@@ -12,7 +12,7 @@
       "displayName": "Metamorfiles Studio",
       "source": "./",
       "description": "On-brand social posts, ads and A/B variants in every platform size, designed by your AI agent and rendered on your computer.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "author": {
         "name": "Metamorfiles",
         "email": "contact@metamorfiles.com",
@@ -22,7 +22,15 @@
       "repository": "https://github.com/metamorfiles/plugin",
       "license": "MIT",
       "category": "design",
-      "keywords": ["design", "social media", "ads", "templates", "variants", "brand", "images"]
+      "keywords": [
+        "design",
+        "social media",
+        "ads",
+        "templates",
+        "variants",
+        "brand",
+        "images"
+      ]
     }
   ]
 }

@@ -6,6 +6,25 @@ You need a Studio download key, from [metamorfiles.com/pricing](https://www.meta
 
 ## Installation
 
+### The easy way: ask your AI app
+
+Paste this into Claude Code, Codex, Gemini CLI, Grok, Cowork, ChatGPT or Cursor:
+
+```text
+Install the Metamorfiles Studio plugin for me from github.com/metamorfiles/plugin.
+
+1. Install it in the app you're running in:
+   - Claude Code: run `claude plugin marketplace add metamorfiles/plugin`, then `claude plugin install metamorfiles@metamorfiles`.
+   - Codex: run `codex plugin marketplace add metamorfiles/plugin`, then `codex plugin add metamorfiles@metamorfiles`.
+   - Gemini CLI: run `gemini extensions install https://github.com/metamorfiles/plugin --consent`.
+   - Grok: run `grok plugin install metamorfiles/plugin --trust`.
+   - Claude Cowork or Desktop, the ChatGPT desktop app, or Cursor: walk me through installing it myself, using the steps for my app at github.com/metamorfiles/plugin.
+2. If you can run commands on my computer, activate Studio: run `npx -y metamorfiles@1 activate` with a timeout of at least 10 minutes. It opens a page in my browser where I paste my download key. Never ask me for the key in this chat.
+3. When you're done, tell me to start a new session.
+```
+
+Then paste your download key into the page that opens. That's it.
+
 ### Claude Code
 
 ```bash
@@ -13,17 +32,10 @@ claude plugin marketplace add metamorfiles/plugin
 claude plugin install metamorfiles@metamorfiles
 ```
 
-Claude Code asks for your download key when the plugin is enabled. To set it in the same step:
-
-```bash
-claude plugin install metamorfiles@metamorfiles --config download_key=YOUR-KEY
-```
-
 ### Claude Cowork and Claude Desktop
 
 1. Open **Customize** > **Plugins**, click **+** > **Add marketplace** > **Add from a repository**, enter `metamorfiles/plugin`, and sync.
 2. Click **Browse**, select **Metamorfiles Studio**, and install. The plugin stays in sync with this repo.
-3. On first use of a Studio tool, activate in your browser (see below).
 
 A plugin you install here is also available in Claude Code signed in with the same claude.ai account.
 
@@ -34,7 +46,7 @@ codex plugin marketplace add metamorfiles/plugin
 codex plugin add metamorfiles@metamorfiles
 ```
 
-Then start a new Codex session. You can also install it from the plugin browser: run `/plugins` in Codex, or open the **Plugins** tab in the ChatGPT desktop app.
+You can also install it from the plugin browser: run `/plugins` in Codex, or open the **Plugins** tab in the ChatGPT desktop app.
 
 ### Cursor
 
@@ -46,8 +58,6 @@ Install from the [Cursor Marketplace](https://cursor.com/marketplace), or open *
 gemini extensions install https://github.com/metamorfiles/plugin
 ```
 
-Gemini CLI asks for your download key during installation.
-
 ### Grok
 
 ```bash
@@ -56,11 +66,17 @@ grok plugin install metamorfiles/plugin --trust
 
 ## Activate
 
-Clients that ask for your download key at install (Claude Code, Gemini CLI) are ready right away. Everywhere else, the first time your agent uses a Studio tool it gives you a link. The link opens a page served by Studio on your own computer: paste the key from your purchase email and click **Activate**. You do this once per computer. The key never passes through the chat.
+Start a new session after installing. Then activate once per computer; every AI app on it shares Studio:
+
+- In Claude Code, run `/metamorfiles:activate`. Claude Code also reminds you at the start of each session until Studio is activated.
+- In any app, say "activate Metamorfiles", or just ask for a design.
+- Or run `npx metamorfiles activate` in a terminal.
+
+A page served by Studio on your own computer opens in your browser. Paste the download key from your purchase email and click **Activate**. Studio downloads in about a minute. The key never passes through the chat.
 
 ## AI images (optional)
 
-Studio can generate images with your own [OpenRouter](https://openrouter.ai/keys) key. Claude Code and Gemini CLI ask for it at install, the activation page has an optional field for it, or run `npx metamorfiles openrouter-key`.
+Studio can generate images with your own [OpenRouter](https://openrouter.ai/keys) key. Add it in the optional field on the activation page, or run `npx metamorfiles openrouter-key`.
 
 ## What you get
 
@@ -73,6 +89,7 @@ Studio can generate images with your own [OpenRouter](https://openrouter.ai/keys
 
 | Skill | Use it for |
 |---|---|
+| `activate` | Activate Studio on this computer with your download key |
 | `metamorfiles` | Any Studio work; explains the project and routes to the right workflow |
 | `metamorfiles-brand` | Set up the brand kit from a website, guide or logos |
 | `metamorfiles-template` | A new or changed template from a brief, reference or screenshot |

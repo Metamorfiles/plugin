@@ -9,7 +9,7 @@ Metamorfiles turns a brand and a brief into HTML image templates, then renders b
 
 ## Start every session
 
-0. If the only Metamorfiles tool available is `activate_studio`, Studio isn't set up on this computer yet. Call it and pass on what it returns: usually a link the user opens to activate. Never ask the user to paste their download key into the chat. Once Studio is ready its full tools appear; continue from step 1.
+0. If the only Metamorfiles tool available is `activate_studio`, Studio isn't activated on this computer yet. Follow the `activate` skill: call `activate_studio`, which opens a page in the user's browser where they paste their download key. Never ask the user to paste their download key into the chat. Once Studio is ready its full tools appear; continue from step 1.
 1. Call `get_project`. If it says no project is open, ask the user for the project folder and call `get_project` with its absolute `path`. If they have no project yet, suggest an empty folder and pass `create: true`.
 2. Read the returned `brand` guide before writing any copy or design.
 3. Pick the workflow below.

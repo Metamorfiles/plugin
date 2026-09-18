@@ -4,10 +4,12 @@ Public plugin for Metamorfiles Studio: skills plus the MCP server entry, package
 
 ## Files per client
 
-- Claude Code, Cowork, Desktop, Grok: `.claude-plugin/plugin.json` (with `userConfig.download_key` and the optional `openrouter_api_key`), `.claude-plugin/marketplace.json`, `.mcp.json` (passes them as `METAMORFILES_KEY` and `OPENROUTER_API_KEY`)
+- Claude Code, Cowork, Desktop, Grok: `.claude-plugin/plugin.json`, `.claude-plugin/marketplace.json`, `.mcp.json`, and `hooks/` (a SessionStart notice while Studio isn't activated)
 - Codex / ChatGPT, Cursor (Agent Plugins standard): `plugin.json` + `mcp.json` (schema-validated, no secrets in `env`), `.agents/plugins/marketplace.json`
 - Cursor extras: `.cursor-plugin/plugin.json`
-- Gemini CLI: `gemini-extension.json` (sensitive `settings` for `METAMORFILES_KEY` and the optional `OPENROUTER_API_KEY`)
+- Gemini CLI: `gemini-extension.json`
+
+No manifest asks for the download key. Every app activates the same way: the `activate` skill (or the `activate_studio` tool) opens a page served on the buyer's computer where they paste the key once.
 
 ## Rules
 
