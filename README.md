@@ -31,16 +31,10 @@ A plugin you install here is also available in Claude Code signed in with the sa
 
 ```bash
 codex plugin marketplace add metamorfiles/plugin
+codex plugin add metamorfiles@metamorfiles
 ```
 
-Then install the plugin from inside Codex:
-
-```
-codex
-/plugins
-```
-
-Select **Metamorfiles Studio** and install.
+Then start a new Codex session. You can also install it from the plugin browser: run `/plugins` in Codex, or open the **Plugins** tab in the ChatGPT desktop app.
 
 ### Cursor
 
