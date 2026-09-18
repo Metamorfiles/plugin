@@ -2,9 +2,14 @@
   "mcpServers": {
     "metamorfiles": {
       "command": "npx",
-      "args": ["-y", "metamorfiles@1", "mcp"],
+      "args": [
+        "-y",
+        "metamorfiles@1",
+        "mcp"
+      ],
       "env": {
-        "METAMORFILES_KEY": "${user_config.download_key}"
+        "METAMORFILES_KEY": "${user_config.download_key}",
+        "OPENROUTER_API_KEY": "${user_config.openrouter_api_key}"
       }
     }
   }

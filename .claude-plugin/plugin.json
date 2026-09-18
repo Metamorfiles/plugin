@@ -11,12 +11,26 @@
   "homepage": "https://www.metamorfiles.com/studio",
   "repository": "https://github.com/metamorfiles/plugin",
   "license": "MIT",
-  "keywords": ["design", "social media", "ads", "templates", "variants", "brand", "images"],
+  "keywords": [
+    "design",
+    "social media",
+    "ads",
+    "templates",
+    "variants",
+    "brand",
+    "images"
+  ],
   "userConfig": {
     "download_key": {
       "type": "string",
       "title": "Download key",
       "description": "The key from your Metamorfiles Studio purchase email. Leave empty to activate later in your browser.",
+      "sensitive": true
+    },
+    "openrouter_api_key": {
+      "type": "string",
+      "title": "OpenRouter key (optional)",
+      "description": "Your own key from openrouter.ai/keys, for AI-generated images. Leave empty to skip.",
       "sensitive": true
     }
   }

@@ -64,6 +64,10 @@ grok plugin install metamorfiles/plugin --trust
 
 Clients that ask for your download key at install (Claude Code, Gemini CLI) are ready right away. Everywhere else, the first time your agent uses a Studio tool it gives you a link. The link opens a page served by Studio on your own computer: paste the key from your purchase email and click **Activate**. You do this once per computer. The key never passes through the chat.
 
+## AI images (optional)
+
+Studio can generate images with your own [OpenRouter](https://openrouter.ai/keys) key. Claude Code and Gemini CLI ask for it at install, the activation page has an optional field for it, or run `npx metamorfiles openrouter-key`.
+
 ## What you get
 
 - **Templates**: plain HTML with declared variables for text, images, colors, fonts and positions, built from your brand kit.

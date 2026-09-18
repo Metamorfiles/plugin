@@ -5,7 +5,11 @@
   "mcpServers": {
     "metamorfiles": {
       "command": "npx",
-      "args": ["-y", "metamorfiles@1", "mcp"]
+      "args": [
+        "-y",
+        "metamorfiles@1",
+        "mcp"
+      ]
     }
   },
   "settings": [
@@ -13,6 +17,12 @@
       "name": "Download key",
       "description": "The key from your Metamorfiles Studio purchase email. Leave empty to activate later in your browser.",
       "envVar": "METAMORFILES_KEY",
+      "sensitive": true
+    },
+    {
+      "name": "OpenRouter key (optional)",
+      "description": "Your own key from openrouter.ai/keys, for AI-generated images. Leave empty to skip.",
+      "envVar": "OPENROUTER_API_KEY",
       "sensitive": true
     }
   ]
