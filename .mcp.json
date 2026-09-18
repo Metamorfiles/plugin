@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "metamorfiles": {
+      "command": "npx",
+      "args": ["-y", "metamorfiles@1", "mcp"],
+      "env": {
+        "METAMORFILES_KEY": "${user_config.download_key}"
+      }
+    }
+  }
+}
