@@ -4,7 +4,7 @@
       "command": "npx",
       "args": [
         "-y",
-        "metamorfiles@1",
+        "metamorfiles@latest",
         "mcp"
       ]
     }

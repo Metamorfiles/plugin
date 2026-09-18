@@ -1,6 +1,6 @@
 # Maintaining the Metamorfiles Studio plugin
 
-Public plugin for Metamorfiles Studio: skills plus the MCP server entry, packaged for every client from one repo (PostHog/ai-plugin layout). No product code lives here; the MCP entry runs `npx -y metamorfiles@1 mcp` (the public installer package in the private kit repo's `installer/`), which downloads Studio with the buyer's key.
+Public plugin for Metamorfiles Studio: skills plus the MCP server entry, packaged for every client from one repo (PostHog/ai-plugin layout). No product code lives here; the MCP entry runs `npx -y metamorfiles@latest mcp` (the public installer package in the private kit repo's `installer/`), which downloads Studio with the buyer's key.
 
 ## Files per client
 

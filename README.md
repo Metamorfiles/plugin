@@ -19,8 +19,8 @@ Install the Metamorfiles Studio plugin for me from github.com/metamorfiles/plugi
    - Gemini CLI: run `gemini extensions install https://github.com/metamorfiles/plugin --consent`.
    - Grok: run `grok plugin install metamorfiles/plugin --trust`.
    - Claude Cowork or Desktop, the ChatGPT desktop app, or Cursor: walk me through installing it myself, using the steps for my app at github.com/metamorfiles/plugin.
-2. If you can run commands on my computer, activate Studio: run `npx -y metamorfiles@1 activate` with a timeout of at least 10 minutes. It opens a page in my browser where I paste my download key. Never ask me for the key in this chat.
-3. When you're done, tell me to start a new session. If activation didn't run, tell me: "Start a new session and run /metamorfiles:activate, or run it yourself in a terminal: npx metamorfiles@1 activate". In apps other than Claude Code, say "activate Metamorfiles" instead of /metamorfiles:activate.
+2. If you can run commands on my computer, activate Studio: run `npx -y metamorfiles@latest activate` with a timeout of at least 10 minutes. It opens a page in my browser where I paste my download key. Never ask me for the key in this chat.
+3. When you're done, tell me to start a new session. If activation didn't run, tell me: "Start a new session and run /metamorfiles:activate, or run it yourself in a terminal: npx metamorfiles@latest activate". In apps other than Claude Code, say "activate Metamorfiles" instead of /metamorfiles:activate.
 ```
 
 Then paste your download key into the page that opens. That's it.
@@ -70,13 +70,13 @@ Start a new session after installing. Then activate once per computer; every AI 
 
 - In Claude Code, run `/metamorfiles:activate`. Claude Code also reminds you at the start of each session until Studio is activated.
 - In any app, say "activate Metamorfiles", or just ask for a design.
-- Or run `npx metamorfiles@1 activate` in a terminal.
+- Or run `npx metamorfiles@latest activate` in a terminal.
 
 A page served by Studio on your own computer opens in your browser. Paste the download key from your purchase email and click **Activate**. Studio downloads in about a minute. The key never passes through the chat.
 
 ## AI images (optional)
 
-Studio can generate images with your own [OpenRouter](https://openrouter.ai/keys) key. Add it in the optional field on the activation page, or run `npx metamorfiles@1 openrouter-key`.
+Studio can generate images with your own [OpenRouter](https://openrouter.ai/keys) key. Add it in the optional field on the activation page, or run `npx metamorfiles@latest openrouter-key`.
 
 ## What you get
 
