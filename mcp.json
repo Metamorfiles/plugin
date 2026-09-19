@@ -7,7 +7,7 @@
       "args": [
         "-y",
         "--fetch-retries=0",
-        "--fetch-timeout=10000",
+        "--fetch-timeout=5000",
         "metamorfiles@latest",
         "mcp"
       ]

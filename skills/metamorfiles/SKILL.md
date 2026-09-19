@@ -37,6 +37,7 @@ If the workflow skill is not loaded, follow the rules in this file and the tool 
 | `generate_image` | Create an image for a variable whose source is `ai`. Saves under `assets/`.                    |
 | `render_preview` | Render one template in one format with given values and look at the result.                   |
 | `render_batch`   | Render every variant in every format. Writes a review page and returns a contact sheet.        |
+| `batch_status`   | Wait for a batch that `render_batch` reported as still rendering, and get its contact sheet.   |
 | `open_panel`     | Start the local control panel and return its URL.                                              |
 
 ## Project layout
