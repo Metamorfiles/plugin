@@ -46,6 +46,7 @@ If the workflow skill is not loaded, follow the rules in this file and the tool 
 
 ```
 metamorfiles.json          project marker: name, imageModel
+AGENTS.md                  instructions for any agent opened here; CLAUDE.md (and GEMINI.md for Gemini CLI) import it
 brand/DESIGN.md            the brand kit: tokens (colors, type, fonts, logos, spacing) and rules
 brand/brand.css            generated --brand-* tokens and @font-face, then the brand's own CSS
 brand/fonts/ logos/ refs/  local brand files
