@@ -12,7 +12,7 @@ Whoever made a design is the worst judge of it. The review looks only at the ren
 1. Finish your own loop first: every `render_preview` check error fixed.
 2. Hand the review to a reviewer that didn't make the design:
    - **Claude Code, Cursor or Gemini CLI:** use the `design-reviewer` agent from the Metamorfiles plugin.
-   - **Codex:** spawn a subagent with the rubric below as its instructions, in a read-only sandbox.
+   - **ChatGPT desktop app or Codex CLI:** spawn a subagent with the rubric below as its instructions, in a read-only sandbox. Their plugins can't include agents, but they delegate to a subagent when a skill asks.
    - **Anywhere else:** do the review yourself as a separate pass. Judge only the images, the findings and DESIGN.md.
 3. Give the reviewer only this: the project path, the template id (or batch id), the formats, and the user's brief in one sentence. Don't explain your design choices.
 4. Fix every issue the reviewer marks **must fix**, render again, and repeat the review once if anything structural changed.
