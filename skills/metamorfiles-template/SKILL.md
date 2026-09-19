@@ -26,7 +26,8 @@ A template is a reusable design whose changeable parts are declared variables. T
    - Look at each image for what the checks can't judge: hierarchy, alignment, crop of photos, logo clear space, balance.
    - Stress test: preview once with the longest plausible copy and with every boolean and enum option that changes layout.
    - Fix and repeat until every format looks intentionally designed for its size.
-8. Show the user the final previews, list the variables, and give them the control panel link from the last result. The panel is where they adjust every variable and save variants.
+8. Get an independent review with `metamorfiles-review` and fix every **must fix**.
+9. Show the user the final previews, list the variables, and give them the control panel link from the last result. The panel is where they adjust every variable and save variants.
 
 ## Design rules
 

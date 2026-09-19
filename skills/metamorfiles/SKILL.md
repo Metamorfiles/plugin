@@ -23,6 +23,7 @@ Metamorfiles turns a brand and a brief into HTML image templates, then renders b
 | A new template from a brief, a reference image or an existing design   | `metamorfiles-template`    |
 | Copy or image variants, A/B test grids, fills from a CSV, a batch      | `metamorfiles-variants`    |
 | One image or design adapted to other platforms and sizes               | `metamorfiles-repurpose`   |
+| An independent review of renders before delivering them               | `metamorfiles-review`      |
 | Hands-on tweaking of variables, saving defaults, reviewing batches     | `open_panel`, give the URL |
 
 If the workflow skill is not loaded, follow the rules in this file and the tool descriptions.

@@ -101,6 +101,7 @@ An older kit has `brand/brand.md` and a hand-written `brand/brand.css`.
 2. Studio regenerates the token block of `brand.css`. It keeps the rest of the brand's CSS below the block, and keeps old variables that DESIGN.md doesn't define, so existing templates still render.
 3. Old variables whose value changed are marked `metamorfiles:changed` in `brand.css`, and every template that uses them gets a check warning. For example, `--brand-muted` meant supporting text in many older kits, but now it's a surface color.
 4. Update those templates to the new token names (supporting text is `--brand-muted-foreground`), then `render_preview` each one until its checks pass.
+5. Once everything from `brand/brand.md` is in DESIGN.md, remove `brand.md` (ask the user first if their rules require it): left in place, it contradicts DESIGN.md and misleads anyone reading it.
 
 ## Rules
 

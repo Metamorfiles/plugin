@@ -13,7 +13,8 @@ No manifest asks for the download key. Every app activates the same way: the `ac
 
 ## Rules
 
-- `skills/` is a copy of the kit repo's `skills/`. Edit skills in the kit, then copy them here.
+- `skills/` and `agents/` are copies of the kit repo's `skills/` and `agents/`. Edit them in the kit (the reviewer agent is generated from the review skill's rubric), then copy them here.
+- `agents/design-reviewer.md` is read by Claude Code, Cursor and Gemini CLI. Keep its frontmatter to `name` and `description`: Gemini CLI rejects unknown fields.
 - The MCP command is `npx -y --fetch-retries=0 --fetch-timeout=5000 metamorfiles@latest mcp` in every manifest: `@latest` makes npx pick up new launcher versions on the next start, and no retries let npx fall back to its cached copy at once when offline (npm serves the stale cache on a failed check).
 - Keep `version` identical in every manifest and the marketplace entry; bump it on every change so clients pick up updates.
 - Validate before committing: `claude plugin validate .` and `claude plugin validate .claude-plugin/plugin.json`, plus the Agent Plugins schemas for `plugin.json` and `mcp.json`.
