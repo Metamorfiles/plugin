@@ -41,15 +41,18 @@ If the workflow skill is not loaded, follow the rules in this file and the tool 
 | `render_batch`   | Render every variant in every format, with checks per file, a review page and a contact sheet. |
 | `batch_status`   | Wait for a batch that `render_batch` reported as still rendering, and get its contact sheet.   |
 | `open_panel`     | Start the local control panel and return its URL.                                              |
+| `extract_brand_values` | Read exact colors from a brand image (with coverage) or a logo's SVG fills. Never guess by eye. |
+| `make_logo_variant` | Write a logo variant by exact color substitution: the brand's theme variants, or approved ones. |
 
 ## Project layout
 
 ```
 metamorfiles.json          project marker: name, imageModel
 AGENTS.md, CLAUDE.md       short instructions for any agent opened here (created only if missing)
-brand/DESIGN.md            the brand kit: tokens (colors, type, fonts, logos, spacing) and rules
+brand/DESIGN.md            the brand kit (design.md format): tokens, rules, Sources and Known gaps
 brand/brand.css            generated --brand-* tokens and @font-face, then the brand's own CSS
 brand/fonts/ logos/ refs/  local brand files
+brand/sources/             copies of the files the brand was translated from
 templates/brand-board/     generated from DESIGN.md; never edit it
 templates/<id>/index.html  one template per folder, plus its local images
 data/*.csv                 data tables
@@ -144,7 +147,7 @@ Every variable has `id`, `type`, `label` and `default`. An optional `source` say
 
 - The body is exactly the format size. Size the root with `100vw` and `100vh`, and use `vmin` for type, spacing and radii.
 - Adapt structure with `@media (min-aspect-ratio: 5/4)` for landscape formats and `html[data-format="…"]` for specific formats.
-- Use brand tokens for colors, type and spacing: `--brand-<color>` (text on a surface always uses that surface's `-foreground`), `--brand-<role>-font` and `-size`, `--brand-safe-margin`. Never hardcode a color the brand already names.
+- Use brand tokens for colors, type and spacing: `--brand-<color>` (text on a surface uses its `on-` color, like `--brand-on-primary` on `--brand-primary`, or a component's pair), `--brand-<role>-font` and `-size`, `--brand-safe-margin`. Never hardcode a color the brand already names.
 - Keep every text inside `--brand-safe-margin`. Story formats need extra room at the top and bottom for platform UI.
 
 ## Quality loop

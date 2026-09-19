@@ -16,7 +16,7 @@ A batch renders every variant of one template in every chosen format. You write 
    - **Size:** variants × formats × rows. Confirm before rendering more than 50 files.
 3. Fill values per variant:
    - `string` variables with an `ai` source: write the copy yourself from the variable's `instruction`, the brand voice and the thesis. Respect `maxLength`.
-   - `image` variables with an `ai` source: call `generate_image` with a prompt built from the instruction, the thesis and the Image prompts section of DESIGN.md, at the size of the largest format. Use the returned path as the value. Reuse one image across variants when the thesis is not about the image.
+   - `image` variables with an `ai` source: call `generate_image` with a prompt built from the instruction, the thesis and the Imagery section of DESIGN.md, at the size of the largest format. Use the returned path as the value. Reuse one image across variants when the thesis is not about the image.
    - `table` variables: do not set them. List the table in the spec and they fill from each row. Call `read_table` first to check columns and rows.
    - Only set the values that differ from the template defaults.
 4. Preview before the full run: `render_preview` two or three representative variants in the most constrained format. Fix copy that overflows, then continue.

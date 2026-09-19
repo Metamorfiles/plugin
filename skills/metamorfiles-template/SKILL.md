@@ -37,7 +37,7 @@ A template is a reusable design whose changeable parts are declared variables. T
 - One focal point per design. Headline, supporting line, then call to action or price.
 - Use `text-wrap: balance` on headlines. Never let text touch the edges or overlap the logo.
 - Photos use `object-fit: cover` with a deliberate `object-position`.
-- Colors, type and spacing come from the brand tokens. Text on a surface uses that surface's `-foreground` token. Accent colors follow the brand's usage rules.
+- Colors, type and spacing come from the brand tokens. Text on a surface uses its `on-` color (`--brand-on-surface` on `--brand-surface`) or a component's pair from DESIGN.md. Accent colors follow the brand's usage rules.
 - Keep every text inside `--brand-safe-margin`; the checks flag anything outside it.
 
 ## Changing an existing template
