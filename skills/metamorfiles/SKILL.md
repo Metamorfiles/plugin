@@ -133,7 +133,7 @@ Every variable has `id`, `type`, `label` and `default`. An optional `source` say
 | `html[data-id="value"]`| enum, boolean and anchor values are also attributes on `<html>`  |
 | `html[data-format="…"]`| the current format id; `--format-width` and `--format-height` hold its size |
 
-**Formats:** `instagram-post` 1080×1350, `instagram-square` 1080×1080, `instagram-story` 1080×1920, `facebook-post` 1200×630, `linkedin-post` 1200×627, `x-post` 1600×900, `pinterest-pin` 1000×1500, `youtube-thumbnail` 1280×720, or inline `{ "id": "banner", "width": 1500, "height": 500 }`.
+**Formats:** `instagram-post` 1080×1350, `instagram-square` 1080×1080, `instagram-story` 1080×1920, `facebook-post` 1200×630, `linkedin-post` 1200×627, `x-post` 1600×900, `pinterest-pin` 1000×1500, `youtube-thumbnail` 1280×720, or inline `{ "id": "banner", "width": 1500, "height": 500 }`. A height of `"auto"` makes the image as tall as its content, for long pages such as a one-pager; size those in px or `vw`, since `vmin` follows the width.
 
 **Rules the check enforces**
 

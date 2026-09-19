@@ -14,7 +14,7 @@ Three principles:
 
 ## Steps
 
-1. Call `get_project` and read `brand`. If its check says the file is in Studio's older format, rebuild it from the brand's sources as below; don't convert the old values.
+1. Call `get_project` and read `brand`. When you rebuild an existing kit, take every value again from the brand's sources as below; never copy values from the previous DESIGN.md.
 2. Gather the sources: the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. Ask for anything essential that's missing, such as the logo or the font files.
 3. Copy the files into the project, unchanged:
    - fonts as WOFF2 in `brand/fonts/` (local files only; for Google Fonts, download the WOFF2 files or ask the user to);
