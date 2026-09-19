@@ -10,7 +10,7 @@ Metamorfiles turns a brand and a brief into HTML image templates, then renders b
 ## Start every session
 
 0. If the only Metamorfiles tool available is `activate_studio`, Studio isn't activated on this computer yet. Follow the `activate` skill: call `activate_studio`, which opens a page in the user's browser where they paste their download key. Never ask the user to paste their download key into the chat. Once Studio is ready its full tools appear; continue from step 1.
-1. Call `get_project`. If it says no project is open, ask the user for the project folder and call `get_project` with its absolute `path`. If they have no project yet, suggest an empty folder and pass `create: true`, which makes an empty project. Pass `example: true` too only when the user wants to explore the example brand and template.
+1. Call `get_project`. It finds the project in the working folder or its `metamorfiles/` folder. If there's none yet, call `get_project` with `create: true` and the brand `name`: Studio creates `metamorfiles/` in the working folder, or `~/Metamorfiles/<name>` when there's no working folder, like in a chat app. Don't ask where to put it; pass an absolute `path` only if the user asks for another location. Pass `example: true` only when the user wants to explore the example brand and template.
 2. Read the returned `brand` before writing any copy or design. If it says there's no brand kit yet, build it first with `metamorfiles-brand`.
 3. Pick the workflow below.
 4. Every render and template write returns a control panel link. Always give it to the user with your result: the panel is where they see the design at full size and adjust it.
@@ -46,7 +46,7 @@ If the workflow skill is not loaded, follow the rules in this file and the tool 
 
 ```
 metamorfiles.json          project marker: name, imageModel
-AGENTS.md                  instructions for any agent opened here; CLAUDE.md (and GEMINI.md for Gemini CLI) import it
+AGENTS.md, CLAUDE.md       short instructions for any agent opened here (created only if missing)
 brand/DESIGN.md            the brand kit: tokens (colors, type, fonts, logos, spacing) and rules
 brand/brand.css            generated --brand-* tokens and @font-face, then the brand's own CSS
 brand/fonts/ logos/ refs/  local brand files
