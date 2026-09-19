@@ -14,6 +14,7 @@ No manifest asks for the download key. Every app activates the same way: the `ac
 ## Rules
 
 - `skills/` is a copy of the kit repo's `skills/`. Edit skills in the kit, then copy them here.
+- The MCP command is `npx -y --fetch-retries=0 --fetch-timeout=10000 metamorfiles@latest mcp` in every manifest: `@latest` makes npx pick up new launcher versions on the next start, and no retries let npx fall back to its cached copy at once when offline (npm serves the stale cache on a failed check).
 - Keep `version` identical in every manifest and the marketplace entry; bump it on every change so clients pick up updates.
 - Validate before committing: `claude plugin validate .` and `claude plugin validate .claude-plugin/plugin.json`, plus the Agent Plugins schemas for `plugin.json` and `mcp.json`.
 - Work on `dev`; `main` is what buyers install. Never push to `main` directly.

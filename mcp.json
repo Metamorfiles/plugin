@@ -4,7 +4,13 @@
     "metamorfiles": {
       "type": "stdio",
       "command": "npx",
-      "args": ["-y", "metamorfiles@latest", "mcp"]
+      "args": [
+        "-y",
+        "--fetch-retries=0",
+        "--fetch-timeout=10000",
+        "metamorfiles@latest",
+        "mcp"
+      ]
     }
   }
 }

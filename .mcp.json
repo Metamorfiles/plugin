@@ -4,6 +4,8 @@
       "command": "npx",
       "args": [
         "-y",
+        "--fetch-retries=0",
+        "--fetch-timeout=10000",
         "metamorfiles@latest",
         "mcp"
       ]
