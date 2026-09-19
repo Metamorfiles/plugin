@@ -24,6 +24,6 @@ Resizing is a layout job, not a crop. Rebuild the design as a template whose str
    - **Portrait and square** (4:5, 1:1): the source layout usually fits with spacing adjustments.
    - **Landscape** (1.9:1, 16:9): place copy beside the image. Headlines get shorter lines and larger relative size.
    - Adjust `object-position` so the subject stays in frame in every crop.
-6. `render_preview` every format, compare each with the source, and fix until they read as one family.
+6. `render_preview` every format, fix every check error, compare each with the source, and fix until they read as one family.
 7. Render the set with `render_batch` using a single variant, for example `{ "template": "<id>", "name": "<id>-formats", "variants": [] }`, which renders the defaults in every format.
-8. Report the batch folder and review page path, and show the contact sheet.
+8. Report the batch folder and review page path, show the contact sheet, and give the user the panel link from the result.

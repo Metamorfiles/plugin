@@ -10,15 +10,16 @@ Metamorfiles turns a brand and a brief into HTML image templates, then renders b
 ## Start every session
 
 0. If the only Metamorfiles tool available is `activate_studio`, Studio isn't activated on this computer yet. Follow the `activate` skill: call `activate_studio`, which opens a page in the user's browser where they paste their download key. Never ask the user to paste their download key into the chat. Once Studio is ready its full tools appear; continue from step 1.
-1. Call `get_project`. If it says no project is open, ask the user for the project folder and call `get_project` with its absolute `path`. If they have no project yet, suggest an empty folder and pass `create: true`.
-2. Read the returned `brand` guide before writing any copy or design.
+1. Call `get_project`. If it says no project is open, ask the user for the project folder and call `get_project` with its absolute `path`. If they have no project yet, suggest an empty folder and pass `create: true`, which makes an empty project. Pass `example: true` too only when the user wants to explore the example brand and template.
+2. Read the returned `brand` before writing any copy or design. If it says there's no brand kit yet, build it first with `metamorfiles-brand`.
 3. Pick the workflow below.
+4. Every render and template write returns a control panel link. Always give it to the user with your result: the panel is where they see the design at full size and adjust it.
 
 ## Workflows
 
 | The user wants                                                         | Use                        |
 | ---------------------------------------------------------------------- | -------------------------- |
-| Set up or change the brand: voice, colors, fonts, logos                | `metamorfiles-brand`       |
+| Set up, import or change the brand: voice, colors, fonts, logos        | `metamorfiles-brand`       |
 | A new template from a brief, a reference image or an existing design   | `metamorfiles-template`    |
 | Copy or image variants, A/B test grids, fills from a CSV, a batch      | `metamorfiles-variants`    |
 | One image or design adapted to other platforms and sizes               | `metamorfiles-repurpose`   |
@@ -30,13 +31,13 @@ If the workflow skill is not loaded, follow the rules in this file and the tool 
 
 | Tool             | Use it to                                                                                      |
 | ---------------- | ---------------------------------------------------------------------------------------------- |
-| `get_project`    | Open or create the project. Returns brand.md, templates, variables and batches.              |
-| `read_file`      | Read templates, brand.css, CSVs and batch specs. Paths are project-relative.                   |
-| `write_file`     | Create or replace files. Writing `templates/<id>/index.html` returns the contract check.       |
+| `get_project`    | Open or create the project. Returns the brand kit and its check, templates and batches.       |
+| `read_file`      | Read templates, DESIGN.md, brand.css, CSVs and batch specs. Paths are project-relative.        |
+| `write_file`     | Create or replace files. Writing a template or DESIGN.md returns its check and a panel link.   |
 | `read_table`     | Read CSV columns and rows before planning a table batch.                                       |
 | `generate_image` | Create an image for a variable whose source is `ai`. Saves under `assets/`.                    |
-| `render_preview` | Render one template in one format with given values and look at the result.                   |
-| `render_batch`   | Render every variant in every format. Writes a review page and returns a contact sheet.        |
+| `render_preview` | Render one template in one format, with design checks and a panel link.                       |
+| `render_batch`   | Render every variant in every format, with checks per file, a review page and a contact sheet. |
 | `batch_status`   | Wait for a batch that `render_batch` reported as still rendering, and get its contact sheet.   |
 | `open_panel`     | Start the local control panel and return its URL.                                              |
 
@@ -44,9 +45,10 @@ If the workflow skill is not loaded, follow the rules in this file and the tool 
 
 ```
 metamorfiles.json          project marker: name, imageModel
-brand/brand.md             voice, audience, do and don't rules
-brand/brand.css            @font-face rules and --brand-* CSS variables
+brand/DESIGN.md            the brand kit: tokens (colors, type, fonts, logos, spacing) and rules
+brand/brand.css            generated --brand-* tokens and @font-face, then the brand's own CSS
 brand/fonts/ logos/ refs/  local brand files
+templates/brand-board/     generated from DESIGN.md; never edit it
 templates/<id>/index.html  one template per folder, plus its local images
 data/*.csv                 data tables
 assets/                    uploaded and generated images
@@ -109,7 +111,7 @@ A template is one HTML file. It declares formats and variables in a JSON script 
 | `boolean` |                                          | true or false                                                     |
 | `enum`    | `options` with `value` and `label`       | one option value                                                  |
 | `image`   |                                          | path relative to the template folder, or project-absolute like `/assets/hero.png` |
-| `font`    |                                          | a family declared with `@font-face` in brand/brand.css            |
+| `font`    |                                          | a family listed in DESIGN.md `fonts`                              |
 | `anchor`  |                                          | `top-left`, `top-center`, `top-right`, `center-left`, `center`, `center-right`, `bottom-left`, `bottom-center`, `bottom-right` |
 
 Every variable has `id`, `type`, `label` and `default`. An optional `source` says where variant values come from: `static` (the default), `ai` with an `instruction` for you, or `table` with a CSV `column`.
@@ -133,16 +135,21 @@ Every variable has `id`, `type`, `label` and `default`. An optional `source` say
 - No remote URLs and no remote `@import`. Save images into the template folder or `assets/`, fonts into `brand/fonts/`.
 - No `<script>` tags besides the manifest. Use variables and CSS.
 - Every binding references a declared variable of a matching type. Unused variables are warnings.
-- Default images must exist. Font defaults must have an `@font-face` in brand/brand.css.
+- Default images must exist. Font defaults must be listed in DESIGN.md `fonts`.
+- Variable ids can't start with `brand-`: that namespace belongs to the brand tokens.
 
 **Layout rules that keep every format working**
 
 - The body is exactly the format size. Size the root with `100vw` and `100vh`, and use `vmin` for type, spacing and radii.
 - Adapt structure with `@media (min-aspect-ratio: 5/4)` for landscape formats and `html[data-format="…"]` for specific formats.
-- Use brand variables from brand.css for colors and fonts. Never hardcode a color the brand already names.
-- Keep text away from the edges: at least 5vmin of padding. Story formats need extra room at the top and bottom for platform UI.
+- Use brand tokens for colors, type and spacing: `--brand-<color>` (text on a surface always uses that surface's `-foreground`), `--brand-<role>-font` and `-size`, `--brand-safe-margin`. Never hardcode a color the brand already names.
+- Keep every text inside `--brand-safe-margin`. Story formats need extra room at the top and bottom for platform UI.
 
 ## Quality loop
 
-After every template edit, call `render_preview` in every declared format, look at each image, and fix clipping, overlap, weak contrast, awkward line breaks or off-brand choices. Repeat until the check passes with no warnings and every format looks designed for its size. Show the final previews to the user.
+Every `render_preview` returns design checks measured on the rendered image:
+- **Errors:** clipped text, text outside the image or the safe margin, fonts that fell back, broken or stretched images, contrast below 3:1.
+- **Warnings:** upscaled images, off-palette colors, small text below 4.5:1.
+
+After every template edit, preview every declared format. Fix every error, and every warning that isn't a deliberate choice, then preview again. The checks can't judge composition, so also look at each image: hierarchy, alignment, crops, awkward line breaks, balance across formats. Finish by showing the final previews and giving the panel link.
 

@@ -16,13 +16,14 @@ A batch renders every variant of one template in every chosen format. You write 
    - **Size:** variants × formats × rows. Confirm before rendering more than 50 files.
 3. Fill values per variant:
    - `string` variables with an `ai` source: write the copy yourself from the variable's `instruction`, the brand voice and the thesis. Respect `maxLength`.
-   - `image` variables with an `ai` source: call `generate_image` with a prompt built from the instruction, the thesis and the image prompt rules in brand.md, at the size of the largest format. Use the returned path as the value. Reuse one image across variants when the thesis is not about the image.
+   - `image` variables with an `ai` source: call `generate_image` with a prompt built from the instruction, the thesis and the Image prompts section of DESIGN.md, at the size of the largest format. Use the returned path as the value. Reuse one image across variants when the thesis is not about the image.
    - `table` variables: do not set them. List the table in the spec and they fill from each row. Call `read_table` first to check columns and rows.
    - Only set the values that differ from the template defaults.
 4. Preview before the full run: `render_preview` two or three representative variants in the most constrained format. Fix copy that overflows, then continue.
 5. Write the batch spec to `batches/specs/<name>.json` with `write_file`, then call `render_batch` with that `path`. Pass `zip: true` when the user wants to send the files.
-6. Look at the returned contact sheet. Re-render any variant that looks wrong.
-7. Report the batch folder, the file count, and the review page path `batches/<id>/index.html`. Offer `open_panel` with the `batch` id to browse and tweak.
+6. If `render_batch` reports the batch is still rendering, call `batch_status` with its id until it's done.
+7. Read the `checks` in the result: files with errors need their values fixed (usually copy that's too long) or the template fixed. Re-render them. Then look at the contact sheet for anything the checks can't judge.
+8. Report the batch folder, the file count and the review page path `batches/<id>/index.html`, and give the user the panel link from the result.
 
 ## Batch spec
 
@@ -47,6 +48,6 @@ A batch renders every variant of one template in every chosen format. You write 
 
 ## Rules
 
-- Copy follows brand.md. No claims, prices or facts that are not in the brief, the brand guide or the table.
+- Copy follows the Voice and Do's and Don'ts in DESIGN.md. No claims, prices or facts that are not in the brief, the brand guide or the table.
 - Name each A/B variant by its thesis so the results can be traced.
 - Never overwrite a previous batch. Each render gets its own dated folder.
