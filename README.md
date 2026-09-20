@@ -8,7 +8,7 @@ You need a Studio download key, from [metamorfiles.com/pricing](https://www.meta
 
 ### The easy way: ask your AI app
 
-Paste this into Claude Code, Codex, Gemini CLI, Grok, Cowork, ChatGPT or Cursor:
+Paste this into Claude Code, Codex, VS Code, Grok, Cowork, ChatGPT or Cursor:
 
 ```text
 Install the Metamorfiles Studio plugin for me from github.com/metamorfiles/plugin.
@@ -16,7 +16,6 @@ Install the Metamorfiles Studio plugin for me from github.com/metamorfiles/plugi
 1. Install it in the app you're running in:
    - Claude Code: run `claude plugin marketplace add metamorfiles/plugin`, then `claude plugin install metamorfiles@metamorfiles`.
    - Codex: run `codex plugin marketplace add metamorfiles/plugin`, then `codex plugin add metamorfiles@metamorfiles`.
-   - Gemini CLI: run `gemini extensions install https://github.com/metamorfiles/plugin --consent`.
    - Grok: run `grok plugin install metamorfiles/plugin --trust`.
    - Claude Cowork or Desktop, the ChatGPT desktop app, or Cursor: walk me through installing it myself, using the steps for my app at github.com/metamorfiles/plugin.
 2. If you can run commands on my computer, activate Studio: run `npx -y metamorfiles@latest activate` with a timeout of at least 10 minutes. It opens a page in my browser where I paste my download key. Never ask me for the key in this chat.
@@ -52,10 +51,12 @@ You can also install it from the plugin browser: run `/plugins` in Codex, or ope
 
 Install from the [Cursor Marketplace](https://cursor.com/marketplace), or open **Customize** in the sidebar and install Metamorfiles Studio.
 
-### Gemini CLI
+### VS Code and GitHub Copilot
 
-```bash
-gemini extensions install https://github.com/metamorfiles/plugin
+Run **Chat: Install Plugin From Source** from the Command Palette and enter:
+
+```text
+https://github.com/metamorfiles/plugin
 ```
 
 ### Grok
