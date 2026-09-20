@@ -16,7 +16,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 ## Steps
 
 1. Call `get_project` and read `brand`. When you rebuild an existing kit, take every value again from the brand's sources as below; never copy values from the previous DESIGN.md.
-2. Gather the sources: the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. Ask for anything essential that's missing, such as the logo or the font files.
+2. Gather the sources: the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. **Go and find the imagery, don't wait to be handed it**: look in `public/`, `static/`, `assets/` and `src/assets/`; follow what the app's own components reference (a component naming `/art/hill-morning.webp` is telling you that file is brand imagery); read the Open Graph and Twitter card images in the app's metadata; and take what the live site renders in its hero and section bands. Icons, favicons, UI chrome and framework defaults (`next.svg`, `vercel.svg`) are not imagery. Ask only for what you cannot find and cannot do without, such as the font files or the logo.
 3. Copy the files into the project, unchanged:
    - fonts as WOFF2 in `brand/fonts/` (local files only; for Google Fonts, download the WOFF2 files or ask the user to);
    - official logos in `brand/logos/`;
@@ -25,7 +25,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 4. Take the values from each source as described below.
 5. Write `brand/DESIGN.md` with `write_file`, following the template.
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
-7. Call `render_preview` on `brand-board`. Show the user the image and the control panel link. Name every value you marked `proposed` and where it came from, list the Known gaps, and offer the logo variants you could generate (see Logos). Wait for their answer before generating any. They change a proposed value by telling you, or by editing DESIGN.md.
+7. Present it. Call `render_preview` on `brand-board`: the board is a deck of pages, so you get one image per page. Show them, then write the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the deck back for an answer, and never list your own values, checks or tools.
 
 ## Taking values from each source
 
@@ -81,6 +81,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 - Name tokens instead of repeating values: `**Ink** {colors.ink} carries all text`. Values belong in the tokens and in Sources.
 - Describe rules and intent, not layouts, unless the brand really has a fixed layout rule. A specific reference ("a 1970s lecture handout") carries more than adjectives ("clean, modern").
 - Keep Do's and Don'ts short and intentional, and never add brand facts such as claims, prices or awards.
+- **Voice is a chart, not a paragraph**: three concepts, each with its characteristics and the lines the brand does and doesn't say. Every Do is quoted from the brand's own copy. See `references/voice-chart.md`; the board draws the chart and the templates write to it.
 - **Sources** is a table: value, origin (file or URL), original name (variable, class or element), confidence (exact, sampled, inferred or proposed), plus what was deliberately not carried over. `proposed` is anything you supplied rather than observed; say what you derived it from.
 - **Known gaps** lists what the brand doesn't define and what you need from the user.
 
@@ -154,6 +155,7 @@ The tokens become CSS variables in `brand/brand.css`:
 
 ## Rules
 
+- The brand board is a deck of 1920x1080 pages, one per format: cover, logo, color, a page per theme, typefaces, type scale, surfaces, imagery and voice. Pages the brand has nothing for are left out, so a missing image or an empty Voice section costs a page. Nothing there is yours to lay out.
 - Never edit the generated block of `brand.css` (between the `metamorfiles:tokens` markers) or `templates/brand-board/`: both are rebuilt from DESIGN.md. Put the brand's own CSS, such as textures and logo lockups, in `brand.css` below the markers.
 - Changing DESIGN.md changes every template. Tell the user which templates will look different, and re-render them.
 - Write DESIGN.md with `write_file`, which returns the check. If you write it with other tools, call `get_project` afterwards to see the check.
