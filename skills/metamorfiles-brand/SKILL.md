@@ -7,10 +7,11 @@ description: Use when the user wants to set up, import or change the brand in a 
 
 The brand kit is `brand/DESIGN.md`, in Google Labs' design.md format (version `alpha`, github.com/google-labs-code/design.md), so it also works in Stitch and other design tools. Studio checks it, runs the official design.md linter on it, and generates from it the `--brand-*` tokens in `brand/brand.css` and the `brand-board` template.
 
-Three principles:
-- **Translate, never invent.** Every value comes from a source. You assign meaning and write intent; you never make up a color, size, component, rule or claim.
-- **Record where everything came from**, in `## Sources`, and what's missing, in `## Known gaps`.
-- **Logos are sacred.** Only official files and the brand's own variants. Anything generated needs the user's approval first.
+Your goal is a complete board the user can use, quickly. Four principles:
+- **What the brand defines is exact.** Copy an observed color, size or file as it is. Never adjust, round or replace it to fit a scale you like better.
+- **What the brand leaves open, you supply.** A kit with no radii, no dark theme or no component pairs isn't faithful, it just moves the guessing into every template. Derive the missing part from what the brand does show, mark it `proposed` in Sources, and tell the user what to look at.
+- **Never invent a fact.** Claims, prices, awards, positioning and logos are not yours to make up. Logos are sacred: only official files and the brand's own variants, and anything generated needs approval first.
+- **Record where everything came from**, in `## Sources`, and what you still need from the user, in `## Known gaps`.
 
 ## Steps
 
@@ -24,7 +25,7 @@ Three principles:
 4. Take the values from each source as described below.
 5. Write `brand/DESIGN.md` with `write_file`, following the template.
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
-7. Call `render_preview` on `brand-board`. Show the user the image and the control panel link. Name what they should double-check, list the Known gaps, and offer the logo variants you could generate (see Logos). Wait for their answer before generating any.
+7. Call `render_preview` on `brand-board`. Show the user the image and the control panel link. Name every value you marked `proposed` and where it came from, list the Known gaps, and offer the logo variants you could generate (see Logos). Wait for their answer before generating any. They change a proposed value by telling you, or by editing DESIGN.md.
 
 ## Taking values from each source
 
@@ -38,10 +39,24 @@ Three principles:
 
 Evidence rules:
 - A value seen once is a value. A literal color in a component (for example `text-[#eef0ea]` on a band) belongs in `components`.
-- Don't create what wasn't observed: no tints, shades, hover states, extra type sizes, spacing scales or dark palettes.
+- Take the whole scale a source defines, not only the steps it happens to use. A radius scale with a step missing is a hole a template will fill badly.
+- What the source leaves open, derive in proportion to what it shows and mark `proposed`. What the source contradicts, don't.
 - When sources disagree, the brand's own files win over the website, and the website over screenshots. Note the other value in Sources.
 - Overview, Voice and Audience may be interpreted from the brand's own copy and code comments; mark them inferred in Sources.
 - Leave out interface plumbing with no brand meaning, such as shadcn's `--ring`, `--input`, `--popover`, `--sidebar-*`, `--chart-*` and its hover `--accent`. List them in Sources as not carried over.
+
+## Complete the kit
+
+A finished kit defines colors (with the role keys), typography, rounded and components, plus fonts and at least one logo. Studio warns when one of those areas is neither defined nor listed in `omitted`, so each one is a decision rather than an oversight.
+
+When the source is thin — a photograph, a screenshot, a one-page brief, a site built without tokens — take what it gives exactly, then derive the rest in proportion and mark it `proposed`:
+
+- one radius on a card → the scale around it, at the source's own ratio;
+- two type sizes → the roles between them on the same ratio, and the roles the templates need above and below;
+- a light palette only → a dark theme, every `on-` pair at 4.5:1 or more;
+- an action color with no text pair → the pair, at 4.5:1 or more.
+
+Ask the user only for what you cannot derive and what changes the result: the font files, the logo, what the brand is actually about. Never hold the board for something you can propose and they can correct in one line.
 
 ## Tokens
 
@@ -52,7 +67,7 @@ Evidence rules:
   - A dark theme the brand defines (a `.dark` block) becomes a group with the same names: `colors.dark.chalk`, `colors.dark.primary`.
   - Numeric scales stay scales (`blue-50` … `blue-900`).
 - **`typography`**: the roles the source actually uses (such as `display`, `headline-lg`, `body`, `label`, `code`), in px as the source defines them (1rem is 16px). `lineHeight` unitless or in px, `letterSpacing` in em. Only the spec's properties: fontFamily, fontSize, fontWeight, lineHeight, letterSpacing, fontFeature and fontVariation. Casing rules, such as "labels in capitals", go in the prose.
-- **`rounded`** and **`spacing`**: as the source defines them. When the brand has none, list the key in `omitted` with a reason. Only colors, typography, spacing, rounded and components can be omitted.
+- **`rounded`** and **`spacing`**: as the source defines them, whole scales. When the source shows only one or two steps, derive the rest around them and mark them `proposed`; when the brand truly has none (square corners everywhere), list the key in `omitted` with a reason. Only colors, typography, spacing, rounded and components can be omitted.
 - **`components`**: only usage pairs you observed, such as `button-primary`, `card`, `band` or `badge-winner`, with `backgroundColor`, `textColor`, `typography`, `rounded` and `padding`. Reference tokens (`"{colors.primary}"`); use a literal value only when the source hardcodes one.
 - **`fonts`** (Studio): every family the roles use, with its local file (relative to `brand/`) and weight range.
 - **`logos`** (Studio): each file with the `background` it's made for (a token reference) and its `source`.
@@ -66,7 +81,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 - Name tokens instead of repeating values: `**Ink** {colors.ink} carries all text`. Values belong in the tokens and in Sources.
 - Describe rules and intent, not layouts, unless the brand really has a fixed layout rule. A specific reference ("a 1970s lecture handout") carries more than adjectives ("clean, modern").
 - Keep Do's and Don'ts short and intentional, and never add brand facts such as claims, prices or awards.
-- **Sources** is a table: value, origin (file or URL), original name (variable, class or element), confidence (exact, sampled or inferred), plus what was deliberately not carried over.
+- **Sources** is a table: value, origin (file or URL), original name (variable, class or element), confidence (exact, sampled, inferred or proposed), plus what was deliberately not carried over. `proposed` is anything you supplied rather than observed; say what you derived it from.
 - **Known gaps** lists what the brand doesn't define and what you need from the user.
 
 ## Logos
