@@ -34,6 +34,7 @@ A template is a reusable design whose changeable parts are declared variables. T
 - Use `100vw` and `100vh` for the root and `vmin` for type, spacing and radii, so one design scales across sizes.
 - Landscape formats need a different structure, usually side by side. Use `@media (min-aspect-ratio: 5/4)`.
 - Story formats (9:16) keep key content out of the top 14% and bottom 20%.
+- Write every headline and call to action against the Voice chart in DESIGN.md: it should be at home in the Do column. What the brand never says, you never write — and neither of you invents a figure.
 - One focal point per design. Headline, supporting line, then call to action or price.
 - Use `text-wrap: balance` on headlines. Never let text touch the edges or overlap the logo.
 - Photos use `object-fit: cover` with a deliberate `object-position`.
