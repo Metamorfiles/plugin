@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-template
-description: Use when the user wants a new or changed Metamorfiles template, for example a social post, ad or banner design from a brief, a reference image, a screenshot or an existing design. Writes templates/<id>/index.html following the contract and checks it visually in every format.
+description: Use when the user wants a new or changed Metamorfiles template, for example a social post, ad or banner design from a brief, a reference image, a screenshot or an existing design. Writes the template's index.html following the contract and checks it visually in every format.
 ---
 
 # Create a template
