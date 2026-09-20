@@ -9,7 +9,9 @@
         "--fetch-retries=0",
         "--fetch-timeout=5000",
         "metamorfiles@latest",
-        "mcp"
+        "mcp",
+        "--plugin-root",
+        "${CLAUDE_PLUGIN_ROOT}"
       ]
     }
   }
