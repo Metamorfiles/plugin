@@ -5,7 +5,7 @@ the `metamorfiles` skill; this is the shape of this particular message.
 
 ## The shape
 
-1. **The deck.** Every page `render_preview` returned, in order, before any words.
+1. **The board.** The image `render_preview` returned, before any words.
 2. **What the brand is**, in two or three sentences, in its own materials: the paper, the ink, the
    accent, what each typeface carries, and what the whole thing feels like. This is the only part
    that is yours to write, and it is what makes the kit feel made rather than extracted.
@@ -21,7 +21,7 @@ Then the panel link, on its own line, at the end.
 
 > **Prompt Royale**
 >
-> [cover] [logo] [color] [dark theme] [typefaces] [type scale] [surfaces] [voice]
+> [the board]
 >
 > Chalk paper, ink type, indigo for action, and gold kept for winners only. Young Serif carries the
 > headlines, Hanken Grotesk the text, JetBrains Mono the model names. It reads calm and even-handed,
