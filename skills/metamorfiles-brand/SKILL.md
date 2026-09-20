@@ -25,7 +25,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 4. Take the values from each source as described below.
 5. Write `brand/DESIGN.md` with `write_file`, following the template.
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
-7. Present it. Call `render_preview` on `brand-board`: the board is a deck of pages, so you get one image per page. Show them, then write the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the deck back for an answer, and never list your own values, checks or tools.
+7. Present it. Call `render_preview` on `brand-board`: it is one square image of the whole brand. Show it, then write the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
 
 ## Taking values from each source
 
@@ -155,7 +155,7 @@ The tokens become CSS variables in `brand/brand.css`:
 
 ## Rules
 
-- The brand board is a deck of 1920x1080 pages, one per format: cover, logo, color, a page per theme, typefaces, type scale, surfaces, imagery and voice. Pages the brand has nothing for are left out, so a missing image or an empty Voice section costs a page. Nothing there is yours to lay out.
+- The brand board is one 1920x1920 image of nine panels: cover, palette, typefaces, type scale, imagery, surfaces, a second theme, voice and rules. Panels the brand has nothing for are left out, so a missing image or an empty Voice section costs a panel. It is a composition, not a reference — DESIGN.md holds every token — and none of it is yours to lay out.
 - Never edit the generated block of `brand.css` (between the `metamorfiles:tokens` markers) or `templates/brand-board/`: both are rebuilt from DESIGN.md. Put the brand's own CSS, such as textures and logo lockups, in `brand.css` below the markers.
 - Changing DESIGN.md changes every template. Tell the user which templates will look different, and re-render them.
 - Write DESIGN.md with `write_file`, which returns the check. If you write it with other tools, call `get_project` afterwards to see the check.
