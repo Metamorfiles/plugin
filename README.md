@@ -65,6 +65,16 @@ https://github.com/metamorfiles/plugin
 grok plugin install metamorfiles/plugin --trust
 ```
 
+### Antigravity, OpenCode and other MCP apps
+
+Antigravity installs plugins only from a local folder, so Studio sets itself up directly:
+
+```bash
+npx metamorfiles@latest setup
+```
+
+This writes the skills, the design-reviewer agent and the MCP server for Antigravity and OpenCode. For any other MCP app, `npx metamorfiles@latest setup --print` shows the config to paste.
+
 ## Activate
 
 Start a new session after installing. Then activate once per computer; every AI app on it shares Studio:
