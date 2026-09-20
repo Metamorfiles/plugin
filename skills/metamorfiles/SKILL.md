@@ -23,8 +23,8 @@ Keep the text sparse, the way a board is: a name, a line, a few labels. Dense ex
 
 ## Start every session
 
-0. If the only Metamorfiles tool available is `activate_studio`, Studio isn't activated on this computer yet. Follow the `activate` skill: call `activate_studio`, which opens a page in the user's browser where they paste their download key. Never ask the user to paste their download key into the chat. Once Studio is ready its full tools appear; continue from step 1.
-1. Call `get_project`. It finds the project in the working folder or its `metamorfiles/` folder. If there's none yet, call `get_project` with `create: true` and the brand `name`: Studio creates `metamorfiles/` in the working folder, or `~/Metamorfiles/<name>` when there's no working folder, like in a chat app. Don't ask where to put it; pass an absolute `path` only if the user asks for another location. Pass `example: true` only when the user wants to explore the example brand and template.
+0. If the only Metamorfiles tool available is `metamorfiles_activate`, Studio isn't activated on this computer yet. Follow the `activate` skill: call `metamorfiles_activate`, which opens a page in the user's browser where they paste their download key. Never ask the user to paste their download key into the chat. Once Studio is ready its full tools appear; continue from step 1.
+1. Call `metamorfiles_get_project`. It finds the project in the working folder or its `metamorfiles/` folder. If there's none yet, call `metamorfiles_get_project` with `create: true` and the brand `name`: Studio creates `metamorfiles/` in the working folder, or `~/Metamorfiles/<name>` when there's no working folder, like in a chat app. Don't ask where to put it; pass an absolute `path` only if the user asks for another location. Pass `example: true` only when the user wants to explore the example brand and template.
 2. Read the returned `brand` before writing any copy or design. If it says there's no brand kit yet, build it first with `metamorfiles-brand`.
 3. Pick the workflow below.
 4. Every render and template write returns a control panel link. Always give it to the user with your result: the panel is where they see the design at full size and adjust it.
@@ -38,7 +38,7 @@ Keep the text sparse, the way a board is: a name, a line, a few labels. Dense ex
 | Copy or image variants, A/B test grids, fills from a CSV, a batch      | `metamorfiles-variants`    |
 | One image or design adapted to other platforms and sizes               | `metamorfiles-repurpose`   |
 | An independent review of renders before delivering them               | `metamorfiles-review`      |
-| Hands-on tweaking of variables, saving defaults, reviewing batches     | `open_panel`, give the URL |
+| Hands-on tweaking of variables, saving defaults, reviewing batches     | `metamorfiles_open_panel`, give the URL |
 
 If the workflow skill is not loaded, follow the rules in this file and the tool descriptions.
 
@@ -46,17 +46,17 @@ If the workflow skill is not loaded, follow the rules in this file and the tool 
 
 | Tool             | Use it to                                                                                      |
 | ---------------- | ---------------------------------------------------------------------------------------------- |
-| `get_project`    | Open or create the project. Returns the brand kit and its check, templates and batches.       |
-| `read_file`      | Read templates, DESIGN.md, brand.css, CSVs and batch specs. Paths are project-relative.        |
-| `write_file`     | Create or replace files. Writing a template or DESIGN.md returns its check and a panel link.   |
-| `read_table`     | Read CSV columns and rows before planning a table batch.                                       |
-| `generate_image` | Create an image for a variable whose source is `ai`. Saves under `assets/`.                    |
-| `render_preview` | Render one template in one format, with design checks and a panel link.                       |
-| `render_batch`   | Render every variant in every format, with checks per file, a review page and a contact sheet. |
-| `batch_status`   | Wait for a batch that `render_batch` reported as still rendering, and get its contact sheet.   |
-| `open_panel`     | Start the local control panel and return its URL.                                              |
-| `extract_brand_values` | Read exact colors from a brand image (with coverage) or a logo's SVG fills. Never guess by eye. |
-| `make_logo_variant` | Write a logo variant by exact color substitution: the brand's theme variants, or approved ones. |
+| `metamorfiles_get_project`    | Open or create the project. Returns the brand kit and its check, templates and batches.       |
+| `metamorfiles_read_file`      | Read templates, DESIGN.md, brand.css, CSVs and batch specs. Paths are project-relative.        |
+| `metamorfiles_write_file`     | Create or replace files. Writing a template or DESIGN.md returns its check and a panel link.   |
+| `metamorfiles_read_table`     | Read CSV columns and rows before planning a table batch.                                       |
+| `metamorfiles_generate_image` | Create an image for a variable whose source is `ai`. Saves under `assets/`.                    |
+| `metamorfiles_render_preview` | Render one template in one format, with design checks and a panel link.                       |
+| `metamorfiles_render_batch`   | Render every variant in every format, with checks per file, a review page and a contact sheet. |
+| `metamorfiles_batch_status`   | Wait for a batch that `metamorfiles_render_batch` reported as still rendering, and get its contact sheet.   |
+| `metamorfiles_open_panel`     | Start the local control panel and return its URL.                                              |
+| `metamorfiles_extract_brand_values` | Read exact colors from a brand image (with coverage) or a logo's SVG fills. Never guess by eye. |
+| `metamorfiles_make_logo_variant` | Write a logo variant by exact color substitution: the brand's theme variants, or approved ones. |
 
 ## Project layout
 
@@ -166,7 +166,7 @@ Every variable has `id`, `type`, `label` and `default`. An optional `source` say
 
 ## Quality loop
 
-Every `render_preview` returns design checks measured on the rendered image:
+Every `metamorfiles_render_preview` returns design checks measured on the rendered image:
 - **Errors:** clipped text, text outside the image or the safe margin, fonts that fell back, broken or stretched images, contrast below 3:1.
 - **Warnings:** upscaled images, off-palette colors, small text below 4.5:1.
 

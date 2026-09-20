@@ -7,7 +7,7 @@ description: Activate Metamorfiles Studio on this computer with the buyer's down
 
 Studio is activated once per computer, and every AI app on it shares it. The user pastes their download key into a page served by Studio on their own computer. Never ask for the key in the chat, and never put it in a command.
 
-1. If the `activate_studio` tool is available, call it. It opens the activation page in the user's browser and returns a link in case the page didn't open. Tell the user to paste the download key from their purchase email there. Call `activate_studio` again to check progress; Studio's full tools appear when it's ready.
+1. If the `metamorfiles_activate` tool is available, call it. It opens the activation page in the user's browser and returns a link in case the page didn't open. Tell the user to paste the download key from their purchase email there. Call `metamorfiles_activate` again to check progress; Studio's full tools appear when it's ready.
 2. Otherwise, if you can run commands on the user's computer, run `npx -y metamorfiles@latest activate` with a timeout of at least 10 minutes. It opens the same page in their browser, waits for the key, then downloads Studio. Pass on the link it prints in case the page didn't open.
 3. If you can do neither, or the command was blocked, tell the user: "Start a new session and run /metamorfiles:activate, or run it yourself in a terminal: `npx metamorfiles@latest activate`". In apps other than Claude Code, say "activate Metamorfiles" instead of /metamorfiles:activate.
 

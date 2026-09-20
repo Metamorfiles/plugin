@@ -9,7 +9,7 @@ Whoever made a design is the worst judge of it. The review looks only at the ren
 
 ## Run it
 
-1. Finish your own loop first: every `render_preview` check error fixed.
+1. Finish your own loop first: every `metamorfiles_render_preview` check error fixed.
 2. Hand the review to a reviewer that didn't make the design:
    - **Claude Code, Cursor or Gemini CLI:** use the `design-reviewer` agent from the Metamorfiles plugin.
    - **ChatGPT desktop app or Codex CLI:** spawn a subagent with the rubric below as its instructions, in a read-only sandbox. Their plugins can't include agents, but they delegate to a subagent when a skill asks.
@@ -22,8 +22,8 @@ Whoever made a design is the worst judge of it. The review looks only at the ren
 
 The reviewer works like this:
 
-1. Call `get_project` for the project, then `read_file` `brand/DESIGN.md`.
-2. Call `render_preview` for the template in every format it declares (for a batch, the contact sheet from `batch_status` plus `render_preview` of the two riskiest variants). Read the check findings in each result.
+1. Call `metamorfiles_get_project` for the project, then `metamorfiles_read_file` `brand/DESIGN.md`.
+2. Call `metamorfiles_render_preview` for the template in every format it declares (for a batch, the contact sheet from `metamorfiles_batch_status` plus `metamorfiles_render_preview` of the two riskiest variants). Read the check findings in each result.
 3. Judge each image on:
    1. **Checks:** no check errors left. Every remaining warning is a deliberate choice.
    2. **Brand:**

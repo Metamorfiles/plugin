@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-template
-description: Use when the user wants a new or changed Metamorfiles template, for example a social post, ad or banner design from a brief, a reference image, a screenshot or an existing design. Writes templates/<id>/index.html following the contract and checks it visually in every format.
+description: Use when the user wants a new or changed Metamorfiles template, for example a social post, ad or banner design from a brief, a reference image, a screenshot or an existing design. Writes the template's index.html following the contract and checks it visually in every format.
 ---
 
 # Create a template
@@ -9,19 +9,19 @@ A template is a reusable design whose changeable parts are declared variables. T
 
 ## Steps
 
-1. Call `get_project`. Read `brand`: the DESIGN.md tokens tell you every `--brand-*` variable, and its prose tells you how to use them. If there's no brand kit, build it first with `metamorfiles-brand`.
+1. Call `metamorfiles_get_project`. Read `brand`: the DESIGN.md tokens tell you every `--brand-*` variable, and its prose tells you how to use them. If there's no brand kit, build it first with `metamorfiles-brand`.
 2. Clarify the brief in one short exchange if needed: the channel and formats, the message, and what must change between variants. Everything that changes becomes a variable. Everything else stays fixed in the design.
 3. If the user gives a reference image, study its layout, hierarchy, spacing and mood. Recreate the structure with the brand's fonts and colors, not a pixel copy.
 4. Plan the variables before writing HTML:
    - Copy that varies becomes `string` variables with `maxLength`, sized so the longest value still fits.
    - Photos and illustrations become `image` variables. Add `"source": { "kind": "ai", "instruction": "…" }` when new images should be generated per variant.
-   - Values coming from a CSV use `"source": { "kind": "table", "column": "…" }`. Call `read_table` first to get the exact column names.
+   - Values coming from a CSV use `"source": { "kind": "table", "column": "…" }`. Call `metamorfiles_read_table` first to get the exact column names.
    - Useful design switches become `enum`, `boolean`, `anchor`, `color` or `number` variables. Keep them few and meaningful.
    - Defaults must be real, on-brand content, so the default render is a finished design.
-5. Choose a short kebab-case id and write `templates/<id>/index.html` with `write_file`. Link `../../brand/brand.css`. Save any default images into the template folder, or generate one with `generate_image` and use its `/assets/…` path.
-6. Read the check in the `write_file` result. Fix every error and warning, then write again.
+5. Choose a short kebab-case id and write `templates/<id>/index.html` with `metamorfiles_write_file`. Link `../../brand/brand.css`. Save any default images into the template folder, or generate one with `metamorfiles_generate_image` and use its `/assets/…` path.
+6. Read the check in the `metamorfiles_write_file` result. Fix every error and warning, then write again.
 7. Run the quality loop:
-   - Call `render_preview` for every declared format.
+   - Call `metamorfiles_render_preview` for every declared format.
    - Fix every check error in the result, and every warning that isn't a deliberate choice.
    - Look at each image for what the checks can't judge: hierarchy, alignment, crop of photos, logo clear space, balance.
    - Stress test: preview once with the longest plausible copy and with every boolean and enum option that changes layout.
@@ -43,4 +43,4 @@ A template is a reusable design whose changeable parts are declared variables. T
 
 ## Changing an existing template
 
-`read_file` the template, make the change, keep variable ids stable so drafts and batches still work, then run the same check and preview loop.
+`metamorfiles_read_file` the template, make the change, keep variable ids stable so drafts and batches still work, then run the same check and preview loop.

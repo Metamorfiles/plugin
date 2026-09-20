@@ -15,7 +15,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 
 ## Steps
 
-1. Call `get_project` and read `brand`. When you rebuild an existing kit, take every value again from the brand's sources as below; never copy values from the previous DESIGN.md.
+1. Call `metamorfiles_get_project` and read `brand`. When you rebuild an existing kit, take every value again from the brand's sources as below; never copy values from the previous DESIGN.md.
 2. Gather the sources: the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. **Go and find the imagery, don't wait to be handed it**: look in `public/`, `static/`, `assets/` and `src/assets/`; follow what the app's own components reference (a component naming `/art/hill-morning.webp` is telling you that file is brand imagery); read the Open Graph and Twitter card images in the app's metadata; and take what the live site renders in its hero and section bands. Icons, favicons, UI chrome and framework defaults (`next.svg`, `vercel.svg`) are not imagery. Ask only for what you cannot find and cannot do without, such as the font files or the logo.
 3. Copy the files into the project, unchanged:
    - fonts as WOFF2 in `brand/fonts/` (local files only; for Google Fonts, download the WOFF2 files or ask the user to);
@@ -23,9 +23,9 @@ Your goal is a complete board the user can use, quickly. Four principles:
    - reference images in `brand/refs/`;
    - the files you translate from (theme CSS, a logo component, a guidelines PDF) in `brand/sources/`, so the values can be checked later.
 4. Take the values from each source as described below.
-5. Write `brand/DESIGN.md` with `write_file`, following the template.
+5. Write `brand/DESIGN.md` with `metamorfiles_write_file`, following the template.
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
-7. Present it. Call `render_preview` on `brand-board`: it is one square image of the whole brand. Show it, then write the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
+7. Present it. Call `metamorfiles_render_preview` on `brand-board`: it is one square image of the whole brand. Show it, then write the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
 
 ## Taking values from each source
 
@@ -34,7 +34,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 | Code theme: shadcn or Tailwind CSS, CSS variables, `tokens.json`, Figma variables | Read the exact values, following `var()` chains to the literal value. Keep the original variable names in Sources. | exact |
 | Website | Computed styles of real elements (headings, body text, buttons, cards, bands) at desktop width, plus its CSS | exact |
 | Guidelines PDF | Values as stated. A CMYK or Pantone value without its RGB or hex goes to Known gaps. | exact |
-| Images, screenshots, logo files | `extract_brand_values`: exact pixel colors with their coverage, and SVG fill and stroke values. Never pick a color by eye. | exact for flat files, sampled for paintings and photos |
+| Images, screenshots, logo files | `metamorfiles_extract_brand_values`: exact pixel colors with their coverage, and SVG fill and stroke values. Never pick a color by eye. | exact for flat files, sampled for paintings and photos |
 | Fonts recognized by eye | "Looks like X". Ask for the files. | inferred |
 
 Evidence rules:
@@ -88,13 +88,13 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 ## Logos
 
 - Use only official files, copied unchanged. Never recolor, redraw, retype, stretch or crop a logo, add effects, or place it on a background it isn't made for.
-- **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--indigo)"`, `currentColor`) has one version per theme: call `make_logo_variant` with that theme's exact values, one file per theme, and record it as the brand's own variant.
+- **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--indigo)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant` with that theme's exact values, one file per theme, and record it as the brand's own variant.
 - **Generated variants need the user's approval, each one, before you make it.** Offer only what's missing:
   - one-color black and white versions (map `"*"` to the color, and paper-colored inner shapes to `"knockout"`);
   - a dark or light version from the brand's palette;
   - a derived dark palette, when the brand has no dark theme, with every on-* pair at 4.5:1 or more.
 
-  Show the preview from `make_logo_variant`, check that its colors meeting the background reach 3:1, and wait for a yes. Then write `generated from <file>, approved by the user on <date>` in the logo's `source` and in Sources.
+  Show the preview from `metamorfiles_make_logo_variant`, check that its colors meeting the background reach 3:1, and wait for a yes. Then write `generated from <file>, approved by the user on <date>` in the logo's `source` and in Sources.
 - When no file suits a background and the user declines a variant, the official logo sits on a plate of its own background color.
 - The Logo section says which file goes on which background, the clear space, and that logos are never recolored.
 
@@ -158,4 +158,4 @@ The tokens become CSS variables in `brand/brand.css`:
 - The brand board is one 1920x1920 image of nine panels: cover, palette, typefaces, type scale, imagery, surfaces, a second theme, voice and rules. Panels the brand has nothing for are left out, so a missing image or an empty Voice section costs a panel. It is a composition, not a reference — DESIGN.md holds every token — and none of it is yours to lay out.
 - Never edit the generated block of `brand.css` (between the `metamorfiles:tokens` markers) or `templates/brand-board/`: both are rebuilt from DESIGN.md. Put the brand's own CSS, such as textures and logo lockups, in `brand.css` below the markers.
 - Changing DESIGN.md changes every template. Tell the user which templates will look different, and re-render them.
-- Write DESIGN.md with `write_file`, which returns the check. If you write it with other tools, call `get_project` afterwards to see the check.
+- Write DESIGN.md with `metamorfiles_write_file`, which returns the check. If you write it with other tools, call `metamorfiles_get_project` afterwards to see the check.
