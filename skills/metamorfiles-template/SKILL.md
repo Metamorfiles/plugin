@@ -18,7 +18,7 @@ A template is a reusable design whose changeable parts are declared variables. T
    - Values coming from a CSV use `"source": { "kind": "table", "column": "…" }`. Call `metamorfiles_read_table` first to get the exact column names.
    - Useful design switches become `enum`, `boolean`, `anchor`, `color` or `number` variables. Keep them few and meaningful.
    - Defaults must be real, on-brand content, so the default render is a finished design.
-5. Choose a short kebab-case id and write `templates/<id>/index.html` with `metamorfiles_write_file`. Link `../../brand/brand.css`. Save any default images into the template folder, or generate one with `metamorfiles_generate_image` and use its `/assets/…` path.
+5. Choose a short kebab-case id and write `templates/<id>/index.html` with `metamorfiles_write_file`. Link `../../brand/brand.css`. Use the brand's own images where they are, as `../../brand/refs/…` and `../../brand/logos/…`: never copy them, since a copy drifts from the brand and later needs deleting. Save only other images into the template folder, or generate one with `metamorfiles_generate_image` and use its `/assets/…` path.
 6. Read the check in the `metamorfiles_write_file` result. Fix every error and warning, then write again.
 7. Run the quality loop:
    - Call `metamorfiles_render_preview` for every declared format.
