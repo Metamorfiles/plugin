@@ -1,6 +1,6 @@
 # Maintaining the Metamorfiles Studio plugin
 
-Public plugin for Metamorfiles Studio: skills, the subagent and the MCP server entry, packaged for every client from one repo. No product code lives here; the MCP entry runs `npx -y metamorfiles@latest mcp` (the public launcher in the private kit repo's `installer/`), which downloads Studio with the buyer's key.
+Public plugin for Metamorfiles Studio: skills, the subagent and the MCP server entry, packaged for every client from one repo. No product code lives here; the MCP entry runs `npx -y metamorfiles@latest mcp`, the public [`metamorfiles`](https://www.npmjs.com/package/metamorfiles) launcher, which downloads Studio with the buyer's key.
 
 ## Files per client
 
@@ -31,7 +31,7 @@ Hook commands run in whatever shell the client picks: `sh`, Git Bash, PowerShell
 
 ## Rules
 
-- `skills/`, `agents/` and `com.github.copilot/agents/` are generated. Edit the originals in the kit repo, then run `bun tools/build-plugin-skills.ts ../metamorfiles-plugin`. Never edit them here.
+- `skills/`, `agents/` and `com.github.copilot/agents/` are generated from Studio's own copies and replaced on every release. Changes made here are overwritten; report issues with them instead.
 - Keep `agents/design-reviewer.md` frontmatter to `name` and `description`. Antigravity wants `mainAgent: false`; `setup` adds that on the way out so the copies here stay portable.
 - No `${...}` placeholder belongs in an MCP config. The standard expands only `${PLUGIN_ROOT}` and `${PLUGIN_DATA}`, Cursor expands neither, and Antigravity documents none.
 - The MCP command is `npx -y --fetch-retries=0 --fetch-timeout=5000 metamorfiles@latest mcp` in every manifest: `@latest` picks up new launcher versions on the next start, and no retries let npx fall back to its cached copy at once when offline.

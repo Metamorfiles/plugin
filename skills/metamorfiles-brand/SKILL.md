@@ -16,7 +16,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 ## Steps
 
 1. Call `metamorfiles_get_project` and read `brand`. When you rebuild an existing kit, take every value again from the brand's sources as below; never copy values from the previous DESIGN.md.
-2. Gather the sources: the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. **Go and find the imagery, don't wait to be handed it**: look in `public/`, `static/`, `assets/` and `src/assets/`; follow what the app's own components reference (a component naming `/art/hill-morning.webp` is telling you that file is brand imagery); read the Open Graph and Twitter card images in the app's metadata; and take what the live site renders in its hero and section bands. Icons, favicons, UI chrome and framework defaults (`next.svg`, `vercel.svg`) are not imagery. Ask only for what you cannot find and cannot do without, such as the font files or the logo.
+2. Gather the sources: the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. **Go and find the imagery, don't wait to be handed it**: look in `public/`, `static/`, `assets/` and `src/assets/`; follow what the app's own components reference (a component naming `/images/serum-morning.jpg` is telling you that file is brand imagery); read the Open Graph and Twitter card images in the app's metadata; and take what the live site renders in its hero and section bands. Icons, favicons, UI chrome and framework defaults (`next.svg`, `vercel.svg`) are not imagery. Ask only for what you cannot find and cannot do without, such as the font files or the logo.
 3. Copy the files into the project, unchanged:
    - fonts as WOFF2 in `brand/fonts/` (local files only; for Google Fonts, download the WOFF2 files or ask the user to);
    - official logos in `brand/logos/`;
@@ -61,10 +61,10 @@ Ask the user only for what you cannot derive and what changes the result: the fo
 ## Tokens
 
 - **`colors`**, hex, in two layers:
-  - the source's own names for its palette (`chalk`, `ink`, `laurel`);
+  - the source's own names for its palette (`paper`, `ink`, `clay`);
   - the role keys every design.md tool expects: `primary`/`on-primary` (the main brand and action color, as in Material 3, shadcn and Stitch), `secondary`/`on-secondary`, `tertiary`, `background`/`on-background`, `surface`/`on-surface`, `outline` and `error`. A role repeats its brand color's value.
   - Text colors are `on-<surface>` (Material's naming), never `<surface>-foreground`. From shadcn, map by the source's own meaning: `--background` → `background`, `--foreground` → `on-background`, `--card` → `surface`, `--card-foreground` → `on-surface`, `--primary-foreground` → `on-primary`, `--muted-foreground` → `on-muted`, `--border` → `outline`, `--destructive` → `error`.
-  - A dark theme the brand defines (a `.dark` block) becomes a group with the same names: `colors.dark.chalk`, `colors.dark.primary`.
+  - A dark theme the brand defines (a `.dark` block) becomes a group with the same names: `colors.dark.paper`, `colors.dark.primary`.
   - Numeric scales stay scales (`blue-50` … `blue-900`).
 - **`typography`**: the roles the source actually uses (such as `display`, `headline-lg`, `body`, `label`, `code`), in px as the source defines them (1rem is 16px). `lineHeight` unitless or in px, `letterSpacing` in em. Only the spec's properties: fontFamily, fontSize, fontWeight, lineHeight, letterSpacing, fontFeature and fontVariation. Casing rules, such as "labels in capitals", go in the prose.
 - **`rounded`** and **`spacing`**: as the source defines them, whole scales. When the source shows only one or two steps, derive the rest around them and mark them `proposed`; when the brand truly has none (square corners everywhere), list the key in `omitted` with a reason. Only colors, typography, spacing, rounded and components can be omitted.
@@ -88,7 +88,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 ## Logos
 
 - Use only official files, copied unchanged. Never recolor, redraw, retype, stretch or crop a logo, add effects, or place it on a background it isn't made for.
-- **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--indigo)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant` with that theme's exact values, one file per theme, and record it as the brand's own variant.
+- **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--clay)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant` with that theme's exact values, one file per theme, and record it as the brand's own variant.
 - **Generated variants need the user's approval, each one, before you make it.** Offer only what's missing:
   - one-color black and white versions (map `"*"` to the color, and paper-colored inner shapes to `"knockout"`);
   - a dark or light version from the brand's palette;
@@ -103,22 +103,22 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 ```md
 ---
 version: alpha
-name: Brand name
-description: One line on what the brand does, in its own words.
+name: Lumen Skincare
+description: Calm, specific skincare for a short morning routine.
 colors:
-  chalk: "#eeefea"
-  ink: "#1a1c20"
-  indigo: "#4f46e5"
-  primary: "#4f46e5"
-  on-primary: "#ffffff"
-  background: "#eeefea"
-  on-background: "#1a1c20"
+  paper: "#f6f1ea"
+  ink: "#1f1a17"
+  clay: "#c9785b"
+  primary: "#c9785b"
+  on-primary: "#1f1a17"
+  background: "#f6f1ea"
+  on-background: "#1f1a17"
 typography:
-  display: { fontFamily: Young Serif, fontSize: 73.6px, fontWeight: 400, lineHeight: 1.02, letterSpacing: -0.012em }
-  body: { fontFamily: Hanken Grotesk, fontSize: 16px, fontWeight: 400, lineHeight: 1.55 }
-  label: { fontFamily: Hanken Grotesk, fontSize: 14px, fontWeight: 500, lineHeight: 20px }
+  display: { fontFamily: Fraunces, fontSize: 64px, fontWeight: 400, lineHeight: 1.02, letterSpacing: -0.015em }
+  body: { fontFamily: Inter, fontSize: 17px, fontWeight: 400, lineHeight: 1.5 }
+  label: { fontFamily: Inter, fontSize: 12px, fontWeight: 600, lineHeight: 1.2, letterSpacing: 0.12em }
 rounded:
-  lg: 14px
+  lg: 18px
   full: 9999px
 omitted:
   - section: spacing
@@ -126,8 +126,8 @@ omitted:
 components:
   button-primary: { backgroundColor: "{colors.primary}", textColor: "{colors.on-primary}", typography: "{typography.label}", rounded: "{rounded.full}" }
 fonts:
-  - { family: Young Serif, file: fonts/YoungSerif.woff2, weight: 400 }
-  - { family: Hanken Grotesk, file: fonts/HankenGrotesk.woff2, weight: 100 900 }
+  - { family: Fraunces, file: fonts/Fraunces.woff2, weight: 100 900 }
+  - { family: Inter, file: fonts/Inter.woff2, weight: 100 900 }
 logos:
   primary: { file: logos/logo.svg, background: "{colors.background}", source: the site's logo component with the light theme's values }
 ---
@@ -147,7 +147,7 @@ logos:
 ```
 
 The tokens become CSS variables in `brand/brand.css`:
-- `--brand-<color>`, such as `--brand-on-primary`; grouped colors join with a dash, like `--brand-dark-chalk`;
+- `--brand-<color>`, such as `--brand-on-primary`; grouped colors join with a dash, like `--brand-dark-paper`;
 - `--brand-<role>-font`, `-size`, `-weight`, `-line-height` and `-tracking`; `--brand-font` and `--brand-font-display` for the body and display families;
 - `--brand-radius-<name>` and `--brand-space-<name>`;
 - `--brand-<component>-background`, `-text`, `-radius` and `-padding`;
