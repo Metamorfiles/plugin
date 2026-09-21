@@ -1,5 +1,7 @@
 # The voice chart
 
+The examples below come from Lumen Skincare, Studio's fictional example brand.
+
 `## Voice` in DESIGN.md is a chart, not a paragraph. A paragraph describes a voice; a chart is
 something a template can write to, and something the reviewer can hold a headline against.
 
@@ -11,23 +13,23 @@ Each one is a real principle of this brand, named in a single word or two.
 ```md
 ## Voice
 
-### Fair
-Even-handed, unshowy, exact.
+### Calm
+Unhurried, warm, never urgent.
 
-Do: "Pick the better page. Then see which model made it."
-Don't: "Discover the ultimate AI showdown!"
+Do: "Two minutes in the morning. Then get on with your day."
+Don't: "Hurry, your skin can't wait!"
 
-### Plain
-Declarative, short, two clauses at most.
+### Specific
+One benefit, with a number or a time.
 
-Do: "Blind battles between AI models, run from your coding agent."
-Don't: "Seamlessly elevate your model evaluation workflow."
+Do: "Brighter skin in two weeks."
+Don't: "Unlock your most radiant glow ever."
 
-### Quiet about itself
-Describes what it does, never how good it is.
+### Honest
+Says what the product does, and stops there.
 
-Do: "Results are stated as results."
-Don't: "The most powerful comparison engine ever built."
+Do: "Invisible protection with no white cast."
+Don't: "A clinically proven miracle for flawless skin."
 ```
 
 The line under each concept is its characteristics: three adjectives, or one short sentence.
@@ -52,9 +54,9 @@ place.
 ```md
 | Context | Tone |
 |---|---|
-| Launch | Direct. States what exists now. |
-| Ad | Shorter still. One claim, the brand's own words. |
-| Changelog | Flat and factual. No adjectives. |
+| Launch | Plain. Names the product and its one benefit. |
+| Ad | Shorter still. One claim, one price. |
+| Night range | Quieter. Fewer words, lower light. |
 ```
 
 ## What it is for
