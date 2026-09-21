@@ -180,7 +180,7 @@ Every variable has `id`, `type`, `label` and `default`. An optional `source` say
 ## Quality loop
 
 Every `metamorfiles_render_preview` returns design checks measured on the rendered image:
-- **Errors:** clipped text, text outside the image or the safe margin, fonts that fell back, broken or stretched images, contrast below 3:1.
+- **Errors:** clipped text, text that spills out of its box, text outside the image or the safe margin, fonts that fell back, broken or stretched images, contrast below 3:1 against what's actually behind the text, photo included.
 - **Warnings:** upscaled images, off-palette colors, small text below 4.5:1.
 
 After every template edit, preview every declared format. Fix every error, and every warning that isn't a deliberate choice, then preview again. The checks can't judge composition, so also look at each image: hierarchy, alignment, crops, awkward line breaks, balance across formats. Finish by showing the final previews and giving the panel link.
