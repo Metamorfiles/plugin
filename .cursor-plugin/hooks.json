@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "command": "node ./hooks/after-render.mjs",
+        "matcher": "metamorfiles_render_(preview|batch)$"
+      }
+    ]
+  }
+}
