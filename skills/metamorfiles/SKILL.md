@@ -50,7 +50,12 @@ If the workflow skill is not loaded, follow the rules in this file and the tool 
 | `metamorfiles_read_file`      | Read templates, DESIGN.md, brand.css, CSVs and batch specs. Paths are project-relative.        |
 | `metamorfiles_write_file`     | Create or replace files. Writing a template or DESIGN.md returns its check and a panel link.   |
 | `metamorfiles_read_table`     | Read CSV columns and rows before planning a table batch.                                       |
-| `metamorfiles_generate_image` | Create an image for a variable whose source is `ai`. Saves under `assets/`.                    |
+| `metamorfiles_generate_image` | Create an image for a variable whose source is `ai`, cropped to size and saved under `assets/`. See AI images. |
+| `metamorfiles_image_status`   | Wait for an image `metamorfiles_generate_image` reported as still generating.                  |
+| `metamorfiles_image_models`   | List image sources, what's connected, the models with price and the default.                   |
+| `metamorfiles_connect_image_source` | Connect ChatGPT, OpenRouter or a provider key when the user asks to add one.              |
+| `metamorfiles_set_image_default` | Change the default model, or set it to ask each time, when the user asks.                   |
+| `metamorfiles_import_image`   | Bring in an image made elsewhere, such as by this app's own image tool, cropped and saved.     |
 | `metamorfiles_render_preview` | Render one template in one format, with design checks and a panel link.                       |
 | `metamorfiles_render_batch`   | Render every variant in every format, with checks per file, a review page and a contact sheet. |
 | `metamorfiles_batch_status`   | Wait for a batch that `metamorfiles_render_batch` reported as still rendering, and get its contact sheet.   |
@@ -58,10 +63,18 @@ If the workflow skill is not loaded, follow the rules in this file and the tool 
 | `metamorfiles_extract_brand_values` | Read exact colors from a brand image (with coverage) or a logo's SVG fills. Never guess by eye. |
 | `metamorfiles_make_logo_variant` | Write a logo variant by exact color substitution: the brand's theme variants, or approved ones. |
 
+## AI images
+
+- Call `metamorfiles_generate_image` without `model`. Studio uses the user's default model, or asks the user itself which model to use or which source to connect, and remembers the answer. Pass `model` only when the user names one.
+- Sources: ChatGPT through Codex (the user's ChatGPT plan, no key), OpenRouter (one sign-in, many models) and provider keys (OpenAI, Google Gemini, xAI, fal, Replicate, Black Forest Labs, Together, DeepInfra). Sign-ins and keys happen on pages Studio opens in the browser. Never ask the user to paste a key into the chat.
+- When the result's status is `generating`, call `metamorfiles_image_status` with its id. When it's `needs_choice` or `needs_connection`, do what its message says: ask the user in chat, or give them the link.
+- If this app has its own image tool and the user prefers it, make the image with it and bring the file in with `metamorfiles_import_image`.
+- Build prompts from the variable's instruction and the Imagery section of DESIGN.md, and pass the brand's reference images from `brand/refs/` when they show the look. Report the cost or limit the result gives.
+
 ## Project layout
 
 ```
-metamorfiles.json          project marker: name, imageModel
+metamorfiles.json          project marker: name, and imageModel only to override the user's default
 AGENTS.md, CLAUDE.md       short instructions for any agent opened here (created only if missing)
 brand/DESIGN.md            the brand kit (design.md format): tokens, rules, Sources and Known gaps
 brand/brand.css            generated --brand-* tokens and @font-face, then the brand's own CSS

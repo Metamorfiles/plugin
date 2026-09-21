@@ -87,7 +87,17 @@ A page served by Studio on your own computer opens in your browser. Paste the do
 
 ## AI images (optional)
 
-Studio can generate images with your own [OpenRouter](https://openrouter.ai/keys) key. Add it in the optional field on the activation page, or run `npx metamorfiles@latest openrouter-key`.
+When a template needs an AI image, Studio uses a service you connect and asks you the first time which model to use:
+
+- **ChatGPT**, through Codex, on your ChatGPT plan (Plus or higher). No key and no extra cost.
+- **OpenRouter**: one sign-in for about 50 models, paid from your OpenRouter credit.
+- **Your own key** for OpenAI, Google Gemini, xAI, fal, Replicate, Black Forest Labs, Together or DeepInfra.
+
+Sign-ins and keys go through pages Studio opens on your own computer, never the chat, and keys are kept in your system's password store. If your AI app has its own image tool, your agent can use it and Studio brings the file in. To see or change your sources from a terminal:
+
+```bash
+npx metamorfiles@latest images
+```
 
 ## What you get
 
