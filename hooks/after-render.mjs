@@ -83,7 +83,8 @@ if (found.length) {
 // A batch is a delivery. Nothing here can judge the design, so it asks for the reviewer that can.
 if (isBatch && result.status === "done") {
   emit({
-    additionalContext: `Batch ${result.id ?? ""} passed Studio's automatic checks, which measure the image and cannot judge the design. It has not been reviewed, even if it only applies an earlier review's fixes: a batch is reviewed only by a verdict on that batch. Before delivering it, get a fresh independent review of it (the metamorfiles-review skill, or the design-reviewer agent) against brand/DESIGN.md, wait for the verdict, deliver only on "ship", and give the user the panel link.`,
+    additionalContext:
+      "This batch passed Studio's automatic checks, which measure the image and cannot judge the design. Before delivering it, get an independent review (the metamorfiles-review skill, or the design-reviewer agent) against brand/DESIGN.md, and give the user the panel link.",
   });
 }
 
