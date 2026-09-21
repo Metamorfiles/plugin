@@ -1,9 +1,6 @@
-// Runs after a render and holds the turn while a check error is still on screen.
-//
-// Studio measures every render and returns what it found, but nothing made the agent act on it:
-// the instruction to fix errors and to get an independent review before delivering lived only in
-// the session prompt, where it competes with everything else said since. This fires at the moment
-// of delivery instead, with the findings in hand.
+// Runs after a render and holds the turn while a check error is still on screen, and asks for an
+// independent review before a batch is delivered. It acts at the moment of delivery, with Studio's
+// findings in hand, rather than relying on an instruction given earlier in the session.
 //
 // It has no model, so it never judges a design. It reports what Studio already measured.
 import { readFileSync } from "node:fs";
@@ -39,8 +36,8 @@ if (!RENDER.test(toolName)) process.exit(0);
 
 // Clients hand over the tool result in different shapes. Claude Code sends the content blocks as a
 // bare list, with structuredContent as JSON in the text block; Cursor sends a JSON string in
-// tool_output; others send an object carrying structuredContent or content, or a string. Every shape is read, because one that isn't recognised
-// is not an error to report: the hook would just stay quiet, which is how it went unnoticed.
+// tool_output; others send an object carrying structuredContent or content, or a string. Every
+// shape is read, because an unrecognised one fails silently: the hook would just stay quiet.
 function findResult(value) {
   if (!value) return undefined;
   if (typeof value === "string") {

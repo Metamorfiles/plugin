@@ -19,23 +19,23 @@ Then the panel link, on its own line, at the end.
 
 ## Worked example
 
-> **Prompt Royale**
+For Lumen Skincare, Studio's fictional example brand:
+
+> **Lumen Skincare**
 >
 > [the board]
 >
-> Chalk paper, ink type, indigo for action, and gold kept for winners only. Young Serif carries the
-> headlines, Hanken Grotesk the text, JetBrains Mono the model names. It reads calm and even-handed,
-> which is the right register for a product whose whole point is not tipping the scales.
+> Warm paper, ink type and one clay accent, with walnut for the night range. Fraunces carries the
+> headlines, Inter everything that informs. It reads like a bathroom shelf in early light: calm,
+> specific, nothing on it that doesn't need to be there.
 >
-> **I decided a few things for you.** The spacing above the largest step your app uses, the padding
-> inside the green band, and a text colour for errors — your app only ever uses red as a tint, so
-> there was nothing to copy. Say the word and I'll change any of them.
+> **I decided a few things for you.** A dark theme for the night range, built from your walnut and
+> ink, and a spacing scale around the one step your site uses. Say the word and I'll change either.
 >
-> **One for you.** Your winner gold and the muted greens sit a hair under the accessibility floor.
-> It is invisible to the eye and it is your brand, so I left it exactly as it is; the fix is a
-> two-digit change in your app whenever you want it.
+> **One for you.** Your clay is too light to carry text on paper, so I kept it for prices and
+> buttons with ink on top. If you want clay headlines, it needs to go a shade darker.
 >
-> Want me to draw a logo for the gold and dark-green backgrounds, or start on the first launch piece?
+> Want a one-color version of the logo for print, or should I start on the first launch post?
 
 ## What this message never contains
 
@@ -48,10 +48,12 @@ Then the panel link, on its own line, at the end.
 
 ## Getting it wrong
 
-A kit this was written for was handed over like this: *"Values I supplied rather than observed (all
-marked proposed in Sources): on-error in both themes — the app only ever uses error as a 10% tint
-behind error text, so no solid pair exists. spacing step names and the 3xl (64px) step... Two AA
-misses I did not fix. award-token-maxxer-muted and award-prompt-wizard-muted each land at 4.49:1."*
+The same handover, written as a report:
 
-Every word of it was true, and the buyer read it as a build log from a tool rather than a handover
-from a designer. The information is not the problem; the room it was said in is.
+*"Values I supplied rather than observed (all marked proposed in Sources): the dark theme
+(dark.background #1f1a17, dark.surface #3b2e27), spacing steps xs to 2xl, and on-error. One AA
+miss: clay #c9785b on paper #f6f1ea is 2.96:1, below 4.5:1, so primary is restricted to
+backgrounds."*
+
+Every word of it is true, and a buyer reads it as a build log from a tool rather than a handover
+from a designer. The information is not the problem; the room it is said in is.
