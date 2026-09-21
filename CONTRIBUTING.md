@@ -25,13 +25,15 @@ No manifest asks for the download key. Every app activates the same way: the `ac
 - `SessionStart` tells the user Studio is not activated yet.
 - `PostToolUse`, matched to the render tools, holds the turn while a check error is still on screen and asks for the independent review before a batch is delivered. It has no model and never judges a design; it reports what Studio measured.
 
-Both scripts live in `hooks/` at the plugin root. The Copilot namespace carries only its own `hooks.json`, which points back at them through `${CLAUDE_PLUGIN_ROOT}`.
+Both scripts live in `hooks/` at the plugin root. The Copilot namespace carries only its own `hooks.json`, which points back at them the same way.
+
+Hook commands run in whatever shell the client picks: `sh`, Git Bash, PowerShell or `cmd` on Windows. So they are `node -e` one-liners that find the plugin root from `CLAUDE_PLUGIN_ROOT`, `PLUGIN_ROOT` or `GROK_PLUGIN_ROOT` inside Node, with no `$`, `%` or backticks for a shell to expand. Cursor sets no root variable and runs plugin hooks from the plugin folder, so `.cursor-plugin/hooks.json` uses a relative path. `test/hooks.test.mjs` runs every command through every shell on Linux, macOS and Windows in CI.
 
 ## Rules
 
 - `skills/`, `agents/` and `com.github.copilot/agents/` are generated. Edit the originals in the kit repo, then run `bun tools/build-plugin-skills.ts ../metamorfiles-plugin`. Never edit them here.
 - Keep `agents/design-reviewer.md` frontmatter to `name` and `description`. Antigravity wants `mainAgent: false`; `setup` adds that on the way out so the copies here stay portable.
-- No `${...}` placeholder belongs in an MCP config. The standard expands only `${PLUGIN_ROOT}` and `${PLUGIN_DATA}`, Cursor expands neither, and Antigravity documents none. Hook commands are the exception, where a `${CLAUDE_PLUGIN_ROOT:-...}` fallback chain covers the clients that name the variable differently.
+- No `${...}` placeholder belongs in an MCP config. The standard expands only `${PLUGIN_ROOT}` and `${PLUGIN_DATA}`, Cursor expands neither, and Antigravity documents none.
 - The MCP command is `npx -y --fetch-retries=0 --fetch-timeout=5000 metamorfiles@latest mcp` in every manifest: `@latest` picks up new launcher versions on the next start, and no retries let npx fall back to its cached copy at once when offline.
 - Keep `version` identical in every manifest and the marketplace entry; bump it on every change so clients pick up updates.
 - Validate before committing: `claude plugin validate . --strict`, and the Agent Plugins schemas for `plugin.json` and `mcp.json`.

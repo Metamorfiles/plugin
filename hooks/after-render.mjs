@@ -8,13 +8,8 @@
 // It has no model, so it never judges a design. It reports what Studio already measured.
 import { readFileSync } from "node:fs";
 
-/** Claude scopes an MCP tool as mcp__<server>__<tool>; only the tool part is ours to match. */
+/** Claude scopes an MCP tool as mcp__<server>__<tool> and Cursor as MCP:<tool>; only the tool part is ours to match. */
 const RENDER = /metamorfiles_render_(preview|batch)$/;
-
-const emit = (hookSpecificOutput) => {
-  process.stdout.write(JSON.stringify({ hookSpecificOutput: { hookEventName: "PostToolUse", ...hookSpecificOutput } }));
-  process.exit(0);
-};
 
 let event;
 try {
@@ -23,18 +18,35 @@ try {
   process.exit(0); // Not our payload to interpret.
 }
 
+// Cursor reads its own flat output and cannot hold a turn, so it gets the findings as context.
+// Claude Code, Codex and Copilot take decision and reason at the top level, context inside
+// hookSpecificOutput.
+const cursor = Boolean(process.env.CURSOR_VERSION || event.cursor_version);
+
+const emit = ({ block, context }) => {
+  const output = cursor
+    ? { additional_context: block ?? context }
+    : {
+        ...(block ? { decision: "block", reason: block } : {}),
+        hookSpecificOutput: { hookEventName: "PostToolUse", additionalContext: block ?? context },
+      };
+  process.stdout.write(JSON.stringify(output));
+  process.exit(0);
+};
+
 const toolName = event.tool_name ?? "";
 if (!RENDER.test(toolName)) process.exit(0);
 
 // Clients hand over the tool result in different shapes. Claude Code sends the content blocks as a
-// bare list, with structuredContent as JSON in the text block; others send an object carrying
-// structuredContent or content, or a string. Every shape is read, because one that isn't recognised
+// bare list, with structuredContent as JSON in the text block; Cursor sends a JSON string in
+// tool_output; others send an object carrying structuredContent or content, or a string. Every shape is read, because one that isn't recognised
 // is not an error to report: the hook would just stay quiet, which is how it went unnoticed.
 function findResult(value) {
   if (!value) return undefined;
   if (typeof value === "string") {
     try {
-      return JSON.parse(value);
+      const parsed = JSON.parse(value);
+      return findResult(parsed) ?? parsed;
     } catch {
       return undefined;
     }
@@ -55,7 +67,7 @@ function findResult(value) {
   return undefined;
 }
 
-const result = findResult(event.tool_response);
+const result = findResult(event.tool_response ?? event.tool_output);
 if (!result || typeof result !== "object") process.exit(0);
 
 const isBatch = toolName.endsWith("render_batch");
@@ -75,15 +87,14 @@ if (found.length) {
     ? `${plural(result.checks.errors, "check error")} across ${plural(result.checks.filesWithFindings, "file")}`
     : plural(found.length, "check error");
   emit({
-    decision: "block",
-    reason: `Studio found ${what} in this render. Fix them in the template or the values and render again before showing anything to the user.\n\n${found.slice(0, 6).join("\n")}`,
+    block: `Studio found ${what} in this render. Fix them in the template or the values and render again before showing anything to the user.\n\n${found.slice(0, 6).join("\n")}`,
   });
 }
 
 // A batch is a delivery. Nothing here can judge the design, so it asks for the reviewer that can.
 if (isBatch && result.status === "done") {
   emit({
-    additionalContext:
+    context:
       "This batch passed Studio's automatic checks, which measure the image and cannot judge the design. Before delivering it, get an independent review (the metamorfiles-review skill, or the design-reviewer agent) against brand/DESIGN.md, and give the user the panel link.",
   });
 }
