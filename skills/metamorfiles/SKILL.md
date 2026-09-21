@@ -151,7 +151,7 @@ Every variable has `id`, `type`, `label` and `default`. An optional `source` say
 
 **Rules the check enforces**
 
-- No remote URLs and no remote `@import`. Save images into the template folder or `assets/`, fonts into `brand/fonts/`.
+- No remote URLs and no remote `@import`. Use brand images in place from `brand/refs/` and `brand/logos/`, never a copy; save other images into the template folder or `assets/`, fonts into `brand/fonts/`.
 - No `<script>` tags besides the manifest. Use variables and CSS.
 - Every binding references a declared variable of a matching type. Unused variables are warnings.
 - Default images must exist. Font defaults must be listed in DESIGN.md `fonts`.
