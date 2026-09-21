@@ -67,7 +67,7 @@ brand/DESIGN.md            the brand kit (design.md format): tokens, rules, Sour
 brand/brand.css            generated --brand-* tokens and @font-face, then the brand's own CSS
 brand/fonts/ logos/ refs/  local brand files
 brand/sources/             copies of the files the brand was translated from
-templates/brand-board/     generated from DESIGN.md; never edit it
+templates/brand-board/     built from DESIGN.md; fix it there
 templates/<id>/index.html  one template per folder, plus its local images
 data/*.csv                 data tables
 assets/                    uploaded and generated images
