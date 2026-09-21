@@ -26,18 +26,36 @@ try {
 const toolName = event.tool_name ?? "";
 if (!RENDER.test(toolName)) process.exit(0);
 
-// Clients that carry structuredContent give it to us directly; the rest put the same object in
-// the first text block, so the findings are readable either way.
-const response = event.tool_response ?? {};
-let result = response.structuredContent;
-if (!result) {
-  const text = response.content?.find((part) => part.type === "text")?.text;
-  try {
-    result = text ? JSON.parse(text) : undefined;
-  } catch {
-    result = undefined;
+// Clients hand over the tool result in different shapes. Claude Code sends the content blocks as a
+// bare list, with structuredContent as JSON in the text block; others send an object carrying
+// structuredContent or content, or a string. Every shape is read, because one that isn't recognised
+// is not an error to report: the hook would just stay quiet, which is how it went unnoticed.
+function findResult(value) {
+  if (!value) return undefined;
+  if (typeof value === "string") {
+    try {
+      return JSON.parse(value);
+    } catch {
+      return undefined;
+    }
   }
+  if (Array.isArray(value)) {
+    for (const block of value) {
+      const found = block?.type === "text" ? findResult(block.text) : undefined;
+      if (found && typeof found === "object") return found;
+    }
+    return undefined;
+  }
+  if (typeof value === "object") {
+    if (value.structuredContent && typeof value.structuredContent === "object") return value.structuredContent;
+    if (value.content) return findResult(value.content);
+    // Already the structured result itself.
+    if ("warnings" in value || "checks" in value || "status" in value) return value;
+  }
+  return undefined;
 }
+
+const result = findResult(event.tool_response);
 if (!result || typeof result !== "object") process.exit(0);
 
 const isBatch = toolName.endsWith("render_batch");

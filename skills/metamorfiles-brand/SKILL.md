@@ -156,6 +156,7 @@ The tokens become CSS variables in `brand/brand.css`:
 ## Rules
 
 - The brand board is one 1920x1920 image of nine panels: cover, palette, typefaces, type scale, imagery, surfaces, a second theme, voice and rules. Panels the brand has nothing for are left out, so a missing image or an empty Voice section costs a panel. It is a composition, not a reference — DESIGN.md holds every token — and none of it is yours to lay out.
-- Never edit the generated block of `brand.css` (between the `metamorfiles:tokens` markers) or `templates/brand-board/`: both are rebuilt from DESIGN.md. Put the brand's own CSS, such as textures and logo lockups, in `brand.css` below the markers.
+- `templates/brand-board/` and the block of `brand.css` between the `metamorfiles:tokens` markers are built from DESIGN.md, so fix them through DESIGN.md: a hand edit is rebuilt away. Never fix one by changing a token to a value the sources don't have. Put the brand's own CSS, such as textures and logo lockups, in `brand.css` below the markers.
+- Fix every check error on the brand board before moving on. One you can't fix through DESIGN.md is a Studio defect: tell the user plainly, don't walk past it.
 - Changing DESIGN.md changes every template. Tell the user which templates will look different, and re-render them.
 - Write DESIGN.md with `metamorfiles_write_file`, which returns the check. If you write it with other tools, call `metamorfiles_get_project` afterwards to see the check.
