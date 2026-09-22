@@ -14,8 +14,9 @@ Paste this into Claude Code, Codex, VS Code, Grok, Cowork, ChatGPT or Cursor:
 Install the Metamorfiles Studio plugin for me from github.com/metamorfiles/plugin.
 
 1. Install it in the app you're running in:
-   - Claude Code: run `claude plugin marketplace add metamorfiles/plugin`, then `claude plugin install metamorfiles@metamorfiles`.
+   - Claude Code: plugins are installed by commands only I can type, so tell me to type `/plugin marketplace add metamorfiles/plugin`, then `/plugin install metamorfiles@metamorfiles`, then `/metamorfiles:activate`, each on its own line, and stop there.
    - Codex: run `codex plugin marketplace add metamorfiles/plugin`, then `codex plugin add metamorfiles@metamorfiles`.
+   - VS Code: run **Chat: Install Plugin From Source** from the Command Palette and enter `https://github.com/metamorfiles/plugin`.
    - Grok: run `grok plugin install metamorfiles/plugin --trust`.
    - Claude Cowork or Desktop, the ChatGPT desktop app, or Cursor: walk me through installing it myself, using the steps for my app at github.com/metamorfiles/plugin.
 2. If you can run commands on my computer, activate Studio: run `npx -y metamorfiles@latest activate` with a timeout of at least 10 minutes. It opens a page in my browser where I paste my download key. Never ask me for the key in this chat.
@@ -26,9 +27,11 @@ Then paste your download key into the page that opens. That's it.
 
 ### Claude Code
 
-```bash
-claude plugin marketplace add metamorfiles/plugin
-claude plugin install metamorfiles@metamorfiles
+Type these in Claude Code, one at a time:
+
+```text
+/plugin marketplace add metamorfiles/plugin
+/plugin install metamorfiles@metamorfiles
 ```
 
 ### Claude Cowork and Claude Desktop
