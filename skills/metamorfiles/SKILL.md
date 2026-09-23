@@ -34,7 +34,7 @@ Keep the text sparse, the way a board is: a name, a line, a few labels. Dense ex
 - A **template** (`templates/<id>/`) is the base design: its variables, formats and defaults.
 - A **page** (`pages/<id>/`) is one deliverable, such as "Spring launch" or "Headline test", made from a template with `metamorfiles_create_page`. It holds its own copy of the design plus `page.json` with its name and variants, so later template changes never alter it, and it exports every variant in every format with `metamorfiles_export_page`. When the user wants a delivered page to follow a new template, make a new page from it; both stay.
 - **History** keeps every version of every template and page: yours, the user's edits in the control panel, a reviewer's fixes. So change a template or page in place, and never copy one to keep an old version or name a new one "-v2": that is what the history is for, and copies bury the user's list. `metamorfiles_list_history` and `metamorfiles_restore_version` go back when the user asks.
-- **The user edits too.** In the control panel they change values, move and restyle elements (saved to the item's `edits.css`) and edit text, and it is all saved on disk at once. Read a file again before you change it, and when they say "this" or "the selected one", call `metamorfiles_get_selection`.
+- **The user edits too.** In the control panel they change values (on a page, for one format or all of them, see `page.json` in `metamorfiles-variants`), move and restyle elements (saved to the item's `edits.css`) and edit text in place, and it is all saved on disk at once. Read a file again before you change it, and when they say "this" or "the selected one", call `metamorfiles_get_selection`.
 
 ## Changing files
 
