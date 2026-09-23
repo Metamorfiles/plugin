@@ -23,9 +23,9 @@ Your goal is a complete board the user can use, quickly. Four principles:
    - reference images in `brand/refs/`;
    - the files you translate from (theme CSS, a logo component, a guidelines PDF) in `brand/sources/`, so the values can be checked later.
 4. Take the values from each source as described below.
-5. Write `brand/DESIGN.md` with `metamorfiles_write_file`, following the template.
+5. Write `brand/DESIGN.md` with `metamorfiles_write_file`, following the template. If `metamorfiles.json` names the brand differently from DESIGN.md (other spelling or capitals), write it with the brand's own name, so the control panel and the kit agree.
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
-7. Present it. Call `metamorfiles_render_preview` on `brand-board`: it is one square image of the whole brand. Show it, then write the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
+7. Present it. Call `metamorfiles_render_preview` on `brand-board`: it is one square image of the whole brand, and its result has the control panel link where the user sees it. Lead with that link, then write the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
 
 ## Taking values from each source
 
@@ -159,4 +159,4 @@ The tokens become CSS variables in `brand/brand.css`:
 - `templates/brand-board/` and the block of `brand.css` between the `metamorfiles:tokens` markers are built from DESIGN.md, so fix them through DESIGN.md: a hand edit is rebuilt away. Never fix one by changing a token to a value the sources don't have. Put the brand's own CSS, such as textures and logo lockups, in `brand.css` below the markers.
 - Fix every check error on the brand board before moving on. One you can't fix through DESIGN.md is a Studio defect: tell the user plainly, don't walk past it.
 - Changing DESIGN.md changes every template. Tell the user which templates will look different, and re-render them.
-- Write DESIGN.md with `metamorfiles_write_file`, which returns the check. If you write it with other tools, call `metamorfiles_get_project` afterwards to see the check.
+- Write and change DESIGN.md only with `metamorfiles_write_file`: it returns the check and rebuilds the tokens and the board at once. A shell edit skips both, and outside auto mode the user has to approve it.

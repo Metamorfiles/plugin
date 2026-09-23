@@ -5,7 +5,9 @@ the `metamorfiles` skill; this is the shape of this particular message.
 
 ## The shape
 
-1. **The board.** The image `metamorfiles_render_preview` returned, before any words.
+1. **The board.** The control panel link from the result, first, with the brand's name: that is
+   where the user sees the board. In a terminal app the image your tool returned never reaches
+   them, so never write "above"; in apps that show it, it appears beside the link anyway.
 2. **What the brand is**, in two or three sentences, in its own materials: the paper, the ink, the
    accent, what each typeface carries, and what the whole thing feels like. This is the only part
    that is yours to write, and it is what makes the kit feel made rather than extracted.
@@ -15,15 +17,11 @@ the `metamorfiles` skill; this is the shape of this particular message.
    choice that is theirs. If there is nothing, say nothing.
 5. **One question.**
 
-Then the panel link, on its own line, at the end.
-
 ## Worked example
 
 For Lumen Skincare, Studio's fictional example brand:
 
-> **Lumen Skincare**
->
-> [the board]
+> **Lumen Skincare**: your brand board is in the control panel, http://127.0.0.1:4747/_studio/?item=templates/brand-board
 >
 > Warm paper, ink type and one clay accent, with walnut for the night range. Fraunces carries the
 > headlines, Inter everything that informs. It reads like a bathroom shelf in early light: calm,

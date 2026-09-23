@@ -13,7 +13,7 @@
     ],
     "PostToolUse": [
       {
-        "matcher": "metamorfiles_render_(preview|batch)$",
+        "matcher": "metamorfiles_(render_preview|export_page|export_status)$",
         "hooks": [
           {
             "type": "command",

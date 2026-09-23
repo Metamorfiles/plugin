@@ -105,9 +105,9 @@ npx metamorfiles@latest images
 ## What you get
 
 - **Templates**: plain HTML with declared variables for text, images, colors, fonts and positions, built from your brand kit.
-- **Renders**: pixel-exact PNG, JPEG or WebP in every format, from Instagram stories to YouTube thumbnails.
-- **Batches**: variants, spreadsheet rows and formats in one run, with a contact sheet and a review page to share with clients.
-- **Control panel**: adjust every variable visually and save the result as defaults or a new variant.
+- **Pages**: your deliverables, each made from a template with its own copy of the design, exporting every variant and spreadsheet row in every format as pixel-exact PNG, JPEG or WebP.
+- **History**: every version of every template and page, whoever changed it, one click from coming back.
+- **Control panel**: every variant in every format side by side on one canvas. Edit the content, move, resize or restyle any element, generate images and export, with undo.
 
 ### Bundled skills
 
@@ -117,8 +117,9 @@ npx metamorfiles@latest images
 | `metamorfiles` | Any Studio work; explains the project and routes to the right workflow |
 | `metamorfiles-brand` | Set up the brand kit from a website, guide or logos |
 | `metamorfiles-template` | A new or changed template from a brief, reference or screenshot |
-| `metamorfiles-variants` | A/B variants, rows from a spreadsheet, batches in several formats |
+| `metamorfiles-variants` | A page of A/B variants or spreadsheet rows, exported in several formats |
 | `metamorfiles-repurpose` | Adapt one design to other platforms and sizes |
+| `metamorfiles-review` | An independent design review before delivery and after layout changes |
 
 Skills load automatically when your request matches, so you don't need to name them.
 

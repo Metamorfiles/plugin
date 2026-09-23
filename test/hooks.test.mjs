@@ -59,12 +59,13 @@ const previewError = {
   tool_response: blocks({ warnings: ["error: headline overflows its box", "warning: low contrast"] }),
 };
 const previewClean = { ...previewError, tool_response: blocks({ warnings: [] }) };
-const batchClean = {
-  tool_name: "mcp__metamorfiles__metamorfiles_render_batch",
-  tool_response: blocks({ status: "done", checks: { errors: 0, filesWithFindings: 0, first: [] } }),
+const exportClean = {
+  tool_name: "mcp__metamorfiles__metamorfiles_export_page",
+  tool_response: blocks({ status: "done", checks: "All files passed the checks." }),
 };
-const batchError = {
-  ...batchClean,
+const exportRunning = { ...exportClean, tool_name: "mcp__metamorfiles__metamorfiles_export_status", tool_response: blocks({ status: "exporting", done: 2, total: 8 }) };
+const exportError = {
+  ...exportClean,
   tool_response: blocks({
     status: "done",
     checks: { errors: 2, filesWithFindings: 1, first: ["post-1.png: error: label cut", "post-1.png: error: logo clipped"] },
@@ -79,15 +80,16 @@ const expectations = [
     assert.match(out.reason, /headline overflows/);
     assert.equal(out.hookSpecificOutput.hookEventName, "PostToolUse");
   }],
-  [batchError, (out) => {
+  [exportError, (out) => {
     assert.equal(out.decision, "block");
     assert.match(out.reason, /2 check errors across 1 file/);
   }],
-  [batchClean, (out) => {
+  [exportClean, (out) => {
     assert.equal(out.decision, undefined);
     assert.match(out.hookSpecificOutput.additionalContext, /independent review/);
   }],
   [previewClean, null],
+  [exportRunning, null],
   [otherTool, null],
 ];
 
@@ -137,7 +139,7 @@ for (const shell of Object.keys(shells)) {
   const blocked = JSON.parse(run(shell, cursorHook.command, { env, cwd: plugin, input: JSON.stringify(asCursor(previewError)) }));
   assert.match(blocked.additional_context, /headline overflows/);
   assert.equal(blocked.decision, undefined);
-  const delivered = JSON.parse(run(shell, cursorHook.command, { env, cwd: plugin, input: JSON.stringify(asCursor(batchClean)) }));
+  const delivered = JSON.parse(run(shell, cursorHook.command, { env, cwd: plugin, input: JSON.stringify(asCursor(exportClean)) }));
   assert.match(delivered.additional_context, /independent review/);
   assert.equal(run(shell, cursorHook.command, { env, cwd: plugin, input: JSON.stringify(asCursor(previewClean)) }), "");
   passed += 3;

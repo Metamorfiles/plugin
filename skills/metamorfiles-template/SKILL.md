@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-template
-description: Use when the user wants a new or changed Metamorfiles template, for example a social post, ad or banner design from a brief, a reference image, a screenshot or an existing design. Writes the template's index.html following the contract and checks it visually in every format.
+description: Use when the user wants a new or changed Metamorfiles template, for example a social post, ad or banner design from a brief, a reference image, a screenshot or an existing design, or a change to the layout, formats or defaults of one. Writes the template's index.html following the contract, checks it visually in every format and gets it reviewed.
 ---
 
 # Create a template
@@ -27,7 +27,7 @@ A template is a reusable design whose changeable parts are declared variables. T
    - Stress test: preview once with the longest plausible copy and with every boolean and enum option that changes layout.
    - Fix and repeat until every format looks intentionally designed for its size.
 8. Get an independent review with `metamorfiles-review` and fix every **must fix**.
-9. Show the user the final previews, list the variables, and give them the control panel link from the last result. The panel is where they adjust every variable and save variants.
+9. Hand it over: the control panel link first, then what the design does, the variables the user can change there, and one question, usually whether to make the first page from it. Don't say the images are above: in many apps the user can't see them.
 
 ## Design rules
 
@@ -43,4 +43,7 @@ A template is a reusable design whose changeable parts are declared variables. T
 
 ## Changing an existing template
 
-`metamorfiles_read_file` the template, make the change, keep variable ids stable so drafts and batches still work, then run the same check and preview loop.
+1. `metamorfiles_read_file` the template (and its `edits.css`, if the user moved or restyled elements in the panel): the user may have changed it since you last looked.
+2. Change it in place with `metamorfiles_write_file` and a `note` saying why. Never copy the template to keep the old version: the history keeps it, and the user can go back with one click. Keep variable ids and every `data-mf-id` stable, so the user's edits still apply.
+3. Run the same check and preview loop, and a new review when the layout changed.
+4. Pages made from the template keep their own copy of the design and don't change. If the user wants a delivered page to follow the change, make a new page from the template (`metamorfiles-variants`); both pages stay.
