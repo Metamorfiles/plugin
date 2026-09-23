@@ -32,6 +32,7 @@ A page is one deliverable made from a template: its own copy of the design, and 
 {
   "name": "Spring headline test",
   "template": { "id": "launch-post", "hash": "…" },
+  "values": { "badge": "New" },
   "variants": [
     { "id": "price-led", "name": "Price-led", "thesis": "Price makes the decision easy", "values": { "headline": "Half the price, all the glow" } },
     { "id": "ritual-led", "name": "Ritual-led", "thesis": "A two-minute routine fits any morning", "values": { "headline": "Your two-minute morning ritual" } }
@@ -42,7 +43,7 @@ A page is one deliverable made from a template: its own copy of the design, and 
 
 - Studio writes it when it makes the page; `template.hash` is how it tells that the template changed since.
 - Variant ids are short kebab-case and unique; `name` is what the user sees. Exported files are named `<page>-<variant>-<format>.<ext>`.
-- `values` apply to every format of the variant. A variant can also hold `formats: { "instagram-story": { "headline": "…" } }`, values for one format only, which win over its `values` there. The user makes these when they change one format in the control panel; keep them when you change the variant, and write to them when the user asks for a change in one format only.
+- Values stack from wide to narrow: the page's `values` (every frame), then a variant's `values` (every format of that variant), then its `formats: { "instagram-story": { "headline": "…" } }` (one frame). The narrower one wins. The user makes all three in the control panel; keep them when you change the page, and write to the level the user means: "everywhere", "in this variant" or "just the story".
 - `output.type` is `png`, `jpeg` or `webp`, `scale` from 0.25 to 4.
 - The page's formats are in the manifest of its own `index.html`, as in a template. Pass `formats` to `metamorfiles_create_page` when the page needs different ones.
 - With `table` (`{ "file": "data/products.csv", "rows": "1-20", "idColumn": "sku" }`), each row becomes a variant named by `idColumn` or `row-N`, with its values copied in, so the page doesn't change when the CSV does. Listed `variants` then apply to every row, giving rows × variants.
