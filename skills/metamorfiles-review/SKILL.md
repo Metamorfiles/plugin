@@ -19,7 +19,7 @@ Whoever made a design is the worst judge of it. The review looks only at the ren
    - **Claude Code, Cursor or Gemini CLI:** use the `design-reviewer` agent from the Metamorfiles plugin. In Claude Code, run it in the foreground, never in the background: the delivery waits for the verdict, and a background review arrives after you have already answered, splitting the handover across turns.
    - **ChatGPT desktop app or Codex CLI:** spawn a subagent with the rubric below as its instructions, in a read-only sandbox. Their plugins can't include agents, but they delegate to a subagent when a skill asks.
    - **Anywhere else:** do the review yourself as a separate pass. Judge only the images, the findings and DESIGN.md.
-3. Give the reviewer only this: the project path, the template id or page id, the formats, and the user's brief in one sentence. Don't explain your design choices.
+3. Give the reviewer only this: the project path, the template id or page id, the frames to review (the ones that changed; none for a whole new template or page), and the user's brief in one sentence. Don't explain your design choices.
 4. Fix every issue the reviewer marks **must fix** in the template or page itself, with `metamorfiles_write_file` and a `note` such as "Review fixes: phone pinned to the bottom". It is a new version of the same item, never a copy. Render again, and review again if anything structural changed.
 5. Deliver once: the control panel link first, then what the review changed in a line, and one question. The user doesn't need the review's list.
 
@@ -28,7 +28,7 @@ Whoever made a design is the worst judge of it. The review looks only at the ren
 The reviewer works like this:
 
 1. Call `metamorfiles_get_project` for the project, then `metamorfiles_read_file` `brand/DESIGN.md`.
-2. Call `metamorfiles_render_preview` for the template in every format it declares. For a page, `metamorfiles_read_file` its `page.json` and preview the page (`page`, `variant`) in every format for its two riskiest variants: the longest copy, the busiest image. Read the check findings in each result.
+2. Review exactly what you were given, with `metamorfiles_render_preview`: the frames you were named (item, variant, format) and nothing else. Given a whole template, preview it in every format it declares; given a whole page, `metamorfiles_read_file` its `page.json` and preview it (`page`, `variant`) in every format for its two riskiest variants: the longest copy, the busiest image. Read the check findings in each result.
 3. Judge each image on:
    1. **Checks:** no check errors left. Every remaining warning is a deliberate choice.
    2. **Brand:**

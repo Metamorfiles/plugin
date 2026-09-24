@@ -39,7 +39,7 @@ Owners: words go to the copywriter, images to the image maker, everything visual
 
 ## 4. Final check, by a separate reviewer
 
-After the fixes, whenever anything visual changed, hand the check to a reviewer that made none of the changes: the reviewer agent Studio's request names, or else as the `metamorfiles-review` skill describes (the plugin's `design-reviewer` agent, or a read-only subagent with its rubric). Give it only the project path, the item, the changed frames (and their other formats when the layout moved) and the brief in one sentence. Never tell it what you changed or what not to flag. Its verdict is for you: every **must fix** goes back to its owner. For a copy change that keeps the same lines, re-check it yourself instead.
+After the fixes, whenever anything visual changed (layout, an image or crop, copy that breaks into different lines), hand the check to a reviewer that made none of the changes: the reviewer agent Studio's request names, or else as the `metamorfiles-review` skill describes. Give it only the project path, the item, the frames the task changed and the brief in one sentence: never what you changed or what not to flag. Its verdict is input for you, never your summary: every **must fix** goes back to its owner, then render and check again. For a copy change that keeps the same lines, re-check it yourself.
 
 Classify what comes back:
 

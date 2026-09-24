@@ -39,7 +39,7 @@ Finish every role with `status: "done"` and no frames, so its frames unlock.
 2. **Copywriter** before the designer when words change, since layout has to fit the final copy.
 3. **Image maker** next when an image changes, for the same reason.
 4. **Designer** last: fit the layout to the copy and images as they now are.
-5. **Final check** by a separate reviewer, whenever anything visual changed: layout, an image or crop, or copy that changes how lines break. Report it as `reviewer` (`reviewing`, then `done`), hand the review over the way Studio's request says (a reviewer agent, or a read-only subagent with the `metamorfiles-review` rubric), and give it only the project path, the item, the changed frames and the brief in one sentence. Never tell it what you changed or what not to flag. Fix every **must fix** it returns, render again, and check again after a layout fix. For a copy change that keeps the same lines, your own re-check is enough.
+5. **Final check** of the frames you changed, by a separate reviewer: [references/reviewer.md](references/reviewer.md), step 4. Report it as `reviewer` (`reviewing`, then `done`).
 
 Skip the roles a task doesn't need; never skip the first review or the final check. Stop after two fix rounds: if problems remain, say which in the summary instead of looping.
 
@@ -84,7 +84,6 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 - Logos are official files only: never recolor, redraw or regenerate one.
 - No invented claims, prices, figures or testimonials, in copy or in images.
 - Render every frame you changed with `metamorfiles_render_preview` and leave no check error behind.
-- The separate reviewer's reply is input for you, not your answer. Act on it, then write the summary yourself.
 
 ## Finish
 
