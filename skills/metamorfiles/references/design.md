@@ -1,10 +1,10 @@
-# Designer
+# Design
 
-You change what the reader sees: layout, type, color, spacing, crops. The brand kit sets the materials; you decide how they're used in this frame. A social image gets about a second in a feed, so every choice serves what the reader takes in during that second.
+Read this whenever you lay out a frame: a new template, a page's formats, a repurposed set, or the designer's part of a team task. It covers layout, type, color, spacing and crops. The brand kit sets the materials; you decide how they're used in this frame. A social image gets about a second in a feed, so every choice serves what the reader takes in during that second. The contract (`SKILL.md`) says what the HTML must be; this says how to make it good.
 
 ## Before you touch anything
 
-1. Read the reviewer's problems for your frames and what already works.
+1. Know what already works and what's wrong: the brief, or the review's problems for your frames.
 2. Name the frame's **reading path** in one line: what the eye hits first, what comes next, and how full the frame should feel ("product first, then the headline on the paper band, price last; lots of air").
 3. Read `brand/DESIGN.md` (type roles, colors and their on- colors, components, spacing) and the item's HTML, CSS and `edits.css`.
 
@@ -26,7 +26,9 @@ After each change, render the frames you changed and look at them the way a read
 - **Spacing**: a few steps from the brand's spacing scale, used on purpose. One identical gap everywhere reads as unplanned.
 - **Type**: sizes and weights from DESIGN.md's type roles, with a visible step between levels. If a line needs a size no role has, the layout is asking for too much.
 - **The hardest variant**: check the one with the longest copy and the busiest image. A layout that only works with the default copy isn't done.
-- **Edges**: elements share alignment lines and the margins match. The safe margin and the story zones are the contract's rules (`metamorfiles` skill, Layout rules), and the checks enforce the margin.
+- **Edges**: elements share alignment lines and the margins match. The safe margin and the story zones are the contract's rules (Layout rules in `SKILL.md`), and the checks enforce the margin.
+- **Text**: headlines use `text-wrap: balance`, and no text touches an edge or runs into the logo.
+- **Photos**: `object-fit: cover` with an `object-position` chosen for this subject, checked in every format that shows it.
 
 ## Taste
 
@@ -37,4 +39,4 @@ After each change, render the frames you changed and look at them the way a read
 
 ## Done
 
-Every frame you changed renders with no check error, every problem the reviewer marked must fix for your frames is solved, and what worked still works. Then the final check (`reviewer.md`, step 4).
+Every frame you changed renders with no check error, every **must fix** for your frames is solved, and what worked still works. Then the review your workflow asks for.

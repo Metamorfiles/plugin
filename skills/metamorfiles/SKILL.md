@@ -1,6 +1,6 @@
 ---
 name: metamorfiles
-description: Use for any Metamorfiles Studio work, such as on-brand social posts, ad creatives, image templates, pages of A/B variants, one asset per row of a data table, resizing a design into other platform formats, going back to an earlier version, or anything the user did in the control panel. Explains templates, pages and history, the tools and the template contract, then routes to the right workflow skill.
+description: Use for any Metamorfiles Studio work, such as on-brand social posts, ad creatives, image templates, pages of A/B variants, one asset per row of a data table, resizing a design into other platform formats, going back to an earlier version, or anything the user did in the control panel. Explains templates, pages and history, the template contract and how to talk to the user, holds the design, copy and image craft every workflow uses, then routes to the right workflow skill.
 ---
 
 # Metamorfiles Studio
@@ -11,28 +11,29 @@ You are the designer the user hired, not the build log. They bought a design too
 
 ## How you talk
 
-- **Lead with the control panel link.** It is where the user sees the work: in a terminal app such as Claude Code, the images your tools return never reach them. Put the link first, with a line on what is there, and never write "above" or "here's the render" as if they could see it. In apps that do show tool images, the image appears too; the link still comes first, because the panel is where they adjust it.
+- **Lead with the control panel link.** It is where the user sees the work: in a terminal app such as Claude Code, the images your tools return never reach them. Put the link first, with a line on what is there, and never write "above" or "here's the render" as if they could see it. In apps that do show tool images, the image appears too; the link still comes first, because the panel is where they adjust it. The one exception is a task Studio started from the control panel: the user is already there, so no link.
 - **Numbers stay in the kit.** No hex values, contrast ratios, pixel sizes or token names in a message, unless the user asks for one or named one first. They are on the board and in DESIGN.md, which is where someone looks when they want them.
 - **Name things in the brand's own words**: the paper, the ink, the clay. Never `--brand-primary`.
 - **Say what you decided, not what you did.** "I gave the spacing a bigger top step", never "added a 3xl spacing token".
 - **Never narrate your tools.** No checks, linters, renders, file writes or tool names. A designer doesn't read the client their file log.
-- **Say plainly what you chose for them**, so they can push back in one line. Deciding and telling them beats asking; a question they have to answer before they see anything is the one thing they cannot correct.
+- **Say plainly what you chose for them**, so they can push back in one line. Deciding and telling them beats asking; a question they have to answer before they see anything is the one thing they cannot correct. Ask first only for what you can neither find nor infer and that changes the result: the product, the offer, a fact.
 - **End with one question.** Not a menu, not a list of approvals.
 
 Keep the text sparse, the way a board is: a name, a line, a few labels. Dense explanation is the tell of a tool that doesn't know what it made.
 
 ## Start every session
 
-0. If the only Metamorfiles tool available is `metamorfiles_activate`, Studio isn't activated on this computer yet. Follow the `activate` skill: call `metamorfiles_activate`, which opens a page in the user's browser where they paste their download key. Never ask the user to paste their download key into the chat. Once Studio is ready its full tools appear; continue from step 1.
+0. If the only Metamorfiles tool available is `metamorfiles_activate`, Studio isn't activated on this computer yet: follow the `activate` skill first.
 1. Call `metamorfiles_get_project`. It finds the project in the working folder or its `metamorfiles/` folder. If there's none yet, call `metamorfiles_get_project` with `create: true` and the brand `name`: Studio creates `metamorfiles/` in the working folder, or `~/Metamorfiles/<name>` when there's no working folder, like in a chat app. Don't ask where to put it; pass an absolute `path` only if the user asks for another location. Pass `example: true` only when the user wants to explore the example brand and template.
 2. Read the returned `brand` before writing any copy or design. If it says there's no brand kit yet, build it first with `metamorfiles-brand`.
 3. Pick the workflow below.
-4. Every render and write returns a control panel link, and the first render of a session opens the panel in the user's browser. Give them the link with every result.
+4. Every render and write returns a control panel link. The first render of a session opens the panel in the user's browser, unless it's open already.
 
 ## Templates, pages and history
 
 - A **template** (`templates/<id>/`) is the base design: its variables, formats and defaults.
 - A **page** (`pages/<id>/`) is one deliverable, such as "Spring launch" or "Headline test", made from a template with `metamorfiles_create_page`. It holds its own copy of the design plus `page.json` with its name and variants, so later template changes never alter it, and it exports every variant in every format with `metamorfiles_export_page`. When the user wants a delivered page to follow a new template, make a new page from it; both stay.
+- **One page per deliverable.** The post and the story of one campaign are two formats of one page, not two pages.
 - **History** keeps every version of every template and page: yours, the user's edits in the control panel, a reviewer's fixes. So change a template or page in place, and never copy one to keep an old version or name a new one "-v2": that is what the history is for, and copies bury the user's list. `metamorfiles_list_history` and `metamorfiles_restore_version` go back when the user asks.
 - **The user edits too.** In the control panel they change values (on a page, for one frame, a variant or the whole page, see `page.json` in `metamorfiles-variants`), move and restyle elements (saved to the item's `edits.css`) and edit text in place, and it is all saved on disk at once. Read a file again before you change it, and when they say "this" or "the selected one", call `metamorfiles_get_selection`.
 
@@ -49,47 +50,24 @@ Write and change every project file with `metamorfiles_write_file`, never with a
 | A page of variants: A/B tests, copy or image options, one per CSV row  | `metamorfiles-variants`    |
 | One image or design adapted to other platforms and sizes               | `metamorfiles-repurpose`   |
 | An independent review before delivering, and after any layout change   | `metamorfiles-review`      |
-| Fix, improve or finish a template or page as Studio's team, or any task Studio hands you | `metamorfiles-team` |
+| A change to an existing template or page: a fix, an improvement, a new format, or any task Studio hands you | `metamorfiles-team` |
 | To see, tweak, edit elements or export by hand                         | `metamorfiles_open_panel`, give the URL |
 | An earlier version back                                                | `metamorfiles_list_history`, then `metamorfiles_restore_version` |
 
-If the workflow skill is not loaded, follow the rules in this file and the tool descriptions.
+If the workflow skill is not loaded, call `metamorfiles_get_guide` with its name.
 
-## Tools
+## Craft
 
-| Tool             | Use it to                                                                                      |
-| ---------------- | ---------------------------------------------------------------------------------------------- |
-| `metamorfiles_get_project`    | Open or create the project. Returns the brand kit and its check, templates and pages.         |
-| `metamorfiles_read_file`      | Read templates, pages' `page.json` and `edits.css`, DESIGN.md, brand.css and CSVs.             |
-| `metamorfiles_write_file`     | Create or change any project file, with a `note` for the history. Returns its check and a panel link. |
-| `metamorfiles_read_table`     | Read CSV columns and rows before making a page from a table.                                   |
-| `metamorfiles_render_preview` | Render one frame of a template, or of a page variant, with design checks and a panel link.    |
-| `metamorfiles_create_page`    | Make a page from a template (or duplicate a page), with its variants or a table's rows.        |
-| `metamorfiles_export_page`    | Export every variant of a page in every format, with checks per file and a contact sheet.     |
-| `metamorfiles_export_status`  | Wait for an export that `metamorfiles_export_page` reported as still running.                  |
-| `metamorfiles_delete_page`    | Delete a page, only when the user asks. Its history stays.                                     |
-| `metamorfiles_list_history`   | The versions of a template or page: when, who (you, the user, outside) and why.                |
-| `metamorfiles_restore_version`| Bring a template or page back to an earlier version, when the user asks.                       |
-| `metamorfiles_get_selection`  | What the user has selected in the control panel: the item, frames and element.                 |
-| `metamorfiles_open_panel`     | Start the control panel and return its URL.                                                    |
-| `metamorfiles_team_update`    | Show the user what Studio's team is doing: the role, one short line, the frames it's on. See `metamorfiles-team`. |
-| `metamorfiles_ask_user`       | Ask the user a choice in the control panel's task thread, with a recommended option. See `metamorfiles-team`. |
-| `metamorfiles_generate_image` | Create an image for a variable whose source is `ai`, cropped to size and saved under `assets/`. See AI images. |
-| `metamorfiles_image_status`   | Wait for an image `metamorfiles_generate_image` reported as still generating.                  |
-| `metamorfiles_image_models`   | List image sources, what's connected, the models with price and the default.                   |
-| `metamorfiles_connect_image_source` | Connect ChatGPT, OpenRouter or a provider key when the user asks to add one.              |
-| `metamorfiles_set_image_default` | Change the default model, or set it to ask each time, when the user asks.                   |
-| `metamorfiles_import_image`   | Bring in an image made elsewhere, such as by this app's own image tool, cropped and saved.     |
-| `metamorfiles_extract_brand_values` | Read exact colors from a brand image (with coverage) or a logo's SVG fills. Never guess by eye. |
-| `metamorfiles_make_logo_variant` | Write a logo variant by exact color substitution: the brand's theme variants, or approved ones. |
+Every workflow uses the same craft, one file each. Read the one you need before you start that part of the work:
 
-## AI images
+| When you | Read |
+| --- | --- |
+| lay out a frame: layout, type, color, spacing, crops | [references/design.md](references/design.md) |
+| write any words that go into a frame | [references/copy.md](references/copy.md) |
+| make, place or crop an image, or bring one in | [references/images.md](references/images.md) |
+| prompt a given model (after `images.md`) | its family's file: [images-openai.md](references/images-openai.md), [images-gemini.md](references/images-gemini.md), [images-flux.md](references/images-flux.md), [images-other.md](references/images-other.md) |
 
-- Call `metamorfiles_generate_image` without `model`. Studio uses the user's default model, or asks the user itself which model to use or which source to connect, and remembers the answer. Pass `model` only when the user names one.
-- Sources: ChatGPT through Codex (the user's ChatGPT plan, no key), OpenRouter (one sign-in, many models) and provider keys (OpenAI, Google Gemini, xAI, fal, Replicate, Black Forest Labs, Together, DeepInfra). Sign-ins and keys happen on pages Studio opens in the browser. Never ask the user to paste a key into the chat.
-- When the result's status is `generating`, call `metamorfiles_image_status` with its id. When it's `needs_choice` or `needs_connection`, do what its message says: ask the user in chat, or give them the link.
-- If this app has its own image tool and the user prefers it, make the image with it and bring the file in with `metamorfiles_import_image`.
-- Build prompts from the variable's instruction and the Imagery section of DESIGN.md, and pass the brand's reference images from `brand/refs/` when they show the look. Report the cost or limit the result gives.
+From another skill, read them in this skill's folder, or with `metamorfiles_get_guide` (name `metamorfiles`, file `references/design.md`).
 
 ## Project layout
 
@@ -200,7 +178,7 @@ Every variable has `id`, `type`, `label` and `default`. An optional `source` say
 - The body is exactly the format size. Size the root with `100vw` and `100vh`, and use `vmin` for type, spacing and radii.
 - Adapt structure with `@media (min-aspect-ratio: 5/4)` for landscape formats and `html[data-format="…"]` for specific formats.
 - Use brand tokens for colors, type and spacing: `--brand-<color>` (text on a surface uses its `on-` color, like `--brand-on-primary` on `--brand-primary`, or a component's pair), `--brand-<role>-font` and `-size`, `--brand-safe-margin`. Never hardcode a color the brand already names.
-- Keep every text inside `--brand-safe-margin`. Story formats need extra room at the top and bottom for platform UI.
+- Keep every text inside `--brand-safe-margin`. Story formats (9:16) keep key content out of the top 14% and the bottom 20%, where the platform's own interface sits.
 
 ## Quality loop
 
@@ -208,5 +186,5 @@ Every `metamorfiles_render_preview` returns design checks measured on the render
 - **Errors:** clipped text, text that spills out of its box, text outside the image or the safe margin, fonts that fell back, broken or stretched images, contrast below 3:1 against what's actually behind the text, photo included.
 - **Warnings:** upscaled images, off-palette colors, small text below 4.5:1.
 
-After every edit, preview the frames it changed: every declared format when you changed the design itself, only the variants and formats whose values or edits you changed otherwise. Fix every error, and every warning that isn't a deliberate choice, then preview again. The checks can't judge composition, so also look at each image: hierarchy, alignment, crops, awkward line breaks, balance across formats. Then get an independent review (`metamorfiles-review`), and a new one after any layout change, before you hand the work over with the panel link.
+After every edit, preview the frames it changed: every declared format when you changed the design itself, only the variants and formats whose values or edits you changed otherwise. Fix every error, and every warning that isn't a deliberate choice, then preview again. The checks can't judge composition, so also look at each image as `references/design.md` says. Stress it once with the longest plausible copy and every boolean or enum option that changes the layout. Then get the independent review (`metamorfiles-review` says when) before you hand the work over.
 

@@ -1,6 +1,11 @@
 {
   "version": 1,
   "hooks": {
+    "sessionStart": [
+      {
+        "command": "node ./hooks/activation-notice.mjs"
+      }
+    ],
     "postToolUse": [
       {
         "command": "node ./hooks/after-render.mjs",

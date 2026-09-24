@@ -5,9 +5,8 @@ the `metamorfiles` skill; this is the shape of this particular message.
 
 ## The shape
 
-1. **The board.** The control panel link from the result, first, with the brand's name: that is
-   where the user sees the board. In a terminal app the image your tool returned never reaches
-   them, so never write "above"; in apps that show it, it appears beside the link anyway.
+1. **The board.** The control panel link from the result, first, with the brand's name, as the
+   `metamorfiles` skill says every result is handed over.
 2. **What the brand is**, in two or three sentences, in its own materials: the paper, the ink, the
    accent, what each typeface carries, and what the whole thing feels like. This is the only part
    that is yours to write, and it is what makes the kit feel made rather than extracted.

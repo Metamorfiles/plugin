@@ -22,7 +22,7 @@ No manifest asks for the download key. Every app activates the same way: the `ac
 
 `hooks/hooks.json` is Claude's schema, which Codex, Copilot and Grok also read. Cursor uses different event names, so `.cursor-plugin/plugin.json` points at `.cursor-plugin/hooks.json` instead; adding Cursor's casing to the shared file makes `claude plugin validate --strict` fail with `unknown hook event`.
 
-- `SessionStart` tells the user Studio is not activated yet.
+- `SessionStart` tells the user Studio is not activated yet. Cursor's `sessionStart` can't show a message, so there the same script gives Cursor's agent the notice to pass on.
 - `PostToolUse`, matched to the render and export tools, holds the turn while a check error is still on screen and asks for the independent review before an exported page is delivered. It has no model and never judges a design; it reports what Studio measured.
 
 Both scripts live in `hooks/` at the plugin root. The Copilot namespace carries only its own `hooks.json`, which points back at them the same way.

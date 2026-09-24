@@ -116,6 +116,7 @@ for (const file of ["hooks/hooks.json", "com.github.copilot/hooks/hooks.json"]) 
       rmSync(home, { recursive: true, force: true });
       const inactive = JSON.parse(run(shell, notice.command, { env: { ...env, METAMORFILES_HOME: home } }));
       assert.match(inactive.systemMessage, /isn't activated/);
+      assert.doesNotMatch(inactive.systemMessage, /\/metamorfiles:/);
       const cli = join(home, "kit", "node_modules", "metamorfiles", "dist");
       mkdirSync(cli, { recursive: true });
       writeFileSync(join(cli, "cli.js"), "");
@@ -143,6 +144,14 @@ for (const shell of Object.keys(shells)) {
   assert.match(delivered.additional_context, /independent review/);
   assert.equal(run(shell, cursorHook.command, { env, cwd: plugin, input: JSON.stringify(asCursor(previewClean)) }), "");
   passed += 3;
+
+  // The same activation notice, as context for Cursor's agent, since Cursor can't show a hook's message.
+  const [cursorNotice] = cursor.hooks.sessionStart;
+  const home = join(scratch, "cursor-home");
+  rmSync(home, { recursive: true, force: true });
+  const inactive = JSON.parse(run(shell, cursorNotice.command, { env: { ...env, METAMORFILES_HOME: home }, cwd: plugin }));
+  assert.match(inactive.additional_context, /isn't activated/);
+  passed++;
 }
 
 rmSync(scratch, { recursive: true, force: true });

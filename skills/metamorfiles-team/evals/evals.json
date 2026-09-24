@@ -4,23 +4,24 @@
     {
       "id": 1,
       "name": "review-and-fix-flagged-frames-only",
-      "prompt": "Studio's request: You are Studio's team on task t1, working on Serum launch (pages/serum-launch). Review and fix only these frames, which Studio's checks flagged: - pages/serum-launch instagram-story (b): Text \"Brighter skin in two weeks of daily use\" is clipped by its box. In this task metamorfiles_ask_user takes the recommended option.",
-      "expected_output": "The reviewer, then the copywriter or designer, fix only the story frame of variant b, reporting each step, and the summary is one or two plain sentences.",
+      "prompt": "The Metamorfiles project is at /path/to/project; pass that path to metamorfiles_get_project.\n\nYou are Studio's team on task t1, working on Serum launch (pages/serum-launch). Review and fix only these frames, which Studio's checks flagged; don't review or change any other frame:\n- pages/serum-launch instagram-story (b): Text \"Brighter skin in two weeks of daily use\" is clipped by its box.\nRender the frames you changed again until no check errors remain.\n\nFollow the metamorfiles-team skill (if this app didn't load it, call metamorfiles_get_guide with name \"metamorfiles-team\" first): report every step with metamorfiles_team_update and task \"t1\", and ask choices with metamorfiles_ask_user. This task runs in Auto: metamorfiles_ask_user takes your recommended option.\n\nFor the final check, use the design-reviewer agent.\n\nYou're running in the background and the user is watching in the control panel: don't include its link.",
+      "expected_output": "The reviewer, then the copywriter or designer, fix only the story frame of variant b, reporting each step; the final check goes to the design-reviewer agent; the summary is one or two plain sentences.",
       "files": [],
       "assertions": [
         "Calls metamorfiles_team_update with task t1 before changing any file",
         "Claims only frames of pages/serum-launch instagram-story variant b while working",
         "Changes no file for other variants or formats",
         "Every metamorfiles_team_update line is under eight words and names no file or tool",
+        "Hands the final check to the design-reviewer agent with only the project, item, changed frames and brief",
         "Renders the changed frame again and leaves no check error",
         "Ends each role with status done",
-        "The final summary has no control panel link, hex value or pixel size"
+        "The final summary is the agent's own, with no control panel link, hex value or pixel size"
       ]
     },
     {
       "id": 2,
-      "name": "copy-choice-asked-in-chat",
-      "prompt": "Studio's request: You are Studio's team on task t2, working on Serum launch (pages/serum-launch). The user asked: Make the headline punchier. Mode: Chat.",
+      "name": "copy-choice-asked-in-chat-mode",
+      "prompt": "The Metamorfiles project is at /path/to/project; pass that path to metamorfiles_get_project.\n\nYou are Studio's team on task t2, working on Serum launch (pages/serum-launch). The user asked: Make the headline punchier\n\nFollow the metamorfiles-team skill (if this app didn't load it, call metamorfiles_get_guide with name \"metamorfiles-team\" first): report every step with metamorfiles_team_update and task \"t2\", and ask choices with metamorfiles_ask_user. This task runs in Chat: metamorfiles_ask_user waits for the user's answer.\n\nFor the final check, use the design-reviewer agent.\n\nYou're running in the background and the user is watching in the control panel: don't include its link.",
       "expected_output": "The copywriter offers two or three headline angles with metamorfiles_ask_user, one recommended, waits for the answer, writes it within maxLength, and the designer re-fits the layout.",
       "files": [],
       "assertions": [
@@ -33,14 +34,15 @@
     },
     {
       "id": 3,
-      "name": "new-image-in-auto",
-      "prompt": "Studio's request: You are Studio's team on task t3, working on launch-post (templates/launch-post). The user asked: The photo feels cold, make it warmer. Mode: Auto.",
-      "expected_output": "The image maker writes a prompt from the variable's instruction and the Imagery section, generates without a model, places it, checks every format's crop, and says in the summary what was chosen for the user.",
+      "name": "new-image-in-auto-mode",
+      "prompt": "The Metamorfiles project is at /path/to/project; pass that path to metamorfiles_get_project.\n\nYou are Studio's team on task t3, working on launch-post (templates/launch-post). The user asked: The photo feels cold, make it warmer\n\nFollow the metamorfiles-team skill (if this app didn't load it, call metamorfiles_get_guide with name \"metamorfiles-team\" first): report every step with metamorfiles_team_update and task \"t3\", and ask choices with metamorfiles_ask_user. This task runs in Auto: metamorfiles_ask_user takes your recommended option.\n\nFor the final check, use the design-reviewer agent.\n\nYou're running in the background and the user is watching in the control panel: don't include its link.",
+      "expected_output": "The image maker checks which model will run, writes a prompt from the variable's instruction and the Imagery section with that family's rules, generates without a model, places it, checks every format's crop, and says in the summary what was chosen for the user.",
       "files": [],
       "assertions": [
         "Reads brand/DESIGN.md before generating",
+        "Calls metamorfiles_image_models before writing the prompt",
         "Calls metamorfiles_generate_image without a model",
-        "The prompt asks for no text or logo in the image",
+        "The prompt asks for no text or logo and quotes no words",
         "Renders every format that shows the image",
         "The summary says which option was chosen in Auto"
       ]
@@ -48,7 +50,7 @@
     {
       "id": 4,
       "name": "user-message-mid-task",
-      "prompt": "Studio's request: You are Studio's team on task t4, working on Serum launch (pages/serum-launch). The user asked: Tighten the spacing on the stories. (During the task, a metamorfiles_team_update result says: The user said: \"Leave variant A as it is.\")",
+      "prompt": "The Metamorfiles project is at /path/to/project; pass that path to metamorfiles_get_project.\n\nYou are Studio's team on task t4, working on Serum launch (pages/serum-launch). The user asked: Tighten the spacing on the stories.\n\nFollow the metamorfiles-team skill (if this app didn't load it, call metamorfiles_get_guide with name \"metamorfiles-team\" first): report every step with metamorfiles_team_update and task \"t4\", and ask choices with metamorfiles_ask_user. This task runs in Chat: metamorfiles_ask_user waits for the user's answer.\n\nFor the final check, use the design-reviewer agent.\n\nYou're running in the background and the user is watching in the control panel: don't include its link.\n\n(During the task, a metamorfiles_team_update result says: The user said: \"Leave variant A as it is.\")",
       "expected_output": "After the update returns the user's message, the team stops changing variant A and continues on the rest.",
       "files": [],
       "assertions": [

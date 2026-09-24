@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-team
-description: Use when Studio hands you a team task (a request with a task id, from Review and fix or the control panel's ask box), or when the user asks Studio's team, a reviewer, designer, copywriter or image maker to fix, improve or finish a Metamorfiles template or page. You work as four specialists who report every step in the control panel with metamorfiles_team_update and ask choices with metamorfiles_ask_user. Not for a new template from a brief (metamorfiles-template) or a new page of variants (metamorfiles-variants).
+description: Use to change an existing Metamorfiles template or page (a fix, an improvement, new copy, a new photo, another format), and whenever Studio hands you a team task (a request with a task id, from Review and fix or the control panel's ask box). You work as four specialists and report every step in the control panel with metamorfiles_team_update, so the user sees the work as it happens. Not for a new template from a brief (metamorfiles-template) or a new page of variants (metamorfiles-variants).
 license: MIT
 ---
 
@@ -10,20 +10,20 @@ The user watches the team in Studio's control panel while you work: a line at th
 
 You play the specialists yourself, one at a time, because their work depends on each other: a shorter headline changes the layout, a new photo changes where the copy can sit. The one exception is the final check, which a separate reviewer does, since whoever made a change is the worst judge of it.
 
-| Role | Owns | Read before starting |
+| Role | Owns | Works with |
 | --- | --- | --- |
-| `reviewer` | Judging renders against `brand/DESIGN.md`: what's wrong, how bad, who fixes it. Never changes files. The final check goes to a separate reviewer (see Order of work). | [references/reviewer.md](references/reviewer.md) |
-| `designer` | Layout, type, color, spacing, crops: the template's HTML and CSS and `edits.css`. | [references/designer.md](references/designer.md) |
-| `copywriter` | Every word: headlines, body, calls to action, in the brand's voice and within each `maxLength`. | [references/copywriter.md](references/copywriter.md) |
-| `imager` | AI images for `image` variables: prompts, generation, placement, crop. | [references/image-maker.md](references/image-maker.md) |
+| `reviewer` | Judging renders against `brand/DESIGN.md`: what's wrong, how bad, who fixes it. Never changes files. | [references/reviewer.md](references/reviewer.md) |
+| `designer` | Layout, type, color, spacing, crops: the design's HTML and CSS, and `edits.css`. | `references/design.md` of the `metamorfiles` skill |
+| `copywriter` | Every word: headlines, body, calls to action. | `references/copy.md` of the `metamorfiles` skill |
+| `imager` | Images: prompts, generation, placement, crop. | `references/images.md` of the `metamorfiles` skill |
 
-Load a role's reference when that role starts, not all four up front.
+The craft files are the same ones every workflow uses; read each when its role starts, not all up front (in that skill's folder, or with `metamorfiles_get_guide`, name `metamorfiles`, file `references/design.md`).
 
 ## Report every step
 
 Call `metamorfiles_team_update` before each part of the work:
 
-- `task`: the id from Studio's request. Working from the user's own app without one, leave it out once with `scope` (the page or template): the result gives you the id to pass from then on.
+- `task`: the id from Studio's request. Working in the user's own chat, leave it out once with `scope` (the page or template): the result gives you the id to pass from then on.
 - `role` and `status`: `reviewing` while only looking, `working` while changing frames, `done` when the role is finished.
 - `frames`: the frames the role is on (`item`, `variant`, `format`). Claim only the frames you are about to change: the user can't touch them until you're done, and they keep working on the rest.
 - `line`: what the user sees at the top, under eight words, starting with a verb: "is tightening the story headline", "is making a warmer photo". No file names, sizes, token names or tool names.
@@ -39,7 +39,7 @@ Finish every role with `status: "done"` and no frames, so its frames unlock.
 2. **Copywriter** before the designer when words change, since layout has to fit the final copy.
 3. **Image maker** next when an image changes, for the same reason.
 4. **Designer** last: fit the layout to the copy and images as they now are.
-5. **Final check** of the frames you changed, by a separate reviewer: [references/reviewer.md](references/reviewer.md), step 4. Report it as `reviewer` (`reviewing`, then `done`).
+5. **Final check** of the frames you changed, by a separate reviewer: [references/reviewer.md](references/reviewer.md), step 3. Report it as `reviewer` (`reviewing`, then `done`).
 
 Skip the roles a task doesn't need; never skip the first review or the final check. Stop after two fix rounds: if problems remain, say which in the summary instead of looping.
 
@@ -52,7 +52,7 @@ Skip the roles a task doesn't need; never skip the first review or the final che
 
 Taste, direction, copy and which image are the user's. Mechanical fixes (clipped text, a margin, a contrast error, a stretched image) are not: just fix them.
 
-For a choice, call `metamorfiles_ask_user` with the question in plain words and two to four short options, the one you'd pick first and marked `recommended`, each one a real alternative (not "other"):
+Working in the user's own chat, ask them there, as `SKILL.md` of `metamorfiles` says. In a task Studio started, call `metamorfiles_ask_user` with the question in plain words and two to four short options, the one you'd pick first and marked `recommended`, each one a real alternative (not "other"):
 
 - In **Chat** it waits in the thread. While it answers `waiting`, call it again with `waitFor` and the question id; carry on meanwhile only with work that doesn't depend on the answer.
 - In **Auto** it returns your recommended option at once and tells the user it was chosen for them. Make the recommendation the one you'd defend.
@@ -77,13 +77,9 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 
 ## Gotchas
 
-- Change files only with `metamorfiles_write_file`, with a `note` saying why ("Team: shorter story headline"). Read the file again right before writing: the user may have edited other frames of the same page meanwhile.
-- Every role changes a problem where it belongs (the design, one format, one frame's edits or one variant's values): see "Where a change goes" in [references/designer.md](references/designer.md).
-- The brand board and `brand/brand.css` are built from `brand/DESIGN.md`. Brand changes go through DESIGN.md with `metamorfiles-brand`, never into those files.
-- Logos are official files only: never recolor, redraw or regenerate one.
-- No invented claims, prices, figures or testimonials, in copy or in images.
-- Render every frame you changed with `metamorfiles_render_preview` and leave no check error behind.
+- Read a file again right before you write it: the user may have edited other frames of the same page meanwhile.
+- Every role changes a problem where it belongs (the design, one format, one frame's edits or one variant's values): "Where a change goes" in `references/design.md`.
 
 ## Finish
 
-End with a short plain summary in one or two sentences: what changed, where, and anything left for the user to decide. It appears in the task's thread. Talk like a designer: no pixel values, token names, file names or check narration, and no control panel link (the user is already there).
+End with a short plain summary in one or two sentences: what changed, where, and anything left for the user to decide, talking as `SKILL.md` of `metamorfiles` says. In a task Studio started it appears in the task's thread, where the user already is.
