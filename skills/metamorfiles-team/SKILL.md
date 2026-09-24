@@ -78,8 +78,7 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 ## Gotchas
 
 - Change files only with `metamorfiles_write_file`, with a `note` saying why ("Team: shorter story headline"). Read the file again right before writing: the user may have edited other frames of the same page meanwhile.
-- A page's values live in its `page.json`; an element's position and size for one frame live in `edits.css`, one rule per line. Keep other frames' rules and every `data-mf-id` as they are.
-- Fix a problem at its source: a value in the page for one variant, the design for all of them. Don't paper over a template problem in one frame's `edits.css`.
+- Every role changes a problem where it belongs (the design, one format, one frame's edits or one variant's values): see "Where a change goes" in [references/designer.md](references/designer.md).
 - The brand board and `brand/brand.css` are built from `brand/DESIGN.md`. Brand changes go through DESIGN.md with `metamorfiles-brand`, never into those files.
 - Logos are official files only: never recolor, redraw or regenerate one.
 - No invented claims, prices, figures or testimonials, in copy or in images.

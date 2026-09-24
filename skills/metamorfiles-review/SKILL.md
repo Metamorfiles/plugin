@@ -17,7 +17,7 @@ Whoever made a design is the worst judge of it. The review looks only at the ren
 1. Finish your own loop first: every `metamorfiles_render_preview` check error fixed.
 2. Hand the review to a reviewer that didn't make the design, and wait for its verdict in the same turn:
    - **Claude Code, Cursor or Gemini CLI:** use the `design-reviewer` agent from the Metamorfiles plugin. In Claude Code, run it in the foreground, never in the background: the delivery waits for the verdict, and a background review arrives after you have already answered, splitting the handover across turns.
-   - **ChatGPT desktop app or Codex CLI:** spawn a subagent with the rubric below as its instructions, in a read-only sandbox. Their plugins can't include agents, but they delegate to a subagent when a skill asks.
+   - **ChatGPT desktop app or Codex CLI:** their plugins can't include agents, so spawn a subagent whose instructions are exactly what `metamorfiles_get_guide` returns for name `design-reviewer`: the same agent, word for word.
    - **Anywhere else:** do the review yourself as a separate pass. Judge only the images, the findings and DESIGN.md.
 3. Give the reviewer only this: the project path, the template id or page id, the frames to review (the ones that changed; none for a whole new template or page), and the user's brief in one sentence. Don't explain your design choices.
 4. Fix every issue the reviewer marks **must fix** in the template or page itself, with `metamorfiles_write_file` and a `note` such as "Review fixes: phone pinned to the bottom". It is a new version of the same item, never a copy. Render again, and review again if anything structural changed.
