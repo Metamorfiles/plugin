@@ -56,7 +56,7 @@ For a choice, call `metamorfiles_ask_user` with the question in plain words and 
 
 - In **Chat** it waits in the thread. While it answers `waiting`, call it again with `waitFor` and the question id; carry on meanwhile only with work that doesn't depend on the answer.
 - In **Auto** it returns your recommended option at once and tells the user it was chosen for them. Make the recommendation the one you'd defend.
-- A question the user already answered in this project comes back answered. `metamorfiles_get_project` lists those decisions: follow them without asking again.
+- Pass `remember: true` when the answer is a lasting preference for the project (a tone, a rule, a style), not a one-off pick like which headline. Remembered answers come back without asking, and `metamorfiles_get_project` lists them: follow them without asking again.
 
 Ask at most once per role per task, and never about something the brand kit already decides.
 
