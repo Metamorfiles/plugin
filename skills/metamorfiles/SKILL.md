@@ -49,6 +49,7 @@ Write and change every project file with `metamorfiles_write_file`, never with a
 | A page of variants: A/B tests, copy or image options, one per CSV row  | `metamorfiles-variants`    |
 | One image or design adapted to other platforms and sizes               | `metamorfiles-repurpose`   |
 | An independent review before delivering, and after any layout change   | `metamorfiles-review`      |
+| Fix, improve or finish a template or page as Studio's team, or any task Studio hands you | `metamorfiles-team` |
 | To see, tweak, edit elements or export by hand                         | `metamorfiles_open_panel`, give the URL |
 | An earlier version back                                                | `metamorfiles_list_history`, then `metamorfiles_restore_version` |
 
@@ -71,6 +72,8 @@ If the workflow skill is not loaded, follow the rules in this file and the tool 
 | `metamorfiles_restore_version`| Bring a template or page back to an earlier version, when the user asks.                       |
 | `metamorfiles_get_selection`  | What the user has selected in the control panel: the item, frames and element.                 |
 | `metamorfiles_open_panel`     | Start the control panel and return its URL.                                                    |
+| `metamorfiles_team_update`    | Show the user what Studio's team is doing: the role, one short line, the frames it's on. See `metamorfiles-team`. |
+| `metamorfiles_ask_user`       | Ask the user a choice in the control panel's task thread, with a recommended option. See `metamorfiles-team`. |
 | `metamorfiles_generate_image` | Create an image for a variable whose source is `ai`, cropped to size and saved under `assets/`. See AI images. |
 | `metamorfiles_image_status`   | Wait for an image `metamorfiles_generate_image` reported as still generating.                  |
 | `metamorfiles_image_models`   | List image sources, what's connected, the models with price and the default.                   |

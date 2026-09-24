@@ -120,6 +120,7 @@ npx metamorfiles@latest images
 | `metamorfiles-variants` | A page of A/B variants or spreadsheet rows, exported in several formats |
 | `metamorfiles-repurpose` | Adapt one design to other platforms and sizes |
 | `metamorfiles-review` | An independent design review before delivery and after layout changes |
+| `metamorfiles-team` | Studio's team (reviewer, designer, copywriter, image maker) fixing or improving a template or page, shown live in the control panel |
 
 Skills load automatically when your request matches, so you don't need to name them.
 
