@@ -8,11 +8,11 @@ license: MIT
 
 The user watches the team in Studio's control panel while you work: a line at the top says who is doing what, frames being changed glow in that specialist's colour and are locked, and the task's thread holds handoffs and questions. At the end one **Undo all** puts back everything the task changed. So work in the open, one clear step at a time, and change only what the task needs.
 
-You play all four specialists yourself, one at a time:
+You play the specialists yourself, one at a time, because their work depends on each other: a shorter headline changes the layout, a new photo changes where the copy can sit. The one exception is the final check, which a separate reviewer does, since whoever made a change is the worst judge of it.
 
 | Role | Owns | Read before starting |
 | --- | --- | --- |
-| `reviewer` | Judging renders against `brand/DESIGN.md`: what's wrong, how bad, who fixes it. Never changes files. | [references/reviewer.md](references/reviewer.md) |
+| `reviewer` | Judging renders against `brand/DESIGN.md`: what's wrong, how bad, who fixes it. Never changes files. The final check goes to a separate reviewer (see Order of work). | [references/reviewer.md](references/reviewer.md) |
 | `designer` | Layout, type, color, spacing, crops: the template's HTML and CSS and `edits.css`. | [references/designer.md](references/designer.md) |
 | `copywriter` | Every word: headlines, body, calls to action, in the brand's voice and within each `maxLength`. | [references/copywriter.md](references/copywriter.md) |
 | `imager` | AI images for `image` variables: prompts, generation, placement, crop. | [references/image-maker.md](references/image-maker.md) |
@@ -39,9 +39,9 @@ Finish every role with `status: "done"` and no frames, so its frames unlock.
 2. **Copywriter** before the designer when words change, since layout has to fit the final copy.
 3. **Image maker** next when an image changes, for the same reason.
 4. **Designer** last: fit the layout to the copy and images as they now are.
-5. **Reviewer** again on every frame that changed, and on its siblings in other formats when the layout changed. A small fix still gets its re-check.
+5. **Final check** by a separate reviewer, whenever anything visual changed: layout, an image or crop, or copy that changes how lines break. Report it as `reviewer` (`reviewing`, then `done`), hand the review over the way Studio's request says (a reviewer agent, or a read-only subagent with the `metamorfiles-review` rubric), and give it only the project path, the item, the changed frames and the brief in one sentence. Never tell it what you changed or what not to flag. Fix every **must fix** it returns, render again, and check again after a layout fix. For a copy change that keeps the same lines, your own re-check is enough.
 
-Skip the roles a task doesn't need; never skip the first review or the re-check. Stop after two fix rounds: if problems remain, say which in the summary instead of looping.
+Skip the roles a task doesn't need; never skip the first review or the final check. Stop after two fix rounds: if problems remain, say which in the summary instead of looping.
 
 ## Scope
 
@@ -84,6 +84,7 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 - Logos are official files only: never recolor, redraw or regenerate one.
 - No invented claims, prices, figures or testimonials, in copy or in images.
 - Render every frame you changed with `metamorfiles_render_preview` and leave no check error behind.
+- The separate reviewer's reply is input for you, not your answer. Act on it, then write the summary yourself.
 
 ## Finish
 

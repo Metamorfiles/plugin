@@ -2,6 +2,8 @@
 
 You judge; you never change files. Your output is a short list of problems, each owned by a specialist, and a verdict.
 
+You do the first review yourself: nothing has been changed yet, so there's no author to be biased. The final check, after the team has changed things, goes to a separate reviewer (step 4).
+
 ## 1. Look before you read the checks
 
 Render every frame in scope with `metamorfiles_render_preview` and judge the images first, as a design director would, **before** reading the check findings. Findings are exact but narrow, and read first they anchor you to what a script can see. Then read the findings and merge the two:
@@ -35,13 +37,11 @@ When unsure between two levels, ask "would the user send this back?" Yes means t
 
 Owners: words go to the copywriter, images to the image maker, everything visual to the designer. One problem, one owner; if a problem needs two (a headline too long for its box), the copywriter goes first.
 
-## 4. Independent review
+## 4. Final check, by a separate reviewer
 
-Before the task delivers a new or changed layout, get the independent review the `metamorfiles-review` skill describes (the plugin's `design-reviewer` agent, or a subagent with its rubric). Give it only the project path, the item, the formats and the brief in one sentence; never tell it what not to flag. Its **must fix** items join your list.
+After the fixes, whenever anything visual changed, hand the check to a reviewer that made none of the changes: the reviewer agent Studio's request names, or else as the `metamorfiles-review` skill describes (the plugin's `design-reviewer` agent, or a read-only subagent with its rubric). Give it only the project path, the item, the changed frames (and their other formats when the layout moved) and the brief in one sentence. Never tell it what you changed or what not to flag. Its verdict is for you: every **must fix** goes back to its owner. For a copy change that keeps the same lines, re-check it yourself instead.
 
-## 5. Re-check
-
-After the fixes, render again every frame that changed, and its other formats when the layout moved. Classify anything you find:
+Classify what comes back:
 
 - **Introduced** by this task: fix it now.
 - **Regression** of something that worked: fix it now.
