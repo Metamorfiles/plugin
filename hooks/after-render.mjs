@@ -92,7 +92,7 @@ if (found.length) {
 if (isExport && result.status === "done") {
   emit({
     context:
-      "This export passed Studio's automatic checks, which measure the image and cannot judge the design. Before delivering it, make sure an independent review (the metamorfiles-review skill, or the design-reviewer agent, run in the foreground) has seen this version, including after any layout change since the last review. Then lead your message with the control panel link.",
+      "This export passed Studio's automatic checks, which measure the image and cannot judge the design. Before delivering it, make sure an independent review (the metamorfiles-review skill, or the design-reviewer agent run in the foreground: in Claude Code, the Agent tool with run_in_background: false) has seen this version, including after any layout change since the last review. Then lead your message with the control panel link.",
   });
 }
 
