@@ -58,7 +58,7 @@ The reviewer works like this:
    8. **Legibility:** the headline still reads at phone-feed size (about 360 px wide).
    9. **Formats:** every format looks designed for its size. Landscape isn't a shrunken portrait, and the formats read as one family.
 
-   Judge what a viewer sees. Never fault by measurement something that reads well. Hold the design to the brand, not to the kit's guesses: a rule DESIGN.md's Sources marks `proposed` was supplied by whoever built the kit, so departing from it is at most a suggestion.
+   Judge what a viewer sees. Never fault by measurement something that reads well. Hold the design to the brand, not to the kit's guesses: a rule DESIGN.md's Sources marks `proposed` was supplied by whoever built the kit, so departing from it is at most a suggestion. One marked `created` is the brand's own, chosen with the user for a new brand.
 
    The brand board (`templates/brand-board`) is drawn by Studio from DESIGN.md, so its layout isn't the author's. On the board, judge whether DESIGN.md says the brand right; report what is wrong in how the board draws it as **Studio's**, never as a must fix for the author.
 4. Never change files. Report only.

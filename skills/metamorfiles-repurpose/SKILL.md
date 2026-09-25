@@ -19,9 +19,9 @@ Resizing is a layout job, not a crop. Rebuild the design as a template whose str
    - Recreate the text as live text with the brand fonts, so it reflows per format instead of being stretched.
    - If the source is a flat image with text baked in, ask the user for the clean photo or logo files. Without them, generate a clean background that follows the original, using the source image as a reference (`references/images.md` of the `metamorfiles` skill).
    - Make the photo an `image` variable and the copy `string` variables, so the result can also feed pages of variants.
-4. Declare the target formats. Default set when the user does not say: `instagram-post`, `instagram-square`, `instagram-story`, `facebook-post`, `linkedin-post`, `x-post`, `pinterest-pin`, `youtube-thumbnail`. Use inline formats for custom sizes.
+4. Declare the target formats. Default set when the user does not say, one per shape: `instagram-post` (the 4:5 post every feed takes), `instagram-square`, `instagram-story`, `linkedin-link`, `x-landscape`, `pinterest-pin`, `youtube-thumbnail`. Use inline formats for custom and print sizes.
 5. Design each aspect ratio family on purpose, with `references/design.md`:
-   - **Tall** (9:16, 2:3): stack content, clear of the story zones in the contract.
+   - **Tall** (9:16, 2:3): stack content, clear of what the platform covers (the checks name it).
    - **Portrait and square** (4:5, 1:1): the source layout usually fits with spacing adjustments.
    - **Landscape** (1.9:1, 16:9): place copy beside the image. Headlines get shorter lines and larger relative size.
    - Adjust `object-position` so the subject stays in frame in every crop.

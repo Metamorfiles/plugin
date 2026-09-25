@@ -17,13 +17,24 @@ Name the one reason the reader should care, from the brief: the outcome ("bright
 - Say the thing itself. A reader scrolling past gives a line one look, so the plain, concrete version wins over the witty one, and the words they'd use win over the brand's internal terms.
 - One idea per line. The headline makes the promise; the support line makes it believable; the call to action names the next step and what it gets them ("Shop the serum", "Claim a free sample").
 - Voice stays the same everywhere; tone can loosen or tighten with the format (a story can be looser than a feed post).
-- Capitalize as the brand does in DESIGN.md; with no rule there, only the first word and names.
+- Capitalize as the brand does in DESIGN.md; with no rule there, only the first word and names. When DESIGN.md's `casing` sets a role in capitals, the design does it (`--brand-<role>-case`): write the words in sentence case and let it.
 
 ## Fit
 
 Before writing a value, check its variable's `maxLength` in the template and the real space in the frame: render it. A headline that fits the post but breaks into four lines in the story is too long for the story. Prefer a shorter line over asking for a smaller size; change the layout only when neither works.
 
 Watch the breaks: no single word on the last line, no brand or product name split across lines.
+
+## A carousel
+
+The cover promises something specific the slides then deliver ("5 mornings, 5 minutes each"), never a vague tease. Each body slide says one thing in a line or two, so it reads in the second a swipe gives it; number them only when they really are steps. The end slide names the next step. Nothing a reader needs is only on a later slide: many never swipe.
+
+## Captions and alt text
+
+A post goes out with words beside the image, and the user pastes them from the panel or the export's `post.md`.
+
+- **The caption** carries what the image can't: the context, the detail, the next step. Its first line has to work alone, since feeds cut the rest off. Hashtags only as the brand uses them, a few specific ones at the end, never a wall. Write a platform its own caption (`captions: { "LinkedIn": "…" }`) only when its readers need a different one: longer and plainer on LinkedIn, inside 280 characters on X. The check warns past a platform's limit.
+- **Alt text** says what the image shows, for someone who can't see it: the subject, what it does, where, and any words in the image as they are written. No "image of", no keywords, no claims. Under 125 characters when it can be; a carousel has one per slide.
 
 ## Read it back
 

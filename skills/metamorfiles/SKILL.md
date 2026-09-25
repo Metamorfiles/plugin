@@ -102,7 +102,7 @@ A template is one HTML file. It declares formats and variables in a JSON script 
     <link rel="stylesheet" href="../../brand/brand.css" />
     <script type="application/json" id="metamorfiles">
       {
-        "formats": ["instagram-post", "instagram-story", "linkedin-post"],
+        "formats": ["instagram-post", "instagram-story", "linkedin-link"],
         "variables": [
           { "id": "headline", "type": "string", "label": "Headline", "default": "Glow that lasts all day", "maxLength": 60,
             "source": { "kind": "ai", "instruction": "Benefit-led hook, max 6 words" } },
@@ -162,7 +162,16 @@ Every variable has `id`, `type`, `label` and `default`. An optional `source` say
 | `html[data-id="value"]`| enum, boolean and anchor values are also attributes on `<html>`  |
 | `html[data-format="…"]`| the current format id; `--format-width` and `--format-height` hold its size |
 
-**Formats:** `instagram-post` 1080×1350, `instagram-square` 1080×1080, `instagram-story` 1080×1920, `facebook-post` 1200×630, `linkedin-post` 1200×627, `x-post` 1600×900, `pinterest-pin` 1000×1500, `youtube-thumbnail` 1280×720, or inline `{ "id": "banner", "width": 1500, "height": 500 }`. A height of `"auto"` makes the image as tall as its content, for long pages such as a one-pager; size those in px or `vw`, since `vmin` follows the width.
+**Formats:** a preset id, `<platform>-<shape>`: a `-post` is the platform's 4:5 feed post (1080×1350), a `-link` its link preview.
+- Instagram: `instagram-post`, `instagram-tall` 1080×1440, `instagram-square`, `instagram-landscape` 1080×566, `instagram-story`, `instagram-reel-cover` (both 1080×1920).
+- Facebook: `facebook-post`, `facebook-square`, `facebook-link` 1200×630, `facebook-story`, `facebook-cover` 851×315, `facebook-group-cover` 1640×856, `facebook-event-cover` 1920×1005.
+- LinkedIn: `linkedin-post`, `linkedin-square`, `linkedin-link` 1200×627, `linkedin-cover` 1584×396, `linkedin-company-cover` 1512×256.
+- X: `x-post`, `x-square`, `x-landscape` 1600×900, `x-header` 1500×500. Threads and Bluesky: `threads-link` 1200×600, `bluesky-header` 1500×500.
+- Pinterest: `pinterest-pin` 1000×1500, `pinterest-cover` 800×450. TikTok: `tiktok-photo` 1080×1920. YouTube: `youtube-thumbnail` 1280×720, `youtube-banner` 2560×1440. Anywhere: `profile-photo` 800×800, shown in a circle.
+
+The posts of Instagram, Facebook, LinkedIn and X are the same size, so one of them serves all four unless the user names a platform. Presets know what their platform covers (a story's profile bar, a banner's edges on phones, the profile circle); the checks name it when text or a logo sits there.
+
+Any other size is inline: `{ "id": "banner", "width": 1500, "height": 500 }`. **Print** sizes are in mm or in, with a resolution and a bleed: an A4 poster is `{ "id": "a4-poster", "label": "A4 poster", "width": 210, "height": 297, "unit": "mm", "dpi": 300, "bleed": 3 }`. Use the named size the user means (A4, A5, US Letter, a business card); ask only when the size is truly unclear. The design fills the bleed with background and keeps everything that matters inside the trim; the export adds a PDF at the physical size. A height of `"auto"` makes the image as tall as its content, for long pages such as a one-pager; size those in px or `vw`, since `vmin` follows the width.
 
 **Rules the check enforces**
 
@@ -179,7 +188,7 @@ Every variable has `id`, `type`, `label` and `default`. An optional `source` say
 - The body is exactly the format size. Size the root with `100vw` and `100vh`, and use `vmin` for type, spacing and radii.
 - Adapt structure with `@media (min-aspect-ratio: 5/4)` for landscape formats and `html[data-format="…"]` for specific formats.
 - Use brand tokens for colors, type and spacing: `--brand-<color>` (text on a surface uses its `on-` color, like `--brand-on-primary` on `--brand-primary`, or a component's pair), `--brand-<role>-font`, `-size`, `-weight`, `-tracking` and `-case` (the role's letter case, such as capitals for headlines: `text-transform: var(--brand-display-case, none)`), `--brand-safe-margin`. Never hardcode a color the brand already names.
-- Keep every text inside `--brand-safe-margin`. Story formats (9:16) keep key content out of the top 14% and the bottom 20%, where the platform's own interface sits.
+- Keep every text inside `--brand-safe-margin`, and text and logos clear of what the platform covers: a story's profile and reply bars, a cover's cropped edges, a profile photo's corners. The checks name the zone.
 
 ## Quality loop
 

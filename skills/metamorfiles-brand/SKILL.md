@@ -1,10 +1,12 @@
 ---
 name: metamorfiles-brand
-description: Use when the user wants to set up, import or change the brand in a Metamorfiles project, for example from their website, their app's theme or styles, a brand guidelines PDF, logos or reference images. Translates the brand into brand/DESIGN.md (the design.md format), from which Studio generates the brand tokens and the brand board.
+description: Use when the user wants to set up, import or change the brand in a Metamorfiles project, for example from their website, their app's theme or styles, a brand guidelines PDF, logos or reference images, or to create a new brand from nothing. Translates the brand (or creates it with the user) into brand/DESIGN.md (the design.md format), from which Studio generates the brand tokens and the brand board.
 license: MIT
 ---
 
 # Translate the brand
+
+**A new brand from nothing?** When the user asks for one, or says there is nothing to translate, follow `references/create.md` instead: directions first, then the kit. Everything below still describes the kit it builds.
 
 The brand kit is `brand/DESIGN.md`, in Google Labs' design.md format (version `alpha`, github.com/google-labs-code/design.md), so it also works in Stitch and other design tools. Studio checks it, runs the official design.md linter on it, and generates from it the `--brand-*` tokens in `brand/brand.css` and the `brand-board` template.
 
