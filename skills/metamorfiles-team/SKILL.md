@@ -27,7 +27,7 @@ Call `metamorfiles_team_update` before each part of the work:
 - `role` and `status`: `reviewing` while only looking, `working` while changing frames, `done` when the role is finished.
 - `frames`: the frames the role is on (`item`, `variant`, `format`). Claim only the frames you are about to change: the user can't touch them until you're done, and they keep working on the rest.
 - `line`: what the user sees at the top, under eight words, starting with a verb: "is tightening the story headline", "is making a warmer photo". No file names, sizes, token names or tool names.
-- `say`: a sentence for the thread when it's worth keeping, above all a handoff (see below).
+- `say`: a sentence for the thread when it's worth keeping, above all a handoff (see below), without your role's name in front: the thread shows who said it.
 
 The result can include what the user said in the thread since your last update. Act on it before anything else; it overrides your plan.
 
@@ -64,7 +64,9 @@ Ask at most once per role per task, and never about something the brand kit alre
 
 When one role passes work to the next, the next role's first update says what it got, as `say`:
 
-> Reviewer: The story headline breaks into four lines and the price sits on the photo. Copywriter: shorten the headline to fit two lines. Designer: move the price onto the paper band.
+> The story headline breaks into four lines and the price sits on the photo. The copywriter shortens the headline to two lines, then the designer moves the price onto the paper band.
+
+The thread already shows who is speaking, with its name and shape, so a `say` never starts with a name or a label ("Reviewer:", "Final check:").
 
 Each specialist ends with one of four outcomes, and the next step follows from it:
 
