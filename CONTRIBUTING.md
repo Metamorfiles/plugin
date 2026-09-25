@@ -22,8 +22,8 @@ No manifest asks for the download key. Every app activates the same way: the `ac
 
 `hooks/hooks.json` is Claude's schema, which Codex, Copilot and Grok also read. Cursor uses different event names, so `.cursor-plugin/plugin.json` points at `.cursor-plugin/hooks.json` instead; adding Cursor's casing to the shared file makes `claude plugin validate --strict` fail with `unknown hook event`.
 
-- `SessionStart` tells the user Studio is not activated yet.
-- `PostToolUse`, matched to the render tools, holds the turn while a check error is still on screen and asks for the independent review before a batch is delivered. It has no model and never judges a design; it reports what Studio measured.
+- `SessionStart` tells the user Studio is not activated yet. Cursor's `sessionStart` can't show a message, so there the same script gives Cursor's agent the notice to pass on.
+- `PostToolUse`, matched to the render and export tools, holds the turn while a check error is still on screen and asks for the independent review before an exported page is delivered. It has no model and never judges a design; it reports what Studio measured.
 
 Both scripts live in `hooks/` at the plugin root. The Copilot namespace carries only its own `hooks.json`, which points back at them the same way.
 
@@ -32,7 +32,7 @@ Hook commands run in whatever shell the client picks: `sh`, Git Bash, PowerShell
 ## Rules
 
 - `skills/`, `agents/` and `com.github.copilot/agents/` are generated from Studio's own copies and replaced on every release. Changes made here are overwritten; report issues with them instead.
-- Keep `agents/design-reviewer.md` frontmatter to `name` and `description`. Antigravity wants `mainAgent: false`; `setup` adds that on the way out so the copies here stay portable.
+- Keep `agents/design-reviewer.md` frontmatter to `name` and `description`: it's the one reviewer every app uses, instructions word for word. `setup` adds only each app's subagent fields on the way out (Antigravity `mainAgent: false` and `subagent: true`; OpenCode `mode: subagent`, named by its file), so the copies here stay portable.
 - No `${...}` placeholder belongs in an MCP config. The standard expands only `${PLUGIN_ROOT}` and `${PLUGIN_DATA}`, Cursor expands neither, and Antigravity documents none.
 - The MCP command is `npx -y --fetch-retries=0 --fetch-timeout=5000 metamorfiles@latest mcp` in every manifest: `@latest` picks up new launcher versions on the next start, and no retries let npx fall back to its cached copy at once when offline.
 - Keep `version` identical in every manifest and the marketplace entry; bump it on every change so clients pick up updates.

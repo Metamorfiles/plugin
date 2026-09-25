@@ -1,10 +1,15 @@
 {
   "version": 1,
   "hooks": {
+    "sessionStart": [
+      {
+        "command": "node ./hooks/activation-notice.mjs"
+      }
+    ],
     "postToolUse": [
       {
         "command": "node ./hooks/after-render.mjs",
-        "matcher": "metamorfiles_render_(preview|batch)$"
+        "matcher": "metamorfiles_(render_preview|export_page|export_status)$"
       }
     ]
   }

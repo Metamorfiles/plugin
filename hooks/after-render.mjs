@@ -1,12 +1,12 @@
 // Runs after a render and holds the turn while a check error is still on screen, and asks for an
-// independent review before a batch is delivered. It acts at the moment of delivery, with Studio's
+// independent review before an exported page is delivered. It acts at the moment of delivery, with Studio's
 // findings in hand, rather than relying on an instruction given earlier in the session.
 //
 // It has no model, so it never judges a design. It reports what Studio already measured.
 import { readFileSync } from "node:fs";
 
 /** Claude scopes an MCP tool as mcp__<server>__<tool> and Cursor as MCP:<tool>; only the tool part is ours to match. */
-const RENDER = /metamorfiles_render_(preview|batch)$/;
+const RENDER = /metamorfiles_(render_preview|export_page|export_status)$/;
 
 let event;
 try {
@@ -67,11 +67,11 @@ function findResult(value) {
 const result = findResult(event.tool_response ?? event.tool_output);
 if (!result || typeof result !== "object") process.exit(0);
 
-const isBatch = toolName.endsWith("render_batch");
+const isExport = /export_(page|status)$/.test(toolName);
 
-/** A preview lists its findings; a batch counts them and quotes the first few. */
+/** A preview lists its findings; an export counts them and quotes the first few. */
 function errors() {
-  if (!isBatch) return (result.warnings ?? []).filter((line) => String(line).startsWith("error"));
+  if (!isExport) return (result.warnings ?? []).filter((line) => String(line).startsWith("error"));
   const checks = result.checks;
   if (!checks || typeof checks !== "object") return [];
   return checks.errors > 0 ? (checks.first ?? []).filter((line) => String(line).includes(": error:")) : [];
@@ -80,19 +80,19 @@ function errors() {
 const found = errors();
 if (found.length) {
   const plural = (n, word) => `${n} ${word}${n === 1 ? "" : "s"}`;
-  const what = isBatch
+  const what = isExport
     ? `${plural(result.checks.errors, "check error")} across ${plural(result.checks.filesWithFindings, "file")}`
     : plural(found.length, "check error");
   emit({
-    block: `Studio found ${what} in this render. Fix them in the template or the values and render again before showing anything to the user.\n\n${found.slice(0, 6).join("\n")}`,
+    block: `Studio found ${what} in this render. Fix them in the template, the page or the values and render again before showing anything to the user.\n\n${found.slice(0, 6).join("\n")}`,
   });
 }
 
-// A batch is a delivery. Nothing here can judge the design, so it asks for the reviewer that can.
-if (isBatch && result.status === "done") {
+// An exported page is a delivery. Nothing here can judge the design, so it asks for the reviewer that can.
+if (isExport && result.status === "done") {
   emit({
     context:
-      "This batch passed Studio's automatic checks, which measure the image and cannot judge the design. Before delivering it, get an independent review (the metamorfiles-review skill, or the design-reviewer agent) against brand/DESIGN.md, and give the user the panel link.",
+      "This export passed Studio's automatic checks, which measure the image and cannot judge the design. Before delivering it, make sure an independent review (the metamorfiles-review skill, or the design-reviewer agent, run in the foreground) has seen this version, including after any layout change since the last review. Then lead your message with the control panel link.",
   });
 }
 
