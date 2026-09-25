@@ -35,7 +35,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 | Source | How | Confidence |
 |---|---|---|
 | Code theme: shadcn or Tailwind CSS, CSS variables, `tokens.json`, Figma variables | Read the exact values, following `var()` chains to the literal value. Keep the original variable names in Sources. | exact |
-| Website | Computed styles of real elements (headings, body text, buttons, cards, bands) at desktop width, plus its CSS | exact |
+| Website | Open it in the app's browser when it has one: computed styles of real elements (headings, body text, buttons, cards, bands) at desktop width, plus its CSS. A plain fetch sees no computed styles and is often blocked; without a browser, fetch the CSS, or an archived copy when the site blocks you, and say which you used. | exact |
 | Guidelines PDF | Values as stated. A CMYK or Pantone value without its RGB or hex goes to Known gaps. | exact |
 | Images, screenshots, logo files | `metamorfiles_extract_brand_values`: exact pixel colors with their coverage, and SVG fill and stroke values. Never pick a color by eye. | exact for flat files, sampled for paintings and photos |
 | Fonts recognized by eye | "Looks like X". Ask for the files. | inferred |
