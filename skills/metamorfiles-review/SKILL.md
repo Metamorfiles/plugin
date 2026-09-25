@@ -42,7 +42,7 @@ The reviewer works like this:
       - where the layout has a logo, the real file renders there, never the name typed out or an initial;
       - only a file declared in DESIGN.md `logos`, on the background it's made for, or on a plate of that background;
       - never recolored, redrawn, stretched, cropped or given effects: compare it with the file in `brand/logos/`;
-      - clear space as the Logo section says;
+      - nothing crowds or touches the logo, and where the brand's own guidelines set a clear space, that space;
       - a generated variant only if its source says the user approved it.
    4. **Hierarchy:** one focal point, and a clear reading order (headline, then support, then call to action or price). Type follows the roles in DESIGN.md.
    5. **Layout:** edges aligned to a shared grid, equal margins, consistent spacing, and nothing crowding the safe margin. Story formats keep platform UI zones clear.
@@ -57,5 +57,9 @@ The reviewer works like this:
       - text over photos sits on a calm area or a scrim.
    8. **Legibility:** the headline still reads at phone-feed size (about 360 px wide).
    9. **Formats:** every format looks designed for its size. Landscape isn't a shrunken portrait, and the formats read as one family.
+
+   Judge what a viewer sees. Never fault by measurement something that reads well. Hold the design to the brand, not to the kit's guesses: a rule DESIGN.md's Sources marks `proposed` was supplied by whoever built the kit, so departing from it is at most a suggestion.
+
+   The brand board (`templates/brand-board`) is drawn by Studio from DESIGN.md, so its layout isn't the author's. On the board, judge whether DESIGN.md says the brand right; report what is wrong in how the board draws it as **Studio's**, never as a must fix for the author.
 4. Never change files. Report only.
-5. Reply with a verdict (**ship** or **fix first**), then at most 10 issues, most important first. For each: **must fix** (anything broken, off brand, hard to read or untrue) or **suggestion** (the rest), the format and the element, what's wrong, and the concrete fix, using DESIGN.md tokens (for example "use `--brand-on-muted` for the product name"). The verdict is **ship** when nothing is must fix.
+5. Reply with a verdict (**ship** or **fix first**), then at most 10 issues, most important first. For each: **must fix** (anything a viewer would see is broken, off brand, hard to read or untrue) or **suggestion** (the rest), or **Studio's** on the brand board, the format and the element, what's wrong, and the concrete fix, using DESIGN.md tokens (for example "use `--brand-on-muted` for the product name"). The verdict is **ship** when nothing is must fix.
