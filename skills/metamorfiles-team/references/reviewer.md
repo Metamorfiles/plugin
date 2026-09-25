@@ -22,4 +22,4 @@ Classify what comes back:
 
 - **Introduced** by this task: fix it now.
 - **Regression** of something that worked: fix it now.
-- **Pre-existing** and out of scope: leave it alone, and out of the summary unless it blocks what the user asked for.
+- **Pre-existing** and out of scope: leave it alone and don't mention it, in the thread or the summary. The user asked for one change; a list of other problems reads as the task not being done. The one exception: the change they asked for can't work because of it.

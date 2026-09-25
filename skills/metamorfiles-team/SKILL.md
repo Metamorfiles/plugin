@@ -82,4 +82,4 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 
 ## Finish
 
-End with a plain summary of at most two sentences: what changed and where. Add a third only when the user has to decide something about this task, or something outside it now blocks what they asked for; nothing else about other frames, items or checks. Talk as `SKILL.md` of `metamorfiles` says. In a task Studio started it appears in the task's thread, where the user already is.
+End with a plain summary of one or two sentences: what changed and where. In a task Studio started it shows in a small thread beside the canvas, where the user already sees the frames; anywhere, every extra line buries the answer. The only third sentence allowed is a choice the user still has about this task (in Auto, the option you picked for them). Nothing about other frames, items, or problems that were there before the task, even ones the final check found. Talk as `SKILL.md` of `metamorfiles` says.
