@@ -22,4 +22,4 @@ Classify what comes back:
 
 - **Introduced** by this task: fix it now.
 - **Regression** of something that worked: fix it now.
-- **Pre-existing** and out of scope: one line in the summary.
+- **Pre-existing** and out of scope: leave it alone, and out of the summary unless it blocks what the user asked for.

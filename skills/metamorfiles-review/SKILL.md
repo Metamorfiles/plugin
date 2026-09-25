@@ -1,6 +1,7 @@
 ---
 name: metamorfiles-review
 description: Use before delivering a new or changed Metamorfiles template, page or repurposed set, again after any layout change to one, or when the user asks for a design review. Gets an independent review of the renders against brand/DESIGN.md, with fixes, from a reviewer that didn't make the design.
+license: MIT
 ---
 
 # Independent design review
@@ -28,7 +29,7 @@ Whoever made a design is the worst judge of it. The review looks only at the ren
 The reviewer works like this:
 
 1. Call `metamorfiles_get_project` for the project, then `metamorfiles_read_file` `brand/DESIGN.md`.
-2. Review exactly what you were given, with `metamorfiles_render_preview`: the frames you were named (item, variant, format) and nothing else. Given a whole template, preview it in every format it declares; given a whole page, `metamorfiles_read_file` its `page.json` and preview it (`page`, `variant`) in every format for its two riskiest variants: the longest copy, the busiest image.
+2. Review exactly what you were given, with `metamorfiles_render_preview`: the frames you were named (item, variant, format) and nothing else, and judge only what's in them, not the item's other frames, its template or its history. Given a whole template, preview it in every format it declares; given a whole page, `metamorfiles_read_file` its `page.json` and preview it (`page`, `variant`) in every format for its two riskiest variants: the longest copy, the busiest image.
 3. Look at each image before you read its check findings, so the findings don't decide what you see. Start with one line on what it is, who it's for and what it has to do. Then read the findings and merge: a finding you also saw is one problem; one you missed is usually real; a warning the design chose on purpose isn't a problem. Judge each image on:
    1. **Checks:** no check errors left. Every remaining warning is a deliberate choice.
    2. **Brand:**

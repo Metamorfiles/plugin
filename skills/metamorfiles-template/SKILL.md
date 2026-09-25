@@ -1,6 +1,7 @@
 ---
 name: metamorfiles-template
 description: Use when the user wants a new Metamorfiles template, for example a social post, ad or banner design from a brief, a reference image, a screenshot or an existing design. Writes the template's index.html following the contract, checks it in every format and gets it reviewed. To change an existing template, use metamorfiles-team.
+license: MIT
 ---
 
 # Create a template

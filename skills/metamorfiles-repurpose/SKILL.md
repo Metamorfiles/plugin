@@ -1,6 +1,7 @@
 ---
 name: metamorfiles-repurpose
 description: Use when the user wants to adapt one existing image, ad or design to other platforms and sizes with Metamorfiles, for example turning an Instagram post into a story, LinkedIn, X, Pinterest and YouTube versions, or resizing a key visual for a whole campaign.
+license: MIT
 ---
 
 # Repurpose one design into every format

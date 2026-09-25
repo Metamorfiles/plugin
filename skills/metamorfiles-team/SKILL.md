@@ -45,7 +45,7 @@ Skip the roles a task doesn't need; never skip the first review or the final che
 
 ## Scope
 
-- **Review and fix** (the request lists flagged frames): review and change only those frames, fixing what the checks found. Other frames are out of scope even if you'd improve them; mention anything worth it in one line of the summary.
+- **Review and fix** (the request lists flagged frames): review and change only those frames, fixing what the checks found. Other frames are out of scope even if you'd improve them.
 - **An ask from the user**: do what they asked, on the page, template or project Studio names, and nothing else. When a request is vague ("make it pop"), the reviewer's design read decides the one change that would matter most.
 
 ## Choices that belong to the user
@@ -82,4 +82,4 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 
 ## Finish
 
-End with a short plain summary in one or two sentences: what changed, where, and anything left for the user to decide, talking as `SKILL.md` of `metamorfiles` says. In a task Studio started it appears in the task's thread, where the user already is.
+End with a plain summary of at most two sentences: what changed and where. Add a third only when the user has to decide something about this task, or something outside it now blocks what they asked for; nothing else about other frames, items or checks. Talk as `SKILL.md` of `metamorfiles` says. In a task Studio started it appears in the task's thread, where the user already is.

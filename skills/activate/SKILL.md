@@ -1,6 +1,7 @@
 ---
 name: activate
 description: Activate Metamorfiles Studio on this computer with the buyer's download key. Use when the user asks to activate Metamorfiles or Studio, enter or change their download key, or right after installing the Metamorfiles plugin.
+license: MIT
 ---
 
 # Activate Metamorfiles Studio

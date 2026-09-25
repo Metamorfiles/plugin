@@ -1,6 +1,7 @@
 ---
 name: metamorfiles-brand
 description: Use when the user wants to set up, import or change the brand in a Metamorfiles project, for example from their website, their app's theme or styles, a brand guidelines PDF, logos or reference images. Translates the brand into brand/DESIGN.md (the design.md format), from which Studio generates the brand tokens and the brand board.
+license: MIT
 ---
 
 # Translate the brand

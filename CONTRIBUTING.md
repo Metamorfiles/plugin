@@ -32,7 +32,7 @@ Hook commands run in whatever shell the client picks: `sh`, Git Bash, PowerShell
 ## Rules
 
 - `skills/`, `agents/` and `com.github.copilot/agents/` are generated from Studio's own copies and replaced on every release. Changes made here are overwritten; report issues with them instead.
-- Keep `agents/design-reviewer.md` frontmatter to `name` and `description`. Antigravity wants `mainAgent: false`; `setup` adds that on the way out so the copies here stay portable.
+- Keep `agents/design-reviewer.md` frontmatter to `name` and `description`: it's the one reviewer every app uses, instructions word for word. `setup` adds only each app's subagent fields on the way out (Antigravity `mainAgent: false` and `subagent: true`; OpenCode `mode: subagent`, named by its file), so the copies here stay portable.
 - No `${...}` placeholder belongs in an MCP config. The standard expands only `${PLUGIN_ROOT}` and `${PLUGIN_DATA}`, Cursor expands neither, and Antigravity documents none.
 - The MCP command is `npx -y --fetch-retries=0 --fetch-timeout=5000 metamorfiles@latest mcp` in every manifest: `@latest` picks up new launcher versions on the next start, and no retries let npx fall back to its cached copy at once when offline.
 - Keep `version` identical in every manifest and the marketplace entry; bump it on every change so clients pick up updates.

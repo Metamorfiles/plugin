@@ -1,6 +1,7 @@
 ---
 name: metamorfiles
 description: Use for any Metamorfiles Studio work, such as on-brand social posts, ad creatives, image templates, pages of A/B variants, one asset per row of a data table, resizing a design into other platform formats, going back to an earlier version, or anything the user did in the control panel. Explains templates, pages and history, the template contract and how to talk to the user, holds the design, copy and image craft every workflow uses, then routes to the right workflow skill.
+license: MIT
 ---
 
 # Metamorfiles Studio

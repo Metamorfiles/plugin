@@ -1,6 +1,7 @@
 ---
 name: metamorfiles-variants
 description: Use when the user wants variations of a Metamorfiles template as a deliverable, for example A/B test creatives from a thesis, copy or image alternatives for client approval, one asset per row of a CSV or product feed, or a set of social or ad images in several formats to export. Plans the variants, makes a page from the template with them and exports it. To change a page that exists, use metamorfiles-team.
+license: MIT
 ---
 
 # Make a page of variants
