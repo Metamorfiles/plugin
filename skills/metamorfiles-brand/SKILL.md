@@ -26,8 +26,8 @@ Your goal is a complete board the user can use, quickly. Four principles:
 4. Take the values from each source as described below.
 5. Write `brand/DESIGN.md` with `metamorfiles_write_file`, following the template. If `metamorfiles.json` names the brand differently from DESIGN.md (other spelling or capitals), write it with the brand's own name, so the control panel and the kit agree.
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
-7. Call `metamorfiles_render_preview` on `brand-board`: it is one square image of the whole brand. Fix every check error through DESIGN.md.
-8. Get the independent review of the board with `metamorfiles-review`: it catches a logo on the wrong background or a pairing that reads badly. Fix what it marks **must fix** through DESIGN.md.
+7. Call `metamorfiles_render_preview` on `brand-board`: it is one image of the whole brand. Fix every check error through DESIGN.md.
+8. Get the independent review of the board with `metamorfiles-review`, in the foreground and before you present anything (in Claude Code, the Agent tool with `run_in_background: false`): it catches a logo on the wrong background or a pairing that reads badly. Fix what it marks **must fix** through DESIGN.md. What it reports as Studio's (how the board is drawn) isn't yours to fix: tell the user plainly, in a line.
 9. Present it with the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
 
 ## Taking values from each source
@@ -69,11 +69,12 @@ Ask the user only for what you cannot derive and what changes the result: the fo
   - Text colors are `on-<surface>` (Material's naming), never `<surface>-foreground`. From shadcn, map by the source's own meaning: `--background` → `background`, `--foreground` → `on-background`, `--card` → `surface`, `--card-foreground` → `on-surface`, `--primary-foreground` → `on-primary`, `--muted-foreground` → `on-muted`, `--border` → `outline`, `--destructive` → `error`.
   - A dark theme the brand defines (a `.dark` block) becomes a group with the same names: `colors.dark.paper`, `colors.dark.primary`.
   - Numeric scales stay scales (`blue-50` … `blue-900`).
-- **`typography`**: the roles the source actually uses (such as `display`, `headline-lg`, `body`, `label`, `code`), in px as the source defines them (1rem is 16px). `lineHeight` unitless or in px, `letterSpacing` in em. Only the spec's properties: fontFamily, fontSize, fontWeight, lineHeight, letterSpacing, fontFeature and fontVariation. Casing rules, such as "labels in capitals", go in the prose.
+- **`typography`**: the roles the source actually uses (such as `display`, `headline-lg`, `body`, `label`, `code`), in px as the source defines them (1rem is 16px). `lineHeight` unitless or in px, `letterSpacing` in em. Only the spec's properties: fontFamily, fontSize, fontWeight, lineHeight, letterSpacing, fontFeature and fontVariation. Letter case goes in `casing`.
 - **`rounded`** and **`spacing`**: as the source defines them, whole scales. When the source shows only one or two steps, derive the rest around them and mark them `proposed`; when the brand truly has none (square corners everywhere), list the key in `omitted` with a reason. Only colors, typography, spacing, rounded and components can be omitted.
 - **`components`**: only usage pairs you observed, such as `button-primary`, `card`, `band` or `badge-winner`, with `backgroundColor`, `textColor`, `typography`, `rounded` and `padding`. Reference tokens (`"{colors.primary}"`); use a literal value only when the source hardcodes one.
 - **`fonts`** (Studio): every family the roles use, with its local file (relative to `brand/`) and weight range.
 - **`logos`** (Studio): each file with the `background` it's made for (a token reference) and its `source`.
+- **`casing`** (Studio): the letter case a role is set in, when the brand sets one: `upper`, `lower` or `title`, such as `display: upper` for headlines in capitals (a site's `text-transform`, or copy typed in capitals). The spec's typography has no case, so without it every template and the board guess.
 
 Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the brand to each image: the body size becomes the frame's body size (`--brand-type-base`, 3vmin), and every other size, radius and space keeps its ratio to it.
 
@@ -99,7 +100,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 
   Show the preview from `metamorfiles_make_logo_variant`, check that its colors meeting the background reach 3:1, and wait for a yes. Then write `generated from <file>, approved by the user on <date>` in the logo's `source` and in Sources.
 - When no file suits a background and the user declines a variant, the official logo sits on a plate of its own background color.
-- The Logo section says which file goes on which background, the clear space, and that logos are never recolored.
+- The Logo section says which file goes on which background, the clear space, and that logos are never recolored. The clear space is the brand's own rule; when its guidelines give none, propose one and mark it `proposed` in Sources, as a guide for layouts rather than a rule of the brand.
 
 ## DESIGN.md template
 
@@ -151,7 +152,7 @@ logos:
 
 The tokens become CSS variables in `brand/brand.css`:
 - `--brand-<color>`, such as `--brand-on-primary`; grouped colors join with a dash, like `--brand-dark-paper`;
-- `--brand-<role>-font`, `-size`, `-weight`, `-line-height` and `-tracking`; `--brand-font` and `--brand-font-display` for the body and display families;
+- `--brand-<role>-font`, `-size`, `-weight`, `-line-height`, `-tracking` and `-case` (from `casing`); `--brand-font` and `--brand-font-display` for the body and display families;
 - `--brand-radius-<name>` and `--brand-space-<name>`;
 - `--brand-<component>-background`, `-text`, `-radius` and `-padding`;
 - Studio's frame values: `--brand-type-base`, `--brand-unit` (one source px), `--brand-safe-margin` and `--brand-gap`.

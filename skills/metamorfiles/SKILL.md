@@ -178,7 +178,7 @@ Every variable has `id`, `type`, `label` and `default`. An optional `source` say
 
 - The body is exactly the format size. Size the root with `100vw` and `100vh`, and use `vmin` for type, spacing and radii.
 - Adapt structure with `@media (min-aspect-ratio: 5/4)` for landscape formats and `html[data-format="…"]` for specific formats.
-- Use brand tokens for colors, type and spacing: `--brand-<color>` (text on a surface uses its `on-` color, like `--brand-on-primary` on `--brand-primary`, or a component's pair), `--brand-<role>-font` and `-size`, `--brand-safe-margin`. Never hardcode a color the brand already names.
+- Use brand tokens for colors, type and spacing: `--brand-<color>` (text on a surface uses its `on-` color, like `--brand-on-primary` on `--brand-primary`, or a component's pair), `--brand-<role>-font`, `-size`, `-weight`, `-tracking` and `-case` (the role's letter case, such as capitals for headlines: `text-transform: var(--brand-display-case, none)`), `--brand-safe-margin`. Never hardcode a color the brand already names.
 - Keep every text inside `--brand-safe-margin`. Story formats (9:16) keep key content out of the top 14% and the bottom 20%, where the platform's own interface sits.
 
 ## Quality loop
