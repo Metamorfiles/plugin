@@ -26,7 +26,7 @@ After each change, render the frames you changed and look at them the way a read
 - **Spacing**: a few steps from the brand's spacing scale, used on purpose. One identical gap everywhere reads as unplanned.
 - **Type**: sizes and weights from DESIGN.md's type roles, with a visible step between levels. If a line needs a size no role has, the layout is asking for too much.
 - **The hardest variant**: check the one with the longest copy and the busiest image. A layout that only works with the default copy isn't done.
-- **Edges**: elements share alignment lines and the margins match. The safe margin and the story zones are the contract's rules (Layout rules in `SKILL.md`), and the checks enforce the margin.
+- **Edges**: elements share alignment lines and the margins match. The safe margin and what each platform covers are the contract's rules (Layout rules in `SKILL.md`), and the checks enforce both.
 - **Text**: headlines use `text-wrap: balance`, and no text touches an edge or runs into the logo.
 - **Photos**: `object-fit: cover` with an `object-position` chosen for this subject, checked in every format that shows it.
 
@@ -36,6 +36,12 @@ After each change, render the frames you changed and look at them the way a read
 - **Improve what's there first.** Tighter alignment, a better crop or a clearer size step usually does more than a new shape, badge or line.
 - **Each format is composed for its size.** A landscape frame isn't a shrunken portrait: put the image beside the copy rather than above it, and let a story use its height.
 - **Only this brand.** Build from what the brand has and a competitor doesn't: its photography, its colors in their stated roles, its type, its voice. A decorative device the brand kit doesn't use (a badge, a card, a gradient, an icon, numbering, an emoji) needs a reason in the content, not just empty space to fill. The brand kit and the brief always win over these preferences.
+
+## A carousel
+
+- **One system, read as a swipe.** Every slide keeps the same margins, grid and type roles, so the eye finds the text in the same place each time. Judge the slides side by side in the panel, as a reader swipes them, not one at a time.
+- **The cover is the loud one.** It has to stop the scroll on its own in the feed; body slides are quieter and carry one idea each; the end slide carries the action and the logo.
+- **Across a seam**, only the spanning layer (`data-span`) crosses: an image or a shape that continues into the next slide invites the swipe. Text never crosses a seam, since each slide is cut there.
 
 ## Done
 
