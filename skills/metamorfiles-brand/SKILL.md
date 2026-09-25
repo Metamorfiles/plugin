@@ -16,7 +16,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 
 ## Steps
 
-1. Call `metamorfiles_get_project` and read `brand`. When you rebuild an existing kit, take every value again from the brand's sources as below; never copy values from the previous DESIGN.md.
+1. Call `metamorfiles_get_project` and read `brand`. If the project already has a kit for another brand (a different name, website or product), this brand gets its own project: call `metamorfiles_get_project` with `create: true` and the new brand's `name`, as `SKILL.md` of `metamorfiles` says, and build the kit there. Rebuild a kit only for the same brand; then take every value again from the brand's sources as below, never from the previous DESIGN.md.
 2. Gather the sources: the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. **Go and find the imagery, don't wait to be handed it**: look in `public/`, `static/`, `assets/` and `src/assets/`; follow what the app's own components reference (a component naming `/images/serum-morning.jpg` is telling you that file is brand imagery); read the Open Graph and Twitter card images in the app's metadata; and take what the live site renders in its hero and section bands. Icons, favicons, UI chrome and framework defaults (`next.svg`, `vercel.svg`) are not imagery. Ask only for what you cannot find and cannot do without, such as the font files or the logo.
 3. Copy the files into the project, unchanged:
    - fonts as WOFF2 in `brand/fonts/` (local files only; for Google Fonts, download the WOFF2 files or ask the user to);
