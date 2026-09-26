@@ -126,6 +126,25 @@ for (const file of ["hooks/hooks.json", "com.github.copilot/hooks/hooks.json"]) 
   }
 }
 
+// Claude Code's reviewer call is put in the foreground, whatever the agent asked; nothing else is touched.
+{
+  const [foreground] = JSON.parse(readFileSync(join(plugin, "hooks/hooks.json"), "utf8")).hooks.PreToolUse[0].hooks;
+  const call = (input) => ({ tool_name: "Agent", tool_input: { description: "Review", prompt: "Review pages/launch", ...input } });
+  for (const shell of Object.keys(shells)) {
+    const env = { CLAUDE_PLUGIN_ROOT: root };
+    for (const input of [{ subagent_type: "metamorfiles:design-reviewer" }, { subagent_type: "design-reviewer", run_in_background: true }]) {
+      const out = JSON.parse(run(shell, foreground.command, { env, input: JSON.stringify(call(input)) }));
+      assert.equal(out.hookSpecificOutput.hookEventName, "PreToolUse");
+      assert.equal(out.hookSpecificOutput.updatedInput.run_in_background, false);
+      assert.equal(out.hookSpecificOutput.updatedInput.prompt, "Review pages/launch");
+    }
+    for (const input of [{ subagent_type: "Explore" }, { subagent_type: "metamorfiles:design-reviewer", run_in_background: false }]) {
+      assert.equal(run(shell, foreground.command, { env, input: JSON.stringify(call(input)) }), "");
+    }
+    passed += 4;
+  }
+}
+
 // Cursor sets no root variable and runs plugin hooks from the plugin folder.
 const cursor = JSON.parse(readFileSync(join(plugin, ".cursor-plugin", "hooks.json"), "utf8"));
 const [cursorHook] = cursor.hooks.postToolUse;
