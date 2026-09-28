@@ -29,7 +29,7 @@ Call `metamorfiles_team_update` before each part of the work:
 - `line`: what the user sees at the top, under eight words, starting with a verb: "is tightening the story headline", "is making a warmer photo". No file names, sizes, token names or tool names.
 - `say`: a sentence for the thread when it's worth keeping, above all a handoff (see below), without your role's name in front: the thread shows who said it.
 
-The result can include what the user said in the thread since your last update. Act on it before anything else; it overrides your plan.
+The result can include what the user said in the thread since your last update. Act on it before anything else; it overrides your plan. A note about something you made (a flaw in an image, a word they dislike) is fixed before you move on, never recorded and skipped.
 
 Finish every role with `status: "done"` and no frames, so its frames unlock.
 
@@ -54,7 +54,7 @@ Taste, direction, copy and which image are the user's. Mechanical fixes (clipped
 
 Working in the user's own chat, ask them there, as `SKILL.md` of `metamorfiles` says. In a task Studio started, call `metamorfiles_ask_user` with the question in plain words and two to four short options, the one you'd pick first and marked `recommended`, each one a real alternative (not "other"):
 
-- In **Chat** it waits in the thread. While it answers `waiting`, call it again with `waitFor` and the question id; carry on meanwhile only with work that doesn't depend on the answer.
+- In **Chat** it waits in the thread. While it answers `waiting`, call it again with `waitFor` and the question id; carry on meanwhile only with work that doesn't depend on the answer. The user may answer in their own words instead of an option: the answer is then their sentence, and you act on what it says (a change, a mix, a redo) rather than taking an option.
 - In **Auto** it returns your recommended option at once and tells the user it was chosen for them. Make the recommendation the one you'd defend.
 - Pass `remember: true` when the answer is a lasting preference for the project (a tone, a rule, a style), not a one-off pick like which headline. Remembered answers come back without asking, and `metamorfiles_get_project` lists them: follow them without asking again.
 
@@ -84,4 +84,6 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 
 ## Finish
 
-End with a plain summary of one or two sentences: what changed and where. In a task Studio started it shows in a small thread beside the canvas, where the user already sees the frames; anywhere, every extra line buries the answer. The only third sentence allowed is a choice the user still has about this task (in Auto, the option you picked for them). Nothing about other frames, items, or problems that were there before the task, even ones the final check found. Talk as `SKILL.md` of `metamorfiles` says.
+The task ends with your last message, so finish everything first: every check, every fix, every subagent, in the foreground. Never end on work still running or promised ("I'll wrap up once the verdict arrives"): wait for it, then summarise.
+
+End with a plain summary of one or two sentences: what changed and where. Plain sentences, not a document: no headings or bold labels. A question for the user at the end is `metamorfiles_ask_user` before you finish, never a line of the summary. In a task Studio started it shows in a small thread beside the canvas, where the user already sees the frames; anywhere, every extra line buries the answer. The only third sentence allowed is a choice the user still has about this task (in Auto, the option you picked for them). Nothing about other frames, items, or problems that were there before the task, even ones the final check found. Talk as `SKILL.md` of `metamorfiles` says.

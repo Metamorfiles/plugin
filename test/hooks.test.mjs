@@ -126,7 +126,8 @@ for (const file of ["hooks/hooks.json", "com.github.copilot/hooks/hooks.json"]) 
   }
 }
 
-// Claude Code's reviewer call is put in the foreground, whatever the agent asked; nothing else is touched.
+// Claude Code's reviewer call is put in the foreground, whatever the agent asked; nothing else is touched,
+// except in a task Studio runs, where every subagent is.
 {
   const [foreground] = JSON.parse(readFileSync(join(plugin, "hooks/hooks.json"), "utf8")).hooks.PreToolUse[0].hooks;
   const call = (input) => ({ tool_name: "Agent", tool_input: { description: "Review", prompt: "Review pages/launch", ...input } });
@@ -141,7 +142,10 @@ for (const file of ["hooks/hooks.json", "com.github.copilot/hooks/hooks.json"]) 
     for (const input of [{ subagent_type: "Explore" }, { subagent_type: "metamorfiles:design-reviewer", run_in_background: false }]) {
       assert.equal(run(shell, foreground.command, { env, input: JSON.stringify(call(input)) }), "");
     }
-    passed += 4;
+    // In a task Studio runs, any subagent is put in the foreground.
+    const team = JSON.parse(run(shell, foreground.command, { env: { ...env, METAMORFILES_TEAM_TASK: "1" }, input: JSON.stringify(call({ subagent_type: "Explore" })) }));
+    assert.equal(team.hookSpecificOutput.updatedInput.run_in_background, false);
+    passed += 5;
   }
 }
 
