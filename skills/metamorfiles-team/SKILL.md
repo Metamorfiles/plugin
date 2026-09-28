@@ -52,9 +52,11 @@ Skip the roles a task doesn't need; never skip the first review or the final che
 
 Taste, direction, copy and which image are the user's. Mechanical fixes (clipped text, a margin, a contrast error, a stretched image) are not: just fix them.
 
-Working in the user's own chat, ask them there, as `SKILL.md` of `metamorfiles` says. In a task Studio started, call `metamorfiles_ask_user` with the question in plain words and two to four short options, the one you'd pick first and marked `recommended`, each one a real alternative (not "other"):
+Ask with `metamorfiles_ask_user` wherever you work, in a task Studio started or in the user's own app: the question in plain words and two to four short options, the one you'd pick first marked `recommended`, each one a real alternative (not "other"). The question shows in the control panel with its options, so the user can answer where they are looking.
 
-- In **Chat** it waits in the thread. While it answers `waiting`, call it again with `waitFor` and the question id; carry on meanwhile only with work that doesn't depend on the answer. The user may answer in their own words instead of an option: the answer is then their sentence, and you act on what it says (a change, a mix, a redo) rather than taking an option.
+- **In the user's own app**, pass the task id `metamorfiles_team_update` returned, and first write the same question in your reply: the panel link, the options as a short numbered list, the recommended one first with its reason, and that they can answer here or in Studio. Then call `metamorfiles_ask_user` and keep waiting. If they answer in the chat, call it with `waitFor` and `answer`: their words, so the panel closes the question.
+
+- In **Chat** it waits. While it answers `waiting`, call it again with `waitFor` and the question id, for as long as it takes; carry on meanwhile only with work that doesn't depend on the answer. The user may answer in their own words instead of an option: the answer is then their sentence, and you act on what it says (a change, a mix, a redo) rather than taking an option.
 - In **Auto** it returns your recommended option at once and tells the user it was chosen for them. Make the recommendation the one you'd defend.
 - Pass `remember: true` when the answer is a lasting preference for the project (a tone, a rule, a style), not a one-off pick like which headline. Remembered answers come back without asking, and `metamorfiles_get_project` lists them: follow them without asking again.
 

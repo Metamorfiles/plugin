@@ -14,7 +14,7 @@ the `metamorfiles` skill; this is the shape of this particular message.
    them a sentence is enough to change any of it.
 4. **What genuinely needs them.** Never more than two, and only real ones: a gap you cannot fill, a
    choice that is theirs. If there is nothing, say nothing.
-5. **One question.**
+5. **One question**, asked with `metamorfiles_ask_user` as well, so it can be answered on the board too.
 
 ## Worked example
 

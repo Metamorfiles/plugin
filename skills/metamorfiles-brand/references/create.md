@@ -43,12 +43,11 @@ At every step:
 - **Say where you are.** Call `metamorfiles_team_update` before the step's work, with a line like
   "is gathering references, step 1 of 5". Working from the chat, it starts a task on the first call
   and returns its id; pass it every time after. The panel shows the step in the team pill.
-- **Ask where the conversation is.**
-  - In a task Studio started: `metamorfiles_ask_user`, the options being the option titles, the
-    recommended one marked. In Auto the recommended one is taken at once; say so in the thread.
-  - In the chat: the panel link to the board first, then the options as a short numbered list,
-    the recommended one first with its reason. One question, answered in a word.
-  - Set the line to "is waiting for your answer" while you wait.
+- **Ask with `metamorfiles_ask_user`**, as `metamorfiles-team` says, the options being the option
+  titles, the recommended one marked, so the user answers in the chat or on the board's panel. From
+  the user's own app, your reply carries the same question first: the panel link to the board, then
+  the options as a short numbered list, the recommended one first with its reason. One question,
+  answered in a word. In Auto the recommended one is taken at once; say so in the thread.
 - **An answer in their own words is the answer.** "A is better but not good enough" means rework A
   and ask again; "C has a cup with two handles" means redo C before anything else.
 - **Record the answer** as `chosen` in the step's file (the imagery step lists the approved seeds,
