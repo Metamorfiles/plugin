@@ -28,9 +28,9 @@ them in templates.
 
 ## Ask before making them
 
-At the start of the kit, name the surfaces you'd show, and ask: in a Studio task with
-`metamorfiles_ask_user` ("Show it on these", recommended, and "Change them"), in the chat as a short
-numbered list. The user may swap any for their own. For each surface, say:
+At the start of the kit, name the surfaces you'd show, and ask with `metamorfiles_ask_user` ("Show it
+on these", recommended, and "Change them"), with the list in your reply when you work from the user's
+own app. The user may swap any for their own. For each surface, say:
 - the part of the system it shows;
 - what it's made of and how the brand is applied, from the list `metamorfiles_make_mockup` takes
   (print, screen-print, thermal-print, paint, vinyl, sticker, embroidery, engraving, emboss, foil,
