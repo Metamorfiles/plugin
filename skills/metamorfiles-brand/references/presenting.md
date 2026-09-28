@@ -34,6 +34,22 @@ For Lumen Skincare, Studio's fictional example brand:
 >
 > Want a one-color version of the logo for print, or should I start on the first launch post?
 
+## In the panel's thread
+
+When Studio started the task (the brand began from the panel's New brand, or a request with a task
+id), the user reads the handover in a narrow thread beside the board they are already looking at. The
+same shape, much shorter:
+
+1. **What the brand is**, in two sentences at most. No link: they are on the board.
+2. **What you decided for them**, in one sentence.
+3. **What needs them**, each a short line of its own, at most two.
+4. **The question** is `metamorfiles_ask_user`, never a line of text: two short options, the one you
+   recommend first ("Make the first posts", "Not now"). Its answer decides what happens next in the
+   same task.
+
+About 80 words before the question. Plain sentences: no headings, no bold labels, no bullets for
+anything that isn't a list of what needs them.
+
 ## What this message never contains
 
 - Hex values, contrast ratios, pixel sizes or token names. They are on the board and in DESIGN.md.

@@ -6,9 +6,9 @@ license: MIT
 
 # Translate the brand
 
-**A new brand from nothing?** When the user asks for one, or says there is nothing to translate, follow `references/create.md` instead: directions first, then the kit. Everything below still describes the kit it builds.
+**A new brand from nothing?** When the user asks for one, or says there is nothing to translate, or the project has a brief in `brand/process/brief.md`, follow `references/create.md` instead: five choices the user makes on boards Studio draws (direction, look, logo, imagery, kit), then the kit. Everything below still describes the kit it builds.
 
-The brand kit is `brand/DESIGN.md`, in Google Labs' design.md format (version `alpha`, github.com/google-labs-code/design.md), so it also works in Stitch and other design tools. Studio checks it, runs the official design.md linter on it, and generates from it the `--brand-*` tokens in `brand/brand.css` and the `brand-board` template.
+The brand kit is `brand/DESIGN.md`, in Google Labs' design.md format (version `alpha`, github.com/google-labs-code/design.md), so it also works in Stitch and other design tools. Studio checks it, runs the official design.md linter on it, and generates from it the `--brand-*` tokens in `brand/brand.css` and the `brand-board`: one item whose frames are the guide, a board for each asset folder it lists, and each mockup.
 
 Your goal is a complete board the user can use, quickly. Four principles:
 - **What the brand defines is exact.** Copy an observed color, size or file as it is. Never adjust, round or replace it to fit a scale you like better.
@@ -21,14 +21,14 @@ Your goal is a complete board the user can use, quickly. Four principles:
 1. Call `metamorfiles_get_project` and read `brand`. If the project already has a kit for another brand (a different name, website or product), this brand gets its own project: call `metamorfiles_get_project` with `create: true` and the new brand's `name`, as `SKILL.md` of `metamorfiles` says, and build the kit there. Rebuild a kit only for the same brand; then take every value again from the brand's sources as below, never from the previous DESIGN.md.
 2. Gather the sources: the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. **Go and find the imagery, don't wait to be handed it**: look in `public/`, `static/`, `assets/` and `src/assets/`; follow what the app's own components reference (a component naming `/images/serum-morning.jpg` is telling you that file is brand imagery); read the Open Graph and Twitter card images in the app's metadata; and take what the live site renders in its hero and section bands. Icons, favicons, UI chrome and framework defaults (`next.svg`, `vercel.svg`) are not imagery. Ask only for what you cannot find and cannot do without, such as the font files or the logo.
 3. Copy the files into the project, unchanged:
-   - fonts as WOFF2 in `brand/fonts/` (local files only; for Google Fonts, download the WOFF2 files or ask the user to);
+   - fonts as WOFF2 in `brand/fonts/` (local files only): a Google Fonts family with `metamorfiles_add_font`, any other face from the user's own files;
    - official logos in `brand/logos/`;
-   - reference images in `brand/refs/`;
+   - reference images in `brand/refs/` (or the asset folders the kit lists);
    - the files you translate from (theme CSS, a logo component, a guidelines PDF) in `brand/sources/`, so the values can be checked later.
 4. Take the values from each source as described below.
 5. Write `brand/DESIGN.md` with `metamorfiles_write_file`, following the template. If `metamorfiles.json` names the brand differently from DESIGN.md (other spelling or capitals), write it with the brand's own name, so the control panel and the kit agree.
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
-7. Call `metamorfiles_render_preview` on `brand-board`: it is one image of the whole brand. Fix every check error through DESIGN.md.
+7. Call `metamorfiles_render_preview` on `brand-board` in each of its frames: `board`, the guide, one image of the whole brand, then each asset folder's frame. Fix every check error through DESIGN.md and the folders.
 8. Get the independent review of the board with `metamorfiles-review`, in the foreground and before you present anything (in Claude Code, the Agent tool with `run_in_background: false`): it catches a logo on the wrong background or a pairing that reads badly. Fix what it marks **must fix** through DESIGN.md. What it reports as Studio's (how the board is drawn) isn't yours to fix: tell the user plainly, in a line.
 9. Present it with the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
 
@@ -77,6 +77,7 @@ Ask the user only for what you cannot derive and what changes the result: the fo
 - **`fonts`** (Studio): every family the roles use, with its local file (relative to `brand/`) and weight range.
 - **`logos`** (Studio): each file with the `background` it's made for (a token reference) and its `source`.
 - **`casing`** (Studio): the letter case a role is set in, when the brand sets one: `upper`, `lower` or `title`, such as `display: upper` for headlines in capitals (a site's `text-transform`, or copy typed in capitals). The spec's typography has no case, so without it every template and the board guess.
+- **`assets`** (Studio): the brand's asset folders under `brand/`, each drawn as a frame of the brand board: `{ folder, kind, title, note?, anchors? }`, the kind one of `imagery` (photos or drawings, whole and framed, with the `anchors` new images are made from marked), `character` (a mascot's turnaround and poses), `icons`, `pattern` and `in-use` (mockups of the brand on its objects, never imagery). Without it, `brand/refs/` is the brand's imagery. The guide board shows a sample of the first imagery folder.
 
 Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the brand to each image: the body size becomes the frame's body size (`--brand-type-base`, 3vmin), and every other size, radius and space keeps its ratio to it.
 
@@ -134,6 +135,8 @@ components:
 fonts:
   - { family: Fraunces, file: fonts/Fraunces.woff2, weight: 100 900 }
   - { family: Inter, file: fonts/Inter.woff2, weight: 100 900 }
+assets:
+  - { folder: refs, kind: imagery, title: Photographs, anchors: [serum-morning.jpg] }
 logos:
   primary: { file: logos/logo.svg, background: "{colors.background}", source: the site's logo component with the light theme's values }
 ---
@@ -161,8 +164,8 @@ The tokens become CSS variables in `brand/brand.css`:
 
 ## Rules
 
-- The brand board is one image, 1920 px wide: panels for the cover, palette, typefaces, type scale, surfaces, a second theme, voice and rules, and the brand's images in a band, each shown whole. It is as tall as its images need. Panels the brand has nothing for are left out, so an empty Voice section costs a panel. It is a composition, not a reference — DESIGN.md holds every token — and none of it is yours to lay out.
-- `templates/brand-board/` and the block of `brand.css` between the `metamorfiles:tokens` markers are built from DESIGN.md, so fix them through DESIGN.md: a hand edit is rebuilt away. Never fix one by changing a token to a value the sources don't have. Put the brand's own CSS, such as textures and logo lockups, in `brand.css` below the markers.
+- The brand board is one image, 1920 px wide: panels for the cover, palette, type scale, surfaces, a second theme, voice and rules, a sample of the brand's images and every typeface with its character set. It is as tall as it needs. Panels the brand has nothing for are left out, so an empty Voice section costs a panel. Each asset folder is another frame of the same item, laid out for its kind, and each mockup one more. They are compositions, not references — DESIGN.md holds every token — and none of it is yours to lay out.
+- The boards (`templates/brand-*/`) and the block of `brand.css` between the `metamorfiles:tokens` markers are built from DESIGN.md and the asset folders, so fix them there: a hand edit is rebuilt away. Never fix one by changing a token to a value the sources don't have. Put the brand's own CSS, such as textures and logo lockups, in `brand.css` below the markers.
 - Fix every check error on the brand board before moving on. One you can't fix through DESIGN.md is a Studio defect: tell the user plainly, don't walk past it.
 - Changing DESIGN.md changes every template and every page, since they all use `brand/brand.css`. Tell the user which will look different, and re-render them.
 - `metamorfiles_write_file` on DESIGN.md returns the check and rebuilds the tokens and the board at once.

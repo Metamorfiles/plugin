@@ -50,6 +50,21 @@ Example for a skincare launch post:
 
 ## Check
 
+Look at every generated image at full size before you use it or show it. Image models make the same
+mistakes again and again; redo an image that has any of them, saying what to fix and what to keep:
+- **Hands and bodies:** extra or missing fingers, fused hands, a limb bending the wrong way, a third
+  arm, a body in a pose it couldn't hold, faces that melt at the edges.
+- **Objects:** duplicated parts (a cup with two handles, a bike with three pedals), warped or bent
+  straight things, parts that float or pass through each other, a strap that goes nowhere.
+- **Physics and light:** shadows that point different ways, reflections of nothing, steam or liquid
+  that ignores gravity.
+- **Text:** any lettering at all, which comes out garbled; the brand's words are set in the design.
+- **Background:** stray figures, extra objects, repeated patterns and smeared detail behind the
+  subject.
+- **The brief:** the ban list of the brand's imagery rules (a forbidden prop, a colour outside the
+  palette).
+
+Then:
 - The subject is whole, not cut at an edge; faces and products are never cropped awkwardly.
 - Nothing stretched, soft or upscaled past its size (the checks flag these).
 - The copy sits on a calm area, or the design adds a scrim.
