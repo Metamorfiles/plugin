@@ -1,7 +1,7 @@
 # Research and direction
 
-Read this for the brief and the first step of `create.md`: what is true of the business, what its
-category looks like, and two or three directions built from real references.
+Read this for the brief and the direction step of `create.md`: what is true of the business, what
+its category looks like, and two or three directions built from real references.
 
 ## The brief
 
@@ -77,17 +77,18 @@ branding projects, most viewed first, or opens the links the user gave:
 - Look at the sheet the tool returns. Keep only what is genuinely good, whatever its category; drop
   the ordinary, however well it fits.
 
-## Territories and moodboards
+## Directions
 
-Group the keepers into two or three territories. A territory is one feeling a reference set agrees
+Group the keepers into two or three directions. A direction is one feeling a reference set agrees
 on ("drawn neighbourhood", "quiet apothecary", "loud market stall"), and each is one option of the
-direction step:
-- **Title:** the territory's name, in a few words.
-- **Line:** what it would feel like to meet this brand, and where it takes a risk.
-- **Files:** six to ten references chosen by attribute (a logo, a palette, type, imagery, a layout,
-  an application), so the moodboard shows the whole brand, not ten logos.
+direction step, with its palette and pairing from `look.md`:
+- **Title:** the direction's name, in a few words.
+- **Line:** why it serves the brief: what it would feel like to meet this brand, and where it takes
+  a risk.
+- **Files:** four to eight references chosen by attribute (a logo, type, imagery, a layout, an
+  application), so the direction shows the whole brand, not eight logos.
 - **Captions:** the project, then what to take from it: "Loom · a loose, confident script as the
   hero". What to take is a principle, never the look to copy.
 
-Recommend the territory that best fits the brief, and say why in its line. The user may mix two;
+Recommend the direction that best fits the brief, and say why in its line. The user may mix two;
 write down what they took from each.

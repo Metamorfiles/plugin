@@ -1,12 +1,12 @@
 # Imagery
 
-Read this for the fourth step of `create.md`, after `images.md` of the `metamorfiles` skill, which
+Read this for the imagery step of `create.md`, after `images.md` of the `metamorfiles` skill, which
 holds how to prompt each image model. This file is what a new brand's imagery needs on top: a
 locked style, anchors the user approves, and a library grown from them.
 
 ## The mode
 
-Decide it from the chosen territory and the brief, and say it in the step's question:
+Decide it from the chosen direction and the brief, and say it in the thread:
 - **Illustration:** drawings carry the brand. Common for food, kids, community and culture brands,
   and any brand with humour.
 - **Photography:** real product, place and people. Lumen, the example brand, is photographic.
@@ -36,15 +36,15 @@ same hand:
 
 ## Seeds, then anchors
 
-1. Make three to five seeds, each a different job: a scene with people, an object alone, an
-   interior, a character, a detail. Save them in `brand/process/imagery/` with a `ground` of the
-   brand's paper colour, so they already sit on it.
-2. Each seed is one option of the imagery step, titled by what it shows. Ask which ones set the style,
-   and which to redo.
+1. Make four seeds together (`wait: false`), each a different job: a scene with people, an object
+   alone, an interior, a character, a detail. Save them in `brand/process/imagery/` with a `ground`
+   of the brand's paper colour, so they already sit on it; the step's frame fills as each arrives.
+2. Each seed is one option of the imagery step, titled by what it shows ("The knit close-up"). The
+   user uses them all, or has single ones redone first ("Redo the knit close-up").
 3. Redo a rejected seed from the ones the user liked, passed as references, never from the rejected
    one. Say what to keep ("the same composition") and what to change ("fewer lines, no texture").
    Expect one in three to need a redo.
-4. The approved seeds are the **anchors**. Every later image is made with two or three of them as
+4. The seeds the user keeps are the **anchors**. Every later image is made with two or three of them as
    references: "draw a new scene in exactly the drawing style of the reference images".
 
 ## Check every image before anyone sees it

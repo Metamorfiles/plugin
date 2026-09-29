@@ -26,7 +26,7 @@ Call `metamorfiles_team_update` before each part of the work:
 - `task`: the id from Studio's request. Working in the user's own chat, leave it out once with `scope` (the page or template): the result gives you the id to pass from then on.
 - `role` and `status`: `reviewing` while only looking, `working` while changing frames, `done` when the role is finished.
 - `frames`: the frames the role is on (`item`, `variant`, `format`). Claim only the frames you are about to change: the user can't touch them until you're done, and they keep working on the rest.
-- `line`: what the user sees at the top, under eight words, starting with a verb: "is tightening the story headline", "is making a warmer photo". No file names, sizes, token names or tool names.
+- `line`: what the user sees at the top, under eight words, starting with a verb: "is tightening the story headline", "is making a warmer photo". No file names, sizes, token names or tool names. While a new brand is made, Studio writes this line itself from the step and the files, so leave it out.
 - `say`: a sentence for the thread when it's worth keeping, above all a handoff (see below), without your role's name in front: the thread shows who said it.
 
 The result can include what the user said in the thread since your last update. Act on it before anything else; it overrides your plan. A note about something you made (a flaw in an image, a word they dislike) is fixed before you move on, never recorded and skipped.
@@ -86,6 +86,6 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 
 ## Finish
 
-The task ends with your last message, so finish everything first: every check, every fix, every subagent, in the foreground. Never end on work still running or promised ("I'll wrap up once the verdict arrives"): wait for it, then summarise.
+End the task with `metamorfiles_team_update` and `finished: true`, your summary as `summary`: the task is done at once, and a later call of yours doesn't reopen it. Only new work reported as `working`, or a new question, does. Finish everything first: every check, every fix, every subagent, in the foreground. Never end on work still running or promised ("I'll wrap up once the verdict arrives"): wait for it, then summarise.
 
 End with a plain summary of one or two sentences: what changed and where. Plain sentences, not a document: no headings or bold labels. A question for the user at the end is `metamorfiles_ask_user` before you finish, never a line of the summary. In a task Studio started it shows in a small thread beside the canvas, where the user already sees the frames; anywhere, every extra line buries the answer. The only third sentence allowed is a choice the user still has about this task (in Auto, the option you picked for them). Nothing about other frames, items, or problems that were there before the task, even ones the final check found. Talk as `SKILL.md` of `metamorfiles` says.
