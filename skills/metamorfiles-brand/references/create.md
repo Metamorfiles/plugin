@@ -96,8 +96,8 @@ Notes for the record: why each option, what the user said.
 ```
 
 Each option can carry:
-- `files`: images or SVGs, each with an optional `caption` (a credit, what to take) and `ground` (the
-  colour a logo file is shown on);
+- `files`: images or SVGs, each with an optional `caption` (a credit, what to take), `ground` (the
+  colour a logo file is shown on) and, for a logo route's small mark, `small: true`;
 - `colors`: `{ name, hex, share }`, in the order and proportion they are used;
 - `fonts`: `{ family, file, role }`, the file under `brand/fonts/`;
 - `sample`: the words the fonts are set in, from the brand's own voice.
