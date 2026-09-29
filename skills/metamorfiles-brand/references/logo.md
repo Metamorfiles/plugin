@@ -30,8 +30,8 @@ Two or three routes, of at least two kinds, chosen for the brief:
    idea, never from the category's clichés.
 3. **Pure typography.** The name in the logo's face, set the way a designer sets a wordmark with
    `metamorfiles_make_wordmark`: its weight, width and italic on the face's axes (the result lists
-   them), tracking (tighten a script or a bold face by 1 to 3%, open capitals by 5 to 15%), kerning
-   by the pair where the face's own leaves a gap, and the face's alternates and OpenType features (an
+   them), tracking (open capitals by 5 to 15%; never a joined script, whose letters keep their joins),
+   kerning by the pair where a gap still shows, and the face's alternates and OpenType features (an
    `S.alt`, a swash `R`, `ss01`). One changed letter is often the whole idea.
 
 ## Putting it together
@@ -76,6 +76,10 @@ Look at each file with `metamorfiles_read_file` (`asImage` for an SVG) and at th
 - **Small:** it still reads at 32 px, and the part or the drawing still reads as itself at 16. A
   detail that turns into a blob needs a simpler shape or a bigger one.
 - **One colour:** it is still what it is in one colour.
+- **Even spacing:** Studio closes the pairs a face leaves loose at logo size and keeps a script's
+  joins, whatever the tracking. Look at the name large all the same: a pair that still looks loose or
+  cramped takes `kerning`; a script that should look spaced out is the wrong face, since its letters
+  are drawn to join.
 - **The tweak shows:** someone who knows the face would see what was changed.
 - **Drawn, not clip-art:** a traced drawing has the brand's idea in it, clean curves and no stray
   specks. Draw it again when it could be any business's.
