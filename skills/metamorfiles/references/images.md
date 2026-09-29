@@ -2,14 +2,16 @@
 
 Read this whenever you make, place or crop an image: an `image` variable whose source is `ai`, a page's variants, a repurposed set, or the image maker's part of a team task. The brand's imagery rules and reference images set the look; the frame sets the shape.
 
+Studio keeps every image whole, as the model made it: it never crops a file to fit. Cropping is a design decision, made where the image is used: the frame's `object-fit` and `object-position`, and each format of a repurposed set choosing its own crop from the same whole image. That is why a generated image should be composed for its frame, not cut to it.
+
 ## Getting an image
 
 - Call `metamorfiles_generate_image` without `model`. Studio uses the user's default model, or asks the user itself which model or source to use and remembers the answer. Pass `model` only when the user names one.
-- Sources: ChatGPT through Codex (the user's ChatGPT plan, no key), OpenRouter (one sign-in, many models) and provider keys (OpenAI, Google Gemini, xAI, fal, Replicate, Black Forest Labs, Together, DeepInfra). Sign-ins and keys happen on pages Studio opens in the browser; never ask for a key in the chat.
+- Sources: ChatGPT (the user's ChatGPT plan, one sign-in, no key), OpenRouter (one sign-in, many models) and provider keys (OpenAI, Google Gemini, xAI, fal, Replicate, Black Forest Labs, Together, DeepInfra). Sign-ins and keys happen on pages Studio opens in the browser; never ask for a key in the chat.
 - When the result's status is `generating`, call `metamorfiles_image_status` with its id.
 - Several images at once (seeds, a library, blank photos): start each with `wait: false`, so they are made together, then wait for each with `metamorfiles_image_status`. Started one by one, each waits for the last.
 - When it's `needs_choice` or `needs_connection`, do what its message says: in chat, ask the user or give them the link. In a task Studio started, ask the model choice with `metamorfiles_ask_user` (its options are the models the message lists); a missing connection can't be made there, so say in the thread what to connect and carry on without the image.
-- If this app has its own image tool and the user prefers it, make the image with it and bring the file in with `metamorfiles_import_image`, which crops and saves it. Bring in an existing image (a source design, a photo the user gave) the same way, at its own width and height to keep it whole.
+- If this app has its own image tool and the user prefers it, make the image with it and bring the file in with `metamorfiles_import_image`, which saves it whole. Bring in an existing image (a source design, a photo the user gave) the same way, at its own width and height to keep it whole.
 - Report the cost or limit the result gives.
 
 ## Before you prompt
@@ -24,15 +26,15 @@ Check which model will run: `metamorfiles_image_models` names the default. Then 
 
 | The model's id contains | Read |
 | --- | --- |
-| `gpt-image` | [images-openai.md](images-openai.md) |
+| `chatgpt` or `gpt-image` | [images-openai.md](images-openai.md) |
 | `gemini`, `imagen` or `nano-banana` | [images-gemini.md](images-gemini.md) |
 | `flux` | [images-flux.md](images-flux.md) |
 | anything else | [images-other.md](images-other.md) |
 
 - **Plain sentences, subject first.** What the image shows, then the setting, the light, the framing, then technical details. Concrete materials, colors and shapes, never vague praise ("beautiful", "premium"). Name the subject each time, never "it". About 30 to 80 words; never past 150, where some models stop reading.
 - **Say what it's for**: "background for a social post, the headline sits on the left". Several models change the whole composition on this one line.
-- **Place the empty space and describe it as a thing**: "a bare off-white plaster wall across the left third". Name positions (thirds, corners), and ask for the aspect ratio nearest the frame, since Studio crops to it.
-- **Ask for what should be there, not for what shouldn't.** Most models read "no people" as a request for people. Keep text out with "clean, unmarked surfaces", and never put a word in quotation marks: every model takes a quoted word as text to draw.
+- **Place the empty space and describe it as a thing**: "a bare off-white plaster wall across the left third". Name positions (thirds, corners), and name the shape ("portrait, 4:5"): several models, ChatGPT among them, compose for the shape the prompt states.
+- **Ask for what should be there, not for what shouldn't.** Most models read "no people" as a request for people. Keep text out with "clean, unmarked surfaces", and never put a word in quotation marks: every model takes a quoted word as text to draw. The one image that carries words is a logo drawn whole (`logo.md` of the brand skill): there, quote each word exactly and spell an uncommon one letter by letter.
 - **Light is the biggest lever**: its direction, softness and time of day ("low morning sun from the left, soft long shadows"). Camera words set framing and depth ("close three-quarter view, shallow depth of field"). At most one or two style anchors, never contradictory ones.
 - **The product and the logo come from real files.** Never ask a model to draw packaging text, a logo or an interface. Put the real product photo in the HTML, or pass it as a reference with what must stay exactly as it is.
 - **References by order**: "image 1 is the product photo, image 2 sets the light and palette", and say what each one gives and what must stay unchanged. Studio sends only as many as the model takes.
@@ -44,10 +46,11 @@ Example for a skincare launch post:
 
 ## Generate and place
 
-- Pass the size the image fills in the frame; Studio crops to it and saves under `assets/`. Make it once at the size of the largest format that shows it, and reuse one image across variants when the variant isn't about the image.
-- For choices between directions, make small drafts first (a smaller width and height), let the user pick, then make the chosen one at full size.
-- To change a generated image, change one thing at a time (light, angle, background), and repeat the list of what must stay the same each time.
-- Place it through the variable's value (the page's `page.json` for one variant, the template default for all), then render every format that shows it: a crop that works in the post can cut the product in the story. Adjust the crop with the design's `object-position`.
+- Pass the width and height the image is used at: the model composes for that shape, and Studio saves the result whole under `assets/`. For an image several formats show, pass the format it matters most in, and compose with room around the subject so every other format can crop it well. Make it once and reuse it across variants when the variant isn't about the image.
+- The result can be another size than the one passed: each source makes its own sizes (on a ChatGPT plan OpenAI sets it, about 1.6 megapixels, in the shape the prompt names). When the result says it's smaller than the frame, the design will enlarge it and it may look soft: tell the user, and let them decide on a source that makes larger images.
+- For choices between directions, make each option as the real thing: the one the user chooses is the image used, never made again, since a new one would be a different image.
+- To change a generated image, edit it rather than make a new one: pass it as the first reference and say "Edit image 1:", the one thing to change, and the list of what stays exactly as it is. Change one thing at a time, and repeat that list each time.
+- Place it through the variable's value (the page's `page.json` for one variant, the template default for all), then render every format that shows it: a crop that works in the post can cut the product in the story. Set each format's crop with the design's `object-position`.
 
 ## Check
 
