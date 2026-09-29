@@ -1,6 +1,6 @@
 # The brand in use
 
-Read this for the kit, the fifth step of `create.md`. Mockups show the new brand on this business's
+Read this for the kit, after the three choices of `create.md`. Mockups show the new brand on this business's
 own objects and screens, so the user can judge the whole system before anything is made for real.
 They are presentation, never the brand's imagery: Studio keeps them in their own folder and refuses
 them in templates.
@@ -26,18 +26,19 @@ them in templates.
 
   A surface that carries only the logo happens once at most.
 
-## Ask before making them
+## Decide them, then say so
 
-At the start of the kit, name the surfaces you'd show, and ask with `metamorfiles_ask_user` ("Show it
-on these", recommended, and "Change them"), with the list in your reply when you work from the user's
-own app. The user may swap any for their own. For each surface, say:
+Choose the surfaces from the brief and make them without asking first: the user sees each one
+arrive on the brand board and can ask the team to change any of them. Say which you chose in one
+`say` for the thread ("The swing tag, the tote, the invoice and the studio door. Ask me to swap any
+of them."). For each surface, decide:
 - the part of the system it shows;
 - what it's made of and how the brand is applied, from the list `metamorfiles_make_mockup` takes
   (print, screen-print, thermal-print, paint, vinyl, sticker, embroidery, engraving, emboss, foil,
   display, lightbox), as the business would really make it;
 - how worn it is, from the brief: `new` or `used` for a business that is starting, `worn` or
-  `weathered` only when the brand's age or trade is the point. The answer decides it, never the
-  image model.
+  `weathered` only when the brand's age or trade is the point. You decide it, never the image
+  model.
 
 ## How
 

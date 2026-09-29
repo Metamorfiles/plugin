@@ -27,7 +27,7 @@ their own licensed files.
 - Pair faces that share a skeleton and differ in flesh, or contrast them on purpose. Never pair two
   faces that compete in contrast, width or personality.
 - Pair the expressive with the plain: a display face with character over a quiet text face.
-- The look step's options differ in type logic (`look.md`), so they never share a family.
+- The direction step's options differ in type logic (`look.md`), so they never share a family.
 
 ## Overused
 

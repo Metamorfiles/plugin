@@ -14,7 +14,9 @@ the `metamorfiles` skill; this is the shape of this particular message.
    them a sentence is enough to change any of it.
 4. **What genuinely needs them.** Never more than two, and only real ones: a gap you cannot fill, a
    choice that is theirs. If there is nothing, say nothing.
-5. **One question**, asked with `metamorfiles_ask_user` as well, so it can be answered on the board too.
+5. **What they can do next,** as an offer, never a question: the kit downloads from the brand board,
+   and the team can make the first posts. Studio shows the same offer at the top of the panel, so
+   nothing waits for an answer.
 
 ## Worked example
 
@@ -32,22 +34,21 @@ For Lumen Skincare, Studio's fictional example brand:
 > **One for you.** Your clay is too light to carry text on paper, so I kept it for prices and
 > buttons with ink on top. If you want clay headlines, it needs to go a shade darker.
 >
-> Want a one-color version of the logo for print, or should I start on the first launch post?
+> The kit downloads from the brand board, and I can make the first posts whenever you like.
 
 ## In the panel's thread
 
-When Studio started the task (the brand began from the panel's New brand, or a request with a task
-id), the user reads the handover in a narrow thread beside the board they are already looking at. The
+When the brand is made in a Studio task (it began from the panel's New brand, or a request with a
+task id), the user reads the handover in a narrow thread beside the board they are already looking
+at. It is the `summary` of your last `metamorfiles_team_update`, the one with `finished: true`. The
 same shape, much shorter:
 
 1. **What the brand is**, in two sentences at most. No link: they are on the board.
 2. **What you decided for them**, in one sentence.
 3. **What needs them**, each a short line of its own, at most two.
-4. **The question** is `metamorfiles_ask_user`, never a line of text: two short options, the one you
-   recommend first ("Make the first posts", "Not now"). Its answer decides what happens next in the
-   same task.
 
-About 80 words before the question. Plain sentences: no headings, no bold labels, no bullets for
+No offer and no question: Studio shows "<Brand> is ready" with **Make the first posts** at the top.
+About 80 words. Plain sentences: no headings, no bold labels, no bullets for
 anything that isn't a list of what needs them.
 
 ## What this message never contains
@@ -56,7 +57,7 @@ anything that isn't a list of what needs them.
 - A report of what you ran: checks, the linter, renders, file writes, tool names.
 - A list of everything marked `proposed`. Name the few that would surprise them; the Sources table
   is the complete record and it is one file away.
-- A menu of approvals. One question, and it is a real one.
+- A menu of approvals, or a question to close with. The work is done; the offer is enough.
 - An apology for what the brand doesn't have.
 
 ## Getting it wrong

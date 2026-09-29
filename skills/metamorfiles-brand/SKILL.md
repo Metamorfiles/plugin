@@ -6,7 +6,7 @@ license: MIT
 
 # Translate the brand
 
-**A new brand from nothing?** When the user asks for one, or says there is nothing to translate, or the project has a brief in `brand/process/brief.md`, follow `references/create.md` instead: five choices the user makes on boards Studio draws (direction, look, logo, imagery, kit), then the kit. Everything below still describes the kit it builds.
+**A new brand from nothing?** When the user asks for one, or says there is nothing to translate, or the project has a brief in `brand/process/brief.md`, follow `references/create.md` instead: three choices the user makes on the brand board Studio draws (direction, logo, imagery), then the kit. Everything below still describes the kit it builds.
 
 The brand kit is `brand/DESIGN.md`, in Google Labs' design.md format (version `alpha`, github.com/google-labs-code/design.md), so it also works in Stitch and other design tools. Studio checks it, runs the official design.md linter on it, and generates from it the `--brand-*` tokens in `brand/brand.css` and the `brand-board`: one item whose frames are the guide, a board for each asset folder it lists, and each mockup.
 
