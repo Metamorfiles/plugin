@@ -34,12 +34,26 @@ Two or three routes, of at least two kinds, chosen for the brief:
    by the pair where the face's own leaves a gap, and the face's alternates and OpenType features (an
    `S.alt`, a swash `R`, `ss01`). One changed letter is often the whole idea.
 
+## Putting it together
+
+A route is rarely one file: the name, a mark or character, a tagline, a seal. Put the parts together
+with `metamorfiles_compose_logo`:
+- `stack`: a character over the name, a tagline under it;
+- `row`: a mark beside the name, ornaments around a word;
+- `badge`: a seal, with rings, a disc, text set around the circle and a monogram in the middle;
+- `place`: letters sitting on a drawn line, a part at a point of another;
+- `pattern`: the small mark repeated, turned one way and the other.
+
+Text parts take the wordmark's controls, and any part can take `depth`, like a carved or painted sign.
+
 ## Each route's files
 
 The option's first file is the logo in colour on the paper it's made for; after it, reversed on the
 dark colour and in one colour on white (a part in the letters' colour), every file with its `ground`.
-Studio shows each route large, in use and at the small sizes it will meet, all at the same weight
-whatever their shape, so leave the presenting to the frame.
+Mark the route's small mark (the character, the replaced letter, the monogram, the badge) with
+`small: true`: the profile picture and the small sizes use it, since a whole lockup can't be read at
+16 px. Studio shows each route large, in use and at the small sizes it will meet, all at the same
+weight whatever their shape, so leave the presenting to the frame.
 
 ## Checks before you show it
 
@@ -63,13 +77,14 @@ brand's touchpoints need one:
 - **A seal**: the name stacked inside a simple shape from the brand's world, for stickers, stamps and
   packaging only, never beside the wordmark.
 
-Make them the same way as the route, into `brand/process/logo/`, and add them to the route's files.
+Make them the same way as the route (a seal is a `badge` composition), into `brand/process/logo/`,
+and add them to the route's files.
 
 ## After the choice
 
 Make the chosen route's final files in `brand/logos/` (`logo.svg`, the reversed and one-colour
-versions, the icon or seal): a wordmark with `metamorfiles_make_wordmark` again, a traced drawing
-with `metamorfiles_make_logo_variant` from its SVG. Show them, and declare them in DESIGN.md
+versions, the icon or seal): a wordmark with `metamorfiles_make_wordmark` again, a composition with
+`metamorfiles_compose_logo`, the other colours with `metamorfiles_make_logo_variant` from its SVG. Show them, and declare them in DESIGN.md
 `logos` with their grounds and the source: "set in <face> as outlines with a drawn part" or "drawn
 by <model> and traced", "created and approved by the user on <date>". The clear space is the height
 of the name's capital, or a quarter of the mark's height, on every side.
