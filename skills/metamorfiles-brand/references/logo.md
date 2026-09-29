@@ -44,7 +44,20 @@ with `metamorfiles_compose_logo`:
 - `place`: letters sitting on a drawn line, a part at a point of another;
 - `pattern`: the small mark repeated, turned one way and the other.
 
-Text parts take the wordmark's controls, and any part can take `depth`, like a carved or painted sign.
+Text parts take the wordmark's controls. Any part can take `depth` and an `inline`, together the
+carved or painted letters of an old sign. Ornaments are shapes: a star, a diamond, a `facet` (a cut
+diamond in two tones), a ring, a disc, a rule. A hairline script or a face a weight too light takes
+`thicken`, in the wordmark and in a text part alike.
+
+## A character
+
+A character that is the brand (a mascot, a face between the words) is drawn once, then shown doing
+what the brand does. Draw the first pose as a drawn route (above). Then draw two or three more
+together (`wait: false`), each passing the first pose's SVG as a reference and saying: "Exactly the
+same character as in the reference image: the same shape, proportions, face and style. Only the pose
+changes:" and the pose. Save each with the same `trace` colours. Look at them side by side: a pose
+that changed the character is drawn again. The poses are the route's other files; the first pose is
+its small mark.
 
 ## Each route's files
 
