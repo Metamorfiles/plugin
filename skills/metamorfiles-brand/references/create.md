@@ -152,7 +152,8 @@ a page that says what's what) from the brand board in the panel.
   opens from the user's own address and busy sites block it. One search and a few projects is enough;
   links the user pastes cost the same and are often better.
 - **Logos come from Studio's tools.** A wordmark is set with `metamorfiles_make_wordmark`; a drawn
-  mark is drawn by the image model in black on white and traced (`logo.md`). Words are set in the
+  mark is drawn by the image model against the name and traced; a logo drawn whole is traced in the
+  brand's colours and every word in it read (`logo.md`). Words outside the logo are set in the
   brand's fonts; mockups place the real files (`mockups.md`).
 - **Authorship.** Images made with an image model and chosen with the user are fine for the brand's
   posts and pages. For a sign, packaging or anything trademarked, say in Known gaps that an
