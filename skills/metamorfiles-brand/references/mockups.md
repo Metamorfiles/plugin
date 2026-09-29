@@ -57,7 +57,8 @@ of them."). For each surface, decide:
    would have: that is what the mockup shows.
 3. **The brand on it.** `metamorfiles_make_mockup` takes each layer's four corners on the photo and
    the `surface`: what it is, its material, the method, the condition and its form (flat, curved or
-   soft), and, for a file layer, the words it shows. Studio places the artwork exactly and bakes it
+   soft), and, for a file layer, the words it shows. The corners are the whole surface; the artwork
+   goes inside at its own proportions, as large as fits and centred, so a logo is never stretched. Studio places the artwork exactly and bakes it
    into the photo's light, then the user's image model finishes it into a photograph of the finished
    object. Studio checks the finish against its bake (the artwork in place on a flat surface, no
    mark added, the photo around it unchanged), tries once more when it fails, and keeps its exact
