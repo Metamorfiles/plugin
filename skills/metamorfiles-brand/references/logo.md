@@ -19,13 +19,16 @@ Two or three routes, each a different move on the chosen look:
     a dot, a sun for an o. Draw it as a small SVG in `brand/process/logo/`, one simple shape with a
     `viewBox` and a fill, and pass it as the wordmark's `part`. It comes from the brand's idea, never
     from the category's clichés.
-- **Each route is shown as a set,** every file with its `ground`, so the board also shows each at
-  64, 32 and 16 px:
+- **Each route is shown as a set,** every file with its `ground`, and the board also shows the first
+  at 24, 16 and 12 px:
   - in colour on the ground it is made for;
   - reversed, on the dark colour;
   - in one colour, on white, with the part in the letters' colour (the part's `color`).
 
 ## Checks before you show it
+
+Look at each file with `metamorfiles_read_file` (`asImage` for an SVG) and at the board with
+`metamorfiles_render_preview`, never through a script of your own.
 
 - **Small:** it still reads at 32 px, and the part still reads as itself. A detail that turns into a
   blob at 16 px needs a simpler part or a bigger one.
