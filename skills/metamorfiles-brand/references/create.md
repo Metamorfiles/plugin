@@ -16,7 +16,7 @@ The examples below use Lumen Skincare, Studio's made-up example brand.
 | Step | You prepare | Speaks as | Read | The user |
 |---|---|---|---|---|
 | 1. Direction | two or three directions, each its references, palette in proportion and type pairing, set in the brand's words | `designer` | `research.md`, `look.md`, `fonts.md` | chooses one, or says what to change or mix |
-| 2. Logo | two or three routes, of at least two kinds, each in colour, reversed and in one colour | `designer` | `logo.md` | chooses one, or asks for another |
+| 2. Logo | three routes: the name with a drawn mark, a logo drawn whole, one led by type; each in colour, reversed and in one colour | `designer` | `logo.md` | chooses one, or asks for another |
 | 3. Imagery | the style in words and four seed images | `imager` | `imagery.md` | uses them, or has single ones redone |
 | Kit | DESIGN.md and the brand board: the guide, the images, the brand in use | `designer`, `copywriter` for the voice | `SKILL.md`, `mockups.md` | asks for any change they want |
 
@@ -102,9 +102,9 @@ Each option can carry:
 - `fonts`: `{ family, file, role }`, the file under `brand/fonts/`;
 - `sample`: the words the fonts are set in, from the brand's own voice.
 
-Up to four options; two or three is right, and the imagery step has one per seed. Each `title` is at
-most 60 characters, what the user will call it, and each `line` at most 200, one sentence on why it
-fits the brief. Exactly one option is `recommended`. Writing the direction step also returns the
+Up to four options: two or three directions, three logo routes, one per seed on the imagery step.
+Each `title` is at most 60 characters, what the user will call it, and each `line` at most 200, one
+sentence on why it fits the brief. Exactly one option is `recommended`. Writing the direction step also returns the
 contrast of every pair in each palette, so there is nothing to work out by hand.
 
 Save what a step makes in its own folder as you go (`brand/process/logo/`, `brand/process/imagery/`):
@@ -119,9 +119,10 @@ its frame shows each file as it arrives, so the user watches the step come toget
    whole direction: four to eight references by attribute (logo, colour, type, imagery, layout),
    captioned with the project and what to take; its palette with shares; its type pairing, the faces
    added with `metamorfiles_add_font`; and its `sample`.
-2. **Logo** (`logo.md`). Two or three routes of at least two kinds, each with its own letterforms or
-   drawing, in colour on its paper first, then reversed and in one colour, every file with its
-   `ground`. Studio shows each route in use and at the small sizes it will meet.
+2. **Logo** (`logo.md`). Three routes, one of each kind: the name with a mark drawn against it, a
+   logo drawn whole and traced in the brand's colours, and one led by type (pure typography, a seal
+   or a monogram). Each in colour on its paper first, then reversed and in one colour, every file
+   with its `ground`. Studio shows each route in use and at the small sizes it will meet.
 3. **Imagery** (`imagery.md`). The mode the brand needs (illustration, photography, a character,
    graphic or 3D), the style block, and four seeds made together, one per option, saved in
    `brand/process/imagery/`. The seeds the user keeps are the anchors; grow the library from them
