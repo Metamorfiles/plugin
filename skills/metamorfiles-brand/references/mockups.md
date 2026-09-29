@@ -41,30 +41,32 @@ own app. The user may swap any for their own. For each surface, say:
 
 ## How
 
-1. List an in-use folder in DESIGN.md `assets`: `{ folder: mockups, kind: in-use, title: In use }`.
-2. **The photo, blank.** Generate it with `metamorfiles_generate_image` into `brand/mockups/`: the
+1. **The photo, blank.** Generate it with `metamorfiles_generate_image` into `brand/mockups/`: the
    object in the business's own world (its place, its light, its customers), as it is really used,
    and the surface where the brand goes described as completely blank, fully in frame and
    unobstructed. The surface may be flat, curved (a bottle, a cup, a cap's front) or soft (a
    garment, a tote); only a curve that turns away from the camera is out of reach. A screen is a
-   device with a blank screen.
-3. **The artwork.** Place the brand's own files (a logo, an image), or, for a surface that carries
+   device with a blank screen. Then list the folder in DESIGN.md `assets`:
+   `{ folder: mockups, kind: in-use, title: In use }`.
+2. **The artwork.** Place the brand's own files (a logo, an image), or, for a surface that carries
    more than a mark, design its artwork as `html`: plain markup with inline styles, set in the brand's
    tokens (`var(--brand-…)`) with its files (`../../brand/…`), at the surface's proportions. Real
-   words only: the brand's voice lines and what the brief says, never an invented price, name or
-   date. Place it at the size and position a real one would have: that is what the mockup shows.
-4. **The brand on it.** `metamorfiles_make_mockup` takes each layer's four corners on the photo and
+   words only: the brand's voice lines and what the brief says, never an invented price, name,
+   date or figure (a temperature, a weight, a size). Place it at the size and position a real one
+   would have: that is what the mockup shows.
+3. **The brand on it.** `metamorfiles_make_mockup` takes each layer's four corners on the photo and
    the `surface`: what it is, its material, the method, the condition and its form (flat, curved or
    soft), and, for a file layer, the words it shows. Studio places the artwork exactly and bakes it
    into the photo's light, then the user's image model finishes it into a photograph of the finished
    object. Studio checks the finish against its bake (the artwork in place on a flat surface, no
    mark added, the photo around it unchanged), tries once more when it fails, and keeps its exact
-   bake after two failures. When the tool returns an id, wait for it with `metamorfiles_image_status`.
-5. **Read every word.** The result comes with the artwork's area enlarged and the words it must
+   bake after two failures. Start several mockups together with `wait: false`, then wait for each
+   with `metamorfiles_image_status`.
+4. **Read every word.** The result comes with the artwork's area enlarged and the words it must
    show. Read each one character by character, accents included. If any differs, call
    `metamorfiles_make_mockup` again for a new finish, or with `finish: false` to keep the exact bake.
    The user should never be the one to find it.
-6. **Look at it as a photograph of the finished object.** The artwork sits where it belongs, at the
+5. **Look at it as a photograph of the finished object.** The artwork sits where it belongs, at the
    size a customer would see it, and the photo has none of the image-model mistakes (`imagery.md`).
    Move the corners or redo the photo until it looks made, not placed. Each mockup is its own frame
    of the brand board.

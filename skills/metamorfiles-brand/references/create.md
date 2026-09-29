@@ -97,7 +97,9 @@ Each option can carry:
 - `fonts`: `{ family, file, role }`, the file under `brand/fonts/`;
 - `sample`: the words the fonts are set in, from the brand's own voice.
 
-Up to four options; two or three is right.
+Up to four options; two or three is right. Each `title` is at most 60 characters and each `line`
+at most 200, one sentence; exactly one option is `recommended`. Writing a look step also returns
+the contrast of every pair in each palette, so there is nothing to work out by hand.
 
 ## The steps
 
