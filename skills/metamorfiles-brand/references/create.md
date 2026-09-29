@@ -48,6 +48,9 @@ At every step:
   the user's own app, your reply carries the same question first: the panel link to the board, then
   the options as a short numbered list, the recommended one first with its reason. One question,
   answered in a word. In Auto the recommended one is taken at once; say so in the thread.
+- **Every question has its board.** Ask only about what the canvas shows. A choice moves the brand
+  on: never ask to confirm what the user just chose, and anything you make from it (the final logo
+  files, an icon) appears on the next board or in the kit, where they can see it and change it.
 - **An answer in their own words is the answer.** "A is better but not good enough" means rework A
   and ask again; "C has a cup with two handles" means redo C before anything else.
 - **Record the answer** as `chosen` in the step's file (the imagery step lists the approved seeds,

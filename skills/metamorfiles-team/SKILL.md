@@ -56,7 +56,7 @@ Ask with `metamorfiles_ask_user` wherever you work, in a task Studio started or 
 
 - **In the user's own app**, pass the task id `metamorfiles_team_update` returned, and first write the same question in your reply: the panel link, the options as a short numbered list, the recommended one first with its reason, and that they can answer here or in Studio. Then call `metamorfiles_ask_user` and keep waiting. If they answer in the chat, call it with `waitFor` and `answer`: their words, so the panel closes the question.
 
-- In **Chat** it waits. While it answers `waiting`, call it again with `waitFor` and the question id, for as long as it takes; carry on meanwhile only with work that doesn't depend on the answer. The user may answer in their own words instead of an option: the answer is then their sentence, and you act on what it says (a change, a mix, a redo) rather than taking an option.
+- In **Chat** it waits. While it answers `waiting`, call it again with `waitFor` and the question id, for as long as it takes, and never end your turn while a question is open: the user may answer in the panel. Carry on meanwhile only with work that doesn't depend on the answer. The user may answer in their own words instead of an option: the answer is then their sentence, and you act on what it says (a change, a mix, a redo) rather than taking an option.
 - In **Auto** it returns your recommended option at once and tells the user it was chosen for them. Make the recommendation the one you'd defend.
 - Pass `remember: true` when the answer is a lasting preference for the project (a tone, a rule, a style), not a one-off pick like which headline. Remembered answers come back without asking, and `metamorfiles_get_project` lists them: follow them without asking again.
 
