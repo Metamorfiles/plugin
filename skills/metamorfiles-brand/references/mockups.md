@@ -45,13 +45,17 @@ of them."). For each surface, decide:
 1. **The photo, blank.** Generate it with `metamorfiles_generate_image` into `brand/mockups/`: the
    object in the business's own world (its place, its light, its customers), as it is really used,
    and the surface where the brand goes described as completely blank, fully in frame and
-   unobstructed. The surface may be flat, curved (a bottle, a cup, a cap's front) or soft (a
+   unobstructed. The object is made in its own colour and material in the photo: a box printed in
+   the brand's green is generated as a plain green box, a card as a plain card in the brand's
+   paper, a sign as a board painted its colour. The surface may be flat, curved (a bottle, a cup, a cap's front) or soft (a
    garment, a tote); only a curve that turns away from the camera is out of reach. A screen is a
    device with a blank screen. Then list the folder in DESIGN.md `assets`:
    `{ folder: mockups, kind: in-use, title: In use }`.
-2. **The artwork.** Place the brand's own files (a logo, an image), or, for a surface that carries
-   more than a mark, design its artwork as `html`: plain markup with inline styles, set in the brand's
-   tokens (`var(--brand-…)`) with its files (`../../brand/…`), at the surface's proportions. Real
+2. **The artwork.** Only what is printed or painted on the object, on nothing: place the brand's
+   own files (a logo, an image), or, for a surface that carries more than a mark, design its artwork
+   as `html`: plain markup with inline styles, set in the brand's tokens (`var(--brand-…)`) with its
+   files (`../../brand/…`), at the surface's proportions, with no background: the object's colour
+   is the photo's, never a panel laid over it, and Studio refuses one. Real
    words only: the brand's voice lines and what the brief says, never an invented price, name,
    date or figure (a temperature, a weight, a size). Place it at the size and position a real one
    would have: that is what the mockup shows.
