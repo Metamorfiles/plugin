@@ -13,26 +13,44 @@ brush script, a heavy serif, a condensed or extended grotesque, a stencil (`font
 
 ## Routes
 
-Two or three routes, of at least two kinds, chosen for the brief:
+Two or three routes, of at least two kinds, chosen for the brief. Most logos are the name set in type
+with character, plus one second mark: a character, a symbol, a replaced letter, a monogram or a seal.
+The register decides the kinds: a playful, casual brand suits a character beside chunky, soft type;
+a relaxed premium one suits refined type with one abstract mark or replaced letter; a heritage one
+suits type alone, dressed for its period.
 
-1. **Drawn.** The image model draws a mark, a symbol, a character or hand lettering. Ask
-   `metamorfiles_generate_image` for it in solid black on plain white, flat, no grey, no texture, no
-   shadow, the shapes bold enough to read small, and save it with `trace`: `{ ink, paper }` from the
-   chosen palette, into `brand/process/logo/`. Studio traces it into a clean SVG: the black in the
-   ink, the white it encloses (a face, a counter) in the paper, and the white around it see-through.
-   Make the reversed and one-colour versions from that SVG with `metamorfiles_make_logo_variant`,
-   into the same folder. Right for a character brand, a symbol-led brand and lettering with a hand
-   in it.
+1. **The name with a drawn mark.** Set the name first (`metamorfiles_make_wordmark`, below), then
+   have the image model draw only the mark, a character, a symbol or an abstract shape, with the
+   name's SVG passed as a reference (`references`), saying: "It sits beside the lettering in the
+   reference image, so draw it to match that lettering as if one designer drew both: the same visual
+   weight, its lines as thick as the letters' stems, the same corner roundness and the same
+   character. Draw only the mark, never the letters." Ask for solid black on plain white, flat, no
+   grey, texture or shadow, and save it with `trace`: `{ ink, paper }` from the chosen palette, into
+   `brand/process/logo/`. Studio traces it into a clean SVG: the black in the ink, the white it
+   encloses (a face) in the paper, and the white around it see-through. A mark drawn without the
+   name beside it comes out a different weight, and looks pasted on.
 2. **A wordmark with one drawn part.** The name in the logo's face with one part that takes a
-   letter's place or its accent's: a flame for an acute, a drop for a dot, a sun for an o. Draw the
-   part as a small SVG in `brand/process/logo/` (one simple shape with a `viewBox` and a fill), or
-   have it drawn and traced as above, and pass it as the wordmark's `part`. It comes from the brand's
-   idea, never from the category's clichés.
+   letter's place or its accent's: a flame for an acute, a coconut for an O. Have the part drawn and
+   traced as above, the name passed as its reference too, or draw it as a small SVG with a `viewBox`
+   and a fill, and pass it as the wordmark's `part`. Studio spaces the part by its own shape. It
+   comes from the brand's idea, never from the category's clichés, and alone it is the small mark.
 3. **Pure typography.** The name in the logo's face, set the way a designer sets a wordmark with
    `metamorfiles_make_wordmark`: its weight, width and italic on the face's axes (the result lists
    them), tracking (open capitals by 5 to 15%; never a joined script, whose letters keep their joins),
    kerning by the pair where a gap still shows, and the face's alternates and OpenType features (an
-   `S.alt`, a swash `R`, `ss01`). One changed letter is often the whole idea.
+   `S.alt`, a swash `R`, `ss01`). One changed letter is often the whole idea. Dress it for its period
+   with a composition's `depth` and `inline` and an ornament.
+4. **Drawn whole.** The image model draws the whole logo, lettering and all: right for hand
+   lettering no face can set (a flowing script, a bouncy custom word) and for a character and a name
+   drawn as one. Write the prompt as a brief, never a font's name: the look and feel, the lettering
+   in a designer's words ("a loose, monoline, connected script, like a name written quickly with a
+   thick marker"), the layout, the drawn element, each colour for what it paints, every word spelled
+   out, and "flat vector artwork, like a brand designer's final logo file". Ask for it on a plain
+   background of a colour the logo doesn't use (pure magenta #FF00FF works), and save it with
+   `trace`: `{ colors: [its brand colours], key: "#FF00FF" }`. Studio traces each colour in the
+   brand's exact value and takes the key away, around the logo and inside it (the counter of an O).
+   Then read every word in it letter by letter, accents included, and draw it again when one
+   differs: the user should never be the one to find it.
 
 ## Putting it together
 
@@ -43,6 +61,11 @@ with `metamorfiles_compose_logo`:
 - `badge`: a seal, with rings, a disc, text set around the circle and a monogram in the middle;
 - `place`: letters sitting on a drawn line, a part at a point of another;
 - `pattern`: the small mark repeated, turned one way and the other.
+
+Balance the parts, never just fit them: a character or a face carries as much weight as the name
+beside it. In a stack a character is about half the name's width; in a row a face is about one and
+a half times the capitals' height. Look at the lockup small: the part that disappears first is too
+small or too light.
 
 Text parts take the wordmark's controls. Any part can take `depth` and an `inline`, together the
 carved or painted letters of an old sign. Ornaments are shapes: a star, a diamond, a `facet` (a cut
@@ -101,7 +124,8 @@ and add them to the route's files.
 
 Make the chosen route's final files in `brand/logos/` (`logo.svg`, the reversed and one-colour
 versions, the icon or seal): a wordmark with `metamorfiles_make_wordmark` again, a composition with
-`metamorfiles_compose_logo`, the other colours with `metamorfiles_make_logo_variant` from its SVG. Show them, and declare them in DESIGN.md
-`logos` with their grounds and the source: "set in <face> as outlines with a drawn part" or "drawn
-by <model> and traced", "created and approved by the user on <date>". The clear space is the height
+`metamorfiles_compose_logo`, the other colours with `metamorfiles_make_logo_variant` from its SVG.
+Show them, and declare them in DESIGN.md `logos` with their grounds and the source: "set in <face>
+as outlines with a drawn part", "drawn by <model> and traced" or "drawn whole by <model> and traced
+in the brand's colours", "created and approved by the user on <date>". The clear space is the height
 of the name's capital, or a quarter of the mark's height, on every side.
