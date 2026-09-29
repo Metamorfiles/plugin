@@ -25,25 +25,28 @@ suits type dressed for its period.
    name's SVG passed as a reference (`references`), saying: "It sits beside the lettering in the
    reference image, so draw it to match that lettering as if one designer drew both: the same visual
    weight, its lines as thick as the letters' stems, the same corner roundness and the same
-   character. Draw only the mark, never the letters." Ask for solid black on plain white, flat, no
-   grey, texture or shadow, and save it with `trace`: `{ ink, paper }` from the chosen palette, into
-   `brand/process/logo/`. Studio traces it into a clean SVG: the black in the ink, the white it
-   encloses (a face) in the paper, and the white around it see-through. A mark drawn without the
-   name beside it comes out a different weight, and looks pasted on. The drawn part can also take a
-   letter's place or its accent's (a flame for an acute, a coconut for an O): pass it as the
-   wordmark's `part`, and Studio spaces it by its own shape. It comes from the brand's idea, never
-   from the category's clichés, and alone it is the small mark.
+   character. Draw only the mark, never the letters." Describe it as designed, in the chosen
+   palette's flat colours, each colour for what it paints, with no gradient, texture or shadow, and
+   save it with `trace`: `{ colors: [every colour it uses] }`, the light ones inside it too (a face's
+   white), into `brand/process/logo/`. Studio has it drawn on a transparent background and traces it
+   into a clean SVG in those exact colours. A mark drawn without the name beside it comes out a
+   different weight, and looks pasted on. The drawn part can also take a letter's place or its
+   accent's (a flame for an acute, a coconut for an O): pass it as the wordmark's `part`, and Studio
+   spaces it by its own shape. It still reads as that letter or accent, in its place. It comes from
+   the brand's idea, never from the category's clichés, and alone it is the small mark.
 2. **Drawn whole.** The image model draws the whole logo, lettering and all, and Studio makes it a
    vector: the route for hand lettering no face can set (a flowing script, a bouncy custom word) and
    for a character and a name drawn as one. Write the prompt as a brief, never a font's name: the
    look and feel, the lettering in a designer's words ("a loose, monoline, connected script, like a
    name written quickly with a thick marker"), the layout, the drawn element, each colour for what
-   it paints, every word spelled out, and "flat vector artwork, like a brand designer's final logo
-   file". Ask for it on a plain background of a colour the logo doesn't use (pure magenta #FF00FF
-   works), and save it with `trace`: `{ colors: [its brand colours], key: "#FF00FF" }`. Studio
-   traces each colour in the brand's exact value and takes the key away, around the logo and inside
-   it (the counter of an O). Then read every word in it letter by letter, accents included, and draw
-   it again when one differs: the user should never be the one to find it.
+   it paints, every word in quotes (an uncommon one spelled letter by letter), and "flat vector
+   artwork, like a brand designer's final logo file". A joined script joins letters within a word,
+   never across the space between words: say each word is written on its own with a clear space
+   after it. Accents keep their shape and their place over their letter. Save it with `trace`:
+   `{ colors: [every colour it uses] }`; Studio has it drawn on a transparent background and traces
+   each colour in the brand's exact value. Then read every word in it letter by letter, accents
+   included, see that the words stand apart, and draw it again when one differs: the user should
+   never be the one to find it.
 3. **Led by type.** Pure typography, a badge or seal, or a monogram: the name in the logo's face,
    set the way a designer sets a wordmark with `metamorfiles_make_wordmark`: its weight, width and
    italic on the face's axes (the result lists them), tracking (open capitals by 5 to 15%; never a
@@ -76,9 +79,9 @@ diamond in two tones), a ring, a disc, a rule. A hairline script or a face a wei
 
 A character that is the brand (a mascot, a face between the words) is drawn once, then shown doing
 what the brand does. Draw the first pose as a drawn route (above). Then draw two or three more
-together (`wait: false`), each passing the first pose's SVG as a reference and saying: "Exactly the
-same character as in the reference image: the same shape, proportions, face and style. Only the pose
-changes:" and the pose. Save each with the same `trace` colours. Look at them side by side: a pose
+together (`wait: false`), each passing the first pose's SVG as image 1 and saying: "Draw exactly the
+same character as in image 1: the same shape, proportions, face and style. Only the pose changes:"
+and the pose. Save each with the same `trace` colours. Look at them side by side: a pose
 that changed the character is drawn again. The poses are the route's other files; the first pose is
 its small mark.
 
