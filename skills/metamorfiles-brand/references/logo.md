@@ -13,11 +13,12 @@ brush script, a heavy serif, a condensed or extended grotesque, a stencil (`font
 
 ## Routes
 
-Two or three routes, of at least two kinds, chosen for the brief. Most logos are the name set in type
-with character, plus one second mark: a character, a symbol, a replaced letter, a monogram or a seal.
-The register decides the kinds: a playful, casual brand suits a character beside chunky, soft type;
+Always three routes, one of each kind, so the user chooses between real alternatives: the name with
+a drawn mark, a logo drawn whole, and one led by type. Most logos are the name set in type with
+character plus one second mark (a character, a symbol, a replaced letter, a monogram, a seal), and
+the register shapes each route: a playful, casual brand suits a character beside chunky, soft type;
 a relaxed premium one suits refined type with one abstract mark or replaced letter; a heritage one
-suits type alone, dressed for its period.
+suits type dressed for its period.
 
 1. **The name with a drawn mark.** Set the name first (`metamorfiles_make_wordmark`, below), then
    have the image model draw only the mark, a character, a symbol or an abstract shape, with the
@@ -28,29 +29,28 @@ suits type alone, dressed for its period.
    grey, texture or shadow, and save it with `trace`: `{ ink, paper }` from the chosen palette, into
    `brand/process/logo/`. Studio traces it into a clean SVG: the black in the ink, the white it
    encloses (a face) in the paper, and the white around it see-through. A mark drawn without the
-   name beside it comes out a different weight, and looks pasted on.
-2. **A wordmark with one drawn part.** The name in the logo's face with one part that takes a
-   letter's place or its accent's: a flame for an acute, a coconut for an O. Have the part drawn and
-   traced as above, the name passed as its reference too, or draw it as a small SVG with a `viewBox`
-   and a fill, and pass it as the wordmark's `part`. Studio spaces the part by its own shape. It
-   comes from the brand's idea, never from the category's clichés, and alone it is the small mark.
-3. **Pure typography.** The name in the logo's face, set the way a designer sets a wordmark with
-   `metamorfiles_make_wordmark`: its weight, width and italic on the face's axes (the result lists
-   them), tracking (open capitals by 5 to 15%; never a joined script, whose letters keep their joins),
-   kerning by the pair where a gap still shows, and the face's alternates and OpenType features (an
-   `S.alt`, a swash `R`, `ss01`). One changed letter is often the whole idea. Dress it for its period
-   with a composition's `depth` and `inline` and an ornament.
-4. **Drawn whole.** The image model draws the whole logo, lettering and all: right for hand
-   lettering no face can set (a flowing script, a bouncy custom word) and for a character and a name
-   drawn as one. Write the prompt as a brief, never a font's name: the look and feel, the lettering
-   in a designer's words ("a loose, monoline, connected script, like a name written quickly with a
-   thick marker"), the layout, the drawn element, each colour for what it paints, every word spelled
-   out, and "flat vector artwork, like a brand designer's final logo file". Ask for it on a plain
-   background of a colour the logo doesn't use (pure magenta #FF00FF works), and save it with
-   `trace`: `{ colors: [its brand colours], key: "#FF00FF" }`. Studio traces each colour in the
-   brand's exact value and takes the key away, around the logo and inside it (the counter of an O).
-   Then read every word in it letter by letter, accents included, and draw it again when one
-   differs: the user should never be the one to find it.
+   name beside it comes out a different weight, and looks pasted on. The drawn part can also take a
+   letter's place or its accent's (a flame for an acute, a coconut for an O): pass it as the
+   wordmark's `part`, and Studio spaces it by its own shape. It comes from the brand's idea, never
+   from the category's clichés, and alone it is the small mark.
+2. **Drawn whole.** The image model draws the whole logo, lettering and all, and Studio makes it a
+   vector: the route for hand lettering no face can set (a flowing script, a bouncy custom word) and
+   for a character and a name drawn as one. Write the prompt as a brief, never a font's name: the
+   look and feel, the lettering in a designer's words ("a loose, monoline, connected script, like a
+   name written quickly with a thick marker"), the layout, the drawn element, each colour for what
+   it paints, every word spelled out, and "flat vector artwork, like a brand designer's final logo
+   file". Ask for it on a plain background of a colour the logo doesn't use (pure magenta #FF00FF
+   works), and save it with `trace`: `{ colors: [its brand colours], key: "#FF00FF" }`. Studio
+   traces each colour in the brand's exact value and takes the key away, around the logo and inside
+   it (the counter of an O). Then read every word in it letter by letter, accents included, and draw
+   it again when one differs: the user should never be the one to find it.
+3. **Led by type.** Pure typography, a badge or seal, or a monogram: the name in the logo's face,
+   set the way a designer sets a wordmark with `metamorfiles_make_wordmark`: its weight, width and
+   italic on the face's axes (the result lists them), tracking (open capitals by 5 to 15%; never a
+   joined script, whose letters keep their joins), kerning by the pair where a gap still shows, and
+   the face's alternates and OpenType features (an `S.alt`, a swash `R`, `ss01`). One changed letter
+   is often the whole idea. Dress it for its period with a composition's `depth`, `inline` and an
+   ornament, or build it into a seal (below).
 
 ## Putting it together
 
@@ -114,8 +114,9 @@ A long wordmark can't fill a round sticker, a stamp or an app icon. Add a compac
 brand's touchpoints need one:
 - **An icon** from the part or the drawing alone (the flame, the drop, the character's head), filling
   a rounded square on a brand colour.
-- **A seal**: the name stacked inside a simple shape from the brand's world, for stickers, stamps and
-  packaging only, never beside the wordmark.
+- **A seal**: the name stacked inside a simple shape from the brand's world, or set around a circle,
+  for stickers, stamps and packaging, never beside the wordmark. Nothing crosses its letters: text
+  around a circle reaches the edge of the size you give it, so a ring goes a little larger.
 
 Make them the same way as the route (a seal is a `badge` composition), into `brand/process/logo/`,
 and add them to the route's files.
