@@ -89,10 +89,12 @@ always built this way.
 | --- | --- |
 | Carved, chiselled, engraved sign | A condensed or engraved capital from the study, with `inline` (a line inside the strokes) and `depth` (the carved side) as a compose text part; a `facet` diamond as its ornament |
 | Painted sign, shadow letters | A display face with `depth` in a second colour |
-| A marker or brush script | A script or brush face (`fonts.md`, Scripts and brush), `thicken` if its strokes are too thin |
+| A monoline handwritten script, "like a marker" | A refined handwriting face (`fonts.md`, Hands: the Playwrite families, Nothing You Could Do), thickened to the marker's weight: the marker is the stroke, not graffiti. A tag or graffiti face only when the brief says street or graffiti |
+| A brush script | A brush face (`fonts.md`, Scripts and brush), `thicken` if its strokes are too thin |
 | Handwritten, casual | A hand face (`fonts.md`, Hands), for the name or one line only |
 | Bouncy, jumping capitals | A heavy or condensed display face with `moves` |
 | Letters cut from dough, inflated, soft | A fat rounded display face (`fonts.md`, Geometric and rounded, Loud and playful display) |
+| Bold, chunky capitals with soft corners, even condensed ones | Heavy faces with rounded corners (`fonts.md`, Chunky and soft): Lilita One, Passion One, Titan One, Bowlby One. A hard-cornered condensed face (Anton, Big Shoulders) loses the softness; when none in the study has both, the drawn route leads |
 | A letter that is an object | The face, with the object drawn as a `part` in that letter's place |
 
 When no face in the study carries a precise look, say so and show the closest, rather than drawing
@@ -101,7 +103,9 @@ the letters.
 ## Taglines and other words
 
 A tagline, a place, a year, the words around a seal: real type, set as text parts of
-`metamorfiles_compose_logo` with the wordmark's controls. Much smaller than the name (a quarter to a
+`metamorfiles_compose_logo` with the wordmark's controls. Put a line on the side of the name whose
+outline is flattest: below a script or a lowercase name with tall letters (an l, a k, a looped d),
+whose top edge is ragged; above or below capitals, whose top edge is even. Much smaller than the name (a quarter to a
 third of its capital height), in a quieter face or the brand's text face, capitals tracked open. It
 is dropped from the small versions, where it can't be read.
 

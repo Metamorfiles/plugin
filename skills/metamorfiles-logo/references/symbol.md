@@ -68,7 +68,10 @@ Only the drawing: no letters, words or numbers, no frame, no shadow, no gradient
 ## A part in a letter's place
 
 A drawn part can take a letter's place (a donut for an O, a crest inside an O) or its accent's (a
-flame for an acute). Draw it at the letter's proportions ("as wide as it is tall, the size of a
+flame for an acute). Never in a script or hand-lettered name: a drawn shape in joined or handwritten letters breaks
+their flow, and a mark over a letter (a drop for an i's dot) never sits where the hand would have
+put it. A script's route 1 puts its mark beside or under the name instead, or the route is led by
+type. Draw it at the letter's proportions ("as wide as it is tall, the size of a
 capital O in image 1, its ring as thick as the letters' stems"), then pass it as the wordmark's
 `part` with `replaces`. Studio sizes it to the letter's box and spaces it by its own shape; adjust
 with `scale`, `dx` and `dy`. It must still read as that letter in the word. Alone, it is the route's

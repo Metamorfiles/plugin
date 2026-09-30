@@ -145,12 +145,19 @@ These carry their finish inside the face. For a finish on another face, add Stud
 
 Japanese files are large, so a type study of them takes minutes: study three to five.
 
+**Chunky and soft**
+- Lilita One: heavy, slightly condensed, softly rounded corners; friendly and loud.
+- Passion One: heavy and tight with rounded corners; posters and food.
+- Titan One: a rounded poster heavyweight.
+- Bowlby One: heavy capitals with soft edges.
+- Baloo 2: rounded, with weights; friendly at every size.
+- Sniglet: bubbly and round.
+
 **Loud and playful display**
 - Shrikhand: a fat italic; food and fun.
 - Bagel Fat One: a round heavyweight.
 - Rammetto One: wide and blunt.
 - Chango: fat and bouncy.
-- Titan One: a rounded poster face.
 - Climate Crisis: its weight falls with a year axis; statement pieces.
 - Tilt Warp: letters tilted in 3D.
 - Protest Strike: a protest-sign display face.
@@ -186,6 +193,8 @@ Japanese files are large, so a type study of them takes minutes: study three to 
 A script is set as the wordmark or one line, never as text.
 
 **Hands**
+- The Playwrite families (Playwrite US Trad, Playwrite GB S, Playwrite IT Moderna and others): refined
+  school handwriting, joined; thickened, a clean marker script.
 - Nothing You Could Do: a loose, personal hand.
 - Mynerve: a neat handwriting.
 - Covered By Your Grace: a marker hand.

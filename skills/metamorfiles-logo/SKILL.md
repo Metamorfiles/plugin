@@ -58,7 +58,8 @@ choose and set it: `references/wordmark.md`.
 One of each kind, so the user chooses between real alternatives:
 
 1. **The name with a drawn mark.** The name set from its face, and a mark or character beside or
-   above it, or a drawn part taking one letter's place or its accent's. Set the name first, then
+   above it, or a drawn part taking one letter's place or its accent's (never inside a script or
+   handwritten name). Set the name first, then
    draw the mark to match it: `references/symbol.md`. A character is designed with the
    `metamorfiles-character` skill.
 2. **Drawn whole.** The image model draws the name and its drawing as one, and Studio traces it:
