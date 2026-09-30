@@ -136,9 +136,10 @@ its frame shows each file as it arrives, so the user watches the step come toget
 ## The steps
 
 1. **Direction** (`references/research.md`, `references/look.md`). The brief's facts, touchpoints and
-   category codes go into `brief.md`. Collect references with `metamorfiles_collect_references`: one
-   search on the business's words, or the user's own links, and a few projects; they appear on the
-   brief's frame as they arrive. Group what's good into two or three directions that differ in feel.
+   category codes go into `brief.md`. Search with `metamorfiles_search_references` on the business's plain
+   words, choose the projects worth opening from the covers, and collect them with
+   `metamorfiles_collect_references`, the user's own links first; they appear on the brief's frame as
+   they arrive. Group what's good into two or three directions that differ in feel.
    Each option is a whole direction: four to eight references by attribute (logo, colour, type,
    imagery, layout), captioned with the project and what to take; its palette with shares; its type
    pairing, the faces added with `metamorfiles_add_font`; and its `sample`.
