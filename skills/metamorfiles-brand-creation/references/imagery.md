@@ -1,6 +1,6 @@
 # Imagery
 
-Read this for the imagery step of `create.md`, after `images.md` of the `metamorfiles` skill, which
+Read this for the imagery step of `SKILL.md`, after `images.md` of the `metamorfiles` skill, which
 holds how to prompt each image model. This file is what a new brand's imagery needs on top: a
 locked style, anchors the user approves, and a library grown from them.
 
@@ -10,8 +10,7 @@ Decide it from the chosen direction and the brief, and say it in the thread:
 - **Illustration:** drawings carry the brand. Common for food, kids, community and culture brands,
   and any brand with humour.
 - **Photography:** real product, place and people. Lumen, the example brand, is photographic.
-- **A character:** one recurring figure or a family of them hosts the brand. It needs a character
-  bible (below).
+- **A character:** one recurring figure or a family of them hosts the brand (below).
 - **Graphic:** shapes, a pattern, or type itself as the image, with no pictures at all. Common for
   technology, finance, professional services and cultural institutions. Seeds are compositions:
   made with the image model in a flat graphic style, or drawn by you as SVG when they are pure
@@ -68,15 +67,10 @@ drawn that the style block forbids. Redo from the anchors when it drifts.
 
 ## A character
 
-A brand with a mascot writes its **character bible** in the imagery folder's `note`: its name, shape,
-proportions, colours, features, what it wears, how it moves and what it never does. Then:
-1. One approved front view: the anchor.
-2. The turnaround, one view at a time from the anchor (three-quarter, side, back), each passed the
-   anchor as a reference and told to change only the angle.
-3. Poses and expressions the same way, from the anchor.
-
-List the character's folder in `assets` with `kind: character`, the files named in order
-(`01-front.png`, `02-three-quarter.png`), and its board shows the turnaround and the poses.
+A brand whose imagery is a character designs it with the `metamorfiles-character` skill: its bible,
+its construction, candidates drawn alone and traced, one anchor the user approves, and every pose
+from that anchor. Its seeds on this step are the character in the brand's moments, each made from
+the anchor. List its folder in `assets` with `kind: character`.
 
 ## In the kit
 

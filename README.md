@@ -116,6 +116,9 @@ npx metamorfiles@latest images
 | `activate` | Activate Studio on this computer with your download key |
 | `metamorfiles` | Any Studio work; explains the project and routes to the right workflow |
 | `metamorfiles-brand` | Set up the brand kit from a website, guide or logos |
+| `metamorfiles-brand-creation` | A new brand from nothing: direction, logo, imagery and the kit |
+| `metamorfiles-logo` | A logo for a new brand: the name set in a chosen typeface, marks, seals and lockups, checked at every size |
+| `metamorfiles-character` | A mascot designed from its construction, and new poses that stay on model |
 | `metamorfiles-template` | A new or changed template from a brief, reference or screenshot |
 | `metamorfiles-variants` | A page of A/B variants or spreadsheet rows, exported in several formats |
 | `metamorfiles-repurpose` | Adapt one design to other platforms and sizes |

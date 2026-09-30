@@ -1,6 +1,6 @@
 # Palette and type
 
-Read this for the direction step of `create.md`: each direction's palette and type pairing, taken
+Read this for the direction step of `SKILL.md`: each direction's palette and type pairing, taken
 from its references and set in the brand's own words.
 
 ## Palettes
@@ -23,7 +23,7 @@ Each direction has a complete palette, not a swatch list:
 Each direction comes with a pairing, and the pairings differ too:
 - **A face with character for the one line that matters** (headlines, product names), and **a quiet
   workhorse for everything that informs.** Two faces for text; the logo gets its own face on the
-  logo step (`logo.md`), never set as text.
+  logo step (the `metamorfiles-logo` skill), never set as text.
 - Choose the faces from `fonts.md`, by what the direction needs. Add each with
   `metamorfiles_add_font` before you write the option.
 - **Every face covers the languages the brand writes in.** A business in Seoul posts in Korean, one in

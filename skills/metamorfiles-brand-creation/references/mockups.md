@@ -1,6 +1,6 @@
 # The brand in use
 
-Read this for the kit, after the three choices of `create.md`. Mockups show the new brand on this business's
+Read this for the kit, after the three choices of `SKILL.md`. Mockups show the new brand on this business's
 own objects and screens, so the user can judge the whole system before anything is made for real.
 They are presentation, never the brand's imagery: Studio keeps them in their own folder and refuses
 them in templates.

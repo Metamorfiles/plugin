@@ -1,12 +1,12 @@
 ---
 name: metamorfiles-brand
-description: Use when the user wants to set up, import or change the brand in a Metamorfiles project, for example from their website, their app's theme or styles, a brand guidelines PDF, logos or reference images, or to create a new brand from nothing. Translates the brand (or creates it with the user) into brand/DESIGN.md (the design.md format), from which Studio generates the brand tokens and the brand board.
+description: Use when the user wants to set up, import or change an existing brand in a Metamorfiles project, for example from their website, their app's theme or styles, a brand guidelines PDF, logos, fonts or reference images, or to change its colours, type, voice or logo files. Translates the brand into brand/DESIGN.md (the design.md format), from which Studio generates the brand tokens and the brand board. A brand made from nothing is metamorfiles-brand-creation.
 license: MIT
 ---
 
 # Translate the brand
 
-**A new brand from nothing?** When the user asks for one, or says there is nothing to translate, or the project has a brief in `brand/process/brief.md`, follow `references/create.md` instead: three choices the user makes on the brand board Studio draws (direction, logo, imagery), then the kit. Everything below still describes the kit it builds.
+**A new brand from nothing?** When the user asks for one, or says there is nothing to translate, or the project has a brief in `brand/process/brief.md`, follow the `metamorfiles-brand-creation` skill instead: three choices the user makes on the brand board Studio draws (direction, logo, imagery), then the kit. Everything below still describes the kit it builds.
 
 The brand kit is `brand/DESIGN.md`, in Google Labs' design.md format (version `alpha`, github.com/google-labs-code/design.md), so it also works in Stitch and other design tools. Studio checks it, runs the official design.md linter on it, and generates from it the `--brand-*` tokens in `brand/brand.css` and the `brand-board`: one item whose frames are the guide, a board for each asset folder it lists, and each mockup.
 
@@ -103,6 +103,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 
   Show the preview from `metamorfiles_make_logo_variant`, check that its colors meeting the background reach 3:1, and wait for a yes. Then write `generated from <file>, approved by the user on <date>` in the logo's `source` and in Sources.
 - When no file suits a background and the user declines a variant, the official logo sits on a plate of its own background color.
+- A brand with no logo at all gets one designed with the `metamorfiles-logo` skill, only when the user asks for it.
 - The Logo section says which file goes on which background, the clear space, and that logos are never recolored. The clear space is the brand's own rule; when its guidelines give none, propose one and mark it `proposed` in Sources, as a guide for layouts rather than a rule of the brand.
 
 ## DESIGN.md template
