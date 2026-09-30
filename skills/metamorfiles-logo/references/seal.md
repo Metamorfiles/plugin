@@ -9,12 +9,14 @@ A `badge` composition with `metamorfiles_compose_logo`:
 - a `ring` or a `disc` as its edge, in the brand's colour;
 - the name, and a second line if the brief gives one (the place, a year the user gave, the trade),
   as text parts set `around: true`, reading clockwise from the top;
-- the mark, the monogram or the name stacked short in the middle;
+- one element in the middle: the mark, the monogram or the name stacked short, never two of them
+  (a letter and an ornament under it compete for the centre);
 - small ornaments between the words where the circle's text meets: a `star`, a `diamond` or a
   `facet`.
 
-Text around a circle reaches the edge of the size you give it, so a ring goes a little larger than
-the text. Nothing crosses the letters. Keep it to two rings at most, and one colour plus the ground,
+Between a ring outside it and a ring or disc inside it, text around the circle is centred in their
+band by Studio, as far from each; give the rings the sizes you want and the text a size between
+them. Nothing crosses the letters. Keep it to two rings at most, and one colour plus the ground,
 so it survives a stamp and a one-colour print. Never invent a founding year or a claim.
 
 ## A monogram

@@ -6,7 +6,8 @@ logo drawn whole (route 2) is one part: its supporting words are text parts comp
 
 ## Layouts
 
-- `stack`: parts one under the other, centred: a character over the name, a tagline under it. `size`
+- `stack`: parts one under the other, centred: a character over the name, a tagline under it (under
+  a script or tall lowercase name always, never above it: `wordmark.md`). `size`
   is a share of the widest part's width.
 - `row`: parts side by side, centred on a line: a mark beside the name. `size` is a share of the
   tallest part's height.
