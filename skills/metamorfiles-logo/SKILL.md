@@ -1,27 +1,26 @@
 ---
 name: metamorfiles-logo
-description: Use to design a logo in Metamorfiles Studio for a brand that has none, including the logo step of a new brand, with the name set from a real typeface after a type study, drawn marks and characters traced into vectors, lockups, seals, monograms and icons, each route checked at every size it will meet. Use it whenever the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a new brand, even if they describe the look they want in their own words. Not for a brand that already has a logo, whose official files are never redrawn (metamorfiles-brand).
+description: Use to design a logo in Metamorfiles Studio for a brand that has none, including the logo step of a new brand, in three routes (the name set from a real typeface with a drawn mark or ornaments, a logo drawn whole by the image model and traced, and one led by type such as a wordmark, seal or monogram), each checked at every size it will meet. Use it whenever the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a new brand, even if they describe the look they want in their own words. Not for a brand that already has a logo, whose official files are never redrawn (metamorfiles-brand).
 license: MIT
 ---
 
 # The logo
 
 A logo is made the way a designer makes one: an idea first, the name set in a face chosen from a
-study, a mark drawn to sit beside it, and the parts put together and tested small before anyone sees
-them. You prepare three strong routes and recommend one; the user chooses.
+study or drawn by hand, a drawing that belongs to it, and the parts put together and tested small
+before anyone sees them. You prepare three strong routes and recommend one; the user chooses.
 
-## Words are type
+## Words
 
-Every word in a logo is real type set from a font: the name, a tagline, the words around a seal, a
-monogram's letters, words in any script. Set them with `metamorfiles_make_wordmark`, or as text
-parts of `metamorfiles_compose_logo`. The image model draws only what no font has: a mark, a
-character, a shape that takes a letter's place. It draws it alone, on a transparent background, and
-Studio traces it into a vector.
-
-This is the rule the rest of the skill is built on. Image models draw letters that are nearly right:
-stems that vary, curves that wobble, spacing no one chose, and a trace keeps every flaw. A look that
-seems to need drawn letters (a carved sign, a marker script, bouncy hand-set capitals) is found in a
-real face and finished with Studio's controls (`references/wordmark.md`).
+- **Supporting words are always real type**: a tagline, the trade, the place, the words around a
+  seal, a monogram's letters, a second script. Set them with `metamorfiles_make_wordmark` or as text
+  parts of `metamorfiles_compose_logo`.
+- **The name is set from a real face** in routes 1 and 3, and **drawn** only in route 2, the logo
+  drawn whole, when its look is expressive hand lettering (a script, chubby, bouncy or hand-cut
+  letters).
+- **Precise letters are never drawn.** Carved or faceted strokes, engraved capitals, fine serifs and
+  even geometric capitals come out nearly right from an image model, and a trace keeps every flaw:
+  find them in a real face and finish them with Studio's controls (`references/wordmark.md`).
 
 ## Checklist
 
@@ -58,13 +57,22 @@ choose and set it: `references/wordmark.md`.
 
 One of each kind, so the user chooses between real alternatives:
 
-1. **The name with a drawn mark.** A symbol, an abstract shape or a character beside or above the
-   name, or a drawn part taking one letter's place. Set the name first, then draw the mark to match
-   it: `references/symbol.md`. A character is designed with the `metamorfiles-character` skill.
-2. **Led by type.** The name alone, with one idea in the letters: an alternate, a joined pair, a
-   letter replaced by a drawn part, a carved or inline finish, a bounce. `references/wordmark.md`.
-3. **A compact emblem.** A seal, a badge, a monogram or a stacked sign that fills a round sticker, a
-   stamp or an app icon: `references/seal.md`.
+1. **The name with a drawn element.** The name set from its face, and one kind of drawing chosen
+   from the brief: a mark or character beside or above it, a drawn part taking one letter's place or
+   its accent's, or ornaments around it (stars, a laurel, steam, a leaf over an i). Set the name
+   first, then draw to match it: `references/symbol.md`. A character is designed with the
+   `metamorfiles-character` skill.
+2. **Drawn whole.** The image model draws the name and its drawing as one, and Studio traces it:
+   for expressive hand lettering no face sets and for a character and a name drawn as one. The
+   supporting words are composed around it in real type: `references/drawn.md`.
+3. **Led by type.** Pure typography with one idea in the letters (an alternate, a swash, a joined
+   pair, a carved or inline finish, a bounce), a seal or badge, or a monogram:
+   `references/wordmark.md`, `references/seal.md`.
+
+A name that needs nothing drawn is route 3, never route 1 without its drawing: the three routes
+differ in kind. When the brief's lettering is precise (carved, engraved, a fine serif, even geometric
+capitals), route 2 would draw it badly: leave it out, make two routes of route 3's kinds instead (a
+wordmark and a seal), and say why in the notes.
 
 The register shapes each route: a playful brand suits chunky, soft type beside a character; a
 relaxed premium one refined type with one abstract mark; a heritage one type dressed for its period.
@@ -110,7 +118,8 @@ height of the name's capital, or a quarter of the mark's height, on every side.
 | Read | When |
 | --- | --- |
 | [references/wordmark.md](references/wordmark.md) | Choosing the logo face, setting and customising the name, taglines, the small-size version |
-| [references/symbol.md](references/symbol.md) | Drawing a mark or a part that takes a letter's place |
+| [references/symbol.md](references/symbol.md) | Drawing a mark, ornaments, or a part that takes a letter's place |
+| [references/drawn.md](references/drawn.md) | Route 2, the logo drawn whole |
 | [references/seal.md](references/seal.md) | A seal, badge, monogram or icon |
 | [references/lockups.md](references/lockups.md) | Putting the parts together |
 | [references/vector.md](references/vector.md) | How a drawing is made and traced |

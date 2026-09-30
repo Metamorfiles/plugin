@@ -1,7 +1,7 @@
 # The name in type
 
-How the logo face is chosen and the name set, customised and finished. Every word of a logo is set
-this way, from a real font, whatever look the brief describes.
+How the logo face is chosen and the name set, customised and finished: the name in routes 1 and 3,
+and every supporting word in all three. Only route 2 draws the name (`drawn.md`).
 
 ## Contents
 
@@ -76,10 +76,14 @@ face would see what changed and no one else would struggle to read it:
 3. **The mark's logic in the letters**: the same corner roundness, the same weight, one cut angle
    shared by the mark and the type.
 
-Redrawing the whole word is lettering, and lettering isn't made here: a look that needs it is found
-in a face (below).
+Redrawing the whole word is lettering: expressive lettering is route 2 (`drawn.md`); precise
+lettering is found in a face (below).
 
 ## Looks that seem drawn
+
+In routes 1 and 3, a look that seems to need drawn letters is built from a real face. Route 2 can
+draw the expressive ones (a script, bouncy or dough-like letters) instead; the precise ones are
+always built this way.
 
 | The brief says | Build it from |
 | --- | --- |
@@ -91,8 +95,8 @@ in a face (below).
 | Letters cut from dough, inflated, soft | A fat rounded display face (`fonts.md`, Geometric and rounded, Loud and playful display) |
 | A letter that is an object | The face, with the object drawn as a `part` in that letter's place |
 
-When no face in the study carries the look, say so and show the closest, rather than drawing the
-letters.
+When no face in the study carries a precise look, say so and show the closest, rather than drawing
+the letters.
 
 ## Taglines and other words
 

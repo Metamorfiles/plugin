@@ -34,7 +34,7 @@ Copy it into your notes and tick each step as you go:
 | Step | You prepare | Speaks as | Read | The user |
 |---|---|---|---|---|
 | 1. Direction | two or three directions, each its references, palette in proportion and type pairing, set in the brand's words | `designer` | `references/research.md`, `references/look.md`, `references/fonts.md` | chooses one, or says what to change or mix |
-| 2. Logo | three routes of different kinds, each in colour, reversed and in one colour | `designer` | the `metamorfiles-logo` skill; `metamorfiles-character` for a mascot | chooses one, or asks for another |
+| 2. Logo | three routes: the name with a drawn element, a logo drawn whole, one led by type; each in colour, reversed and in one colour | `designer` | the `metamorfiles-logo` skill; `metamorfiles-character` for a mascot | chooses one, or asks for another |
 | 3. Imagery | the style in words and four seed images | `imager` | `references/imagery.md` | uses them, or has single ones redone |
 | Kit | DESIGN.md and the brand board: the guide, the images, the brand in use | `designer`, `copywriter` for the voice | `metamorfiles-brand`, `references/mockups.md` | asks for any change they want |
 
@@ -142,11 +142,12 @@ its frame shows each file as it arrives, so the user watches the step come toget
    Each option is a whole direction: four to eight references by attribute (logo, colour, type,
    imagery, layout), captioned with the project and what to take; its palette with shares; its type
    pairing, the faces added with `metamorfiles_add_font`; and its `sample`.
-2. **Logo** (the `metamorfiles-logo` skill). Three routes of different kinds: the name with a drawn
-   mark or character, one led by type, and a compact emblem. Every word set from a real font after a
-   type study; only marks and characters drawn, alone, and traced; each route checked with
-   `metamorfiles_check_logo`, in colour on its paper, reversed and in one colour, every file with its
-   `ground`, its small mark marked `small: true`. A mascot is designed with `metamorfiles-character`.
+2. **Logo** (the `metamorfiles-logo` skill). Three routes, one of each kind: the name set in type
+   with a drawn element (a mark, a letter's part or ornaments), a logo drawn whole by the image model
+   and traced, and one led by type (pure typography, a seal or a monogram). Supporting words are
+   always real type. Each route checked with `metamorfiles_check_logo`, in colour on its paper,
+   reversed and in one colour, every file with its `ground`, its small mark marked `small: true`. A
+   mascot is designed with `metamorfiles-character`.
 3. **Imagery** (`references/imagery.md`). The mode the brand needs (illustration, photography, a
    character, graphic or 3D), the style block, and four seeds made together, one per option, saved in
    `brand/process/imagery/`. The seeds the user keeps are the anchors; grow the library from them
@@ -178,9 +179,10 @@ a page that says what's what) from the brand board in the panel.
 - **The web is used lightly.** Every page you open comes from the project's daily budget, because it
   opens from the user's own address and busy sites block it. One search and a few projects is enough;
   links the user pastes cost the same and are often better.
-- **Words are type.** Every word in the logo, on a mockup or in the kit is set from the brand's
-  fonts; image models draw marks, characters and imagery, never letters. Mockups place the real
-  files (`references/mockups.md`).
+- **Logos come from Studio's tools.** A name is set with `metamorfiles_make_wordmark`, or drawn in a
+  logo drawn whole and read letter by letter; marks, ornaments and characters are drawn and traced;
+  every supporting word is set from a font (`metamorfiles-logo`). Words outside the logo are set in
+  the brand's fonts; mockups place the real files (`references/mockups.md`).
 - **Authorship.** Images made with an image model and chosen with the user are fine for the brand's
   posts and pages. For a sign, packaging or anything trademarked, say in Known gaps that an
   illustrator or photographer should redo the final artwork from the approved one; a drawn logo
