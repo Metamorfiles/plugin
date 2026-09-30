@@ -31,6 +31,11 @@ reference images with `metamorfiles_read_file`. They set the look; the logo's id
 brief, the business's own reality, not the category's usual symbol. Outside a new brand, the user's
 request and the brand's DESIGN.md do the same.
 
+When a route needs a part the references don't show well (the lettering, a mascot, a mark), start a
+search for it in the background as you begin: `metamorfiles_search_references` with the category and
+the part ("pizza mascot", "bakery lettering"), sorted by `recommended`, and `wait: false`. Read it
+when you reach that route, and collect the two or three projects worth studying.
+
 ### 2. The type study
 
 Set the name in the faces the direction suggests and others around them with
