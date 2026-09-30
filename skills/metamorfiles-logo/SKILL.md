@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-logo
-description: Use to design a logo in Metamorfiles Studio for a brand that has none, including the logo step of a new brand, in three routes (the name set from a real typeface with a drawn mark or ornaments, a logo drawn whole by the image model and traced, and one led by type such as a wordmark, seal or monogram), each checked at every size it will meet. Use it whenever the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a new brand, even if they describe the look they want in their own words. Not for a brand that already has a logo, whose official files are never redrawn (metamorfiles-brand).
+description: Use to design a logo in Metamorfiles Studio for a brand that has none, including the logo step of a new brand, in three routes (the name set from a real typeface with a drawn mark, a logo drawn whole by the image model and traced, and one led by type such as a wordmark, seal or monogram), each checked at every size it will meet. Use it whenever the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a new brand, even if they describe the look they want in their own words. Not for a brand that already has a logo, whose official files are never redrawn (metamorfiles-brand).
 license: MIT
 ---
 
@@ -57,14 +57,15 @@ choose and set it: `references/wordmark.md`.
 
 One of each kind, so the user chooses between real alternatives:
 
-1. **The name with a drawn element.** The name set from its face, and one kind of drawing chosen
-   from the brief: a mark or character beside or above it, a drawn part taking one letter's place or
-   its accent's, or ornaments around it (stars, a laurel, steam, a leaf over an i). Set the name
-   first, then draw to match it: `references/symbol.md`. A character is designed with the
+1. **The name with a drawn mark.** The name set from its face, and a mark or character beside or
+   above it, or a drawn part taking one letter's place or its accent's. Set the name first, then
+   draw the mark to match it: `references/symbol.md`. A character is designed with the
    `metamorfiles-character` skill.
 2. **Drawn whole.** The image model draws the name and its drawing as one, and Studio traces it:
-   for expressive hand lettering no face sets and for a character and a name drawn as one. The
-   supporting words are composed around it in real type: `references/drawn.md`.
+   for expressive hand lettering no face sets, for a character and a name drawn as one, and for
+   ornaments the brief asks for (a laurel, steam, stars), which only look part of the logo when they
+   are drawn with it. The supporting words are composed around it in real type:
+   `references/drawn.md`.
 3. **Led by type.** Pure typography with one idea in the letters (an alternate, a swash, a joined
    pair, a carved or inline finish, a bounce), a seal or badge, or a monogram:
    `references/wordmark.md`, `references/seal.md`.
@@ -118,7 +119,7 @@ height of the name's capital, or a quarter of the mark's height, on every side.
 | Read | When |
 | --- | --- |
 | [references/wordmark.md](references/wordmark.md) | Choosing the logo face, setting and customising the name, taglines, the small-size version |
-| [references/symbol.md](references/symbol.md) | Drawing a mark, ornaments, or a part that takes a letter's place |
+| [references/symbol.md](references/symbol.md) | Drawing a mark or a part that takes a letter's place |
 | [references/drawn.md](references/drawn.md) | Route 2, the logo drawn whole |
 | [references/seal.md](references/seal.md) | A seal, badge, monogram or icon |
 | [references/lockups.md](references/lockups.md) | Putting the parts together |
