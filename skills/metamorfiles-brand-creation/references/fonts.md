@@ -8,6 +8,8 @@ their own licensed files.
 
 ## Getting the files
 
+- Compare candidates first with `metamorfiles_type_study`: it sets the brand's words in many faces on
+  one sheet, without adding any to the brand.
 - Add a family with `metamorfiles_add_font`, by its Google Fonts name, with `italic: true` when the
   design uses the italic.
 - It writes complete WOFF2 files to `brand/fonts/`, one per style for a variable family and one per
@@ -116,6 +118,32 @@ The number is the family's rank by use on Google Fonts, when it matters: higher 
 - Epunda Slab: contemporary.
 - Zilla Slab: sturdy utility.
 - Alfa Slab One: a heavy poster slab.
+
+**Inline, shaded and engraved, for signs and wordmarks**
+- Castoro Titling: engraved capitals.
+- Rye and Sancreek: Western wood type with spurs.
+- Ewert: ornamented wood type with a drop shadow.
+- Vast Shadow: a wide slab with a cut shadow.
+- Fascinate Inline: Art Deco capitals split by an inline.
+- Limelight: Art Deco contrast; theatres and bars.
+- Bungee Inline and Bungee Shade: signage capitals with an inline, or with depth.
+- Big Shoulders Inline: condensed capitals with an inline; set it heavy.
+- Londrina Shadow: hand-cut capitals in outline with a shadow.
+- Monoton: letters in parallel lines, neon; one word only.
+
+These carry their finish inside the face. For a finish on another face, add Studio's own `depth` and
+`inline` to a compose text part.
+
+**Japanese, with Latin**
+- Shippori Mincho and Shippori Mincho B1: a calm, bookish mincho.
+- Zen Old Mincho: an old-style mincho with warm contrast.
+- Kaisei Decol: a decorative mincho with ball terminals.
+- Noto Serif JP: the neutral serif.
+- Zen Kaku Gothic New: a clean gothic.
+- Zen Maru Gothic: a rounded gothic; friendly and soft.
+- Dela Gothic One: heavy and blunt display.
+
+Japanese files are large, so a type study of them takes minutes: study three to five.
 
 **Loud and playful display**
 - Shrikhand: a fat italic; food and fun.

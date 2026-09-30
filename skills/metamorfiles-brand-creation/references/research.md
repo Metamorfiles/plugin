@@ -1,6 +1,6 @@
 # Research and direction
 
-Read this for the brief and the direction step of `create.md`: what is true of the business, what
+Read this for the brief and the direction step of `SKILL.md`: what is true of the business, what
 its category looks like, and two or three directions built from real references.
 
 ## The brief

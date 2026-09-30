@@ -16,7 +16,6 @@ For ChatGPT Images (`chatgpt/images`, the user's ChatGPT plan) and `gpt-image` m
 - **Keeping things exact.** List what must not change ("the bottle's shape, label and color stay exactly as in image 1") and repeat the list every time you change something else; this family follows such lists better than most.
 - **Exclusions work here.** Unlike other families, a short "no extra text, no watermark" at the end is respected. Still describe clean surfaces first.
 - **References.** Label each by number and role ("Image 1: the product photo, keep it exactly. Image 2: only the light and palette"), then say how they combine. A reference an edit changes is image 1.
-- **Words in the image** only where the image carries them (a logo drawn whole): the exact words in quotes, an uncommon one spelled letter by letter, and where they sit.
 - **Camera words** set framing loosely; they don't produce an exact lens.
 - Weak at exact positions in dense layouts, and at the same person or character across images: pass the first image as image 1 each time rather than describing it again.
 

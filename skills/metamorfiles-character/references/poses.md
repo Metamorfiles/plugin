@@ -1,0 +1,58 @@
+# Poses and expressions
+
+Image models redraw a character a little differently every time. It stays on model only when every
+new drawing starts from the approved anchor, repeats its identity word for word, and changes one
+thing.
+
+## The identity block
+
+Write it once from the bible and the construction, a short paragraph of what never changes: the
+shapes and their ratios, the defining feature, the face, the colours, the style. Paste it unchanged
+into every prompt for this character, with no rewording. A synonym is a different instruction.
+
+## A new pose
+
+An edit of the anchor: its SVG first in `references`, which Studio sends on a ground the model reads
+it against.
+
+```
+Edit image 1: draw exactly the same character in a new pose.
+Keep exactly: <the identity block>.
+Change only the pose: <the pose, in one sentence: what it does, where its limbs are, which way it faces>.
+Alone on a transparent background, flat colours only, no letters, no ground line or shadow.
+```
+
+- **One change per drawing.** A new pose, or a new expression, or a prop: never two at once.
+- **Always from the anchor**, never from a pose made from it: copies of copies drift.
+- **Several at once**: start each with `wait: false`, each from the anchor, then wait for each.
+- Save each with the same `trace` colours as the anchor.
+
+## The set
+
+Start with what the brand will use, not a full sheet:
+- **The turnaround**: three-quarter, side and back, each told to change only the angle. Needed when
+  the character appears in scenes or in 3D.
+- **Poses** from what the brand does: serving, waving, carrying the one product, pointing at a
+  headline's space.
+- **Expressions**: only the eyes and mouth change ("Change only the expression: surprised, round eyes
+  and a small O mouth"). Three or four are enough: happy, surprised, thinking, winking.
+
+## Checking the set
+
+Look at every new drawing beside the anchor, at the same size (`metamorfiles_read_file`, `asImage`,
+or the character's frame on the brand board with `metamorfiles_render_preview`):
+- the same proportions and the same number of features;
+- the defining feature the same shape and size;
+- the same colours, each for what it paints, and nothing added (a nose, fingers, an outline);
+- the same line weight, or the same flat fills;
+- no mistakes of the image model (a third arm, a limb bending the wrong way; the list is in
+  `references/images.md` of the `metamorfiles` skill).
+
+A drawing that drifted is drawn again from the anchor, with the drifted part named in its "Keep
+exactly" line. The user should never be the one to find it.
+
+## Files
+
+In the character's folder, numbered in the order the board shows them: `01-front`,
+`02-three-quarter`, `03-side`, `04-wave`, `05-surprised`. The anchor is `01-front` and the folder's
+`anchors`.

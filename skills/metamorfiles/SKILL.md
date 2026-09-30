@@ -47,6 +47,9 @@ Write and change every project file with `metamorfiles_write_file`, never with a
 | The user wants                                                         | Use                        |
 | ---------------------------------------------------------------------- | -------------------------- |
 | Set up, import or change the brand: voice, colors, fonts, logos        | `metamorfiles-brand`       |
+| A new brand from nothing: direction, logo, imagery, kit                | `metamorfiles-brand-creation` |
+| A logo, wordmark, mark, seal or lockup for a brand that has none       | `metamorfiles-logo`        |
+| A mascot or character, or new poses of one                             | `metamorfiles-character`   |
 | A new template from a brief, a reference image or an existing design   | `metamorfiles-template`    |
 | A page of variants: A/B tests, copy or image options, one per CSV row  | `metamorfiles-variants`    |
 | One image or design adapted to other platforms and sizes               | `metamorfiles-repurpose`   |
