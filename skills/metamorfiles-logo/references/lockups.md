@@ -1,7 +1,8 @@
 # Lockups
 
-A route is rarely one file: a name, a mark or character, a tagline. `metamorfiles_compose_logo` puts
-them together as one SVG, each part nested untouched, and every text part set from a real font.
+A route is rarely one file: a name, a mark, ornaments or a character, a tagline. `metamorfiles_compose_logo` puts
+them together as one SVG, each part nested untouched, and every text part set from a real font. A
+logo drawn whole (route 2) is one part: its supporting words are text parts composed around it.
 
 ## Layouts
 

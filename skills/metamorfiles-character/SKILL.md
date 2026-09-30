@@ -55,8 +55,9 @@ colours: `references/styles.md`. The style's paragraph is pasted unchanged into 
 
 Draw three candidates together (`wait: false`), each from the same full prompt: the bible's one-line
 identity, the construction, the style paragraph and the palette. Front or three-quarter view,
-standing, a neutral pose. It is drawn alone, never with the brand's name or any word; the lettering
-is set from a font and composed around it (`metamorfiles-logo`). Save each with
+standing, a neutral pose. It is drawn alone, never with any word; the name is composed around it
+(`metamorfiles-logo`). In a logo drawn whole, where the character and the name are drawn as one,
+use this same construction and style in its prompt. Save each with
 `trace: { colors: [...] }` into `brand/process/logo/` for a logo, or the imagery step's folder. The
 prompt's shape: `references/styles.md`.
 

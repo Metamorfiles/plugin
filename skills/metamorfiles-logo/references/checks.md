@@ -21,6 +21,7 @@ never be the one to find what fails.
 | The one-colour version loses a part | That part only worked through colour: give it a shape of its own, or a cut-out |
 | The blurred version is a blob | The silhouette carries no idea: go back to the construction |
 | More colours than the brand's | A colour missing from the trace list, or a drawing with shading: draw again |
+| A drawn letter wrong, an accent moved, words run together (route 2) | Draw it again; read every letter before anyone sees it |
 
 Pieces lost only at 16 px are fine in a lockup, which is never used that small, and a problem in the
 small mark, which is.
