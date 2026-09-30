@@ -25,7 +25,8 @@ Write the prompt as a brief, never a font's name:
   jumping baseline");
 - the layout: where the drawn element sits against the name, and their sizes;
 - the drawn element, described by its construction (`symbol.md`; a character by
-  `metamorfiles-character`);
+  `metamorfiles-character`), and any ornament the brief asks for (a laurel round the name, steam
+  rising from a letter, stars beside it), drawn in the same hand and weight as the letters;
 - each colour for what it paints;
 - the name in quotes, exactly as written, an uncommon one spelled letter by letter;
 - "flat vector artwork, like a brand designer's final logo file", and no other text.

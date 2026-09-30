@@ -1,9 +1,10 @@
-# Drawn marks and ornaments
+# Drawn marks
 
-What route 1 draws beside a name set in type: a mark with one idea (a symbol, an abstract shape), a
-part that takes a letter's place, or ornaments around the name. The image model draws it alone;
-Studio traces it (`vector.md`) and it is composed with the name (`lockups.md`). A character is
-designed with the `metamorfiles-character` skill and then placed the same way.
+What route 1 draws beside a name set in type: a mark with one idea (a symbol, an abstract shape) or a
+part that takes a letter's place. The image model draws it alone; Studio traces it (`vector.md`) and
+it is composed with the name (`lockups.md`). A character is designed with the
+`metamorfiles-character` skill and then placed the same way. Ornaments are never drawn apart: drawn
+separately, they don't belong to the name, so they are part of a logo drawn whole (`drawn.md`).
 
 ## Contents
 
@@ -11,7 +12,6 @@ designed with the `metamorfiles-character` skill and then placed the same way.
 - Describe its construction
 - The prompt
 - A part in a letter's place
-- Ornaments
 - Draw several, keep one
 
 ## What makes a mark
@@ -73,28 +73,6 @@ capital O in image 1, its ring as thick as the letters' stems"), then pass it as
 `part` with `replaces`. Studio sizes it to the letter's box and spaces it by its own shape; adjust
 with `scale`, `dx` and `dy`. It must still read as that letter in the word. Alone, it is the route's
 small mark.
-
-## Ornaments
-
-Small drawings that dress the name rather than stand for the brand: stars or sparkles around it, a
-laurel, steam rising over a word, a leaf over an i, a wave under it, dots between words. Choose them
-when the brief's register asks for decoration (a heritage bakery, a festive sweet shop) and the idea
-lives in the type; a brand that needs a symbol of its own gets a mark instead.
-
-- **Around the name, never joined to it.** An ornament drawn apart can't meet a letter's stroke at
-  the right point and weight, so it sits free: above, below, beside or between words, with a gap. A
-  flourish that grows out of a letter comes from the face's own swashes (`alternates`, or the `swsh`
-  feature, `wordmark.md`) or from route 2 (`drawn.md`).
-- **Drawn to the name's size.** Pass the wordmark as image 1 and give the ornament's size against it
-  ("a laurel as wide as the name in image 1, open at the top", "three stars, each a quarter of the
-  capitals' height"), with its lines as thick as the letters' thin strokes or lighter, never heavier
-  than the name.
-- **One family of ornaments per logo**, in one or two of the brand's colours.
-- **Placed with `metamorfiles_compose_logo`**: `place` at points of the name (`at`, shares of its
-  width and height), `row` beside it, `stack` above or below. Simple geometric ones need no drawing:
-  Studio's `star`, `diamond`, `facet`, `ring` and `rule` shapes.
-- Look at the lockup at 64 px: an ornament that turns to specks there is left out of the small
-  versions.
 
 ## Draw several, keep one
 

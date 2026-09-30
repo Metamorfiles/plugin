@@ -117,7 +117,7 @@ npx metamorfiles@latest images
 | `metamorfiles` | Any Studio work; explains the project and routes to the right workflow |
 | `metamorfiles-brand` | Set up the brand kit from a website, guide or logos |
 | `metamorfiles-brand-creation` | A new brand from nothing: direction, logo, imagery and the kit |
-| `metamorfiles-logo` | A logo for a new brand in three routes (the name in type with a drawn mark or ornaments, a logo drawn whole, one led by type), checked at every size |
+| `metamorfiles-logo` | A logo for a new brand in three routes (the name in type with a drawn mark, a logo drawn whole, one led by type), checked at every size |
 | `metamorfiles-character` | A mascot designed from its construction, and new poses that stay on model |
 | `metamorfiles-template` | A new or changed template from a brief, reference or screenshot |
 | `metamorfiles-variants` | A page of A/B variants or spreadsheet rows, exported in several formats |

@@ -1,6 +1,6 @@
 # From drawing to vector
 
-A mark, an ornament, a character or a logo drawn whole is drawn by the image model and traced by
+A mark, a character or a logo drawn whole is drawn by the image model and traced by
 Studio into a vector in the brand's exact colours. Type set from a font is never traced, and
 supporting words are never drawn: they are set from fonts (`wordmark.md`).
 
