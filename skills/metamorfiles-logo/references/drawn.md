@@ -1,46 +1,41 @@
 # The logo drawn whole
 
-Route 2. The image model draws the whole logo, lettering and all, and Studio makes it a vector: the
-route for hand lettering no face can set (a flowing script, a bouncy custom word, letters that look
-cut from dough) and for a character and a name drawn as one.
+Route 1. The image model draws the logo as one composition, lettering and all, and Studio makes it a
+vector: lettering alone, or lettering with a mark, a mascot or ornaments, drawn in one style so every
+part belongs to the others.
 
-## What it draws, and what it doesn't
+## What the model draws well, and what it doesn't
 
-- **The name, drawn, when its look is expressive**: a loose or joined script, chubby, soft, bouncy or
-  hand-cut letters, where the hand's irregularity is the point.
-- **Never precise letters.** Carved or faceted strokes, engraved capitals, high-contrast serifs with
-  hairlines, geometric capitals of perfectly even strokes: the model draws them nearly right, and
-  nearly right shows. Those are set from a real face (`wordmark.md`), with a drawn detail at most,
-  and this route is left out for that brand.
-- **Never the supporting words.** A tagline, the trade, the place, a second script: set them from a
-  real font and compose them around the traced drawing (`lockups.md`). The drawing holds the name and
-  its drawn element only.
+- **Expressive lettering draws well**: scripts, chubby, soft, bouncy or hand-cut letters, where the
+  hand's irregularity is part of the look.
+- **Precise lettering doesn't**: carved or faceted strokes, engraved capitals, fine hairline serifs,
+  perfectly even geometric capitals come out nearly right, and a trace keeps every flaw. When the
+  direction's lettering is like that, draw only what the model can draw (a mark, a mascot, a
+  detail) and set the name in route 2, or leave this route out and say why.
+- **Supporting words** (a tagline, the trade, the place) are set in real type and composed around the
+  traced drawing (`lockups.md`), not drawn.
 
 ## The prompt
 
-Write the prompt as a brief, never a font's name:
-- the look and feel;
-- the lettering in a designer's words ("a loose, monoline, connected script, like a name written
-  quickly with a thick marker"; "heavy, condensed, bouncy capitals with soft corners and a slightly
-  jumping baseline");
-- the layout: where the drawn element sits against the name, and their sizes;
-- the drawn element, described by its construction (`symbol.md`; a character by
-  `metamorfiles-character`), and any ornament the brief asks for (a laurel round the name, steam
-  rising from a letter, stars beside it), drawn in the same hand and weight as the letters;
-- each colour for what it paints;
+Write the prompt from the chosen direction and the brief, as a designer's brief, never a font's name:
+- the look and feel, in the direction's own terms;
+- the lettering, described in a designer's words;
+- the layout: how the parts sit together and the space between them;
+- any mark, mascot or ornament, in the same hand and weight as the letters (a mascot is designed
+  with `metamorfiles-character`);
+- each colour for what it paints, from the direction's palette;
 - the name in quotes, exactly as written, an uncommon one spelled letter by letter;
 - "flat vector artwork, like a brand designer's final logo file", and no other text.
 
 A joined script joins letters within a word, never across the space between words: say each word is
-written on its own with a clear space after it. Accents keep their shape and their place over their
-letter.
+written on its own. Accents keep their shape and their place over their letter.
 
 Save it with `trace: { colors: [every colour it uses] }`; Studio has it drawn on a transparent
 background and traces each colour in the brand's exact value (`vector.md`).
 
 ## Read every letter
 
-Then read every word in it letter by letter, accents included, see that the words stand apart, and
-draw it again when one differs: the user should never be the one to find it. Draw two or three
-together (`wait: false`) and keep the one whose letters are right and whose drawing holds the idea;
-then compose the supporting words around it and run `metamorfiles_check_logo`.
+Read every word letter by letter, accents included, and see that the words stand apart; draw it
+again when one differs. Draw two or three together (`wait: false`) and keep the one whose letters
+are right and whose drawing holds the direction best; then compose the supporting words around it
+and run `metamorfiles_check_logo`.

@@ -2,7 +2,7 @@
 
 Thirty identities that juries and critics singled out, from a neighbourhood bakery to a city, each described in one structure: the brief, the idea and where it came from, the mark and how it is built, type, colour with shares, the device, imagery and voice rules, the applications and what varies across them, what makes it ownable, and what the generic version would have been. Written in our own words from the studios' case studies, guidelines and design press; sources in each file.
 
-Read the three to six cases closest to the brief: the same kind of business, and also the same register or the same source of idea in another kind of business, which is often the more useful one. Take the thinking, never the look: no mark, layout, device or palette is to be copied (`create.md`).
+Read the three to six cases closest to the brief: the same kind of business, and also the same register or the same source of idea in another kind of business, which is often the more useful one. Take the thinking, never the look: no mark, layout, device or palette is to be copied (`SKILL.md`).
 
 | Case | Kind | Business | Register | Idea from | The idea |
 |---|---|---|---|---|---|

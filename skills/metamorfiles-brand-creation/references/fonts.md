@@ -194,7 +194,7 @@ A script is set as the wordmark or one line, never as text.
 
 **Hands**
 - The Playwrite families (Playwrite US Trad, Playwrite GB S, Playwrite IT Moderna and others): refined
-  school handwriting, joined; thickened, a clean marker script.
+  school handwriting, joined.
 - Nothing You Could Do: a loose, personal hand.
 - Mynerve: a neat handwriting.
 - Covered By Your Grace: a marker hand.
