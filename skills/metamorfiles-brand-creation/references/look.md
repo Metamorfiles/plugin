@@ -6,11 +6,8 @@ from its references and set in the brand's own words.
 ## Palettes
 
 Each direction has a complete palette, not a swatch list:
-- **Four or five colours, named from the brand's world** (`paper`, `ink`, `clay`, never
-  `primary-1`), in the order they are used, each with its **share**: a ground at about half, an ink
-  at a quarter, one accent rationed to a tenth or less, and a supporting colour.
-- **One accent does the recognising.** Say what it is for (the one thing each piece is about) and
-  what it is never for (small text, a whole background).
+- **Colours named from the brand's world** (`paper`, `ink`, `clay`, never `primary-1`), in the
+  order they are used, each with its **share**, as the direction's references use them.
 - **Text pairs work:** the ink on the ground at 4.5:1 or more, the ground on the dark colour too.
   Check the accent: if it can't carry text, say so, and keep it for shapes.
 - **Differ in logic, not in hue.** One direction warm and light, one dark or saturated, one built

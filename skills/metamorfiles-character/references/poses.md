@@ -6,7 +6,7 @@ thing.
 
 ## The identity block
 
-Write it once from the bible and the construction, a short paragraph of what never changes: the
+Write it once from the bible and the description, a short paragraph of what never changes: the
 shapes and their ratios, the defining feature, the face, the colours, the style. Paste it unchanged
 into every prompt for this character, with no rewording. A synonym is a different instruction.
 

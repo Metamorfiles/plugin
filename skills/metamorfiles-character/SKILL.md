@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-character
-description: Use to design a character in Metamorfiles Studio (a mascot, a creature, a person, an object with a face) for a brand's logo or its imagery, and to draw an existing character in new poses and expressions that stay on model. Designs it from its construction (shapes, proportions, one defining feature), draws candidates alone on a transparent background, traces the one kept into a vector, and grows every later pose from that anchor. Use it whenever a brand needs a mascot or character, or the user asks for one doing something new, even if they only describe what it should look like.
+description: Use to design a character in Metamorfiles Studio (a mascot, a creature, a person, an object with a face) for a brand's logo or its imagery, and to draw an existing character in new poses and expressions that stay on model. Describes it in words from the brand's brief and direction, draws candidates alone on a transparent background, traces the one kept into a vector, and grows every later pose from that anchor. Use it whenever a brand needs a mascot or character, or the user asks for one doing something new, even if they only describe what it should look like.
 license: MIT
 ---
 
@@ -17,10 +17,10 @@ Copy it into your notes and tick each step as you go:
 
 ```
 - [ ] 1. The bible: who it is and why it is this brand's
-- [ ] 2. The construction, in shapes and proportions
+- [ ] 2. The character described in words
 - [ ] 3. The style, in words the image model follows
 - [ ] 4. Candidates drawn together, alone, on transparent; traced
-- [ ] 5. Checked: silhouette, 32 px, the construction kept; the best one kept
+- [ ] 5. Checked: silhouette, 32 px, true to the description; the best one kept
 - [ ] 6. Shown to the user; the kept one is the anchor
 - [ ] 7. Poses and expressions from the anchor, checked side by side
 - [ ] 8. Placed: in the logo, in the imagery, as the small mark
@@ -39,11 +39,9 @@ Write it before drawing anything:
 Keep it in the notes of the step's file (below its YAML) while a brand is made, and in the
 character folder's `note` in DESIGN.md `assets` once the kit is written.
 
-### 2. The construction
+### 2. The description
 
-How it is built, in measurable words: the primitives, the ratios, the face, the one defining
-feature, the one asymmetry, what is left out, and a complexity budget it stays within. This is the
-part that makes it good: `references/construction.md`.
+Who it is, its silhouette, its pose and its face, in words: `references/design.md`.
 
 ### 3. The style
 
@@ -54,10 +52,10 @@ colours: `references/styles.md`. The style's paragraph is pasted unchanged into 
 ### 4. Draw candidates
 
 Draw three candidates together (`wait: false`), each from the same full prompt: the bible's one-line
-identity, the construction, the style paragraph and the palette. Front or three-quarter view,
+identity, the description, the style paragraph and the palette. Front or three-quarter view,
 standing, a neutral pose. It is drawn alone, never with any word; the name is composed around it
 (`metamorfiles-logo`). In a logo drawn whole, where the character and the name are drawn as one,
-use this same construction and style in its prompt. Save each with
+use this same description and style in its prompt. Save each with
 `trace: { colors: [...] }` into `brand/process/logo/` for a logo, or the imagery step's folder. The
 prompt's shape: `references/styles.md`.
 
@@ -67,10 +65,10 @@ For each candidate:
 - read the trace at full size (`metamorfiles_read_file`, `asImage`);
 - run `metamorfiles_check_logo` on it: the blurred and one-colour versions show the silhouette, the
   32 px one whether its face still reads;
-- compare it with the construction: the ratios, the feature count, what was to be left out.
+- compare it with the description.
 
-Keep the one that holds the construction and the personality best. When none does, change one line
-of the construction, never add a correction about the failed drawing, and draw again.
+Keep the one that holds the description and the personality best. When none does, change the
+description, never add a correction about the failed drawing, and draw again.
 
 ### 6. The anchor
 
@@ -95,7 +93,7 @@ time, and checked side by side with the anchor: `references/poses.md`.
 
 | Read | When |
 | --- | --- |
-| [references/construction.md](references/construction.md) | Designing the character's build: shapes, proportions, face, budget |
+| [references/design.md](references/design.md) | Describing the character |
 | [references/styles.md](references/styles.md) | Choosing its rendering, and the prompt |
 | [references/poses.md](references/poses.md) | New poses and expressions that stay on model |
 
