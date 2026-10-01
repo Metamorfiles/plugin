@@ -87,7 +87,8 @@ why, the recommended one first.
 ### 7. After the choice
 
 Make the chosen route's final files in `brand/logos/` with the same tools and settings, and the other
-colours with `metamorfiles_make_logo_variant`. Run `metamorfiles_check_logo` on each. Declare them in
+colours with `metamorfiles_make_logo_variant`. A version of a logo drawn whole that leaves a part out
+or is laid out another way is drawn again from it, never cut from its paths (`references/drawn.md`). Run `metamorfiles_check_logo` on each. Declare them in
 DESIGN.md `logos` with their grounds, sources ("set in <face> as outlines with a drawn part", "drawn
 by <model> and traced", "created and approved by the user on <date>") and clear space.
 

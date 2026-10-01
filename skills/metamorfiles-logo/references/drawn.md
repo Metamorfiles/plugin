@@ -39,3 +39,14 @@ Read every word letter by letter, accents included, and see that the words stand
 again when one differs. Draw two or three together (`wait: false`) and keep the one whose letters
 are right and whose drawing holds the direction best; then compose the supporting words around it
 and run `metamorfiles_check_logo`.
+
+## Other versions of it
+
+A logo drawn whole is one traced drawing whose parts overlap and share outlines, so a version with a
+part left out (the name alone, the mark alone) or laid out another way (one line, stacked) can't be
+cut from its paths. Draw it again from the chosen logo: pass the drawing it was traced from (its
+record's `traceDrawing`) or the traced file as image 1 and edit it ("Edit image 1: the same
+lettering, letter for letter and shape for shape, without the character; close the outline
+where the character covered it"). Save it with the same `trace` colours, read every letter against the
+original, and check it like the original. Recolourings stay `metamorfiles_make_logo_variant`.
+
