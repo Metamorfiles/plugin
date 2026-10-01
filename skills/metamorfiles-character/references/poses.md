@@ -12,15 +12,21 @@ into every prompt for this character, with no rewording. A synonym is a differen
 
 ## A new pose
 
-An edit of the anchor: its SVG first in `references`, which Studio sends on a ground the model reads
-it against.
+A new drawing of the character, with the anchor attached: its SVG first in `references`, which
+Studio sends on a ground the model reads it against.
 
 ```
-Edit image 1: draw exactly the same character in a new pose.
-Keep exactly: <the identity block>.
-Change only the pose: <the pose, in one sentence: what it does, where its limbs are, which way it faces>.
+Draw the character from image 1 again, in a new pose, the same character in every way.
+Who it is: <the identity block>.
+The pose: <the pose, in one sentence: what it does, where its limbs are, which way it and its head face>.
 Alone on a transparent background, flat colours only, no letters, no ground line or shadow.
 ```
+
+Draw it anew rather than editing image 1. An edit keeps what is already in the image, so the head
+stays at its old angle and size while a new body is painted under it, and the pose looks pasted
+together. A new drawing lets the head turn and the body move, and image 1 with the identity block
+keeps it the same character. Edit (`"Edit image 1:"`, then what stays exactly as it is) only for a
+change that keeps the pose: an expression, a prop swapped, a colour fixed.
 
 - **One change per drawing.** A new pose, or a new expression, or a prop: never two at once.
 - **Always from the anchor**, never from a pose made from it: copies of copies drift.
