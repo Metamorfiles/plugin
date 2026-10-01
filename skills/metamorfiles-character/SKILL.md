@@ -79,8 +79,9 @@ is the **anchor**: every later drawing of the character is made from it. Name it
 
 ### 7. Poses and expressions
 
-Each new pose is an edit of the anchor, with its identity repeated word for word, one change at a
-time, and checked side by side with the anchor: `references/poses.md`.
+Each new pose is a new drawing of the character with the anchor attached as image 1 and its
+identity repeated word for word, checked side by side with the anchor; a small change that keeps the
+pose (an expression, a prop) is an edit: `references/poses.md`.
 
 ### 8. Where it goes
 
