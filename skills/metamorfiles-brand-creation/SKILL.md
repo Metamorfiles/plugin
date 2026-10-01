@@ -53,10 +53,14 @@ write its file, and stays as the record after the choice. You never lay any of i
 
 - **From the panel.** The user filled in "New brand": their brief is in `brand/process/brief.md`, and
   Studio started you on a task, whose id is in your request.
-- **From the chat.** Call `metamorfiles_get_project` with `create: true` and the brand's name. Ask one
-  message with your proposal in it: what it is, who it's for, how it should feel, the name, and
-  anything true and specific (the place, the founder, the process, the hours). Write your reading as
-  the proposal, so "go" is a full answer. Then write `brand/process/brief.md` with their answers.
+- **From the chat.** Call `metamorfiles_get_project` with `create: true` and the brand's name, then
+  `metamorfiles_team_update` to start the task. Ask for the brief with `metamorfiles_ask_user` and
+  `brief`: your reading of what the user said (what it is, who it's for, how it should feel, links
+  they gave). Studio opens the same brief questions the panel's New brand asks, filled in with your
+  reading; the user completes them, above all the work they like, and Studio writes
+  `brand/process/brief.md`. In your reply give the panel link and say the questions are open there;
+  they can also answer in the chat, which keeps your reading. Never write the brief yourself before
+  they answer: their taste is what the direction starts from.
 
 Before the first step, say in one line that it takes about half an hour and makes twenty to thirty
 images on their image source.
