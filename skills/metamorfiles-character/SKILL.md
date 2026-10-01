@@ -45,7 +45,8 @@ Who it is, its silhouette, its pose and its face, in words: `references/design.m
 
 ### 3. The style
 
-One rendering, chosen for the brand: one even line, a solid silhouette with cut-out features, flat
+The families seen in strong work, and what makes a character strong or weak:
+`references/taste.md`. One rendering, chosen for the brand: one even line, a solid silhouette with cut-out features, flat
 shapes with inner colours, or a thick outline with flat fills. Each has its words and its trace
 colours: `references/styles.md`. The style's paragraph is pasted unchanged into every prompt.
 
@@ -93,6 +94,7 @@ time, and checked side by side with the anchor: `references/poses.md`.
 
 | Read | When |
 | --- | --- |
+| [references/taste.md](references/taste.md) | What a strong character looks like, and what goes wrong |
 | [references/design.md](references/design.md) | Describing the character |
 | [references/styles.md](references/styles.md) | Choosing its rendering, and the prompt |
 | [references/poses.md](references/poses.md) | New poses and expressions that stay on model |

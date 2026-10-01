@@ -29,7 +29,8 @@ Copy it into your notes and tick each step as you go:
 Read `brand/process/brief.md` and the chosen option of `brand/process/direction.md`, and look at its
 reference images with `metamorfiles_read_file`. They set the look; the logo's idea comes from the
 brief, the business's own reality, not the category's usual symbol. Outside a new brand, the user's
-request and the brand's DESIGN.md do the same.
+request and the brand's DESIGN.md do the same. Read `references/taste.md` for what a strong version
+of that look is, and what the image model tends to get wrong.
 
 When a route needs a part the references don't show well (the lettering, a mascot, a mark), start a
 search for it in the background as you begin: `metamorfiles_search_references` with the category and
@@ -44,6 +45,9 @@ become the idea. Choose each route's face and add it with `metamorfiles_add_font
 (`references/wordmark.md`).
 
 ### 3. Three routes
+
+Three answers, not three versions: each route takes a different lettering family or composition move
+(`references/taste.md`), so the user chooses between ideas.
 
 1. **Drawn whole by AI.** The image model draws the logo as one composition: lettering alone, or
    lettering with a mark, a mascot or ornaments, all in one style, with proper spacing between its
@@ -87,6 +91,7 @@ by <model> and traced", "created and approved by the user on <date>") and clear 
 
 | Read | When |
 | --- | --- |
+| [references/taste.md](references/taste.md) | What a strong logo, lockup and mark look like |
 | [references/drawn.md](references/drawn.md) | Route 1, the logo drawn whole by AI |
 | [references/wordmark.md](references/wordmark.md) | The type study, setting the name, the small-size version |
 | [references/symbol.md](references/symbol.md) | A generated mark or a drawn letter |
