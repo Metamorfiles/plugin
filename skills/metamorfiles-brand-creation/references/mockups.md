@@ -57,12 +57,14 @@ of them."). For each surface, decide:
    files (`../../brand/…`), at the surface's proportions, with no background: the object's colour
    is the photo's, never a panel laid over it, and Studio refuses one. Real
    words only: the brand's voice lines and what the brief says, never an invented price, name,
-   date or figure (a temperature, a weight, a size). Place it at the size and position a real one
-   would have: that is what the mockup shows.
+   date or figure (a temperature, a weight, a size). A designed artwork has its own margins and
+   hierarchy, like a printed label, rather than filling its box edge to edge.
 3. **The brand on it.** `metamorfiles_make_mockup` takes each layer's four corners on the photo and
    the `surface`: what it is, its material, the method, the condition and its form (flat, curved or
-   soft), and, for a file layer, the words it shows. The corners are the whole surface; the artwork
-   goes inside at its own proportions, as large as fits and centred, so a logo is never stretched. Studio places the artwork exactly and bakes it
+   soft), and, for a file layer, the words it shows. The corners are the whole surface; `size` and
+   `at` place the artwork in it the way a real one sits (below), at its own proportions, so a logo is
+   never stretched. The result says how much of the surface each artwork covers: read it against the
+   real object. Studio places the artwork exactly and bakes it
    into the photo's light, then the user's image model finishes it into a photograph of the finished
    object. Studio checks the finish against its bake (the artwork in place on a flat surface, no
    mark added, the photo around it unchanged), tries once more when it fails, and keeps its exact
@@ -74,8 +76,28 @@ of them."). For each surface, decide:
    The user should never be the one to find it.
 5. **Look at it as a photograph of the finished object.** The artwork sits where it belongs, at the
    size a customer would see it, and the photo has none of the image-model mistakes (`imagery.md`).
-   Move the corners or redo the photo until it looks made, not placed. Each mockup is its own frame
+   Change its size and place, or redo the photo, until it looks made, not placed. Each mockup is its own frame
    of the brand board.
+
+## Placing it
+
+Mockups look made when the brand sits on the object the way a printer or signwriter would put it,
+and placed when everything is blown up to the edges. Look at the real object in your head: where its
+brand goes, how big it is next to the object, how much room is around it.
+
+- **A garment or apron** carries a small mark on the chest, high and to one side, or a modest one
+  centred; a back print is the one place a large one goes.
+- **A box, bag or lid** holds the logo with generous room around it, often centred, sometimes low or
+  in a corner; a pattern or a flood of colour is what covers it edge to edge.
+- **A sticker, badge or label** fills its die-cut with a border of the material showing.
+- **A sign, lightbox or fascia** sets the name large but with breathing room to its frame, in the
+  sign's own proportions.
+- **A cup, can or bottle** keeps the logo within the face you see, never wrapping to its edges.
+- **Small type stays small,** as on the real thing: a line under a logo, an address, a URL.
+- **One hero per surface.** When the logo, a line and a drawing share a surface, one leads and the
+  others are clearly smaller.
+
+The artwork is never the size of the whole surface unless the real object is printed that way.
 
 A model never draws the logo or the words into the blank photo: the mockup always starts from the
 real files and the brand's own type, placed by Studio.
