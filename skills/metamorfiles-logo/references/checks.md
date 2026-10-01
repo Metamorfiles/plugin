@@ -19,6 +19,7 @@ never be the one to find what fails.
 | A lockup unreadable at 32 px | That's expected: the small mark is used there. Check the small mark instead |
 | The reversed version looks heavier | Set the reversed wordmark a weight lighter; fine lines on dark spread |
 | The one-colour version loses a part | That part only worked through colour: give it a shape of its own, or a cut-out |
+| The one-colour or reversed version is a silhouette (a drawing of lines and fills recoloured whole) | Make it line art: the line colour to the ink, every fill to `"knockout"` |
 | The blurred version is a blob | The silhouette carries nothing recognisable: go back to the drawing |
 | More colours than the brand's | A colour missing from the trace list, or a drawing with shading: draw again |
 | A drawn letter wrong, an accent moved, words run together (route 1) | Draw it again; read every letter before anyone sees it |
