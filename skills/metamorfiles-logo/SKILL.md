@@ -69,7 +69,11 @@ vanishes at 32 px, a drawn letter that's wrong, or a reversed version that doesn
 ### 5. Each route's files
 
 The route's first file is the logo in colour on the ground it's made for; after it, reversed on the
-dark colour and in one colour on white, each with its `ground`. Mark the route's small mark (the
+dark colour and in one colour on white, each with its `ground`. A drawing of lines with coloured
+fills becomes line art in one colour and reversed: its line colour to the ink and every fill cut out
+(`metamorfiles_make_logo_variant`, each fill's colour to `"knockout"`), so the ground shows through
+the drawing. Recolouring every paint to one colour turns it into a silhouette, and the details are
+gone. A drawing of solid shapes becomes one solid shape with its inner details cut out. Mark the route's small mark (the
 mark, the mascot's head, the monogram, the seal) with `small: true`: the profile picture and the
 small sizes use it. Save every file under `brand/process/logo/`.
 
