@@ -184,7 +184,3 @@ a page that says what's what) from the brand board in the panel.
   logo drawn whole and read letter by letter; marks and characters are drawn and traced;
   every supporting word is set from a font (`metamorfiles-logo`). Words outside the logo are set in
   the brand's fonts; mockups place the real files (`references/mockups.md`).
-- **Authorship.** Images made with an image model and chosen with the user are fine for the brand's
-  posts and pages. For a sign, packaging or anything trademarked, say in Known gaps that an
-  illustrator or photographer should redo the final artwork from the approved one; a drawn logo
-  should be registered only after a designer has refined it.
