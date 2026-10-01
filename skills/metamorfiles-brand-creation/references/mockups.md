@@ -63,8 +63,11 @@ of them."). For each surface, decide:
    the `surface`: what it is, its material, the method, the condition and its form (flat, curved or
    soft), and, for a file layer, the words it shows. The corners are the whole surface; `size` and
    `at` place the artwork in it the way a real one sits (below), at its own proportions, so a logo is
-   never stretched. The result says how much of the surface each artwork covers: read it against the
-   real object. Studio places the artwork exactly and bakes it
+   never stretched. The result says how much of the surface each artwork covers, and shows the
+   placement over the photo: the surface you gave dashed, the artwork solid, each with its centre
+   line. Check both against the object's own edges and centre before anything else. When the
+   artwork's words set badly (a block breaking into more lines than you set, a word alone on a line,
+   words past its edge), Studio says so and doesn't finish it: fix the artwork and make it again. Studio places the artwork exactly and bakes it
    into the photo's light, then the user's image model finishes it into a photograph of the finished
    object. Studio checks the finish against its bake (the artwork in place on a flat surface, no
    mark added, the photo around it unchanged), tries once more when it fails, and keeps its exact
