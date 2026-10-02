@@ -42,8 +42,10 @@ Copy it into your notes and tick each step as you go:
 step; read it before the first step and use it to make each step's options stronger. Its
 `library/` describes published identities by kind of business, for study.
 
-A new brand is made, not reviewed: the team skill's first review doesn't apply. The `reviewer` speaks
-only for the final check of the kit.
+This skill is the order of work for a new brand, in place of the team skill's: there is no first
+review (a new brand is made, not reviewed), it asks once per step rather than once per role, and its
+handover is the one `references/presenting.md` of `metamorfiles-brand` describes. The `reviewer`
+speaks only for the final check of the kit.
 
 Studio draws everything on one item, the brand board: the brief first, then each step as its own
 frame, then the kit's frames. A step's frame shows its slots while you make it, its options once you
@@ -51,33 +53,51 @@ write its file, and stays as the record after the choice. You never lay any of i
 
 ## Where it starts
 
-- **From the panel.** The user filled in "New brand": their brief is in `brand/process/brief.md`, and
-  Studio started you on a task, whose id is in your request.
-- **From the chat.** Call `metamorfiles_get_project` with `create: true` and the brand's name, then
-  `metamorfiles_team_update` to start the task. Ask for the brief with `metamorfiles_ask_user` and
-  `brief`: your reading of what the user said (what it is, who it's for, how it should feel, links
-  they gave). Studio opens the same brief questions the panel's New brand asks, filled in with your
-  reading; the user completes them, above all the work they like, and Studio writes
-  `brand/process/brief.md`. In your reply give the panel link and say the questions are open there;
-  they can also answer in the chat, which keeps your reading. Never write the brief yourself before
-  they answer: their taste is what the direction starts from.
+A brand can start, and continue, anywhere: Studio's panel, the user's terminal or desktop app, any
+app with Studio's tools. Whatever the start, there is one task for the brand and the user sees it on
+the brand board.
 
-Before the first step, say in one line that it takes about half an hour and makes twenty to thirty
-images on their image source.
+- **Studio's New brand.** The user answered the brief questions in the panel: their brief is in
+  `brand/process/brief.md`, and Studio started you on a task whose id is in your request. Begin with
+  the direction.
+- **Studio's Ask box, or a request with no brief.** Studio started you on a task, but there is no
+  `brand/process/brief.md` yet: ask for it as below, with the task id from your request. The user is
+  in the panel already, so the questions open in front of them.
+- **The user's own app** (a terminal, a desktop app, any chat with Studio's tools). Call
+  `metamorfiles_get_project` with `create: true` and the brand's name, then
+  `metamorfiles_team_update` (`designer`, `working`, `scope: "project"`), which starts the task and
+  returns its id. Ask for the brief as below.
+- **Continuing**, in a new chat, another app, or after Studio restarted. `metamorfiles_get_project`
+  says the brand is being made, with its `task` and where each step stands in `creating`. Pass that
+  task id to every `metamorfiles_team_update` and `metamorfiles_ask_user`, never start a second one,
+  and continue from the first step that isn't chosen.
+
+**Asking for the brief.** Call `metamorfiles_ask_user` with `brief`: your reading of what the user
+said (what it is, who it's for, how it should feel, links they gave). Studio draws the brief on the
+board at once and opens the same questions as New brand, filled in with your reading, for the user
+to complete, above all the work they like. From the user's own app it returns at once with the
+panel link: write the link in your reply, say the questions are open there and that they can answer
+in the chat instead, then keep calling it with `waitFor` until they answer. An answer in the chat
+goes back with `waitFor` and `answer`. Either way Studio writes `brand/process/brief.md`; read it
+before the direction. Never write the brief yourself: the user's taste is what the direction starts
+from.
+
+Before the first step, tell the user in one line that it takes about half an hour and makes twenty
+to thirty images on their image source: in your reply in their own app, or as `say` in a task Studio
+started.
 
 ## At every step
 
-- **Say who is at work.** Call `metamorfiles_team_update` with the `role` and `status` before each
-  part of the work. Studio writes what the user reads at the top, from the step and the files you
-  make, so leave out `line`. Working from the chat, the first call starts a task and returns its id;
-  pass it every time after.
+- **Say who is at work.** Call `metamorfiles_team_update` with the `role`, `status` and the task id
+  before each part of the work. Studio writes what the user reads at the top, from the step and the
+  files you make, so leave out `line`.
 - **Write the step's file** (below). The result says what's wrong with it, or gives the question
   Studio will ask and the options as the user will see them.
 - **Ask with `metamorfiles_ask_user` and `step`.** Studio asks the step's own question with the
-  options' titles, and the user chooses on the step's frame, in the thread or in your chat. From the
-  user's own app, first write in your reply what the write result gave you: the panel link, then the
-  options as a short list, the recommended one first with its reason. In Auto the recommended option
-  is taken at once; say so in the thread.
+  options' titles, opens the board on the step's frame, and the user chooses there, in the thread or
+  in your chat. From the user's own app it returns at once: write the panel link and the options in
+  your reply as Studio lettered them, the recommended one first with its reason, then keep calling it
+  with `waitFor`. In Auto the recommended option is taken at once; say so in the thread.
 - **Studio records the choice** in the step's file, however the user made it, and the next step's
   frame appears. Never write `chosen` yourself.
 - **An answer in their own words is the answer.** "A is better but not good enough" means rework A
@@ -91,9 +111,6 @@ images on their image source.
   what depends on it. A new palette recolours the logo routes; it never restarts the research.
 - **Going back from the chat.** "Back to the logo": write the logo step's file again without its
   `chosen`, and ask again.
-
-A brand started in one place can continue in the other: `metamorfiles_get_project` lists where each
-step stands in `brand.creating`. Continue from the first one that isn't chosen.
 
 ## The steps' files
 

@@ -38,10 +38,10 @@ For Lumen Skincare, Studio's fictional example brand:
 
 ## In the panel's thread
 
-When the brand is made in a Studio task (it began from the panel's New brand, or a request with a
-task id), the user reads the handover in a narrow thread beside the board they are already looking
-at. It is the `summary` of your last `metamorfiles_team_update`, the one with `finished: true`. The
-same shape, much shorter:
+Wherever the brand was made, the panel's thread shows the `summary` of your last
+`metamorfiles_team_update`, the one with `finished: true`, in a narrow column beside the board. In a
+task Studio started it is the whole handover; from the user's own app, your reply above is the full
+one and the summary is its short form. The same shape, much shorter:
 
 1. **What the brand is**, in two sentences at most. No link: they are on the board.
 2. **What you decided for them**, in one sentence.
