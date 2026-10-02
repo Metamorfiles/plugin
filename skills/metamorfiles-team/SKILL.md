@@ -17,6 +17,8 @@ You play the specialists yourself, one at a time, because their work depends on 
 | `copywriter` | Every word: headlines, body, calls to action. | `references/copy.md` of the `metamorfiles` skill |
 | `imager` | Images: prompts, generation, placement, crop. | `references/images.md` of the `metamorfiles` skill |
 
+A new brand made from nothing (Studio's request says so, or `metamorfiles_get_project` says the brand is being made) follows `metamorfiles-brand-creation` for its order of work, its questions and its handover; the reporting below holds for it too.
+
 The craft files are the same ones every workflow uses; read each when its role starts, not all up front (in that skill's folder, or with `metamorfiles_get_guide`, name `metamorfiles`, file `references/design.md`).
 
 ## Report every step
@@ -60,7 +62,7 @@ Ask with `metamorfiles_ask_user` wherever you work, in a task Studio started or 
 - In **Auto** it returns your recommended option at once and tells the user it was chosen for them. Make the recommendation the one you'd defend.
 - Pass `remember: true` when the answer is a lasting preference for the project (a tone, a rule, a style), not a one-off pick like which headline. Remembered answers come back without asking, and `metamorfiles_get_project` lists them: follow them without asking again.
 
-Ask at most once per role per task, and never about something the brand kit already decides.
+Ask at most once per role per task (a new brand asks once per step), and never about something the brand kit already decides.
 
 ## Handoffs
 

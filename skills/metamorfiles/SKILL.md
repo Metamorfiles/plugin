@@ -26,9 +26,9 @@ Keep the text sparse, the way a board is: a name, a line, a few labels. Dense ex
 
 0. If the only Metamorfiles tool available is `metamorfiles_activate`, Studio isn't activated on this computer yet: follow the `activate` skill first.
 1. Call `metamorfiles_get_project`. Every brand is its own project, and a working folder can hold several: it opens the brand last worked on and lists the others in `otherBrands`. When the user names a brand, or its website or product is another brand's, pass that brand as `name` to open its project. For a brand with no project yet, pass `create: true` and its `name`: Studio makes it a new project beside the others (`metamorfiles/` for the first, a folder named for the brand after that, `~/Metamorfiles/<name>` when there's no working folder, like in a chat app). Never rebuild one brand's kit for another: that would restyle every template and page of the first. Don't ask where to put it; pass an absolute `path` only if the user asks for another location. Pass `example: true` only when the user wants to explore the example brand and template.
-2. Read the returned `brand` before writing any copy or design. If it says there's no brand kit yet, build it first with `metamorfiles-brand`.
+2. Read the returned `brand` before writing any copy or design. If there's no brand kit yet, it says what to do: an existing brand is translated with `metamorfiles-brand`, a new one is made with `metamorfiles-brand-creation`, and a brand already being made is continued on the task it names.
 3. Pick the workflow below.
-4. Every render and write returns a control panel link. The first render of a session opens the panel in the user's browser, unless it's open already.
+4. Every render and write returns a control panel link. The first render or question of a session opens the panel in the user's browser, unless it's open already.
 
 ## Templates, pages and history
 
