@@ -103,7 +103,7 @@ started.
 - **An answer in their own words is the answer.** "A is better but not good enough" means rework A
   and ask again; "the palette of A with the type of B" means write that option and ask again; "C has
   a cup with two handles" means redo C before anything else.
-- **From the frame** the answer can also be "Try another route instead of <title>" or "Redo <title>":
+- **From the frame** the answer can also be "Try another logo instead of <title>" or "Redo <title>":
   replace that one option, keep the others as they are, and ask again. "Direction: <title>" means
   the user went back and chose again on an earlier step: Studio has cleared the steps after it, so
   make them again from the new choice.
@@ -148,7 +148,8 @@ Each option can carry:
 
 Up to four options: two or three directions, three logo routes, one per seed on the imagery step.
 Each `title` is at most 60 characters, what the user will call it, and each `line` at most 200, one
-sentence on why it fits the brief. Exactly one option is `recommended`. Writing the direction step
+sentence on why it fits the brief; the board marks the recommended one itself, so the line never
+says so. Exactly one option is `recommended`. Writing the direction step
 also returns the contrast of every pair in each palette, so there is nothing to work out by hand.
 
 Save what a step makes in its own folder as you go (`brand/process/logo/`, `brand/process/imagery/`):
@@ -186,6 +187,12 @@ its frame shows each file as it arrives, so the user watches the step come toget
    the brand.
 
 ## Ending
+
+Finish the kit before you hand it over. An image that fails is retried by Studio; if its source
+keeps failing, wait a minute and make it again, and if it still fails, ask the user
+(`metamorfiles_ask_user`: wait and try again, or another image model) rather than handing over a
+kit with parts missing. An image that doesn't hold the style is made again or taken out, never left
+for the user to find or listed for them to remove.
 
 The last `metamorfiles_team_update` has `finished: true` and your handover as `summary`. The run
 ends there: Studio tells the user the brand is ready and offers to make the first posts, so the

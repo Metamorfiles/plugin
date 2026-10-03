@@ -73,9 +73,14 @@ dark colour and in one colour on white, each with its `ground`. A drawing of lin
 fills becomes line art in one colour and reversed: its line colour to the ink and every fill cut out
 (`metamorfiles_make_logo_variant`, each fill's colour to `"knockout"`), so the ground shows through
 the drawing. Recolouring every paint to one colour turns it into a silhouette, and the details are
-gone. A drawing of solid shapes becomes one solid shape with its inner details cut out. Mark the route's small mark (the
-mark, the mascot's head, the monogram, the seal) with `small: true`: the profile picture and the
-small sizes use it. Save every file under `brand/process/logo/`.
+gone. A drawing of solid shapes becomes one solid shape with its inner details cut out.
+
+Mark the route's small mark (the mark, the mascot's head, the monogram, the seal) with `small: true`:
+the profile picture and the small sizes use it, so it must be the very mark the logo shows. In a
+route with a generated mark it is that mark's own file. In a logo drawn whole it is drawn from the
+logo once the logo is right, never alongside it: the logo as image 1, edited to the mark alone and
+placed for a small square (`references/drawn.md`, "Other versions of it"); Studio refuses a small
+mark drawn on its own. Save every file under `brand/process/logo/`.
 
 ### 6. Show them
 
