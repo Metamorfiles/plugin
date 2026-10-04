@@ -26,7 +26,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 1. Direction: references collected, 2 or 3 directions written, asked, chosen
 - [ ] 2. Logo: three routes with metamorfiles-logo (a character with metamorfiles-character), asked, chosen
 - [ ] 3. Imagery: mode, style block, four seeds, asked, anchors kept
-- [ ] Kit: DESIGN.md, final logos, fonts, library, mockups, imagery guide
+- [ ] Kit: DESIGN.md (its voice by the copywriter), final logos, fonts, library, mockups, imagery guide
 - [ ] Final check: metamorfiles-review in the foreground, fixes made
 - [ ] Handover: finished: true with the summary
 ```
@@ -175,7 +175,10 @@ its frame shows each file as it arrives, so the user watches the step come toget
    character, graphic or 3D), the style block, and four seeds made together, one per option, saved in
    `brand/process/imagery/`. The seeds the user keeps are the anchors; grow the library from them
    into `brand/refs/`.
-4. **Kit.** The chosen direction, logo and imagery become `brand/DESIGN.md` as `metamorfiles-brand`
+4. **Kit.** The voice is the copywriter's, always: report as `copywriter` while you write DESIGN.md's
+   Voice (the chart in `references/voice-chart.md` of `metamorfiles-brand`, and its lines in the
+   brand's own words, `references/copy.md` of `metamorfiles`), then hand back to the designer.
+   The chosen direction, logo and imagery become `brand/DESIGN.md` as `metamorfiles-brand`
    describes, with the final logos in `brand/logos/` (step 8 of `metamorfiles-logo`), every face with
    its role (the logo's own face named for it), the library as an imagery folder in `assets` with its
    anchors, a character folder when there is one, and an in-use folder of mockups
