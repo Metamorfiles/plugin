@@ -81,6 +81,8 @@ of them."). For each surface, decide:
    size a customer would see it, and the photo has none of the image-model mistakes (`imagery.md`).
    Change its size and place, or redo the photo, until it looks made, not placed. Each mockup is its own frame
    of the brand board.
+6. **Then the reviewer.** Each batch of mockups goes to the reviewer before the user sees it, and
+   again after any change to one (`SKILL.md`, "Reviewed before the user sees it").
 
 ## Placing it
 

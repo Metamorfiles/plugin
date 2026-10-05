@@ -52,7 +52,9 @@ Look at each image at full size, and redo it from the anchors when it shows any 
 image models make (the list is in `images.md` of the `metamorfiles` skill, under Check): a cup with
 two handles, a hand with six fingers, a limb that bends the wrong way, a warped object, garbled
 letters, a stray figure in the background. The user should never be the one to find it. When they
-do, the redo comes before anything else.
+do, the redo comes before anything else. After your own look, the reviewer checks the seeds and
+each batch of the library before the user sees them (`SKILL.md`, "Reviewed before the user sees
+it").
 
 ## The library
 
