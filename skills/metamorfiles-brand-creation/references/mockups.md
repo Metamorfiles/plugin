@@ -56,11 +56,11 @@ of them."). For each surface, decide:
    set in the brand's tokens (`var(--brand-…)`) with its files (`../../brand/…`), at the surface's
    real proportions. There are two kinds:
    - **A full print** (`cover: true`) for every surface whose real version is printed all over:
-     packaging (a can's wrap, a box's face, a bag, a bottle's label), a poster, a menu, a card. Lay
-     it out the way a packaging or print designer would: its colour fields and grounds, the brand at
-     the size it has there, the product's name and what it is, the imagery, the character or the
-     pattern, and a hierarchy you can read from a shelf. It shows the brand system at work, never
-     the logo on a flood of colour. It fills the surface, so `size` and `at` don't apply.
+     packaging (a can's wrap, a box's face, a bag, a bottle's label), a poster, a menu, a card. Make
+     it with `metamorfiles-artwork`: the image model paints its picture in the brand's style, and
+     the real logo and type are set on it, with a hierarchy you can read from a shelf. It shows the
+     brand system at work, never the logo on a flood of colour, never flat boxes drawn in code. It
+     fills the surface, so `size` and `at` don't apply, and Studio prints it opaque on the object.
    - **Only the ink** for a mark applied to a material: embroidery, a stamp on kraft, a sign's
      letters, engraving. Place the brand's files with `size` and `at`, or design the marks in `html`
      on nothing: the object's colour is the photo's, and Studio refuses a panel laid over it.
