@@ -18,6 +18,7 @@ Studio sends on a ground the model reads it against.
 ```
 Draw the character from image 1 again, in a new pose, the same character in every way.
 Who it is: <the identity block>.
+Its body, exactly: <the bible's body line>; nothing added to hold or do anything.
 The pose: <the pose, in one sentence: what it does, where its limbs are, which way it and its head face>.
 Alone on a transparent background, flat colours only, no letters, no ground line or shadow.
 ```

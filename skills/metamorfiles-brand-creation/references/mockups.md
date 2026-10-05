@@ -45,20 +45,28 @@ of them."). For each surface, decide:
 1. **The photo, blank.** Generate it with `metamorfiles_generate_image` into `brand/mockups/`: the
    object in the business's own world (its place, its light, its customers), as it is really used,
    and the surface where the brand goes described as completely blank, fully in frame and
-   unobstructed. The object is made in its own colour and material in the photo: a box printed in
-   the brand's green is generated as a plain green box, a card as a plain card in the brand's
-   paper, a sign as a board painted its colour. The surface may be flat, curved (a bottle, a cup, a cap's front) or soft (a
+   unobstructed. An object whose print covers it (a can, a box, a label, a poster) is generated
+   blank in its base material, a plain aluminium can or a white box, since its print brings every
+   colour. One that carries only a mark is made in its own colour and material: a sign as a board
+   painted its colour, an apron in its cloth. The surface may be flat, curved (a bottle, a cup, a cap's front) or soft (a
    garment, a tote); only a curve that turns away from the camera is out of reach. A screen is a
    device with a blank screen. Then list the folder in DESIGN.md `assets`:
    `{ folder: mockups, kind: in-use, title: In use }`.
-2. **The artwork.** Only what is printed or painted on the object, on nothing: place the brand's
-   own files (a logo, an image), or, for a surface that carries more than a mark, design its artwork
-   as `html`: plain markup with inline styles, set in the brand's tokens (`var(--brand-…)`) with its
-   files (`../../brand/…`), at the surface's proportions, with no background: the object's colour
-   is the photo's, never a panel laid over it, and Studio refuses one. Real
-   words only: the brand's voice lines and what the brief says, never an invented price, name,
+2. **The artwork.** Designed as the real one would be, in `html`: plain markup with inline styles,
+   set in the brand's tokens (`var(--brand-…)`) with its files (`../../brand/…`), at the surface's
+   real proportions. There are two kinds:
+   - **A full print** (`cover: true`) for every surface whose real version is printed all over:
+     packaging (a can's wrap, a box's face, a bag, a bottle's label), a poster, a menu, a card. Lay
+     it out the way a packaging or print designer would: its colour fields and grounds, the brand at
+     the size it has there, the product's name and what it is, the imagery, the character or the
+     pattern, and a hierarchy you can read from a shelf. It shows the brand system at work, never
+     the logo on a flood of colour. It fills the surface, so `size` and `at` don't apply.
+   - **Only the ink** for a mark applied to a material: embroidery, a stamp on kraft, a sign's
+     letters, engraving. Place the brand's files with `size` and `at`, or design the marks in `html`
+     on nothing: the object's colour is the photo's, and Studio refuses a panel laid over it.
+   Real words only: the brand's voice lines and what the brief says, never an invented price, name,
    date or figure (a temperature, a weight, a size). A designed artwork has its own margins and
-   hierarchy, like a printed label, rather than filling its box edge to edge.
+   hierarchy, like a printed label.
 3. **The brand on it.** `metamorfiles_make_mockup` takes each layer's four corners on the photo and
    the `surface`: what it is, its material, the method, the condition and its form (flat, curved or
    soft), and, for a file layer, the words it shows. The corners are the whole surface; `size` and
@@ -82,7 +90,8 @@ of them."). For each surface, decide:
    Change its size and place, or redo the photo, until it looks made, not placed. Each mockup is its own frame
    of the brand board.
 6. **Then the reviewer.** Each batch of mockups goes to the reviewer before the user sees it, and
-   again after any change to one (`SKILL.md`, "Reviewed before the user sees it").
+   again after any change to one (`SKILL.md`, "Reviewed before the user sees it"): each designed
+   artwork flat, as a design, on its `print-<id>` frame, then the photograph on its `mockup-<id>`.
 
 ## Placing it
 

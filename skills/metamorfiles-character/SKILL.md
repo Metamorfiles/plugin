@@ -32,6 +32,10 @@ Write it before drawing anything:
 - its **name**, and **what it is**: an animal, a creature, a person, an object that came alive;
 - **why it is this brand's**: taken from the business's own world (its product, its place, a story
   the user told), never the category's stock mascot;
+- its **body**, part by part, with how many of each and what does the work of hands: for Lumen's
+  moth, "two antennae, four wings, six thin legs, no hands: it holds things between its front
+  legs". Image models add the part a pose seems to need (an arm on a bird holding a cup, a third
+  wing), so every prompt carries this line, and the reviewer counts each drawing against it;
 - its **personality** in one sentence, and how it shows (a wink, a lean, a grin);
 - its **palette**: the brand's hex values, each for what it paints;
 - **what it never does**.
@@ -53,7 +57,7 @@ colours: `references/styles.md`. The style's paragraph is pasted unchanged into 
 ### 4. Draw candidates
 
 Draw three candidates together (`wait: false`), each from the same full prompt: the bible's one-line
-identity, the description, the style paragraph and the palette. Front or three-quarter view,
+identity, its body line, the description, the style paragraph and the palette. Front or three-quarter view,
 standing, a neutral pose. It is drawn alone, never with any word; the name is composed around it
 (`metamorfiles-logo`). In a logo drawn whole, where the character and the name are drawn as one,
 use this same description and style in its prompt. Save each with
