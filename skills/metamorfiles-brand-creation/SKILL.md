@@ -124,14 +124,19 @@ wait for its verdict, naming only the frames that are new or changed:
 | `logo.md` written, before asking | `process-logo` | every letter; each route's small mark is the very mark its logo shows; the small sizes, reversed and one colour |
 | `imagery.md` written, before asking | `process-imagery` | image-model mistakes; the four belong together |
 | Each batch of the library | the imagery folder's frame | the same, against the anchors |
-| Each batch of mockups | each `mockup-<id>` | the words, the placement, the finished photograph |
+| Each batch of mockups | each `print-<id>`, then `mockup-<id>` | the designed artwork flat, as a design; then the words, the placement, the finished photograph |
 | The finished kit | the whole board | the final check, under Kit |
 
 Report it as the reviewer: `metamorfiles_team_update` with `role: "reviewer"`, `status:
-"reviewing"` and those frames, so the user sees what is being checked, then `done`. Fix every
-**must fix** as the role that made the piece, at most two rounds; then ask, or go on. The brief and
-the directions aren't reviewed: they are the user's taste. The reviewer judges the work in each
-option, never which option is better.
+"reviewing"` and those frames, so the user sees what is being checked, then `done`. The reviewer
+records its verdict in Studio, and the thread shows what it caught. Fix every **must fix** as the
+role that made the piece, with a method that can fix it (a version that recolouring makes muddy is
+drawn again from the logo), and have it reviewed again; after two rounds, make the failing option
+again from scratch. Nothing reaches the user with a must fix standing: Studio won't ask a step, or
+let the brand be handed over, until its frames pass as they are now. Only when an option made
+again still fails is the step asked anyway, with `cannot`: one plain line on what couldn't be
+made, which the user reads beside the question. The brief and the directions aren't reviewed: they
+are the user's taste. The reviewer judges the work in each option, never which option is better.
 
 ## The steps' files
 

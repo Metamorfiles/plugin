@@ -72,7 +72,9 @@ drawn that the style block forbids. Redo from the anchors when it drifts.
 A brand whose imagery is a character designs it with the `metamorfiles-character` skill: its bible,
 its construction, candidates drawn alone and traced, one anchor the user approves, and every pose
 from that anchor. Its seeds on this step are the character in the brand's moments, each made from
-the anchor. List its folder in `assets` with `kind: character`.
+the anchor, and every image of it, seeds and library alike, carries the bible's body line, so the
+model adds nothing a pose seems to need. List its folder in `assets` with `kind: character`, its
+`note` holding the body line, which the reviewer counts against.
 
 ## In the kit
 
