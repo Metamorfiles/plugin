@@ -9,7 +9,7 @@
       "files": [],
       "assertions": [
         "Calls metamorfiles_team_update with task t1 before changing any file",
-        "Claims only frames of pages/serum-launch instagram-story variant b while working",
+        "Changes only pages/serum-launch instagram-story variant b",
         "Changes no file for other variants or formats",
         "Every metamorfiles_team_update line is under eight words and names no file or tool",
         "Hands the final check to the design-reviewer agent with only the project, item, changed frames and brief",
