@@ -24,10 +24,10 @@ Copy it into your notes and tick each step as you go:
 ```
 - [ ] Brief: brand/process/brief.md, the user's answers and facts
 - [ ] 1. Direction: references collected, 2 or 3 directions written, asked, chosen
-- [ ] 2. Logo: three routes with metamorfiles-logo (a character with metamorfiles-character), asked, chosen
-- [ ] 3. Imagery: mode, style block, four seeds, asked, anchors kept
-- [ ] Kit: DESIGN.md (its voice by the copywriter), final logos, fonts, library, mockups, imagery guide
-- [ ] Final check: metamorfiles-review in the foreground, fixes made
+- [ ] 2. Logo: three routes with metamorfiles-logo (a character with metamorfiles-character), reviewed, asked, chosen
+- [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
+- [ ] Kit: DESIGN.md (its voice by the copywriter), final logos, fonts, library and mockups (each batch reviewed), imagery guide
+- [ ] Final check: metamorfiles-review of the whole kit in the foreground, fixes made
 - [ ] Handover: finished: true with the summary
 ```
 
@@ -43,9 +43,9 @@ step; read it before the first step and use it to make each step's options stron
 `library/` describes published identities by kind of business, for study.
 
 This skill is the order of work for a new brand, in place of the team skill's: there is no first
-review (a new brand is made, not reviewed), it asks once per step rather than once per role, and its
-handover is the one `references/presenting.md` of `metamorfiles-brand` describes. The `reviewer`
-speaks only for the final check of the kit.
+review (a new brand is made, not reviewed), the reviewer checks each piece once it's made (below),
+it asks once per step rather than once per role, and its handover is the one
+`references/presenting.md` of `metamorfiles-brand` describes.
 
 Studio draws everything on one item, the brand board: the brief first, then each step as its own
 frame, then the kit's frames. A step's frame shows its slots while you make it, its options once you
@@ -111,6 +111,27 @@ started.
   what depends on it. A new palette recolours the logo routes; it never restarts the research.
 - **Going back from the chat.** "Back to the logo": write the logo step's file again without its
   `chosen`, and ask again.
+
+## Reviewed before the user sees it
+
+Whoever made something is the worst judge of it, so the reviewer looks at each piece of work before
+the user does, and at whatever is made again: a logo tried again, an image redone, a mockup moved,
+any change the user asks for in their own words. Run `metamorfiles-review` in the foreground and
+wait for its verdict, naming only the frames that are new or changed:
+
+| When | Frames | What it judges |
+|---|---|---|
+| `logo.md` written, before asking | `process-logo` | every letter; each route's small mark is the very mark its logo shows; the small sizes, reversed and one colour |
+| `imagery.md` written, before asking | `process-imagery` | image-model mistakes; the four belong together |
+| Each batch of the library | the imagery folder's frame | the same, against the anchors |
+| Each batch of mockups | each `mockup-<id>` | the words, the placement, the finished photograph |
+| The finished kit | the whole board | the final check, under Kit |
+
+Report it as the reviewer: `metamorfiles_team_update` with `role: "reviewer"`, `status:
+"reviewing"` and those frames, so the user sees what is being checked, then `done`. Fix every
+**must fix** as the role that made the piece, at most two rounds; then ask, or go on. The brief and
+the directions aren't reviewed: they are the user's taste. The reviewer judges the work in each
+option, never which option is better.
 
 ## The steps' files
 
