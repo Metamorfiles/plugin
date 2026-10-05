@@ -6,7 +6,7 @@ license: MIT
 
 # Studio's team
 
-The user watches the team in Studio's control panel while you work: a line at the top says who is doing what, frames being changed glow in that specialist's colour and are locked, and the task's thread holds handoffs and questions. At the end one **Undo all** puts back everything the task changed. So work in the open, one clear step at a time, and change only what the task needs.
+The user watches the team in Studio's control panel while you work: a line at the top says who is doing what, Studio marks each frame you change or render with the specialist and what it's doing (locked while it changes), and the task's thread holds the conversation, the reviewer's verdicts and the questions. At the end one **Undo all** puts back everything the task changed. So work in the open, one clear step at a time, and change only what the task needs.
 
 You play the specialists yourself, one at a time, because their work depends on each other: a shorter headline changes the layout, a new photo changes where the copy can sit. The one exception is the final check, which a separate reviewer does, since whoever made a change is the worst judge of it.
 
@@ -26,14 +26,13 @@ The craft files are the same ones every workflow uses; read each when its role s
 Call `metamorfiles_team_update` before each part of the work:
 
 - `task`: the id from Studio's request. Working in the user's own chat, leave it out once with `scope` (the page or template): the result gives you the id to pass from then on.
-- `role` and `status`: `reviewing` while only looking, `working` while changing frames, `done` when the role is finished.
-- `frames`: the frames the role is on (`item`, `variant`, `format`). Claim only the frames you are about to change: the user can't touch them until you're done, and they keep working on the rest.
+- `role` and `status`: `reviewing` while only looking, `working` while changing, `done` when the role is finished. Studio shows the frames each role changes from the tools it calls; you never name them.
 - `line`: what the user sees at the top, under eight words, starting with a verb: "is tightening the story headline", "is making a warmer photo". No file names, sizes, token names or tool names. While a new brand is made, Studio writes this line itself from the step and the files, so leave it out.
 - `say`: a sentence for the thread when it's worth keeping, above all a handoff (see below), without your role's name in front: the thread shows who said it.
 
-The result can include what the user said in the thread since your last update. Act on it before anything else; it overrides your plan. A note about something you made (a flaw in an image, a word they dislike) is fixed before you move on, never recorded and skipped.
+What the user writes in the thread reaches you with the result of the next Studio tool you call, whatever it is, and again with each one until your next `metamorfiles_team_update`, which acknowledges it. Act on it before anything else; it overrides your plan, and your next update's `say` tells the user what you'll do about it. A note about something you made (a flaw in an image, a word they dislike) is fixed before you move on, never recorded and skipped.
 
-Finish every role with `status: "done"` and no frames, so its frames unlock.
+Finish every role with `status: "done"`.
 
 ## Order of work
 
@@ -41,9 +40,9 @@ Finish every role with `status: "done"` and no frames, so its frames unlock.
 2. **Copywriter** before the designer when words change, since layout has to fit the final copy.
 3. **Image maker** next when an image changes, for the same reason.
 4. **Designer** last: fit the layout to the copy and images as they now are.
-5. **Final check** of the frames you changed, by a separate reviewer: [references/reviewer.md](references/reviewer.md), step 3. Report it as `reviewer` (`reviewing`, then `done`).
+5. **Final check** of what you changed, by a separate reviewer: [references/reviewer.md](references/reviewer.md), step 3. Report it as `reviewer` (`reviewing`, then `done`). It records its verdict in Studio, and Studio doesn't end the task until everything it changed has passed as it is now.
 
-Skip the roles a task doesn't need; never skip the first review or the final check. Stop after two fix rounds: if problems remain, say which in the summary instead of looping.
+Skip the roles a task doesn't need; never skip the first review or the final check. Stop after two fix rounds: when the third look still sends must fixes back, Studio lets the task end, and the summary says which remain.
 
 ## Scope
 
@@ -88,6 +87,6 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 
 ## Finish
 
-End the task with `metamorfiles_team_update` and `finished: true`, your summary as `summary`: the task is done at once, and a later call of yours doesn't reopen it. Only new work reported as `working`, or a new question, does. Finish everything first: every check, every fix, every subagent, in the foreground. Never end on work still running or promised ("I'll wrap up once the verdict arrives"): wait for it, then summarise.
+End the task with `metamorfiles_team_update` and `finished: true`, your summary as `summary`: the task is done at once, and a later call of yours doesn't reopen it. Studio refuses to end it while anything it changed hasn't passed the final check as it is now, and says what: have that reviewed, then finish. Only new work reported as `working`, or a new question, does. Finish everything first: every check, every fix, every subagent, in the foreground. Never end on work still running or promised ("I'll wrap up once the verdict arrives"): wait for it, then summarise.
 
 End with a plain summary of one or two sentences: what changed and where. Plain sentences, not a document: no headings or bold labels. A question for the user at the end is `metamorfiles_ask_user` before you finish, never a line of the summary. In a task Studio started it shows in a small thread beside the canvas, where the user already sees the frames; anywhere, every extra line buries the answer. The only third sentence allowed is a choice the user still has about this task (in Auto, the option you picked for them). Nothing about other frames, items, or problems that were there before the task, even ones the final check found. Talk as `SKILL.md` of `metamorfiles` says.

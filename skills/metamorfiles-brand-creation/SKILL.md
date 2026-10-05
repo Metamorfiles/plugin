@@ -94,8 +94,8 @@ started.
 - **Write the step's file** (below). The result says what's wrong with it, or gives the question
   Studio will ask and the options as the user will see them.
 - **Ask with `metamorfiles_ask_user` and `step`.** Studio asks the step's own question with the
-  options' titles, opens the board on the step's frame, and the user chooses there, in the thread or
-  in your chat. From the user's own app it returns at once: write the panel link and the options in
+  options' titles, the panel offers to bring the step's frame into view, and the user chooses there,
+  in the thread or in your chat. From the user's own app it returns at once: write the panel link and the options in
   your reply as Studio lettered them, the recommended one first with its reason, then keep calling it
   with `waitFor`. In Auto the recommended option is taken at once; say so in the thread.
 - **Studio records the choice** in the step's file, however the user made it, and the next step's
@@ -127,8 +127,8 @@ wait for its verdict, naming only the frames that are new or changed:
 | Each batch of mockups | each `print-<id>`, then `mockup-<id>` | the designed artwork flat, as a design; then the words, the placement, the finished photograph |
 | The finished kit | the whole board | the final check, under Kit |
 
-Report it as the reviewer: `metamorfiles_team_update` with `role: "reviewer"`, `status:
-"reviewing"` and those frames, so the user sees what is being checked, then `done`. The reviewer
+Report it as the reviewer: `metamorfiles_team_update` with `role: "reviewer"` and `status:
+"reviewing"`, then `done`; Studio shows the frames being checked as the reviewer renders them. The reviewer
 records its verdict in Studio, and the thread shows what it caught. Fix every **must fix** as the
 role that made the piece, with a method that can fix it (a version that recolouring makes muddy is
 drawn again from the logo), and have it reviewed again; after two rounds, make the failing option
