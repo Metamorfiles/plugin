@@ -53,7 +53,7 @@ Skip the roles a task doesn't need; never skip the first review or the final che
 
 Taste, direction, copy and which image are the user's. Mechanical fixes (clipped text, a margin, a contrast error, a stretched image) are not: just fix them.
 
-Ask with `metamorfiles_ask_user` wherever you work, in a task Studio started or in the user's own app: the question in plain words and two to four short options, the one you'd pick first marked `recommended`, each one a real alternative (not "other"). The question shows in the control panel with its options, so the user can answer where they are looking.
+Ask with `metamorfiles_ask_user` wherever you work, in a task Studio started or in the user's own app: the question in plain words and two to four short options, the one you'd pick first marked `recommended`, each one a real alternative (not "other"). The question shows in the control panel with its options, so the user can answer where they are looking. Never ask with your app's own question tool: the user watches the panel, and a question only your chat shows leaves the work stopped where nobody looks.
 
 - **In the user's own app**, pass the task id `metamorfiles_team_update` returned, and first write the same question in your reply: the panel link, the options as a short numbered list, the recommended one first with its reason, and that they can answer here or in Studio. Then call `metamorfiles_ask_user` and keep waiting. If they answer in the chat, call it with `waitFor` and `answer`: their words, so the panel closes the question.
 
