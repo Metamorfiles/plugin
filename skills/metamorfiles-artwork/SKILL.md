@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-artwork
-description: Use to design print and packaging artwork in Metamorfiles Studio, such as a can's wrap, a box's face, a bottle's label, a bag, a sticker, a poster or a menu, whether it's a new brand's mockup or a real piece to print. The image model paints the artwork's picture (illustration, pattern or scene) in the brand's own style and Studio sets the real logo and type on it exactly, so the result looks designed and printed, not drawn in code. Use it whenever an object's printed face is designed in full, even if the user only says "a label" or "the packaging".
+description: Use to design print and packaging artwork in Metamorfiles Studio to print for real, such as a can's wrap, a box's face, a bottle's label, a bag, a sticker, a poster or a menu. The image model paints the artwork's picture (illustration, pattern or scene) in the brand's own style and Studio sets the real logo and type on it exactly, so the result looks designed and printed, not drawn in code. Use it whenever an object's printed face is designed in full, even if the user only says "a label" or "the packaging".
 license: MIT
 ---
 
@@ -20,15 +20,15 @@ draws a letter or the logo, and the picture is never a CSS gradient.
 - [ ] 2. The picture painted by the image model, with calm room for the type
 - [ ] 3. Composed: the picture full bleed, the real logo and type on it
 - [ ] 4. Checked flat, as a printed piece, then reviewed
-- [ ] 5. Put to use: a mockup's print, or a template to print
+- [ ] 5. A template to print
 ```
 
 ### 1. Plan the piece
 
 Before any image, decide, as a packaging designer would, in your notes:
 
-- **The face.** Its real proportions: the part of a can or bottle a shopper sees, a box's front, a
-  label's shape. For a mockup, the surface's own corners give them.
+- **The face.** Its real proportions: a can's full wrap, a box's dieline, a label's shape, at its
+  printed size.
 - **The category's codes.** How packaging in this category looks on a shelf, and which code the
   brand keeps or breaks (the brief's research, `references/research.md` of
   `metamorfiles-brand-creation`). Craft drinks wear full illustration; skincare leans on type and
@@ -41,8 +41,7 @@ Before any image, decide, as a packaging designer would, in your notes:
 
 ### 2. The picture
 
-Generate it with `metamorfiles_generate_image`, into the folder the piece belongs to (an in-use
-folder for a mockup):
+Generate it with `metamorfiles_generate_image`, into the template's own folder:
 
 - **At the face's proportions,** so nothing is stretched or cropped to fit.
 - **In the brand's imagery style,** with its anchors as references and the character's anchor when
@@ -76,12 +75,10 @@ Render it and look at it flat, as the printed piece, before it goes anywhere: th
 shelf, every word, the logo intact, the picture on brand. Then get the review
 (`metamorfiles-review`) of it as a printed piece.
 
-### 5. Put it to use
+### 5. A template to print
 
-- **On a mockup** (a new brand's kit, `references/mockups.md` of `metamorfiles-brand-creation`):
-  the html is the layer's artwork with `cover: true`. Studio shows it flat on its `print-<id>` frame
-  beside the photograph, and prints it opaque on the object.
-- **To print for real:** a template (`metamorfiles-template`) whose format is the piece's size in mm
-  with its bleed, the same composition in its `index.html`, exported as PDF.
+A template (`metamorfiles-template`) whose format is the piece's size in mm with its bleed, the
+composition in its `index.html`, exported as PDF. To show it on the object, a mockup of it is made as
+`references/mockups.md` of `metamorfiles-brand-creation` says, with the flat artwork as a reference.
 
 What strong and weak artwork looks like is in [references/taste.md](references/taste.md).

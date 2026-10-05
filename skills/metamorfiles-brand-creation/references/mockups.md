@@ -1,117 +1,82 @@
 # The brand in use
 
-Read this for the kit, after the three choices of `SKILL.md`. Mockups show the new brand on this business's
-own objects and screens, so the user can judge the whole system before anything is made for real.
-They are presentation, never the brand's imagery: Studio keeps them in their own folder and refuses
-them in templates.
+Read this for the kit, after the three choices of `SKILL.md`. Mockups show the new brand made real on
+this business's own objects, so the user can judge the whole system at a glance. They are
+presentation, never the brand's imagery: Studio keeps them in their own folder and refuses them in
+templates.
 
-## Which surfaces
+The bar is packaging photography a design publication would feature: a real object, designed in
+full, shot with intent. Each mockup is one photograph the image model makes whole, with the brand's
+exact logo and the brand board as its references. Studio places nothing on it.
 
-- **From the brief's touchpoints** (`research.md`): four to six of them. Never a stock set (a
-  business card, a tote and a phone), and never an object this business doesn't use.
-- **A spread:** the most public surface (a sign, a store listing, a pack front), the humblest and
-  most frequent (a tag, a receipt, a notification), one held in the hand, and one on a screen when the
-  brand lives online.
-- **Each shows a different part of the system,** so together they prove it works:
+## Which three
 
-  | Part | For example |
-  |---|---|
-  | the wordmark at scale | a sign, a pack front |
-  | the icon or seal, small | a sticker, a tag, an app icon |
-  | a voice line as the headline | a report card, a poster, an email |
-  | the imagery or the character, in a scene | a poster, a pack side, an onboarding screen |
-  | the accent on one thing | a collar, a price, a button |
-  | the ground colour as a flood | a box, a wall, a splash screen |
-  | the pattern or graphic system | a wrap, a lining, a background |
+Three mockups, from the brief's touchpoints (`research.md`), each a different part of the system:
 
-  A surface that carries only the logo happens once at most.
+- **The hero:** the most public object, designed in full: the pack, the bottle, the can, the box.
+- **The range or the set:** the hero's family together (flavours, sizes, variants), or the hero with
+  what travels with it (a bag, a sleeve, a gift box).
+- **The everyday:** a small, frequent touchpoint that shows another part of the system: a sticker,
+  a tag, a sign, a card, a screen.
 
-## Decide them, then say so
+Never a stock set (a business card, a tote and a phone), and never an object this business doesn't
+use. Choose them without asking: the user sees each one arrive on the brand board and can ask for a
+change. Say which you chose in one `say` for the thread ("The bottle, the gift box and the market
+sign. Ask me to swap any of them.").
 
-Choose the surfaces from the brief and make them without asking first: the user sees each one
-arrive on the brand board and can ask the team to change any of them. Say which you chose in one
-`say` for the thread ("The swing tag, the tote, the invoice and the studio door. Ask me to swap any
-of them."). For each surface, decide:
-- the part of the system it shows;
-- what it's made of and how the brand is applied, from the list `metamorfiles_make_mockup` takes
-  (print, screen-print, thermal-print, paint, vinyl, sticker, embroidery, engraving, emboss, foil,
-  display, lightbox), as the business would really make it;
-- how worn it is, from the brief: `new` or `used` for a business that is starting, `worn` or
-  `weathered` only when the brand's age or trade is the point. You decide it, never the image
-  model.
+## Art direction, before any prompt
 
-## How
+Decide each one as an art director would, in your notes:
 
-1. **The photo, blank.** Generate it with `metamorfiles_generate_image` into `brand/mockups/`: the
-   object in the business's own world (its place, its light, its customers), as it is really used,
-   and the surface where the brand goes described as completely blank, fully in frame and
-   unobstructed. An object whose print covers it (a can, a box, a label, a poster) is generated
-   blank in its base material, a plain aluminium can or a white box, since its print brings every
-   colour. One that carries only a mark is made in its own colour and material: a sign as a board
-   painted its colour, an apron in its cloth. The surface may be flat, curved (a bottle, a cup, a cap's front) or soft (a
-   garment, a tote); only a curve that turns away from the camera is out of reach. A screen is a
-   device with a blank screen. Then list the folder in DESIGN.md `assets`:
-   `{ folder: mockups, kind: in-use, title: In use }`.
-2. **The artwork.** Designed as the real one would be, in `html`: plain markup with inline styles,
-   set in the brand's tokens (`var(--brand-…)`) with its files (`../../brand/…`), at the surface's
-   real proportions. There are two kinds:
-   - **A full print** (`cover: true`) for every surface whose real version is printed all over:
-     packaging (a can's wrap, a box's face, a bag, a bottle's label), a poster, a menu, a card. Make
-     it with `metamorfiles-artwork`: the image model paints its picture in the brand's style, and
-     the real logo and type are set on it, with a hierarchy you can read from a shelf. It shows the
-     brand system at work, never the logo on a flood of colour, never flat boxes drawn in code. It
-     fills the surface, so `size` and `at` don't apply, and Studio prints it opaque on the object.
-   - **Only the ink** for a mark applied to a material: embroidery, a stamp on kraft, a sign's
-     letters, engraving. Place the brand's files with `size` and `at`, or design the marks in `html`
-     on nothing: the object's colour is the photo's, and Studio refuses a panel laid over it.
-   Real words only: the brand's voice lines and what the brief says, never an invented price, name,
-   date or figure (a temperature, a weight, a size). A designed artwork has its own margins and
-   hierarchy, like a printed label.
-3. **The brand on it.** `metamorfiles_make_mockup` takes each layer's four corners on the photo and
-   the `surface`: what it is, its material, the method, the condition and its form (flat, curved or
-   soft), and, for a file layer, the words it shows. The corners are the whole surface; `size` and
-   `at` place the artwork in it the way a real one sits (below), at its own proportions, so a logo is
-   never stretched. The result says how much of the surface each artwork covers, and shows the
-   placement over the photo: the surface you gave dashed, the artwork solid, each with its centre
-   line. Check both against the object's own edges and centre before anything else. When the
-   artwork's words set badly (a block breaking into more lines than you set, a word alone on a line,
-   words past its edge), Studio says so and doesn't finish it: fix the artwork and make it again. Studio places the artwork exactly and bakes it
-   into the photo's light, then the user's image model finishes it into a photograph of the finished
-   object. Studio checks the finish against its bake (the artwork in place on a flat surface, no
-   mark added, the photo around it unchanged), tries once more when it fails, and keeps its exact
-   bake after two failures. Start several mockups together with `wait: false`, then wait for each
-   with `metamorfiles_image_status`.
-4. **Read every word.** The result comes with the artwork's area enlarged and the words it must
-   show. Read each one character by character, accents included. If any differs, call
-   `metamorfiles_make_mockup` again for a new finish, or with `finish: false` to keep the exact bake.
-   The user should never be the one to find it.
-5. **Look at it as a photograph of the finished object.** The artwork sits where it belongs, at the
-   size a customer would see it, and the photo has none of the image-model mistakes (`imagery.md`).
-   Change its size and place, or redo the photo, until it looks made, not placed. Each mockup is its own frame
-   of the brand board.
-6. **Then the reviewer.** Each batch of mockups goes to the reviewer before the user sees it, and
-   again after any change to one (`SKILL.md`, "Reviewed before the user sees it"): each designed
-   artwork flat, as a design, on its `print-<id>` frame, then the photograph on its `mockup-<id>`.
+- **The packaging design.** Designed in full, the way real packaging in this category is: the brand's
+  imagery or character at work across the object, its palette, its type style, and a hierarchy that
+  reads from a shelf: the brand, then what the product is, then one descriptor. A logo alone on a
+  flat field of colour is not packaging design.
+- **The shot.** A controlled studio set (a seamless or tonal ground in a brand colour, soft directional
+  light, a real shadow) or a styled scene from the business's own world. One idea per shot: a
+  three-quarter hero, a tight group of the range, a top-down flat lay, a detail close-up.
+- **The materials and finishes,** named as a printer would: uncoated paper, matte laminate, kraft,
+  foil, emboss, glass, brushed aluminium. They are what make it read as made, not rendered.
+- **Restraint.** Room around the object, few props and only ones that belong to it, nothing that
+  competes with the brand.
 
-## Placing it
+What strong and weak work look like is in `references/taste.md` of `metamorfiles-artwork`.
 
-Mockups look made when the brand sits on the object the way a printer or signwriter would put it,
-and placed when everything is blown up to the edges. Look at the real object in your head: where its
-brand goes, how big it is next to the object, how much room is around it.
+## Make them
 
-- **A garment or apron** carries a small mark on the chest, high and to one side, or a modest one
-  centred; a back print is the one place a large one goes.
-- **A box, bag or lid** holds the logo with generous room around it, often centred, sometimes low or
-  in a corner; a pattern or a flood of colour is what covers it edge to edge.
-- **A sticker, badge or label** fills its die-cut with a border of the material showing.
-- **A sign, lightbox or fascia** sets the name large but with breathing room to its frame, in the
-  sign's own proportions.
-- **A cup, can or bottle** keeps the logo within the face you see, never wrapping to its edges.
-- **Small type stays small,** as on the real thing: a line under a logo, an address, a URL.
-- **One hero per surface.** When the logo, a line and a drawing share a surface, one leads and the
-  others are clearly smaller.
+1. **The folder.** List it in DESIGN.md `assets`: `{ folder: mockups, kind: in-use, title: In use }`.
+   Each image in it is a frame of the brand board.
+2. **Each photograph,** with `metamorfiles_generate_image` into `brand/mockups/`, all three together
+   with `wait: false`, at the shot's shape (a landscape hero, a square group, a portrait detail). The
+   references, in this order, and the prompt says what each one is:
+   1. **The logo file** the object carries (DESIGN.md `logos`): "image 1 is the logo".
+   2. **The brand board,** `templates/brand-board#board`: "image 2 is the brand system: its colours,
+      type and imagery".
+   3. **The imagery anchors or the character's anchor,** when they appear on the object.
+3. **The prompt,** in this order:
+   - the photograph: the shot, the set, the light, the angle, the camera;
+   - the object and its packaging design: its form, its materials and finishes, how the design
+     covers it, and where the brand, the product name and the descriptor sit;
+   - the logo: "the logo from image 1 exactly as drawn: the same shapes, letters, colours and
+     proportions, never redrawn, restyled or retyped", and where it sits and how big;
+   - the words: only these, exactly (the brand's name, and the product names the brief gives), and
+     no other text: no small print, barcodes, prices, nutrition panels or claims;
+   - the brand's look from image 2: its palette by name, its type's character, its imagery's style.
 
-The artwork is never the size of the whole surface unless the real object is printed that way.
+## Check, fix, review
 
-A model never draws the logo or the words into the blank photo: the mockup always starts from the
-real files and the brand's own type, placed by Studio.
+4. **Look at each one first,** as the photograph a design publication would run: the logo against its
+   file, every word, the object a real printer could make, the light and the set. A take that misses
+   is made again before review, and the one it replaces is removed (`metamorfiles_write_file` with
+   `remove: true`).
+5. **The reviewer** checks the three `mockup-` frames before the user sees them (`SKILL.md`, "Reviewed
+   before the user sees it").
+6. **Fix what it sends back** with the method that can fix it:
+   - **A wrong logo or word** on an otherwise good photograph: an edit of it. Call
+     `metamorfiles_generate_image` with `edit: true`, the mockup first and the logo file second in
+     `references`, and a prompt that changes only that ("Change only the logo on the bottle's label
+     so it is exactly the logo in image 2; keep everything else as it is").
+   - **A weak design, shot or object:** a new take, with the art direction changed where it fell short.
+   - Two rounds at most; then a new take from scratch, as `SKILL.md` says.
+
+The user reviews them last, on the board, and asks for any change in their own words.
