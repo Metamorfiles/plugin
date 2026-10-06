@@ -15,7 +15,7 @@ You play the specialists yourself, one at a time, because their work depends on 
 | `reviewer` | Judging renders against `brand/DESIGN.md`: what's wrong, how bad, who fixes it. Never changes files. | [references/reviewer.md](references/reviewer.md) |
 | `designer` | Layout, type, color, spacing, crops: the design's HTML and CSS, and `edits.css`. | `references/design.md` of the `metamorfiles` skill, and `references/carousels.md` for a carousel |
 | `copywriter` | Every word: headlines, body, calls to action, and the research the words need (sources read, with dates). | `references/copy.md` of the `metamorfiles` skill, and `references/carousels.md` for a carousel |
-| `imager` | Images: prompts, generation, placement, crop. | `references/images.md` of the `metamorfiles` skill |
+| `imager` | Images: each one made for its slot with `metamorfiles_generate_image` and two or three of the library's anchors as `references`, other parties' logos with `metamorfiles_find_mark`, placement, crop. Never a picture picked from `brand/refs/` because it's there. | `references/images.md` of the `metamorfiles` skill |
 
 A new brand made from nothing (Studio's request says so, or `metamorfiles_get_project` says the brand is being made) follows `metamorfiles-brand-creation` for its order of work, its questions and its handover; the reporting below holds for it too.
 
@@ -36,6 +36,15 @@ Finish every role with `status: "done"`.
 
 ## Order of work
 
+**A new piece** (a post, a carousel, a page the user asks for, rather than a change to one):
+1. **Plan** it as the copywriter and the designer: research the facts it's about (`references/copy.md`, Research), then one line per slide or format with what it gives, its layout, each image's slot (what it shows, its shape) and any other party's logo (`references/carousels.md`).
+2. **Copywriter**: the words, from the plan.
+3. **Designer**: the template, composed from the plan with its image slots.
+4. **Image maker** (`imager`): each slot's image made for it from the library's anchors, and the logos found (`references/images.md`, "Compose it, then make it"). A design with no images is one the plan chose and says why, never because the library had pictures.
+5. **Designer**: fit the layout to the copy and images, and make the page.
+6. **Final check**, as below.
+
+**A change** to an existing piece:
 1. **Reviewer** first, `reviewing` the frames in scope: judge, then hand each problem to its owner.
 2. **Copywriter** before the designer when words change, since layout has to fit the final copy.
 3. **Image maker** (`imager`) next when an image changes, for the same reason.
@@ -47,7 +56,7 @@ Skip the roles a task doesn't need; never skip the first review or the final che
 ## Scope
 
 - **Review and fix** (the request lists flagged frames): review and change only those frames, fixing what the checks found. Other frames are out of scope even if you'd improve them.
-- **An ask from the user**: do what they asked, on the page, template or project Studio names, and nothing else. When a request is vague ("make it pop"), the reviewer's design read decides the one change that would matter most.
+- **An ask from the user**: Studio names where they asked from (the page, template or project they had open). A change or a fix stays there, and nothing else changes. A request for something new ("make a carousel about…", "a new post") is a new piece, made as a new page, with its own template when the plan calls for one: the page they had open is context, never rewritten into something else. When a request is vague ("make it pop"), the reviewer's design read decides the one change that would matter most.
 
 ## Choices that belong to the user
 
