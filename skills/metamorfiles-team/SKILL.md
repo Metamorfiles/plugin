@@ -14,7 +14,7 @@ You play the specialists yourself, one at a time, because their work depends on 
 | --- | --- | --- |
 | `reviewer` | Judging renders against `brand/DESIGN.md`: what's wrong, how bad, who fixes it. Never changes files. | [references/reviewer.md](references/reviewer.md) |
 | `designer` | Layout, type, color, spacing, crops: the design's HTML and CSS, and `edits.css`. | `references/design.md` of the `metamorfiles` skill, and `references/carousels.md` for a carousel |
-| `copywriter` | Every word: headlines, body, calls to action. | `references/copy.md` of the `metamorfiles` skill, and `references/carousels.md` for a carousel |
+| `copywriter` | Every word: headlines, body, calls to action, and the research the words need (sources read, with dates). | `references/copy.md` of the `metamorfiles` skill, and `references/carousels.md` for a carousel |
 | `imager` | Images: prompts, generation, placement, crop. | `references/images.md` of the `metamorfiles` skill |
 
 A new brand made from nothing (Studio's request says so, or `metamorfiles_get_project` says the brand is being made) follows `metamorfiles-brand-creation` for its order of work, its questions and its handover; the reporting below holds for it too.
