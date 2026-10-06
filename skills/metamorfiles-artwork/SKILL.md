@@ -42,14 +42,14 @@ Before any image, decide, as a packaging designer would, in your notes:
 ### 2. The picture
 
 Generate it with
-`metamorfiles_generate_image { prompt, width: 2400, height: 1000, references: ["brand/refs/<anchor>", ...], name: "can-wrap" }`.
+`metamorfiles_generate_image { prompt, width: 2400, height: 1000, references: ["templates/brand-board#refs"], name: "can-wrap" }`.
 It saves into `assets/` (or a brand folder given as `folder`), and the template uses the path it
 returned as the image's value.
 
 - **At the face's proportions,** `width` and `height` in pixels at the face's ratio, the long side
   at most 4096, so nothing is stretched or cropped to fit.
-- **In the brand's imagery style,** with its anchors as references, by their place in the folder
-  DESIGN.md lists them in (`brand/refs/<anchor>`), the character's anchor when it appears, and the
+- **In the brand's imagery style,** with the library's sheet as the reference (its frame on the brand
+  board, `templates/brand-board#refs`, or the character's folder frame when it appears) and the
   Imagery section's words, so it belongs with the rest of the brand. A character keeps its body
   line in the prompt (`metamorfiles-character`).
 - **No words, letters, numbers, logos or labels in it,** asked for plainly: they are set in step 3.

@@ -80,8 +80,8 @@ says what each one is:
 
 1. **The logo file** DESIGN.md `logos` names, such as `brand/logos/logo.svg`: "image 1 is the logo".
 2. **The brand board,** `templates/brand-board#board`: "image 2 is the brand system".
-3. **The imagery anchors or the character's anchor,** when they appear on the object, by their place
-   in the folder DESIGN.md lists them in, such as `brand/refs/<anchor>`.
+3. **The library's sheet,** when the brand's imagery or character appears on the object: its frame on
+   the brand board, such as `templates/brand-board#refs`: "image 3 is the brand's image library".
 
 Write it in this order:
 1. The shot: "Editorial packaging photograph", its shape, the idea, the camera (from above, straight
