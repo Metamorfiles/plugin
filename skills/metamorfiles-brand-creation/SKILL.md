@@ -122,17 +122,18 @@ wait for its verdict, naming only the frames that are new or changed:
 | When | Frames | What it judges |
 |---|---|---|
 | `logo.md` written, before asking | `process-logo` | every letter; each route's small mark is the very mark its logo shows; the small sizes, reversed and one colour |
-| `imagery.md` written, before asking | `process-imagery` | image-model mistakes; the four belong together |
+| `imagery.md` written, before asking | `process-imagery` | image-model mistakes; none in another medium |
 | Each batch of the library | the imagery folder's frame | the same, against the anchors |
 | The three mockups | each `mockup-<id>` | the logo against its file, every word, the packaging designed in full, how each object sits and opens, the photograph |
 | The finished kit | the whole board | the final check, under Kit |
 
 Report it as the reviewer: `metamorfiles_team_update` with `role: "reviewer"` and `status:
 "reviewing"`, then `done`; Studio shows the frames being checked as the reviewer renders them. The reviewer
-records its verdict in Studio, and the thread shows what it caught. Fix every **must fix** as the
-role that made the piece, with a method that can fix it (a version that recolouring makes muddy is
-drawn again from the logo), and have it reviewed again; after two rounds, make the failing option
-again from scratch. Nothing reaches the user with a must fix standing: Studio won't ask a step, or
+records its verdict in Studio, and the thread shows what it caught. Fix only the **must fixes**,
+once, as the role that made the piece, with a method that can fix it (a version that recolouring
+makes muddy is drawn again from the logo), and have it reviewed again; if that look still sends one
+back, make the failing option again from scratch. Suggestions are taste: weigh them, but never
+remake work for one before the user has seen it. The user's choice is the judgement that counts. Nothing reaches the user with a must fix standing: Studio won't ask a step, or
 let the brand be handed over, until its frames pass as they are now. Only when an option made
 again still fails is the step asked anyway, with `cannot`: one plain line on what couldn't be
 made, which the user reads beside the question. The brief and the directions aren't reviewed: they

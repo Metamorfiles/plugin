@@ -23,15 +23,18 @@ every mode: a locked style, seeds the user approves, and a library grown from th
 ## The style block
 
 One paragraph, written once and pasted unchanged after every scene, so every image is drawn by the
-same hand:
+same hand. Describe the look the way an art director briefs an illustrator, in what it is ("flat
+cut-paper shapes in a few colours, little or no shading"), not as a list of bans: a model draws
+what it reads, and a ban names the very thing it then draws. The reviewer reads it the same way, as
+a look to recognise, not rules to count.
 - **For illustration:** the line (its weight as a share of the width, caps, how loose), the fills
-  (flat, the palette's hex values only, plus a material colour such as wood when the drawings need
-  one), what never appears (hatching, gradients, shading, texture), the one accent on the one object
-  each image is about, how people are drawn, and a calm ground in the brand's paper colour.
+  (flat, in the palette's colours, plus a material colour such as wood when the drawings need one),
+  how much light and texture there is, where the accent falls, how people are drawn, and a calm
+  ground in the brand's paper colour.
 - **For photography:** the light (hard morning sun, on-camera flash), the lens and distance, the grade,
   real materials, how many props at most.
-- **For both:** no text, letters or logos anywhere; and the category's and the place's clichés,
-  named, as what never appears.
+- **For both:** no text, letters or logos anywhere. Keep the category's and the place's clichés
+  out by choosing the subjects, not by listing them.
 
 ## Seeds, then anchors
 
@@ -41,8 +44,10 @@ same hand:
 2. Each seed is one option of the imagery step, titled by what it shows ("The knit close-up"). The
    user uses them all, or has single ones redone first ("Redo the knit close-up").
 3. Redo a rejected seed from the ones the user liked, passed as references, never from the rejected
-   one. Say what to keep ("the same composition") and what to change ("fewer lines, no texture").
-   Expect one in three to need a redo.
+   one. Say what to keep ("the same composition") and what to change ("fewer, bolder lines"). The
+   new take goes first in the option's `files` and the earlier one stays after it: the board shows
+   it small and dimmed under "Earlier takes", so the user can ask for it back, and then it moves
+   first again. Remove a take only when it has an image-model mistake.
 4. The seeds the user keeps are the **anchors**. Every later image is made with two or three of them as
    references: "draw a new scene in exactly the drawing style of the reference images".
 
@@ -64,8 +69,9 @@ with the same style block, `folder` set to that folder so its ground is the bran
 - **Scenes:** the business's moments and people, with calm space above for a headline.
 - The accent colour on the one object each image is about.
 
-Check each one against the anchors: the same line and fills, no colours outside the palette, nothing
-drawn that the style block forbids. Redo from the anchors when it drifts.
+Check each one against the anchors: the same medium, line and fills. Redo from the anchors when one
+has an image-model mistake or is plainly in another medium; a small drift in a tint or a detail is
+not worth a redo.
 
 ## A character
 
@@ -78,7 +84,7 @@ model adds nothing a pose seems to need. List its folder in `assets` with `kind:
 
 ## In the kit
 
-- DESIGN.md's Imagery section says the mode, the rules and what never appears, and names the anchors.
+- DESIGN.md's Imagery section describes the mode and the look, and names the anchors.
 - `assets` lists the folder with `kind: imagery` (or `character`) and its `anchors`.
 - `brand/imagery-guide.md` holds the style block and how to write a scene, for anyone who makes the
   next image.
