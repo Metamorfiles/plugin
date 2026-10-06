@@ -67,15 +67,16 @@ hand-made, character-led, editorial, material), in how the mark is made and in w
 ## The reference hunt
 
 Designers start from the best of what exists, the way they browse it:
-- **Search** with `metamorfiles_search_references`, in the business's plainest words ("bakery",
-  "skincare packaging", "bike shop"). It returns the covers of the most viewed and the featured
-  projects, numbered on one sheet: two pages of the daily budget.
+- **Search** with `metamorfiles_search_references { query: "bakery" }`, in the business's plainest
+  words ("bakery", "skincare packaging", "bike shop"). It returns the covers of the most viewed and
+  the featured projects, numbered on one sheet: two pages of the daily budget.
 - **Choose from the covers** the four to six projects worth opening, genuinely good whatever their
-  category, and pass their links to `metamorfiles_collect_references`, which keeps about eight images
-  of each (the logo, lettering, mascot and palette pages come with them). Links the user pasted come
-  first: they are their taste.
-- `metamorfiles_look_at_page` shows a single page when you need to read one more closely, such as a
-  type specimen or the business's own website. Every page opened spends the same budget.
+  category, and pass their links as `metamorfiles_collect_references { links: [...] }`, which keeps
+  about eight images of each (the logo, lettering, mascot and palette pages come with them). Links
+  the user pasted come first: they are their taste.
+- `metamorfiles_look_at_page { url: "https://..." }` shows a single page when you need to read one
+  more closely, such as a type specimen or the business's own website. Every page opened spends the
+  same budget.
 
 ## Directions
 
@@ -87,7 +88,7 @@ direction step, with its palette and pairing from `look.md`:
   a risk.
 - **Files:** four to eight references chosen by attribute (a logo, type, imagery, a layout, an
   application), so the direction shows the whole brand, not eight logos.
-- **Captions:** the project, then what to take from it: "Loom · a loose, confident script as the
+- **Captions:** the project, then what to take from it: "Harbour Study · a loose, confident script as the
   hero". What to take is a principle, never the look to copy.
 
 Recommend the direction that best fits the brief, and say why in its line. The user may mix two;

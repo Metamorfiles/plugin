@@ -25,7 +25,7 @@ Keep the text sparse, the way a board is: a name, a line, a few labels. Dense ex
 ## Start every session
 
 0. If the only Metamorfiles tool available is `metamorfiles_activate`, Studio isn't activated on this computer yet: follow the `activate` skill first.
-1. Call `metamorfiles_get_project`. Every brand is its own project, and a working folder can hold several: it opens the brand last worked on and lists the others in `otherBrands`. When the user names a brand, or its website or product is another brand's, pass that brand as `name` to open its project. For a brand with no project yet, pass `create: true` and its `name`: Studio makes it a new project beside the others (`metamorfiles/` for the first, a folder named for the brand after that, `~/Metamorfiles/<name>` when there's no working folder, like in a chat app). Never rebuild one brand's kit for another: that would restyle every template and page of the first. Don't ask where to put it; pass an absolute `path` only if the user asks for another location. Pass `example: true` only when the user wants to explore the example brand and template.
+1. Call `metamorfiles_get_project`. Every brand is its own project, and a working folder can hold several: it opens the brand last worked on and lists the others in `otherBrands`. When the user names a brand, or its website or product is another brand's, open its project with `metamorfiles_get_project { name: "Lumen Skincare" }`. For a brand with no project yet, `metamorfiles_get_project { create: true, name: "<brand>" }`: Studio makes it a new project beside the others (`metamorfiles/` for the first, a folder named for the brand after that, `~/Metamorfiles/<name>` when there's no working folder, like in a chat app). Never rebuild one brand's kit for another: that would restyle every template and page of the first. Don't ask where to put it; pass an absolute `path` only if the user asks for another location. Pass `example: true` only when the user wants to explore the example brand and template.
 2. Read the returned `brand` before writing any copy or design. If there's no brand kit yet, it says what to do: an existing brand is translated with `metamorfiles-brand`, a new one is made with `metamorfiles-brand-creation`, and a brand already being made is continued on the task it names.
 3. Pick the workflow below.
 4. Every render and write returns a control panel link. The first render or question of a session opens the panel in the user's browser, unless it's open already.
@@ -35,12 +35,12 @@ Keep the text sparse, the way a board is: a name, a line, a few labels. Dense ex
 - A **template** (`templates/<id>/`) is the base design: its variables, formats and defaults.
 - A **page** (`pages/<id>/`) is one deliverable, such as "Spring launch" or "Headline test", made from a template with `metamorfiles_create_page`. It holds its own copy of the design plus `page.json` with its name and variants, so later template changes never alter it, and it exports every variant in every format with `metamorfiles_export_page`. When the user wants a delivered page to follow a new template, make a new page from it; both stay.
 - **One page per deliverable.** The post and the story of one campaign are two formats of one page, not two pages.
-- **History** keeps every version of every template and page: yours, the user's edits in the control panel, a reviewer's fixes. So change a template or page in place, and never copy one to keep an old version or name a new one "-v2": that is what the history is for, and copies bury the user's list. `metamorfiles_list_history` and `metamorfiles_restore_version` go back when the user asks.
+- **History** keeps every version of every template and page: yours, the user's edits in the control panel, a reviewer's fixes. So change a template or page in place, and never copy one to keep an old version or name a new one "-v2": that is what the history is for, and copies bury the user's list. `metamorfiles_list_history { item: "pages/<id>" }` (or `"templates/<id>"`) and `metamorfiles_restore_version { item, version }` go back when the user asks.
 - **The user edits too.** In the control panel they change values (on a page, for one frame, a variant or the whole page, see `page.json` in `metamorfiles-variants`), move and restyle elements (saved to the item's `edits.css`) and edit text in place, and it is all saved on disk at once. Read a file again before you change it, and when they say "this" or "the selected one", call `metamorfiles_get_selection`.
 
 ## Changing files
 
-Write and change every project file with `metamorfiles_write_file`, never with a shell command, a script or another editor. It checks what you wrote and returns the findings, records the version in the history with your `note` (say why: "Review fixes: shorter headline"), and refuses a copy that is older than what is on disk, so you never overwrite the user's panel edits. A shell edit skips all three, and outside auto mode it makes the user approve every change. Write the whole file: read it with `metamorfiles_read_file`, change what you need, write it back. The one exception is copying the brand's own files into the project unchanged, such as fonts, logos and reference images from the user's folders: copy those as they are.
+Write and change every project file with `metamorfiles_write_file`, never with a shell command, a script or another editor. It checks what you wrote and returns the findings, records the version in the history with your `note` (say why: "Review fixes: shorter headline"), and refuses a copy that is older than what is on disk, so you never overwrite the user's panel edits. A shell edit skips all three, and outside auto mode it makes the user approve every change. Write the whole file: read it with `metamorfiles_read_file { path }`, change what you need, write it back with `metamorfiles_write_file { path, content, note }`. The one exception is bringing the brand's own files in unchanged from the user's folders: images with `metamorfiles_import_image { path: "<absolute path>", folder: "brand/refs" }`, a Google font with `metamorfiles_add_font { family: "Fraunces" }`, and logos and other files (a font file the user has, a source to translate from) with a plain file copy, the one shell command allowed.
 
 ## Workflows
 
@@ -57,10 +57,10 @@ Write and change every project file with `metamorfiles_write_file`, never with a
 | One image or design adapted to other platforms and sizes               | `metamorfiles-repurpose`   |
 | An independent review before delivering, and after any layout change   | `metamorfiles-review`      |
 | A change to an existing template or page: a fix, an improvement, a new format, or any task Studio hands you | `metamorfiles-team` |
-| To see, tweak, edit elements or export by hand                         | `metamorfiles_open_panel`, give the URL |
-| An earlier version back                                                | `metamorfiles_list_history`, then `metamorfiles_restore_version` |
+| To see, tweak, edit elements or export by hand                         | `metamorfiles_open_panel { item: "pages/<id>" }`, give the URL |
+| An earlier version back                                                | `metamorfiles_list_history { item }`, then `metamorfiles_restore_version { item, version }` |
 
-If the workflow skill is not loaded, call `metamorfiles_get_guide` with its name.
+If the workflow skill is not loaded, call `metamorfiles_get_guide { name: "<skill>" }`, such as `metamorfiles-variants`.
 
 ## Craft
 
@@ -73,7 +73,7 @@ Every workflow uses the same craft, one file each. Read the one you need before 
 | make, place or crop an image, or bring one in | [references/images.md](references/images.md) |
 | prompt a given model (after `images.md`) | its family's file: [images-openai.md](references/images-openai.md), [images-gemini.md](references/images-gemini.md), [images-flux.md](references/images-flux.md), [images-other.md](references/images-other.md) |
 
-From another skill, read them in this skill's folder, or with `metamorfiles_get_guide` (name `metamorfiles`, file `references/design.md`).
+From another skill, read them in this skill's folder, or with `metamorfiles_get_guide { name: "metamorfiles", file: "references/design.md" }`.
 
 ## Project layout
 
@@ -197,7 +197,7 @@ Any other size is inline: `{ "id": "banner", "width": 1500, "height": 500 }`. **
 
 ## Quality loop
 
-Every `metamorfiles_render_preview` returns design checks measured on the rendered image:
+Every `metamorfiles_render_preview { item: "templates/launch-post", format: "instagram-story" }` (add `variant` for a page, `values` to try copy) returns design checks measured on the rendered image:
 - **Errors:** clipped text, text that spills out of its box, text outside the image or the safe margin, fonts that fell back, broken or stretched images, contrast below 3:1 against what's actually behind the text, photo included.
 - **Warnings:** upscaled images, off-palette colors, small text below 4.5:1.
 

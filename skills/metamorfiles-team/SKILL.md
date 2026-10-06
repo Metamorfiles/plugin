@@ -19,14 +19,14 @@ You play the specialists yourself, one at a time, because their work depends on 
 
 A new brand made from nothing (Studio's request says so, or `metamorfiles_get_project` says the brand is being made) follows `metamorfiles-brand-creation` for its order of work, its questions and its handover; the reporting below holds for it too.
 
-The craft files are the same ones every workflow uses; read each when its role starts, not all up front (in that skill's folder, or with `metamorfiles_get_guide`, name `metamorfiles`, file `references/design.md`).
+The craft files are the same ones every workflow uses; read each when its role starts, not all up front (in that skill's folder, or with `metamorfiles_get_guide { name: "metamorfiles", file: "references/design.md" }`).
 
 ## Report every step
 
-Call `metamorfiles_team_update` before each part of the work:
+Call `metamorfiles_team_update { task: "<id>", role: "copywriter", status: "working", line: "is tightening the story headline" }` before each part of the work:
 
-- `task`: the id from Studio's request. Working in the user's own chat, leave it out once with `scope` (the page or template): the result gives you the id to pass from then on.
-- `role` and `status`: `reviewing` while only looking, `working` while changing, `done` when the role is finished. Studio shows the frames each role changes from the tools it calls; you never name them.
+- `task`: the id from Studio's request, exactly as Studio wrote it; Studio refuses one it never gave. Working in the user's own chat, leave it out once and pass `scope` instead (`"pages/<id>"`, `"templates/<id>"`, or `"project"` for the brand): the result gives you the id to pass from then on.
+- `role` (`reviewer`, `designer`, `copywriter` or `imager`) and `status`: `reviewing` while only looking, `working` while changing, `done` when the role is finished. Studio shows the frames each role changes from the tools it calls; you never name them.
 - `line`: what the user sees at the top, under eight words, starting with a verb: "is tightening the story headline", "is making a warmer photo". No file names, sizes, token names or tool names. While a new brand is made, Studio writes this line itself from the step and the files, so leave it out.
 - `say`: a sentence for the thread when it's worth keeping, above all a handoff (see below), without your role's name in front: the thread shows who said it.
 
@@ -38,7 +38,7 @@ Finish every role with `status: "done"`.
 
 1. **Reviewer** first, `reviewing` the frames in scope: judge, then hand each problem to its owner.
 2. **Copywriter** before the designer when words change, since layout has to fit the final copy.
-3. **Image maker** next when an image changes, for the same reason.
+3. **Image maker** (`imager`) next when an image changes, for the same reason.
 4. **Designer** last: fit the layout to the copy and images as they now are.
 5. **Final check** of what you changed, by a separate reviewer: [references/reviewer.md](references/reviewer.md), step 3. Report it as `reviewer` (`reviewing`, then `done`). It records its verdict in Studio, and Studio doesn't end the task until everything it changed has passed as it is now.
 
@@ -53,11 +53,11 @@ Skip the roles a task doesn't need; never skip the first review or the final che
 
 Taste, direction, copy and which image are the user's. Mechanical fixes (clipped text, a margin, a contrast error, a stretched image) are not: just fix them.
 
-Ask with `metamorfiles_ask_user` wherever you work, in a task Studio started or in the user's own app: the question in plain words and two to four short options, the one you'd pick first marked `recommended`, each one a real alternative (not "other"). The question shows in the control panel with its options, so the user can answer where they are looking. Never ask with your app's own question tool: the user watches the panel, and a question only your chat shows leaves the work stopped where nobody looks.
+Ask with `metamorfiles_ask_user { task, role: "copywriter", question: "Which headline leads the post?", options: [{ label: "Price-led", recommended: true }, { label: "Ritual-led" }] }` wherever you work, in a task Studio started or in the user's own app: the question in plain words and two to four options of up to 80 characters each, the one you'd pick first marked `recommended`, each one a real alternative (not "other"). The question shows in the control panel with its options, so the user can answer where they are looking. Never ask with your app's own question tool: the user watches the panel, and a question only your chat shows leaves the work stopped where nobody looks.
 
-- **In the user's own app**, pass the task id `metamorfiles_team_update` returned, and first write the same question in your reply: the panel link, the options as a short numbered list, the recommended one first with its reason, and that they can answer here or in Studio. Then call `metamorfiles_ask_user` and keep waiting. If they answer in the chat, call it with `waitFor` and `answer`: their words, so the panel closes the question.
+- **In the user's own app**, pass the task id `metamorfiles_team_update` returned, and first write the same question in your reply: the panel link, the options as a short numbered list, the recommended one first with its reason, and that they can answer here or in Studio. Then call `metamorfiles_ask_user` and keep waiting. If they answer in the chat, call `metamorfiles_ask_user { task, waitFor: "<question id>", answer: "<their words>" }`, so the panel closes the question.
 
-- In **Chat** it waits. While it answers `waiting`, call it again with `waitFor` and the question id, for as long as it takes, and never end your turn while a question is open: the user may answer in the panel. Carry on meanwhile only with work that doesn't depend on the answer. The user may answer in their own words instead of an option: the answer is then their sentence, and you act on what it says (a change, a mix, a redo) rather than taking an option.
+- In **Chat** it waits. While it answers `waiting`, call `metamorfiles_ask_user { task, waitFor: "<question id>" }` again, for as long as it takes, and never end your turn while a question is open: the user may answer in the panel. Carry on meanwhile only with work that doesn't depend on the answer. The user may answer in their own words instead of an option: the answer is then their sentence, and you act on what it says (a change, a mix, a redo) rather than taking an option.
 - In **Auto** it returns your recommended option at once and tells the user it was chosen for them. Make the recommendation the one you'd defend.
 - Pass `remember: true` when the answer is a lasting preference for the project (a tone, a rule, a style), not a one-off pick like which headline. Remembered answers come back without asking, and `metamorfiles_get_project` lists them: follow them without asking again.
 
@@ -87,6 +87,6 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 
 ## Finish
 
-End the task with `metamorfiles_team_update` and `finished: true`, your summary as `summary`: the task is done at once, and a later call of yours doesn't reopen it. Studio refuses to end it while anything it changed hasn't passed the final check as it is now, and says what: have that reviewed, then finish. Only new work reported as `working`, or a new question, does. Finish everything first: every check, every fix, every subagent, in the foreground. Never end on work still running or promised ("I'll wrap up once the verdict arrives"): wait for it, then summarise.
+End the task with `metamorfiles_team_update { task, role: "designer", finished: true, summary: "<what changed and where>" }`, as the role that finishes: the task is done at once, and a later call of yours doesn't reopen it. Studio refuses to end it while anything it changed hasn't passed the final check as it is now, and says what: have that reviewed, then finish. Only new work reported as `working`, or a new question, does. Finish everything first: every check, every fix, every subagent, in the foreground. Never end on work still running or promised ("I'll wrap up once the verdict arrives"): wait for it, then summarise.
 
 End with a plain summary of one or two sentences: what changed and where. Plain sentences, not a document: no headings or bold labels. A question for the user at the end is `metamorfiles_ask_user` before you finish, never a line of the summary. In a task Studio started it shows in a small thread beside the canvas, where the user already sees the frames; anywhere, every extra line buries the answer. The only third sentence allowed is a choice the user still has about this task (in Auto, the option you picked for them). Nothing about other frames, items, or problems that were there before the task, even ones the final check found. Talk as `SKILL.md` of `metamorfiles` says.

@@ -13,11 +13,11 @@ Resizing is a layout job, not a crop. Rebuild the design as a template whose str
 1. Call `metamorfiles_get_project` and read the brand guide.
 2. Get the source design into the project:
    - A template that already exists: `metamorfiles_read_file` it and skip to step 4.
-   - An image file not in the project yet: bring it in with `metamorfiles_import_image`, at its own width and height so nothing is cropped.
+   - An image file not in the project yet: bring it in with `metamorfiles_import_image { path: "<absolute path>" }`, which keeps it whole.
 3. Rebuild the source as a template with the `metamorfiles-template` workflow:
    - Separate the parts: background or photo, headline, supporting copy, call to action, logo, badges.
    - Recreate the text as live text with the brand fonts, so it reflows per format instead of being stretched.
-   - If the source is a flat image with text baked in, ask the user for the clean photo or logo files. Without them, generate a clean background that follows the original, using the source image as a reference (`references/images.md` of the `metamorfiles` skill).
+   - If the source is a flat image with text baked in, ask the user for the clean photo or logo files. Without them, generate a clean background that follows the original with `metamorfiles_generate_image { prompt, width, height, references: ["/assets/<source>.png"] }`, at the size of the format it matters most in (`references/images.md` of the `metamorfiles` skill).
    - Make the photo an `image` variable and the copy `string` variables, so the result can also feed pages of variants.
 4. Declare the target formats. Default set when the user does not say, one per shape: `instagram-post` (the 4:5 post every feed takes), `instagram-square`, `instagram-story`, `linkedin-link`, `x-landscape`, `pinterest-pin`, `youtube-thumbnail`. Use inline formats for custom and print sizes.
 5. Design each aspect ratio family on purpose, with `references/design.md`:
@@ -26,5 +26,5 @@ Resizing is a layout job, not a crop. Rebuild the design as a template whose str
    - **Landscape** (1.9:1, 16:9): place copy beside the image. Headlines get shorter lines and larger relative size.
    - Adjust `object-position` so the subject stays in frame in every crop.
 6. Run the quality loop in every format, compare each with the source, and fix until they read as one family. Then get the independent review with `metamorfiles-review`.
-7. Make the set a page with `metamorfiles_create_page`, named for the deliverable ("Spring key visual, every format"), from the template with its default values, then export it with `metamorfiles_export_page` (and `metamorfiles_export_status` while it runs).
+7. Make the set a page from the template with its default values, `metamorfiles_create_page { name: "Spring key visual, every format", template: "<id>" }`, then export it with `metamorfiles_export_page { page: "<id>" }` (and `metamorfiles_export_status { page }` while it runs).
 8. Hand it over: every format sits side by side in the panel; say in a line how each family adapts, and one question. Offer the zip when the user wants to send the files.

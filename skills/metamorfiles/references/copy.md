@@ -33,7 +33,7 @@ The cover promises something specific the slides then deliver ("5 mornings, 5 mi
 
 A post goes out with words beside the image, and the user pastes them from the panel or the export's `post.md`.
 
-- **The caption** carries what the image can't: the context, the detail, the next step. Its first line has to work alone, since feeds cut the rest off. Hashtags only as the brand uses them, a few specific ones at the end, never a wall. Write a platform its own caption (`captions: { "LinkedIn": "…" }`) only when its readers need a different one: longer and plainer on LinkedIn, inside 280 characters on X. The check warns past a platform's limit.
+- **The caption** carries what the image can't: the context, the detail, the next step. Its first line has to work alone, since feeds cut the rest off. Hashtags only as the brand uses them, a few specific ones at the end, never a wall. Write a platform its own caption (`captions: { "LinkedIn": "…" }`, keyed by Studio's platform names exactly: Instagram, Facebook, LinkedIn, X, Threads, Bluesky, Pinterest, TikTok, YouTube) only when its readers need a different one: longer and plainer on LinkedIn, inside 280 characters on X. The check warns past a platform's limit.
 - **Alt text** says what the image shows, for someone who can't see it: the subject, what it does, where, and any words in the image as they are written. No "image of", no keywords, no claims. Under 125 characters when it can be; a carousel has one per slide.
 
 ## Read it back
@@ -49,4 +49,4 @@ Check the rewrite didn't add or drop a fact. Any text you're given to edit (the 
 
 ## Choices
 
-When the copy is a matter of taste (the headline's angle, a tagline), decide and say what you chose, as `SKILL.md` asks. Offer two or three options only when the user asked for options, or in a task Studio started, with `metamorfiles_ask_user`: each a short line, your pick first and recommended. Write the chosen one; don't leave options in the frames.
+When the copy is a matter of taste (the headline's angle, a tagline), decide and say what you chose, as `SKILL.md` asks. Offer two or three options only when the user asked for options, or in a task Studio started, with `metamorfiles_ask_user { question, options: [{ label: "<your pick>", recommended: true }, { label: "<another>" }] }`: each a short line, your pick first and recommended. Write the chosen one; don't leave options in the frames.

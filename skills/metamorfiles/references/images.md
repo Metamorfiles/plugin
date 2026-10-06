@@ -6,18 +6,18 @@ Studio keeps every image whole, as the model made it: it never crops a file to f
 
 ## Getting an image
 
-- Call `metamorfiles_generate_image` without `model`. Studio uses the user's default model, or asks the user itself which model or source to use and remembers the answer. Pass `model` only when the user names one.
+- Call `metamorfiles_generate_image { prompt, width: 1080, height: 1350 }` without `model`. Studio uses the user's default model, or asks the user itself which model or source to use and remembers the answer. Pass `model` only when the user names one.
 - Sources: ChatGPT (the user's ChatGPT plan, one sign-in, no key), OpenRouter (one sign-in, many models) and provider keys (OpenAI, Google Gemini, xAI, fal, Replicate, Black Forest Labs, Together, DeepInfra). Sign-ins and keys happen on pages Studio opens in the browser; never ask for a key in the chat.
-- When the result's status is `generating`, call `metamorfiles_image_status` with its id.
-- Several images at once (seeds, a library, blank photos): start each with `wait: false`, so they are made together, then wait for each with `metamorfiles_image_status`. Started one by one, each waits for the last.
-- When it's `needs_choice` or `needs_connection`, do what its message says: in chat, ask the user or give them the link. In a task Studio started, ask the model choice with `metamorfiles_ask_user` (its options are the models the message lists); a missing connection can't be made there, so say in the thread what to connect and carry on without the image.
-- If this app has its own image tool and the user prefers it, make the image with it and bring the file in with `metamorfiles_import_image`, which saves it whole. Bring in an existing image (a source design, a photo the user gave) the same way, at its own width and height to keep it whole.
+- When the result's status is `generating`, call `metamorfiles_image_status { id }`.
+- Several images at once (seeds, a library, blank photos): start each with `metamorfiles_generate_image { prompt, width, height, wait: false }`, so they are made together, then wait for each with `metamorfiles_image_status`. Started one by one, each waits for the last.
+- When it's `needs_choice`, it lists the models: ask with `metamorfiles_ask_user`, up to four of them as options, then call `metamorfiles_generate_image` again with the same prompt and size plus `model: "<id>"`, and `remember: true` only when the user said to use it every time. When it's `needs_connection`, do what its message says: in chat, give the user the link; in a task Studio started, the connection can't be made, so say in the thread what to connect and carry on without the image.
+- If this app has its own image tool and the user prefers it, make the image with it and bring the file in with `metamorfiles_import_image { path: "<absolute path>" }`, which saves it whole. Bring in an existing image (a source design, a photo the user gave) the same way.
 - Report the cost or limit the result gives.
 
 ## Before you prompt
 
 1. Read the variable's `source.instruction` in the template (what the image must show) and the Imagery section of `brand/DESIGN.md`.
-2. Look at the brand's reference images in `brand/refs/` if there are any: they are the standard for light, color and mood. Pass the ones that show the look to `metamorfiles_generate_image`.
+2. Look at the brand's reference images in `brand/refs/` if there are any: they are the standard for light, color and mood. Pass the ones that show the look as `references: ["brand/refs/<file>"]`.
 3. Look at the frame: where the copy sits, and so where the image must stay calm.
 
 ## Write the prompt
@@ -46,11 +46,11 @@ Example for a skincare launch post:
 
 ## Generate and place
 
-- Pass the width and height the image is used at: the model composes for that shape, and Studio saves the result whole under `assets/`. For an image several formats show, pass the format it matters most in, and compose with room around the subject so every other format can crop it well. Make it once and reuse it across variants when the variant isn't about the image.
+- Pass `width` and `height` as the size the image is used at: the model composes for that shape, nothing is cropped, and Studio saves the result whole under `assets/`. For an image several formats show, pass the format it matters most in, and compose with room around the subject so every other format can crop it well. Make it once and reuse it across variants when the variant isn't about the image.
 - The result can be another size than the one passed: each source makes its own sizes (on a ChatGPT plan OpenAI sets it, about 1.6 megapixels, in the shape the prompt names). When the result says it's smaller than the frame, the design will enlarge it and it may look soft: tell the user, and let them decide on a source that makes larger images.
 - For choices between directions, make each option as the real thing: the one the user chooses is the image used, never made again, since a new one would be a different image.
-- To change a generated image, edit it rather than make a new one: pass it as the first reference and say "Edit image 1:", the one thing to change, and the list of what stays exactly as it is. Change one thing at a time, and repeat that list each time. A character in a new pose or from a new angle is the exception: an edit keeps what is in the image, so the head stays as it was while the body changes under it; draw it anew from the anchor (`references/poses.md` of `metamorfiles-character`).
-- Place it through the variable's value (the page's `page.json` for one variant, the template default for all), then render every format that shows it: a crop that works in the post can cut the product in the story. Set each format's crop with the design's `object-position`.
+- To change a generated image, edit it rather than make a new one: `metamorfiles_generate_image { prompt: "Edit image 1: ...", width, height, references: ["/assets/<file>.png"], edit: true }`: the image first in `references`, then after "Edit image 1:" the one thing to change, and the list of what stays exactly as it is. Change one thing at a time, and repeat that list each time. A character in a new pose or from a new angle is the exception: an edit keeps what is in the image, so the head stays as it was while the body changes under it; draw it anew from the anchor (`references/poses.md` of `metamorfiles-character`).
+- Place it through the variable's value, the path the result gives exactly as it is (`/assets/<file>.png`, leading slash kept), in the page's `page.json` for one variant or the template default for all, then render every format that shows it: a crop that works in the post can cut the product in the story. Set each format's crop with the design's `object-position`.
 
 ## Check
 

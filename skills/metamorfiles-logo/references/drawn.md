@@ -36,23 +36,27 @@ show lettering, a mark or a mascot (two or three of them) as `references`, and s
 the parts lock together; never copy their letters, names, marks or layout." Words alone lose what
 made the user pick the direction.
 
-Save it with `trace: { colors: [every colour it uses] }`; Studio has it drawn on a transparent
-background and traces each colour in the brand's exact value (`vector.md`).
+Draw it at the lockup's shape, listing every colour it uses:
+`metamorfiles_generate_image { prompt, references: [...], width: 1536, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
+Studio has it drawn on a transparent background and traces each colour in the brand's exact value
+(`vector.md`); the path it returns is the traced .svg.
 
 ## Read every letter
 
 Read every word letter by letter, accents included, and see that the words stand apart; draw it
-again when one differs. Draw two or three together (`wait: false`) and keep the one whose letters
-are right and whose drawing holds the direction best; then compose the supporting words around it
-and run `metamorfiles_check_logo`.
+again when one differs. Draw two or three together (each with `wait: false`, then
+`metamorfiles_image_status { id }` for each) and keep the one whose letters are right and whose
+drawing holds the direction best; then compose the supporting words around it and run
+`metamorfiles_check_logo`.
 
 ## Other versions of it
 
 A logo drawn whole is one traced drawing whose parts overlap and share outlines, so a version with a
 part left out (the name alone, the mark alone) or laid out another way (one line, stacked) can't be
-cut from its paths. Draw it again from the chosen logo: pass the drawing it was traced from (its
-record's `traceDrawing`) or the traced file as image 1 and edit it ("Edit image 1: the same
-lettering, letter for letter and shape for shape, without the character; close the outline
-where the character covered it"). Save it with the same `trace` colours, read every letter against the
+cut from its paths. Draw it again from the chosen logo: the drawing it was traced from (`drawing` in
+the record `<file>.svg.json` beside it, read with `metamorfiles_read_file`) or the traced file first
+in `references`, with `edit: true` ("Edit image 1: the same lettering, letter for letter and shape
+for shape, without the character; close the outline where the character covered it"). Save it with
+the same `folder` and `trace` colours, at the new version's shape, read every letter against the
 original, and check it like the original. Recolourings stay `metamorfiles_make_logo_variant`.
 

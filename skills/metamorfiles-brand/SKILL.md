@@ -18,17 +18,17 @@ Your goal is a complete board the user can use, quickly. Four principles:
 
 ## Steps
 
-1. Call `metamorfiles_get_project` and read `brand`. If the project already has a kit for another brand (a different name, website or product), this brand gets its own project: call `metamorfiles_get_project` with `create: true` and the new brand's `name`, as `SKILL.md` of `metamorfiles` says, and build the kit there. Rebuild a kit only for the same brand; then take every value again from the brand's sources as below, never from the previous DESIGN.md.
+1. Call `metamorfiles_get_project` and read `brand`. If the project already has a kit for another brand (a different name, website or product), this brand gets its own project: call `metamorfiles_get_project { create: true, name: "<brand>" }`, as `SKILL.md` of `metamorfiles` says, and build the kit there. Rebuild a kit only for the same brand; then take every value again from the brand's sources as below, never from the previous DESIGN.md.
 2. Gather the sources: the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. **Go and find the imagery, don't wait to be handed it**: look in `public/`, `static/`, `assets/` and `src/assets/`; follow what the app's own components reference (a component naming `/images/serum-morning.jpg` is telling you that file is brand imagery); read the Open Graph and Twitter card images in the app's metadata; and take what the live site renders in its hero and section bands. Icons, favicons, UI chrome and framework defaults (`next.svg`, `vercel.svg`) are not imagery. Ask only for what you cannot find and cannot do without, such as the font files or the logo.
 3. Copy the files into the project, unchanged:
-   - fonts as WOFF2 in `brand/fonts/` (local files only): a Google Fonts family with `metamorfiles_add_font`, any other face from the user's own files;
+   - fonts as WOFF2 in `brand/fonts/` (local files only): a Google Fonts family with `metamorfiles_add_font { family: "Fraunces" }`, any other face from the user's own files;
    - official logos in `brand/logos/`;
    - reference images in `brand/refs/` (or the asset folders the kit lists);
    - the files you translate from (theme CSS, a logo component, a guidelines PDF) in `brand/sources/`, so the values can be checked later.
 4. Take the values from each source as described below.
-5. Write `brand/DESIGN.md` with `metamorfiles_write_file`, following the template. If `metamorfiles.json` names the brand differently from DESIGN.md (other spelling or capitals), write it with the brand's own name, so the control panel and the kit agree.
+5. Write `brand/DESIGN.md` with `metamorfiles_write_file { path: "brand/DESIGN.md", content }`, following the template. If `metamorfiles.json` names the brand differently from DESIGN.md (other spelling or capitals), write it with the brand's own name, so the control panel and the kit agree.
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
-7. Call `metamorfiles_render_preview` on `brand-board` in each of its frames: `board`, the guide, one image of the whole brand, then each asset folder's frame. Fix every check error through DESIGN.md and the folders.
+7. Render each frame of the brand board with `metamorfiles_render_preview { item: "templates/brand-board", format: "board" }`: `board`, the guide, one image of the whole brand; `logos`; each asset folder's frame, by the folder's name (`refs`); and each mockup's, `mockup-<file name without extension>`. Fix every check error through DESIGN.md and the folders.
 8. Get the independent review of the board with `metamorfiles-review`, in the foreground and before you present anything (in Claude Code, the Agent tool with `run_in_background: false`): it catches a logo on the wrong background or a pairing that reads badly. Fix what it marks **must fix** through DESIGN.md. What it reports as Studio's (how the board is drawn) isn't yours to fix: tell the user plainly, in a line.
 9. Present it with the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
 
@@ -39,7 +39,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 | Code theme: shadcn or Tailwind CSS, CSS variables, `tokens.json`, Figma variables | Read the exact values, following `var()` chains to the literal value. Keep the original variable names in Sources. | exact |
 | Website | Open it in the app's browser when it has one: computed styles of real elements (headings, body text, buttons, cards, bands) at desktop width, plus its CSS. A plain fetch sees no computed styles and is often blocked; without a browser, fetch the CSS, or an archived copy when the site blocks you, and say which you used. | exact |
 | Guidelines PDF | Values as stated. A CMYK or Pantone value without its RGB or hex goes to Known gaps. | exact |
-| Images, screenshots, logo files | `metamorfiles_extract_brand_values`: exact pixel colors with their coverage, and SVG fill and stroke values. Never pick a color by eye. | exact for flat files, sampled for paintings and photos |
+| Images, screenshots, logo files | `metamorfiles_extract_brand_values { path: "brand/refs/serum-morning.jpg" }`: exact pixel colors with their coverage, and SVG fill and stroke values. Never pick a color by eye. | exact for flat files, sampled for paintings and photos |
 | Fonts recognized by eye | "Looks like X". Ask for the files. | inferred |
 
 Evidence rules:
@@ -95,7 +95,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 ## Logos
 
 - Use only official files, copied unchanged. Never recolor, redraw, retype, stretch or crop a logo, add effects, or place it on a background it isn't made for.
-- **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--clay)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant` with that theme's exact values, one file per theme, and record it as the brand's own variant.
+- **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--clay)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant { file: "brand/sources/logo.tsx", output: "brand/logos/logo-dark.svg", colors: { "var(--clay)": "#e39a7f" }, background: "#1f1a17" }` with that theme's exact values, one file per theme, and record it as the brand's own variant.
 - **Generated variants need the user's approval, each one, before you make it.** Offer only what's missing:
   - one-color black and white versions (map `"*"` to the color, and paper-colored inner shapes to `"knockout"`);
   - a dark or light version from the brand's palette;

@@ -51,5 +51,6 @@ Only the character: no letters, words or numbers, no ground line or shadow, no f
   presentation boards.
 - Pass the name's wordmark as image 1 when it will sit beside it, so its weight matches; say it draws
   only the character.
-- Save it with `trace: { colors: [...] }` listing the style's trace colours.
+- Draw it at `width: 1024, height: 1024` with `trace: { colors: [...] }` listing the style's trace
+  colours, and the `folder` it belongs in (the call: step 4 of the skill).
 - Follow the image model's own file of the `metamorfiles` skill (`references/images.md` names it).

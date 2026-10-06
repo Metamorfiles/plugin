@@ -33,16 +33,18 @@ request and the brand's DESIGN.md do the same. Read `references/taste.md` for wh
 of that look is, and what the image model tends to get wrong.
 
 When a route needs a part the references don't show well (the lettering, a mascot, a mark), start a
-search for it in the background as you begin: `metamorfiles_search_references` with the category and
-the part ("pizza mascot", "bakery lettering"), sorted by `recommended`, and `wait: false`. Read it
-when you reach that route, and collect the two or three projects worth studying.
+search for it in the background as you begin, with the category and the part:
+`metamorfiles_search_references { query: "bakery lettering", sorts: ["recommended"], wait: false }`.
+Read it when you reach that route (`metamorfiles_search_references { id }`), and collect the two or
+three projects worth studying: `metamorfiles_collect_references { links: [...] }`.
 
 ### 2. The type study
 
-Set the name in the faces the direction suggests and others around them with
-`metamorfiles_type_study`, and read the sheet: the word's shape, its pairs, its rhythm, and what could
-become the idea. Choose each route's face and add it with `metamorfiles_add_font`
-(`references/wordmark.md`).
+Set the name in the faces the direction suggests and others around them
+(`metamorfiles_type_study { text: "Lumen Skincare", faces: ["Fraunces", { family: "Inter", weight: 800 }] }`),
+and read the sheet: the word's shape, its pairs, its rhythm, and what could become the idea. Choose
+each route's face and add it with `metamorfiles_add_font { family: "Fraunces" }`: the file it returns
+is the `font` the wordmark is set from (`references/wordmark.md`).
 
 ### 3. Three routes
 
@@ -75,12 +77,14 @@ fills becomes line art in one colour and reversed: its line colour to the ink an
 the drawing. Recolouring every paint to one colour turns it into a silhouette, and the details are
 gone. A drawing of solid shapes becomes one solid shape with its inner details cut out.
 
-Mark the route's small mark (the mark, the mascot's head, the monogram, the seal) with `small: true`:
+Mark the route's small mark (the mark, the mascot's head, the monogram, the seal) with `small: true`
+on its entry in the option's `files` in `brand/process/logo.md` (`{ file: <its path>, small: true }`):
 the profile picture and the small sizes use it, so it must be the very mark the logo shows. In a
 route with a generated mark it is that mark's own file. In a logo drawn whole it is drawn from the
-logo once the logo is right, never alongside it: the logo as image 1, edited to the mark alone and
-placed for a small square (`references/drawn.md`, "Other versions of it"); Studio refuses a small
-mark drawn on its own. Save every file under `brand/process/logo/`.
+logo once the logo is right, never alongside it: the logo first in `references` with `edit: true`,
+edited to the mark alone and placed for a small square (`references/drawn.md`, "Other versions of
+it"); Studio refuses a small mark drawn on its own. Save every file under `brand/process/logo/`:
+`folder: "brand/process/logo"` for an image, an `output` there for the other tools.
 
 ### 6. Show them
 
@@ -91,9 +95,12 @@ why, the recommended one first.
 
 ### 7. After the choice
 
-Make the chosen route's final files in `brand/logos/` with the same tools and settings, and the other
-colours with `metamorfiles_make_logo_variant`. A version of a logo drawn whole that leaves a part out
-or is laid out another way is drawn again from it, never cut from its paths (`references/drawn.md`). Run `metamorfiles_check_logo` on each. Declare them in
+Make the chosen route's final files in `brand/logos/` with the same tools and settings, each with an
+`output` there. A traced drawing reaches it as one part:
+`metamorfiles_compose_logo { layout: "stack", parts: [{ file: "<the traced .svg>" }], output: "brand/logos/logo.svg" }`
+(`metamorfiles_generate_image` never saves into `brand/logos/`). The other colours come from
+`metamorfiles_make_logo_variant { file, output: "brand/logos/logo-reversed.svg", colors: { ... } }`.
+A version of a logo drawn whole that leaves a part out or is laid out another way is drawn again from it, never cut from its paths (`references/drawn.md`). Run `metamorfiles_check_logo` on each. Declare them in
 DESIGN.md `logos` with their grounds, sources ("set in <face> as outlines with a drawn part", "drawn
 by <model> and traced", "created and approved by the user on <date>") and clear space.
 

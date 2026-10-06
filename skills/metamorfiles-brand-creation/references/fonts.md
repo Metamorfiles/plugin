@@ -8,10 +8,12 @@ their own licensed files.
 
 ## Getting the files
 
-- Compare candidates first with `metamorfiles_type_study`: it sets the brand's words in many faces on
-  one sheet, without adding any to the brand.
-- Add a family with `metamorfiles_add_font`, by its Google Fonts name, with `italic: true` when the
-  design uses the italic.
+- Compare candidates first with
+  `metamorfiles_type_study { text: "Lumen", faces: ["Fraunces", { family: "Inter", weight: 700 }, ...] }`:
+  it sets the brand's name (at most 40 characters) in many faces on one sheet, each a Google Fonts
+  family name or `{ family, weight }`, without adding any to the brand.
+- Add a family with `metamorfiles_add_font { family: "Fraunces", italic: true }`, by its Google Fonts
+  name, with `italic` only when the design uses the italic.
 - It writes complete WOFF2 files to `brand/fonts/`, one per style for a variable family and one per
   weight for a static one. It returns the `@font-face` rules for a template.
 - Never download, subset or copy font files yourself. The tool refuses a family that isn't OFL.

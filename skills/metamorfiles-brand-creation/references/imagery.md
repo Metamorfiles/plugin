@@ -38,9 +38,12 @@ a look to recognise, not rules to count.
 
 ## Seeds, then anchors
 
-1. Make four seeds together (`wait: false`), each a different job: a scene with people, an object
-   alone, an interior, a character, a detail. Save them in `brand/process/imagery/` with a `ground`
-   of the brand's paper colour, so they already sit on it; the step's frame fills as each arrives.
+1. Make four seeds together, each a different job: a scene with people, an object alone, an
+   interior, a character, a detail. Each is
+   `metamorfiles_generate_image { prompt, width: 1600, height: 2000, folder: "brand/process/imagery", ground: "#f6f1ea", wait: false }`,
+   each at the shape the brand's images will mostly be used at (here 4:5), `ground` the chosen
+   direction's paper, so they already sit on it; collect each with `metamorfiles_image_status { id }`. The step's
+   frame fills as each arrives.
 2. Each seed is one option of the imagery step, titled by what it shows ("The knit close-up"). The
    user uses them all, or has single ones redone first ("Redo the knit close-up").
 3. Redo a rejected seed from the ones the user liked, passed as references, never from the rejected
@@ -48,8 +51,11 @@ a look to recognise, not rules to count.
    new take goes first in the option's `files` and the earlier one stays after it: the board shows
    it small and dimmed under "Earlier takes", so the user can ask for it back, and then it moves
    first again. Remove a take only when it has an image-model mistake.
-4. The seeds the user keeps are the **anchors**. Every later image is made with two or three of them as
-   references: "draw a new scene in exactly the drawing style of the reference images".
+4. The seeds the user keeps are the **anchors**: the kit brings each into the library folder
+   (`SKILL.md`, Kit) and DESIGN.md lists the file names that returned. Every later image is made
+   with two or three of them as references, by their place in the library
+   (`references: ["brand/refs/<anchor>", ...]`): "draw a new scene in exactly the drawing style of
+   the reference images".
 
 ## Check every image before anyone sees it
 
@@ -63,8 +69,12 @@ it").
 
 ## The library
 
-Grow six to ten images from the anchors into `brand/refs/` (or the imagery folder the kit lists), each
-with the same style block, `folder` set to that folder so its ground is the brand's paper:
+Grow six to ten images from the anchors into the imagery folder DESIGN.md lists, each with the same
+style block:
+`metamorfiles_generate_image { prompt, width, height, references: ["brand/refs/<anchor>", ...], folder: "brand/refs" }`.
+Once DESIGN.md lists the folder as `imagery` (or `character`), `folder` alone brings each image's
+ground to the brand's paper; before that, pass `ground: "#rrggbb"` too. Each is made at the shape
+it will be used at (1024 × 1024 for a spot, 1600 × 2000 for a 4:5 scene):
 - **Spots:** single objects the business sells or uses, centred with space around them.
 - **Scenes:** the business's moments and people, with calm space above for a headline.
 - The accent colour on the one object each image is about.

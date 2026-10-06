@@ -71,13 +71,17 @@ prompt carries:
 
 ### 3. The prompt
 
-`metamorfiles_generate_image` into the brand's in-use folder (DESIGN.md `assets`, kind `in-use`,
-such as `brand/mockups/`), all the shots together with `wait: false`, each at its shot's shape. The
-references, in this order, and the prompt says what each one is:
+All the shots together, each
+`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "templates/brand-board#board"], folder: "brand/mockups", name: "tin-on-leaves", wait: false }`:
+`width` and `height` the shot's shape (1600 × 2000 for 4:5, 2000 × 1600 for 5:4), `folder` the
+brand's in-use folder (DESIGN.md `assets`, kind `in-use`). Collect each with
+`metamorfiles_image_status { id }`. The references are project paths, in this order, and the prompt
+says what each one is:
 
-1. **The logo file** (DESIGN.md `logos`): "image 1 is the logo".
+1. **The logo file** DESIGN.md `logos` names, such as `brand/logos/logo.svg`: "image 1 is the logo".
 2. **The brand board,** `templates/brand-board#board`: "image 2 is the brand system".
-3. **The imagery anchors or the character's anchor,** when they appear on the object.
+3. **The imagery anchors or the character's anchor,** when they appear on the object, by their place
+   in the folder DESIGN.md lists them in, such as `brand/refs/<anchor>`.
 
 Write it in this order:
 1. The shot: "Editorial packaging photograph", its shape, the idea, the camera (from above, straight
@@ -102,17 +106,18 @@ As the photograph a design publication would run, before review:
 
 ### 5. Fix what fails, with the method that can fix it
 
-- **A wrong logo, word or detail** on an otherwise good photograph: an edit of it.
-  `metamorfiles_generate_image` with `edit: true`, the mockup first and the logo file second in
-  `references`, and a prompt that changes only that ("Change only the lid so it lies flat beside the
-  tin, open side up; keep everything else exactly as it is").
+- **A wrong logo, word or detail** on an otherwise good photograph: an edit of it,
+  `metamorfiles_generate_image { prompt, width, height, edit: true, references: ["<mockup>", "brand/logos/logo.svg"], folder: "brand/mockups" }`,
+  the mockup first, at its own size, and a prompt that changes only that ("Change only the lid so it
+  lies flat beside the tin, open side up; keep everything else exactly as it is").
 - **A weak shot, design or object:** a new take, with the art direction changed where it fell short.
-- Two rounds at most, then a new take from scratch. A take you replace is removed
-  (`metamorfiles_write_file` with `remove: true`).
+- Two rounds at most, then a new take from scratch. An edit or a new take is a new file: remove the
+  one it replaces with `metamorfiles_write_file { path: "<mockup>", remove: true }`.
 
 ### 6. Review
 
-Get the review (`metamorfiles-review`) of each `mockup-` frame of the brand board, and fix what it
+Get the review (`metamorfiles-review`) of each mockup's frame of the brand board,
+`mockup-<file name without extension>` (`mockup-tin-on-leaves-3f2a9c1d`), and fix what it
 sends back as above. The user sees them last and asks for any change in their own words.
 
 What strong and weak mockups look like is in [references/taste.md](references/taste.md).

@@ -22,7 +22,8 @@ Each direction comes with a pairing, and the pairings differ too:
   workhorse for everything that informs.** Two faces for text; the logo gets its own face on the
   logo step (the `metamorfiles-logo` skill), never set as text.
 - Choose the faces from `fonts.md`, by what the direction needs. Add each with
-  `metamorfiles_add_font` before you write the option.
+  `metamorfiles_add_font { family: "Fraunces" }` before you write the option, and give the option
+  the file it returned (a static family has one per weight, such as `brand/fonts/Anton-400.woff2`).
 - **Every face covers the languages the brand writes in.** A business in Seoul posts in Korean, one in
   Athens in Greek: each face has those letters, or the pairing names the face that sets them (a
   Korean face beside a Latin display face, sized to sit together). Set the option's `sample` in that
@@ -32,7 +33,8 @@ Each direction comes with a pairing, and the pairings differ too:
 
 ## The option
 
-With its references from `research.md`, a direction is one option:
+With its references from `research.md`, a direction is one option. Each file is the path the tool
+returned, as it returned it:
 
 ```yaml
   - id: morning
@@ -40,16 +42,16 @@ With its references from `research.md`, a direction is one option:
     line: Warm paper and ink with one clay accent; the calm of an early bathroom shelf.
     recommended: true
     files:
-      - { file: process/references/aesop-shelf/1.jpg, caption: "Shelf study · ink type on warm paper" }
-      - { file: process/references/linen-co/2.jpg, caption: "Linen Co · one accent, rationed" }
+      - { file: brand/process/references/shelf-study/1.jpg, caption: "Shelf study · ink type on warm paper" }
+      - { file: brand/process/references/linen-co/2.jpg, caption: "Linen Co · one accent, rationed" }
     colors:
       - { name: Paper, hex: "#f6f1ea", share: 55 }
       - { name: Ink, hex: "#1f1a17", share: 25 }
       - { name: Sand, hex: "#e9dccb", share: 12 }
       - { name: Clay, hex: "#c9785b", share: 8 }
     fonts:
-      - { family: Fraunces, file: fonts/Fraunces.woff2, role: headlines }
-      - { family: Inter, file: fonts/Inter.woff2, role: everything that informs }
+      - { family: Fraunces, file: brand/fonts/Fraunces.woff2, role: headlines }
+      - { family: Inter, file: brand/fonts/Inter.woff2, role: everything that informs }
     sample: Two minutes in the morning. Then get on with your day.
 ```
 
