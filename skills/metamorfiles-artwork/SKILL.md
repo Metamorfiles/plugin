@@ -78,7 +78,7 @@ shelf, every word, the logo intact, the picture on brand. Then get the review
 ### 5. A template to print
 
 A template (`metamorfiles-template`) whose format is the piece's size in mm with its bleed, the
-composition in its `index.html`, exported as PDF. To show it on the object, a mockup of it is made as
-`references/mockups.md` of `metamorfiles-brand-creation` says, with the flat artwork as a reference.
+composition in its `index.html`, exported as PDF. To show it on the object, a mockup of it is made
+with `metamorfiles-mockup`, with the flat artwork as a reference.
 
 What strong and weak artwork looks like is in [references/taste.md](references/taste.md).

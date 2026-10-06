@@ -30,6 +30,12 @@ Write the prompt from the chosen direction and the brief, as a designer's brief,
 A joined script joins letters within a word, never across the space between words: say each word is
 written on its own. Accents keep their shape and their place over their letter.
 
+Show the model the look, not only describe it: pass the chosen direction's reference images that
+show lettering, a mark or a mascot (two or three of them) as `references`, and start the prompt with
+"Images 1 to 3 are style references: take their drawing hand, letter weight, colour handling and how
+the parts lock together; never copy their letters, names, marks or layout." Words alone lose what
+made the user pick the direction.
+
 Save it with `trace: { colors: [every colour it uses] }`; Studio has it drawn on a transparent
 background and traces each colour in the brand's exact value (`vector.md`).
 
