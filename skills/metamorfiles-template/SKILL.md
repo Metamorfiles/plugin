@@ -13,6 +13,7 @@ A template is a reusable design whose changeable parts are declared variables. T
 1. Call `metamorfiles_get_project`. Read `brand`: the DESIGN.md tokens tell you every `--brand-*` variable, and its prose tells you how to use them. If there's no brand kit, build it first with `metamorfiles-brand`.
 2. Settle the brief: the channel and formats, the message, and what must change between variants. Everything that changes becomes a variable; everything else stays fixed in the design. Ask only for what you can't infer (see How you talk in `metamorfiles`).
 3. If the user gives a reference image, study its layout, hierarchy, spacing and mood. Recreate the structure with the brand's fonts and colors, not a pixel copy.
+   For a carousel, plan its slides first with `references/carousels.md` of the `metamorfiles` skill, and the Carousels section of `metamorfiles-variants`: the plan decides the template's slide layouts.
 4. Plan the variables before writing HTML:
    - Copy that varies becomes `string` variables with `maxLength`, sized so the longest value still fits.
    - Photos and illustrations become `image` variables. Add `"source": { "kind": "ai", "instruction": "…" }` when new images should be generated per variant.
