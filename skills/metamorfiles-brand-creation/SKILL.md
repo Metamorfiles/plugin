@@ -82,7 +82,9 @@ open there and that they can answer in the chat instead, then keep calling
 `metamorfiles_ask_user { task, waitFor: "<id>" }` until they answer. An answer in the chat goes back
 as `metamorfiles_ask_user { task, waitFor, answer }`. Either way Studio writes
 `brand/process/brief.md`; read it before the direction. Never write the brief yourself: the user's
-taste is what the direction starts from.
+taste is what the direction starts from. The brief's first line (`# <name>`) is the brand's name
+everywhere Studio shows it until DESIGN.md names it: a name is a word or two, never the user's
+request, so when they name the brand later, change that line.
 
 Before the first step, tell the user in one line that it takes about half an hour and makes twenty
 to thirty images on their image source: in your reply in their own app, or as `say` in a task Studio

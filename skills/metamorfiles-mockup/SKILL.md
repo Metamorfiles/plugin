@@ -112,7 +112,10 @@ As the photograph a design publication would run, before review:
   lies flat beside the tin, open side up; keep everything else exactly as it is").
 - **A weak shot, design or object:** a new take, with the art direction changed where it fell short.
 - Two rounds at most, then a new take from scratch. An edit or a new take is a new file: remove the
-  one it replaces with `metamorfiles_write_file { path: "<mockup>", remove: true }`.
+  one it replaces with `metamorfiles_write_file { path: "<mockup>", remove: true }` (Studio keeps it),
+  and say in the thread that the earlier version is kept, so the user can have it back in a word.
+- An edit redraws the whole photograph and can lose what made it good, so edit a finished mockup only
+  for a must fix; a suggestion is the user's to weigh when they see it.
 
 ### 6. Review
 
