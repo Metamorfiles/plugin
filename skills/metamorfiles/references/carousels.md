@@ -15,9 +15,11 @@ swipe, gives something on every slide and ends with a reason to keep it.
 
 Most weak carousels fail in the outline, before any design. Before the template, write the plan in
 your notes, one line per slide: what the slide gives the reader, its pattern (below), its layout and
-its image (a library file that shows it, or "new:" and its subject, by "Use one, or make one" in
-`images.md`), and any other party's mark or photo it shows, with where it comes from ("Other
-parties' marks and images" in `images.md`).
+its image: composed for this slide's slot and made from the library's anchors ("new:" with what it
+shows and its shape), a library file only when it already is that composition ("Compose it, then make
+it" in `images.md`); and any other party's mark or photo it shows, found with
+`metamorfiles_find_mark { name }` or imported with its credit ("Other parties' marks and images" in
+`images.md`).
 Read it top to bottom: every slide earns its place, the order builds, and no two neighbours share a
 layout unless they're a pair on purpose. Then design the template from the plan, and fill the page's
 variants from it. An existing template is reused only when its layouts already serve this plan, and
