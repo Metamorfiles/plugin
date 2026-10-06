@@ -3,7 +3,9 @@
 Read this for the kit, after the three choices of `SKILL.md`. Mockups show the new brand made real on
 this business's own objects, so the user can judge the whole system at a glance. They are
 presentation, never the brand's imagery: Studio keeps them in their own folder and refuses them in
-templates. List the folder in DESIGN.md `assets`: `{ folder: mockups, kind: in-use, title: In use }`.
+templates. They go into `brand/mockups/`; once the first is saved there (a listed folder must exist),
+list it in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`, and each mockup
+becomes its own frame, `mockup-<file name without extension>`.
 
 ## Which three
 

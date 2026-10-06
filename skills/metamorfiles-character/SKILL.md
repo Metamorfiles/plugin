@@ -40,8 +40,9 @@ Write it before drawing anything:
 - its **palette**: the brand's hex values, each for what it paints;
 - **what it never does**.
 
-Keep it in the notes of the step's file (below its YAML) while a brand is made, and in the
-character folder's `note` in DESIGN.md `assets` once the kit is written.
+Keep it in the notes of the step's file (below its YAML) while a brand is made. Once the kit is
+written, the character folder's `note` in DESIGN.md `assets` holds its one-line identity and body
+line (400 characters at most).
 
 ### 2. The description
 
@@ -56,13 +57,14 @@ colours: `references/styles.md`. The style's paragraph is pasted unchanged into 
 
 ### 4. Draw candidates
 
-Draw three candidates together (`wait: false`), each from the same full prompt: the bible's one-line
-identity, its body line, the description, the style paragraph and the palette. Front or three-quarter view,
-standing, a neutral pose. It is drawn alone, never with any word; the name is composed around it
+Draw three candidates together (each with `wait: false`, then `metamorfiles_image_status { id }` for
+each), each from the same full prompt: the bible's one-line identity, its body line, the
+description, the style paragraph and the palette. Front or three-quarter view, standing, a neutral pose. It is drawn alone, never with any word; the name is composed around it
 (`metamorfiles-logo`). In a logo drawn whole, where the character and the name are drawn as one,
-use this same description and style in its prompt. Save each with
-`trace: { colors: [...] }` into `brand/process/logo/` for a logo, or the imagery step's folder. The
-prompt's shape: `references/styles.md`.
+use this same description and style in its prompt. Each one traced:
+`metamorfiles_generate_image { prompt, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`,
+with `folder: "brand/process/imagery"` for the imagery step; the path it returns is the traced .svg.
+The prompt's shape: `references/styles.md`.
 
 ### 5. Check and keep one
 
@@ -78,22 +80,27 @@ description, never add a correction about the failed drawing, and draw again.
 ### 6. The anchor
 
 Show the kept one (in a new brand, as a logo route or an imagery option). The one the user approves
-is the **anchor**: every later drawing of the character is made from it. Name its file
-`01-front.png` or `01-front.svg` in the character's folder.
+is the **anchor**: every later drawing of the character is made from it. Put it in the character's
+folder as `01-front`:
+`metamorfiles_import_image { path: "<the kept .svg>", name: "01-front", folder: "brand/<the character's folder>" }`.
+Studio adds a short id to the name, so list the full file name it returns (`01-front-1a2b3c4d.svg`)
+in the folder's `anchors`.
 
 ### 7. Poses and expressions
 
 Each new pose is a new drawing of the character with the anchor attached as image 1 and its
 identity repeated word for word, checked side by side with the anchor; a small change that keeps the
-pose (an expression, a prop) is an edit: `references/poses.md`.
+pose (an expression, a prop) is an edit, the anchor first in `references` with `edit: true`:
+`references/poses.md`.
 
 ### 8. Where it goes
 
 - **In a logo**: composed with the name set in type (`references/lockups.md` of
-  `metamorfiles-logo`); its head or bust alone is the route's small mark.
+  `metamorfiles-logo`); its head or bust alone is the route's small mark, made from the logo (or,
+  beside a name in type, the anchor) first in `references` with `edit: true`, never drawn on its own.
 - **In the imagery**: its folder listed in DESIGN.md `assets` with `kind: character`, the files named
-  in order (`01-front`, `02-three-quarter`, `03-wave`), so the brand board shows the turnaround and
-  the poses.
+  in order with `name` (`01-front`, `02-three-quarter`, `03-wave`), so the brand board shows the
+  turnaround and the poses.
 
 ## References
 

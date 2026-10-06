@@ -5,8 +5,8 @@ never be the one to find what fails.
 
 ## The check loop
 
-1. Run `metamorfiles_check_logo` on the route's file, with its `ground` and the brand's `dark`
-   colour.
+1. Run `metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#3b2e27" }` on the route's file,
+   with its ground and the brand's dark colour.
 2. Read the sheet: large on its ground and reversed (top), in one colour and at 64, 32 and 16 px
    (middle), blurred (bottom). Read the numbers: its colours, paths, pieces, and the pieces too small
    to read at 32 and 16 px.
@@ -33,5 +33,6 @@ Then look at each route large, as a designer would: the spacing even, the parts 
 the drawn letters right, and the route true to the chosen direction. Name the logo you would have
 made for any business like this one, and check none of the routes is it.
 
-Look at every file with `metamorfiles_read_file` (`asImage`) and at the brand board's logo frame with
-`metamorfiles_render_preview`, never through a script of your own.
+Look at every file with `metamorfiles_read_file { path, asImage: true }` and at the brand board's logo
+frame with `metamorfiles_render_preview { item: "templates/brand-board", format: "process-logo" }`,
+never through a script of your own.

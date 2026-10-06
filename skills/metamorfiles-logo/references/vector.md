@@ -17,11 +17,12 @@ The trace keeps what the drawing gives it, so the drawing is made clean:
 
 ## Tracing
 
-Save the image with `trace: { colors: [...] }` in `metamorfiles_generate_image`, listing every colour
-the drawing uses: the light ones inside it too (an eye's white, a shape cut into a badge in the
-ground colour). Studio traces each area into the nearest of them, stacked so no gap opens between
-colours, and what is transparent stays so. It keeps the drawing in `.metamorfiles/traces/`, named in
-the image's record.
+`metamorfiles_generate_image { prompt, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`
+(a logo drawn whole at its lockup's shape, such as 1536 by 1024), listing every colour the drawing uses: the light ones inside it too (an eye's white, a shape cut into
+a badge in the ground colour). Without `folder` it lands in `assets/`, where the logo tools can't
+read it. Studio traces each area into the nearest of them, stacked so no gap opens between colours,
+and what is transparent stays so; the path it returns is the traced .svg. It keeps the drawing in
+`.metamorfiles/traces/`, named as `drawing` in the record `<file>.svg.json` beside the SVG.
 
 The result says how much of the drawing the trace kept. A clean drawing keeps all of it. Less than
 90% means the drawing isn't what was listed: a colour missing from the list, a soft gradient, a

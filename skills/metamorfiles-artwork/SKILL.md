@@ -41,12 +41,17 @@ Before any image, decide, as a packaging designer would, in your notes:
 
 ### 2. The picture
 
-Generate it with `metamorfiles_generate_image`, into the template's own folder:
+Generate it with
+`metamorfiles_generate_image { prompt, width: 2400, height: 1000, references: ["brand/refs/<anchor>", ...], name: "can-wrap" }`.
+It saves into `assets/` (or a brand folder given as `folder`), and the template uses the path it
+returned as the image's value.
 
-- **At the face's proportions,** so nothing is stretched or cropped to fit.
-- **In the brand's imagery style,** with its anchors as references and the character's anchor when
-  it appears, and the Imagery section's words, so it belongs with the rest of the brand. A character
-  keeps its body line in the prompt (`metamorfiles-character`).
+- **At the face's proportions,** `width` and `height` in pixels at the face's ratio, the long side
+  at most 4096, so nothing is stretched or cropped to fit.
+- **In the brand's imagery style,** with its anchors as references, by their place in the folder
+  DESIGN.md lists them in (`brand/refs/<anchor>`), the character's anchor when it appears, and the
+  Imagery section's words, so it belongs with the rest of the brand. A character keeps its body
+  line in the prompt (`metamorfiles-character`).
 - **No words, letters, numbers, logos or labels in it,** asked for plainly: they are set in step 3.
 - **The zones in the prompt:** where it stays calm and open for the logo and the type, and where its
   subject sits. A picture that fills every corner leaves the type nowhere to go.
@@ -58,9 +63,11 @@ it again rather than covering a flaw with type.
 
 ### 3. Compose
 
-Write the artwork as `html`: the picture full bleed as the face's background, and on it the brand's
-real logo file and its words in the brand's own fonts and tokens (`var(--brand-…)`, files from
-`../../brand/…`).
+Write the artwork as the template's `index.html`, with
+`metamorfiles_write_file { path: "templates/<id>/index.html", content }`, following the contract
+of `metamorfiles-template`, its format the piece's size in mm (step 5): the picture full bleed as
+the face's background, and on it the brand's real logo file and its words in the brand's own fonts
+and tokens (`var(--brand-…)`, files from `../../brand/…`).
 
 - The logo at the size this object carries it, in the version made for the ground it sits on.
 - Every word real: the brand's voice and what the brief says, never an invented price, figure,
@@ -71,9 +78,10 @@ real logo file and its words in the brand's own fonts and tokens (`var(--brand-�
 
 ### 4. Check it, flat
 
-Render it and look at it flat, as the printed piece, before it goes anywhere: the hierarchy from a
-shelf, every word, the logo intact, the picture on brand. Then get the review
-(`metamorfiles-review`) of it as a printed piece.
+Render it with `metamorfiles_render_preview { item: "templates/<id>" }` and look at it flat, as the
+printed piece, before it goes anywhere: the hierarchy from a shelf, every word, the logo intact, the
+picture on brand. Then get the review (`metamorfiles-review`) of `templates/<id>` as a printed
+piece.
 
 ### 5. A template to print
 

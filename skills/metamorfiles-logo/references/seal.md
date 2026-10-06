@@ -5,9 +5,10 @@ real type, shapes and drawn marks.
 
 ## A seal or badge
 
-A `badge` composition with `metamorfiles_compose_logo`, its layers centred on one circle: `ring` and
-`disc` shapes, text parts set `around: true`, and whatever sits in the middle (a mark, a monogram,
-the name). What goes in it, and how much, is the design's decision.
+A `badge` composition, its layers centred on one circle: `ring` and `disc` shapes, text parts set
+`around: true`, and whatever sits in the middle (a mark, a monogram, the name):
+`metamorfiles_compose_logo { layout: "badge", parts: [{ shape: "ring", color: "#3b2e27", size: 1 }, { text: "HEARTH BAKERY · EST 2024 ·", font: "brand/fonts/Fraunces.woff2", color: "#3b2e27", around: true, size: 0.94 }, { shape: "ring", color: "#3b2e27", size: 0.7 }, { file: "<the mark .svg>", size: 0.4 }], output: "brand/process/logo/seal.svg" }`.
+Sizes are shares of the badge's width. What goes in it, and how much, is the design's decision.
 
 Text around the circle reads from the top, its first phrase centred there. Between a ring outside it
 and a ring or disc inside it, Studio sizes the letters to their band, centres them in it, and spaces
@@ -26,9 +27,10 @@ The name broken over lines and fitted into a shape, each line a text part of a `
 
 ## Finishes
 
-Any part can take `depth` (a side in a second colour) and an `inline` (a line inside the strokes).
-The shapes `star`, `diamond`, `facet` (a cut diamond in two tones), `ring`, `disc` and `rule` need no
-drawing.
+Any part can take `depth: { color, amount: 0.08 }` (a side in a second colour) and
+`inline: { color, inset: 0.035, width: 0.025 }` (a line inside the strokes), as shares of the part's
+height. The shapes `star`, `diamond`, `facet` (a cut diamond in two tones, `color` and `shade`),
+`ring`, `disc` and `rule` need no drawing: a part `{ shape: "ring", color, size }`.
 
 ## Small
 

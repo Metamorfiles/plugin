@@ -16,10 +16,10 @@ A template is a reusable design whose changeable parts are declared variables. T
 4. Plan the variables before writing HTML:
    - Copy that varies becomes `string` variables with `maxLength`, sized so the longest value still fits.
    - Photos and illustrations become `image` variables. Add `"source": { "kind": "ai", "instruction": "…" }` when new images should be generated per variant.
-   - Values coming from a CSV use `"source": { "kind": "table", "column": "…" }`. Call `metamorfiles_read_table` first to get the exact column names.
+   - Values coming from a CSV use `"source": { "kind": "table", "column": "…" }`. Call `metamorfiles_read_table { file: "data/products.csv" }` first to get the exact column names.
    - Useful design switches become `enum`, `boolean`, `anchor`, `color` or `number` variables. Keep them few and meaningful.
    - Defaults must be real, on-brand content, so the default render is a finished design: write them with `references/design.md` and `references/copy.md` of the `metamorfiles` skill, and images with `references/images.md`.
-5. Choose a short kebab-case id and write `templates/<id>/index.html` with `metamorfiles_write_file`. Link `../../brand/brand.css`. Use the brand's own images where they are, as `../../brand/refs/…` and `../../brand/logos/…`: never copy them, since a copy drifts from the brand and later needs deleting. Save only other images into the template folder, or generate one and use its `/assets/…` path.
+5. Choose a short kebab-case id and write the template with `metamorfiles_write_file { path: "templates/launch-post/index.html", content, note }`. Link `../../brand/brand.css`. Use the brand's own images where they are, as `../../brand/refs/…` and `../../brand/logos/…`: never copy them, since a copy drifts from the brand and later needs deleting. Save only other images into the template folder, or generate one and use the `/assets/…` path it returns exactly as given.
 6. Read the check in the `metamorfiles_write_file` result. Fix every error and warning, then write again.
 7. Run the quality loop in every declared format, until every format looks designed for its size.
 8. Get the independent review with `metamorfiles-review` and fix every **must fix**.
