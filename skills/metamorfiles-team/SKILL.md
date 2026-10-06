@@ -42,7 +42,7 @@ Finish every role with `status: "done"`.
 4. **Designer** last: fit the layout to the copy and images as they now are.
 5. **Final check** of what you changed, by a separate reviewer: [references/reviewer.md](references/reviewer.md), step 3. Report it as `reviewer` (`reviewing`, then `done`). It records its verdict in Studio, and Studio doesn't end the task until everything it changed has passed as it is now.
 
-Skip the roles a task doesn't need; never skip the first review or the final check. Stop after two fix rounds: when the third look still sends must fixes back, Studio lets the task end, and the summary says which remain.
+Skip the roles a task doesn't need; never skip the first review or the final check. Fix only the must fixes, once, then have the reviewer look again at those fixes; after that look, finish, and the summary says what remains. Suggestions are the user's to weigh: never a round of their own. Give the reviewer the task's decisions (what the user answered in the thread, and what Auto chose), which stand: they're never sent back.
 
 ## Scope
 
@@ -58,7 +58,7 @@ Ask with `metamorfiles_ask_user { task, role: "copywriter", question: "Which hea
 - **In the user's own app**, pass the task id `metamorfiles_team_update` returned, and first write the same question in your reply: the panel link, the options as a short numbered list, the recommended one first with its reason, and that they can answer here or in Studio. Then call `metamorfiles_ask_user` and keep waiting. If they answer in the chat, call `metamorfiles_ask_user { task, waitFor: "<question id>", answer: "<their words>" }`, so the panel closes the question.
 
 - In **Chat** it waits. While it answers `waiting`, call `metamorfiles_ask_user { task, waitFor: "<question id>" }` again, for as long as it takes, and never end your turn while a question is open: the user may answer in the panel. Carry on meanwhile only with work that doesn't depend on the answer. The user may answer in their own words instead of an option: the answer is then their sentence, and you act on what it says (a change, a mix, a redo) rather than taking an option.
-- In **Auto** it returns your recommended option at once and tells the user it was chosen for them. Make the recommendation the one you'd defend.
+- In **Auto** it returns your recommended option at once and tells the user it was chosen for them. Make the recommendation the one you'd defend. Never ask for a fact only the user has (their routine, a result, a price, a date) in Auto: it can't answer with one. Reframe the line as `references/copy.md` says (Grounding) and name what's missing in the summary.
 - Pass `remember: true` when the answer is a lasting preference for the project (a tone, a rule, a style), not a one-off pick like which headline. Remembered answers come back without asking, and `metamorfiles_get_project` lists them: follow them without asking again.
 
 Ask at most once per role per task (a new brand asks once per step), and never about something the brand kit already decides.

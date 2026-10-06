@@ -4,7 +4,7 @@ Read this whenever you write words that go into a frame: a template's defaults, 
 
 ## Grounding
 
-Every line traces back to something given: the user's brief or request, `brand/DESIGN.md` (its Voice section, with its Do and Don't columns, and its rules), the page's data or table, or text already approved in the design. No claim, number, price, ingredient, date or testimonial comes from you. When a line needs a fact nobody gave, don't invent a plausible one: ask for it, or write around it.
+Every line traces back to something given: the user's brief or request, `brand/DESIGN.md` (its Voice section, with its Do and Don't columns, and its rules), the page's data or table, or text already approved in the design. No claim, number, price, ingredient, date or testimonial comes from you. When a line needs a fact nobody gave, don't invent a plausible one, and don't fill the slot with a line that repeats another: reframe it to what's true and still useful. "How I use it" without the user's routine becomes "One way to use it" and a concrete, general tip ("Paste a call transcript and ask for the decisions and owners"); a result nobody measured becomes what the product does. Ask once for the fact, before any design: in Chat, wait for it; in Auto, write the reframed line and name what's missing in the handover, never ask (Auto can't answer with a fact).
 
 Every line should sit comfortably in the Voice chart's Do column, and none of it should read like a Don't.
 
