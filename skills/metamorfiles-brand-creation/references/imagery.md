@@ -28,9 +28,13 @@ cut-paper shapes in a few colours, little or no shading"), not as a list of bans
 what it reads, and a ban names the very thing it then draws. The reviewer reads it the same way, as
 a look to recognise, not rules to count.
 - **For illustration:** the line (its weight as a share of the width, caps, how loose), the fills
-  (flat, in the palette's colours, plus a material colour such as wood when the drawings need one),
-  how much light and texture there is, where the accent falls, how people are drawn, and a calm
-  ground in the brand's paper colour.
+  (flat, plus a material colour such as wood when the drawings need one), how much light and texture
+  there is, how people are drawn, and a calm ground in the brand's paper colour.
+- **Colours as hex, each tied to what it paints** ("outline #14101c, ground #3a1c8c"), never by the
+  kit's names, which the model doesn't know. An accent colour is given a role (light, a prop the scene
+  has, a spark), never a quota: a rule like "one accent object per image" competes with everything
+  else in the scene, and the model resolves it by painting the accent wherever it can, the character
+  included.
 - **For photography:** the light (hard morning sun, on-camera flash), the lens and distance, the grade,
   real materials, how many props at most.
 - **For both:** no text, letters or logos anywhere. Keep the category's and the place's clichés
@@ -52,10 +56,10 @@ a look to recognise, not rules to count.
    it small and dimmed under "Earlier takes", so the user can ask for it back, and then it moves
    first again. Remove a take only when it has an image-model mistake.
 4. The seeds the user keeps are the **anchors**: the kit brings each into the library folder
-   (`SKILL.md`, Kit) and DESIGN.md lists the file names that returned. Every later image is made
-   with two or three of them as references, by their place in the library
-   (`references: ["brand/refs/<anchor>", ...]`): "draw a new scene in exactly the drawing style of
-   the reference images".
+   (`SKILL.md`, Kit) and DESIGN.md lists the file names that returned. The library below is grown
+   from two or three of them as references (`references: ["brand/refs/<anchor>", ...]`), since the
+   library sheet doesn't exist yet; every image after the kit takes the library's sheet instead
+   (`images.md` of the `metamorfiles` skill, "The prompt").
 
 ## Check every image before anyone sees it
 
@@ -77,7 +81,6 @@ ground to the brand's paper; before that, pass `ground: "#rrggbb"` too. Each is 
 it will be used at (1024 × 1024 for a spot, 1600 × 2000 for a 4:5 scene):
 - **Spots:** single objects the business sells or uses, centred with space around them.
 - **Scenes:** the business's moments and people, with calm space above for a headline.
-- The accent colour on the one object each image is about.
 
 Check each one against the anchors: the same medium, line and fills. Redo from the anchors when one
 has an image-model mistake or is plainly in another medium; a small drift in a tint or a detail is
@@ -88,13 +91,20 @@ not worth a redo.
 A brand whose imagery is a character designs it with the `metamorfiles-character` skill: its bible,
 its construction, candidates drawn alone and traced, one anchor the user approves, and every pose
 from that anchor. Its seeds on this step are the character in the brand's moments, each made from
-the anchor, and every image of it, seeds and library alike, carries the bible's body line, so the
-model adds nothing a pose seems to need. List its folder in `assets` with `kind: character`, its
-`note` holding the body line, which the reviewer counts against.
+the anchor, and every image of it, seeds and library alike, carries its character sheet (the body
+part by part, each part's colour in hex, what never changes), so the model adds nothing a pose seems
+to need and paints no part another colour. List its folder in `assets` with `kind: character`, its
+`note` holding the body line, and write the sheet whole into the imagery guide.
 
 ## In the kit
 
 - DESIGN.md's Imagery section describes the mode and the look, and names the anchors.
 - `assets` lists the folder with `kind: imagery` (or `character`) and its `anchors`.
-- `brand/imagery-guide.md` holds the style block and how to write a scene, for anyone who makes the
-  next image.
+- `brand/imagery-guide.md` is the brand's image contract, which every later image reads first
+  (`images.md` of the `metamorfiles` skill). Write it with these sections, in this order:
+  - **Style:** the style block, word for word as the seeds used it.
+  - **Character sheet** (a character brand): from the character's bible, the body part by part with
+    each part's colour in hex, and what never changes, word for word.
+  - **Colour roles:** each colour's hex and what it paints in a scene; the accent's role (light, the
+    scene's own props), never on the character, never a count.
+  - **Writing a scene:** one or two example scenes in the brand's words, subject first.

@@ -15,7 +15,7 @@ You play the specialists yourself, one at a time, because their work depends on 
 | `reviewer` | Judging renders against `brand/DESIGN.md`: what's wrong, how bad, who fixes it. Never changes files. | [references/reviewer.md](references/reviewer.md) |
 | `designer` | Layout, type, color, spacing, crops: the design's HTML and CSS, and `edits.css`. | `references/design.md` of the `metamorfiles` skill, and `references/carousels.md` for a carousel |
 | `copywriter` | Every word: headlines, body, calls to action, and the research the words need (sources read, with dates). | `references/copy.md` of the `metamorfiles` skill, and `references/carousels.md` for a carousel |
-| `imager` | Images: each one made for its slot with `metamorfiles_generate_image` and the library's sheet as the reference (`references: ["templates/brand-board#refs"]`), other parties' logos with `metamorfiles_find_mark`, placement, crop. Never a picture picked from `brand/refs/` because it's there. | `references/images.md` of the `metamorfiles` skill |
+| `imager` | Images: each one made for its slot with `metamorfiles_generate_image`, by the prompt `references/images.md` gives: the brand's image contract (`brand/imagery-guide.md`), the character's anchor first when it appears, the library's sheet as a style reference, other parties' logos with `metamorfiles_find_mark`, placement, crop. Never a picture picked from `brand/refs/` because it's there. | `references/images.md` of the `metamorfiles` skill |
 
 A new brand made from nothing (Studio's request says so, or `metamorfiles_get_project` says the brand is being made) follows `metamorfiles-brand-creation` for its order of work, its questions and its handover; the reporting below holds for it too.
 
@@ -40,7 +40,7 @@ Finish every role with `status: "done"`.
 1. **Plan** it as the copywriter and the designer: research the facts it's about (`references/copy.md`, Research), then one line per slide or format with what it gives, its layout, each image's slot (what it shows, its shape) and any other party's logo (`references/carousels.md`).
 2. **Copywriter**: the words, from the plan.
 3. **Designer**: the template, composed from the plan with its image slots.
-4. **Image maker** (`imager`): each slot's image made for it with the library's sheet as the reference, and the logos found (`references/images.md`, "Compose it, then make it"). A design with no images is one the plan chose and says why, never because the library had pictures.
+4. **Image maker** (`imager`): each slot's image made for it by `references/images.md`'s prompt (the brand's image contract, the character first, the library's sheet for style), saved under `assets/`, and the logos found (`references/images.md`, "Compose it, then make it"). A design with no images is one the plan chose and says why, never because the library had pictures.
 5. **Designer**: fit the layout to the copy and images, and make the page.
 6. **Final check**, as below.
 

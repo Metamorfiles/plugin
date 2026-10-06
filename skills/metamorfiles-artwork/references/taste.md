@@ -25,4 +25,4 @@ direction and the category decide what the piece is.
 - **A picture with no room for the type,** and boxes laid under the words to save it: paint the
   picture again with calm zones.
 - **A different style from the brand's imagery:** a glossy 3D scene on a brand drawn in flat
-  sticker shapes. Use the anchors as references.
+  sticker shapes, in the brand's image contract (`brand/imagery-guide.md`).

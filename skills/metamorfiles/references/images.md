@@ -1,30 +1,111 @@
 # Images
 
-Read this whenever you make, choose, place or crop an image: an `image` variable, a page's variants, a repurposed set, or the image maker's part of a team task. The brand's imagery rules and reference images set the look; the frame sets the shape.
+Read this whenever you make, choose, place or crop an image: an `image` variable, a page's variants, a repurposed set, a mockup, an artwork, or the image maker's part of a team task. The brand's image contract sets the look; the frame sets the shape.
 
 Studio keeps every image whole, as the model made it: it never crops a file to fit. Cropping is a design decision, made where the image is used: the frame's `object-fit` and `object-position`, and each format of a repurposed set choosing its own crop from the same whole image. That is why a generated image should be composed for its frame, not cut to it.
 
+## Contents
+- The brand's image contract
+- Compose it, then make it
+- The prompt
+- Other parties' marks and images
+- Getting an image
+- Generate and place, edit or redraw
+- Check
+
+## The brand's image contract
+
+Read `brand/imagery-guide.md` before any prompt: it's what every image of this brand shares, written
+when the brand was made. Its sections:
+- **Style:** one paragraph describing the look, with each colour's hex and what it paints. Pasted
+  whole into every prompt.
+- **Character sheet** (a brand with a character): the body, part by part, each part's colour in hex,
+  and what never changes. Pasted whole into every prompt that shows the character.
+- **Colour roles:** what each colour is for in a scene. An accent is a role for objects and light
+  (a balloon, a lamp, a spark), never a colour on the character or a quota per image.
+- **Writing a scene:** how the brand's scenes are described.
+
+A brand without the guide (translated from an existing one) takes its look from DESIGN.md's Imagery
+section and its reference images; write the same parts from them in your notes and use them alike.
+
 ## Compose it, then make it
 
-The brand's library (the folders DESIGN.md `assets` lists, imagery and character) is the style
-reference, not a stock folder; its sheet on the brand board, `templates/brand-board#<folder>` (such as
-`templates/brand-board#refs`), shows the model the whole style at once. An image that carries a piece is made for that
-piece.
+The brand's library (the folders DESIGN.md `assets` lists) is a style reference, not a stock folder.
+An image that carries a piece is made for that piece.
 
 1. **Compose the frame first:** where the copy sits, the image's slot (its shape, its size, where it
    must stay calm for type), and what it shows for this frame's content: the character doing this
    slide's thing, the product in this post's moment, the scene the copy names.
-2. **Make it for that slot,** in the brand's style: the subject and the composition in words, the
-   library's sheet as the reference ("image 1 is the brand's image library: draw in its style"),
-   `width` and `height` the slot's size, `folder` the library folder so the library grows:
-   `metamorfiles_generate_image { prompt, width: 1080, height: 700, references: ["templates/brand-board#refs"], folder: "brand/refs" }`.
-   The model takes the style from the sheet; say only what this image shows and how it's framed.
+2. **Make it for that slot** with the prompt below, `width` and `height` the slot's size. It's saved
+   under `assets/`: a piece's images are the piece's, never added to the brand's library, whose
+   images are reviewed as a set (the library grows only through the brand's library step).
 3. **Use a library image as it is** only when it already is that composition: a pattern, a texture, a
    small spot used as decoration, or the very picture the brief names. A near fit is still the wrong
    image: a generic picture on a slide about something specific reads as filler.
 
 No image repeats within a page or post. The plan names each frame's image: "new:" with its subject and
 slot, or the library file and why it already fits.
+
+## The prompt
+
+One shape for every brand image, in short labelled sections, the order OpenAI's guide gives (other
+models read it as well):
+
+1. **References,** numbered, each with its role. The image to keep goes first, since models preserve
+   the first most closely:
+   - a character: its anchor first, "Image 1 is <name>: keep its identity, anatomy and colours
+     exactly; draw it anew in this scene" (the anchor is the image DESIGN.md `assets` marks for the
+     character's folder);
+   - the library's sheet next, its folder's frame on the brand board
+     (`templates/brand-board#<folder>`, such as `templates/brand-board#refs`): "Image 2 is the
+     brand's image library: take only its drawing style, palette and texture; never copy its
+     subjects or compositions";
+   - a product or a source image: what must stay exactly as it is.
+2. **Scene:** the setting, the light, the framing and the shape ("portrait, 4:5"), and what the image
+   is for ("background for a post; the headline sits on the calm left third").
+3. **Subject:** what it shows, plainly, named each time, never "it". With the character, its sheet
+   pasted whole.
+4. **Style:** the guide's style paragraph, pasted whole.
+5. **Constraints,** plain and early enough to survive a host that rewrites prompts: "<the character>'s
+   colours never change: each part stays the colour its sheet gives", "no text or lettering", and
+   anything the scene must not add.
+
+`metamorfiles_generate_image { prompt, width: 1080, height: 700, references: ["brand/refs/<character anchor>", "templates/brand-board#refs"] }`
+
+Then the craft, for every model, and that model family's file for what differs (`metamorfiles_image_models` names the default):
+
+| The model's id contains | Read |
+| --- | --- |
+| `chatgpt` or `gpt-image` | [images-openai.md](images-openai.md) |
+| `gemini`, `imagen` or `nano-banana` | [images-gemini.md](images-gemini.md) |
+| `flux` | [images-flux.md](images-flux.md) |
+| anything else | [images-other.md](images-other.md) |
+
+- **Concrete words.** Materials, colours as hex tied to what they paint, shapes; never vague praise
+  ("beautiful", "premium") and never a colour's name in the brand kit (the model doesn't know
+  "Roxo"; it knows #3a1c8c). Keep the scene and subject short (30 to 80 words); the guide's blocks go
+  in as they are.
+- **Place the empty space and describe it as a thing**: "a bare off-white plaster wall across the left
+  third". Name positions (thirds, corners) and the shape: several models, ChatGPT among them, compose
+  for the shape the prompt states.
+- **Ask for what should be there.** Most models read a bare "no people" as a request for people; say
+  "an empty street" instead, and keep exclusions to the Constraints line. Keep text out with "clean,
+  unmarked surfaces", and never put a word in quotation marks: a quoted word is drawn. The one image
+  that carries words is a logo drawn whole (`references/drawn.md` of `metamorfiles-logo`).
+- **One or two style anchors at most, never contradictory instructions:** given two rules that
+  compete (an accent quota and the character's colours), the model picks one, and not always yours.
+- **Light is the biggest lever**: its direction, softness and time of day. Camera words set framing
+  and depth.
+- **The product and the logo come from real files.** Never ask a model to draw packaging text, a logo
+  or an interface; place the real file in the layout, or pass it as a reference with what must stay.
+
+Example, a character brand's carousel slide:
+
+> Image 1 is Pip, the brand's otter: keep its identity, anatomy and colours exactly; draw it anew in this scene. Image 2 is the brand's image library: take only its drawing style, palette and texture; never copy its subjects or compositions.
+> Scene: a cosy desk at night lit by one warm lamp from the right; portrait 4:5; the top third stays calm, plain #1d2a44 for the headline.
+> Subject: Pip leaning over a blank laptop screen, both paws on the keys, a mug beside it. Pip: one head with two round ears, two arms with dark #2b1d14 paws, two legs, one tail; fur #8a5a3c, belly and face #f2e3c9.
+> Style: flat poster illustration, thick even #121212 outline, flat fills, strong contrast, little or no shading.
+> Constraints: Pip's colours never change; the lamp's glow is the only #ffc21a; no text or lettering.
 
 ## Other parties' marks and images
 
@@ -58,42 +139,12 @@ show the real thing, never a drawing of it.
 - If this app has its own image tool and the user prefers it, make the image with it and bring the file in with `metamorfiles_import_image { path: "<absolute path>" }`, which saves it whole. Bring in an existing image (a source design, a photo the user gave) the same way.
 - Report the cost or limit the result gives.
 
-## Before you prompt
-
-1. Read the variable's `source.instruction` in the template (what the image must show) and the Imagery section of `brand/DESIGN.md`.
-2. Look at the brand's library (the folders DESIGN.md `assets` lists, else `brand/refs/`): it's the standard for light, colour, drawing and mood. Pass its sheet as the reference, `references: ["templates/brand-board#refs"]` (the folder's frame on the brand board).
-3. Look at the frame: where the copy sits, and so where the image must stay calm.
-
-## Write the prompt
-
-Check which model will run: `metamorfiles_image_models` names the default. Then write with these rules, which hold for every model, and read that model family's file for what differs:
-
-| The model's id contains | Read |
-| --- | --- |
-| `chatgpt` or `gpt-image` | [images-openai.md](images-openai.md) |
-| `gemini`, `imagen` or `nano-banana` | [images-gemini.md](images-gemini.md) |
-| `flux` | [images-flux.md](images-flux.md) |
-| anything else | [images-other.md](images-other.md) |
-
-- **Plain sentences, subject first.** What the image shows, then the setting, the light, the framing, then technical details. Concrete materials, colors and shapes, never vague praise ("beautiful", "premium"). Name the subject each time, never "it". About 30 to 80 words; never past 150, where some models stop reading.
-- **Say what it's for**: "background for a social post, the headline sits on the left". Several models change the whole composition on this one line.
-- **Place the empty space and describe it as a thing**: "a bare off-white plaster wall across the left third". Name positions (thirds, corners), and name the shape ("portrait, 4:5"): several models, ChatGPT among them, compose for the shape the prompt states.
-- **Ask for what should be there, not for what shouldn't.** Most models read "no people" as a request for people. Keep text out with "clean, unmarked surfaces", and never put a word in quotation marks: every model takes a quoted word as text to draw. The one image that carries words is a logo drawn whole (`references/drawn.md` of `metamorfiles-logo`): there, quote the name exactly and spell an uncommon one letter by letter.
-- **Light is the biggest lever**: its direction, softness and time of day ("low morning sun from the left, soft long shadows"). Camera words set framing and depth ("close three-quarter view, shallow depth of field"). At most one or two style anchors, never contradictory ones.
-- **The product and the logo come from real files.** Never ask a model to draw packaging text, a logo or an interface. Put the real product photo in the HTML, or pass it as a reference with what must stay exactly as it is.
-- **References by order**: "image 1 is the product photo, image 2 sets the light and palette", and say what each one gives and what must stay unchanged. Studio sends only as many as the model takes.
-- **Hard constraints early and plain.** Several hosts rewrite prompts before the model sees them, and what's stated first and simply survives.
-
-Example for a skincare launch post:
-
-> A small amber glass dropper bottle of vitamin C serum standing on a pale travertine ledge, morning sunlight from a window on the left casting long soft shadows, warm neutral palette of cream and honey tones, editorial product photography, shallow depth of field, bottle on the right third with calm empty stone on the left.
-
-## Generate and place
+## Generate and place, edit or redraw
 
 - Pass `width` and `height` as the size the image is used at: the model composes for that shape, nothing is cropped, and Studio saves the result whole under `assets/`. For an image several formats show, pass the format it matters most in, and compose with room around the subject so every other format can crop it well. Make it once and reuse it across variants when the variant isn't about the image.
 - The result can be another size than the one passed: each source makes its own sizes (on a ChatGPT plan OpenAI sets it, about 1.6 megapixels, in the shape the prompt names). When the result says it's smaller than the frame, the design will enlarge it and it may look soft: tell the user, and let them decide on a source that makes larger images.
 - For choices between directions, make each option as the real thing: the one the user chooses is the image used, never made again, since a new one would be a different image.
-- To change a generated image, edit it rather than make a new one: `metamorfiles_generate_image { prompt: "Edit image 1: ...", width, height, references: ["/assets/<file>.png"], edit: true }`: the image first in `references`, then after "Edit image 1:" the one thing to change, and the list of what stays exactly as it is. Change one thing at a time, and repeat that list each time. A character in a new pose or from a new angle is the exception: an edit keeps what is in the image, so the head stays as it was while the body changes under it; draw it anew from the anchor (`references/poses.md` of `metamorfiles-character`).
+- **Edit or redraw.** Edit when one detail is wrong and the rest should stay: `metamorfiles_generate_image { prompt: "Edit image 1: ...", width, height, references: ["/assets/<file>.png"], edit: true }`, the image first in `references`, then what stays exactly as it is ("keep everything else exactly as it is: the composition, the light, the character's colours"), then the one thing to change. One change per edit; repeat the list of what stays each time. Redraw from the prompt when the composition, a pose or the subject is wrong: an edit keeps what's in the image, so a new pose drawn by an edit keeps the old head on a changed body (`references/poses.md` of `metamorfiles-character`). Never use a generated image as a style reference for the next: copies of copies drift.
 - Place it through the variable's value, the path the result gives exactly as it is (`/assets/<file>.png`, leading slash kept), in the page's `page.json` for one variant or the template default for all, then render every format that shows it: a crop that works in the post can cut the product in the story. Set each format's crop with the design's `object-position`.
 
 ## Check
@@ -109,8 +160,10 @@ mistakes again and again; redo an image that has any of them, saying what to fix
 - **Text:** any lettering at all, which comes out garbled; the brand's words are set in the design.
 - **Background:** stray figures, extra objects, repeated patterns and smeared detail behind the
   subject.
-- **The brief:** the ban list of the brand's imagery rules (a forbidden prop, a colour outside the
-  palette).
+- **The character:** count its parts against its sheet and check each part's colour: a part in a colour
+  the sheet doesn't give (a gold paw, a cream ear that should be dark) is as wrong as an extra arm.
+  Only what you can see counts: a part hidden by the pose, an object or the edge isn't missing.
+- **The brand:** a colour outside the guide's roles, or the style broken (shading in a flat style).
 
 Then:
 - The subject is whole, not cut at an edge; faces and products are never cropped awkwardly.

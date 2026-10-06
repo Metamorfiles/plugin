@@ -232,7 +232,8 @@ its frame shows each file as it arrives, so the user watches the step come toget
      first, and list their folder once the first is saved:
      `{ folder: mockups, kind: in-use, title: In use }`.
 
-   Write `brand/imagery-guide.md` with the style block. The brand board then holds it all after the
+   Write `brand/imagery-guide.md`, the brand's image contract, with its four sections (`references/imagery.md`,
+   In the kit): style, the character sheet with each part's colour, colour roles, writing a scene. The brand board then holds it all after the
    steps: the guide, the images and each mockup as its own frame. Get the final check (`metamorfiles-review`,
    in the foreground, waiting for its verdict), fix what it marks, and hand over as
    `references/presenting.md` of `metamorfiles-brand` says. Make no templates or pages: the kit is
