@@ -120,6 +120,7 @@ npx metamorfiles@latest images
 | `metamorfiles-logo` | A logo for a new brand in three routes from its direction (drawn whole by AI, real fonts with a generated part, type alone), checked at every size |
 | `metamorfiles-character` | A mascot described from the brand's direction, and new poses that stay on model |
 | `metamorfiles-artwork` | Packaging and print artwork: the image model paints the picture in the brand's style, Studio sets the real logo and type |
+| `metamorfiles-mockup` | The brand on its real objects: art-directed packaging photography with the exact logo, checked and fixed by an edit |
 | `metamorfiles-template` | A new or changed template from a brief, reference or screenshot |
 | `metamorfiles-variants` | A page of A/B variants or spreadsheet rows, exported in several formats |
 | `metamorfiles-repurpose` | Adapt one design to other platforms and sizes |
