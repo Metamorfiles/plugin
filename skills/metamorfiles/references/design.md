@@ -37,6 +37,16 @@ After each change, render the frames you changed and look at them the way a read
 - **Each format is composed for its size.** A landscape frame isn't a shrunken portrait: put the image beside the copy rather than above it, and let a story use its height.
 - **Only this brand.** Build from what the brand has and a competitor doesn't: its photography, its colors in their stated roles, its type, its voice. A decorative device the brand kit doesn't use (a badge, a card, a gradient, an icon, numbering, an emoji) needs a reason in the content, not just empty space to fill. The brand kit and the brief always win over these preferences.
 
+## Images in the composition
+
+- **The composition decides the image, not the library.** Lay the frame out first (where the copy sits,
+  the image's slot and shape, where it must stay calm), then make the image for that slot: the brand's
+  character or scene doing what this frame is about, from two or three of the library's anchors as
+  references (`references/images.md`, "Compose it, then make it"). A picture picked from `brand/refs/`
+  because it's there is a stock photo of your own brand.
+- **Other parties are shown by their real marks**, set in the layout beside the image, never drawn in
+  it: `metamorfiles_find_mark { name }` (`references/images.md`, "Other parties' marks and images").
+
 ## A carousel
 
 - **One system, read as a swipe.** Every slide keeps the same margins, grid and type roles, so the eye finds the text in the same place each time. Judge the slides side by side in the panel, as a reader swipes them, not one at a time.

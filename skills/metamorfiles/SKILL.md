@@ -181,7 +181,7 @@ Any other size is inline: `{ "id": "banner", "width": 1500, "height": 500 }`. **
 
 **Rules the check enforces**
 
-- No remote URLs and no remote `@import`. Use brand images in place from `brand/refs/` and `brand/logos/`, never a copy (whether a library image fits or a new one is made: `references/images.md`, "Use one, or make one"); save other images into the template folder or `assets/`, fonts into `brand/fonts/`.
+- No remote URLs and no remote `@import`. Use brand images in place from `brand/refs/` and `brand/logos/`, never a copy (whether a library image fits or a new one is made: `references/images.md`, "Compose it, then make it"); save other images into the template folder or `assets/`, fonts into `brand/fonts/`.
 - No `<script>` tags besides the manifest. Use variables and CSS.
 - Every binding references a declared variable of a matching type. Unused variables are warnings.
 - Default images must exist. Font defaults must be listed in DESIGN.md `fonts`.

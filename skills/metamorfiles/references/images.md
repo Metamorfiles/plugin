@@ -4,21 +4,25 @@ Read this whenever you make, choose, place or crop an image: an `image` variable
 
 Studio keeps every image whole, as the model made it: it never crops a file to fit. Cropping is a design decision, made where the image is used: the frame's `object-fit` and `object-position`, and each format of a repurposed set choosing its own crop from the same whole image. That is why a generated image should be composed for its frame, not cut to it.
 
-## Use one, or make one
+## Compose it, then make it
 
-Decide for every image a frame needs, never by default. The brand's library is the folders DESIGN.md
-`assets` lists (imagery, character); its `anchors` are the images that set the look.
+The brand's library (the folders DESIGN.md `assets` lists, imagery and character, with their
+`anchors`) is the style reference, not a stock folder. An image that carries a piece is made for that
+piece.
 
-- **Use a library image** in place only when it shows what this frame says (the slide's tool, the
-  post's product, the scene the copy describes), suits the frame's shape without cutting its subject,
-  and isn't already used elsewhere in the same page or post.
-- **Otherwise make a new one in the brand's style:** the subject from the copy, the anchors (two or
-  three) first in `references`, the style block from `brand/imagery-guide.md` pasted after the scene,
-  and `folder` set to the library folder, so the library grows and the next post can use it:
-  `metamorfiles_generate_image { prompt, width, height, references: ["brand/refs/<anchor>"], folder: "brand/refs" }`.
-- A library image that is near enough is still the wrong image: a generic picture on a slide about
-  something specific reads as filler. When unsure, make one.
-- Say in the plan which frames use which library image and which get a new one, and its subject.
+1. **Compose the frame first:** where the copy sits, the image's slot (its shape, its size, where it
+   must stay calm for type), and what it shows for this frame's content: the character doing this
+   slide's thing, the product in this post's moment, the scene the copy names.
+2. **Make it for that slot,** in the brand's style: the subject and the composition in words, two or
+   three anchors first in `references`, the style block from `brand/imagery-guide.md` after the scene,
+   `width` and `height` the slot's size, `folder` the library folder so the library grows:
+   `metamorfiles_generate_image { prompt, width: 1080, height: 700, references: ["brand/refs/<anchor>"], folder: "brand/refs" }`.
+3. **Use a library image as it is** only when it already is that composition: a pattern, a texture, a
+   small spot used as decoration, or the very picture the brief names. A near fit is still the wrong
+   image: a generic picture on a slide about something specific reads as filler.
+
+No image repeats within a page or post. The plan names each frame's image: "new:" with its subject and
+slot, or the library file and why it already fits.
 
 ## Other parties' marks and images
 
