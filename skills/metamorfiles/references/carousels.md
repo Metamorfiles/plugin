@@ -59,7 +59,7 @@ Pick the one the idea is, and say it in the plan:
 - **The end asks for what the content earns:** save for something to come back to, share for
   something a friend needs, comment for an opinion, follow for a series. One ask.
 - **The caption** opens with its own hook in the first line, says what's inside, and ends with the ask.
-- Every fact comes from the brief, the brand or the user. Copy craft and voice: `copy.md`.
+- Every fact comes from the brief, the brand, the user or research done for this post, kept with its source and date ("Research" in `copy.md`); a post about news is researched before it's planned. Copy craft and voice: `copy.md`.
 
 ## The design
 
