@@ -16,7 +16,7 @@ A template is a reusable design whose changeable parts are declared variables. T
    For a carousel, plan its slides first with `references/carousels.md` of the `metamorfiles` skill, and the Carousels section of `metamorfiles-variants`: the plan decides the template's slide layouts.
 4. Plan the variables before writing HTML:
    - Copy that varies becomes `string` variables with `maxLength`, sized so the longest value still fits.
-   - Photos and illustrations become `image` variables. Add `"source": { "kind": "ai", "instruction": "…" }` when new images should be generated per variant.
+   - Photos and illustrations become `image` variables. One whose subject changes with the content (each slide's tool, each variant's product or scene) gets `"source": { "kind": "ai", "instruction": "…" }`, the instruction naming what it shows; a library image can be its default. Each variant then uses a library image or gets a new one by `references/images.md`, "Use one, or make one".
    - Values coming from a CSV use `"source": { "kind": "table", "column": "…" }`. Call `metamorfiles_read_table { file: "data/products.csv" }` first to get the exact column names.
    - Useful design switches become `enum`, `boolean`, `anchor`, `color` or `number` variables. Keep them few and meaningful.
    - Defaults must be real, on-brand content, so the default render is a finished design: write them with `references/design.md` and `references/copy.md` of the `metamorfiles` skill, and images with `references/images.md`.
