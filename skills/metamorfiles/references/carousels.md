@@ -20,7 +20,12 @@ its image (a library file that shows it, or "new:" and its subject, by "Use one,
 parties' marks and images" in `images.md`).
 Read it top to bottom: every slide earns its place, the order builds, and no two neighbours share a
 layout unless they're a pair on purpose. Then design the template from the plan, and fill the page's
-variants from it.
+variants from it. An existing template is reused only when its layouts already serve this plan, and
+the plan says so; new content, or a request for a new post or design, gets its own template.
+
+When the brief asks for something only the user knows and didn't give it (their routine, a result,
+a date), the plan says so once, with the exact question, and the slide is reframed to what's true
+and still useful ("Grounding" in `copy.md`), never invented and never a line repeating another.
 
 - **Length:** what the idea needs, usually 6 to 10 slides; one idea per carousel.
 - **Cover, then a promise:** the cover stops the scroll; slide 2 says exactly what the reader gets
