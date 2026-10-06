@@ -70,6 +70,7 @@ Every workflow uses the same craft, one file each. Read the one you need before 
 | --- | --- |
 | lay out a frame: layout, type, color, spacing, crops | [references/design.md](references/design.md) |
 | write any words that go into a frame | [references/copy.md](references/copy.md) |
+| plan, write or design a carousel (after `copy.md` and `design.md`) | [references/carousels.md](references/carousels.md) |
 | make, place or crop an image, or bring one in | [references/images.md](references/images.md) |
 | prompt a given model (after `images.md`) | its family's file: [images-openai.md](references/images-openai.md), [images-gemini.md](references/images-gemini.md), [images-flux.md](references/images-flux.md), [images-other.md](references/images-other.md) |
 
