@@ -16,7 +16,8 @@ swipe, gives something on every slide and ends with a reason to keep it.
 Most weak carousels fail in the outline, before any design. Before the template, write the plan in
 your notes, one line per slide: what the slide gives the reader, its pattern (below), its layout and
 its image (a library file that shows it, or "new:" and its subject, by "Use one, or make one" in
-`images.md`).
+`images.md`), and any other party's mark or photo it shows, with where it comes from ("Other
+parties' marks and images" in `images.md`).
 Read it top to bottom: every slide earns its place, the order builds, and no two neighbours share a
 layout unless they're a pair on purpose. Then design the template from the plan, and fill the page's
 variants from it.
