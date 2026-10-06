@@ -32,17 +32,21 @@ Write it before drawing anything:
 - its **name**, and **what it is**: an animal, a creature, a person, an object that came alive;
 - **why it is this brand's**: taken from the business's own world (its product, its place, a story
   the user told), never the category's stock mascot;
-- its **body**, part by part, with how many of each and what does the work of hands: for Lumen's
-  moth, "two antennae, four wings, six thin legs, no hands: it holds things between its front
-  legs". Image models add the part a pose seems to need (an arm on a bird holding a cup, a third
-  wing), so every prompt carries this line, and the reviewer counts each drawing against it;
+- its **body**, part by part, with how many of each, what does the work of hands, and **each part's
+  colour in hex**: for Lumen's moth, "two antennae #3b2e27, four wings #f6f1ea with #c9a227 tips, six
+  thin legs #3b2e27, no hands: it holds things between its front legs". Image models add the part a
+  pose seems to need (an arm on a bird holding a cup, a third wing) and repaint a part with a colour
+  the scene asks for elsewhere (a gold paw where the scene wanted one gold thing), so every prompt
+  carries this sheet whole, with "its colours never change", and the reviewer checks each drawing's
+  parts and their colours against it;
 - its **personality** in one sentence, and how it shows (a wink, a lean, a grin);
-- its **palette**: the brand's hex values, each for what it paints;
 - **what it never does**.
 
 Keep it in the notes of the step's file (below its YAML) while a brand is made. Once the kit is
-written, the character folder's `note` in DESIGN.md `assets` holds its one-line identity and body
-line (400 characters at most).
+written, the body line with its colours is the **character sheet** in `brand/imagery-guide.md`,
+word for word, which every later image pastes whole (`images.md` of the `metamorfiles` skill); the
+character folder's `note` in DESIGN.md `assets` holds its one-line identity and body line (400
+characters at most).
 
 ### 2. The description
 
@@ -58,8 +62,8 @@ colours: `references/styles.md`. The style's paragraph is pasted unchanged into 
 ### 4. Draw candidates
 
 Draw three candidates together (each with `wait: false`, then `metamorfiles_image_status { id }` for
-each), each from the same full prompt: the bible's one-line identity, its body line, the
-description, the style paragraph and the palette. Front or three-quarter view, standing, a neutral pose. It is drawn alone, never with any word; the name is composed around it
+each), each from the same full prompt: the bible's one-line identity, its body line with each part's
+colour, the description and the style paragraph. Front or three-quarter view, standing, a neutral pose. It is drawn alone, never with any word; the name is composed around it
 (`metamorfiles-logo`). In a logo drawn whole, where the character and the name are drawn as one,
 use this same description and style in its prompt. Each one traced:
 `metamorfiles_generate_image { prompt, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`,

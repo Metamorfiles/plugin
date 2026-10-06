@@ -41,8 +41,9 @@ After each change, render the frames you changed and look at them the way a read
 
 - **The composition decides the image, not the library.** Lay the frame out first (where the copy sits,
   the image's slot and shape, where it must stay calm), then make the image for that slot: the brand's
-  character or scene doing what this frame is about, with the library's sheet
-  (`templates/brand-board#refs`) as the reference (`references/images.md`, "Compose it, then make it"). A picture picked from `brand/refs/`
+  character or scene doing what this frame is about, in the brand's image contract
+  (`brand/imagery-guide.md`) with the library's sheet as a style reference (`references/images.md`,
+  "The prompt"). A picture picked from `brand/refs/`
   because it's there is a stock photo of your own brand.
 - **Other parties are shown by their real marks**, set in the layout beside the image, never drawn in
   it: `metamorfiles_find_mark { name }` (`references/images.md`, "Other parties' marks and images").

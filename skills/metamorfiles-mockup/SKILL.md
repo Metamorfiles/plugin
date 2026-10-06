@@ -80,8 +80,11 @@ says what each one is:
 
 1. **The logo file** DESIGN.md `logos` names, such as `brand/logos/logo.svg`: "image 1 is the logo".
 2. **The brand board,** `templates/brand-board#board`: "image 2 is the brand system".
-3. **The library's sheet,** when the brand's imagery or character appears on the object: its frame on
-   the brand board, such as `templates/brand-board#refs`: "image 3 is the brand's image library".
+3. **The character's anchor and the library's sheet,** when the brand's character or imagery appears
+   on the object: the anchor "keep its identity, anatomy and colours exactly", the sheet (its folder's
+   frame on the brand board, `templates/brand-board#<folder>`) "only its style, never its subjects".
+   The character's sheet from `brand/imagery-guide.md` goes into the prompt whole, as `images.md` of
+   the `metamorfiles` skill says.
 
 Write it in this order:
 1. The shot: "Editorial packaging photograph", its shape, the idea, the camera (from above, straight

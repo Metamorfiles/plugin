@@ -18,6 +18,7 @@ For ChatGPT Images (`chatgpt/images`, the user's ChatGPT plan) and `gpt-image` m
 - **References.** Label each by number and role ("Image 1: the product photo, keep it exactly. Image 2: only the light and palette"), then say how they combine. A reference an edit changes is image 1.
 - **Words in the image** only where the image carries them (a logo drawn whole): the exact words in quotes, an uncommon one spelled letter by letter, and where they sit.
 - **Camera words** set framing loosely; they don't produce an exact lens.
-- Weak at exact positions in dense layouts, and at the same person or character across images: pass the first image as image 1 each time rather than describing it again.
+- Weak at exact positions in dense layouts, and at the same person or character across images: pass the character's anchor as image 1 each time, say "do not redesign the character", and name each part with its colour ("two arms with dark #2b1d14 paws") rather than describing it in general.
+- **Never two rules that compete.** Given a global rule (an accent quota, "one loud object") and the character's own colours, the rewrite picks one and may paint the accent on the character. Scope every colour rule to what it paints, and when a colour lands wrong, read `revisedPrompt` to see which rule won.
 
 Sources: OpenAI's [image generation tool](https://developers.openai.com/api/docs/guides/tools-image-generation), [image generation guide](https://developers.openai.com/api/docs/guides/image-generation) and [image prompting guide](https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide).
