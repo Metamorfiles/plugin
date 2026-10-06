@@ -6,7 +6,7 @@ license: MIT
 
 # Make a page of variants
 
-A page is one deliverable made from a template: its own copy of the design, and every variant in every format. You write the variant values yourself, and make each variant's images composed for its frame, from the library's anchors (`references/images.md` of the `metamorfiles` skill, "Compose it, then make it").
+A page is one deliverable made from a template: its own copy of the design, and every variant in every format. You write the variant values yourself, and make each variant's images composed for its frame, with the library's sheet as the reference (`references/images.md` of the `metamorfiles` skill, "Compose it, then make it").
 
 ## Steps
 
@@ -17,7 +17,7 @@ A page is one deliverable made from a template: its own copy of the design, and 
    - **Size:** variants × formats × rows. Confirm before exporting more than 50 files.
 3. Fill values per variant:
    - `string` variables with an `ai` source: write the copy yourself from the variable's `instruction` and the thesis, with `references/copy.md` of the `metamorfiles` skill.
-   - `image` variables: for each variant, make the image composed for its slot (what this variant is about, the slot's shape, where the copy sits), from two or three of the library's anchors as references, saved into the library folder (`references/images.md`, "Compose it, then make it"); a library file only when it already is that composition, and never the same image on two variants of one post. Other parties' logos come from `metamorfiles_find_mark { name }`.
+   - `image` variables: for each variant, make the image composed for its slot (what this variant is about, the slot's shape, where the copy sits), with the library's sheet as the reference (`templates/brand-board#refs`), saved into the library folder (`references/images.md`, "Compose it, then make it"); a library file only when it already is that composition, and never the same image on two variants of one post. Other parties' logos come from `metamorfiles_find_mark { name }`.
    - `table` variables: don't set them. Pass the table and each row becomes a variant filled from its columns. Call `metamorfiles_read_table { file: "data/products.csv" }` first to check columns and rows.
    - Only set the values that differ from the template defaults.
 4. Preview before making the page: two or three representative variants as `metamorfiles_render_preview { item: "templates/launch-post", format: "instagram-story", values: { headline: "…" } }` in the most constrained format. Fix copy that overflows, then continue.

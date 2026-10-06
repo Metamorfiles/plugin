@@ -6,17 +6,19 @@ Studio keeps every image whole, as the model made it: it never crops a file to f
 
 ## Compose it, then make it
 
-The brand's library (the folders DESIGN.md `assets` lists, imagery and character, with their
-`anchors`) is the style reference, not a stock folder. An image that carries a piece is made for that
+The brand's library (the folders DESIGN.md `assets` lists, imagery and character) is the style
+reference, not a stock folder; its sheet on the brand board, `templates/brand-board#<folder>` (such as
+`templates/brand-board#refs`), shows the model the whole style at once. An image that carries a piece is made for that
 piece.
 
 1. **Compose the frame first:** where the copy sits, the image's slot (its shape, its size, where it
    must stay calm for type), and what it shows for this frame's content: the character doing this
    slide's thing, the product in this post's moment, the scene the copy names.
-2. **Make it for that slot,** in the brand's style: the subject and the composition in words, two or
-   three anchors first in `references`, the style block from `brand/imagery-guide.md` after the scene,
+2. **Make it for that slot,** in the brand's style: the subject and the composition in words, the
+   library's sheet as the reference ("image 1 is the brand's image library: draw in its style"),
    `width` and `height` the slot's size, `folder` the library folder so the library grows:
-   `metamorfiles_generate_image { prompt, width: 1080, height: 700, references: ["brand/refs/<anchor>"], folder: "brand/refs" }`.
+   `metamorfiles_generate_image { prompt, width: 1080, height: 700, references: ["templates/brand-board#refs"], folder: "brand/refs" }`.
+   The model takes the style from the sheet; say only what this image shows and how it's framed.
 3. **Use a library image as it is** only when it already is that composition: a pattern, a texture, a
    small spot used as decoration, or the very picture the brief names. A near fit is still the wrong
    image: a generic picture on a slide about something specific reads as filler.
@@ -59,7 +61,7 @@ show the real thing, never a drawing of it.
 ## Before you prompt
 
 1. Read the variable's `source.instruction` in the template (what the image must show) and the Imagery section of `brand/DESIGN.md`.
-2. Look at the brand's library (the folders DESIGN.md `assets` lists, else `brand/refs/`): its anchors are the standard for light, colour, drawing and mood. Pass two or three of them as `references: ["brand/refs/<anchor>"]`, and paste the style block from `brand/imagery-guide.md` when there is one.
+2. Look at the brand's library (the folders DESIGN.md `assets` lists, else `brand/refs/`): it's the standard for light, colour, drawing and mood. Pass its sheet as the reference, `references: ["templates/brand-board#refs"]` (the folder's frame on the brand board).
 3. Look at the frame: where the copy sits, and so where the image must stay calm.
 
 ## Write the prompt
