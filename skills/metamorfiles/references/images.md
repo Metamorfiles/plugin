@@ -1,8 +1,24 @@
 # Images
 
-Read this whenever you make, place or crop an image: an `image` variable whose source is `ai`, a page's variants, a repurposed set, or the image maker's part of a team task. The brand's imagery rules and reference images set the look; the frame sets the shape.
+Read this whenever you make, choose, place or crop an image: an `image` variable, a page's variants, a repurposed set, or the image maker's part of a team task. The brand's imagery rules and reference images set the look; the frame sets the shape.
 
 Studio keeps every image whole, as the model made it: it never crops a file to fit. Cropping is a design decision, made where the image is used: the frame's `object-fit` and `object-position`, and each format of a repurposed set choosing its own crop from the same whole image. That is why a generated image should be composed for its frame, not cut to it.
+
+## Use one, or make one
+
+Decide for every image a frame needs, never by default. The brand's library is the folders DESIGN.md
+`assets` lists (imagery, character); its `anchors` are the images that set the look.
+
+- **Use a library image** in place only when it shows what this frame says (the slide's tool, the
+  post's product, the scene the copy describes), suits the frame's shape without cutting its subject,
+  and isn't already used elsewhere in the same page or post.
+- **Otherwise make a new one in the brand's style:** the subject from the copy, the anchors (two or
+  three) first in `references`, the style block from `brand/imagery-guide.md` pasted after the scene,
+  and `folder` set to the library folder, so the library grows and the next post can use it:
+  `metamorfiles_generate_image { prompt, width, height, references: ["brand/refs/<anchor>"], folder: "brand/refs" }`.
+- A library image that is near enough is still the wrong image: a generic picture on a slide about
+  something specific reads as filler. When unsure, make one.
+- Say in the plan which frames use which library image and which get a new one, and its subject.
 
 ## Getting an image
 
@@ -17,7 +33,7 @@ Studio keeps every image whole, as the model made it: it never crops a file to f
 ## Before you prompt
 
 1. Read the variable's `source.instruction` in the template (what the image must show) and the Imagery section of `brand/DESIGN.md`.
-2. Look at the brand's reference images in `brand/refs/` if there are any: they are the standard for light, color and mood. Pass the ones that show the look as `references: ["brand/refs/<file>"]`.
+2. Look at the brand's library (the folders DESIGN.md `assets` lists, else `brand/refs/`): its anchors are the standard for light, colour, drawing and mood. Pass two or three of them as `references: ["brand/refs/<anchor>"]`, and paste the style block from `brand/imagery-guide.md` when there is one.
 3. Look at the frame: where the copy sits, and so where the image must stay calm.
 
 ## Write the prompt

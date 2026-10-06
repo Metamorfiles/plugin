@@ -57,7 +57,8 @@ The reviewer works like this:
       - a product shown is the real one, from its photo, never a generated stand-in;
       - subjects (faces, products) not cut off;
       - crops look intentional, and nothing is stretched or soft;
-      - text over photos sits on a calm area or a scrim.
+      - text over photos sits on a calm area or a scrim;
+      - each image shows what its frame says, in the brand's style: a library picture that doesn't match the slide's subject, or the same image on several slides of one post, is a **suggestion** ("Use one, or make one" in `references/images.md` of the `metamorfiles` skill).
    8. **Legibility:** the headline still reads at phone-feed size (about 360 px wide).
    9. **Formats:** every format looks designed for its size. Landscape isn't a shrunken portrait, and the formats read as one family.
    10. **Carousels:** judge the sequence as `references/carousels.md` of the `metamorfiles` skill describes it: a cover that promises something specific, each slide giving the reader something, an end that pays off. A slide that only names a topic, one body arrangement repeated on every slide, or an end that is only the logo are **suggestions**: the sequence is the author's to weigh with the user.
