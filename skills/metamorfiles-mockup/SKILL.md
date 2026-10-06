@@ -64,7 +64,10 @@ prompt carries:
   brushed aluminium, foil, emboss. Textured and matte reads as made; glossy and smooth reads as
   rendered.
 - **Real words only:** the brand's name, what the product is in the brief's words, and the product
-  names the brief gives. Never an invented flavour, weight, price, claim or garbled small print.
+  names the brief gives. When the brief gives none, a pack still names its product: the copywriter
+  proposes names in the brand's voice, a few words each, recorded as proposals for the user to
+  confirm (a new brand's brief, `**Product names (proposed):** …`; otherwise said in your reply).
+  Never a weight, price, ingredient, claim or garbled small print.
 
 ### 3. The prompt
 
@@ -84,7 +87,8 @@ Write it in this order:
 4. The packaging design: its system, its colours, its material and finish.
 5. The logo: "the logo from image 1 exactly as drawn: the same shapes, letters, colours and
    proportions, never redrawn, restyled or retyped", where it sits and how big.
-6. The words: only these, exactly, and "no other text, no small print, no barcode".
+6. The words: only these, exactly (the brand, the product names, one descriptor), and "no other text,
+   no small print, no barcode".
 7. The brand's look from image 2: its palette by name, its type's character, its imagery's style.
 
 ### 4. Check each one
