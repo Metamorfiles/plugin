@@ -20,6 +20,28 @@ Decide for every image a frame needs, never by default. The brand's library is t
   something specific reads as filler. When unsure, make one.
 - Say in the plan which frames use which library image and which get a new one, and its subject.
 
+## Other parties' marks and images
+
+When the content names someone else (the tools in a post, a partner, a sponsor, an event, a launch),
+show the real thing, never a drawing of it.
+
+- **A logo or icon:** `metamorfiles_find_mark { name: "Perplexity" }` shows the candidates (Simple
+  Icons first, one colour in its brand's colour; SVGL for colour logos and wordmarks), then
+  `metamorfiles_find_mark { name: "Perplexity", use: "simple-icons:perplexity" }` saves the chosen one
+  into `assets/marks/`. Pass `color` for a one-colour version on a dark or busy ground. With none
+  found, the owner's press kit: `metamorfiles_import_image { url, credit, license }`.
+- **A photo of a real event, product or person:** only one you may use, with its source: the user's
+  own, an official press or newsroom image, or an openly licensed one.
+  `metamorfiles_import_image { url: "<the image's own address>", credit: "Photo: …", license: "CC BY 4.0" }`
+  records them; never an image from a search you have no right to use.
+- **How they're shown:** the mark as it is or in one colour, smaller than the brand's own logo, never
+  as a partnership or endorsement the brief doesn't state; a credit where the license asks, in the
+  frame or the caption; the brand's style around them, not on them.
+- **Never generated:** an image model never draws another party's logo (it can't, and it isn't
+  theirs), and never makes a photo of a real event or a real person. A scene that needs both, such
+  as the brand's character using a tool, is drawn with a blank screen or object, and the real mark
+  is set beside it in the layout.
+
 ## Getting an image
 
 - Call `metamorfiles_generate_image { prompt, width: 1080, height: 1350 }` without `model`. Studio uses the user's default model, or asks the user itself which model or source to use and remembers the answer. Pass `model` only when the user names one.

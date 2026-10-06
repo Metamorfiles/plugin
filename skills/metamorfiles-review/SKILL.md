@@ -45,6 +45,7 @@ The reviewer works like this:
       - never recolored, redrawn, stretched, cropped or given effects: compare it with the file in `brand/logos/`;
       - nothing crowds or touches the logo, and where the brand's own guidelines set a clear space, that space;
       - a generated variant only if its source says the user approved it.
+      - another party's mark (a tool's, a partner's or an event's logo, from `assets/marks/` with its record) is the real file, as it is or in one colour, never redrawn, stretched or bigger than the brand's own logo, and never placed so it reads as a partnership or endorsement the brief doesn't state: each of these is a **must fix**, and so is a logo of another party drawn by an image model.
    4. **Hierarchy:** one focal point, and a clear reading order (headline, then support, then call to action or price). Type follows the roles in DESIGN.md.
    5. **Layout:** edges aligned to a shared grid, equal margins, consistent spacing, and nothing crowding the safe margin. Story formats keep platform UI zones clear.
    6. **Text:**
@@ -55,6 +56,7 @@ The reviewer works like this:
       - every figure has the body it should: before you look at an image with figures (people, animals, a character), write down each one's body, part by part with how many of each, from the character's body line in the brand (its folder's note in DESIGN.md, or the notes of `brand/process/logo.md` or `imagery.md`) or else from the real person or species: a loon has two wings, two legs and a beak, and no arms. Then count the parts you can see of every figure against it, and list the counts in your report. A part that isn't on the list (an arm on a bird, a third wing, a sixth finger) or that is wrong (a limb bending the wrong way, two heads) is a **must fix**, and so is anything you'd have to explain away: if you need to argue that something isn't an extra limb, the user will see one. A part hidden by the pose, another object or the image's edge is not missing: a paw behind a laptop or legs below the crop are fine, and an awkward crop is at most a suggestion;
       - no other image-model mistakes: fused fingers, limbs bending the wrong way, duplicated parts (a cup with two handles), warped objects, garbled lettering, stray figures or objects in the background;
       - a product shown is the real one, from its photo, never a generated stand-in;
+      - another party's image (its record in the image's `.json` names a `url`) carries its credit where its license asks for one, in the frame or the post's caption; a generated photo of a real event or a real person is a **must fix**, and so is a missing credit;
       - subjects (faces, products) not cut off;
       - crops look intentional, and nothing is stretched or soft;
       - text over photos sits on a calm area or a scrim;
