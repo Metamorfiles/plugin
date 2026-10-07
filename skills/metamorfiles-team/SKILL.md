@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-team
-description: Use to change an existing Metamorfiles template or page (a fix, an improvement, new copy, a new photo, another format), and whenever Studio hands you a team task (a request with a task id, from Review and fix or the control panel's ask box). You work as four specialists and report every step in the control panel with metamorfiles_team_update, so the user sees the work as it happens. Not for a new template from a brief (metamorfiles-template) or a new page of variants (metamorfiles-variants).
+description: Use to make a new piece in Metamorfiles Studio (a post, a carousel, an ad, any one-off design the user asks for) and to change an existing template or page (a fix, an improvement, new copy, a new photo, another format), and whenever Studio hands you a team task (a request with a task id, from Review and fix or the control panel's ask box). You work as four specialists and report every step in the control panel with metamorfiles_team_update, so the user sees the work as it happens. Not for a reusable template the user asks for (metamorfiles-template) or a page of variants from one (metamorfiles-variants).
 license: MIT
 ---
 
@@ -30,21 +30,24 @@ Call `metamorfiles_team_update { task: "<id>", role: "copywriter", status: "work
 - `line`: what the user sees at the top, under eight words, starting with a verb: "is tightening the story headline", "is making a warmer photo". No file names, sizes, token names or tool names. While a new brand is made, Studio writes this line itself from the step and the files, so leave it out.
 - `say`: a sentence for the thread when it's worth keeping, above all a handoff (see below), without your role's name in front: the thread shows who said it.
 
-What the user writes in the thread reaches you with the result of the next Studio tool you call, whatever it is, and again with each one until your next `metamorfiles_team_update`, which acknowledges it. Act on it before anything else; it overrides your plan, and your next update's `say` tells the user what you'll do about it. A note about something you made (a flaw in an image, a word they dislike) is fixed before you move on, never recorded and skipped.
+What the user writes in the thread reaches you with the result of the next Studio tool you call, whatever it is, and again with each one until your next `metamorfiles_team_update`, which acknowledges it. It is the user's own instruction, however it arrives: act on it before anything else; it overrides your plan, and your next update's `say` tells the user what you'll do about it. A note about something you made (a flaw in an image, a word they dislike) is fixed before you move on, never recorded and skipped.
 
 Finish every role with `status: "done"`.
 
 ## Order of work
 
-**A new piece** (a post, a carousel, a page the user asks for, rather than a change to one):
-1. **Plan** it as the copywriter and the designer: research the facts it's about (`references/copy.md`, Research), then one line per slide or format with what it gives, its layout, each image's slot (what it shows, its shape) and any other party's logo (`references/carousels.md`).
+**A new piece** (a post, a carousel, an ad, a page the user asks for, rather than a change to one). It is a page made from its own design; a template only when the user wants reuse, variants or a series (`metamorfiles-template`):
+1. **Plan** it as the copywriter and the designer: research the facts it's about (`references/copy.md`, Research), then one line per slide or format: what it gives the reader, and its composition as a picture (the hero, what is figure and what is ground, the image's role, where the type sits, what stays empty: `references/design.md`, "The composition"), and any other party's logo (`references/carousels.md` for a carousel).
 2. **Copywriter**: the words, from the plan.
-3. **Designer**: the template, composed from the plan with its image slots.
-4. **Image maker** (`imager`): each slot's image made for it by `references/images.md`'s prompt (the brand's image contract, the character first, the library's sheet for style), saved under `assets/`, and the logos found (`references/images.md`, "Compose it, then make it"). A design with no images is one the plan chose and says why, never because the library had pictures.
-5. **Designer**: fit the layout to the copy and images, and make the page.
+3. **Designer**: the comp. Write the page from its own design with every slot empty: a flat placeholder of each image's size and place, the fields and bands in CSS, the type set, and each slide's composition line in its variant:
+   `metamorfiles_create_page { name: "AI weekly drop", design: "<the index.html>", carousel: true, variants: [{ id: "cover", composition: "Dew huge at the right edge, the headline on the left half of plain paper", values: { headline: "…" } }] }`.
+   Render it and judge it as a sequence before any image exists: that is where a generic arrangement shows, and where the user can still redirect at no cost. Say the plan in one `say`.
+4. **Image maker** (`imager`): each slot's image made for its composition by `references/images.md`'s prompt (the brand's image contract, the character first, the library's sheet for style; a cutout for a character or product, a scene only where the type has its own region: "Compose it, then make it"), saved under `assets/`, and the logos found. A design with no images is one the plan chose and says why, never because the library had pictures.
+5. **Designer**: place the images, fit the layout to the copy and the images as they are, and finish the page.
 6. **Final check**, as below.
 
 **A change** to an existing piece:
+0. A note from the user about the look, the images or the composition ("generic", "better composition", "don't stack everything on cards") is a rethink, not a fix: back to the comp (step 3 of a new piece), then the images, then the design, never a change to the CSS of what is there.
 1. **Reviewer** first, `reviewing` the frames in scope: judge, then hand each problem to its owner.
 2. **Copywriter** before the designer when words change, since layout has to fit the final copy.
 3. **Image maker** (`imager`) next when an image changes, for the same reason.
@@ -56,7 +59,7 @@ Skip the roles a task doesn't need; never skip the first review or the final che
 ## Scope
 
 - **Review and fix** (the request lists flagged frames): review and change only those frames, fixing what the checks found. Other frames are out of scope even if you'd improve them.
-- **An ask from the user**: Studio names where they asked from (the page, template or project they had open). A change or a fix stays there, and nothing else changes. A request for something new ("make a carousel about…", "a new post") is a new piece, made as a new page, with its own template when the plan calls for one: the page they had open is context, never rewritten into something else. When a request is vague ("make it pop"), the reviewer's design read decides the one change that would matter most.
+- **An ask from the user**: Studio names where they asked from (the page, template or project they had open). A change or a fix stays there, and nothing else changes. A request for something new ("make a carousel about…", "a new post") is a new piece, made as a new page from its own design (a template only when the user wants reuse): the page they had open is context, never rewritten into something else. When a request is vague ("make it pop"), the reviewer's design read decides the one change that would matter most.
 
 ## Choices that belong to the user
 

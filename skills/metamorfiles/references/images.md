@@ -41,6 +41,14 @@ An image that carries a piece is made for that piece.
 2. **Make it for that slot** with the prompt below, `width` and `height` the slot's size. It's saved
    under `assets/`: a piece's images are the piece's, never added to the brand's library, whose
    images are reviewed as a set (the library grows only through the brand's library step).
+   - **A character or product is a cutout:** `transparent: true`, drawn alone on a transparent
+     background, placed and scaled by the layout (`references/design.md`, "The composition"). Studio
+     un-blends the cutout's edges so it sits clean on a dark field too. ChatGPT and OpenAI models make
+     transparent images; the others can't: ask them for a flat field in the brand's paper colour and
+     set `ground`, and place it as a field, not a cutout.
+   - **A scene** fills a region the type never enters, or the type gets a band, a plate or a scrim in
+     CSS. Never paint a shape, a band or a "calm patch for the headline" into the image: shapes are
+     CSS, and a shape in the pixels makes every type change a regeneration.
 3. **Use a library image as it is** only when it already is that composition: a pattern, a texture, a
    small spot used as decoration, or the very picture the brief names. A near fit is still the wrong
    image: a generic picture on a slide about something specific reads as filler.

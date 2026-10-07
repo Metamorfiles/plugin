@@ -33,7 +33,7 @@ Keep the text sparse, the way a board is: a name, a line, a few labels. Dense ex
 ## Templates, pages and history
 
 - A **template** (`templates/<id>/`) is the base design: its variables, formats and defaults.
-- A **page** (`pages/<id>/`) is one deliverable, such as "Spring launch" or "Headline test", made from a template with `metamorfiles_create_page`. It holds its own copy of the design plus `page.json` with its name and variants, so later template changes never alter it, and it exports every variant in every format with `metamorfiles_export_page`. When you change the template of a page you're working on, bring the page along in place with `metamorfiles_update_page { page: "<id>" }`: the same page as a new version, its variants and the user's edits kept, so the user keeps watching it. Never delete and remake a page to do that. A page already delivered is the user's to update: ask first.
+- A **page** (`pages/<id>/`) is one deliverable, such as "Spring launch" or "Headline test", made with `metamorfiles_create_page` from its own design (`design`: a one-off piece, which most posts and carousels are) or from a template (`template`: when the user wants reuse or variants). It holds its own copy of the design plus `page.json` with its name and variants, each with its composition line, so later template changes never alter it, and it exports every variant in every format with `metamorfiles_export_page`. When you change the template of a page made from one, bring the page along in place with `metamorfiles_update_page { page: "<id>" }`: the same page as a new version, its variants and the user's edits kept, so the user keeps watching it. Never delete and remake a page to do that. A page already delivered is the user's to update: ask first.
 - **One page per deliverable.** The post and the story of one campaign are two formats of one page, not two pages.
 - **History** keeps every version of every template and page: yours, the user's edits in the control panel, a reviewer's fixes. So change a template or page in place, and never copy one to keep an old version or name a new one "-v2": that is what the history is for, and copies bury the user's list. `metamorfiles_list_history { item: "pages/<id>" }` (or `"templates/<id>"`) and `metamorfiles_restore_version { item, version }` go back when the user asks.
 - **The user edits too.** In the control panel they change values (on a page, for one frame, a variant or the whole page, see `page.json` in `metamorfiles-variants`), move and restyle elements (saved to the item's `edits.css`) and edit text in place, and it is all saved on disk at once. Read a file again before you change it, and when they say "this" or "the selected one", call `metamorfiles_get_selection`.
@@ -52,8 +52,9 @@ Write and change every project file with `metamorfiles_write_file`, never with a
 | A mascot or character, or new poses of one                             | `metamorfiles-character`   |
 | Packaging or print artwork to print: a can, a box, a label, a poster   | `metamorfiles-artwork`     |
 | The brand on its real objects: mockups of a pack, a range, a sign      | `metamorfiles-mockup`      |
-| A new template from a brief, a reference image or an existing design   | `metamorfiles-template`    |
-| A page of variants: A/B tests, copy or image options, one per CSV row  | `metamorfiles-variants`    |
+| A new post, carousel, ad or one-off design                             | `metamorfiles-team` (A new piece) |
+| A reusable template the user asks for: a key visual, a series, a design to make variants from | `metamorfiles-template` |
+| A page of variants from a template: A/B tests, copy or image options, one per CSV row | `metamorfiles-variants` |
 | One image or design adapted to other platforms and sizes               | `metamorfiles-repurpose`   |
 | An independent review before delivering, and after any layout change   | `metamorfiles-review`      |
 | A change to an existing template or page: a fix, an improvement, a new format, or any task Studio hands you | `metamorfiles-team` |
@@ -89,7 +90,7 @@ templates/brand-board/     built from DESIGN.md; fix it there
 templates/<id>/index.html  one template per folder, plus its local images
 templates/<id>/edits.css   element edits made in the control panel, one rule per line
 pages/<id>/                a deliverable: its copy of the design (index.html, edits.css, images)
-pages/<id>/page.json       the page's name, the template it came from, its variants and output
+pages/<id>/page.json       the page's name, the template it came from (if any), its variants with their composition lines, and output
 pages/<id>/exports/        the last export: the files, checks.json and a zip on request
 data/*.csv                 data tables
 assets/                    uploaded and generated images; <image>.json says how a generated one was made
