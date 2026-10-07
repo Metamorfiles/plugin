@@ -28,6 +28,9 @@ The logo's own page is `references/taste.md` of `metamorfiles-logo`.
 ## Weak, and why it happens
 
 - **A generic mascot with no personality:** a smiling thing standing still.
+- **Briefed as an assembly.** A prompt that counts limbs, places each one and paints each part a
+  colour draws exactly that: an assembly with an emoji's face. Brief who it is and what it's doing,
+  and let the drawing find the shapes.
 - **Detail that vanishes when small:** fine textures, tiny accessories.
 - **Props merged into the body.** When a prop overlaps the head or body, the model can read the two
   as one shape and carry it into every later pose: a barrel becomes part of the head. Say in each pose

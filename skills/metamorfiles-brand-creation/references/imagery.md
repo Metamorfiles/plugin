@@ -95,13 +95,15 @@ not worth a redo.
 
 ## A character
 
-A brand whose imagery is a character designs it with the `metamorfiles-character` skill: its bible,
-its construction, candidates drawn alone and traced, one anchor the user approves, and right after,
+A brand whose imagery is a character designs it with the `metamorfiles-character` skill: its brief
+and its look, candidates drawn alone and traced, one anchor the user approves, and right after,
 its character sheet (`references/sheet.md` of `metamorfiles-character`), drawn before any seed. Its
-seeds on this step are the character in the brand's moments, each made from the sheet, and every image of it, seeds and library alike, carries its character sheet (the body
-part by part, each part's colour in hex, what never changes), so the model adds nothing a pose seems
-to need and paints no part another colour. List its folder in `assets` with `kind: character`, its
-`note` holding the body line, and write the sheet whole into the imagery guide.
+seeds on this step are the character in the brand's moments, each made from the sheet, and every
+image of it, seeds and library alike, carries its Character lines (who it is, the one thing that
+makes it itself, its palette, that nothing about it changes) with the sheet first in the references,
+so the model adds nothing a pose seems to need and paints no part another colour. List its folder in
+`assets` with `kind: character`, its `note` holding those lines, and write them into the imagery
+guide.
 
 ## In the kit
 
@@ -110,8 +112,9 @@ to need and paints no part another colour. List its folder in `assets` with `kin
 - `brand/imagery-guide.md` is the brand's image contract, which every later image reads first
   (`images.md` of the `metamorfiles` skill). Write it with these sections, in this order:
   - **Style:** the style block, word for word as the seeds used it.
-  - **Character sheet** (a character brand): from the character's bible, the body part by part with
-    each part's colour in hex, and what never changes, word for word.
+  - **Character** (a character brand): the character's lines from its brief: who it is, the one
+    thing that makes it itself, its palette, its look, and that nothing about it changes, word for
+    word.
   - **Colour roles:** each colour's hex and what it paints in a scene; the accent's role (light, the
     scene's own props), never on the character, never a count.
   - **Writing a scene:** one or two example scenes in the brand's words, subject first.

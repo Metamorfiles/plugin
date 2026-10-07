@@ -7,9 +7,8 @@ character's identity word for word, and states its own pose, head angle and expr
 
 ## The identity block
 
-Write it once from the bible and the description, a short paragraph of what never changes: the
-shapes and their ratios, the defining feature, the face's construction (the eyes' shape and size,
-the markings), the colours of each part, the style. Never an expression or a head angle: those are
+Write it once from the brief, a short paragraph of what never changes: who it is, the one feature
+that makes it itself, the markings, its palette, the style. Never an expression or a head angle: those are
 each drawing's own, and a fixed one makes every drawing the same face. Paste it unchanged
 into every prompt for this character, with no rewording. A synonym is a different instruction.
 
@@ -22,7 +21,7 @@ A new drawing of the character, with the sheet attached first in `references`:
 Image 1 is the reference sheet of the character from every side: draw exactly one of it, in a new
 pose, the same character in every way.
 Who it is: <the identity block>.
-Its body, exactly: <the bible's body line>; nothing added to hold or do anything.
+Nothing about it changes; nothing added to hold or do anything.
 The pose: <the pose, in one sentence: what it does, where its limbs are, which way it and its head face>.
 Alone on a transparent background, flat colours only, no letters, no ground line or shadow.
 ```
