@@ -20,8 +20,9 @@ The trace keeps what the drawing gives it, so the drawing is made clean:
 `metamorfiles_generate_image { prompt, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`
 (a logo drawn whole at its lockup's shape, such as 1536 by 1024), listing every colour the drawing uses: the light ones inside it too (an eye's white, a shape cut into
 a badge in the ground colour). Without `folder` it lands in `assets/`, where the logo tools can't
-read it. Studio traces each area into the nearest of them, stacked so no gap opens between colours,
-and what is transparent stays so; the path it returns is the traced .svg. It keeps the drawing in
+read it. Studio traces each area into the nearest of them (a logo has its listed colours and nothing
+else; artwork, which keeps colours of its own, is "Vector versions" in `references/images.md` of
+`metamorfiles`), stacked so no gap opens between colours, and what is transparent stays so; the path it returns is the traced .svg. It keeps the drawing in
 `.metamorfiles/traces/`, named as `drawing` in the record `<file>.svg.json` beside the SVG.
 
 The result says how much of the drawing the trace kept, and names each colour the drawing has outside
@@ -30,8 +31,8 @@ the list, traced as the nearest listed one. Find each in the drawing:
   `metamorfiles_import_image { path: "<the drawing>", folder: "brand/process/logo", trace: { colors: [...] } }`.
 - **A shade, a highlight or a texture the model added:** draw it again without it.
 
-A clean drawing keeps all of it. Less than 90% means the drawing isn't what was listed: a soft
-gradient, a shadow. Draw it again with the fix in the prompt; never adjust a trace by hand.
+A clean drawing keeps nearly all of it (the last few percent are its edges). Less than 90% means
+the drawing isn't what was listed: a soft gradient, a shadow. Draw it again with the fix in the prompt; never adjust a trace by hand.
 
 ## Looking at it
 

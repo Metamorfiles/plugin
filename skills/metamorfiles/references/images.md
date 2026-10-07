@@ -11,6 +11,7 @@ Studio keeps every image whole, as the model made it: it never crops a file to f
 - Other parties' marks and images
 - Getting an image
 - Generate and place, edit or redraw
+- Vector versions
 - Check
 
 ## The brand's image contract
@@ -148,6 +149,35 @@ show the real thing, never a drawing of it.
 - For choices between directions, make each option as the real thing: the one the user chooses is the image used, never made again, since a new one would be a different image.
 - **Edit or redraw.** Edit when one detail is wrong and the rest should stay: `metamorfiles_generate_image { prompt: "Edit image 1: ...", width, height, references: ["/assets/<file>.png"], edit: true }`, the image first in `references`, then what stays exactly as it is ("keep everything else exactly as it is: the composition, the light, the character's colours"), then the one thing to change. One change per edit; repeat the list of what stays each time. Redraw from the prompt when the composition, a pose or the subject is wrong: an edit keeps what's in the image, so a new pose drawn by an edit keeps the old head on a changed body (`references/poses.md` of `metamorfiles-character`). Never use a generated image as a style reference for the next: copies of copies drift.
 - Place it through the variable's value, the path the result gives exactly as it is (`/assets/<file>.png`, leading slash kept), in the page's `page.json` for one variant or the template default for all, then render every format that shows it: a crop that works in the post can cut the product in the story. Set each format's crop with the design's `object-position`.
+
+## Vector versions
+
+Flat-colour artwork that is printed, cut or scaled (a T-shirt or tote print, a sticker, cut vinyl, a
+poster, a pattern) is traced into an SVG as it's saved, with `trace` on `metamorfiles_generate_image`
+or `metamorfiles_import_image`:
+
+`metamorfiles_generate_image { prompt, width: 2048, height: 2048, name: "tee-front", trace: { colors: ["#1b1a17", "#f4efe6"], inks: 6 } }`
+
+- **`colors`:** the brand colours the piece uses, as DESIGN.md gives them. Each one the drawing has
+  lands on its exact value; one it doesn't have takes nothing. List only what the piece is meant
+  to use.
+- **`inks`:** how many colours the trace has in all. Beyond the brand's, the drawing keeps its own
+  colours (a sky, a skin tone, a shade), largest first, up to this number. Artwork may use any colour
+  the composition needs: the brand's colours are its guide, never a limit. Ask the prompt for flat
+  colour in about that many colours, with no gradient, shading or texture. Leave `colors` out to
+  trace an image in its own colours alone (the user's own file, art with no brand tie).
+- **`ground`:** an image on a paper or garment colour (an illustration from the library, a file on
+  white) names it as `ground`, and that colour is left out of the trace, inside the drawing too, as a
+  printer knocks out the garment.
+- **Edge to edge:** a full-bleed picture (a poster, a wrap) with no paper to name is traced whole.
+- **Not traced:** a photograph, a gradient or textured art. It stays a raster, printed at its
+  resolution: make it at the largest size the source gives.
+
+The result lists each colour with its share and says how much of the drawing the trace keeps. Under
+90%, the drawing isn't flat colour: keep the raster, or draw it again flat. A colour reported beyond
+the trace's is part of the design (trace again with it listed, or with more `inks`) or a shade the
+model added (draw again without it). The brand's logo is made by `metamorfiles-logo`, never traced
+from a render of it, and another party's mark is never traced (`metamorfiles_find_mark`).
 
 ## Check
 
