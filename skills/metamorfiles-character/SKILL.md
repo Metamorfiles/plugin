@@ -1,88 +1,85 @@
 ---
 name: metamorfiles-character
-description: Use to design a character in Metamorfiles Studio (a mascot, a creature, a person, an object with a face) for a brand's logo or its imagery, and to draw an existing character in new poses and expressions that stay on model. Describes it in words from the brand's brief and direction, draws candidates alone on a transparent background, traces the one kept into a vector, and grows every later pose from that anchor. Use it whenever a brand needs a mascot or character, or the user asks for one doing something new, even if they only describe what it should look like.
+description: Use to design a character in Metamorfiles Studio (a mascot, a creature, a person, an object with a face) for a brand's logo or its imagery, and to draw an existing character in new poses and expressions that stay on model. Briefs it by who it is, its attitude and its look, draws candidates alone on a transparent background from the direction's references, traces the one kept into a vector, and grows every later drawing from its character sheet. Use it whenever a brand needs a mascot or character, or the user asks for one doing something new, even if they only describe what it should look like.
 license: MIT
 ---
 
 # Characters
 
-A brand character is designed, not described. The difference between a mascot people remember and
-one that looks generated is decided before any image is made: what it is built from, the one
-feature that makes it itself, and what it leaves out. Then it is drawn alone, as a clean vector, and
-every later drawing of it starts from the one the user approved.
+A brand character is briefed the way an illustrator is briefed: who it is, what it's like, what it's
+doing, and the hand it's drawn in. The drawing finds the shapes. A brief that counts limbs, places
+each one and paints each part a colour gets exactly that back: an assembly standing still, with an
+emoji's face. Then the character is drawn alone, traced, and every later drawing of it starts from
+the character sheet the user approved.
 
 ## Checklist
 
 Copy it into your notes and tick each step as you go:
 
 ```
-- [ ] 1. The bible: who it is and why it is this brand's
-- [ ] 2. The character described in words
-- [ ] 3. The style, in words the image model follows
-- [ ] 4. Candidates drawn together, alone, on transparent; traced
-- [ ] 5. Checked: silhouette, 32 px, true to the description; the best one kept
-- [ ] 6. Shown to the user; the kept one is the anchor
-- [ ] 7. The character sheet from the anchor: every side and four poses, the reference for every image of it
-- [ ] 8. Placed: in the logo, in the imagery, as the small mark
+- [ ] 1. The brief: who it is, why it's this brand's, what it's like, what it's doing
+- [ ] 2. The look: one rendering, chosen for this character, in the direction's words
+- [ ] 3. Candidates drawn together from the direction's references, alone, on transparent; traced
+- [ ] 4. Judged: a character, or a smiling thing standing still; one kept, or the brief changed
+- [ ] 5. Shown to the user; the kept one is the anchor
+- [ ] 6. The character sheet from the anchor: every side and four poses, the reference for every image of it
+- [ ] 7. Placed: in the logo, in the imagery, as the small mark
 ```
 
-### 1. The bible
+### 1. The brief
 
-Write it before drawing anything:
+Write it before drawing anything, as `references/design.md` shows:
 - its **name**, and **what it is**: an animal, a creature, a person, an object that came alive;
 - **why it is this brand's**: taken from the business's own world (its product, its place, a story
   the user told), never the category's stock mascot;
-- its **body**, part by part, with how many of each, what does the work of hands, and **each part's
-  colour in hex**: for Lumen's moth, "two antennae #3b2e27, four wings #f6f1ea with #c9a227 tips, six
-  thin legs #3b2e27, no hands: it holds things between its front legs". Image models add the part a
-  pose seems to need (an arm on a bird holding a cup, a third wing) and repaint a part with a colour
-  the scene asks for elsewhere (a gold paw where the scene wanted one gold thing), so every prompt
-  carries this sheet whole, with "its colours never change", and the reviewer checks each drawing's
-  parts and their colours against it;
-- its **personality** in one sentence, and how it can show (a wink, a lean, a grin): a range, never one
-  fixed face, since each image gives the character the expression its scene needs;
-- **what it never does**.
+- **what it's like**, as behaviour: how it carries itself, what it's feeling, and the one thing that
+  makes it itself (a feature, a habit, a prop it's never without);
+- **what it's doing**: this business's thing, with the business's own object;
+- **what it leaves out**: only what the brief and the category's codes rule out (`research.md` of
+  `metamorfiles-brand-creation`). A list of bans invented against clichés leaves the model a thing
+  standing still, and names the very things it then draws.
 
 Keep it in the notes of the step's file (below its YAML) while a brand is made. Once the kit is
-written, the body line with its colours is the **character sheet** in `brand/imagery-guide.md`,
-word for word, which every later image pastes whole (`images.md` of the `metamorfiles` skill); the
-character folder's `note` in DESIGN.md `assets` holds its one-line identity and body line (400
-characters at most).
+written, its two or three lines are the **Character** section of `brand/imagery-guide.md`, which
+every later image of the character pastes whole with "nothing about <name> changes" (`images.md` of
+the `metamorfiles` skill), and the character folder's `note` in DESIGN.md `assets` (400 characters
+at most).
 
-### 2. The description
+### 2. The look
 
-Who it is, its silhouette, its pose and its face, in words: `references/design.md`.
+One rendering for this character, from the chosen direction and from what the character needs: a
+figure with limbs and a face holds at 32 px and in one colour through an outline or a solid
+silhouette; flat shapes with inner colours suit a simple, chunky body. The families, their words and
+their trace colours: `references/styles.md`. The look's paragraph is pasted unchanged into every
+prompt. What a strong character looks like, and what goes wrong: `references/taste.md`.
 
-### 3. The style
+### 3. Draw candidates
 
-The families seen in strong work, and what makes a character strong or weak:
-`references/taste.md`. One rendering, chosen for the brand: one even line, a solid silhouette with cut-out features, flat
-shapes with inner colours, or a thick outline with flat fills. Each has its words and its trace
-colours: `references/styles.md`. The style's paragraph is pasted unchanged into every prompt.
-
-### 4. Draw candidates
-
-Draw three candidates together (each with `wait: false`, then `metamorfiles_image_status { id }` for
-each), each from the same full prompt: the bible's one-line identity, its body line with each part's
-colour, the description and the style paragraph. Front or three-quarter view, standing, a neutral pose. It is drawn alone, never with any word; the name is composed around it
-(`metamorfiles-logo`). In a logo drawn whole, where the character and the name are drawn as one,
-use this same description and style in its prompt. Each one traced:
-`metamorfiles_generate_image { prompt, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`,
+Draw three together (each with `wait: false`, then `metamorfiles_image_status { id }` for each), each
+from the same prompt (`references/styles.md`, "The prompt"), with two or three of the chosen
+direction's references that show a figure or the hand it's drawn in, so the model sees the look the
+user chose instead of reading about it. The candidates differ in idea (the attitude, the pose, the
+prop), never in the count of a limb. It is drawn alone, never with any word; the name is composed
+around it (`metamorfiles-logo`). Each one traced:
+`metamorfiles_generate_image { prompt, references: ["brand/process/references/<project>/1.jpg"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`,
 with `folder: "brand/process/imagery"` for the imagery step; the path it returns is the traced .svg.
-The prompt's shape: `references/styles.md`.
+In a logo drawn whole, where the character and the name are drawn as one, the same brief and look go
+into its prompt (`references/drawn.md` of `metamorfiles-logo`).
 
-### 5. Check and keep one
+### 4. Judge, and keep one
 
 For each candidate:
 - read the trace at full size (`metamorfiles_read_file`, `asImage`);
 - run `metamorfiles_check_logo` on it: the blurred and one-colour versions show the silhouette, the
   32 px one whether its face still reads;
-- compare it with the description.
+- hold it against `references/taste.md`: a personality in the pose and the face, one feature that
+  makes it itself, doing this business's thing.
 
-Keep the one that holds the description and the personality best. When none does, change the
-description, never add a correction about the failed drawing, and draw again.
+Keep the one that is most a character. When all three are a smiling thing standing still, the brief
+is what's wrong, not the model: change the brief (never describe the failed drawing back to the
+model) and draw again.
 
-### 6. The anchor
+### 5. The anchor
 
 Show the kept one (in a new brand, as a logo route or an imagery option). The one the user approves
 is the **anchor**: every later drawing of the character is made from it. Put it in the character's
@@ -91,7 +88,7 @@ folder as `01-front`:
 Studio adds a short id to the name, so list the full file name it returns (`01-front-1a2b3c4d.svg`)
 in the folder's `anchors`.
 
-### 7. The character sheet
+### 6. The character sheet
 
 As soon as the anchor is approved (in a new brand, the logo with the character is chosen), draw the
 **character sheet**: one image of the character from every side and in four poses, made in one
@@ -103,7 +100,7 @@ and where it goes: `references/sheet.md`.
 A single new drawing for the brand's files (a pose for a sticker, the small mark's bust) is made
 from the sheet too: `references/poses.md`.
 
-### 8. Where it goes
+### 7. Where it goes
 
 - **In a logo**: composed with the name set in type (`references/lockups.md` of
   `metamorfiles-logo`); its head or bust alone is the route's small mark, made from the logo (or,
@@ -116,7 +113,7 @@ from the sheet too: `references/poses.md`.
 | Read | When |
 | --- | --- |
 | [references/taste.md](references/taste.md) | What a strong character looks like, and what goes wrong |
-| [references/design.md](references/design.md) | Describing the character |
+| [references/design.md](references/design.md) | Writing the brief |
 | [references/styles.md](references/styles.md) | Choosing its rendering, and the prompt |
 | [references/sheet.md](references/sheet.md) | The character sheet: its grid, the prompt, the check, where it goes |
 | [references/poses.md](references/poses.md) | A single new drawing for the brand's files, from the sheet |

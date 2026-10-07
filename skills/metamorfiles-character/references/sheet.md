@@ -19,7 +19,7 @@ labels, numbers or panel borders: lettering comes out garbled, and the order bel
 
 The top row gives every angle of the head and body; the bottom one gives motion, hands, a seated
 body and three expressions. A character with no hands (a moth, a fish) does the bottom row with
-what it has: its body line says what does the work of hands.
+what it has, as its brief says.
 
 ## The prompt
 
@@ -34,7 +34,7 @@ figures of the same <name> at the same scale on one shared ground line, evenly s
 Top row, a calm neutral face: front; three-quarter facing left; side profile facing left; back.
 Bottom row: walking mid-stride; sitting, holding a small cup in both hands; arms up, cheering, mouth
 open; thinking, one hand on the chin, sceptical.
-<name>: <the character sheet's body, part by part with each colour>.
+<name>: <the brief's lines: who it is, the one thing that makes it itself, its palette>; nothing about <name> changes.
 Style: <the character's style paragraph>.
 Constraints: <name>'s colours and proportions never change between figures; exactly eight figures;
 nothing added that a pose seems to need; no text.
@@ -48,8 +48,8 @@ It is raster, never traced: a reference, not artwork.
 
 At full size (`metamorfiles_read_file { path, asImage: true }`), figure by figure:
 - exactly eight figures, in the grid's order;
-- each figure's parts counted and each part's colour checked against the character sheet, as the
-  reviewer does (`metamorfiles-review`);
+- the same character in all eight as the anchor, by eye: the face, the one feature, the markings,
+  the colours; nothing added that a pose seemed to need (a hand, a prop, a nose);
 - the same proportions in all eight (head to body, ear size, tail length), and the same face shape
   across the turnaround;
 - the three expressions of the bottom row clearly different from each other and from the top row.

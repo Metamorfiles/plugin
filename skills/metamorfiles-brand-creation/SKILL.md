@@ -129,7 +129,7 @@ wait for its verdict, naming only the frames that are new or changed:
 | When | Frames | What it judges |
 |---|---|---|
 | `logo.md` written, before asking | `process-logo` | every letter; each route's small mark is the very mark its logo shows; the small sizes, reversed and one colour |
-| The character sheet written, before the imagery | `process-logo` | eight figures in the grid's order, each part and its colour against the character's sheet, the same proportions in all |
+| The character sheet written, before the imagery | `process-logo` | eight figures in the grid's order, the same character as the anchor in all eight: its face, its one feature, its proportions, its colours |
 | `imagery.md` written, before asking | `process-imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
 | Each batch of the library | the imagery folder's frame, by the folder's name (`refs`) | the same, against the anchors |
 | The three mockups | each `mockup-<file name without extension>` | the logo against its file, every word, the packaging designed in full, how each object sits and opens, the photograph |
@@ -241,7 +241,7 @@ its frame shows each file as it arrives, so the user watches the step come toget
      `{ folder: mockups, kind: in-use, title: In use }`.
 
    Write `brand/imagery-guide.md`, the brand's image contract, with its four sections (`references/imagery.md`,
-   In the kit): style, the character sheet with each part's colour, colour roles, writing a scene. The brand board then holds it all after the
+   In the kit): style, the character (a character brand), colour roles, writing a scene. The brand board then holds it all after the
    steps: the guide, the images and each mockup as its own frame. Get the final check (`metamorfiles-review`,
    in the foreground, waiting for its verdict), fix what it marks, and hand over as
    `references/presenting.md` of `metamorfiles-brand` says. Make no templates or pages: the kit is

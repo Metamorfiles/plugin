@@ -21,8 +21,9 @@ Write the prompt from the chosen direction and the brief, as a designer's brief,
 - the look and feel, in the direction's own terms;
 - the lettering, described in a designer's words;
 - the layout: how the parts sit together and the space between them;
-- any mark, mascot or ornament, in the same hand and weight as the letters (a mascot is designed
-  with `metamorfiles-character`);
+- any mark, mascot or ornament, in the same hand and weight as the letters, and its size against
+  them (as tall as the capitals, its head over the word): a mascot is briefed with
+  `metamorfiles-character`, by who it is, what it's doing and its look, never as a list of parts;
 - each colour for what it paints, from the direction's palette;
 - the name in quotes, exactly as written, an uncommon one spelled letter by letter;
 - "flat vector artwork, like a brand designer's final logo file", and no other text.

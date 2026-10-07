@@ -20,8 +20,9 @@ Read `brand/imagery-guide.md` before any prompt: it's what every image of this b
 when the brand was made. Its sections:
 - **Style:** one paragraph describing the look, with each colour's hex and what it paints. Pasted
   whole into every prompt.
-- **Character sheet** (a brand with a character): the body, part by part, each part's colour in hex,
-  and what never changes. Pasted whole into every prompt that shows the character.
+- **Character** (a brand with a character): who it is, the one thing that makes it itself, its
+  palette and its look, in two or three lines, and that nothing about it changes. Pasted whole into
+  every prompt that shows the character, with its character sheet first in the references.
 - **Colour roles:** what each colour is for in a scene. An accent is a role for objects and light
   (a balloon, a lamp, a spark), never a colour on the character or a quota per image.
 - **Writing a scene:** how the brand's scenes are described.
@@ -67,10 +68,10 @@ models read it as well):
 2. **Scene:** the setting, the light, the framing and the shape ("portrait, 4:5"), and what the image
    is for ("background for a post; the headline sits on the calm left third").
 3. **Subject:** what it shows, plainly, named each time, never "it". With the character: its pose,
-   which way its head turns and its expression, then its character sheet's text pasted whole.
+   which way its head turns and its expression, then its Character lines pasted whole.
 4. **Style:** the guide's style paragraph, pasted whole.
 5. **Constraints,** plain and early enough to survive a host that rewrites prompts: "exactly one
-   <the character>", "its colours never change: each part stays the colour its sheet gives", "no text
+   <the character>", "nothing about <the character> changes: its colours, its one feature, its proportions", "no text
    or lettering", and anything the scene must not add.
 
 `metamorfiles_generate_image { prompt, width: 1080, height: 700, references: ["brand/<character folder>/<sheet>", "templates/brand-board#refs"] }`
@@ -106,9 +107,9 @@ Example, a character brand's carousel slide:
 
 > Image 1 is the reference sheet of Pip, the brand's otter, from every side: keep its identity, anatomy and colours exactly; draw exactly one Pip, in this scene's own pose. Image 2 is the brand's image library: take only its drawing style, palette and texture; never copy its subjects or compositions.
 > Scene: a cosy desk at night lit by one warm lamp from the right; portrait 4:5; the top third stays calm, plain #1d2a44 for the headline.
-> Subject: Pip leaning over a blank laptop screen, both paws on the keys, head turned three-quarter to the left, eyes wide with surprise, a mug beside it. Pip: one head with two round ears, two arms with dark #2b1d14 paws, two legs, one tail; fur #8a5a3c, belly and face #f2e3c9.
+> Subject: Pip leaning over a blank laptop screen, both paws on the keys, head turned three-quarter to the left, eyes wide with surprise, a mug beside it. Pip: a small round-headed otter who is always a little too curious, fur #8a5a3c, belly and face #f2e3c9, dark #2b1d14 paws and nose; nothing about Pip changes.
 > Style: flat poster illustration, thick even #121212 outline, flat fills, strong contrast, little or no shading.
-> Constraints: exactly one Pip; Pip's colours never change; the lamp's glow is the only #ffc21a; no text or lettering.
+> Constraints: exactly one Pip; nothing about Pip changes; the lamp's glow is the only #ffc21a; no text or lettering.
 
 ## Other parties' marks and images
 
@@ -192,9 +193,10 @@ mistakes again and again; redo an image that has any of them, saying what to fix
 - **Text:** any lettering at all, which comes out garbled; the brand's words are set in the design.
 - **Background:** stray figures, extra objects, repeated patterns and smeared detail behind the
   subject.
-- **The character:** count its parts against its sheet and check each part's colour: a part in a colour
-  the sheet doesn't give (a gold paw, a cream ear that should be dark) is as wrong as an extra arm.
-  Only what you can see counts: a part hidden by the pose, an object or the edge isn't missing.
+- **The character:** the same character as its sheet, by eye: the face, the one feature, the
+  proportions and the colours. A part in a colour the character doesn't have (a gold paw) or a part
+  its kind doesn't have (an arm on a bird) is as wrong as an extra arm. Only what you can see counts:
+  a part hidden by the pose, an object or the edge isn't missing.
 - **The brand:** a colour outside the guide's roles, or the style broken (shading in a flat style).
 
 Then:
