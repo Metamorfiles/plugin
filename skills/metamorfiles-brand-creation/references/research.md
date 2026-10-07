@@ -5,23 +5,21 @@ its category looks like, and two or three directions built from real references.
 
 ## The subject, first
 
-Before any reference, look up who or what the brand is for, whether the user asked for it or not:
-the brief names a business or a person, and what's public about them is where the idea comes from.
-A few searches and pages, not a dossier:
-- **Search** the name with the place or the trade, and every handle or address the user gave
-  (a web search when this app has one; Studio's own team runs do).
-- **Read their own pages:** the website, the profiles they named, a portfolio, a shop listing, the
-  menu, with `metamorfiles_look_at_page { url: "<a public page>" }` (it shares the project's daily
-  page budget with the reference searches) or a web fetch. A profile behind a login, or one just
-  opened, gives what's public and no more: never fill the gap by guessing.
-- **For a person's brand:** what they make and have made (products, clients, talks, writing), the
-  words they use about themselves, what they post about and how, and what their own feed already
-  looks like.
-- **For a business:** what it sells and at what price, its place or its world, its reviews (the
-  phrases customers use), its founders, one odd fact.
+Before any reference, look up the brand's subject, whether or not the user asked. A few searches and
+pages, with a web search and `metamorfiles_look_at_page { url: "<a public page>" }` (it shares the
+daily page budget with the reference searches):
+- **It exists** (a business, a person, a handle, a site): read its own pages and profiles. For a
+  person: what they've made, the words they use about themselves, what they post and how their feed
+  looks. For a business: its offer and prices, its place, its reviews' phrases, its founders, one odd
+  fact.
+- **It's new** (no name in public yet): research what is real around it: the founder or the person
+  behind it, the place, and the customers of businesses like it (what reviews of the nearest ones
+  praise and complain about).
+- **A namesake isn't the subject:** use a page only when its handle, place or trade matches the brief.
+- **Behind a login or empty:** take what's public, never guess.
 
-Keep each finding with where it came from in the brief's Facts. When nothing public is found, say so
-in one line there, and ask the user once for one or two links that show who they are.
+Keep each finding with its source in the brief's Facts. When nothing is found, say so there in one
+line and ask the user once for links that show who they are.
 
 ## The brief
 
