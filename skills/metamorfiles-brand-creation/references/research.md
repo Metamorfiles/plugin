@@ -5,21 +5,18 @@ its category looks like, and two or three directions built from real references.
 
 ## The subject, first
 
-Before any reference, look up the brand's subject, whether or not the user asked. A few searches and
-pages, with a web search and `metamorfiles_look_at_page { url: "<a public page>" }` (it shares the
-daily page budget with the reference searches):
-- **It exists** (a business, a person, a handle, a site): read its own pages and profiles. For a
-  person: what they've made, the words they use about themselves, what they post and how their feed
-  looks. For a business: its offer and prices, its place, its reviews' phrases, its founders, one odd
-  fact.
-- **It's new** (no name in public yet): research what is real around it: the founder or the person
-  behind it, the place, and the customers of businesses like it (what reviews of the nearest ones
-  praise and complain about).
-- **A namesake isn't the subject:** use a page only when its handle, place or trade matches the brief.
+Read everything the user gave about the brand itself before any reference: the brief's "Where it is
+today" links, and any site, profile or handle in their words. Open each with
+`metamorfiles_look_at_page { url: "<the page>" }` (it shares the daily page budget with the reference
+searches) or a web fetch.
+- **A person:** what they've made, the words they use about themselves, what they post and how their
+  feed looks.
+- **A business:** its offer and prices, its place, its reviews' phrases, its founders, one odd fact.
 - **Behind a login or empty:** take what's public, never guess.
 
-Keep each finding with its source in the brief's Facts. When nothing is found, say so there in one
-line and ask the user once for links that show who they are.
+Never search for the brand or the person by name: a name finds namesakes, and what represents them is
+theirs to give. With nothing given, write "Nothing public given" in the brief's Facts and build from
+their words and the category.
 
 ## The brief
 
@@ -29,7 +26,7 @@ research:
   in, and anything true and specific: hours,
   process, tools, materials, founders, rituals, a word the customers use: three to five phrases from
   the subject's own pages or reviews, and one odd fact, each with its source. That fact is often the
-  idea. A line that only repeats the user's request isn't research.
+  idea. A line that only repeats the user's request isn't a fact.
 - **The place,** when there is one: its signs, materials, colours and light, and two or three things
   only it has. An online business has a world instead: its customers' homes, their commute, their
   feed.
