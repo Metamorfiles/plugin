@@ -24,9 +24,14 @@ read it. Studio traces each area into the nearest of them, stacked so no gap ope
 and what is transparent stays so; the path it returns is the traced .svg. It keeps the drawing in
 `.metamorfiles/traces/`, named as `drawing` in the record `<file>.svg.json` beside the SVG.
 
-The result says how much of the drawing the trace kept. A clean drawing keeps all of it. Less than
-90% means the drawing isn't what was listed: a colour missing from the list, a soft gradient, a
-shadow. Draw it again with the fix in the prompt; never adjust a trace by hand.
+The result says how much of the drawing the trace kept, and names each colour the drawing has outside
+the list, traced as the nearest listed one. Find each in the drawing:
+- **Part of the design** (an eye, an outline, a beak): trace the drawing again with it listed,
+  `metamorfiles_import_image { path: "<the drawing>", folder: "brand/process/logo", trace: { colors: [...] } }`.
+- **A shade, a highlight or a texture the model added:** draw it again without it.
+
+A clean drawing keeps all of it. Less than 90% means the drawing isn't what was listed: a soft
+gradient, a shadow. Draw it again with the fix in the prompt; never adjust a trace by hand.
 
 ## Looking at it
 
