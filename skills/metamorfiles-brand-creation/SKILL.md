@@ -72,9 +72,10 @@ the brand board.
   id as `task` to every `metamorfiles_team_update` and `metamorfiles_ask_user`, never start a second
   one, and continue from the first step that isn't chosen.
 
-**Asking for the brief.** Call `metamorfiles_ask_user { brief: { name, what, who, feel, links } }`
+**Asking for the brief.** Call `metamorfiles_ask_user { brief: { name, what, who, feel, own, links } }`
 with your reading of what the user said: the brand's name, what it is, who it's for, how it should
-feel, and the links they gave as full https addresses (`name` and `what` are required). Studio draws
+feel, where it is today (its site, profiles or handles, as they gave them) and the work they love as
+full https links (`name` and `what` are required). Studio draws
 the brief on the board at once and opens the same questions as New brand, filled in with your
 reading, for the user to complete, above all the work they like. From the user's own app it returns
 at once with the panel link and a question id: write the link in your reply, say the questions are
@@ -197,9 +198,9 @@ its frame shows each file as it arrives, so the user watches the step come toget
 
 ## The steps
 
-1. **Direction** (`references/research.md`, `references/look.md`). First the subject: look it up, or
-   for a new brand what is real around it (`references/research.md`, "The subject, first"), even when
-   the user didn't ask. The brief's facts
+1. **Direction** (`references/research.md`, `references/look.md`). First read what the user gave
+   about the brand itself, its site, profiles or handles (`references/research.md`, "The subject,
+   first"); never search for it by name. The brief's facts
    with their sources, touchpoints and category codes go into `brief.md`. Search with `metamorfiles_search_references { query: "bakery" }`
    on the business's plain words, choose the projects worth opening from the covers, and collect
    them with `metamorfiles_collect_references { links: [...] }`, the user's own links first; they
