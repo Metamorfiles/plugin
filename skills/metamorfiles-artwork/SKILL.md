@@ -55,7 +55,11 @@ returned as the image's value.
 - **No words, letters, numbers, logos or labels in it,** asked for plainly: they are set in step 3.
 - **The zones in the prompt:** where it stays calm and open for the logo and the type, and where its
   subject sits. A picture that fills every corner leaves the type nowhere to go.
-- **Its colours from the palette,** named as the brand names them.
+- **The brand's colours as its guide,** named as the brand names them; the picture may bring
+  colours of its own where the composition needs them.
+- **Printed in flat colour** (screen print, cut vinyl, apparel): traced as it's made, with `trace`
+  ("Vector versions" in `references/images.md` of `metamorfiles`), the brand's colours listed and
+  `inks` the number of colours the print allows.
 
 Look at it before going on, with the image-model mistakes in mind (`references/images.md` of
 `metamorfiles`): a wrong body, an extra part, garbled marks, a gradient the brand rules out. Make

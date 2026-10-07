@@ -35,7 +35,7 @@ The reviewer works like this:
    1. **Checks:** no check errors left. Every remaining warning is a deliberate choice.
    2. **Brand:**
       - it belongs to this brand: another brand couldn't post it unchanged;
-      - only DESIGN.md colors and fonts, used as its Colors and Components prose says (text on a surface in its on- color or a component's pair);
+      - only DESIGN.md colors and fonts in the layout (type, surfaces, rules), used as its Colors and Components prose says (text on a surface in its on- color or a component's pair); a picture the image model made may bring colours of its own, which are taste, never off brand;
       - the action color used as the brand's rules say;
       - copy that holds against the Voice chart in DESIGN.md: it could sit in the Do column, and none of it reads like a Don't. No claim, price or fact that isn't in the brief, the brand or the data.
       - none of the marks of generated copy listed in `references/copy.md` of the `metamorfiles` skill (`metamorfiles_get_guide { name: "metamorfiles", file: "references/copy.md" }`), and no invented figure.
