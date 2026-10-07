@@ -128,7 +128,8 @@ wait for its verdict, naming only the frames that are new or changed:
 | When | Frames | What it judges |
 |---|---|---|
 | `logo.md` written, before asking | `process-logo` | every letter; each route's small mark is the very mark its logo shows; the small sizes, reversed and one colour |
-| `imagery.md` written, before asking | `process-imagery` | image-model mistakes; none in another medium |
+| The character sheet written, before the imagery | `process-logo` | eight figures in the grid's order, each part and its colour against the character's sheet, the same proportions in all |
+| `imagery.md` written, before asking | `process-imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
 | Each batch of the library | the imagery folder's frame, by the folder's name (`refs`) | the same, against the anchors |
 | The three mockups | each `mockup-<file name without extension>` | the logo against its file, every word, the packaging designed in full, how each object sits and opens, the photograph |
 | The finished kit | the whole board | the final check, under Kit |
@@ -212,6 +213,9 @@ its frame shows each file as it arrives, so the user watches the step come toget
    `metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#1f1a17" }`, which draws it in colour
    on its paper, reversed and in one colour on one sheet; in `logo.md` every file has its `ground`,
    its small mark `small: true`. A mascot is designed with `metamorfiles-character`.
+   **Once a logo with a character is chosen,** draw its character sheet (`references/sheet.md` of
+   `metamorfiles-character`) before anything else, write it into `logo.md` as `sheet`, and have the
+   reviewer check it: every image of the character after that is made from it.
 3. **Imagery** (`references/imagery.md`). The mode the brand needs (illustration, photography, a
    character, graphic or 3D), the style block, and four seeds made together, one per option, saved in
    `brand/process/imagery/`. The seeds the user keeps are the anchors.
@@ -226,7 +230,8 @@ its frame shows each file as it arrives, so the user watches the step come toget
      `metamorfiles_import_image { path: "<seed>", name: "knit-close-up", folder: "brand/refs" }`,
      and list the folder with the file names it returned as its anchors:
      `{ folder: refs, kind: imagery, title: Imagery, anchors: [...] }`. A character's folder is
-     listed the same way when there is one.
+     listed the same way, the character sheet brought in first and listed first in its `anchors`
+     (`references/sheet.md` of `metamorfiles-character`).
    - Grow the library from the anchors into `brand/refs/` (`references/imagery.md`).
    - Make the mockups (`references/mockups.md`) on the touchpoints the brief names, without asking
      first, and list their folder once the first is saved:

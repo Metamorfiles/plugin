@@ -43,7 +43,13 @@ a look to recognise, not rules to count.
 ## Seeds, then anchors
 
 1. Make four seeds together, each a different job: a scene with people, an object alone, an
-   interior, a character, a detail. Each is
+   interior, a character, a detail. They differ on purpose: in the pose, which way the head turns,
+   the framing (a close-up, the full body, from behind, from above) and the expression, never four
+   versions of one drawing in new props. The props come from the brief's own world (its list of
+   what the business makes and uses); a generic symbol standing in for it (a star, a sparkle, a
+   lightning bolt, a heart) is the default to recognise and replace. A character brand makes its
+   seeds from the character sheet, as `images.md` of the `metamorfiles` skill says ("The prompt").
+   Each is
    `metamorfiles_generate_image { prompt, width: 1600, height: 2000, folder: "brand/process/imagery", ground: "#f6f1ea", wait: false }`,
    each at the shape the brand's images will mostly be used at (here 4:5), `ground` the chosen
    direction's paper, so they already sit on it; collect each with `metamorfiles_image_status { id }`. The step's
@@ -51,7 +57,8 @@ a look to recognise, not rules to count.
 2. Each seed is one option of the imagery step, titled by what it shows ("The knit close-up"). The
    user uses them all, or has single ones redone first ("Redo the knit close-up").
 3. Redo a rejected seed from the ones the user liked, passed as references, never from the rejected
-   one. Say what to keep ("the same composition") and what to change ("fewer, bolder lines"). The
+   one; a seed with the character is redone from the character sheet, never from another seed, since
+   a seed copied as a reference brings its head and face with it. Say what to keep ("the same composition") and what to change ("fewer, bolder lines"). The
    new take goes first in the option's `files` and the earlier one stays after it: the board shows
    it small and dimmed under "Earlier takes", so the user can ask for it back, and then it moves
    first again. Remove a take only when it has an image-model mistake.
@@ -89,9 +96,9 @@ not worth a redo.
 ## A character
 
 A brand whose imagery is a character designs it with the `metamorfiles-character` skill: its bible,
-its construction, candidates drawn alone and traced, one anchor the user approves, and every pose
-from that anchor. Its seeds on this step are the character in the brand's moments, each made from
-the anchor, and every image of it, seeds and library alike, carries its character sheet (the body
+its construction, candidates drawn alone and traced, one anchor the user approves, and right after,
+its character sheet (`references/sheet.md` of `metamorfiles-character`), drawn before any seed. Its
+seeds on this step are the character in the brand's moments, each made from the sheet, and every image of it, seeds and library alike, carries its character sheet (the body
 part by part, each part's colour in hex, what never changes), so the model adds nothing a pose seems
 to need and paints no part another colour. List its folder in `assets` with `kind: character`, its
 `note` holding the body line, and write the sheet whole into the imagery guide.

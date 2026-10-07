@@ -22,7 +22,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 4. Candidates drawn together, alone, on transparent; traced
 - [ ] 5. Checked: silhouette, 32 px, true to the description; the best one kept
 - [ ] 6. Shown to the user; the kept one is the anchor
-- [ ] 7. Poses and expressions from the anchor, checked side by side
+- [ ] 7. The character sheet from the anchor: every side and four poses, the reference for every image of it
 - [ ] 8. Placed: in the logo, in the imagery, as the small mark
 ```
 
@@ -39,7 +39,8 @@ Write it before drawing anything:
   the scene asks for elsewhere (a gold paw where the scene wanted one gold thing), so every prompt
   carries this sheet whole, with "its colours never change", and the reviewer checks each drawing's
   parts and their colours against it;
-- its **personality** in one sentence, and how it shows (a wink, a lean, a grin);
+- its **personality** in one sentence, and how it can show (a wink, a lean, a grin): a range, never one
+  fixed face, since each image gives the character the expression its scene needs;
 - **what it never does**.
 
 Keep it in the notes of the step's file (below its YAML) while a brand is made. Once the kit is
@@ -90,21 +91,25 @@ folder as `01-front`:
 Studio adds a short id to the name, so list the full file name it returns (`01-front-1a2b3c4d.svg`)
 in the folder's `anchors`.
 
-### 7. Poses and expressions
+### 7. The character sheet
 
-Each new pose is a new drawing of the character with the anchor attached as image 1 and its
-identity repeated word for word, checked side by side with the anchor; a small change that keeps the
-pose (an expression, a prop) is an edit, the anchor first in `references` with `edit: true`:
-`references/poses.md`.
+As soon as the anchor is approved (in a new brand, the logo with the character is chosen), draw the
+**character sheet**: one image of the character from every side and in four poses, made in one
+generation so all eight match. It is the character's reference from then on: every image of it,
+any scene, any pose, any movement, passes the sheet as image 1, and a model that sees the character
+from every side learns the character instead of copying one drawing. The grid, the prompt, the check
+and where it goes: `references/sheet.md`.
+
+A single new drawing for the brand's files (a pose for a sticker, the small mark's bust) is made
+from the sheet too: `references/poses.md`.
 
 ### 8. Where it goes
 
 - **In a logo**: composed with the name set in type (`references/lockups.md` of
   `metamorfiles-logo`); its head or bust alone is the route's small mark, made from the logo (or,
   beside a name in type, the anchor) first in `references` with `edit: true`, never drawn on its own.
-- **In the imagery**: its folder listed in DESIGN.md `assets` with `kind: character`, the files named
-  in order with `name` (`01-front`, `02-three-quarter`, `03-wave`), so the brand board shows the
-  turnaround and the poses.
+- **In the imagery**: its folder listed in DESIGN.md `assets` with `kind: character`, the sheet first
+  in its `anchors` and the anchor drawing second, so the brand board shows the sheet first.
 
 ## References
 
@@ -113,7 +118,8 @@ pose (an expression, a prop) is an edit, the anchor first in `references` with `
 | [references/taste.md](references/taste.md) | What a strong character looks like, and what goes wrong |
 | [references/design.md](references/design.md) | Describing the character |
 | [references/styles.md](references/styles.md) | Choosing its rendering, and the prompt |
-| [references/poses.md](references/poses.md) | New poses and expressions that stay on model |
+| [references/sheet.md](references/sheet.md) | The character sheet: its grid, the prompt, the check, where it goes |
+| [references/poses.md](references/poses.md) | A single new drawing for the brand's files, from the sheet |
 
 How to prompt each image model is in `references/images.md` of the `metamorfiles` skill, and how a
 drawing is traced in `references/vector.md` of `metamorfiles-logo`. In an app that didn't load a

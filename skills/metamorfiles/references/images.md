@@ -53,9 +53,11 @@ models read it as well):
 
 1. **References,** numbered, each with its role. The image to keep goes first, since models preserve
    the first most closely:
-   - a character: its anchor first, "Image 1 is <name>: keep its identity, anatomy and colours
-     exactly; draw it anew in this scene" (the anchor is the image DESIGN.md `assets` marks for the
-     character's folder);
+   - a character: its sheet first (the first of its folder's `anchors` in DESIGN.md, or the logo
+     step's `sheet` while a brand is made; `references/sheet.md` of `metamorfiles-character`): "Image 1
+     is the reference sheet of <name> from every side: keep its identity, anatomy and colours exactly;
+     draw exactly one <name>, in this scene's own pose". The pose, which way the head turns and the
+     expression are this prompt's, never copied from image 1;
    - the library's sheet next, its folder's frame on the brand board
      (`templates/brand-board#<folder>`, such as `templates/brand-board#refs`): "Image 2 is the
      brand's image library: take only its drawing style, palette and texture; never copy its
@@ -63,14 +65,14 @@ models read it as well):
    - a product or a source image: what must stay exactly as it is.
 2. **Scene:** the setting, the light, the framing and the shape ("portrait, 4:5"), and what the image
    is for ("background for a post; the headline sits on the calm left third").
-3. **Subject:** what it shows, plainly, named each time, never "it". With the character, its sheet
-   pasted whole.
+3. **Subject:** what it shows, plainly, named each time, never "it". With the character: its pose,
+   which way its head turns and its expression, then its character sheet's text pasted whole.
 4. **Style:** the guide's style paragraph, pasted whole.
-5. **Constraints,** plain and early enough to survive a host that rewrites prompts: "<the character>'s
-   colours never change: each part stays the colour its sheet gives", "no text or lettering", and
-   anything the scene must not add.
+5. **Constraints,** plain and early enough to survive a host that rewrites prompts: "exactly one
+   <the character>", "its colours never change: each part stays the colour its sheet gives", "no text
+   or lettering", and anything the scene must not add.
 
-`metamorfiles_generate_image { prompt, width: 1080, height: 700, references: ["brand/refs/<character anchor>", "templates/brand-board#refs"] }`
+`metamorfiles_generate_image { prompt, width: 1080, height: 700, references: ["brand/<character folder>/<sheet>", "templates/brand-board#refs"] }`
 
 Then the craft, for every model, and that model family's file for what differs (`metamorfiles_image_models` names the default):
 
@@ -101,11 +103,11 @@ Then the craft, for every model, and that model family's file for what differs (
 
 Example, a character brand's carousel slide:
 
-> Image 1 is Pip, the brand's otter: keep its identity, anatomy and colours exactly; draw it anew in this scene. Image 2 is the brand's image library: take only its drawing style, palette and texture; never copy its subjects or compositions.
+> Image 1 is the reference sheet of Pip, the brand's otter, from every side: keep its identity, anatomy and colours exactly; draw exactly one Pip, in this scene's own pose. Image 2 is the brand's image library: take only its drawing style, palette and texture; never copy its subjects or compositions.
 > Scene: a cosy desk at night lit by one warm lamp from the right; portrait 4:5; the top third stays calm, plain #1d2a44 for the headline.
-> Subject: Pip leaning over a blank laptop screen, both paws on the keys, a mug beside it. Pip: one head with two round ears, two arms with dark #2b1d14 paws, two legs, one tail; fur #8a5a3c, belly and face #f2e3c9.
+> Subject: Pip leaning over a blank laptop screen, both paws on the keys, head turned three-quarter to the left, eyes wide with surprise, a mug beside it. Pip: one head with two round ears, two arms with dark #2b1d14 paws, two legs, one tail; fur #8a5a3c, belly and face #f2e3c9.
 > Style: flat poster illustration, thick even #121212 outline, flat fills, strong contrast, little or no shading.
-> Constraints: Pip's colours never change; the lamp's glow is the only #ffc21a; no text or lettering.
+> Constraints: exactly one Pip; Pip's colours never change; the lamp's glow is the only #ffc21a; no text or lettering.
 
 ## Other parties' marks and images
 
