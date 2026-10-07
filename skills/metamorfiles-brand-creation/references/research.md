@@ -3,14 +3,35 @@
 Read this for the brief and the direction step of `SKILL.md`: what is true of the business, what
 its category looks like, and two or three directions built from real references.
 
+## The subject, first
+
+Before any reference, look up who or what the brand is for, whether the user asked for it or not:
+the brief names a business or a person, and what's public about them is where the idea comes from.
+A few searches and pages, not a dossier:
+- **Search** the name with the place or the trade, and every handle or address the user gave
+  (a web search when this app has one; Studio's own team runs do).
+- **Read their own pages:** the website, the profiles they named, a portfolio, a shop listing, the
+  menu, with `metamorfiles_look_at_page { url: "<a public page>" }` (it shares the project's daily
+  page budget with the reference searches) or a web fetch. A profile behind a login, or one just
+  opened, gives what's public and no more: never fill the gap by guessing.
+- **For a person's brand:** what they make and have made (products, clients, talks, writing), the
+  words they use about themselves, what they post about and how, and what their own feed already
+  looks like.
+- **For a business:** what it sells and at what price, its place or its world, its reviews (the
+  phrases customers use), its founders, one odd fact.
+
+Keep each finding with where it came from in the brief's Facts. When nothing public is found, say so
+in one line there, and ask the user once for one or two links that show who they are.
+
 ## The brief
 
-`brand/process/brief.md` starts with what the user said. Add below it, briefly:
+`brand/process/brief.md` starts with what the user said. Add below it, briefly, from the subject's
+research:
 - **Facts:** what it makes, for whom, where, at what price, the languages it speaks to its customers
   in, and anything true and specific: hours,
-  process, tools, materials, founders, rituals, a word the customers use. When the business has a
-  website or reviews, read them for three to five phrases customers actually use and one odd fact.
-  That fact is often the idea.
+  process, tools, materials, founders, rituals, a word the customers use: three to five phrases from
+  the subject's own pages or reviews, and one odd fact, each with its source. That fact is often the
+  idea. A line that only repeats the user's request isn't research.
 - **The place,** when there is one: its signs, materials, colours and light, and two or three things
   only it has. An online business has a world instead: its customers' homes, their commute, their
   feed.
