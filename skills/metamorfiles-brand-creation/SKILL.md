@@ -197,9 +197,9 @@ its frame shows each file as it arrives, so the user watches the step come toget
 
 ## The steps
 
-1. **Direction** (`references/research.md`, `references/look.md`). First the subject itself: look up
-   the business or the person the brief names, by name, handles and site, and read their own pages
-   (`references/research.md`, "The subject, first"), even when the user didn't ask. The brief's facts
+1. **Direction** (`references/research.md`, `references/look.md`). First the subject: look it up, or
+   for a new brand what is real around it (`references/research.md`, "The subject, first"), even when
+   the user didn't ask. The brief's facts
    with their sources, touchpoints and category codes go into `brief.md`. Search with `metamorfiles_search_references { query: "bakery" }`
    on the business's plain words, choose the projects worth opening from the covers, and collect
    them with `metamorfiles_collect_references { links: [...] }`, the user's own links first; they
