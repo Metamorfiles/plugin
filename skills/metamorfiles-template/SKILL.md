@@ -1,12 +1,12 @@
 ---
 name: metamorfiles-template
-description: Use when the user wants a new Metamorfiles template, for example a social post, ad or banner design from a brief, a reference image, a screenshot or an existing design. Writes the template's index.html following the contract, checks it in every format and gets it reviewed. To change an existing template, use metamorfiles-team.
+description: Use when the user wants a reusable Metamorfiles template: a key visual, a series they will repeat, or a design to make variants and A/B tests from, built from a brief, a reference image, a screenshot or an existing page. Writes the template's index.html following the contract, checks it in every format and gets it reviewed. A one-off post or carousel is a page from its own design (metamorfiles-team, A new piece); to change an existing template, use metamorfiles-team.
 license: MIT
 ---
 
 # Create a template
 
-A template is a reusable design whose changeable parts are declared variables. The contract, the craft and the quality loop are in the `metamorfiles` skill; follow them exactly.
+A template is a reusable design whose changeable parts are declared variables, made when the user wants reuse: a one-off piece is a page from its own design instead (`metamorfiles-team`, A new piece). From an existing page, read its `index.html`, declare as variables what will change between uses, and write the template. The contract, the craft and the quality loop are in the `metamorfiles` skill; follow them exactly.
 
 ## Steps
 

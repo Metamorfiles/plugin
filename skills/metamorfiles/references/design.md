@@ -37,14 +37,29 @@ After each change, render the frames you changed and look at them the way a read
 - **Each format is composed for its size.** A landscape frame isn't a shrunken portrait: put the image beside the copy rather than above it, and let a story use its height.
 - **Only this brand.** Build from what the brand has and a competitor doesn't: its photography, its colors in their stated roles, its type, its voice. A decorative device the brand kit doesn't use (a badge, a card, a gradient, an icon, numbering, an emoji) needs a reason in the content, not just empty space to fill. The brand kit and the brief always win over these preferences.
 
-## Images in the composition
+## The composition
 
-- **The composition decides the image, not the library.** Lay the frame out first (where the copy sits,
-  the image's slot and shape, where it must stay calm), then make the image for that slot: the brand's
+Decide each frame as a picture before any image or CSS exists, and write it as the variant's
+`composition` line in `page.json`: the hero, what is figure and what is ground, the image's role,
+where the type sits and what stays empty ("Dew huge at the right edge, cropped by the frame; the
+headline on the left half of plain paper; nothing else"). A plan made of layout names (a statement,
+a figure, a pair) is not a composition: it draws the same card with new words. Build the comp first,
+with every slot empty (a flat placeholder of each image's size and place, the fields and bands, the
+type), render it and read the sequence; only then make the images for it.
+
+- **The composition decides the image, not the library.** The image is made for its slot: the brand's
   character or scene doing what this frame is about, in the brand's image contract
   (`brand/imagery-guide.md`) with the library's sheet as a style reference (`references/images.md`,
-  "The prompt"). A picture picked from `brand/refs/`
-  because it's there is a stock photo of your own brand.
+  "The prompt"). A picture picked from `brand/refs/` because it's there is a stock photo of your own
+  brand.
+- **Three modes that never collide.** A character or product is a **cutout** (a transparent image),
+  placed and scaled by the layout: it can run off the frame, sit huge, or overlap the headline on
+  purpose, and the type never fights it. A **scene** fills a region the type doesn't enter, or the
+  type gets a band, a plate or a scrim; type set into a "calm patch" of a generated scene is the last
+  resort, checked at phone size. A **type-led** frame has no image and says why. Shapes, fields and
+  bands are CSS, never painted into the image: a shape in the pixels makes every change a new image.
+- **Variety in a sequence:** no two neighbouring frames share figure and ground. Change what is big,
+  where the type sits, and the ground, by what each frame does.
 - **Other parties are shown by their real marks**, set in the layout beside the image, never drawn in
   it: `metamorfiles_find_mark { name }` (`references/images.md`, "Other parties' marks and images").
 
