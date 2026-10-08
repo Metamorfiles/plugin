@@ -8,14 +8,15 @@ character's identity word for word, and states its own pose, head angle and expr
 ## The identity block
 
 Write it once from the brief, a short paragraph of what never changes: who it is, the one feature
-that makes it itself, the markings, its palette, the style. Never an expression or a head angle: those are
-each drawing's own, and a fixed one makes every drawing the same face. Paste it unchanged
+that makes it itself, how its face is made (the shape of its eyes and pupils, its brows, its mouth,
+a fang or a gap), the markings, its palette, the style. Never an expression or a head angle: those
+are each drawing's own, and a fixed one makes every drawing the same face. Paste it unchanged
 into every prompt for this character, with no rewording. A synonym is a different instruction.
 
 ## A new pose
 
 A new drawing of the character, with the sheet attached first in `references`:
-`metamorfiles_generate_image { prompt, references: ["<the character sheet>"], width: 1024, height: 1024, folder: "brand/<the character's folder>", name: "02-wave", trace: { colors: [...] } }`.
+`metamorfiles_generate_image { prompt, references: ["<the character sheet>"], width: 1024, height: 1024, folder: "brand/<the character's folder>", name: "02-stirring", trace: { colors: [...] } }`.
 
 ```
 Image 1 is the reference sheet of the character from every side: draw exactly one of it, in a new
@@ -65,5 +66,5 @@ exactly" line. The user should never be the one to find it.
 ## Files
 
 In the character's folder, numbered in the order the board shows them, by `name`: `00-sheet`,
-`01-front` (the anchor), `02-wave`; Studio adds a short id to each. The sheet and the anchor are
+`01-front` (the anchor), `02-stirring`; Studio adds a short id to each. The sheet and the anchor are
 listed, in that order, by their full file names in the folder's `anchors`.

@@ -17,11 +17,12 @@ Copy it into your notes and tick each step as you go:
 ```
 - [ ] 1. The brief and the chosen direction read, its reference images looked at
 - [ ] 2. Type study: the name in the faces the direction suggests and around them
-- [ ] 3. Three routes made
-- [ ] 4. Every route checked with metamorfiles_check_logo, fixed, checked again
-- [ ] 5. Each route's files: colour, reversed, one colour, small mark
-- [ ] 6. Routes shown and one recommended
-- [ ] 7. After the choice: the final files in brand/logos/
+- [ ] 3. Three ideas: each route's idea and composition written before anything is drawn
+- [ ] 4. Three routes made: the word set first, a mark drawn to fit it
+- [ ] 5. Every route checked with metamorfiles_check_logo, fixed, checked again
+- [ ] 6. Each route's files: colour, reversed, one colour, small mark
+- [ ] 7. Routes shown and one recommended
+- [ ] 8. After the choice: the final files in brand/logos/
 ```
 
 ### 1. What the brand already decided
@@ -46,29 +47,43 @@ and read the sheet: the word's shape, its pairs, its rhythm, and what could beco
 each route's face and add it with `metamorfiles_add_font { family: "Fraunces" }`: the file it returns
 is the `font` the wordmark is set from (`references/wordmark.md`).
 
-### 3. Three routes
+### 3. Three ideas
 
-Three answers, not three versions: each route takes a different lettering family or composition move
-(`references/taste.md`), so the user chooses between ideas.
+Before anything is drawn, write each route's idea and composition in one line in your notes. Each
+idea comes from a different source: one from the name (its sound, its letters, a pair that could
+join), one from the product (what it is, how it's made, what it's used for), one from the place, the
+people or the feeling it promises. The composition says how the logo is built: what leads, how big
+the other parts are against the word's cap height, whether they share its baseline, overlap it, tuck
+into a letter or stand apart, and the word's own line (straight, on an arc, bent, bouncing). Read
+the three together against `references/taste.md`, "Defaults to recognise": three ideas in one
+arrangement (a mark centred above the word, three times) are one answer. Each line goes on its
+route's option as `composition` in `brand/process/logo.md`, and the card shows it.
+
+### 4. Three routes
+
+Three answers, not three versions: each route a different idea and a different lettering family or
+composition move (`references/taste.md`), so the user chooses between ideas.
 
 1. **Drawn whole by AI.** The image model draws the logo as one composition: lettering alone, or
    lettering with a mark, a mascot or ornaments, all in one style, with proper spacing between its
    parts. Studio traces it; supporting words are set in real type around it: `references/drawn.md`.
 2. **Real fonts with a generated part.** The name set from real fonts with its kerning, ligatures and
-   spacing, composed with a generated mark, a mascot or a drawn letter in a letter's place:
-   `references/wordmark.md`, `references/symbol.md`, `references/lockups.md`. A mascot is designed
-   with the `metamorfiles-character` skill.
+   spacing, composed with a generated mark, a mascot or a drawn letter in a letter's place. The word
+   comes first; the mark is drawn alone, then fitted to the set word's stroke and corners
+   (`references/symbol.md`, "Fit it to the word") and composed with it by the route's composition:
+   `references/wordmark.md`, `references/lockups.md`. A mascot is designed with the
+   `metamorfiles-character` skill.
 3. **Type alone.** The name in its face with kerning, ligatures, alternates, a bounce and the face's
    own features, in a simple composition, or a seal or monogram when the brand needs one:
    `references/wordmark.md`, `references/seal.md`.
 
-### 4. Check, fix, check again
+### 5. Check, fix, check again
 
 Run `metamorfiles_check_logo` on every route file. Read the sheet and the numbers, fix what fails,
 and run it again: `references/checks.md`. The user should never be the one to find a piece that
 vanishes at 32 px, a drawn letter that's wrong, or a reversed version that doesn't read.
 
-### 5. Each route's files
+### 6. Each route's files
 
 The route's first file is the logo in colour on the ground it's made for; after it, reversed on the
 dark colour and in one colour on white, each with its `ground`. A drawing of lines with coloured
@@ -86,14 +101,14 @@ edited to the mark alone and placed for a small square (`references/drawn.md`, "
 it"); Studio refuses a small mark drawn on its own. Save every file under `brand/process/logo/`:
 `folder: "brand/process/logo"` for an image, an `output` there for the other tools.
 
-### 6. Show them
+### 7. Show them
 
 In a new brand, write the routes as the options of `brand/process/logo.md` and ask as the
 `metamorfiles-brand-creation` skill says: Studio draws each route large, in use and at the small
 sizes on the brand board. Outside it, show the check sheets and say in a line what each route is and
 why, the recommended one first.
 
-### 7. After the choice
+### 8. After the choice
 
 Make the chosen route's final files in `brand/logos/` with the same tools and settings, each with an
 `output` there. A traced drawing reaches it as one part:

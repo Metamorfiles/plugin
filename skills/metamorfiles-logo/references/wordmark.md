@@ -40,14 +40,33 @@ features and the alternates it has for these letters. Its controls:
 - **Alternates and features**: the face's own alternate glyphs (`{ "S": "S.alt" }`) and OpenType
   features (`ss01`, `dlig`, `liga`, a swash set).
 - **`thicken`**, in em: heavier strokes for a face a little too light.
-- **`moves`**: single letters lifted, dropped or turned after spacing, for a bouncing word:
-  `moves: [{ at: 2, dy: -0.04, rotate: -4 }]`, `at` counting every character from 1, spaces included.
+- **`moves`**: single letters turned or lifted, for a hand-set word:
+  `moves: [{ at: 2, rotate: -4 }]`, `at` counting every character from 1, spaces included. A turn
+  pivots on the letter's foot, so it stays on the line; `dy` lifts it off, and the result names
+  every letter that sits off its line. Each move is part of the composition and says why (the letter
+  that leans into the mark, a joyful word that bounces as a whole); a lone letter off the line reads
+  as a mistake, and every letter moved in an up-down pattern reads as jitter. A face whose own shapes
+  bounce carries the movement better. Judge it at 64 px as well as large.
+- **`curve`**: the word on a line other than straight. `letters: "bend"` draws every outline through
+  the curve, as an envelope warps type: stems bend and strokes stretch, which suits chunky retro and
+  sign lettering and looks cheap on a high-contrast serif. `letters: "turn"` keeps each letter whole,
+  standing on the curve, as type is set on a path: seals, scripts, a name arched over a character.
+  `letters: "upright"` keeps them whole and upright, stepping along it.
+  `curve: { kind: "arc", amount: 0.3, letters: "turn" }` arches the name; `kind` is also `arch`,
+  `bulge`, `wave`, `rise` or `envelope` (with `top` and `bottom` heights). The file records the curve
+  as its baseline, and a lockup lines up to it.
 - **`part`**: a drawn shape in a letter's place or its accent's, spaced by its own shape
   (`symbol.md`).
 
 `metamorfiles_compose_logo` adds finishes to a text part: `depth: { color, amount }` (a side in a
 second colour, as on a painted or carved sign) and `inline: { color, inset, width }` (a line inside
 the strokes).
+
+## Adjusting it
+
+Every wordmark keeps its settings beside it (`<file>.svg.json`). Change one thing without restating
+the rest: `metamorfiles_make_wordmark { from: "brand/process/logo/route-2.svg", kerning: { "ol": -0.02 }, output: "brand/process/logo/route-2.svg" }`.
+Objects merge key by key, so one kerning pair changes and the others stay.
 
 ## Supporting words
 

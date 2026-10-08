@@ -85,7 +85,7 @@ The ways the parts meet, chosen by the brand's world and where the logo will liv
   a shield.
 - **The mark in the stack's empty corner:** two lines of different lengths, the mark filling the gap.
 - **The character above the name,** behind it and overlapping, or peeking over it.
-- **The name arched over the character or a crest,** a line of small type below.
+- **The name arched over the character or a crest** (`curve` in `wordmark.md`), a line of small type below.
 - **Small words at the name's ends,** justified to its width (the trade on the left, the year on the
   right).
 - **A line tucked under a script,** from under its first letters to under its last.
@@ -101,7 +101,8 @@ that changes from file to file.
 ## Marks
 
 - **Same hand as the letters.** A cut-paper name gets a cut-paper mark; a monoline script gets a
-  monoline mark.
+  monoline mark. The hand is the line weight, the edges and the corners; a character keeps its face
+  and its drawing, never turned into a silhouette to match a heavy face.
 - **One idea, simple enough to cut out,** and still itself at 32 px in one colour.
 - **From the business, not the category.** Left alone, the image model reaches for the category's
   symbol (a mountain for climbing, wheat for a bakery, a lotus for wellness, a bean for a café) and
@@ -121,7 +122,8 @@ What a generator produces when nothing was decided. They aren't forbidden; they'
 direction chose them, and recognised when it didn't:
 - a stock bubble, geometric or script face set untouched as the "custom" lettering;
 - the category's symbol added to every route;
-- everything centred, one size, even gaps;
+- everything centred, one size, even gaps; a mark centred above the word in every route;
+- a letter lifted or turned alone, off the word's line, with nothing it leans into;
 - a badge or a frame around a name that didn't need one;
 - gradients, shadows, glows or textures on the logo itself;
 - three routes that are one idea in three fonts.

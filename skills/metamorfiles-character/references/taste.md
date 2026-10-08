@@ -28,9 +28,15 @@ The logo's own page is `references/taste.md` of `metamorfiles-logo`.
 ## Weak, and why it happens
 
 - **A generic mascot with no personality:** a smiling thing standing still.
+- **A face left to the model.** "A cheeky grin" or "happy eyes" gets the model's stock face on any
+  character. A face described from the attitude (the lids, the brows, where it looks, the mouth, one
+  thing uneven) gets this character's.
 - **Briefed as an assembly.** A prompt that counts limbs, places each one and paints each part a
-  colour draws exactly that: an assembly with an emoji's face. Brief who it is and what it's doing,
-  and let the drawing find the shapes.
+  colour draws exactly that: an assembly standing still. Brief who it is, its face and what it's
+  doing, and let the drawing find the body's shapes.
+- **A scene instead of a character.** A board, a wave and the spray around it take over the drawing
+  and vanish at 32 px. One gesture and one object, smaller than the character; scenes belong to the
+  imagery.
 - **Detail that vanishes when small:** fine textures, tiny accessories.
 - **Props merged into the body.** When a prop overlaps the head or body, the model can read the two
   as one shape and carry it into every later pose: a barrel becomes part of the head. Say in each pose
@@ -38,3 +44,19 @@ The logo's own page is `references/taste.md` of `metamorfiles-logo`.
 - **Features invented between poses.** Without the character described in words, each pose adds its
   own detail. Repeat the description in every prompt.
 - **Stray letters and symbols:** "zzz" over a sleeping character, sound words. Ask for none.
+
+## Defaults to recognise
+
+What the image model draws when the brief left it to choose. A default is not a choice: when the
+brief asks for one, it's right; when it didn't, the candidate is drawn again from a changed brief.
+- two closed, happy crescents for eyes and a wide grin, on any character;
+- an object with a face drawn on it, standing still, arms out;
+- stick limbs ending in round mitts;
+- waving at the viewer, or a thumbs-up;
+- the category's stock character (a chef's hat on food, a fox for anything clever, a robot for
+  tech);
+- a cocky smirk with one raised brow and a fang, when nothing in the brief is cocky;
+- glossy 3D, or big sparkling eyes in a tiny body, when the direction is flat.
+
+Two questions for every candidate: could you guess it from the category alone? Could another
+business use it unchanged? Either yes, and the idea isn't this brand's yet.

@@ -2,8 +2,8 @@
 
 One rendering per character, from the chosen direction and from what the character needs, written
 once as a paragraph that is pasted unchanged into every prompt. A figure with limbs and a face holds
-at 32 px and in one colour through an outline or a solid silhouette; flat shapes with inner colours
-suit a simple, chunky body. Each style traces cleanly because it is flat: no gradient, shading or
+at 32 px through an outline, and goes to one colour as line art; flat shapes with inner colours suit
+a simple, chunky body. Each style traces cleanly because it is flat: no gradient, shading or
 texture.
 
 ## Some renderings that trace cleanly
@@ -14,12 +14,13 @@ open shapes, no fill.
 
 Trace colours: the line colour only.
 
-**Solid silhouette with cut-out features.** One flat shape in one colour, its eyes, mouth and other
-features cut out as holes through to the ground.
-> One solid flat shape in a single colour, with its eyes, mouth and features cut out of it as holes;
-> smooth edges, no outline, no inner lines.
+**Solid silhouette.** One flat shape in one colour, for a faceless figure that reads by its outline
+alone (a running fox, a leaping fish). A face cut into a silhouette as holes reads as a mask, so a
+character with a face takes another style.
+> One solid flat shape in a single colour, its pose readable from the outline alone; smooth edges,
+> no inner lines.
 
-Trace colours: the one colour; the holes stay transparent.
+Trace colours: the one colour.
 
 **Flat shapes with inner colours.** Two or three flat colours, each shape one colour, the features in
 the darkest; no outlines.
@@ -43,7 +44,8 @@ brand's mascot.
 ```
 Draw one character on a transparent background, alone, centred, with space around it.
 Who: <the brief: who it is, what it's like, the one thing that makes it itself, in two or three sentences>.
-Doing: <this business's thing, with its own object, and the attitude in the pose and the face>.
+Face: <its expression in three to five concrete terms from its attitude: the lids, the brows, where it looks, the mouth, one thing uneven>.
+Doing: <one gesture with this business's own object, smaller than the character; no scene around it>.
 Look: <the rendering paragraph>.
 Palette: <the brand's colours as hex, each with its job: the body in the product's own colour, the features in the ink>, flat.
 Only the character: no letters, words or numbers, no ground line or shadow, no frame, no scenery.
@@ -53,9 +55,17 @@ Only the character: no letters, words or numbers, no ground line or shadow, no f
   presentation boards.
 - Colours are the palette with a job each, never a colour per limb: the model gives them to the
   shapes it draws, and a part in a colour the brand doesn't have is caught at the check.
-- Pass two or three of the direction's references that show a figure or the hand, and the name's
-  wordmark when the character will sit beside it ("Image 1 is the brand's wordmark: draw only the
-  character, matching its weight; do not draw any letters").
+- Each candidate has its own Who, Face and Doing (`design.md`, "Three ideas for one character");
+  the Look and the Palette are the same in all three, and so is what it is and its build.
+- A reference goes in only when it shows a figure drawn in the chosen look ("Image 1 is a style
+  reference: take its drawing hand and line weight; never copy its character, pose or layout").
+  Never the wordmark while the character is explored: the first image is the one the model keeps
+  most, and a typeface isn't a drawing hand. With no such reference, the Look paragraph carries the
+  hand alone. Once kept for a logo, it is fitted to the set word (`references/symbol.md` of
+  `metamorfiles-logo`, "Fit it to the word").
 - Draw it at `width: 1024, height: 1024` with `trace: { colors: [...] }` listing the style's trace
-  colours, and the `folder` it belongs in (the call: step 3 of the skill).
+  colours, and the `folder` it belongs in (the call: step 3 of the skill). A model that can't draw
+  on a transparent background (its own file says so) gets "on a plain flat field of <the paper's
+  hex>" in place of the first line's transparent background, and `ground: "<the paper's hex>"` in
+  the call, so the trace leaves the field out.
 - Follow the image model's own file of the `metamorfiles` skill (`references/images.md` names it).

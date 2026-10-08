@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-brand-creation
-description: Use to create a new brand from nothing in Metamorfiles Studio, when the user asks for a new brand or identity, says there is nothing to translate, or the project holds a brief in brand/process/brief.md (Studio's "New brand"). Three choices the user makes on the brand board (direction, logo, imagery), then the kit. Use it for "make me a brand", "I'm starting a bakery and need everything", or a business name with no logo, site or files yet. Not for an existing company, website, logo or guidelines, which are translated (metamorfiles-brand).
+description: Use to create a new brand from nothing in Metamorfiles Studio, when the user asks for a new brand or identity, says there is nothing to translate, or the project holds a brief in brand/process/brief.md (Studio's "New brand"). Choices the user makes on the brand board (direction, logo, imagery), the kit, then the mockups. Use it for "make me a brand", "I'm starting a bakery and need everything", or a business name with no logo, site or files yet. Not for an existing company, website, logo or guidelines, which are translated (metamorfiles-brand).
 license: MIT
 ---
 
@@ -26,7 +26,8 @@ Copy it into your notes and tick each step as you go:
 - [ ] 1. Direction: references collected, 2 or 3 directions written, asked, chosen
 - [ ] 2. Logo: three routes with metamorfiles-logo (a character with metamorfiles-character), reviewed, asked, chosen
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
-- [ ] Kit: DESIGN.md (its voice by the copywriter), final logos, fonts, library and mockups (each batch reviewed), imagery guide
+- [ ] Kit: DESIGN.md (its voice by the copywriter), final logos, fonts, library (each batch reviewed), imagery guide
+- [ ] 4. Mockups: three shots of the brand on its objects, reviewed, asked, kept
 - [ ] Final check: metamorfiles-review of the whole kit in the foreground, fixes made
 - [ ] Handover: finished: true with the summary
 ```
@@ -36,7 +37,8 @@ Copy it into your notes and tick each step as you go:
 | 1. Direction | two or three directions, each its references, palette in proportion and type pairing, set in the brand's words | `designer` | `references/research.md`, `references/look.md`, `references/fonts.md` | chooses one, or says what to change or mix |
 | 2. Logo | three routes from the chosen direction: drawn whole by AI, real fonts with a generated part, type alone; each in colour, reversed and in one colour | `designer` | the `metamorfiles-logo` skill; `metamorfiles-character` for a mascot | chooses one, or asks for another |
 | 3. Imagery | the style in words and four seed images | `imager` | `references/imagery.md` | uses them, or has single ones redone |
-| Kit | DESIGN.md and the brand board: the guide, the images, the brand in use | `designer`, `copywriter` for the voice | `metamorfiles-brand`, `references/mockups.md`, `metamorfiles-mockup` | asks for any change they want |
+| Kit | DESIGN.md and the brand board: the guide and the images | `designer`, `copywriter` for the voice | `metamorfiles-brand` | asks for any change they want |
+| 4. Mockups | three shots of the brand on its own objects | `designer`, `imager` for the photographs | `references/mockups.md`, `metamorfiles-mockup` | keeps them, swaps a take, or has one redone |
 
 `references/principles.md` holds what separates studio work from generated work, with tests for each
 step; read it before the first step and use it to make each step's options stronger. Its
@@ -98,7 +100,7 @@ started.
   top, from the step and the files you make, so leave out `line`.
 - **Write the step's file** (below). The result says what's wrong with it, or gives the question
   Studio will ask and the options as the user will see them.
-- **Ask with `metamorfiles_ask_user { task, step: "logo" }`** (`direction`, `logo` or `imagery`).
+- **Ask with `metamorfiles_ask_user { task, step: "logo" }`** (`direction`, `logo`, `imagery` or `mockups`).
   Studio asks the step's own question with the options' titles, the panel offers to bring the step's
   frame into view, and the user chooses there, in the thread or in your chat. From the user's own app
   it returns at once: write the panel link and the options in your reply as Studio lettered them,
@@ -114,6 +116,10 @@ started.
   replace that one option, keep the others as they are, and ask again. "Direction: <title>" means
   the user went back and chose again on an earlier step: Studio has cleared the steps after it, so
   make them again from the new choice.
+- **A verdict on quality is a rethink.** "Redo all, the quality is low", "none of these work": write
+  what they rejected again from its brief (its idea; a character's attitude, face and pose; the
+  lettering's idea), keep what they praised, and say in a line what changed. A new rendering of the
+  same ideas doesn't answer it.
 - **A change is local.** "Warmer", "the other S", "redo the second one": rework that step only, and
   what depends on it. A new palette recolours the logo routes; it never restarts the research.
 - **Going back from the chat.** "Back to the logo": write the logo step's file again without its
@@ -132,7 +138,7 @@ wait for its verdict, naming only the frames that are new or changed:
 | The character sheet written, before the imagery | `process-logo` | eight figures in the grid's order, the same character as the anchor in all eight: its face, its one feature, its proportions, its colours |
 | `imagery.md` written, before asking | `process-imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
 | Each batch of the library | the imagery folder's frame, by the folder's name (`refs`) | the same, against the anchors |
-| The three mockups | each `mockup-<file name without extension>` | the logo against its file, every word, the packaging designed in full, how each object sits and opens, the photograph |
+| `mockups.md` written, before asking | `process-mockups` | the logo against its file, every word, how each object sits and opens |
 | The finished kit | the whole board | the final check, under Kit |
 
 Report it as the reviewer: `metamorfiles_team_update { task, role: "reviewer", status: "reviewing" }`,
@@ -150,7 +156,7 @@ reviewed: they are the user's taste. The reviewer judges the work in each option
 
 ## The steps' files
 
-The brief and every step live in `brand/process/`: `direction.md`, `logo.md` and `imagery.md`, each a
+The brief and every step live in `brand/process/`: `direction.md`, `logo.md`, `imagery.md` and `mockups.md`, each a
 Markdown file with its options in YAML, written with
 `metamorfiles_write_file { path: "brand/process/logo.md", content }`. Each `file` is the path the
 tool that made it returned, as it returned it.
@@ -186,14 +192,15 @@ Each option can carry:
   static family has one per weight, such as `brand/fonts/Anton-400.woff2`);
 - `sample`: at most 120 characters, the words the fonts are set in, from the brand's own voice.
 
-Up to four options: two or three directions, three logo routes, one per seed on the imagery step.
+Up to four options: two or three directions, three logo routes, one per seed on the imagery step,
+one per shot on the mockups step.
 Each `title` is at most 60 characters, what the user will call it, and each `line` at most 200, one
 sentence on why it fits the brief; the board marks the recommended one itself, so the line never
-says so. On the direction and logo steps one option is `recommended: true`; the imagery step asks
-whether to use the seeds, so none is. Writing the direction step
+says so. On the direction and logo steps one option is `recommended: true`; the imagery and mockups
+steps ask whether to use them all, so none is. Writing the direction step
 also returns the contrast of every pair in each palette, so there is nothing to work out by hand.
 
-Save what a step makes in its own folder as you go (`brand/process/logo/`, `brand/process/imagery/`):
+Save what a step makes in its own folder as you go (`brand/process/logo/`, `brand/process/imagery/`, `brand/process/mockups/`):
 its frame shows each file as it arrives, so the user watches the step come together.
 
 ## The steps
@@ -236,16 +243,18 @@ its frame shows each file as it arrives, so the user watches the step come toget
      listed the same way, the character sheet brought in first and listed first in its `anchors`
      (`references/sheet.md` of `metamorfiles-character`).
    - Grow the library from the anchors into `brand/refs/` (`references/imagery.md`).
-   - Make the mockups (`references/mockups.md`) on the touchpoints the brief names, without asking
-     first, and list their folder once the first is saved:
-     `{ folder: mockups, kind: in-use, title: In use }`.
 
    Write `brand/imagery-guide.md`, the brand's image contract, with its four sections (`references/imagery.md`,
-   In the kit): style, the character (a character brand), colour roles, writing a scene. The brand board then holds it all after the
-   steps: the guide, the images and each mockup as its own frame. Get the final check (`metamorfiles-review`,
-   in the foreground, waiting for its verdict), fix what it marks, and hand over as
-   `references/presenting.md` of `metamorfiles-brand` says. Make no templates or pages: the kit is
-   the brand.
+   In the kit): style, the character (a character brand), colour roles, writing a scene.
+5. **Mockups** (`references/mockups.md`), from the kit: three shots of the brand on its own objects,
+   made in `brand/process/mockups/` and written as `mockups.md`, reviewed and asked like the imagery.
+   Studio copies the shots kept into `brand/mockups/`; list that folder then:
+   `{ folder: mockups, kind: in-use, title: In use }`.
+
+   The brand board then holds it all after the steps: the guide, the images and each mockup as its
+   own frame. Get the final check (`metamorfiles-review`, in the foreground, waiting for its verdict),
+   fix what it marks, and hand over as `references/presenting.md` of `metamorfiles-brand` says. Make
+   no templates or pages: the kit is the brand.
 
 ## Ending
 

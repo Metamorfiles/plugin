@@ -20,8 +20,8 @@ Read `brand/imagery-guide.md` before any prompt: it's what every image of this b
 when the brand was made. Its sections:
 - **Style:** one paragraph describing the look, with each colour's hex and what it paints. Pasted
   whole into every prompt.
-- **Character** (a brand with a character): who it is, the one thing that makes it itself, its
-  palette and its look, in two or three lines, and that nothing about it changes. Pasted whole into
+- **Character** (a brand with a character): who it is, the one thing that makes it itself, how its
+  face is made, its palette and its look, in two or three lines, and that nothing about it changes. Pasted whole into
   every prompt that shows the character, with its character sheet first in the references.
 - **Colour roles:** what each colour is for in a scene. An accent is a role for objects and light
   (a balloon, a lamp, a spark), never a colour on the character or a quota per image.
@@ -35,9 +35,8 @@ section and its reference images; write the same parts from them in your notes a
 The brand's library (the folders DESIGN.md `assets` lists) is a style reference, not a stock folder.
 An image that carries a piece is made for that piece.
 
-1. **Compose the frame first:** where the copy sits, the image's slot (its shape, its size, where it
-   must stay calm for type), and what it shows for this frame's content: the character doing this
-   slide's thing, the product in this post's moment, the scene the copy names.
+1. **Compose the frame first** (`references/design.md`, "The composition"): its idea, its picture and
+   the image's slot, its shape and size.
 2. **Make it for that slot** with the prompt below, `width` and `height` the slot's size. It's saved
    under `assets/`: a piece's images are the piece's, never added to the brand's library, whose
    images are reviewed as a set (the library grows only through the brand's library step).
@@ -46,9 +45,8 @@ An image that carries a piece is made for that piece.
      un-blends the cutout's edges so it sits clean on a dark field too. ChatGPT and OpenAI models make
      transparent images; the others can't: ask them for a flat field in the brand's paper colour and
      set `ground`, and place it as a field, not a cutout.
-   - **A scene** fills a region the type never enters, or the type gets a band, a plate or a scrim in
-     CSS. Never paint a shape, a band or a "calm patch for the headline" into the image: shapes are
-     CSS, and a shape in the pixels makes every type change a regeneration.
+   - **A scene** keeps the type's region empty in the picture itself, as its Scene says. A band, a
+     plate or a scrim is CSS, never painted in: a shape in the pixels makes every type change a new image.
 3. **Use a library image as it is** only when it already is that composition: a pattern, a texture, a
    small spot used as decoration, or the very picture the brief names. A near fit is still the wrong
    image: a generic picture on a slide about something specific reads as filler.
@@ -73,8 +71,9 @@ models read it as well):
      brand's image library: take only its drawing style, palette and texture; never copy its
      subjects or compositions";
    - a product or a source image: what must stay exactly as it is.
-2. **Scene:** the setting, the light, the framing and the shape ("portrait, 4:5"), and what the image
-   is for ("background for a post; the headline sits on the calm left third").
+2. **Scene:** the frame's composition, word for word from its `composition` line (`design.md`, "The
+   composition"): where the subject is, its scale and crop, which way it faces, what stays empty and
+   the shape ("portrait, 4:5"); then the setting and the light.
 3. **Subject:** what it shows, plainly, named each time, never "it". With the character: its pose,
    which way its head turns and its expression, then its Character lines pasted whole.
 4. **Style:** the guide's style paragraph, pasted whole.
@@ -208,7 +207,8 @@ mistakes again and again; redo an image that has any of them, saying what to fix
 - **The brand:** a colour outside the guide's roles, or the style broken (shading in a flat style).
 
 Then:
-- The subject is whole, not cut at an edge; faces and products are never cropped awkwardly.
+- A crop is the one the composition names: a subject cut by the frame's edge on purpose is fine, a cut
+  through a face, a hand or a product's label never is.
 - Nothing stretched, soft or upscaled past its size (the checks flag these).
 - The copy sits on a calm area, or the design adds a scrim.
 - The image looks like the brand's references, not like stock.

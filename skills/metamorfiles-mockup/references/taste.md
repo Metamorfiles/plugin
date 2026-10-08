@@ -7,7 +7,9 @@ describes; it never decides: the brand's direction and what it makes decide the 
 
 - **One idea per photograph,** readable at a glance: a pattern, a stack, a pour, a detail.
 - **The range as a system:** the same layout in a colour per variant, so many packs read as one
-  family, and one unit breaking the pattern draws the eye.
+  family.
+- **An idea from the brand's world:** a moment, a place or a ritual of this business, which no other
+  brand's shot could be.
 - **A backdrop chosen for the pack:** a saturated colour from the palette or against it, or the
   pack's own ingredient as the ground.
 - **Light with a point of view:** a hard sun with long, crisp shadows, or one dramatic studio light.
@@ -18,6 +20,8 @@ describes; it never decides: the brand's direction and what it makes decide the 
 ## Weak, and why it happens
 
 - **The product alone on a flat grey floor in even light:** no idea was chosen. Pick a shot.
+- **A twist with no reason:** one unit of a pattern turned or lifted because a pattern "should" break.
+  It reads as an error; a break is another object, there for a reason.
 - **A logo on a flat field of colour:** the packaging wasn't designed, only labelled.
 - **A redrawn or misspelled logo:** the prompt didn't hold the model to image 1. Edit it back.
 - **Garbled small print:** the prompt asked for text the brief doesn't give. Ask for none.

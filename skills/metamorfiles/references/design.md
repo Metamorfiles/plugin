@@ -39,27 +39,55 @@ After each change, render the frames you changed and look at them the way a read
 
 ## The composition
 
-Decide each frame as a picture before any image or CSS exists, and write it as the variant's
-`composition` line in `page.json`: the hero, what is figure and what is ground, the image's role,
-where the type sits and what stays empty ("Dew huge at the right edge, cropped by the frame; the
-headline on the left half of plain paper; nothing else"). A plan made of layout names (a statement,
-a figure, a pair) is not a composition: it draws the same card with new words. Build the comp first,
-with every slot empty (a flat placeholder of each image's size and place, the fields and bands, the
-type), render it and read the sequence; only then make the images for it.
+Every frame is decided as an idea, then as a picture, before any image or CSS exists.
 
-- **The composition decides the image, not the library.** The image is made for its slot: the brand's
-  character or scene doing what this frame is about, in the brand's image contract
-  (`brand/imagery-guide.md`) with the library's sheet as a style reference (`references/images.md`,
-  "The prompt"). A picture picked from `brand/refs/` because it's there is a stock photo of your own
-  brand.
+**The idea.** One visual idea per frame, from what this frame says and the brand's own world (its
+objects, place, name, people, character), named in a phrase: "the parcel too big to carry" for a post
+about shipping costs. A layout name (a statement, a figure, a split) is not an idea: it draws the same
+card with new words. Ideas come in kinds, and three ideas of one kind are one idea:
+- a metaphor: the subject stands for the point (a maze for a confusing process);
+- an exaggeration: one thing at an impossible scale or amount;
+- the demonstration: the thing doing what the copy says, literally;
+- a visual pun: a shape that reads two ways;
+- before and after, or a contrast set side by side;
+- type as the image: the words are the picture, set big and placed;
+- the object itself, alone and large, when it is the news;
+- the empty frame: one small subject in a lot of space, when the point is calm or absence.
+
+**What composition does**, so you can choose by the effect you need:
+- one focal point, the strongest by size, contrast or isolation; everything else quieter;
+- contrast of scale and weight makes the order of reading; even sizes make none;
+- tension: a crop by the frame's edge, a diagonal, a subject entering the frame, against the calm of a
+  centred, framed subject;
+- empty space is a shape, placed where the eye should rest or the words should go;
+- a gaze, a gesture or a line leads the eye, so point it at the words;
+- symmetry reads calm and formal, asymmetry reads alive;
+- in a sequence, rhythm: the same grid and type roles on every frame, and what is big, the crop and
+  figure and ground changing with what each frame does.
+The brand's direction and the brief choose among them; none is a default.
+
+**Three comps.** For a single post or a carousel's cover, build three comps, each a different kind of
+idea, as one page from its own design with three variants (`comp-a`, `comp-b`, `comp-c`), each laid
+out by its own rules (`html[data-variant="comp-b"] …`), its type set and every image an empty
+placeholder of its size and place, and each variant's `composition` line saying the idea and the
+picture ("Idea: the parcel too big to carry. Frame: Dew hugging a parcel twice its size, cut by the
+right edge; the headline across the top third of plain paper"). Render them and judge them side by side
+at phone size. In Chat, ask which one with `metamorfiles_ask_user`; in Auto, choose and say why in one
+line. The body slides of a carousel follow the chosen comp's system (`references/carousels.md`).
+
+**The composition decides the image.** The image is made for its slot, and its prompt's Scene is the
+composition line's picture, word for word: where the subject is, its scale, its crop, which way it
+faces and what stays empty (`references/images.md`, "The prompt"). A picture picked from `brand/refs/`
+because it's there is a stock photo of your own brand.
+
 - **Three modes that never collide.** A character or product is a **cutout** (a transparent image),
   placed and scaled by the layout: it can run off the frame, sit huge, or overlap the headline on
-  purpose, and the type never fights it. A **scene** fills a region the type doesn't enter, or the
-  type gets a band, a plate or a scrim; type set into a "calm patch" of a generated scene is the last
-  resort, checked at phone size. A **type-led** frame has no image and says why. Shapes, fields and
-  bands are CSS, never painted into the image: a shape in the pixels makes every change a new image.
-- **Variety in a sequence:** no two neighbouring frames share figure and ground. Change what is big,
-  where the type sits, and the ground, by what each frame does.
+  purpose. A **scene** made for its frame keeps the type's region empty in the picture itself (plain
+  ground, a sky, a wall), named in its Scene; a band, a plate or a scrim, when the type needs one, is
+  CSS. A **type-led** frame has no image and says why. Shapes, fields and bands are CSS, never painted
+  into the image: a shape in the pixels makes every change a new image.
+- **A crop is a choice.** A subject cut by the frame's edge is fine when the composition names it; a
+  cut through a face, a hand or a product's label never is.
 - **Other parties are shown by their real marks**, set in the layout beside the image, never drawn in
   it: `metamorfiles_find_mark { name }` (`references/images.md`, "Other parties' marks and images").
 
