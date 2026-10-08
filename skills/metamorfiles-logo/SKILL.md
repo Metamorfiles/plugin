@@ -98,9 +98,8 @@ Mark the route's small mark (the mark, the mascot's head, the monogram, the seal
 on its entry in the option's `files` in `brand/process/logo.md` (`{ file: <its path>, small: true }`):
 the profile picture and the small sizes use it, so it must be the very mark the logo shows. In a
 route with a generated mark it is that mark's own file. In a logo drawn whole, one is made from the other,
-never alongside: the mark from the logo once the logo is right (the logo first in `references` with
-`edit: true`, edited to the mark alone and placed for a small square), or the logo from the mark, as
-when the user wants the logo with its icon (`references/drawn.md`, "Other versions of it"); Studio
+never alongside: the mark taken from the logo once the logo is right, or the logo drawn from the mark,
+as when the user wants the logo with its icon (`references/drawn.md`, "Other versions of it"); Studio
 refuses a small mark and a logo drawn apart. Save every file under `brand/process/logo/`:
 `folder: "brand/process/logo"` for an image, an `output` there for the other tools.
 
