@@ -40,6 +40,10 @@ After each change, render the frames you changed and look at them the way a read
 ## The composition
 
 Every frame is decided as an idea, then as a picture, in your notes, before any image or CSS exists.
+Imagine it from what the piece is for: its goal (what the viewer should feel, know or do), its format
+and how it's met (a feed post judged in a second, a story seen full height, a carousel swiped on
+purpose, a print held in the hand), and the story it tells (one beat, or a sequence with a cover, a
+build and an end). Then build it with the tools.
 
 **The idea.** One visual idea per frame, from what this frame says and the brand's own world (its
 objects, place, name, people, character), named in a phrase: "the parcel too big to carry" for a post
