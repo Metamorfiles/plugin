@@ -37,17 +37,17 @@ Finish every role with `status: "done"`.
 ## Order of work
 
 **A new piece** (a post, a carousel, an ad, a page the user asks for, rather than a change to one). It is a page made from its own design; a template only when the user wants reuse, variants or a series (`metamorfiles-template`):
-1. **Plan** it as the copywriter and the designer: research the facts it's about (`references/copy.md`, Research), then one line per slide or format: what it gives the reader, its idea and its picture (`references/design.md`, "The composition"), and any other party's logo (`references/carousels.md` for a carousel).
+1. **Plan** it as the copywriter and the designer: research the facts it's about (`references/copy.md`, Research), then one line per slide or format: what it gives the reader, its idea and its picture (`references/design.md`, "The composition"), and any other party's logo (`references/carousels.md` for a carousel). Say the plan in one `say`, so the user can redirect it before anything is made; never ask them to choose between layouts.
 2. **Copywriter**: the words, from the plan.
-3. **Designer**: the comp. For a single post or a carousel's cover, first the three comps and the choice (`references/design.md`, "Three comps"). Then write the page from its own design with every slot empty: a flat placeholder of each image's size and place, the fields and bands in CSS, the type set, and each slide's composition line in its variant:
+3. **Image maker** (`imager`): each slot's image made for its picture by `references/images.md`'s prompt (the brand's image contract, the character first, the library's sheet for style; a cutout for a character or product, a scene only where the type has its own region: "Compose it, then make it"), at the slot's shape the plan names, saved under `assets/`, and the logos found. A design with no images is one the plan chose and says why, never because the library had pictures.
+4. **Designer**: the page from its own design, with the images in place and each slide's composition line in its variant:
    `metamorfiles_create_page { name: "AI weekly drop", design: "<the index.html>", carousel: true, variants: [{ id: "cover", composition: "Idea: the week's news as one heavy stack. Frame: Dew under a tower of papers, cut by the top edge; the headline on the lower half of plain paper", values: { headline: "…" } }] }`.
-   Render it and judge it as a sequence before any image exists: that is where a generic arrangement shows, and where the user can still redirect at no cost. Say the plan in one `say`.
-4. **Image maker** (`imager`): each slot's image made for its composition by `references/images.md`'s prompt (the brand's image contract, the character first, the library's sheet for style; a cutout for a character or product, a scene only where the type has its own region: "Compose it, then make it"), saved under `assets/`, and the logos found. A design with no images is one the plan chose and says why, never because the library had pictures.
-5. **Designer**: place the images, fit the layout to the copy and the images as they are, and finish the page.
+   Render it, judge it as a sequence, and fit the layout to the copy and the images as they are.
+5. Say what you made in one `say`.
 6. **Final check**, as below.
 
 **A change** to an existing piece:
-0. A note from the user about the look, the images or the composition ("generic", "better composition", "don't stack everything on cards") is a rethink, not a fix: back to the comp (step 3 of a new piece), then the images, then the design, never a change to the CSS of what is there.
+0. A note from the user about the look, the images or the composition ("generic", "better composition", "don't stack everything on cards") is a rethink, not a fix: back to the plan's ideas and pictures (step 1 of a new piece), then the images, then the design, never a change to the CSS of what is there.
 1. **Reviewer** first, `reviewing` the frames in scope: judge, then hand each problem to its owner.
 2. **Copywriter** before the designer when words change, since layout has to fit the final copy.
 3. **Image maker** (`imager`) next when an image changes, for the same reason.

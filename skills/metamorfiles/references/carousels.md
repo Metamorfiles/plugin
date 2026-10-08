@@ -13,16 +13,15 @@ swipe, gives something on every slide and ends with a reason to keep it.
 
 ## Plan it first
 
-Most weak carousels fail in the outline, before any design. Before the comp, write the plan in your
+Most weak carousels fail in the outline, before any design. Before anything is made, write the plan in your
 notes, one line per slide: what the slide gives the reader, its pattern (below), its idea and its
 picture (`design.md`, "The composition") and its image ("new:" with what it shows and its shape, or a
 library file only when it already is that picture: "Compose it, then make it" in `images.md`);
 and any other party's mark or photo it shows, found with `metamorfiles_find_mark { name }` or
 imported with its credit ("Other parties' marks and images" in `images.md`).
 Read it top to bottom: every slide earns its place, the order builds, and no two neighbours share
-figure and ground unless they're a pair on purpose. Then build the comp from the plan (the page from
-its own design, its slots empty, each slide's composition line in its variant), read it as a swipe,
-and only then make the images. A template is made only when the user wants a series to repeat, and
+figure and ground unless they're a pair on purpose. Then make the images for the plan's pictures, build the
+page with them (each slide's composition line in its variant), and read it as a swipe. A template is made only when the user wants a series to repeat, and
 an existing one is reused only when its layouts already serve this plan, and the plan says so.
 
 When the brief asks for something only the user knows and didn't give it (their routine, a result,
