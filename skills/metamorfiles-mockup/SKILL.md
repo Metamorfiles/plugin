@@ -120,11 +120,10 @@ As the photograph a design publication would run, before review:
 
 ### 5. Fix what fails, with the method that can fix it
 
-- **A wrong logo, word or detail** on an otherwise good photograph: an edit of that place only,
-  `metamorfiles_generate_image { prompt, width, height, edit: true, region: { x: 0.3, y: 0.35, width: 0.4, height: 0.3 }, references: ["<mockup>", "brand/logos/logo.svg"], folder: "brand/mockups" }`,
-  the mockup first, `region` the label or the sticker as shares of the photograph, and a prompt that
-  changes only that ("Change only the logo on the label so it matches image 2; keep everything else
-  exactly as it is"). The rest of the photograph stays as it was, pixel for pixel.
+- **A wrong logo, word or detail** on an otherwise good photograph: an edit of it,
+  `metamorfiles_generate_image { prompt: "the logo on the label matches image 2", width, height, edit: true, region: { x: 0.3, y: 0.35, width: 0.4, height: 0.3 }, references: ["<mockup>", "brand/logos/logo.svg"], folder: "brand/mockups" }`,
+  the mockup first and a prompt saying only what changes; `region` (the label or the sticker as
+  shares of the photograph) keeps the model to that place. The rest of the photograph stays as it was.
 - **A weak shot, design or object:** a new take, with the art direction changed where it fell short.
 - Two rounds at most, then a new take from scratch. An edit or a new take is a new file, and the one
   it replaces is kept: in a new brand's step the new one goes first in its option's `files`; anywhere

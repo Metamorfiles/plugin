@@ -97,10 +97,11 @@ gone. A drawing of solid shapes becomes one solid shape with its inner details c
 Mark the route's small mark (the mark, the mascot's head, the monogram, the seal) with `small: true`
 on its entry in the option's `files` in `brand/process/logo.md` (`{ file: <its path>, small: true }`):
 the profile picture and the small sizes use it, so it must be the very mark the logo shows. In a
-route with a generated mark it is that mark's own file. In a logo drawn whole it is drawn from the
-logo once the logo is right, never alongside it: the logo first in `references` with `edit: true`,
-edited to the mark alone and placed for a small square (`references/drawn.md`, "Other versions of
-it"); Studio refuses a small mark drawn on its own. Save every file under `brand/process/logo/`:
+route with a generated mark it is that mark's own file. In a logo drawn whole, one is made from the other,
+never alongside: the mark from the logo once the logo is right (the logo first in `references` with
+`edit: true`, edited to the mark alone and placed for a small square), or the logo from the mark, as
+when the user wants the logo with its icon (`references/drawn.md`, "Other versions of it"); Studio
+refuses a small mark and a logo drawn apart. Save every file under `brand/process/logo/`:
 `folder: "brand/process/logo"` for an image, an `output` there for the other tools.
 
 ### 7. Show them
@@ -117,7 +118,7 @@ Make the chosen route's final files in `brand/logos/` with the same tools and se
 `metamorfiles_compose_logo { layout: "stack", parts: [{ file: "<the traced .svg>" }], output: "brand/logos/logo.svg" }`
 (`metamorfiles_generate_image` never saves into `brand/logos/`). The other colours come from
 `metamorfiles_make_logo_variant { file, output: "brand/logos/logo-reversed.svg", colors: { ... } }`.
-A version of a logo drawn whole that leaves a part out or is laid out another way is drawn again from it, never cut from its paths (`references/drawn.md`). Run `metamorfiles_check_logo` on each. Declare them in
+A version of a logo drawn whole: `references/drawn.md`, "Other versions of it". Run `metamorfiles_check_logo` on each. Declare them in
 DESIGN.md `logos` with their grounds, sources ("set in <face> as outlines with a drawn part", "drawn
 by <model> and traced", "created and approved by the user on <date>") and clear space.
 

@@ -141,6 +141,10 @@ wait for its verdict, naming only the frames that are new or changed:
 | `mockups.md` written, before asking | `process-mockups` | the logo against its file, every word, how each object sits and opens |
 | The finished kit | the whole board | the final check, under Kit |
 
+A change to one option after its frame passed (a route tried again, a seed or a mockup redone, the
+user's change to one option) is reviewed alone: name it as `process-<step>:<option id>`
+(`process-logo:adesivo`), with the file it replaced. The other options keep their pass.
+
 Report it as the reviewer: `metamorfiles_team_update { task, role: "reviewer", status: "reviewing" }`,
 then the same with `status: "done"`; Studio shows the frames being checked as the reviewer renders
 them. The reviewer records its verdict in Studio, and the thread shows what it caught. Fix only the **must fixes**,
