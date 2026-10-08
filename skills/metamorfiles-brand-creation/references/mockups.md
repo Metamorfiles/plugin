@@ -1,6 +1,6 @@
 # The brand in use
 
-Read this for the mockups step, once the kit's DESIGN.md is written. Mockups show the new brand made
+Read this for the mockups, the last part of the kit. Mockups show the new brand made
 real on this business's own objects, so the user can judge the whole system at a glance. They are
 presentation, never the brand's imagery: Studio keeps them in their own folder and refuses them in
 templates.
@@ -23,13 +23,12 @@ pattern of the range is broken, when it is, by another object of the range for a
 says (a sachet among the bottles, a lid among the tins), never by the same unit turned. Never a stock
 set (a business card, a tote and a phone), and never an object this business doesn't use.
 
-## The step
+## Make them
 
-Make them with `metamorfiles-mockup`, saved with `folder: "brand/process/mockups"`, and write
-`brand/process/mockups.md`, one option per shot: its `title`, its `composition` (the idea and the
-picture in one line, which the board shows under it) and its `files`, the takes newest first. A fix
-or a new take goes first in its option's `files` and the earlier one stays after it: the user can
-swap them on the board. Get the review of the `process-mockups` frame, then ask with
-`metamorfiles_ask_user { task, step: "mockups" }`. Studio copies each kept shot's current take into
-`brand/mockups/`, named for its option; then list the folder in DESIGN.md `assets` as
-`{ folder: mockups, kind: in-use, title: In use }`.
+Last, once the kit is written, with `metamorfiles-mockup`, into the brand's in-use folder
+(`folder: "brand/mockups"`); once the first is saved there, list the folder in DESIGN.md `assets` as
+`{ folder: mockups, kind: in-use, title: In use }`. They are one board, like the logos and the
+images, and nothing is asked: say which three you made in one `say`. The user can redo one from its
+board, or pick one of its earlier takes back; a mockup made again or fixed takes the old one's place
+(`replaces`, which an edit of a mockup does by itself), and the old one stays an earlier take. Get the
+review of the board (`mockups`) before the final check.

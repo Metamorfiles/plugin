@@ -83,8 +83,7 @@ prompt carries:
 All the shots together, each
 `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "templates/brand-board#board"], folder: "brand/mockups", name: "tin-on-leaves", wait: false }`:
 `width` and `height` the shot's shape (1600 × 2000 for 4:5, 2000 × 1600 for 5:4), `folder` the
-brand's in-use folder (DESIGN.md `assets`, kind `in-use`), or `brand/process/mockups` while a new
-brand is made (`references/mockups.md` of `metamorfiles-brand-creation`). Collect each with
+brand's in-use folder (DESIGN.md `assets`, kind `in-use`). Collect each with
 `metamorfiles_image_status { id }`. The references are project paths, in this order, and the prompt
 says what each one is:
 
@@ -125,16 +124,14 @@ As the photograph a design publication would run, before review:
   the mockup first and a prompt saying only what changes; `region` (the label or the sticker as
   shares of the photograph) keeps the model to that place. The rest of the photograph stays as it was.
 - **A weak shot, design or object:** a new take, with the art direction changed where it fell short.
-- Two rounds at most, then a new take from scratch. An edit or a new take is a new file, and the one
-  it replaces is kept: in a new brand's step the new one goes first in its option's `files`; anywhere
-  else, remove the old one with `metamorfiles_write_file { path: "<mockup>", remove: true }` (Studio
-  keeps it) and say in the thread it can come back in a word.
+- Two rounds at most, then a new take from scratch. A fix or a new take takes the mockup's place:
+  an edit of a mockup does so by itself, and a new take is made with `replaces: "<the mockup>"`.
+  The one it replaces stays on the board as an earlier take the user can pick back.
 - Fix a finished mockup only for a must fix; a suggestion is the user's to weigh when they see it.
 
 ### 6. Review
 
-Get the review (`metamorfiles-review`) of the mockups' frame of the brand board: `process-mockups`
-while a new brand is made, else each mockup's own, `mockup-<file name without extension>`
-(`mockup-tin-on-leaves-3f2a9c1d`), and fix what it sends back as above. The user sees them last and asks for any change in their own words.
+Get the review (`metamorfiles-review`) of the mockups' board, the brand board's frame named for their
+folder (`mockups`), and fix what it sends back as above. The user sees them last and asks for any change in their own words.
 
 What strong and weak mockups look like is in [references/taste.md](references/taste.md).
