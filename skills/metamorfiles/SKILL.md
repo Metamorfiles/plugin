@@ -42,6 +42,13 @@ Keep the text sparse, the way a board is: a name, a line, a few labels. Dense ex
 
 Write and change every project file with `metamorfiles_write_file`, never with a shell command, a script or another editor. It checks what you wrote and returns the findings, records the version in the history with your `note` (say why: "Review fixes: shorter headline"), and refuses a copy that is older than what is on disk, so you never overwrite the user's panel edits. A shell edit skips all three, and outside auto mode it makes the user approve every change. Write the whole file: read it with `metamorfiles_read_file { path }`, change what you need, write it back with `metamorfiles_write_file { path, content, note }`. The one exception is bringing the brand's own files in unchanged from the user's folders: images with `metamorfiles_import_image { path: "<absolute path>", folder: "brand/refs" }`, a Google font with `metamorfiles_add_font { family: "Fraunces" }`, and logos and other files (a font file the user has, a source to translate from) with a plain file copy, the one shell command allowed.
 
+**Change the least that answers the request.** A value or a composed part (a word, a colour, a size,
+a place, one part of a composed logo) changes in its file or in the logo's saved settings (`from`),
+with no image made. A change to an image or a drawing (one part swapped, a detail fixed) is an edit
+of it, `edit: true` with the image first in `references`, saying only what changes: Studio asks the
+model to keep the rest and keeps every part the edit didn't change exactly as it was. Only a new idea
+or a weak result is made again.
+
 ## Workflows
 
 | The user wants                                                         | Use                        |

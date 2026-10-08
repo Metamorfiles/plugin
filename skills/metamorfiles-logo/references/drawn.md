@@ -53,12 +53,11 @@ drawing holds the direction best; then compose the supporting words around it an
 
 ## Other versions of it
 
-A logo drawn whole is one traced drawing whose parts overlap and share outlines, so a version with a
-part left out (the name alone, the mark alone) or laid out another way (one line, stacked) can't be
-cut from its paths. Draw it again from the chosen logo: the drawing it was traced from (`drawing` in
-the record `<file>.svg.json` beside it, read with `metamorfiles_read_file`) or the traced file first
-in `references`, with `edit: true` ("Edit image 1: the same lettering, letter for letter and shape
-for shape, without the character; close the outline where the character covered it"). Save it with
-the same `folder` and `trace` colours, at the new version's shape, read every letter against the
-original, and check it like the original. Recolourings stay `metamorfiles_make_logo_variant`.
+A logo drawn whole is one traced drawing whose parts overlap and share outlines, so a version is an
+edit of it, never cut from its paths: the traced file first in `references`, `edit: true`, the same
+`folder` and `trace` colours, saying only what changes. A part swapped or left out keeps the logo's
+shape, and Studio keeps every letter the edit didn't touch exactly as it was:
+`metamorfiles_generate_image { prompt: "Replace the full-body character under the lettering with the bust in image 2, at the same place and scale", references: ["brand/process/logo/<file>.svg", "<the bust .svg>"], edit: true, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
+A version laid out another way (one line, stacked) is drawn at the new shape; read every letter
+against the original and check it like the original. Recolourings stay `metamorfiles_make_logo_variant`.
 
