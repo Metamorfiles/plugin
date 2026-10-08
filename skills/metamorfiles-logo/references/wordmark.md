@@ -40,21 +40,11 @@ features and the alternates it has for these letters. Its controls:
 - **Alternates and features**: the face's own alternate glyphs (`{ "S": "S.alt" }`) and OpenType
   features (`ss01`, `dlig`, `liga`, a swash set).
 - **`thicken`**, in em: heavier strokes for a face a little too light.
-- **`moves`**: single letters turned or lifted, for a hand-set word:
-  `moves: [{ at: 2, rotate: -4 }]`, `at` counting every character from 1, spaces included. A turn
-  pivots on the letter's foot, so it stays on the line; `dy` lifts it off, and the result names
-  every letter that sits off its line. Each move is part of the composition and says why (the letter
-  that leans into the mark, a joyful word that bounces as a whole); a lone letter off the line reads
-  as a mistake, and every letter moved in an up-down pattern reads as jitter. A face whose own shapes
-  bounce carries the movement better. Judge it at 64 px as well as large.
-- **`curve`**: the word on a line other than straight. `letters: "bend"` draws every outline through
-  the curve, as an envelope warps type: stems bend and strokes stretch, which suits chunky retro and
-  sign lettering and looks cheap on a high-contrast serif. `letters: "turn"` keeps each letter whole,
-  standing on the curve, as type is set on a path: seals, scripts, a name arched over a character.
-  `letters: "upright"` keeps them whole and upright, stepping along it.
-  `curve: { kind: "arc", amount: 0.3, letters: "turn" }` arches the name; `kind` is also `arch`,
-  `bulge`, `wave`, `rise` or `envelope` (with `top` and `bottom` heights). The file records the curve
-  as its baseline, and a lockup lines up to it.
+- **`moves`**: one letter turned or lifted, when the composition has a reason for it (the letter
+  that leans into the mark): `moves: [{ at: 2, rotate: -4 }]`, `at` counting every character from 1,
+  spaces included. A turn pivots on the letter's foot, so it stays on the line; `dy` lifts it off, and
+  the result names every letter off its line. A name that bounces, arches or waves is lettering, drawn
+  whole (`drawn.md`), never real type bent or jiggled: bent type reads as WordArt.
 - **`part`**: a drawn shape in a letter's place or its accent's, spaced by its own shape
   (`symbol.md`).
 
@@ -72,7 +62,8 @@ Objects merge key by key, so one kerning pair changes and the others stay.
 
 A tagline, the trade, the place, the words around a seal: real type, set as text parts of
 `metamorfiles_compose_logo`, flat, with the same controls beside the part's own (`size`, `gap`,
-`shift`): `{ text: "SINCE 2024", font: "brand/fonts/Inter.woff2", color: "#3b2e27", tracking: 0.12, size: 0.3 }`.
+`shift`), and `curve` to set them on an arc, each letter whole (a line under an arched drawing, a
+seal's line): `{ text: "SINCE 2024", font: "brand/fonts/Inter.woff2", color: "#3b2e27", tracking: 0.12, size: 0.3 }`.
 Where they sit and how large is a design decision for this logo; look at the lockup large and small
 to judge it.
 

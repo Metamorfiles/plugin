@@ -2,13 +2,14 @@
 
 A route is often more than one file: a name, a mark or a mascot, a supporting line.
 `metamorfiles_compose_logo` puts them together as one SVG, each part nested untouched, and every text
-part set from a real font. It builds the route's composition (SKILL.md, step 3), so decide that
-first: what leads, and how the parts meet.
+part set from a real font: a mark beside the name, the supporting words, a seal. A mark or mascot
+that meets the letters (lying on them, tucked under an arch) is drawn onto the set word by the image
+model instead (`symbol.md`, "Compose it on the word"). Decide the route's composition first
+(SKILL.md, step 3): what leads, and how the parts meet.
 
-`metamorfiles_compose_logo { layout: "row", align: "baseline", parts: [{ file: "<the mark .svg>", size: 1.3, gap: -0.08, behind: true }, { file: "<the wordmark .svg>", knockout: { color: "#f3f1ea" } }], output: "brand/process/logo/lockup.svg" }`
-sets a mark standing on the word's baseline, a little taller than the word, tucked behind its first
-letter with a gap of the ground's colour cut around the letters. A logo drawn whole (route 1) is one
-part, with its supporting words composed around it.
+`metamorfiles_compose_logo { layout: "row", align: "baseline", parts: [{ file: "<the mark .svg>", size: 1.3, gap: 0.12 }, { file: "<the wordmark .svg>" }], output: "brand/process/logo/lockup.svg" }`
+sets a mark standing on the word's baseline, a little taller than the word. A logo drawn whole
+(route 1) is one part, with its supporting words composed around it.
 
 ## Layouts
 

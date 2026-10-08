@@ -32,16 +32,20 @@ Only the drawing: no letters, words or numbers, no frame, no shadow, no gradient
   The path it returns is the traced .svg.
 - Follow the image model's own file of the `metamorfiles` skill (`references/images.md` names it).
 
-## Fit it to the word
+## Compose it on the word
 
-The mark kept is drawn once more for the word it goes with, so the two look made by one hand: the
-kept mark as image 1, the set word as image 2,
-`metamorfiles_generate_image { prompt, references: ["<the kept mark .svg>", "<the wordmark .svg>"], edit: true, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`,
-with a prompt like "Edit image 1: keep this mark's idea and shapes exactly; make its lines as thick
-as the letters' strokes in image 2, and its corners and ends shaped like theirs. Image 2 is only a
-reference for stroke and corners: draw no letters." Compose it with the word (`lockups.md`) and
-compare the stroke weights `metamorfiles_check_logo` gives for each part. A mascot is fitted the same
-way, its character unchanged.
+A mark or mascot that goes with the name is drawn onto the set word, so they meet as one drawing:
+lying on its letters, an arm over a stem, under an arch of the word. Image 1 is the wordmark, image 2
+the kept mark:
+`metamorfiles_generate_image { prompt, references: ["<the wordmark .svg>", "<the kept mark .svg>"], edit: true, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
+The prompt keeps the letters and places the mark by the route's composition: "Edit image 1: keep
+every letter exactly as it is, the same shapes, size and place. Add <the mark> from image 2, <where
+and how it meets the letters>, drawn as image 2 draws it, its lines as heavy as the letters'
+strokes." Then compare the letters with the font:
+`metamorfiles_check_logo { file: "<the lockup .svg>", word: "<the wordmark .svg>" }` finds the word
+in the drawing, says how much of its letters were kept, and outlines the font's letters in red on
+it. A letter the model redrew is drawn again, never kept. The route's files are this lockup, the
+wordmark alone and the mark alone.
 
 ## A drawn letter
 
