@@ -25,12 +25,14 @@ photograph is checked against the logo file before anyone sees it.
 
 ### 1. The shots
 
-Pick one idea per photograph, each a different idea and a different part of the system, from what
-the brand really makes (its brief, its touchpoints). Never a plain product standing on a plain floor:
+One idea per photograph, each a different idea and a different part of the system, from the brand's
+own world: what it really makes (its brief, its touchpoints) and the moments and places it lives in.
+The kinds of shot below are cameras and sets to build an idea with, never the idea itself. Never a
+plain product standing on a plain floor:
 
 | Shot | What it is |
 |---|---|
-| **The range as a pattern** | many units tiled edge to edge or on a diagonal, cropped by the frame, top-down or straight on, each variant in its own colour; one unit breaks the pattern: standing up, opened, showing what's inside |
+| **The range as a pattern** | many units tiled edge to edge or on a diagonal, cropped by the frame, top-down or straight on, each variant in its own colour |
 | **A playful stack** | packs and lids piled at angles, the lids' tops showing |
 | **On its own ingredient** | the pack lying on a deep bed of what's inside it, seen from above |
 | **In use** | a cropped hand pouring, opening, holding, carrying an armful; clothing and set in the brand's colours |
@@ -45,6 +47,9 @@ For each, decide in your notes:
 - **The light:** hard sun or window light with crisp shadows, or one dramatic studio light (a
   backlight, a single colour-gradient ground). Never flat, even light.
 - **The people:** cropped hands, arms and sleeves; a face only when the shot is about a person.
+- **The idea:** one line, the shot's composition: what it shows, from where, what leads. Anything
+  that breaks a pattern is another object of the range, there for a reason the line says, lit and
+  shadowed like the rest.
 - **The physics:** how this object really sits, opens and holds its contents: a lid off rests beside
   its container or tilts on it, an opened pack shows its real contents inside, a tin lying down shows
   its side and its rim the right way round, a pouch stands on its gusset, nothing floats unless the
@@ -60,6 +65,10 @@ prompt carries:
 - **The logo from the logo file, big and confident,** where this object carries it.
 - **A hierarchy that reads from a shelf:** the brand, then what the product is, then a seal or one
   descriptor. A logo alone on a flat field of colour is not packaging design.
+- **The label designed flat first,** for the hero object: its wrap or label as a page at its own size
+  (`metamorfiles-template` sizes it in mm), with the real logo file, the brand's pattern or imagery,
+  the hierarchy and a colour per variant, exported and passed to the photograph as a reference to
+  wrap: the label gets real design and the logo arrives as its file.
 - **The material and finish,** named: uncoated paper, paper tube, kraft, matte laminate, ceramic,
   brushed aluminium, foil, emboss. Textured and matte reads as made; glossy and smooth reads as
   rendered.
@@ -74,13 +83,15 @@ prompt carries:
 All the shots together, each
 `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "templates/brand-board#board"], folder: "brand/mockups", name: "tin-on-leaves", wait: false }`:
 `width` and `height` the shot's shape (1600 × 2000 for 4:5, 2000 × 1600 for 5:4), `folder` the
-brand's in-use folder (DESIGN.md `assets`, kind `in-use`). Collect each with
+brand's in-use folder (DESIGN.md `assets`, kind `in-use`), or `brand/process/mockups` while a new
+brand is made (`references/mockups.md` of `metamorfiles-brand-creation`). Collect each with
 `metamorfiles_image_status { id }`. The references are project paths, in this order, and the prompt
 says what each one is:
 
 1. **The logo file** DESIGN.md `logos` names, such as `brand/logos/logo.svg`: "image 1 is the logo".
 2. **The brand board,** `templates/brand-board#board`: "image 2 is the brand system".
-3. **The character's anchor and the library's sheet,** when the brand's character or imagery appears
+3. **The label artwork,** when it was designed flat: "wrap image 3 around the <object> as its label".
+4. **The character's anchor and the library's sheet,** when the brand's character or imagery appears
    on the object: the anchor "keep its identity, anatomy and colours exactly", the sheet (its folder's
    frame on the brand board, `templates/brand-board#<folder>`) "only its style, never its subjects".
    The character's sheet from `brand/imagery-guide.md` goes into the prompt whole, as `images.md` of
@@ -109,21 +120,22 @@ As the photograph a design publication would run, before review:
 
 ### 5. Fix what fails, with the method that can fix it
 
-- **A wrong logo, word or detail** on an otherwise good photograph: an edit of it,
-  `metamorfiles_generate_image { prompt, width, height, edit: true, references: ["<mockup>", "brand/logos/logo.svg"], folder: "brand/mockups" }`,
-  the mockup first, at its own size, and a prompt that changes only that ("Change only the lid so it
-  lies flat beside the tin, open side up; keep everything else exactly as it is").
+- **A wrong logo, word or detail** on an otherwise good photograph: an edit of that place only,
+  `metamorfiles_generate_image { prompt, width, height, edit: true, region: { x: 0.3, y: 0.35, width: 0.4, height: 0.3 }, references: ["<mockup>", "brand/logos/logo.svg"], folder: "brand/mockups" }`,
+  the mockup first, `region` the label or the sticker as shares of the photograph, and a prompt that
+  changes only that ("Change only the logo on the label so it matches image 2; keep everything else
+  exactly as it is"). The rest of the photograph stays as it was, pixel for pixel.
 - **A weak shot, design or object:** a new take, with the art direction changed where it fell short.
-- Two rounds at most, then a new take from scratch. An edit or a new take is a new file: remove the
-  one it replaces with `metamorfiles_write_file { path: "<mockup>", remove: true }` (Studio keeps it),
-  and say in the thread that the earlier version is kept, so the user can have it back in a word.
-- An edit redraws the whole photograph and can lose what made it good, so edit a finished mockup only
-  for a must fix; a suggestion is the user's to weigh when they see it.
+- Two rounds at most, then a new take from scratch. An edit or a new take is a new file, and the one
+  it replaces is kept: in a new brand's step the new one goes first in its option's `files`; anywhere
+  else, remove the old one with `metamorfiles_write_file { path: "<mockup>", remove: true }` (Studio
+  keeps it) and say in the thread it can come back in a word.
+- Fix a finished mockup only for a must fix; a suggestion is the user's to weigh when they see it.
 
 ### 6. Review
 
-Get the review (`metamorfiles-review`) of each mockup's frame of the brand board,
-`mockup-<file name without extension>` (`mockup-tin-on-leaves-3f2a9c1d`), and fix what it
-sends back as above. The user sees them last and asks for any change in their own words.
+Get the review (`metamorfiles-review`) of the mockups' frame of the brand board: `process-mockups`
+while a new brand is made, else each mockup's own, `mockup-<file name without extension>`
+(`mockup-tin-on-leaves-3f2a9c1d`), and fix what it sends back as above. The user sees them last and asks for any change in their own words.
 
 What strong and weak mockups look like is in [references/taste.md](references/taste.md).

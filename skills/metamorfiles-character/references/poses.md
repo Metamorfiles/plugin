@@ -16,7 +16,7 @@ into every prompt for this character, with no rewording. A synonym is a differen
 ## A new pose
 
 A new drawing of the character, with the sheet attached first in `references`:
-`metamorfiles_generate_image { prompt, references: ["<the character sheet>"], width: 1024, height: 1024, folder: "brand/<the character's folder>", name: "02-wave", trace: { colors: [...] } }`.
+`metamorfiles_generate_image { prompt, references: ["<the character sheet>"], width: 1024, height: 1024, folder: "brand/<the character's folder>", name: "02-stirring", trace: { colors: [...] } }`.
 
 ```
 Image 1 is the reference sheet of the character from every side: draw exactly one of it, in a new
@@ -66,5 +66,5 @@ exactly" line. The user should never be the one to find it.
 ## Files
 
 In the character's folder, numbered in the order the board shows them, by `name`: `00-sheet`,
-`01-front` (the anchor), `02-wave`; Studio adds a short id to each. The sheet and the anchor are
+`01-front` (the anchor), `02-stirring`; Studio adds a short id to each. The sheet and the anchor are
 listed, in that order, by their full file names in the folder's `anchors`.

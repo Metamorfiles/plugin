@@ -21,16 +21,27 @@ presentation board, so describe the drawing itself:
 ```
 Draw a flat graphic drawing on a transparent background, centred with space around it.
 Subject: <the drawing, described concretely>.
-Style: <from the chosen direction>, like a clean vector drawing, drawn in the same hand and weight as the lettering in image 1.
+Style: <from the chosen direction>, like a clean vector drawing.
 Colours: <each hex and what it paints>, flat, nothing else.
 Only the drawing: no letters, words or numbers, no frame, no shadow, no gradient or texture.
 ```
 
-- Pass the name's wordmark SVG as image 1 so the weight matches. Draw only the mark.
+- Explore it alone, without the word: a model shown letters draws letters into the mark.
 - List every colour it uses in `trace`, the light ones inside it too:
-  `metamorfiles_generate_image { prompt, references: ["<the wordmark .svg>"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
+  `metamorfiles_generate_image { prompt, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
   The path it returns is the traced .svg.
 - Follow the image model's own file of the `metamorfiles` skill (`references/images.md` names it).
+
+## Fit it to the word
+
+The mark kept is drawn once more for the word it goes with, so the two look made by one hand: the
+kept mark as image 1, the set word as image 2,
+`metamorfiles_generate_image { prompt, references: ["<the kept mark .svg>", "<the wordmark .svg>"], edit: true, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`,
+with a prompt like "Edit image 1: keep this mark's idea and shapes exactly; make its lines as thick
+as the letters' strokes in image 2, and its corners and ends shaped like theirs. Image 2 is only a
+reference for stroke and corners: draw no letters." Compose it with the word (`lockups.md`) and
+compare the stroke weights `metamorfiles_check_logo` gives for each part. A mascot is fitted the same
+way, its character unchanged.
 
 ## A drawn letter
 

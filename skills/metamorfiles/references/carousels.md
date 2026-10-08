@@ -14,11 +14,9 @@ swipe, gives something on every slide and ends with a reason to keep it.
 ## Plan it first
 
 Most weak carousels fail in the outline, before any design. Before the comp, write the plan in your
-notes, one line per slide: what the slide gives the reader, its pattern (below), its composition as a
-picture (the hero, what is figure and what is ground, the image's role, where the type sits:
-`design.md`, "The composition") and its image: composed for this slide's slot and made by `images.md`'s
-prompt, the brand's contract and the library's sheet ("new:" with what it shows and its shape), a
-library file only when it already is that composition ("Compose it, then make it" in `images.md`);
+notes, one line per slide: what the slide gives the reader, its pattern (below), its idea and its
+picture (`design.md`, "The composition") and its image ("new:" with what it shows and its shape, or a
+library file only when it already is that picture: "Compose it, then make it" in `images.md`);
 and any other party's mark or photo it shows, found with `metamorfiles_find_mark { name }` or
 imported with its credit ("Other parties' marks and images" in `images.md`).
 Read it top to bottom: every slide earns its place, the order builds, and no two neighbours share
@@ -69,11 +67,10 @@ One system, many arrangements. Readers feel the relationship between slides more
 
 - **Fixed:** the type families and scale, the palette, the margins and grid, and one running cue
   (a counter, a corner mark, an edge that carries on). These make it one post.
-- **Varied:** the arrangement, by the slide's job: each slide its own composition over the shared
-  system (its CSS by `data-variant`), or, in a series, two or three body layouts alternated by a
-  `layout` enum. The big statement, the item with its example, the pair, the figure, the full-bleed
-  image, the cutout that runs off the frame. Change scale or surface every slide or two: type that
-  fills the frame, then a quiet slide; the brand's ground, then its strongest colour.
+- **Varied:** each slide its own idea and picture over the shared system (its CSS by
+  `data-variant`), or, in a series, two or three body layouts alternated by a `layout` enum. Change
+  what is big, the crop and the surface every slide or two: type that fills the frame, then a quiet
+  slide; the brand's ground, then its strongest colour.
 - **One surprise** past the middle, a slide that breaks the pattern, keeps people to the end.
 - **The cover** is the boldest slide and reads at thumbnail size: one large claim, high contrast,
   the brand present but small.

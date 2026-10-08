@@ -7,7 +7,7 @@ real type, shapes and drawn marks.
 
 A `badge` composition, its layers centred on one circle: `ring` and `disc` shapes, text parts set
 `around: true`, and whatever sits in the middle (a mark, a monogram, the name):
-`metamorfiles_compose_logo { layout: "badge", parts: [{ shape: "ring", color: "#3b2e27", size: 1 }, { text: "HEARTH BAKERY · EST 2024 ·", font: "brand/fonts/Fraunces.woff2", color: "#3b2e27", around: true, size: 0.94 }, { shape: "ring", color: "#3b2e27", size: 0.7 }, { file: "<the mark .svg>", size: 0.4 }], output: "brand/process/logo/seal.svg" }`.
+`metamorfiles_compose_logo { layout: "badge", parts: [{ shape: "ring", color: "#3b2e27", size: 1 }, { text: "HEARTH BAKERY · WOOD FIRED ·", font: "brand/fonts/Fraunces.woff2", color: "#3b2e27", around: true, size: 0.94 }, { shape: "ring", color: "#3b2e27", size: 0.7 }, { file: "<the mark .svg>", size: 0.4 }], output: "brand/process/logo/seal.svg" }`.
 Sizes are shares of the badge's width. What goes in it, and how much, is the design's decision.
 
 Text around the circle reads from the top, its first phrase centred there. Between a ring outside it

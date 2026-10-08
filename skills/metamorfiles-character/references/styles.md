@@ -59,8 +59,10 @@ Only the character: no letters, words or numbers, no ground line or shadow, no f
   the Look and the Palette are the same in all three, and so is what it is and its build.
 - A reference goes in only when it shows a figure drawn in the chosen look ("Image 1 is a style
   reference: take its drawing hand and line weight; never copy its character, pose or layout").
-  Never the wordmark: the first image is the one the model keeps most, and a typeface isn't a
-  drawing hand. With no such reference, the Look paragraph carries the hand alone.
+  Never the wordmark while the character is explored: the first image is the one the model keeps
+  most, and a typeface isn't a drawing hand. With no such reference, the Look paragraph carries the
+  hand alone. Once kept for a logo, it is fitted to the set word (`references/symbol.md` of
+  `metamorfiles-logo`, "Fit it to the word").
 - Draw it at `width: 1024, height: 1024` with `trace: { colors: [...] }` listing the style's trace
   colours, and the `folder` it belongs in (the call: step 3 of the skill). A model that can't draw
   on a transparent background (its own file says so) gets "on a plain flat field of <the paper's
