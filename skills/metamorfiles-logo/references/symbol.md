@@ -56,11 +56,12 @@ its file under `brand/process/` or `brand/logos/`. Studio sizes it to the letter
 by its own shape; adjust with the part's `scale`, `dx` and `dy`. It still reads as that letter in
 the word.
 
-## Draw several, keep one
+## Draw several, keep the good ones
 
 Draw two or three versions together, each from its own prompt with a different take on the idea
 (another shape it's built from, another detail it keeps), each with `wait: false`, then collect each
 with `metamorfiles_image_status { id }`: one prompt drawn three times gives three copies. A mascot's
-candidates are three briefs (`metamorfiles-character`, step 3). Keep the one that holds the idea and passes
-`metamorfiles_check_logo`; the others stay in the folder. When all miss, change the description and
+candidates are three briefs (`metamorfiles-character`, step 3). Keep the one that holds the idea best and passes
+`metamorfiles_check_logo`; another that holds it as well, another way, is its own option
+(`SKILL.md`, step 7), and the rest stay in the folder. When all miss, change the description and
 draw again, never describing the failed drawing.
