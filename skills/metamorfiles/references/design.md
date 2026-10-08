@@ -39,7 +39,7 @@ After each change, render the frames you changed and look at them the way a read
 
 ## The composition
 
-Every frame is decided as an idea, then as a picture, before any image or CSS exists.
+Every frame is decided as an idea, then as a picture, in your notes, before any image or CSS exists.
 
 **The idea.** One visual idea per frame, from what this frame says and the brand's own world (its
 objects, place, name, people, character), named in a phrase: "the parcel too big to carry" for a post
@@ -66,14 +66,11 @@ card with new words. Ideas come in kinds, and three ideas of one kind are one id
   figure and ground changing with what each frame does.
 The brand's direction and the brief choose among them; none is a default.
 
-**Three comps.** For a single post or a carousel's cover, build three comps, each a different kind of
-idea, as one page from its own design with three variants (`comp-a`, `comp-b`, `comp-c`), each laid
-out by its own rules (`html[data-variant="comp-b"] …`), its type set and every image an empty
-placeholder of its size and place, and each variant's `composition` line saying the idea and the
-picture ("Idea: the parcel too big to carry. Frame: Dew hugging a parcel twice its size, cut by the
-right edge; the headline across the top third of plain paper"). Render them and judge them side by side
-at phone size. In Chat, ask which one with `metamorfiles_ask_user`; in Auto, choose and say why in one
-line. The body slides of a carousel follow the chosen comp's system (`references/carousels.md`).
+**Choose the idea yourself.** Weigh two or three ideas of different kinds in your notes and keep the
+strongest for this frame, this brand and what it says. The user sees finished work, never a wireframe
+or a choice between empty layouts; a note from them about the look is a rethink of the idea. In a
+carousel the slides share one system: the grid and type roles stay, and what is big, the crop and
+figure and ground change with each slide's idea.
 
 **The composition decides the image.** The image is made for its slot, and its prompt's Scene is the
 composition line's picture, word for word: where the subject is, its scale, its crop, which way it
