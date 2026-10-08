@@ -54,7 +54,7 @@ idea comes from a different source: one from the name (its sound, its letters, a
 join), one from the product (what it is, how it's made, what it's used for), one from the place, the
 people or the feeling it promises. The composition says how the logo is built: what leads, how big
 the other parts are against the word's cap height, whether they share its baseline, overlap it, tuck
-into a letter or stand apart, and the word's own line (straight, on an arc, bent, bouncing). Read
+into a letter or stand apart. A name that arches or bounces is drawn whole (route 1). Read
 the three together against `references/taste.md`, "Defaults to recognise": three ideas in one
 arrangement (a mark centred above the word, three times) are one answer. Each line goes on its
 route's option as `composition` in `brand/process/logo.md`, and the card shows it.
@@ -68,13 +68,15 @@ composition move (`references/taste.md`), so the user chooses between ideas.
    lettering with a mark, a mascot or ornaments, all in one style, with proper spacing between its
    parts. Studio traces it; supporting words are set in real type around it: `references/drawn.md`.
 2. **Real fonts with a generated part.** The name set from real fonts with its kerning, ligatures and
-   spacing, composed with a generated mark, a mascot or a drawn letter in a letter's place. The word
-   comes first; the mark is drawn alone, then fitted to the set word's stroke and corners
-   (`references/symbol.md`, "Fit it to the word") and composed with it by the route's composition:
-   `references/wordmark.md`, `references/lockups.md`. A mascot is designed with the
-   `metamorfiles-character` skill.
-3. **Type alone.** The name in its face with kerning, ligatures, alternates, a bounce and the face's
-   own features, in a simple composition, or a seal or monogram when the brand needs one:
+   spacing, with a generated mark, a mascot or a drawn letter in a letter's place. The word comes
+   first. A drawn letter is set into it (`references/symbol.md`, "A drawn letter"); a mark or mascot
+   is drawn alone, kept, then drawn by the image model onto the set word as the route's composition
+   says (`references/symbol.md`, "Compose it on the word"), so the two meet in one hand. The route
+   keeps the name alone, the real wordmark file, beside the lockup and the mark: `references/wordmark.md`.
+   A mascot is designed with the `metamorfiles-character` skill.
+3. **Type alone.** The name set straight in its face with kerning, ligatures, alternates and the
+   face's own features, at most one letter moved for a reason, in a simple composition, or a seal or
+   monogram when the brand needs one:
    `references/wordmark.md`, `references/seal.md`.
 
 ### 5. Check, fix, check again
