@@ -35,7 +35,7 @@ Copy it into your notes and tick each step as you go:
 | Step | You prepare | Speaks as | Read | The user |
 |---|---|---|---|---|
 | 1. Direction | two or three directions, each its references, palette in proportion and type pairing, set in the brand's words | `designer` | `references/research.md`, `references/look.md`, `references/fonts.md` | chooses one, or says what to change or mix |
-| 2. Logo | three routes from the chosen direction: drawn whole by AI, real fonts with a generated part, type alone; each in colour, reversed and in one colour | `designer` | the `metamorfiles-logo` skill; `metamorfiles-character` for a mascot | chooses one, or asks for another |
+| 2. Logo | three routes or more from the chosen direction: drawn whole by AI, real fonts with a generated part, type alone; each in colour, reversed and in one colour | `designer` | the `metamorfiles-logo` skill; `metamorfiles-character` for a mascot | chooses one, or asks for another |
 | 3. Imagery | the style in words and four seed images | `imager` | `references/imagery.md` | uses them, or has single ones redone |
 | Kit | DESIGN.md and the brand board: the guide and the images | `designer`, `copywriter` for the voice | `metamorfiles-brand` | asks for any change they want |
 | Mockups, last | three shots of the brand on its own objects, on their own board | `designer`, `imager` for the photographs | `references/mockups.md`, `metamorfiles-mockup` | redoes one, or picks an earlier take back |
@@ -196,7 +196,8 @@ Each option can carry:
   static family has one per weight, such as `brand/fonts/Anton-400.woff2`);
 - `sample`: at most 120 characters, the words the fonts are set in, from the brand's own voice.
 
-Up to four options: two or three directions, three logo routes, one per seed on the imagery step.
+Up to six options: two or three directions; every logo route and every other candidate as good, at
+least three; one per seed on the imagery step.
 Each `title` is at most 60 characters, what the user will call it, and each `line` at most 200, one
 sentence on why it fits the brief; the board marks the recommended one itself, so the line never
 says so. On the direction and logo steps one option is `recommended: true`; the imagery step asks

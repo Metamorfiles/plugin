@@ -47,8 +47,9 @@ Studio has it drawn on a transparent background and traces each colour in the br
 
 Read every word letter by letter, accents included, and see that the words stand apart; draw it
 again when one differs. Draw two or three together (each with `wait: false`, then
-`metamorfiles_image_status { id }` for each) and keep the one whose letters are right and whose
-drawing holds the direction best; then compose the supporting words around it and run
+`metamorfiles_image_status { id }` for each) and keep each whose letters are right and whose
+drawing holds the direction: the best is the route, and another as good, another way, is its own
+option (`SKILL.md`, step 7). Compose the supporting words around each and run
 `metamorfiles_check_logo`.
 
 ## Other versions of it

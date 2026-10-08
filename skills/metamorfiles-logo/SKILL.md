@@ -8,7 +8,7 @@ license: MIT
 
 The logo is made from what the brand's earlier steps decided. In a new brand, the brief and the
 chosen direction already hold the look: its references, palette, type pairing and voice. The logo
-interprets that direction in three routes, and the user chooses.
+interprets that direction in at least three routes, and the user chooses.
 
 ## Checklist
 
@@ -22,7 +22,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 5. Every route checked with metamorfiles_check_logo, fixed, checked again
 - [ ] 6. Each route's files: colour, reversed, one colour, small mark
 - [ ] 7. Routes shown and one recommended
-- [ ] 8. After the choice: the final files in brand/logos/
+- [ ] 8. After the choice: its traced files cleaned, the final files in brand/logos/
 ```
 
 ### 1. What the brand already decided
@@ -105,16 +105,31 @@ refuses a small mark and a logo drawn apart. Save every file under `brand/proces
 
 ### 7. Show them
 
-In a new brand, write the routes as the options of `brand/process/logo.md` and ask as the
-`metamorfiles-brand-creation` skill says: Studio draws each route large, in use and at the small
-sizes on the brand board. Outside it, show the check sheets and say in a line what each route is and
-why, the recommended one first.
+Show every route, and every other candidate as good as one: a second drawing with every letter
+right that holds the direction another way, a second mark that holds the idea. Each is its own
+option, checked and given its files like a route (steps 5 and 6), up to six in all, so nothing worth
+choosing stays in your notes.
+
+In a new brand, write them as the options of `brand/process/logo.md`, one `recommended: true`, and
+ask as the `metamorfiles-brand-creation` skill says: Studio draws each large, in use and at the small
+sizes on the brand board. Outside it, show the check sheets and say in a line what each is and why,
+the recommended one first.
 
 ### 8. After the choice
 
-Make the chosen route's final files in `brand/logos/` with the same tools and settings, each with an
-`output` there. A traced drawing reaches it as one part:
-`metamorfiles_compose_logo { layout: "stack", parts: [{ file: "<the traced .svg>" }], output: "brand/logos/logo.svg" }`
+First clean every file of the chosen logo that Studio traced from a drawing (a logo drawn whole, a
+lockup drawn on the word, a mark, a mascot): one `logo-cleaner` agent per file, started together,
+each given the project path, the traced file and what it is in one sentence. In an app without the
+plugin's agents, each is a subagent whose instructions are exactly what
+`metamorfiles_get_guide { name: "logo-cleaner" }` returns. Each writes `<name>-clean.svg` beside its
+trace; look at it over the drawing with
+`metamorfiles_compare_trace { file: "brand/process/logo/<name>-clean.svg", against: "brand/process/logo/<name>.svg" }`.
+From here on the cleaned files stand in for the traced ones, and anything made from a traced file
+(its small mark, its colours) is made again from the cleaned one.
+
+Then make the final files in `brand/logos/` with the same tools and settings, each with an `output`
+there. A cleaned drawing reaches it as one part:
+`metamorfiles_compose_logo { layout: "stack", parts: [{ file: "<the cleaned .svg>" }], output: "brand/logos/logo.svg" }`
 (`metamorfiles_generate_image` never saves into `brand/logos/`). The other colours come from
 `metamorfiles_make_logo_variant { file, output: "brand/logos/logo-reversed.svg", colors: { ... } }`.
 A version of a logo drawn whole: `references/drawn.md`, "Other versions of it". Run `metamorfiles_check_logo` on each. Declare them in
