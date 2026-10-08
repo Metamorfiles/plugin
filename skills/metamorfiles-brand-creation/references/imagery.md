@@ -100,7 +100,7 @@ and its look, candidates drawn alone and traced, one anchor the user approves, a
 its character sheet (`references/sheet.md` of `metamorfiles-character`), drawn before any seed. Its
 seeds on this step are the character in the brand's moments, each made from the sheet, and every
 image of it, seeds and library alike, carries its Character lines (who it is, the one thing that
-makes it itself, its palette, that nothing about it changes) with the sheet first in the references,
+makes it itself, how its face is made, its palette, that nothing about it changes) with the sheet first in the references,
 so the model adds nothing a pose seems to need and paints no part another colour. List its folder in
 `assets` with `kind: character`, its `note` holding those lines, and write them into the imagery
 guide.
@@ -113,8 +113,8 @@ guide.
   (`images.md` of the `metamorfiles` skill). Write it with these sections, in this order:
   - **Style:** the style block, word for word as the seeds used it.
   - **Character** (a character brand): the character's lines from its brief: who it is, the one
-    thing that makes it itself, its palette, its look, and that nothing about it changes, word for
-    word.
+    thing that makes it itself, how its face is made, its palette, its look, and that nothing about
+    it changes, word for word.
   - **Colour roles:** each colour's hex and what it paints in a scene; the accent's role (light, the
     scene's own props), never on the character, never a count.
   - **Writing a scene:** one or two example scenes in the brand's words, subject first.

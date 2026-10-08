@@ -42,6 +42,9 @@ features and the alternates it has for these letters. Its controls:
 - **`thicken`**, in em: heavier strokes for a face a little too light.
 - **`moves`**: single letters lifted, dropped or turned after spacing, for a bouncing word:
   `moves: [{ at: 2, dy: -0.04, rotate: -4 }]`, `at` counting every character from 1, spaces included.
+  One or two letters, each for a reason (the letter that leans into the mark, the last one kicking
+  up); every letter moved in an up-down pattern reads as jitter. A face whose own shapes bounce
+  carries the movement better. Judge it at 64 px as well as large.
 - **`part`**: a drawn shape in a letter's place or its accent's, spaced by its own shape
   (`symbol.md`).
 

@@ -43,7 +43,9 @@ the word.
 
 ## Draw several, keep one
 
-Draw two or three versions together from the same prompt, each with `wait: false`, then collect
-each with `metamorfiles_image_status { id }`. Keep the one that holds the idea and passes
+Draw two or three versions together, each from its own prompt with a different take on the idea
+(another shape it's built from, another detail it keeps), each with `wait: false`, then collect each
+with `metamorfiles_image_status { id }`: one prompt drawn three times gives three copies. A mascot's
+candidates are three briefs (`metamorfiles-character`, step 3). Keep the one that holds the idea and passes
 `metamorfiles_check_logo`; the others stay in the folder. When all miss, change the description and
 draw again, never describing the failed drawing.

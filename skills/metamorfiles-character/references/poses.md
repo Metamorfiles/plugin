@@ -8,8 +8,9 @@ character's identity word for word, and states its own pose, head angle and expr
 ## The identity block
 
 Write it once from the brief, a short paragraph of what never changes: who it is, the one feature
-that makes it itself, the markings, its palette, the style. Never an expression or a head angle: those are
-each drawing's own, and a fixed one makes every drawing the same face. Paste it unchanged
+that makes it itself, how its face is made (the shape of its eyes and pupils, its brows, its mouth,
+a fang or a gap), the markings, its palette, the style. Never an expression or a head angle: those
+are each drawing's own, and a fixed one makes every drawing the same face. Paste it unchanged
 into every prompt for this character, with no rewording. A synonym is a different instruction.
 
 ## A new pose

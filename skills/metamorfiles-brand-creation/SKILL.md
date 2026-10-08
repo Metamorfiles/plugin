@@ -114,6 +114,10 @@ started.
   replace that one option, keep the others as they are, and ask again. "Direction: <title>" means
   the user went back and chose again on an earlier step: Studio has cleared the steps after it, so
   make them again from the new choice.
+- **A verdict on quality is a rethink.** "Redo all, the quality is low", "none of these work": write
+  what they rejected again from its brief (its idea; a character's attitude, face and pose; the
+  lettering's idea), keep what they praised, and say in a line what changed. A new rendering of the
+  same ideas doesn't answer it.
 - **A change is local.** "Warmer", "the other S", "redo the second one": rework that step only, and
   what depends on it. A new palette recolours the logo routes; it never restarts the research.
 - **Going back from the chat.** "Back to the logo": write the logo step's file again without its

@@ -14,11 +14,12 @@ labels, numbers or panel borders: lettering comes out garbled, and the order bel
 
 | Row | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- | --- |
-| The turnaround, a calm neutral face | front | three-quarter, facing left | side profile, facing left | back |
+| The turnaround, its own resting face | front | three-quarter, facing left | side profile, facing left | back |
 | The range | walking mid-stride | sitting, holding a small object in both hands | arms up, cheering, mouth open | thinking, one hand on the chin, sceptical |
 
-The top row gives every angle of the head and body; the bottom one gives motion, hands, a seated
-body and three expressions. A character with no hands (a moth, a fish) does the bottom row with
+The top row gives every angle of the head and body, with the face the anchor has (a neutral face
+there would teach the model a blank character); the bottom one gives motion, hands, a seated body
+and three expressions. A character with no hands (a moth, a fish) does the bottom row with
 what it has, as its brief says.
 
 ## The prompt
@@ -31,10 +32,10 @@ Image 1 is <name>, the brand's character: keep its identity, anatomy and colours
 Draw a character sheet of <name>: one landscape image, four columns and two rows, eight full-body
 figures of the same <name> at the same scale on one shared ground line, evenly spaced, on plain
 <paper hex>, no labels, numbers or borders.
-Top row, a calm neutral face: front; three-quarter facing left; side profile facing left; back.
+Top row, with <name>'s resting face as in image 1: front; three-quarter facing left; side profile facing left; back.
 Bottom row: walking mid-stride; sitting, holding a small cup in both hands; arms up, cheering, mouth
 open; thinking, one hand on the chin, sceptical.
-<name>: <the brief's lines: who it is, the one thing that makes it itself, its palette>; nothing about <name> changes.
+<name>: <the brief's lines: who it is, the one thing that makes it itself, how its face is made, its palette>; nothing about <name> changes.
 Style: <the character's style paragraph>.
 Constraints: <name>'s colours and proportions never change between figures; exactly eight figures;
 nothing added that a pose seems to need; no text.

@@ -20,8 +20,8 @@ Read `brand/imagery-guide.md` before any prompt: it's what every image of this b
 when the brand was made. Its sections:
 - **Style:** one paragraph describing the look, with each colour's hex and what it paints. Pasted
   whole into every prompt.
-- **Character** (a brand with a character): who it is, the one thing that makes it itself, its
-  palette and its look, in two or three lines, and that nothing about it changes. Pasted whole into
+- **Character** (a brand with a character): who it is, the one thing that makes it itself, how its
+  face is made, its palette and its look, in two or three lines, and that nothing about it changes. Pasted whole into
   every prompt that shows the character, with its character sheet first in the references.
 - **Colour roles:** what each colour is for in a scene. An accent is a role for objects and light
   (a balloon, a lamp, a spark), never a colour on the character or a quota per image.
