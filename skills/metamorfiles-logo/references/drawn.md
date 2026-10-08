@@ -53,11 +53,17 @@ drawing holds the direction best; then compose the supporting words around it an
 
 ## Other versions of it
 
-A logo drawn whole is one traced drawing whose parts overlap and share outlines, so a version is an
-edit of it, never cut from its paths: the traced file first in `references`, `edit: true`, the same
-`folder` and `trace` colours, saying only what changes. A part swapped or left out keeps the logo's
-shape, and Studio keeps every letter the edit didn't touch exactly as it was:
-`metamorfiles_generate_image { prompt: "Replace the full-body character under the lettering with the bust in image 2, at the same place and scale", references: ["brand/process/logo/<file>.svg", "<the bust .svg>"], edit: true, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
-A version laid out another way (one line, stacked) is drawn at the new shape; read every letter
-against the original and check it like the original. Recolourings stay `metamorfiles_make_logo_variant`.
+A version of a logo drawn whole is made the cheapest way that keeps it the logo's own drawing:
+
+- **A part that is its own piece** (a letter, a mark with space around it), taken out as it is:
+  `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-mark.svg", keep: { x: 0.81, y: 0.03, width: 0.19, height: 0.88 }, square: true }`,
+  its box from the boxes `metamorfiles_check_logo` lists. No image is made; the small mark is this.
+- **A part that touches or overlaps others** (a mascot over the letters), or one drawn anew (the bust
+  for the full body), is an edit of it: the traced file first in `references`, `edit: true`, the same
+  `folder` and `trace` colours, saying only what changes. Studio keeps every letter the edit doesn't
+  touch exactly as it was.
+- **Another layout** (one line, stacked) is drawn at its new shape; read every letter against the
+  original and check it like the original.
+
+Recolourings stay `metamorfiles_make_logo_variant`.
 
