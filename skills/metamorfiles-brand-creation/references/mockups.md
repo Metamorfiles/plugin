@@ -25,10 +25,11 @@ set (a business card, a tote and a phone), and never an object this business doe
 
 ## Make them
 
-Last, once the kit is written, with `metamorfiles-mockup`, into the brand's in-use folder
-(`folder: "brand/mockups"`); once the first is saved there, list the folder in DESIGN.md `assets` as
-`{ folder: mockups, kind: in-use, title: In use }`. They are one board, like the logos and the
-images, and nothing is asked: say which three you made in one `say`. The user can redo one from its
-board, or pick one of its earlier takes back; a mockup made again or fixed takes the old one's place
-(`replaces`, which an edit of a mockup does by itself), and the old one stays an earlier take. Get the
-review of the board (`mockups`) before the final check.
+Last, once the kit is written, with `metamorfiles-mockup`: each object's print decided from the shot
+(the logo alone, or artwork made flat with it), the blank photos in `brand/mockups/blanks/`, and the
+brand placed on each with `metamorfiles_make_mockup`, which saves it in `brand/mockups/`. Once the
+first is saved, list the folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`.
+They are one board, like the logos and the images, and nothing is asked: say which three you made in
+one `say`. The user can redo one from its board, or pick one of its earlier takes back; a mockup made
+again takes the old one's place (`replaces`), and the old one stays an earlier take. Get the review of
+the board (`mockups`) before the final check.

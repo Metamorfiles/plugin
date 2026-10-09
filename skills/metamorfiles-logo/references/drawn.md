@@ -32,14 +32,15 @@ Write the prompt from the chosen direction and the brief, as a designer's brief,
 A joined script joins letters within a word, never across the space between words: say each word is
 written on its own. Accents keep their shape and their place over their letter.
 
-Show the model the look, not only describe it: pass the chosen direction's reference images that
-show lettering, a mark or a mascot (two or three of them) as `references`, and start the prompt with
-"Images 1 to 3 are style references: take their drawing hand, letter weight, colour handling and how
-the parts lock together; never copy their letters, names, marks or layout." Words alone lose what
-made the user pick the direction.
+Show the model the look, not only describe it: the chosen direction's card first, then two or three
+of its reference images that show lettering, a mark or a mascot, and start the prompt with "Image 1
+is the chosen direction: take its palette, type character and mood. Images 2 to 4 are style
+references: take their drawing hand, letter weight, colour handling and how the parts lock together.
+Never copy their letters, names, marks or layout." Words alone lose what made the user pick the
+direction.
 
 Draw it at the lockup's shape, listing every colour it uses:
-`metamorfiles_generate_image { prompt, references: [...], width: 1536, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
+`metamorfiles_generate_image { prompt, references: ["templates/brand-board#process-direction:<chosen id>", "brand/process/references/<project>/2.jpg"], width: 1536, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
 Studio has it drawn on a transparent background and traces each colour in the brand's exact value
 (`vector.md`); the path it returns is the traced .svg.
 
@@ -59,6 +60,10 @@ A version of a logo drawn whole is made the cheapest way that keeps it the logo'
 - **A part that is its own piece** (a letter, a mark with space around it), taken out as it is:
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-mark.svg", keep: { x: 0.81, y: 0.03, width: 0.19, height: 0.88 }, square: true }`,
   its box from the boxes `metamorfiles_check_logo` lists. No image is made; the small mark is this.
+- **A letter or mark sitting on a shape of another colour** (a letter on a strip of tape, a mark on a
+  badge): cut the shape's colour out first, which leaves the letter as its own piece, then take it:
+  `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-letters.svg", colors: { "#efe1b4": "knockout" } }`,
+  then `keep` on that file as above. No image is made.
 - **A part that touches or overlaps others** (a mascot over the letters), or one drawn anew (the bust
   for the full body), is an edit of it: the traced file first in `references`, `edit: true`, the same
   `folder` and `trace` colours, saying only what changes. Studio keeps every letter the edit doesn't

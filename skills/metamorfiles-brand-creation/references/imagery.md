@@ -50,9 +50,12 @@ a look to recognise, not rules to count.
    lightning bolt, a heart) is the default to recognise and replace. A character brand makes its
    seeds from the character sheet, as `images.md` of the `metamorfiles` skill says ("The prompt").
    Each is
-   `metamorfiles_generate_image { prompt, width: 1600, height: 2000, folder: "brand/process/imagery", ground: "#f6f1ea", wait: false }`,
+   `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["templates/brand-board#process-direction:<chosen id>"], folder: "brand/process/imagery", ground: "#f6f1ea", wait: false }`,
+   the prompt starting "Image 1 is the chosen direction: take its palette, light and mood, never its
+   pictures"; the logo never goes in, since a model shown a logo draws it into the picture;
    each at the shape the brand's images will mostly be used at (here 4:5), `ground` the chosen
-   direction's paper, so they already sit on it; collect each with `metamorfiles_image_status { id }`. The step's
+   direction's paper for drawings on a flat paper field, so they already sit on it (a photograph
+   takes no `ground`); collect each with `metamorfiles_image_status { id }`. The step's
    frame fills as each arrives.
 2. Each seed is one option of the imagery step, titled by what it shows ("The knit close-up"). The
    user uses them all, or has single ones redone first ("Redo the knit close-up").
@@ -83,8 +86,8 @@ it").
 Grow six to ten images from the anchors into the imagery folder DESIGN.md lists, each with the same
 style block:
 `metamorfiles_generate_image { prompt, width, height, references: ["brand/refs/<anchor>", ...], folder: "brand/refs" }`.
-Once DESIGN.md lists the folder as `imagery` (or `character`), `folder` alone brings each image's
-ground to the brand's paper; before that, pass `ground: "#rrggbb"` too. Each is made at the shape
+A drawing on a flat paper field also passes `ground: "{colors.background}"`, so it sits on the
+brand's paper; a photograph never takes a `ground`. Each is made at the shape
 it will be used at (1024 × 1024 for a spot, 1600 × 2000 for a 4:5 scene):
 - **Spots:** single objects the business sells or uses, centred with space around them.
 - **Scenes:** the business's moments and people, with calm space above for a headline.

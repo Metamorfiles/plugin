@@ -96,7 +96,9 @@ Designers start from the best of what exists, the way they browse it:
 
 ## Directions
 
-Group the keepers into two or three directions. A direction is one feeling a reference set agrees
+Look at everything you collected together first, as the brief's frame shows it:
+`metamorfiles_render_preview { item: "templates/brand-board", format: "process-brief" }`. Then group
+the keepers into two or three directions. A direction is one feeling a reference set agrees
 on ("drawn neighbourhood", "quiet apothecary", "loud market stall"), and each is one option of the
 direction step, with its palette and pairing from `look.md`:
 - **Title:** the direction's name, in a few words.
