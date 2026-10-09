@@ -81,8 +81,9 @@ composition move (`references/taste.md`), so the user chooses between ideas.
 
 ### 5. Check, fix, check again
 
-Run `metamorfiles_check_logo` on every route file. Read the sheet and the numbers, fix what fails,
-and run it again: `references/checks.md`. The user should never be the one to find a piece that
+Run `metamorfiles_check_logo` on every route file, its small mark included. Read the sheet and the
+numbers, fix what fails, and run it again: `references/checks.md`. A small mark that loses a part at
+32 px is broken: Studio won't ask the logos until every small mark keeps all of its parts. The user should never be the one to find a piece that
 vanishes at 32 px, a drawn letter that's wrong, or a reversed version that doesn't read.
 
 ### 6. Each route's files

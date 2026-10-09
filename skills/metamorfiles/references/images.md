@@ -152,6 +152,12 @@ show the real thing, never a drawing of it.
 
 ## Generate and place, edit or redraw
 
+- **Make or place.** Anything that must match a file exactly (the logo, a label, its words) is
+  placed, never drawn: on a photograph with `metamorfiles_make_mockup` on a blank photo
+  (`metamorfiles-mockup`), on a designed piece in its template. Anything new (a scene, a picture, a
+  pattern, a stylised mascot) is made by the image model. A piece that needs both makes the picture,
+  then places the files on it (`metamorfiles-artwork`). Decide it per piece, from its goal, its
+  composition and its surface.
 - Pass `width` and `height` as the size the image is used at: the model composes for that shape, nothing is cropped, and Studio saves the result whole under `assets/`. For an image several formats show, pass the format it matters most in, and compose with room around the subject so every other format can crop it well. Make it once and reuse it across variants when the variant isn't about the image.
 - The result can be another size than the one passed: each source makes its own sizes (on a ChatGPT plan OpenAI sets it, about 1.6 megapixels, in the shape the prompt names). When the result says it's smaller than the frame, the design will enlarge it and it may look soft: tell the user, and let them decide on a source that makes larger images.
 - For choices between directions, make each option as the real thing: the one the user chooses is the image used, never made again, since a new one would be a different image.

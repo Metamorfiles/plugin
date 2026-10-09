@@ -1,10 +1,10 @@
 ---
 name: metamorfiles-artwork
-description: Use to design print and packaging artwork in Metamorfiles Studio to print for real, such as a can's wrap, a box's face, a bottle's label, a bag, a sticker, a poster or a menu. The image model paints the artwork's picture (illustration, pattern or scene) in the brand's own style and Studio sets the real logo and type on it exactly, so the result looks designed and printed, not drawn in code. Use it whenever an object's printed face is designed in full, even if the user only says "a label" or "the packaging".
+description: Use to make artwork in Metamorfiles Studio: print and packaging to print for real with the logo on it (a can's wrap, a box's face, a label, a poster, merch with the logo), branded artwork without the logo (a stylised mascot or logo for a T-shirt, new mascot poses, a branded pattern) and free artwork in the brand's drawing style alone (a one-colour print, a themed piece). The image model paints the picture and Studio sets the real logo and type exactly, so nothing reads as drawn in code. Use it whenever an object's printed face or a piece of art is designed, even if the user only says "a label", "the packaging" or "a shirt design".
 license: MIT
 ---
 
-# Print and packaging artwork
+# Artwork
 
 Real packaging is a picture and a hierarchy working together: an illustration, a pattern or a
 photograph that fills the face, and the brand, the product and its words set on it with care. Built
@@ -13,7 +13,29 @@ does best: the image model paints the picture, in the brand's own style, and Stu
 and every word exactly, from the real files and fonts. Neither does the other's job: the model never
 draws a letter or the logo, and the picture is never a CSS gradient.
 
-## Checklist
+## Which artwork
+
+| Kind | For | How |
+|---|---|---|
+| **With the logo** | a can's wrap, a box's face, a label, a poster, a menu, merch with the logo, a pattern with the logo | the picture painted by the image model, the real logo and words set on it: the steps below |
+| **Branded** | a stylised logo or mascot for merch, the mascot in new poses, a branded pattern | made whole by the image model from the brand's own references |
+| **Free** | a one-colour print, a themed piece (a Halloween poster) in the brand's drawing style | made whole from the style alone |
+
+**Branded:**
+`metamorfiles_generate_image { prompt, width: 2400, height: 2400, references: ["<the character's anchor>", "templates/brand-board#<library folder>"], name: "mascot-tee" }`:
+the character's anchor first when it appears, its lines from `brand/imagery-guide.md` in the prompt
+(`metamorfiles-character`), the library's sheet for the style, the logo file as a reference for a
+stylised version of it, and the brand's colours named. Its words, when it has any, are set in a
+template as below.
+
+**Free:** the same call with the library's sheet alone, named "only its style, never its subjects or
+colours", and the piece's own colours (one ink for a one-colour print). No brand colours or logo
+unless the user asks.
+
+Either one printed in flat colour (screen print, cut vinyl, apparel) is traced as it's made, with
+`trace` and `inks` ("Vector versions" in `references/images.md` of `metamorfiles`).
+
+## With the logo
 
 ```
 - [ ] 1. The piece planned: its face, its zones, its hierarchy, its picture
