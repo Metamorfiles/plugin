@@ -32,10 +32,10 @@ their words and the category.
 `brand/process/brief.md` starts with what the user said. Add below it, briefly, from the subject's
 research:
 - **Facts:** what it makes, for whom, where, at what price, the languages it speaks to its customers
-  in, and anything true and specific: hours,
-  process, tools, materials, founders, rituals, a word the customers use: three to five phrases from
-  the subject's own pages or reviews, and one odd fact, each with its source. That fact is often the
-  idea. A line that only repeats the user's request isn't a fact.
+  in, and anything true and specific: hours, process, tools, materials, founders, rituals, a word the
+  customers use: three to five phrases from the subject's own pages or reviews, and one odd fact,
+  each with its source and the date you read it ("(their menu page, 9 Oct)"): prices, hours and
+  offers change. That fact is often the idea. A line that only repeats the user's request isn't a fact.
 - **The place,** when there is one: its signs, materials, colours and light, and two or three things
   only it has. An online business has a world instead: its customers' homes, their commute, their
   feed.
