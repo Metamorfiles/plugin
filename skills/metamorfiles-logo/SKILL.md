@@ -37,7 +37,7 @@ When a route needs a part the references don't show well (the lettering, a masco
 search for it in the background as you begin, with the category and the part:
 `metamorfiles_search_references { query: "bakery lettering", sorts: ["recommended"], wait: false }`.
 Read it when you reach that route (`metamorfiles_search_references { id }`), and collect the two or
-three projects worth studying: `metamorfiles_collect_references { links: [...] }`.
+three projects worth studying: `metamorfiles_collect_references { links: [...], path: "Bakery lettering" }`.
 
 ### 2. The type study
 
@@ -113,7 +113,8 @@ choosing stays in your notes.
 
 In a new brand, write them as the options of `brand/process/logo.md`, one `recommended: true`, and
 ask as the `metamorfiles-brand-creation` skill says: Studio draws each large, in use and at the small
-sizes on the brand board. Outside it, show the check sheets and say in a line what each is and why,
+sizes on the brand board, a logo made from a drawing as the drawing itself and its colour versions
+from its trace. Outside it, show the check sheets and say in a line what each is and why,
 the recommended one first.
 
 ### 8. After the choice
@@ -125,8 +126,9 @@ plugin's agents, each is a subagent whose instructions are exactly what
 `metamorfiles_get_guide { name: "logo-cleaner" }` returns. Each writes `<name>-clean.svg` beside its
 trace; look at it over the drawing with
 `metamorfiles_compare_trace { file: "brand/process/logo/<name>-clean.svg", against: "brand/process/logo/<name>.svg" }`.
-From here on the cleaned files stand in for the traced ones, and anything made from a traced file
-(its small mark, its colours) is made again from the cleaned one.
+The user chose the drawing: the cleaned file keeps every part of it, with only its edges straightened
+or smoothed. From here on the cleaned files stand in for the traced ones, and anything made from a
+traced file (its small mark, its colours) is made again from the cleaned one.
 
 Then make the final files in `brand/logos/` with the same tools and settings, each with an `output`
 there. A cleaned drawing reaches it as one part:

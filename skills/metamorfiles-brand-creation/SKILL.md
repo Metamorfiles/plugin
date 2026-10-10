@@ -23,7 +23,7 @@ Copy it into your notes and tick each step as you go:
 
 ```
 - [ ] Brief: brand/process/brief.md, the user's answers and facts
-- [ ] 1. Direction: references collected, 2 or 3 directions written, asked, chosen
+- [ ] 1. Direction: three paths in the brief, references collected for each, directions written, asked, chosen
 - [ ] 2. Logo: three routes with metamorfiles-logo (a character with metamorfiles-character), reviewed, asked, chosen
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
 - [ ] Kit: DESIGN.md (its voice by the copywriter), final logos, fonts, library (each batch reviewed), imagery guide
@@ -212,13 +212,15 @@ its frame shows each file as it arrives, so the user watches the step come toget
 1. **Direction** (`references/research.md`, `references/look.md`). First read what the user gave
    about the brand itself, its site, profiles or handles (`references/research.md`, "The subject,
    first"); never search for it by name. The brief's facts
-   with their sources, touchpoints and category codes go into `brief.md`. Search with `metamorfiles_search_references { query: "bakery" }`
-   on the business's plain words, choose the projects worth opening from the covers, and collect
-   them with `metamorfiles_collect_references { links: [...] }`, the user's own links first; they
-   appear on the brief's frame as they arrive. Group what's good into two or three directions that
-   differ in feel. Each option is a whole direction: four to eight references by attribute (logo,
-   colour, type, imagery, layout), captioned with the project and what to take; its palette with
-   shares; its type pairing, each face added with `metamorfiles_add_font { family: "Fraunces" }`; and
+   with their sources, touchpoints, category codes and three paths go into `brief.md`
+   (`references/research.md`, "Three paths"). For each path, search its plain words with
+   `metamorfiles_search_references { query: "bakery opening hours poster" }`, choose the projects
+   worth opening from the covers, and collect them with
+   `metamorfiles_collect_references { links: [...], path: "Morning batch" }`, the user's own links
+   first; they appear on the brief's frame under their path as they arrive. Each path that holds up
+   becomes a direction, and they differ in feel. Each option is a whole direction: four to eight
+   references by attribute (logo, colour, type, imagery, layout), captioned with the project and
+   what to take; its palette with shares; its type pairing, each face added with `metamorfiles_add_font { family: "Fraunces" }`; and
    its `sample`.
 2. **Logo** (the `metamorfiles-logo` skill), made from the brief and the chosen direction. Three
    routes: a logo drawn whole by the image model and traced; the name set from real fonts with a

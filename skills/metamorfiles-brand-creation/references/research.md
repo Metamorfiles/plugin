@@ -1,7 +1,16 @@
 # Research and direction
 
 Read this for the brief and the direction step of `SKILL.md`: what is true of the business, what
-its category looks like, and two or three directions built from real references.
+its category looks like, three paths into it, and the directions their references become.
+
+## Contents
+- The subject, first
+- The brief
+- Touchpoints
+- Where ideas come from
+- Three paths
+- The reference hunt
+- Directions
 
 ## The subject, first
 
@@ -77,30 +86,51 @@ nothing to draw from; "the hour the first batch comes out is the brand's number"
 | The moment | the hour, the ritual, the season, the queue | a number, a colour of that hour |
 | A reversal | the category's habit, and its considered opposite | a palette or register nobody uses |
 
-The directions differ in feel, not in hue: in register (vernacular, heritage, minimal, loud,
-hand-made, character-led, editorial, material), in how the mark is made and in what the imagery is.
+## Three paths
+
+Before any search, end the brief with three paths: three ways into the brand, each from a different
+source above, so each search looks for something different. They differ in feel, not in hue: in
+register (vernacular, heritage, minimal, loud, hand-made, character-led, editorial, material), in how
+the mark is made and in what the imagery is. Write each as a numbered line under `## Paths`: its
+name, what it takes from the brief, which category codes it keeps or breaks, and the plain words to
+search for it:
+
+```markdown
+## Paths
+
+1. **Morning batch:** the hour the first loaves come out as the brand's number; breaks beige
+   minimalism. Search: bakery opening hours poster.
+```
+
+A path is a guess the research tests: one that finds nothing good changes or gives way to a better
+one the references show, and its line in the brief changes with it.
 
 ## The reference hunt
 
-Designers start from the best of what exists, the way they browse it:
-- **Search** with `metamorfiles_search_references { query: "bakery" }`, in the business's plainest
-  words ("bakery", "skincare packaging", "bike shop"). It returns the covers of the most viewed and
-  the featured projects, numbered on one sheet: two pages of the daily budget.
-- **Choose from the covers** the four to six projects worth opening, genuinely good whatever their
-  category, and pass their links as `metamorfiles_collect_references { links: [...] }`, which keeps
-  about eight images of each (the logo, lettering, mascot and palette pages come with them). Links
-  the user pasted come first: they are their taste.
+Designers start from the best of what exists, the way they browse it, one hunt for each path:
+- **Search** with `metamorfiles_search_references { query: "bakery opening hours poster" }`, in the
+  path's plain words. It returns the covers of the most viewed and the featured projects, numbered
+  on one sheet.
+- **Choose from the covers** the three projects worth opening, genuinely good whatever their
+  category, and pass their links with the path's name as
+  `metamorfiles_collect_references { links: [...], path: "Morning batch" }`, which keeps about eight
+  images of each (the logo, lettering, mascot and palette pages come with them). Links the user
+  pasted come first, with no path: they are their taste.
 - `metamorfiles_look_at_page { url: "https://..." }` shows a single page when you need to read one
-  more closely, such as a type specimen or the business's own website. Every page opened spends the
-  same budget.
+  more closely, such as a type specimen or the business's own website.
+
+Each sort of a search and each project opened spends one of the project's 15 pages a day: three paths,
+each one search (two sorts) and three projects, spend all 15, so pages spent on the subject come off
+the projects.
 
 ## Directions
 
-Look at everything you collected together first, as the brief's frame shows it:
-`metamorfiles_render_preview { item: "templates/brand-board", format: "process-brief" }`. Then group
-the keepers into two or three directions. A direction is one feeling a reference set agrees
-on ("drawn neighbourhood", "quiet apothecary", "loud market stall"), and each is one option of the
-direction step, with its palette and pairing from `look.md`:
+Look at everything you collected first, as the brief's frame shows it, under each path's name:
+`metamorfiles_render_preview { item: "templates/brand-board", format: "process-brief" }`. Each path
+that holds up becomes a direction, the references showing what it really is, and the best of any
+path may serve another. A direction is one feeling a reference set agrees on ("drawn
+neighbourhood", "quiet apothecary", "loud market stall"), and each is one option of the direction
+step, with its palette and pairing from `look.md`:
 - **Title:** the direction's name, in a few words.
 - **Line:** why it serves the brief: what it would feel like to meet this brand, and where it takes
   a risk.
