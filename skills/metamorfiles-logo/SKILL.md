@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-logo
-description: Use to design a logo in Metamorfiles Studio for a brand that has none, including the logo step of a new brand, in three routes (a logo drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, and one in type alone), each checked at every size it will meet. Use it whenever the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a new brand, even if they describe the look they want in their own words. Not for a brand that already has a logo, whose official files are never redrawn (metamorfiles-brand).
+description: Use to design a logo in Metamorfiles Studio for a brand that has none, including the logo step of a new brand, in three routes (a logo drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, and one in type alone), then, once the user chooses, its small mark and its small uses. Use it whenever the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a new brand, even if they describe the look they want in their own words. Not for a brand that already has a logo, whose official files are never redrawn (metamorfiles-brand).
 license: MIT
 ---
 
@@ -19,10 +19,10 @@ Copy it into your notes and tick each step as you go:
 - [ ] 2. Type study: the name in the faces the direction suggests and around them
 - [ ] 3. Three ideas: each route's idea and composition written before anything is drawn
 - [ ] 4. Three routes made: the word set first, a mark drawn to fit it
-- [ ] 5. Every route checked with metamorfiles_check_logo, fixed, checked again
-- [ ] 6. Each route's files: colour, reversed, one colour, small mark
+- [ ] 5. Every route checked with metamorfiles_check_logo: its letters, reversed and one colour
+- [ ] 6. Each route's files: colour, reversed, one colour, and its mark when it has one
 - [ ] 7. Routes shown and one recommended
-- [ ] 8. After the choice: its traced files cleaned, the final files in brand/logos/
+- [ ] 8. After the choice: cleaned, its small mark agreed, the final files, the small uses composed
 ```
 
 ### 1. What the brand already decided
@@ -81,10 +81,10 @@ composition move (`references/taste.md`), so the user chooses between ideas.
 
 ### 5. Check, fix, check again
 
-Run `metamorfiles_check_logo` on every route file, its small mark included. Read the sheet and the
-numbers, fix what fails, and run it again: `references/checks.md`. A small mark that loses a part at
-32 px is broken: Studio won't ask the logos until every small mark keeps all of its parts. The user should never be the one to find a piece that
-vanishes at 32 px, a drawn letter that's wrong, or a reversed version that doesn't read.
+Run `metamorfiles_check_logo` on every route's logo. Read the sheet and the numbers, fix what fails,
+and run it again: `references/checks.md`. The user should never be the one to find a drawn letter
+that's wrong or a reversed version that doesn't read. The small sizes are checked after the choice
+(step 8): a route is never drawn again for them.
 
 ### 6. Each route's files
 
@@ -95,14 +95,12 @@ fills becomes line art in one colour and reversed: its line colour to the ink an
 the drawing. Recolouring every paint to one colour turns it into a silhouette, and the details are
 gone. A drawing of solid shapes becomes one solid shape with its inner details cut out.
 
-Mark the route's small mark (the mark, the mascot's head, the monogram, the seal) with `small: true`
+A route with a mark of its own (a generated mark, a mascot, a seal) shows it last, with `small: true`
 on its entry in the option's `files` in `brand/process/logo.md` (`{ file: <its path>, small: true }`):
-the profile picture and the small sizes use it, so it must be the very mark the logo shows. In a
-route with a generated mark it is that mark's own file. In a logo drawn whole, one is made from the other,
-never alongside: the mark taken from the logo once the logo is right, or the logo drawn from the mark,
-as when the user wants the logo with its icon (`references/drawn.md`, "Other versions of it"); Studio
-refuses a small mark and a logo drawn apart. Save every file under `brand/process/logo/`:
-`folder: "brand/process/logo"` for an image, an `output` there for the other tools.
+the very mark the logo shows, its own file in a route with a generated mark, cut from the logo's
+file in a logo drawn whole (`references/drawn.md`, "Other versions of it"). Studio refuses a mark the
+image model drew again. A route without a mark shows none. Save every file under
+`brand/process/logo/`: `folder: "brand/process/logo"` for an image, an `output` there for the other tools.
 
 ### 7. Show them
 
@@ -112,9 +110,9 @@ option, checked and given its files like a route (steps 5 and 6), up to six in a
 choosing stays in your notes.
 
 In a new brand, write them as the options of `brand/process/logo.md`, one `recommended: true`, and
-ask as the `metamorfiles-brand-creation` skill says: Studio draws each large, in use and at the small
-sizes on the brand board, a logo made from a drawing as the drawing itself and its colour versions
-from its trace. Outside it, show the check sheets and say in a line what each is and why,
+ask as the `metamorfiles-brand-creation` skill says: Studio draws each large on its ground with its
+versions beside it on the brand board, a logo made from a drawing as the drawing itself and its colour
+versions from its trace. Outside it, show the check sheets and say in a line what each is and why,
 the recommended one first.
 
 ### 8. After the choice
@@ -130,6 +128,11 @@ The user chose the drawing: the cleaned file keeps every part of it, with only i
 or smoothed. From here on the cleaned files stand in for the traced ones, and anything made from a
 traced file (its small mark, its colours) is made again from the cleaned one.
 
+Then the small mark: the logo's own mark, or a part of the logo that stands alone (a letter, a
+monogram, the seal's middle), cut from its file, or the whole logo when it holds up at 32 px. Check it
+at 32 and 16 px with `metamorfiles_check_logo` and ask the user with `metamorfiles_ask_user`, showing
+it. When no part of the logo holds up small, say so and ask what they want: never change the logo for it.
+
 Then make the final files in `brand/logos/` with the same tools and settings, each with an `output`
 there. A cleaned drawing reaches it as one part:
 `metamorfiles_compose_logo { layout: "stack", parts: [{ file: "<the cleaned .svg>" }], output: "brand/logos/logo.svg" }`
@@ -138,7 +141,19 @@ there. A cleaned drawing reaches it as one part:
 A version of a logo drawn whole: `references/drawn.md`, "Other versions of it". Run `metamorfiles_check_logo` on each. Declare them in
 DESIGN.md `logos` with their grounds, sources ("set in <face> as outlines with a drawn part", "drawn
 by <model> and traced", "created and approved by the user on <date>") and clear space, and the
-small mark with `small: true`: the kit makes the favicon and profile picture from it.
+small mark with `small: true`.
+
+Last, compose the small mark for where it's used small: the profile picture, which platforms crop to
+a circle, and the favicon and app icons, squares. Studio places the mark by its ink and shows each at
+its real size on the brand board's `logos` frame
+(`metamorfiles_render_preview { item: "templates/brand-board", format: "logos" }`). Look at each as
+it will be seen and decide its composition for that mark: how much of the circle or square it fills,
+where it sits, its ground, or another version of it (the reversed mark on a brand colour). Write what
+differs from Studio's placement on the small mark's entry, `profile` and `icon`:
+`{ file: logos/mark.svg, small: true, profile: { size: 0.9, ground: "{colors.ember}", file: logos/mark-reversed.svg }, icon: { size: 1 } }`
+(`size` is the share of the circle, from its centre to the mark's farthest point, or of the square,
+its longer side, that the mark spans; above 1 it is cropped; `at` its centre). The kit's profile
+picture, favicon and app icons are exactly these.
 
 ## References
 
@@ -165,3 +180,5 @@ mascot is designed with `metamorfiles-character`; how to prompt each image model
 - **A mark is drawn by the image model, never geometry typed as SVG by you.** Only Studio's shapes (a
   ring, a disc, a star, a diamond, a facet, a rule) are built without a drawing.
 - **Supporting words are real type,** in every route.
+- **A route's logo is never drawn again to fix another file** (a mark, a version, a small size): the
+  file changes, or the user hears what can't be made.

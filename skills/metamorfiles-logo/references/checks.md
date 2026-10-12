@@ -1,7 +1,8 @@
 # Checks
 
 Every route is checked before anyone sees it, and checked again after every fix. The user should
-never be the one to find what fails.
+never be the one to find what fails. Before the choice, a route's letters and its versions count;
+the small sizes count for the small mark, after the choice.
 
 ## The check loop
 
@@ -14,9 +15,9 @@ never be the one to find what fails.
 
 | It shows | Fix |
 | --- | --- |
-| A piece lost at 32 px (a dot, a crumb, a fine line) | Enlarge it, merge it into a larger shape, or leave it out of the drawing; draw again |
+| The small mark loses a piece at 32 px (a dot, a crumb, a fine line) | Another part of the logo as the small mark, or a small-size version of a set word (`wordmark.md`); else tell the user, never redraw the logo |
 | The name closing up at 32 px | The small-size version (`wordmark.md`) |
-| A lockup unreadable at 32 px | That's expected: the small mark is used there. Check the small mark instead |
+| A lockup unreadable at 32 px | That's expected: the small mark is used there, agreed after the choice |
 | The reversed version looks heavier | Set the reversed wordmark a weight lighter; fine lines on dark spread |
 | The one-colour version loses a part | That part only worked through colour: give it a shape of its own, or a cut-out |
 | The one-colour or reversed version is a silhouette (a drawing of lines and fills recoloured whole) | Make it line art: the line colour to the ink, every fill to `"knockout"` |

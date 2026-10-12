@@ -42,6 +42,6 @@ Every lockup keeps its settings beside it (`<file>.svg.json`); change one thing 
 
 ## The set
 
-Each route has the lockup, and the name alone and the mark alone when it has a mark (the small mark,
-`small: true` on its entry in the option's `files` in `brand/process/logo.md`). Once fixed, the
+Each route has the lockup, and the name alone and the mark alone when it has a mark (`small: true`
+on its entry in the option's `files` in `brand/process/logo.md`). Once fixed, the
 parts' sizes and positions stay the same from file to file.
