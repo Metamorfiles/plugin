@@ -39,9 +39,23 @@ research:
 - **The place,** when there is one: its signs, materials, colours and light, and two or three things
   only it has. An online business has a world instead: its customers' homes, their commute, their
   feed.
-- **The category's codes:** the colours, symbols, type, imagery and voice its businesses share. Mark
-  each one to keep (it earns trust or helps a customer) or to break (room to be different). Break one
-  to three, knowingly. A place has codes too: its tourist look is a cliché unless the idea changes it.
+- **The category's codes:** the colours, symbols, type, imagery and voice its businesses share, as
+  two lists under plain headings: what the category always does and this brand avoids (one to three,
+  knowingly: room to be different), and what it keeps because it earns trust or helps a customer. A
+  place has codes too: its tourist look is a cliché unless the idea changes it.
+
+  ```markdown
+  ## The category's codes
+
+  Bakeries in the old town.
+
+  What the category always does, and this brand avoids:
+  - wheat sheaves and rolling pins in the mark
+  - kraft brown on everything
+
+  What it keeps, because it earns trust:
+  - the hours on the door, large: people plan around them
+  ```
 
 | Category | Codes to avoid by default |
 |---|---|
@@ -92,13 +106,13 @@ Before any search, end the brief with three paths: three ways into the brand, ea
 source above, so each search looks for something different. They differ in feel, not in hue: in
 register (vernacular, heritage, minimal, loud, hand-made, character-led, editorial, material), in how
 the mark is made and in what the imagery is. Write each as a numbered line under `## Paths`: its
-name, what it takes from the brief, which category codes it keeps or breaks, and the plain words to
+name, what it takes from the brief, which of the category's codes it avoids or keeps, and the plain words to
 search for it:
 
 ```markdown
 ## Paths
 
-1. **Morning batch:** the hour the first loaves come out as the brand's number; breaks beige
+1. **Morning batch:** the hour the first loaves come out as the brand's number; avoids beige
    minimalism. Search: bakery opening hours poster.
 ```
 
