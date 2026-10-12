@@ -137,7 +137,8 @@ there. A cleaned drawing reaches it as one part:
 `metamorfiles_make_logo_variant { file, output: "brand/logos/logo-reversed.svg", colors: { ... } }`.
 A version of a logo drawn whole: `references/drawn.md`, "Other versions of it". Run `metamorfiles_check_logo` on each. Declare them in
 DESIGN.md `logos` with their grounds, sources ("set in <face> as outlines with a drawn part", "drawn
-by <model> and traced", "created and approved by the user on <date>") and clear space.
+by <model> and traced", "created and approved by the user on <date>") and clear space, and the
+small mark with `small: true`: the kit makes the favicon and profile picture from it.
 
 ## References
 

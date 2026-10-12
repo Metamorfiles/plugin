@@ -75,7 +75,7 @@ Ask the user only for what you cannot derive and what changes the result: the fo
 - **`rounded`** and **`spacing`**: as the source defines them, whole scales. When the source shows only one or two steps, derive the rest around them and mark them `proposed`; when the brand truly has none (square corners everywhere), list the key in `omitted` with a reason. Only colors, typography, spacing, rounded and components can be omitted.
 - **`components`**: only usage pairs you observed, such as `button-primary`, `card`, `band` or `badge-winner`, with `backgroundColor`, `textColor`, `typography`, `rounded` and `padding`. Reference tokens (`"{colors.primary}"`); use a literal value only when the source hardcodes one.
 - **`fonts`** (Studio): every family the roles use, with its local file (relative to `brand/`) and weight range.
-- **`logos`** (Studio): each file with the `background` it's made for (a token reference) and its `source`.
+- **`logos`** (Studio): each file with the `background` it's made for (a token reference) and its `source`; the brand's small mark (its icon, the mark alone, a monogram) with `small: true`, since the favicon and profile picture are made from it.
 - **`casing`** (Studio): the letter case a role is set in, when the brand sets one: `upper`, `lower` or `title`, such as `display: upper` for headlines in capitals (a site's `text-transform`, or copy typed in capitals). The spec's typography has no case, so without it every template and the board guess.
 - **`assets`** (Studio): the brand's asset folders under `brand/`, each drawn as a frame of the brand board: `{ folder, kind, title, note?, anchors? }`, the kind one of `imagery` (photos or drawings, whole and framed, with the `anchors` that set its look marked), `character` (a mascot's turnaround and poses), `icons`, `pattern` and `in-use` (mockups of the brand on its objects, never imagery). Without it, `brand/refs/` is the brand's imagery. The guide board shows a sample of the first imagery folder.
 
@@ -140,6 +140,7 @@ assets:
   - { folder: refs, kind: imagery, title: Photographs, anchors: [serum-morning.jpg] }
 logos:
   primary: { file: logos/logo.svg, background: "{colors.background}", source: the site's logo component with the light theme's values }
+  mark: { file: logos/mark.svg, background: "{colors.background}", source: the app icon, as the site serves it, small: true }
 ---
 
 ## Overview
