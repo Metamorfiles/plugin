@@ -134,7 +134,7 @@ wait for its verdict, naming only the frames that are new or changed:
 
 | When | Frames | What it judges |
 |---|---|---|
-| `logo.md` written, before asking | `process-logo` | every letter; each route's small mark is the very mark its logo shows; the small sizes, reversed and one colour |
+| `logo.md` written, before asking | `process-logo` | every letter; a route's mark is the very mark its logo shows; reversed and one colour |
 | The character sheet written, before the imagery | `process-logo` | eight figures in the grid's order, the same character as the anchor in all eight: its face, its one feature, its proportions, its colours |
 | `imagery.md` written, before asking | `process-imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
 | Each batch of the library | the imagery folder's frame, by the folder's name (`refs`) | the same, against the anchors |
@@ -189,7 +189,7 @@ Notes for the record: why each option, what the user said.
 Each option can carry:
 - `files`: up to 16 images or SVGs, each `{ file, caption, ground, small }` with all but `file`
   optional: `caption` (at most 140 characters: a credit, what to take), `ground` (`"#rrggbb"`, the
-  colour a logo file is shown on) and, for a logo route's small mark, `small: true`;
+  colour a logo file is shown on) and, for a logo route's mark, `small: true`;
 - `colors`: up to 10, each `{ name, hex: "#rrggbb", share }` with `share` 0 to 100, in the order and
   proportion they are used;
 - `fonts`: up to 4, each `{ family, file, role }`, `file` the one `metamorfiles_add_font` returned (a
@@ -228,7 +228,8 @@ its frame shows each file as it arrives, so the user watches the step come toget
    type. Each route checked with one
    `metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#1f1a17" }`, which draws it in colour
    on its paper, reversed and in one colour on one sheet; in `logo.md` every file has its `ground`,
-   its small mark `small: true`. A mascot is designed with `metamorfiles-character`.
+   a route's mark `small: true`. The small mark and the small uses come after the choice (its step 8).
+   A mascot is designed with `metamorfiles-character`.
    **Once a logo with a character is chosen,** draw its character sheet (`references/sheet.md` of
    `metamorfiles-character`) before anything else, write it into `logo.md` as `sheet`, and have the
    reviewer check it: every image of the character after that is made from it.

@@ -59,15 +59,15 @@ A version of a logo drawn whole is made the cheapest way that keeps it the logo'
 
 - **A part that is its own piece** (a letter, a mark with space around it), taken out as it is:
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-mark.svg", keep: { x: 0.81, y: 0.03, width: 0.19, height: 0.88 }, square: true }`,
-  its box from the boxes `metamorfiles_check_logo` lists. No image is made; the small mark is this.
+  its box from the boxes `metamorfiles_check_logo` lists. No image is made; the logo's mark is this.
 - **A letter or mark sitting on a shape of another colour** (a letter on a strip of tape, a mark on a
   badge): cut the shape's colour out first, which leaves the letter as its own piece, then take it:
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-letters.svg", colors: { "#efe1b4": "knockout" } }`,
   then `keep` on that file as above. No image is made.
 - **A part that touches or overlaps others** (a mascot over the letters), or one drawn anew (the bust
-  for the full body), is an edit of it: the traced file first in `references`, `edit: true`, the same
-  `folder` and `trace` colours, saying only what changes. Studio keeps every letter the edit doesn't
-  touch exactly as it was.
+  for the full body), is an edit of it, made only after the choice and on the user's word: the traced
+  file first in `references`, `edit: true`, the same `folder` and `trace` colours, saying only what
+  changes. Studio keeps every letter the edit doesn't touch exactly as it was.
 - **Another layout** (one line, stacked) is drawn at its new shape; read every letter against the
   original and check it like the original.
 
