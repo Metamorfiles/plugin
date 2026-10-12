@@ -128,11 +128,15 @@ The user chose the drawing: the cleaned file keeps every part of it, with only i
 or smoothed. From here on the cleaned files stand in for the traced ones, and anything made from a
 traced file (its small mark, its colours) is made again from the cleaned one.
 
-Then the small mark, which stands for the whole name: the logo's own mark, its first letter or a
-monogram of its initials, or the seal's middle, cut from its file, or the whole logo when it holds up
-at 32 px. Never another letter alone: a lone e reads as "e", not as the brand. Check it
-at 32 and 16 px with `metamorfiles_check_logo` and ask the user with `metamorfiles_ask_user`, showing
-it. When no part of the logo holds up small, say so and ask what they want: never change the logo for it.
+Then the small mark, right after the choice and before anything else is made: it stands for the
+whole name. Offer one to three: the logo's own mark, its first letter or a monogram of its initials,
+the seal's middle, each cut from its file, or the whole logo when it holds up at 32 px. Never another
+letter alone: a lone e reads as "e", not as the brand. Check each at 32 and 16 px with
+`metamorfiles_check_logo`, write them into `brand/process/logo.md` as `marks`, each
+`{ file, title }` and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`.
+Studio shows them on the logo frame as a profile picture and at 32 and 16 px, records the answer as
+`mark`, and asks nothing after the logo, nor hands the brand over, until it's answered. When no part
+of the logo holds up small, say so and ask what they want: never change the logo for it.
 
 Then make the final files in `brand/logos/` with the same tools and settings, each with an `output`
 there. A cleaned drawing reaches it as one part:
