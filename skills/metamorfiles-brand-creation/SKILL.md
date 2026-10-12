@@ -237,9 +237,12 @@ its frame shows each file as it arrives, so the user watches the step come toget
    `brand/process/imagery/`. The seeds the user keeps are the anchors. Start them (`wait: false`)
    before the chosen logo's cleanup (step 8 of `metamorfiles-logo`), which then runs while they're
    made; its final logo files wait for the kit.
-4. **Kit.** The voice is the copywriter's, always: report as `copywriter` while you write DESIGN.md's
+4. **Kit.** The words are the copywriter's, always: report as `copywriter` while you write DESIGN.md's
    Voice (the chart in `references/voice-chart.md` of `metamorfiles-brand`, and its lines in the
-   brand's own words, `references/copy.md` of `metamorfiles`), then hand back to the designer.
+   brand's own words, `references/copy.md` of `metamorfiles`) and its Messaging (as `metamorfiles-brand`
+   describes it, from the brief's facts), then hand back to the designer. Overview ends with one
+   paragraph on why the chosen direction and logo fit the brief, and what they leave out of the
+   category's usual look.
    The chosen direction, logo and imagery become `brand/DESIGN.md` as `metamorfiles-brand`
    describes, with the final logos in `brand/logos/` (step 8 of `metamorfiles-logo`) and every face
    with its role (the logo's own face named for it). A folder in `assets` must exist, and its frame
@@ -274,8 +277,9 @@ The last call is `metamorfiles_team_update { task, role: "designer", finished: t
 your handover as `summary`; when the
 mockups carry proposed product names, it names them as proposals for the user to confirm, one of the
 things that need them. The run ends there: Studio tells the user the brand is ready and offers to make the first posts, so the
-handover asks nothing. The user downloads the kit (the logo for each use, the fonts, the colours and
-a page that says what's what) from the brand board in the panel.
+handover asks nothing. The user downloads the kit from the brand board in the panel, or any app writes it into `kit/` with
+`metamorfiles_export_kit {}`: the logos for screens and print, the profile picture, the website's
+icons, fonts and colours, the fonts, the guidelines, the brand's words and a page that says what's what.
 
 ## Rules
 
