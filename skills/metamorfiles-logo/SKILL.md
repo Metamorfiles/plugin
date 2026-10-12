@@ -128,8 +128,9 @@ The user chose the drawing: the cleaned file keeps every part of it, with only i
 or smoothed. From here on the cleaned files stand in for the traced ones, and anything made from a
 traced file (its small mark, its colours) is made again from the cleaned one.
 
-Then the small mark: the logo's own mark, or a part of the logo that stands alone (a letter, a
-monogram, the seal's middle), cut from its file, or the whole logo when it holds up at 32 px. Check it
+Then the small mark, which stands for the whole name: the logo's own mark, its first letter or a
+monogram of its initials, or the seal's middle, cut from its file, or the whole logo when it holds up
+at 32 px. Never another letter alone: a lone e reads as "e", not as the brand. Check it
 at 32 and 16 px with `metamorfiles_check_logo` and ask the user with `metamorfiles_ask_user`, showing
 it. When no part of the logo holds up small, say so and ask what they want: never change the logo for it.
 
