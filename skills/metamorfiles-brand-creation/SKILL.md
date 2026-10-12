@@ -120,6 +120,8 @@ started.
   what they rejected again from its brief (its idea; a character's attitude, face and pose; the
   lettering's idea), keep what they praised, and say in a line what changed. A new rendering of the
   same ideas doesn't answer it.
+- **Fonts are Studio's to tidy.** It deletes the fonts a brand doesn't use: a direction's when another
+  is chosen, every face the kit doesn't list when the brand is handed over. Never remove a font yourself.
 - **Back to a version they saw is a swap.** "Change it back", "the earlier one was better": put that
   version back, `metamorfiles_use_take { step: "logo", option: "painted-door", take: 1 }` (a route's
   `takes` in `logo.md`, a seed's earlier files), and ask again. Never make it again.
@@ -231,7 +233,8 @@ its frame shows each file as it arrives, so the user watches the step come toget
    type. Each route checked with one
    `metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#1f1a17" }`, which draws it in colour
    on its paper, reversed and in one colour on one sheet; in `logo.md` every file has its `ground`,
-   a route's mark `small: true`. The small mark and the small uses come after the choice (its step 8).
+   a route's mark `small: true`. Once a logo is chosen, its small mark is asked next, with
+   `metamorfiles_ask_user { step: "mark" }` (the logo skill's step 8), and answered before the imagery.
    A mascot is designed with `metamorfiles-character`.
    **Once a logo with a character is chosen,** draw its character sheet (`references/sheet.md` of
    `metamorfiles-character`) before anything else, write it into `logo.md` as `sheet`, and have the
