@@ -84,10 +84,11 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 ## Prose
 
 - The spec's sections, in order, only those the brand has: Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts.
-- Then Studio's sections: Logo, Imagery, Voice, Audience, Sources, Known gaps.
+- Then Studio's sections: Logo, Imagery, Voice, Messaging, Audience, Sources, Known gaps.
 - Name tokens instead of repeating values: `**Ink** {colors.ink} carries all text`. Values belong in the tokens and in Sources.
 - Describe rules and intent, not layouts, unless the brand really has a fixed layout rule. A specific reference ("a 1970s lecture handout") carries more than adjectives ("clean, modern").
 - Keep Do's and Don'ts short and intentional, and never add brand facts such as claims, prices or awards.
+- **Messaging** is the brand described, ready to copy into a shop, a profile or an About page: the brand in one line, in one sentence and in one paragraph, then up to three key messages, each one line. Only facts from the sources or the brief: no claims, no prices, no awards, no tagline (a tagline is a piece, made when the user asks). Quote the brand's own description word for word where it has one. Words to use and avoid belong in Voice.
 - **Voice is a chart, not a paragraph**: three concepts, each with its characteristics and the lines the brand does and doesn't say. Every Do is quoted from the brand's own copy. See `references/voice-chart.md`; the board draws the chart and the templates write to it.
 - **Sources** is a table: value, origin (file or URL), original name (variable, class or element), confidence (exact, sampled, inferred or proposed), plus what was deliberately not carried over. `proposed` is anything you supplied rather than observed; say what you derived it from.
 - **Known gaps** lists what the brand doesn't define and what you need from the user.
@@ -152,6 +153,7 @@ logos:
 ## Logo
 ## Imagery
 ## Voice
+## Messaging
 ## Audience
 ## Sources
 ## Known gaps

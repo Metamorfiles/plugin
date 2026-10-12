@@ -14,8 +14,10 @@ the `metamorfiles` skill; this is the shape of this particular message.
    them a sentence is enough to change any of it.
 4. **What genuinely needs them.** Never more than two, and only real ones: a gap you cannot fill, a
    choice that is theirs. If there is nothing, say nothing.
-5. **What they can do next,** as an offer, never a question: the kit downloads from the brand board,
-   and the team can make the first posts. Studio shows the same offer at the top of the panel, so
+5. **What they can do next,** as an offer, never a question: the kit downloads from the brand board
+   (or `metamorfiles_export_kit {}` writes it into `kit/`), with the logos for print and screens, the
+   website's icons and colours, the guidelines and the brand's words; and the team can make anything
+   with the brand: posts, a business card, covers, a flyer. Studio shows the same offer at the top of the panel, so
    nothing waits for an answer.
 
 ## Worked example
