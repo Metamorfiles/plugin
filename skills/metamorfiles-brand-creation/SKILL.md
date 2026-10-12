@@ -37,7 +37,7 @@ Copy it into your notes and tick each step as you go:
 | 1. Direction | two or three directions, each its references, palette in proportion and type pairing, set in the brand's words | `designer` | `references/research.md`, `references/look.md`, `references/fonts.md` | chooses one, or says what to change or mix |
 | 2. Logo | three routes or more from the chosen direction: drawn whole by AI, real fonts with a generated part, type alone; each in colour, reversed and in one colour | `designer` | the `metamorfiles-logo` skill; `metamorfiles-character` for a mascot | chooses one, or asks for another |
 | 3. Imagery | the style in words and four seed images | `imager` | `references/imagery.md` | uses them, or has single ones redone |
-| Kit | DESIGN.md and the brand board: the guide and the images | `designer`, `copywriter` for the voice | `metamorfiles-brand` | asks for any change they want |
+| Kit | DESIGN.md and the brand board: the guideline pages and the images | `designer`, `copywriter` for the voice | `metamorfiles-brand` | asks for any change they want |
 | Mockups, last | three shots of the brand on its own objects, on their own board | `designer`, `imager` for the photographs | `references/mockups.md`, `metamorfiles-mockup` | redoes one, or picks an earlier take back |
 
 `references/principles.md` holds what separates studio work from generated work, with tests for each
@@ -267,8 +267,8 @@ its frame shows each file as it arrives, so the user watches the step come toget
    - Last, the mockups (`references/mockups.md`): three shots of the brand on its own objects, on
      their own board, never asked.
 
-   The brand board then holds it all after the steps: the guide, the logos, the images and the
-   mockups, each a board of its own. Get the final check (`metamorfiles-review`, in the foreground, waiting for its verdict),
+   The brand board then holds it all after the steps, as the brand's guideline pages: the logo,
+   colour, type, voice, the images and the mockups. Get the final check (`metamorfiles-review`, in the foreground, waiting for its verdict),
    fix what it marks, and hand over as `references/presenting.md` of `metamorfiles-brand` says. Make
    no templates or pages: the kit is the brand.
 
