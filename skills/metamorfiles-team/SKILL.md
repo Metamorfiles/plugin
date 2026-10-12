@@ -19,6 +19,8 @@ You play the specialists yourself, one at a time, because their work depends on 
 
 A new brand made from nothing (Studio's request says so, or `metamorfiles_get_project` says the brand is being made) follows `metamorfiles-brand-creation` for its order of work, its questions and its handover; the reporting below holds for it too.
 
+`metamorfiles_get_project` gives the user's `decisions`, which are rules, and `preferences`, what they chose and changed before: context for your judgement on this piece, never a rule or a look to repeat. Its `stale` lists work made before the brand changed: bring it up to date only when the user asks.
+
 The craft files are the same ones every workflow uses; read each when its role starts, not all up front (in that skill's folder, or with `metamorfiles_get_guide { name: "metamorfiles", file: "references/design.md" }`).
 
 ## Report every step
