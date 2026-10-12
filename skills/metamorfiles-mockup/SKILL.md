@@ -104,8 +104,7 @@ Look at each blank photo with `metamorfiles_read_file`, then
   its centre line: check both against the object's own edges and centre first.
 - Studio bakes the artwork into the photo's light, then the image model finishes it, checked against
   the bake (the artwork in place, no mark added, the photo around it unchanged), once more when it
-  fails, the exact bake kept after two failures. A kept finish is set into the photo around the
-  artwork, so the rest of the photo stays exactly as it was. The mockup is saved in the in-use folder.
+  fails, the exact bake kept after two failures. The mockup is saved in the in-use folder.
 
 ### 5. Check each one
 
