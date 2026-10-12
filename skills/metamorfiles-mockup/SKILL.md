@@ -77,7 +77,7 @@ proposes names in the brand's voice, recorded for the user to confirm (a new bra
 ### 3. The blank photo
 
 All the shots together, each
-`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["templates/brand-board#board"], folder: "brand/mockups/blanks", name: "card-at-door", wait: false }`,
+`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["templates/brand-board#guidelines"], folder: "brand/mockups/blanks", name: "card-at-door", wait: false }`,
 collected with `metamorfiles_image_status { id }`. Write the prompt in this order: the shot
 ("Editorial photograph", its shape, the idea, the camera); the backdrop and the light, with where the
 shadows fall; the objects and how they sit, physics said plainly; then the surface where the brand
@@ -143,7 +143,7 @@ Mockups look made when the brand sits on the object the way a printer or signwri
 
 A shot where nothing printed has to read exactly (the brand's colours in a busy place, an object
 seen far off) may be one photograph the image model makes whole:
-`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "templates/brand-board#board"], folder: "brand/mockups", name: "market-stall" }`,
+`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "templates/brand-board#guidelines"], folder: "brand/mockups", name: "market-stall" }`,
 the prompt saying "the logo from image 1 exactly as drawn" where it shows, then checked against the
 logo file and fixed by an edit of that region (`edit: true`, `region`).
 

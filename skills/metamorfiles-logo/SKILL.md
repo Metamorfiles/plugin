@@ -150,8 +150,8 @@ small mark with `small: true`.
 
 Last, compose the small mark for where it's used small: the profile picture, which platforms crop to
 a circle, and the favicon and app icons, squares. Studio places the mark by its ink and shows each at
-its real size on the brand board's `logos` frame
-(`metamorfiles_render_preview { item: "templates/brand-board", format: "logos" }`). Look at each as
+its real size on the guidelines' `mark` page
+(`metamorfiles_render_preview { item: "templates/brand-board", format: "mark" }`). Look at each as
 it will be seen and decide its composition for that mark: how much of the circle or square it fills,
 where it sits, its ground, or another version of it (the reversed mark on a brand colour). Write what
 differs from Studio's placement on the small mark's entry, `profile` and `icon`:
