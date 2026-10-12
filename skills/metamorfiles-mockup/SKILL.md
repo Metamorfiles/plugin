@@ -94,12 +94,18 @@ Look at each blank photo with `metamorfiles_read_file`, then
 - `corners`: the whole surface, top-left, top-right, bottom-right, bottom-left, in the photo's pixels;
   `size` and `at` place the artwork in it as a real one sits, at its own proportions, never stretched.
   A `cover` layer fills its surface instead.
+- A curved surface (`form: "curved"`: a can, a cup, a bottle) takes the corners of its visible face at
+  its sides and `curve`: `{ file: "brand/logos/mark.svg", corners: [[385, 260], [746, 260], [746, 1140], [385, 1140]], curve: { wrap: 150, bend: [8, 14] } }`,
+  `wrap` the degrees of its turn the face spans and `bend` how far the middle of its top and bottom
+  edges sits below their corners' line (negative above), as the object's rim bows in the photo. A
+  soft surface follows the photo's folds by itself.
 - `text`: the words a file layer shows (a logo's name); an html layer's words are read from it.
 - The result shows the placement over the photo, the surface dashed and the artwork solid, each with
   its centre line: check both against the object's own edges and centre first.
 - Studio bakes the artwork into the photo's light, then the image model finishes it, checked against
   the bake (the artwork in place, no mark added, the photo around it unchanged), once more when it
-  fails, the exact bake kept after two failures. The mockup is saved in the in-use folder.
+  fails, the exact bake kept after two failures. A kept finish is set into the photo around the
+  artwork, so the rest of the photo stays exactly as it was. The mockup is saved in the in-use folder.
 
 ### 5. Check each one
 
