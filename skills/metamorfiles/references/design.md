@@ -6,14 +6,14 @@ Read this whenever you lay out a frame: a new template, a page's formats, a repu
 
 1. Know what already works and what's wrong: the brief, or the review's problems for your frames.
 2. Name the frame's **reading path** in one line: what the eye hits first, what comes next, and how full the frame should feel ("product first, then the headline on the paper band, price last; lots of air").
-3. Read `brand/DESIGN.md` (type roles, colors and their on- colors, components, spacing) and the item's HTML, CSS and `edits.css`.
+3. Read `brand/DESIGN.md` (type roles, colors and their on- colors, components, spacing) and the item's HTML, CSS and `edits.css`. `metamorfiles_inspect_frame { item: "pages/<id>", format: "instagram-story" }` lists each element of a frame with its id or path and its box.
 
 ## Where a change goes
 
 - **Every variant and format**: the template's (or page's) `index.html` and its CSS.
 - **One format**: a rule scoped to that format in the design's CSS (`html[data-format="instagram-story"] …`).
-- **One frame's element** (position, size, one style): `edits.css`, one line per element and frame, keeping every other line and every `data-mf-id`.
-- **One variant's content**: that variant's values in `page.json`, which is the copywriter's or image maker's unless the value is visual (a color, an anchor, a size).
+- **One frame's element** (position, size, one style, hidden): `metamorfiles_edit { item: "pages/<id>", changes: [{ do: "place", element: "e1", x: 80, y: 120, variant: "<id>", format: "instagram-story" }] }`, with `style`, `hide` and `show` the same way; Studio writes it to `edits.css`.
+- **One variant's content**: `metamorfiles_edit { item: "pages/<id>", changes: [{ do: "value", variable: "headline", value: "…", variant: "<id>" }] }`, which is the copywriter's or image maker's unless the value is visual (a color, an anchor, a size).
 
 Fix at the widest level the problem really has. A headline that overflows in every story frame is a story-format rule, not four frame edits.
 
