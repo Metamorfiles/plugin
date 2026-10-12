@@ -120,6 +120,9 @@ started.
   what they rejected again from its brief (its idea; a character's attitude, face and pose; the
   lettering's idea), keep what they praised, and say in a line what changed. A new rendering of the
   same ideas doesn't answer it.
+- **Back to a version they saw is a swap.** "Change it back", "the earlier one was better": put that
+  version back, `metamorfiles_use_take { step: "logo", option: "painted-door", take: 1 }` (a route's
+  `takes` in `logo.md`, a seed's earlier files), and ask again. Never make it again.
 - **A change is local.** "Warmer", "the other S", "redo the second one": rework that step only, and
   what depends on it. A new palette recolours the logo routes; it never restarts the research.
 - **Going back from the chat.** "Back to the logo": write the logo step's file again without its
