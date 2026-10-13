@@ -249,7 +249,11 @@ its frame shows each file as it arrives, so the user watches the step come toget
    brand's own words, `references/copy.md` of `metamorfiles`) and its Messaging (as `metamorfiles-brand`
    describes it, from the brief's facts), then hand back to the designer. Overview ends with one
    paragraph on why the chosen direction and logo fit the brief, and what they leave out of the
-   category's usual look.
+   category's usual look. The guideline pages print every prose section, so each is written for the
+   brand's reader the first time: no file paths, no process notes ("the seeds the user approved",
+   "chosen on step 2"), and every measure a real one (a clear space as a share of the logo's height
+   or in px at a stated size, never "the K's x-height"); Studio warns on the board where a section
+   reads as a working note.
    The chosen direction, logo and imagery become `brand/DESIGN.md` as `metamorfiles-brand`
    describes, with the final logos in `brand/logos/` (step 8 of `metamorfiles-logo`) and every face
    with its role (the logo's own face named for it). A folder in `assets` must exist, and its frame
