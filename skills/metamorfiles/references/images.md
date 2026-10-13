@@ -176,7 +176,8 @@ or `metamorfiles_import_image`:
   lands on its exact value; one it doesn't have takes nothing. List only what the piece is meant
   to use.
 - **`inks`:** how many colours the trace has in all. Beyond the brand's, the drawing keeps its own
-  colours (a sky, a skin tone, a shade), largest first, up to this number. Artwork may use any colour
+  colours (a sky, a skin tone, a shade), largest first, up to this number (eight beyond the listed
+  ones when left out). Artwork may use any colour
   the composition needs: the brand's colours are its guide, never a limit. Ask the prompt for flat
   colour in about that many colours, with no gradient, shading or texture. Leave `colors` out to
   trace an image in its own colours alone (the user's own file, art with no brand tie).
@@ -190,7 +191,8 @@ or `metamorfiles_import_image`:
 The result lists each colour with its share and says how much of the drawing the trace keeps. Under
 90%, the drawing isn't flat colour: keep the raster, or draw it again flat. A colour reported beyond
 the trace's is part of the design (trace again with it listed, or with more `inks`) or a shade the
-model added (draw again without it). The brand's logo is made by `metamorfiles-logo`, never traced
+model added (draw again without it); an area reported as a gradient is drawn again flat, or the
+raster is kept where the gradient is the design. The brand's logo is made by `metamorfiles-logo`, never traced
 from a render of it, and another party's mark is never traced (`metamorfiles_find_mark`).
 
 ## Check
