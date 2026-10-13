@@ -68,6 +68,16 @@ A version of a logo drawn whole is made the cheapest way that keeps it the logo'
   for the full body), is an edit of it, made only after the choice and on the user's word: the traced
   file first in `references`, `edit: true`, the same `folder` and `trace` colours, saying only what
   changes. Studio keeps every letter the edit doesn't touch exactly as it was.
+- **A version that loses a part in one colour.** The reversed and one-colour versions are recolours
+  of the file (`metamorfiles_make_logo_variant`) unless `metamorfiles_check_logo` reports
+  `lostInOneColour` with `merged` boxes: a face's features that merge into one ink, a gem's cut that
+  disappears. Then that version is drawn as an edit of the logo's own drawing (`edit: true`, the
+  traced file first in `references`, the same `folder` and `trace` colours, saying only what changes in
+  the merged parts: an outline cut between the features, a facet left open) and traced, and lined up
+  with the logo: `metamorfiles_align_version { file: "brand/process/logo/<file>.svg", version: "brand/process/logo/<file>-ink-draft.svg", output: "brand/process/logo/<file>-ink.svg", redrawn: [{ x: 0.81, y: 0.03, width: 0.19, height: 0.88 }] }`,
+  the boxes being the merged ones the check reported. Every piece outside them is the logo's own
+  file; the version's entry in `logo.md` carries the same boxes as `redrawn`, so the card says what
+  was redrawn and the reviewer judges only that.
 - **Another layout** (one line, stacked) is drawn at its new shape; read every letter against the
   original and check it like the original.
 
