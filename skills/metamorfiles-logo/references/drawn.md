@@ -68,7 +68,8 @@ A version of a logo drawn whole is made the cheapest way that keeps it the logo'
   for the full body), is an edit of it, made only after the choice and on the user's word: the traced
   file first in `references`, `edit: true`, the same `folder` and `trace` colours, saying only what
   changes. Studio keeps every letter the edit doesn't touch exactly as it was.
-- **A version that loses a part in one colour.** The reversed and one-colour versions are recolours
+- **A version that loses a part in one colour,** redrawn after the choice, for the chosen logo only.
+  The reversed and one-colour versions are recolours
   of the file (`metamorfiles_make_logo_variant`) unless `metamorfiles_check_logo` reports
   `lostInOneColour` with `merged` boxes: a face's features that merge into one ink, a gem's cut that
   disappears. Then that version is drawn as an edit of the logo's own drawing (`edit: true`, the
