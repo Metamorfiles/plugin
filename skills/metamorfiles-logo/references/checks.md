@@ -1,8 +1,8 @@
 # Checks
 
 Every route is checked before anyone sees it, and checked again after every fix. The user should
-never be the one to find what fails. Before the choice, a route's letters and its versions count;
-the small sizes count for the small mark, after the choice.
+never be the one to find what fails. Before the choice, a route's letters and its one-colour version
+count; the reversed version and the small sizes count after the choice, for the chosen route.
 
 ## The check loop
 

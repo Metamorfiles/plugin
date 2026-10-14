@@ -19,10 +19,10 @@ Copy it into your notes and tick each step as you go:
 - [ ] 2. Type study: the name in the faces the direction suggests and around them
 - [ ] 3. Three ideas: each route's idea and composition written before anything is drawn
 - [ ] 4. Three routes made: the word set first, a mark drawn to fit it
-- [ ] 5. Every route checked with metamorfiles_check_logo: its letters, reversed and one colour
-- [ ] 6. Each route's files: colour, reversed, one colour, and its mark when it has one
+- [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
+- [ ] 6. Each route's two files: colour, and one colour
 - [ ] 7. Routes shown and one recommended
-- [ ] 8. After the choice: cleaned, its small mark agreed, the final files, the small uses composed
+- [ ] 8. After the choice: cleaned, its small mark agreed, the reversed and final files, the small uses composed
 ```
 
 ### 1. What the brand already decided
@@ -83,23 +83,21 @@ composition move (`references/taste.md`), so the user chooses between ideas.
 
 Run `metamorfiles_check_logo` on every route's logo. Read the sheet and the numbers, fix what fails,
 and run it again: `references/checks.md`. The user should never be the one to find a drawn letter
-that's wrong or a reversed version that doesn't read. The small sizes are checked after the choice
-(step 8): a route is never drawn again for them.
+that's wrong or a one-colour version that doesn't read. The reversed version and the small sizes are
+made and checked after the choice (step 8): a route is never drawn again for them.
 
 ### 6. Each route's files
 
-The route's first file is the logo in colour on the ground it's made for; after it, reversed on the
-dark colour and in one colour on white, each with its `ground`. A drawing of lines with coloured
-fills becomes line art in one colour and reversed: its line colour to the ink and every fill cut out
-(`metamorfiles_make_logo_variant`, each fill's colour to `"knockout"`), so the ground shows through
-the drawing. Recolouring every paint to one colour turns it into a silhouette, and the details are
-gone. A drawing of solid shapes becomes one solid shape with its inner details cut out.
+Two files a route: the logo in colour on the ground it's made for, then in one colour on white,
+each with its `ground`. One colour is what tells routes apart: it shows whether the drawing holds
+without its fills. A drawing of lines with coloured fills becomes line art in one colour: its line
+colour to the ink and every fill cut out (`metamorfiles_make_logo_variant`, each fill's colour to
+`"knockout"`), so the ground shows through the drawing. Recolouring every paint to one colour turns
+it into a silhouette, and the details are gone. A drawing of solid shapes becomes one solid shape
+with its inner details cut out.
 
-A route with a mark of its own (a generated mark, a mascot, a seal) shows it last, with `small: true`
-on its entry in the option's `files` in `brand/process/logo.md` (`{ file: <its path>, small: true }`):
-the very mark the logo shows, its own file in a route with a generated mark, cut from the logo's
-file in a logo drawn whole (`references/drawn.md`, "Other versions of it"). Studio refuses a mark the
-image model drew again. A route without a mark shows none. Save every file under
+The reversed version, the small mark, and a version redrawn because it loses a part in one colour
+are made after the choice, for the chosen route only (step 8). Save every file under
 `brand/process/logo/`: `folder: "brand/process/logo"` for an image, an `output` there for the other tools.
 
 ### 7. Show them
@@ -111,8 +109,8 @@ choosing stays in your notes.
 
 In a new brand, write them as the options of `brand/process/logo.md`, one `recommended: true`, and
 ask as the `metamorfiles-brand-creation` skill says: Studio draws each large on its ground with its
-versions beside it on the brand board, a logo made from a drawing as the drawing itself and its colour
-versions from its trace. Outside it, show the check sheets and say in a line what each is and why,
+one-colour version beside it on the brand board, a logo made from a drawing as the drawing itself and its
+one-colour version from its trace. Outside it, show the check sheets and say in a line what each is and why,
 the recommended one first.
 
 ### 8. After the choice
@@ -142,8 +140,9 @@ Then make the final files in `brand/logos/` with the same tools and settings, ea
 there. A cleaned drawing reaches it as one part:
 `metamorfiles_compose_logo { layout: "stack", parts: [{ file: "<the cleaned .svg>" }], output: "brand/logos/logo.svg" }`
 (`metamorfiles_generate_image` never saves into `brand/logos/`). The other colours come from
-`metamorfiles_make_logo_variant { file, output: "brand/logos/logo-reversed.svg", colors: { ... } }`.
-A version of a logo drawn whole: `references/drawn.md`, "Other versions of it". Run `metamorfiles_check_logo` on each. Declare them in
+`metamorfiles_make_logo_variant { file, output: "brand/logos/logo-reversed.svg", colors: { ... } }`:
+the reversed version is made here for the first time, the same way as the one colour, and a version
+that loses a part in one colour is redrawn now. A version of a logo drawn whole: `references/drawn.md`, "Other versions of it". Run `metamorfiles_check_logo` on each. Declare them in
 DESIGN.md `logos` with their grounds, sources ("set in <face> as outlines with a drawn part", "drawn
 by <model> and traced", "created and approved by the user on <date>") and clear space, and the
 small mark with `small: true`.

@@ -35,7 +35,7 @@ Copy it into your notes and tick each step as you go:
 | Step | You prepare | Speaks as | Read | The user |
 |---|---|---|---|---|
 | 1. Direction | two or three directions, each its references, palette in proportion and type pairing, set in the brand's words | `designer` | `references/research.md`, `references/look.md`, `references/fonts.md` | chooses one, or says what to change or mix |
-| 2. Logo | three routes or more from the chosen direction: drawn whole by AI, real fonts with a generated part, type alone; each in colour, reversed and in one colour | `designer` | the `metamorfiles-logo` skill; `metamorfiles-character` for a mascot | chooses one, or asks for another |
+| 2. Logo | three routes or more from the chosen direction: drawn whole by AI, real fonts with a generated part, type alone; each in colour and in one colour | `designer` | the `metamorfiles-logo` skill; `metamorfiles-character` for a mascot | chooses one, or asks for another |
 | 3. Imagery | the style in words and four seed images | `imager` | `references/imagery.md` | uses them, or has single ones redone |
 | Kit | DESIGN.md and the brand board: the guideline pages and the images | `designer`, `copywriter` for the voice | `metamorfiles-brand` | asks for any change they want |
 | Mockups, last | three shots of the brand on its own objects, on their own board | `designer`, `imager` for the photographs | `references/mockups.md`, `metamorfiles-mockup` | redoes one, or picks an earlier take back |
@@ -139,7 +139,7 @@ wait for its verdict, naming only the frames that are new or changed:
 
 | When | Frames | What it judges |
 |---|---|---|
-| `logo.md` written, before asking | `process-logo` | every letter; a route's mark is the very mark its logo shows; reversed and one colour |
+| `logo.md` written, before asking | `process-logo` | every letter; one colour |
 | The character sheet written, before the imagery | `process-logo` | eight figures in the grid's order, the same character as the anchor in all eight: its face, its one feature, its proportions, its colours |
 | `imagery.md` written, before asking | `process-imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
 | Each batch of the library | the imagery folder's frame, by the folder's name (`refs`) | the same, against the anchors |
@@ -232,8 +232,9 @@ its frame shows each file as it arrives, so the user watches the step come toget
    generated mark, mascot or letter; and the name in type alone. Supporting words are always real
    type. Each route checked with one
    `metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#1f1a17" }`, which draws it in colour
-   on its paper, reversed and in one colour on one sheet; in `logo.md` every file has its `ground`,
-   a route's mark `small: true`. Once a logo is chosen, its small mark is asked next, with
+   on its paper, reversed and in one colour on one sheet; in `logo.md` each route has two files, in
+   colour and in one colour, each with its `ground`. Once a logo is chosen, its reversed version is
+   made and its small mark is asked next, with
    `metamorfiles_ask_user { step: "mark" }` (the logo skill's step 8), and answered before the imagery.
    A mascot is designed with `metamorfiles-character`.
    **Once a logo with a character is chosen,** draw its character sheet (`references/sheet.md` of
