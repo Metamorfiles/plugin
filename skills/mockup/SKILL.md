@@ -24,7 +24,8 @@ edit. Only a print it can't make exact is placed by Studio on a blank photo.
 
 ### 1. The shots
 
-One idea per photograph, each a different idea and a different part of the system, from the brand's
+Read [references/taste.md](references/taste.md) first: what strong mockups do, and the weak ones to
+recognise. One idea per photograph, each a different idea and a different part of the system, from the brand's
 own world: what it really makes (its brief, its touchpoints) and the moments and places it lives in.
 The kinds of shot below are cameras and sets to build an idea with, never the idea itself. Never a
 plain product standing on a plain floor:
@@ -135,4 +136,3 @@ Mockups look made when the brand sits on the object the way a printer or signwri
 - **A cup, can or bottle** keeps the logo within the face you see.
 - **Small type stays small,** as on the real thing: a line under a logo, an address.
 
-What strong and weak mockups look like is in [references/taste.md](references/taste.md).
