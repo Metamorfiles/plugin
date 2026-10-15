@@ -1,6 +1,6 @@
 ---
 name: mockup
-description: Use to show a brand on its real objects in Metamorfiles Studio, as photography a design publication would feature: a pack, a tin, a bottle, a box, a range, a bag, a sign, a card, a tag, a cup, a garment, merchandise. Each shot is art-directed, made as a blank photo, and the brand's real files (the logo, or artwork designed flat) are placed on it exactly by Studio and finished into a photograph by the image model. Use it for a new brand's mockups and whenever the user wants to see their brand, a product or a range on the real thing, even if they only say "a mockup" or "show it on a can".
+description: Use to show a brand on its real objects in Metamorfiles Studio, as photography a design publication would feature: a pack, a tin, a bottle, a box, a range, a bag, a sign, a card, a tag, a cup, a garment, merchandise. Each shot is art-directed and made whole by the image model from one prompt and the brand's real files as references (the logo, artwork designed flat, the mascot), then checked and fixed by an edit; placed by Studio on a blank photo only when the model can't make it exact. Use it for a new brand's mockups and whenever the user wants to see their brand, a product or a range on the real thing, even if they only say "a mockup" or "show it on a can".
 license: MIT
 ---
 
@@ -8,19 +8,18 @@ license: MIT
 
 A mockup sells the brand made real. The best ones are art-directed photographs: one clear idea per
 shot, light with intent, a backdrop that makes the object sing, and what's printed on it designed as
-a system. What must match a file exactly (the logo, a label, its words) is never drawn by the image
-model: the photo is made blank, Studio places the real files on it in perspective and bakes them in,
-and the model only finishes the result into a photograph.
+a system. The image model makes each photograph whole, from one prompt that directs the shot and the
+brand's real files given as references; what it prints is checked against those files and fixed by an
+edit. Only a print it can't make exact is placed by Studio on a blank photo.
 
 ## Checklist
 
 ```
 - [ ] 1. The shots chosen: one idea each, different from each other
 - [ ] 2. What's printed on each object decided: the logo alone, or artwork with it
-- [ ] 3. Each blank photo made; all together
-- [ ] 4. The brand placed on each, then finished
-- [ ] 5. Each one checked: placement, words, physics, the photograph
-- [ ] 6. Fixed; reviewed; then the user sees them
+- [ ] 3. Each photograph made whole, from its prompt and the brand's files; all together
+- [ ] 4. Each one checked: the logo, the words, the physics, the photograph
+- [ ] 5. Fixed by an edit, or placed when an edit can't; reviewed; then the user sees them
 ```
 
 ### 1. The shots
@@ -58,13 +57,14 @@ Decide it per object, from the shot's goal, its composition and the surface, as 
 really make it:
 - **The logo alone** (a sign, a tag, a card, a sticker, an embroidered chest): the logo file the
   ground calls for, placed the way a printer or signwriter would put it ("Placing it", below).
-- **Artwork with the logo** (a can's wrap, a box's face, a bottle's label, merch with an
-  illustration, a pattern with the logo): designed flat first with the `artwork` skill, where the
-  image model paints the picture and Studio sets the real logo and words on it, then exported and
-  placed as the object's whole printed face (`cover`).
-- **Html artwork** for a surface that carries a few words and the logo (a card's back, a receipt):
-  plain markup with inline styles in the brand's tokens (`var(--brand-…)`) and files (`../../brand/…`),
-  at the surface's proportions.
+- **The object designed in full** (a can's wrap, a box, a label, a poster, merch): the image model
+  designs it in the photograph, the way the best packaging and posters in its category are designed.
+  The brand's files are its references, not its limits: its imagery, character, pattern, palette and
+  type inspire the design, in variants and adaptations made for this object (a new pose of the
+  mascot, the pattern scaled to the box, an illustration in the imagery's style). Only the logo and
+  the words are exact.
+- **Artwork that must be exact** (a label a printer would get as a file, a precise illustration):
+  designed flat first with the `artwork` skill, then given to the model as the object's print.
 
 Then the surface: what it is, its material, how the brand is applied (print, screen-print,
 thermal-print, paint, vinyl, sticker, embroidery, engraving, emboss, foil, display, lightbox), how worn
@@ -74,54 +74,50 @@ the brand's name, the brief's words and its product names; when the brief gives 
 proposes names in the brand's voice, recorded for the user to confirm (a new brand's brief,
 `**Product names (proposed):** …`). Never a weight, price, ingredient, claim or small print.
 
-### 3. The blank photo
+### 3. Make each photograph
 
 All the shots together, each
-`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["templates/brand-board#guidelines"], folder: "brand/mockups/blanks", name: "card-at-door", wait: false }`,
-collected with `metamorfiles_image_status { id }`. Write the prompt in this order: the shot
-("Editorial photograph", its shape, the idea, the camera); the backdrop and the light, with where the
-shadows fall; the objects and how they sit, physics said plainly; then the surface where the brand
-goes, **completely blank, fully in frame and unobstructed**: an object whose print covers it (a can,
-a box, a label) in its base material (a plain aluminium can, a white box), one that carries only a
-mark in its own colour and material (a sign as a board painted its colour, an apron in its cloth).
-The brand board gives the palette and the look; no logo goes in as a reference, since none is
-drawn. `blanks/` keeps the blank photos off the board.
+`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "brand/artwork/can-wrap.png"], folder: "brand/mockups", name: "can-on-peppers", wait: false }`,
+collected with `metamorfiles_image_status { id }`. The references are the brand's real files, numbered
+by role: image 1 the logo file the object's ground calls for (the reversed one on a dark object), kept
+exact; then what the design draws on, as inspiration: the artwork made flat when there is one, the
+character sheet, a pattern, one or two of the imagery's anchors. Write the prompt in labelled
+sections, in this order:
 
-### 4. Place and finish
+- **Shot:** "Editorial product photograph", its shape, the idea in one line, the camera and the lens.
+- **Set and light:** the backdrop, the light and where the shadows fall.
+- **Objects:** what's in frame and how each really sits, opens and holds its contents.
+- **The print:** what is on the object and how it's designed: the logo from image 1, where and how
+  large (as "Placing it" says); the design around it, drawn from which images and how it adapts them
+  (the mascot from image 3 in a new pose, the imagery of image 4 as the label's illustration); how
+  it's applied (printed, screen-printed, embroidered, painted, a sticker, a screen).
+- **Words:** every word that appears, quoted exactly, and that no other word, number or label does.
+- **Keep:** the logo from image 1 exactly as drawn (every letter, shape and colour, its proportions),
+  and artwork made flat exactly as designed; the rest is designed freely in the brand's style. No
+  other logo, mark, badge, claim, price or small print.
 
-Look at each blank photo with `metamorfiles_read_file`, then
-`metamorfiles_make_mockup { name: "membership-card", photo: "brand/mockups/blanks/card-at-door-1a2b3c4d.png", surface: { object: "a membership card held at the door", material: "matte card", method: "print", condition: "new", form: "flat", text: ["Hearth Bakery"] }, layers: [{ file: "brand/logos/logo.svg", corners: [[412, 610], [980, 598], [990, 940], [420, 955]], size: 0.6, at: [0.5, 0.35] }], wait: false }`:
-- `corners`: the whole surface, top-left, top-right, bottom-right, bottom-left, in the photo's pixels;
-  `size` and `at` place the artwork in it as a real one sits, at its own proportions, never stretched.
-  A `cover` layer fills its surface instead.
-- A curved surface (`form: "curved"`: a can, a cup, a bottle) takes the corners of its visible face at
-  its sides and `curve`: `{ file: "brand/logos/mark.svg", corners: [[385, 260], [746, 260], [746, 1140], [385, 1140]], curve: { wrap: 150, bend: [8, 14] } }`,
-  `wrap` the degrees of its turn the face spans and `bend` how far the middle of its top and bottom
-  edges sits below their corners' line (negative above), as the object's rim bows in the photo. A
-  soft surface follows the photo's folds by itself.
-- `text`: the words a file layer shows (a logo's name); an html layer's words are read from it.
-- The result shows the placement over the photo, the surface dashed and the artwork solid, each with
-  its centre line: check both against the object's own edges and centre first.
-- Studio bakes the artwork into the photo's light, then the image model finishes it, checked against
-  the bake (the artwork in place, no mark added, the photo around it unchanged), once more when it
-  fails, the exact bake kept after two failures. The mockup is saved in the in-use folder.
+### 4. Check each one
 
-### 5. Check each one
-
-As the photograph a design publication would run, before review:
-- **The placement:** where the real object carries the brand, at the size a customer sees it.
-- **The words:** read the enlarged crop the result shows, character by character, accents included,
-  against the words it lists.
+Look at each with `metamorfiles_read_file`, as the photograph a design publication would run:
+- **The logo:** against the logo file, letter by letter, accents included, at the size a viewer sees
+  it: no letter wrong, missing or added, no shape changed, the right colours.
+- **The words:** character by character, against the words the prompt quoted; nothing else written.
 - **The physics:** the object as the real one is made and used.
-- **The photograph:** the idea reads at a glance, the light is real, the print looks made, not placed.
+- **The photograph:** the idea reads at a glance, the light is real, the print looks made, not pasted.
 
-### 6. Fix and review
+### 5. Fix, place when it can't be fixed, and review
 
-- **A word or mark the finish changed:** `metamorfiles_make_mockup` again with `replaces` for a new
-  finish, or `finish: false` to keep the exact bake.
-- **A placement off:** the same call with its corners, `size` or `at` changed, and `replaces`.
-- **A weak shot or object:** a new blank photo, then the brand placed on it again, with `replaces`.
-  The one it replaces stays on the board as an earlier take the user can pick back.
+- **A logo or word wrong:** an edit of that place only, the image first and the logo file after it:
+  `metamorfiles_generate_image { prompt: "Make the logo on the can exactly the logo in image 2", references: ["brand/mockups/can-on-peppers-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, region: { x: 0.3, y: 0.2, width: 0.4, height: 0.4 }, width: 1600, height: 2000, folder: "brand/mockups" }`.
+- **Still wrong after two edits** (long copy, small type, a screen of text): place it. Make the photo
+  with the print's surface left blank (the same prompt, the surface "completely blank, fully in frame
+  and unobstructed", into `brand/mockups/blanks`), then
+  `metamorfiles_make_mockup { name: "can-on-peppers", photo: "brand/mockups/blanks/can-on-peppers-blank-5e6f7a8b.png", surface: { object: "a drinks can", material: "aluminium", method: "print", condition: "new", form: "curved", text: ["Hearth"] }, layers: [{ file: "brand/artwork/can-wrap.png", corners: [[385, 260], [746, 260], [746, 1140], [385, 1140]], cover: true, curve: { wrap: 150, bend: [8, 14] } }], replaces: "brand/mockups/can-on-peppers-1a2b3c4d.png" }`:
+  `corners` the surface's top-left, top-right, bottom-right and bottom-left in the photo's pixels,
+  `size` and `at` to place a logo in it, `cover` to fill it, `curve` for a can, cup or bottle; Studio
+  bakes the files in and the model finishes the photograph.
+- **A weak shot:** made again with `replaces`; the one it replaces stays on the board as an earlier
+  take the user can pick back.
 
 Then get the review (the `review` skill) of the mockups' board, the brand board's frame named for
 their folder (`mockups`), and fix what it sends back. The user sees them last.
@@ -138,13 +134,5 @@ Mockups look made when the brand sits on the object the way a printer or signwri
 - **A sign or fascia** sets the name large but with breathing room to its frame.
 - **A cup, can or bottle** keeps the logo within the face you see.
 - **Small type stays small,** as on the real thing: a line under a logo, an address.
-
-## Made whole
-
-A shot where nothing printed has to read exactly (the brand's colours in a busy place, an object
-seen far off) may be one photograph the image model makes whole:
-`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "templates/brand-board#guidelines"], folder: "brand/mockups", name: "market-stall" }`,
-the prompt saying "the logo from image 1 exactly as drawn" where it shows, then checked against the
-logo file and fixed by an edit of that region (`edit: true`, `region`).
 
 What strong and weak mockups look like is in [references/taste.md](references/taste.md).

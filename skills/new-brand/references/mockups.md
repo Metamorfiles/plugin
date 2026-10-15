@@ -26,8 +26,9 @@ set (a business card, a tote and a phone), and never an object this business doe
 ## Make them
 
 Last, once the kit is written, with the `mockup` skill: each object's print decided from the shot
-(the logo alone, or artwork made flat with it), the blank photos in `brand/mockups/blanks/`, and the
-brand placed on each with `metamorfiles_make_mockup`, which saves it in `brand/mockups/`. Once the
+(the logo alone, or artwork made flat with it), and each photograph made whole by the image model in
+`brand/mockups/` from its prompt and the brand's real files as references, checked against them and
+fixed by an edit, placed with `metamorfiles_make_mockup` only when an edit can't make it exact. Once the
 first is saved, list the folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`.
 They are one board, like the logos and the images, and nothing is asked: say which three you made in
 one `say`. The user can redo one from its board, or pick one of its earlier takes back; a mockup made
