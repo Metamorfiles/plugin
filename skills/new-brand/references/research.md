@@ -139,8 +139,9 @@ the projects.
 
 ## Directions
 
-Look at everything you collected first, as the brief's frame shows it, under each path's name:
-`metamorfiles_render_preview { item: "templates/brand-board", format: "process-brief" }`. Each path
+Look at everything you collected first, every image whole and numbered on one sheet with its path
+(a folder per project, its `credit.json` naming the path it was collected for):
+`metamorfiles_read_file { path: "brand/process/references" }`. Each path
 that holds up becomes a direction, the references showing what it really is, and the best of any
 path may serve another. A direction is one feeling a reference set agrees on ("drawn
 neighbourhood", "quiet apothecary", "loud market stall"), and each is one option of the direction
