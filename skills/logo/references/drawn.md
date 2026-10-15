@@ -1,0 +1,86 @@
+# The logo drawn whole
+
+Route 1. The image model draws the logo as one composition, lettering and all, and Studio makes it a
+vector: lettering alone, or lettering with a mark, a mascot or ornaments, drawn in one style so every
+part belongs to the others.
+
+## What the model draws well, and what it doesn't
+
+- **Expressive lettering draws well**: scripts, chubby, soft, bouncy or hand-cut letters, where the
+  hand's irregularity is part of the look.
+- **Precise lettering doesn't**: carved or faceted strokes, engraved capitals, fine hairline serifs,
+  perfectly even geometric capitals come out nearly right, and a trace keeps every flaw. When the
+  direction's lettering is like that, draw only what the model can draw (a mark, a mascot, a
+  detail) and set the name in route 2, or leave this route out and say why.
+- **Supporting words** (a tagline, the trade, the place) are set in real type and composed around the
+  traced drawing (`lockups.md`), not drawn.
+
+## The prompt
+
+Write the prompt from the chosen direction and the brief, as a designer's brief, never a font's name:
+- the look and feel, in the direction's own terms;
+- the lettering, described in a designer's words;
+- the layout: how the parts sit together and the space between them;
+- any mark, mascot or ornament, in the same hand and weight as the letters, and its size against
+  them (as tall as the capitals, its head over the word): a mascot is briefed with
+  the `character` skill, by who it is, its face, what it's doing and its look, never as a list
+  of parts;
+- each colour for what it paints, from the direction's palette;
+- the name in quotes, exactly as written, an uncommon one spelled letter by letter;
+- "flat vector artwork, like a brand designer's final logo file", and no other text.
+
+A joined script joins letters within a word, never across the space between words: say each word is
+written on its own. Accents keep their shape and their place over their letter.
+
+Show the model the look, not only describe it: the chosen direction's card first, then two or three
+of its reference images that show lettering, a mark or a mascot, and start the prompt with "Image 1
+is the chosen direction: take its palette, type character and mood. Images 2 to 4 are style
+references: take their drawing hand, letter weight, colour handling and how the parts lock together.
+Never copy their letters, names, marks or layout." Words alone lose what made the user pick the
+direction.
+
+Draw it at the lockup's shape, listing every colour it uses:
+`metamorfiles_generate_image { prompt, references: ["templates/brand-board#process-direction:<chosen id>", "brand/process/references/<project>/2.jpg"], width: 1536, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
+Studio has it drawn on a transparent background and traces each colour in the brand's exact value
+(`vector.md`); the path it returns is the traced .svg.
+
+## Read every letter
+
+Read every word letter by letter in the drawing, accents included, and see that the words stand
+apart; draw it again when one differs. The logo step shows the user the drawing itself. Draw two or three together (each with `wait: false`, then
+`metamorfiles_image_status { id }` for each) and keep each whose letters are right and whose
+drawing holds the direction: the best is the route, and another as good, another way, is its own
+option (`SKILL.md`, step 7). Compose the supporting words around each and run
+`metamorfiles_check_logo`.
+
+## Other versions of it
+
+A version of a logo drawn whole is made the cheapest way that keeps it the logo's own drawing:
+
+- **A part that is its own piece** (a letter, a mark with space around it), taken out as it is:
+  `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-mark.svg", keep: { x: 0.81, y: 0.03, width: 0.19, height: 0.88 }, square: true }`,
+  its box from the boxes `metamorfiles_check_logo` lists. No image is made; the logo's mark is this.
+- **A letter or mark sitting on a shape of another colour** (a letter on a strip of tape, a mark on a
+  badge): cut the shape's colour out first, which leaves the letter as its own piece, then take it:
+  `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-letters.svg", colors: { "#efe1b4": "knockout" } }`,
+  then `keep` on that file as above. No image is made.
+- **A part that touches or overlaps others** (a mascot over the letters), or one drawn anew (the bust
+  for the full body), is an edit of it, made only after the choice and on the user's word: the traced
+  file first in `references`, `edit: true`, the same `folder` and `trace` colours, saying only what
+  changes. Studio keeps every letter the edit doesn't touch exactly as it was.
+- **A version that loses a part in one colour,** redrawn after the choice, for the chosen logo only.
+  The reversed and one-colour versions are recolours
+  of the file (`metamorfiles_make_logo_variant`) unless `metamorfiles_check_logo` reports
+  `lostInOneColour` with `merged` boxes: a face's features that merge into one ink, a gem's cut that
+  disappears. Then that version is drawn as an edit of the logo's own drawing (`edit: true`, the
+  traced file first in `references`, the same `folder` and `trace` colours, saying only what changes in
+  the merged parts: an outline cut between the features, a facet left open) and traced, and lined up
+  with the logo: `metamorfiles_align_version { file: "brand/process/logo/<file>.svg", version: "brand/process/logo/<file>-ink-draft.svg", output: "brand/process/logo/<file>-ink.svg", redrawn: [{ x: 0.81, y: 0.03, width: 0.19, height: 0.88 }] }`,
+  the boxes being the merged ones the check reported. Every piece outside them is the logo's own
+  file; the version's entry in `logo.md` carries the same boxes as `redrawn`, so the card says what
+  was redrawn and the reviewer judges only that.
+- **Another layout** (one line, stacked) is drawn at its new shape; read every letter against the
+  original and check it like the original.
+
+Recolourings stay `metamorfiles_make_logo_variant`.
+

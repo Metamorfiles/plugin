@@ -114,20 +114,21 @@ npx metamorfiles@latest images
 | Skill | Use it for |
 |---|---|
 | `activate` | Activate Studio on this computer with your download key |
-| `metamorfiles` | Any Studio work; explains the project and routes to the right workflow |
-| `metamorfiles-brand` | Set up the brand kit from a website, guide or logos |
-| `metamorfiles-brand-creation` | A new brand from nothing: direction, logo, imagery and the kit |
-| `metamorfiles-logo` | A logo for a new brand in three routes from its direction (drawn whole by AI, real fonts with a generated part, type alone), checked at every size |
-| `metamorfiles-character` | A mascot described from the brand's direction, and new poses that stay on model |
-| `metamorfiles-artwork` | Packaging and print artwork: the image model paints the picture in the brand's style, Studio sets the real logo and type |
-| `metamorfiles-mockup` | The brand on its real objects: art-directed packaging photography with the exact logo, checked and fixed by an edit |
-| `metamorfiles-template` | A new or changed template from a brief, reference or screenshot |
-| `metamorfiles-variants` | A page of A/B variants or spreadsheet rows, exported in several formats |
-| `metamorfiles-repurpose` | Adapt one design to other platforms and sizes |
-| `metamorfiles-review` | An independent design review before delivery and after layout changes |
-| `metamorfiles-team` | Studio's team (reviewer, designer, copywriter, image maker) fixing or improving a template or page, shown live in the control panel |
+| `studio` | Any Studio work; explains the project and routes to the right workflow |
+| `brand` | Set up the brand kit from a website, guide or logos |
+| `new-brand` | A new brand from nothing: direction, logo, imagery and the kit |
+| `logo` | A logo for a new brand in three routes from its direction (drawn whole by AI, real fonts with a generated part, type alone), checked at every size |
+| `character` | A mascot described from the brand's direction, and new poses that stay on model |
+| `artwork` | Packaging and print artwork: the image model paints the picture in the brand's style, Studio sets the real logo and type |
+| `mockup` | The brand on its real objects: art-directed packaging photography with the exact logo, checked and fixed by an edit |
+| `template` | A new or changed template from a brief, reference or screenshot |
+| `variants` | A page of A/B variants or spreadsheet rows, exported in several formats |
+| `repurpose` | Adapt one design to other platforms and sizes |
+| `review` | An independent design review before delivery and after layout changes |
+| `team` | Studio's team (reviewer, designer, copywriter, image maker) fixing or improving a template or page, shown live in the control panel |
+| `code` | The brand in your codebase: the kit's website files mapped into your project's theme, fonts and icons |
 
-Skills load automatically when your request matches, so you don't need to name them.
+Skills load automatically when your request matches, so you don't need to name them. To pick one yourself, type `/metamorfiles:` in Claude Code (`/metamorfiles:new-brand`), or `@metamorfiles` in Codex.
 
 ## Example prompts
 
