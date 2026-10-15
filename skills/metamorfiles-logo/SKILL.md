@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-logo
-description: Use to design a logo in Metamorfiles Studio for a brand that has none, including the logo step of a new brand, in three routes (a logo drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, and one in type alone), then, once the user chooses, its small mark and its small uses. Use it whenever the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a new brand, even if they describe the look they want in their own words. Not for a brand that already has a logo, whose official files are never redrawn (metamorfiles-brand).
+description: Use to design a logo in Metamorfiles Studio for a brand that has none, including the logo step of a new brand, in three routes (a logo drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, and one in type alone), then, once the user chooses, its small mark and its small uses. Use it for the logo step of a new brand, or when the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a brand whose DESIGN.md already sets its look. A business with nothing made yet, even when the user asks only for a logo, starts with metamorfiles-brand-creation, whose logo step this is. Not for a brand that already has a logo, whose official files are never redrawn (metamorfiles-brand).
 license: MIT
 ---
 
@@ -30,7 +30,8 @@ Copy it into your notes and tick each step as you go:
 Read `brand/process/brief.md` and the chosen option of `brand/process/direction.md`, and look at its
 reference images with `metamorfiles_read_file`. They set the look; the logo's idea comes from the
 brief, the business's own reality, not the category's usual symbol. Outside a new brand, the user's
-request and the brand's DESIGN.md do the same. Read `references/taste.md` for what a strong version
+request and the brand's DESIGN.md do the same. With neither a brief nor a DESIGN.md, the brand is new:
+follow metamorfiles-brand-creation instead, which comes back here for its logo step. Read `references/taste.md` for what a strong version
 of that look is, and what the image model tends to get wrong.
 
 When a route needs a part the references don't show well (the lettering, a mascot, a mark), start a

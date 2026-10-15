@@ -1,6 +1,6 @@
 ---
 name: metamorfiles-brand-creation
-description: Use to create a new brand from nothing in Metamorfiles Studio, when the user asks for a new brand or identity, says there is nothing to translate, or the project holds a brief in brand/process/brief.md (Studio's "New brand"). Three choices the user makes on the brand board (direction, logo, imagery), then the kit, its mockups last. Use it for "make me a brand", "I'm starting a bakery and need everything", or a business name with no logo, site or files yet. Not for an existing company, website, logo or guidelines, which are translated (metamorfiles-brand).
+description: Use to create a new brand from nothing in Metamorfiles Studio, when the user asks for a new brand or identity, says there is nothing to translate, or the project holds a brief in brand/process/brief.md (Studio's "New brand"). Three choices the user makes on the brand board (direction, logo, imagery), then the kit, its mockups last. Use it for "make me a brand", "I'm starting a bakery and need everything", "we need a logo" for a business with no logo, site or files yet, or a business name alone. Not for an existing company, website, logo or guidelines, which are translated (metamorfiles-brand).
 license: MIT
 ---
 
