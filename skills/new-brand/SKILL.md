@@ -28,7 +28,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
 - [ ] Kit: DESIGN.md (its voice by the copywriter), final logos, fonts, library (each batch reviewed), imagery guide
 - [ ] Mockups: three shots of the brand on its own objects, last, reviewed
-- [ ] Final check: the `review` skill of the whole kit in the foreground, fixes made
+- [ ] Final check: every planned change made first, then the `review` skill of the whole kit in the foreground, fixes made
 - [ ] Handover: finished: true with the summary
 ```
 
@@ -134,8 +134,10 @@ started.
 
 Whoever made something is the worst judge of it, so the reviewer looks at each piece of work before
 the user does, and at whatever is made again: a logo tried again, an image redone, a mockup remade,
-any change the user asks for in their own words. Run the `review` skill in the foreground and
-wait for its verdict, naming only the frames that are new or changed:
+any change the user asks for in their own words. Finish every change you plan to a piece (its
+wording, a size, a crop) before it goes to the reviewer: a change after a pass sends it back. Run the
+`review` skill in the foreground and wait for its verdict, naming only the frames that are new or
+changed:
 
 | When | Frames | What it judges |
 |---|---|---|
