@@ -24,8 +24,8 @@ searches) or a web fetch.
 - **Behind a login or empty:** take what's public, never guess.
 
 Never search for the brand or the person by name: a name finds namesakes, and what represents them is
-theirs to give. With nothing given, write "Nothing public given" in the brief's Facts and build from
-their words and the category.
+theirs to give. With nothing given, build from their words and the category. The brief is the user's
+page: no note about sources, dates or what was given in it.
 
 ## The brief
 
