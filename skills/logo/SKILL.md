@@ -22,7 +22,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
 - [ ] 6. Each route's two files: colour, and one colour
 - [ ] 7. Routes shown and one recommended
-- [ ] 8. After the choice: cleaned, its small mark agreed, the reversed and final files, the small uses composed
+- [ ] 8. After the choice: the small mark first (cut, or drawn from the logo and traced) and asked; then, while the imagery is made, cleaned, the final files, the small uses composed
 ```
 
 ### 1. What the brand already decided
@@ -116,29 +116,34 @@ the recommended one first.
 
 ### 8. After the choice
 
-First clean every file of the chosen logo that Studio traced from a drawing (a logo drawn whole, a
-lockup drawn on the word, a mark, a mascot): one `logo-cleaner` agent per file, started together,
-each given the project path, the traced file and what it is in one sentence. In an app without the
-plugin's agents, each is a subagent whose instructions are exactly what
-`metamorfiles_get_guide { name: "logo-cleaner" }` returns. Each writes `<name>-clean.svg` beside its
+The small mark is the next step, before the imagery or anything else: it stands for the whole name.
+Run `metamorfiles_check_logo` on the chosen logo and look at the pieces it loses at 32 and 16 px.
+
+- **A part of it holds up small** (the logo's own mark, its first letter or a monogram of its initials,
+  the seal's middle, or the whole logo at 32 px): cut it from the logo's file,
+  `metamorfiles_make_logo_variant { file: "brand/process/logo/<chosen>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x: 0, y: 0, width: 0.3, height: 1 }, square: true }`.
+- **None does** (fine detail, texture, a long name): never clean or redraw the logo for it. Have the
+  image model draw the mark from the logo, the prompt naming the part and saying it is simplified to
+  read at 16 px in the logo's own drawing and colours, and trace it:
+  `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
+
+Never another letter alone: a lone e reads as "e", not as the brand. Offer one to three, check each at
+32 and 16 px with `metamorfiles_check_logo`, write them into `brand/process/logo.md` as `marks`, each
+`{ file, title }` and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`.
+Studio shows them on their own page as a profile picture, an app icon and at 32 and 16 px, records
+the answer as `mark`, and starts nothing of the imagery until it's answered. Then the imagery.
+
+While the imagery is made, clean the chosen logo's traced files for the final files, in the
+background: one `logo-cleaner` agent per file, given the project path, the traced file and what it is
+in one sentence (in an app without the plugin's agents, a subagent whose instructions are exactly what
+`metamorfiles_get_guide { name: "logo-cleaner" }` returns). Each writes `<name>-clean.svg` beside its
 trace; look at it over the drawing with
 `metamorfiles_compare_trace { file: "brand/process/logo/<name>-clean.svg", against: "brand/process/logo/<name>.svg" }`.
-The user chose the drawing: the cleaned file keeps every part of it, with only its edges straightened
-or smoothed. From here on the cleaned files stand in for the traced ones, and anything made from a
-traced file (its small mark, its colours) is made again from the cleaned one.
+The cleaned file keeps every part of the drawing, with only its edges straightened or smoothed. Nothing
+the user is asked waits for it.
 
-Then the small mark, right after the choice and before anything else is made: it stands for the
-whole name. Offer one to three: the logo's own mark, its first letter or a monogram of its initials,
-the seal's middle, each cut from its file, or the whole logo when it holds up at 32 px. Never another
-letter alone: a lone e reads as "e", not as the brand. Check each at 32 and 16 px with
-`metamorfiles_check_logo`, write them into `brand/process/logo.md` as `marks`, each
-`{ file, title }` and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`.
-Studio shows them on the logo frame as a profile picture and at 32 and 16 px, records the answer as
-`mark`, and asks nothing after the logo, nor hands the brand over, until it's answered. When no part
-of the logo holds up small, say so and ask what they want: never change the logo for it.
-
-Then make the final files in `brand/logos/` with the same tools and settings, each with an `output`
-there. A cleaned drawing reaches it as one part:
+Then make the final files in `brand/logos/` from the cleaned files, with the same tools and settings,
+each with an `output` there. A cleaned drawing reaches it as one part:
 `metamorfiles_compose_logo { layout: "stack", parts: [{ file: "<the cleaned .svg>" }], output: "brand/logos/logo.svg" }`
 (`metamorfiles_generate_image` never saves into `brand/logos/`). The other colours come from
 `metamorfiles_make_logo_variant { file, output: "brand/logos/logo-reversed.svg", colors: { ... } }`:

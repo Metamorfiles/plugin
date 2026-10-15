@@ -15,7 +15,7 @@ count; the reversed version and the small sizes count after the choice, for the 
 
 | It shows | Fix |
 | --- | --- |
-| The small mark loses a piece at 32 px (a dot, a crumb, a fine line) | Another part of the logo as the small mark, or a small-size version of a set word (`wordmark.md`); else tell the user, never redraw the logo |
+| The small mark loses a piece at 32 px (a dot, a crumb, a fine line) | Another part of the logo as the small mark, or one drawn from the logo and traced (step 8 of `SKILL.md`), or a small-size version of a set word (`wordmark.md`); else tell the user, never redraw the logo |
 | The name closing up at 32 px | The small-size version (`wordmark.md`) |
 | A lockup unreadable at 32 px | That's expected: the small mark is used there, agreed after the choice |
 | The reversed version looks heavier | Set the reversed wordmark a weight lighter; fine lines on dark spread |

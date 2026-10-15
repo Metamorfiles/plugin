@@ -233,18 +233,19 @@ its frame shows each file as it arrives, so the user watches the step come toget
    type. Each route checked with one
    `metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#1f1a17" }`, which draws it in colour
    on its paper, reversed and in one colour on one sheet; in `logo.md` each route has two files, in
-   colour and in one colour, each with its `ground`. Once a logo is chosen, its reversed version is
-   made and its small mark is asked next, with
-   `metamorfiles_ask_user { step: "mark" }` (the logo skill's step 8), and answered before the imagery.
-   A mascot is designed with the `character` skill.
+   colour and in one colour, each with its `ground`. Once a logo is chosen, the small mark is the
+   next step: cut from the logo, or drawn from it by the image model and traced where no part of it
+   reads small, and asked with `metamorfiles_ask_user { step: "mark" }` (the logo skill's step 8).
+   Studio starts nothing of the imagery until it's answered. A mascot is designed with the
+   `character` skill.
    **Once a logo with a character is chosen,** draw its character sheet (`references/sheet.md` of
-   the `character` skill) before anything else, write it into `logo.md` as `sheet`, and have the
+   the `character` skill) once the mark is asked, write it into `logo.md` as `sheet`, and have the
    reviewer check it: every image of the character after that is made from it.
 3. **Imagery** (`references/imagery.md`). The mode the brand needs (illustration, photography, a
    character, graphic or 3D), the style block, and four seeds made together, one per option, saved in
    `brand/process/imagery/`. The seeds the user keeps are the anchors. Start them (`wait: false`)
-   before the chosen logo's cleanup (step 8 of the `logo` skill), which then runs while they're
-   made; its final logo files wait for the kit.
+   once the small mark is answered; the chosen logo's cleanup (step 8 of the `logo` skill) runs while
+   they're made, and its final logo files wait for the kit.
 4. **Kit.** The words are the copywriter's, always: report as `copywriter` while you write DESIGN.md's
    Voice (the chart in `references/voice-chart.md` of the `brand` skill, and its lines in the
    brand's own words, `references/copy.md` of the `studio` skill) and its Messaging (as the `brand` skill
