@@ -58,7 +58,7 @@ the other parts are against the word's cap height, whether they share its baseli
 into a letter or stand apart. A name that arches or bounces is drawn whole (route 1). Read
 the three together against `references/taste.md`, "Defaults to recognise": three ideas in one
 arrangement (a mark centred above the word, three times) are one answer. Each line goes on its
-route's option as `composition` in `brand/process/logo.md`, and the card shows it.
+route's option as `composition` in `brand/process/logo.md`, for the reviewer; the user sees the route's `line`, written for them.
 
 ### 4. Three routes
 
