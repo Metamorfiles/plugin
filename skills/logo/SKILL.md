@@ -22,7 +22,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
 - [ ] 6. Each route's two files: colour, and one colour
 - [ ] 7. Routes shown and one recommended
-- [ ] 8. After the choice: the mascot first when the brand has one (drawn from the chosen logo) and asked; then the small mark (cut, drawn from the logo, or the mascot's head) and asked; then, while the imagery is made, cleaned, the final files, the small uses composed
+- [ ] 8. After the choice: the mascot first when the brand has one (the chosen logo's own, or three designs drawn from it) and asked; then the small mark (cut, drawn from the logo, or the mascot's head) and asked; then, while the imagery is made, cleaned, the final files, the small uses composed
 ```
 
 ### 1. What the brand already decided
@@ -36,10 +36,10 @@ of that look is, and what the image model tends to get wrong.
 
 When a route needs a part the references don't show well (the lettering, a mascot, a mark), start a
 search for it in the background as you begin, with the category and the part:
-`metamorfiles_search_references { query: "bakery lettering", sorts: ["recommended"], wait: false }`.
+`metamorfiles_search_references { query: "bakery lettering", wait: false }`.
 Read it when you reach that route (`metamorfiles_search_references { id }`), and collect the two or
 three projects worth studying: `metamorfiles_collect_references { links: [...], path: "Bakery lettering" }`.
-When Studio won't open the search's site, find the part with your own web search instead (the
+When the index has nothing good for the part, find it with your own web search instead (the
 category and the part, "branding" or "case study") and collect the best links the same way.
 
 ### 2. The type study
@@ -111,19 +111,19 @@ option, checked and given its files like a route (steps 5 and 6), up to six in a
 choosing stays in your notes.
 
 In a new brand, write them as the options of `brand/process/logo.md`, one `recommended: true`, with
-`mascot: true` beside them when the brand has a mascot (its brief asks for one, or a route carries a
-character), and ask as the `new-brand` skill says: Studio draws each large on its ground with its
+`mascot: true` at the top when the brief asks for a mascot, and `mascot: true` on each route whose
+logo carries the character, and ask as the `new-brand` skill says: Studio draws each large on its ground with its
 one-colour version beside it on the brand board, a logo made from a drawing as the drawing itself and its
 one-colour version from its trace. Outside it, show the check sheets and say in a line what each is and why,
 the recommended one first.
 
 ### 8. After the choice
 
-When the brand has a mascot, it comes first, drawn from the logo the user chose, never from a route
-they passed over: the `character` skill, "In a new brand". Write the mascots into
-`brand/process/logo.md` as `characters`, each `{ file, title }`, and ask with
-`metamorfiles_ask_user { step: "character" }`. Studio records the answer as `character`, and the
-mascot's sheet and the small mark wait for it.
+When the brand has a mascot, it comes first, from the logo the user chose, never from a route they
+passed over: the `character` skill, "In a new brand". A chosen route that carries the character
+gives its poses and sheet, approved with "Use these"; any other gets three mascot designs drawn from
+it, one chosen, then its sheet. Both are written into `brand/process/logo.md` as `characters` and
+asked with `metamorfiles_ask_user { step: "character" }`; the small mark waits for the answer.
 
 The small mark is next, before the imagery or anything else: it stands for the whole name, and with a
 mascot it may be the mascot's head or bust, made from the chosen mascot as the `character` skill says.

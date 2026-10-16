@@ -50,20 +50,22 @@ Strong:
 The weak brief gets a drop with sticks for arms and the stock face. The strong one says what Dew is
 like and how its face shows it, and leaves the body's shapes to the illustrator.
 
-## Three ideas for one character
+## Three designs for one character
 
-The three candidates are the same character in three briefs that each change the idea. For Dew,
-beside the sleepy one:
+The three candidates are three designs: each is built differently and is someone different. For
+Dew, beside the sleepy drop above:
 
-> Dew, proud of a job done: up on tiptoe, chest out, one arm presenting a tiny Lumen dropper like a
-> trophy. Eyes bright and turned to you, one brow arched, a closed smile pushed up on one side, its
-> curl standing straight up.
+> Dew is a round bead of serum, almost a ball, sitting on its own reflection: stubby legs, no
+> arms, a wide flat face across its middle. Calm, a little smug: eyes as two short level dashes, a
+> small closed smile tucked to one side. Its one shine never moves.
 
-> Dew, startled awake: mid-hop, both arms flung out, its curl sprung upright. Eyes wide with small
-> pupils, brows shot up, its mouth a small o pulled off to one side.
+> Dew is a tall thin drop with a long drawn-out tip it twirls like a moustache: a lanky body, long
+> arms, a small head at the top of the curve. A showman, mid-bow: one eye winking, one brow up, a
+> wide open grin.
 
-The name, what it is, its build, the look and the palette stay; the attitude, the face and the
-pose change.
+What the brief fixes stays (a drop of Lumen's serum), and so do the look and the palette. The
+construction, the proportions, the face, the one feature and who it is change. Three poses of one
+design are not three candidates.
 
 ## When a drawing misses
 

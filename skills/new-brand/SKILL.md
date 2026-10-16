@@ -142,7 +142,7 @@ changed:
 | When | Frames | What it judges |
 |---|---|---|
 | `logo.md` written, before asking | `process-logo` | every letter; one colour |
-| The mascots written, before asking | `process-logo` | each a figure drawn in the chosen logo's hand and colours, with no letters; its anatomy and face |
+| The mascots written, before asking | `process-logo` | each a figure drawn in the chosen logo's hand and colours, with no letters; its anatomy and face; three designs built differently, or the logo's own character on model |
 | The character sheet written, before the small mark | `process-logo` | eight figures in the grid's order, the same character as the anchor in all eight: its face, its one feature, its proportions, its colours |
 | `imagery.md` written, before asking | `process-imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
 | Each batch of the library | the imagery folder's frame, by the folder's name (`refs`) | the same, against the anchors |
@@ -221,8 +221,8 @@ its frame shows each file as it arrives, so the user watches the step come toget
    about the brand itself, its site, profiles or handles (`references/research.md`, "The subject,
    first"); never search for it by name. The brief's facts
    with their sources, touchpoints, category codes and three paths go into `brief.md`
-   (`references/research.md`, "Three paths"). For each path, search its plain words with
-   `metamorfiles_search_references { query: "bakery opening hours poster" }`, choose the projects
+   (`references/research.md`, "Three paths"). For each path, search Studio's index of the design press with
+   `metamorfiles_search_references { query: "bakery poster" }`, choose the projects
    worth opening from the covers, and collect them with
    `metamorfiles_collect_references { links: [...], path: "Morning batch" }`, the user's own links
    first; they appear on the brief's frame under their path as they arrive. Each path that holds up
@@ -236,13 +236,15 @@ its frame shows each file as it arrives, so the user watches the step come toget
    type. Each route checked with one
    `metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#1f1a17" }`, which draws it in colour
    on its paper, reversed and in one colour on one sheet; in `logo.md` each route has two files, in
-   colour and in one colour, each with its `ground`; `mascot: true` when the brand has a mascot.
+   colour and in one colour, each with its `ground`; `mascot: true` at the top when the brand has a
+   mascot, and on each route whose logo carries it.
    Once a logo is chosen, in this order (the logo skill's step 8):
-   - **The mascot,** when the brand has one: drawn from the chosen logo with the `character` skill
-     ("In a new brand"), written as `characters` and asked with
-     `metamorfiles_ask_user { step: "character" }`; then its character sheet from the one chosen
-     (`references/sheet.md` of the `character` skill), written into `logo.md` as `sheet` and checked
-     by the reviewer: every image of the character after that is made from it.
+   - **The mascot,** when the brand has one, from the chosen logo with the `character` skill ("In a
+     new brand"): the logo's own character in poses with its sheet, approved with "Use these", or
+     three designs drawn from the logo, one chosen, then its sheet (`references/sheet.md` of the
+     `character` skill). Written into `logo.md` as `characters` and `sheet`, checked by the reviewer
+     and asked with `metamorfiles_ask_user { step: "character" }`: every image of the character
+     after that is made from its sheet.
    - **The small mark:** cut from the logo, drawn from it by the image model and traced where no part
      of it reads small, or the mascot's head or bust; asked with `metamorfiles_ask_user { step: "mark" }`.
    Studio starts nothing of the imagery until both are answered.

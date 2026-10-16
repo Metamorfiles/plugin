@@ -1,6 +1,6 @@
 ---
 name: character
-description: Use to design a character in Metamorfiles Studio (a mascot, a creature, a person, an object with a face) for a brand's logo or its imagery, and to draw an existing character in new poses and expressions that stay on model. Briefs it by who it is, its attitude, its face and its look, draws three ideas as candidates alone on a transparent background, traces the one kept into a vector, and grows every later drawing from its character sheet. Use it whenever a brand needs a mascot or character, or the user asks for one doing something new, even if they only describe what it should look like.
+description: Use to design a character in Metamorfiles Studio (a mascot, a creature, a person, an object with a face) for a brand's logo or its imagery, and to draw an existing character in new poses and expressions that stay on model. Briefs it by who it is, its attitude, its face and its look, draws three designs as candidates alone on a transparent background, traces the one kept into a vector, and grows every later drawing from its character sheet. Use it whenever a brand needs a mascot or character, or the user asks for one doing something new, even if they only describe what it should look like.
 license: MIT
 ---
 
@@ -9,7 +9,7 @@ license: MIT
 A brand character is briefed the way an illustrator is briefed: who it is, what it's like, what it's
 doing, its face, and the hand it's drawn in. The face carries the personality, so the brief says
 how it looks in a few concrete terms; left to choose, the model draws its stock face (closed happy
-crescents and a grin) on every character. Three candidates are three ideas, each with its own
+crescents and a grin) on every character. Three candidates are three designs, each with its own
 brief. Then the character is drawn alone, traced, and every later drawing of it starts from the
 character sheet the user approved.
 
@@ -20,7 +20,7 @@ Copy it into your notes and tick each step as you go:
 ```
 - [ ] 1. The brief: who it is, why it's this brand's, what it's like, its face, what it's doing
 - [ ] 2. The look: one rendering, chosen for this character, in the direction's words
-- [ ] 3. Three ideas, a brief each; drawn together, alone, on transparent; traced
+- [ ] 3. Three designs, a brief each; drawn together, alone, on transparent; traced
 - [ ] 4. Judged against the defaults; one kept, or the briefs changed
 - [ ] 5. Shown to the user; the kept one is the anchor
 - [ ] 6. The character sheet from the anchor: every side and four poses, the reference for every image of it
@@ -65,14 +65,14 @@ flat shapes with inner colours suit a simple, chunky body. The families, their w
 `references/styles.md`. The look's paragraph is pasted unchanged into every prompt. What a strong
 character looks like, and what goes wrong: `references/taste.md`.
 
-### 3. Three ideas, then draw
+### 3. Three designs, then draw
 
 In the notes, name the character the category always gets (its codes in `research.md` of
 the `new-brand` skill): that one is the default, not a candidate. Then write three short
-briefs of the same character, each a different idea: its attitude, its face and what it's doing
-change; its name, what it is, its build (a body with legs has them in all three), the look and the
-palette stay. One prompt drawn three times gives
-three copies of one idea, and the user is left nothing to choose between.
+briefs, each a different design: its construction (the shapes its body is built from), its
+proportions, its face and its one feature change, and with them who it is. What the brief fixes
+stays (a plover stays a plover), and so do the look and the palette. Three poses or moods of one
+design are one candidate, not three, and the user is left nothing to choose between.
 
 Draw the three together (each with `wait: false`, then `metamorfiles_image_status { id }` for each),
 each from its own prompt (`references/styles.md`, "The prompt"). A reference image goes in only
@@ -110,19 +110,25 @@ in the folder's `anchors`.
 
 ### In a new brand
 
-The mascot is decided once the logo is chosen, and drawn from the logo the user chose, never from a
-route they passed over unless they ask for it:
-- **The chosen route carries the character:** its traced character is the one mascot.
-- **Otherwise:** write this brand's brief (step 1) and draw three ideas (step 3) with the chosen logo
-  as image 1, so the mascot is drawn in its hand: "Image 1 is the brand's chosen logo: take its
+The mascot is decided once the logo is chosen, from the logo the user chose, never from a route they
+passed over unless they ask for it. Which case it is shows in `brand/process/logo.md`: the chosen
+route has `mascot: true` when its character is in the logo.
+
+- **The chosen logo carries the character:** that character is the mascot, so there is nothing to
+  choose. Draw it in one to three poses (`references/poses.md`, from its traced drawing in the logo)
+  and its sheet (step 6), write the poses as `characters` and the sheet as `sheet`, have the
+  reviewer check them, and ask with `metamorfiles_ask_user { step: "character" }`: the user approves
+  them with "Use these", like the imagery.
+- **Otherwise:** write this brand's briefs (step 1) and draw three designs (step 3), each with the
+  chosen logo as image 1, so it is drawn in its hand: "Image 1 is the brand's chosen logo: take its
   drawing hand, line weight, corners and colours, never its letters or its layout."
   `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`
+  Write them as `characters`, each `{ file, title }` and one `recommended: true`, have the reviewer
+  check them, and ask with `metamorfiles_ask_user { step: "character" }`. The one chosen
+  (`character`) is the anchor: draw its sheet from it (step 6) and have the reviewer check it.
 
-Write them into `brand/process/logo.md` as `characters`, each `{ file, title }` and one
-`recommended: true`, have the reviewer check them, and ask with
-`metamorfiles_ask_user { step: "character" }`; a lone one is taken without asking. Studio checks each
-was drawn from the chosen logo. The one chosen (`character`) is the anchor: its sheet is drawn from it
-(step 6), then the small mark, which may be its head or bust (step 7).
+Studio checks that each was drawn from the chosen logo, and the sheet from the mascot. The small mark
+comes next, and may be the mascot's head or bust (step 7).
 
 ### 6. The character sheet
 

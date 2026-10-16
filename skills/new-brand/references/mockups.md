@@ -11,9 +11,13 @@ Three shots, from the brief's touchpoints (`research.md`), each a different part
 different kind of idea:
 
 - **The hero:** the most public object, designed in full (the pack, the bottle, the tin, the box).
-- **The range:** the hero's family together, a colour per variant.
+- **The range:** the hero's family together, a colour per variant: the hero's design, never a new one.
 - **The everyday:** a small, frequent touchpoint that shows another part of the system: a sign, a
   sticker, a cup, a card, a screen.
+
+Every pack in the three is one packaging system (the `mockup` skill, "The shots"). A business with
+one product, or none to pack, shows the hero, or nothing packed, and gives the other shots to its
+merch, signs and placements.
 
 Each shot's idea comes from the brand's own world, the moments and places of this business, not from
 a stock setup: for skincare made for short mornings, the jar on a steamed-up bathroom shelf at seven

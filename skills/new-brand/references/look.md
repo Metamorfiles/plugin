@@ -19,8 +19,8 @@ Each direction has a complete palette, not a swatch list:
 
 Each direction comes with a pairing, and the pairings differ too:
 - **A face with character for the one line that matters** (headlines, product names), and **a quiet
-  workhorse for everything that informs.** Two faces for text; the logo gets its own face on the
-  logo step (the `logo` skill), never set as text.
+  workhorse for everything that informs.** Two faces for every text, the brand's name included
+  wherever a sentence names it; the logo's lettering is made on the logo step (the `logo` skill).
 - Choose the faces from `fonts.md`, by what the direction needs. Add each with
   `metamorfiles_add_font { family: "Fraunces" }` before you write the option, and give the option
   the file it returned (a static family has one per weight, such as `brand/fonts/Anton-400.woff2`).
