@@ -52,9 +52,11 @@ wordmark alone and the mark alone.
 A drawn part can take a letter's place (a donut for an O) or its accent's (a flame for an acute).
 Draw it at the letter's proportions against the wordmark in image 1, then set the wordmark again
 with it: `metamorfiles_make_wordmark { text, font, color, output, part: { file: "<the traced .svg>", replaces: "o" } }`,
-its file under `brand/process/` or `brand/logos/`. Studio sizes it to the letter's box and spaces it
-by its own shape; adjust with the part's `scale`, `dx` and `dy`. It still reads as that letter in
-the word.
+its file under `brand/process/` or `brand/logos/`. Studio fits its ink to the letter's lines (its
+baseline and x-height, or cap height), however the drawing is padded or turned, and spaces it by its
+own shape. `scale` grows it evenly above and below, as a round letter overshoots. It stays on the
+letter's lines: `dx`, `dy` and `rotate` move it off them only when the move is the idea, said in the
+route's `composition`. It still reads as that letter in the word.
 
 ## Draw several, keep the good ones
 
