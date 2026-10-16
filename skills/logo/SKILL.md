@@ -39,6 +39,8 @@ search for it in the background as you begin, with the category and the part:
 `metamorfiles_search_references { query: "bakery lettering", sorts: ["recommended"], wait: false }`.
 Read it when you reach that route (`metamorfiles_search_references { id }`), and collect the two or
 three projects worth studying: `metamorfiles_collect_references { links: [...], path: "Bakery lettering" }`.
+When Studio won't open the search's site, find the part with your own web search instead (the
+category and the part, "branding" or "case study") and collect the best links the same way.
 
 ### 2. The type study
 
