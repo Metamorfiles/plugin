@@ -107,7 +107,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 - A logo the brand has only as a picture (a PNG or JPEG) stays as it is: the kit gives it no print file. Offer once to trace it into a vector for print; on a yes, `metamorfiles_import_image { path: "brand/sources/yours/logo.png", name: "logo", folder: "brand/logos", trace: { colors: ["#1f1a17"] } }` with the logo's exact colours, show the result beside the original, and record `traced from the user's <file>, approved on <date>` in its `source` and in Sources.
 - A brand with no logo at all gets one designed with the `logo` skill, only when the user asks for it.
 - The Logo section says which file goes on which background, the clear space, and that logos are never recolored. The clear space is the brand's own rule; when its guidelines give none, propose one and mark it `proposed` in Sources, as a guide for layouts rather than a rule of the brand. It is a real measure, a share of the logo's height or px at a stated size, never a part of a letter.
-- The prose sections (Overview, Imagery, Voice, Messaging, Logo, Do's and Don'ts) are printed on the guideline pages: write them for the brand's reader, with no file paths or process notes; Studio warns on the board where one reads as a working note.
+- The prose sections (Overview, Imagery, Voice, Messaging, Logo) are printed on the guideline pages: write them for the brand's reader, with no file paths or process notes; Studio warns on the board where one reads as a working note. Do's and Don'ts isn't printed: it holds the rules agents follow when they design.
 
 ## DESIGN.md template
 

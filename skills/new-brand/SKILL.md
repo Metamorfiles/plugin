@@ -254,8 +254,8 @@ its frame shows each file as it arrives, so the user watches the step come toget
    describes it, from the brief's facts), then hand back to the designer. Overview ends with one
    paragraph for whoever uses the brand (staff, printers, partners): what the logo and the look
    have to do, and what they leave out of the category's usual look, never how they were chosen.
-   The guideline pages print every prose section, so each is written for the brand's reader the
-   first time: no file paths, no process notes ("the seeds the user approved", "chosen on step 2",
+   The guideline pages print the prose sections (all but Do's and Don'ts), so each is written for
+   the brand's reader the first time: no file paths, no process notes ("the seeds the user approved", "chosen on step 2",
    "the brief asked for"), nothing about how its images were made (generated, stand-ins, to be
    replaced by photographs), and every measure a real one (a clear space as a share of the logo's height
    or in px at a stated size, never "the K's x-height"); Studio warns on the board where a section
