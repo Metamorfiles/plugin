@@ -34,8 +34,7 @@ The logo's own page is `references/taste.md` of the `logo` skill.
 - **Briefed as an assembly.** A prompt that counts limbs, places each one and paints each part a
   colour draws exactly that: an assembly standing still. Brief who it is, its face and what it's
   doing, and let the drawing find the body's shapes.
-- **A scene instead of a character.** A board, a wave and the spray around it take over the drawing
-  and vanish at 32 px. One gesture and one object, smaller than the character; scenes belong to the
+- **A scene instead of a character.** A board, a wave and the spray around it take over the drawing. One gesture and one object, smaller than the character; scenes belong to the
   imagery.
 - **Detail that vanishes when small:** fine textures, tiny accessories.
 - **Props merged into the body.** When a prop overlaps the head or body, the model can read the two

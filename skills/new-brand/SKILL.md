@@ -142,7 +142,7 @@ Studio keeps what waits, piece by piece; run the `review` skill on the queue and
 |---|---|---|
 | `logo.md` written, before asking | `logo` | every letter; one colour |
 | The mascots, and in the logo's own case their sheet, before asking | `character` | each a figure in the chosen logo's hand and colours, with no letters; designs built differently; the sheet's eight figures the same character |
-| The small marks, before asking | `mark` | cut or drawn from the chosen logo; holds at small sizes |
+| The small marks, before asking | `mark` | cut or drawn from the chosen logo, or the mascot's head |
 | `imagery.md` written, before asking | `imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
 | The library and the mockups made, then the kit written | `handover` | each image, each mockup's logo and words, each final logo file, DESIGN.md's printed sections |
 

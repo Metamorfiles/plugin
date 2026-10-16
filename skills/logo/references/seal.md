@@ -34,5 +34,5 @@ height. The shapes `star`, `diamond`, `facet` (a cut diamond in two tones, `colo
 
 ## Small
 
-A seal's lettering is usually too small to read at 32 px: the check shows it. Its small mark is then
-what sits in its middle, or the seal without its lettering.
+A seal's lettering is too fine to stand for the brand on its own: its small mark is what sits in its
+middle, or the seal without its lettering.

@@ -66,9 +66,3 @@ A tagline, the trade, the place, the words around a seal: real type, set as text
 seal's line): `{ text: "SINCE 2024", font: "brand/fonts/Inter.woff2", color: "#3b2e27", tracking: 0.12, size: 0.3 }`.
 Where they sit and how large is a design decision for this logo; look at the lockup large and small
 to judge it.
-
-## The small-size version
-
-A name set for 400 px can close up at 32. When the check shows it, set it again as its own file for
-the small sizes (heavier, spaced a little looser, without the supporting words) and check both with
-`metamorfiles_check_logo`.

@@ -1,8 +1,8 @@
 # Styles and the prompt
 
 One rendering per character, from the chosen direction and from what the character needs, written
-once as a paragraph that is pasted unchanged into every prompt. A figure with limbs and a face holds
-at 32 px through an outline, and goes to one colour as line art; flat shapes with inner colours suit
+once as a paragraph that is pasted unchanged into every prompt. A figure with limbs and a face reads
+through an outline, and goes to one colour as line art; flat shapes with inner colours suit
 a simple, chunky body. Each style traces cleanly because it is flat: no gradient, shading or
 texture.
 

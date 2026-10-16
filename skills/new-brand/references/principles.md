@@ -59,12 +59,11 @@ cover the name; one element still says which brand it is.
 
 The wordmark is the default: the name is already the brand's. It earns character through one small
 anomaly: one changed letter, one glyph, a full stop, a cut. A symbol needs a reason, and then it is
-a member or container of the brand's own device family, simple enough to cut from paper, and still
-itself at 16 px. A second reading may hide in the negative space, as a bonus, never a requirement.
+a member or container of the brand's own device family, simple enough to cut from paper. A second reading may hide in the negative space, as a bonus, never a requirement.
 Marks made from something real (a hand, a print, a tear) keep their imperfections; a drawn imitation
 of them doesn't count.
 
-**Test:** describe the mark after one look. Does it hold at 16 px, in one colour? Is its anomaly
+**Test:** describe the mark after one look. Does it hold in one colour? Is its anomaly
 tied to the idea?
 
 - **1:**
