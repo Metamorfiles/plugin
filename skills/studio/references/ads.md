@@ -1,6 +1,6 @@
 # Ads
 
-Read before you make an ad or a set of ads. `design.md`, `copy.md` and `images.md` still apply; this is what paid placements add.
+Read before you make an ad or a set of ads. `design.md`, `images.md` and the `copywriting` skill still apply; this is what paid placements add.
 
 ## The set
 

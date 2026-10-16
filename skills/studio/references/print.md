@@ -1,6 +1,6 @@
 # Print
 
-Read before you make anything printed: a business card, a flyer, a poster, a letterhead. `design.md` and `copy.md` still apply; this is what paper adds.
+Read before you make anything printed: a business card, a flyer, a poster, a letterhead. `design.md` and the `copywriting` skill still apply; this is what paper adds.
 
 ## Contents
 - Sizes and the printer's template

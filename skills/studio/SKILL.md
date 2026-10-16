@@ -77,8 +77,8 @@ Every workflow uses the same craft, one file each. Read the one you need before 
 | When you | Read |
 | --- | --- |
 | lay out a frame: layout, type, color, spacing, crops | [references/design.md](references/design.md) |
-| write any words that go into a frame | [references/copy.md](references/copy.md) |
-| plan, write or design a carousel (after `copy.md` and `design.md`) | [references/carousels.md](references/carousels.md) |
+| write any words that go into a frame | the `copywriting` skill |
+| plan, write or design a carousel (after the `copywriting` skill and `design.md`) | [references/carousels.md](references/carousels.md) |
 | make an ad or a set of ads | [references/ads.md](references/ads.md) |
 | make a profile's cover or header | [references/covers.md](references/covers.md) |
 | make anything printed: a business card, a flyer, a poster, a letterhead | [references/print.md](references/print.md) |

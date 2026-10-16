@@ -16,7 +16,7 @@ A page is one deliverable made from a template: its own copy of the design, and 
    - **Axes:** what varies. For A/B tests, one thesis per variant, and change one idea at a time so results are readable. Name each variant by its thesis, so results can be traced.
    - **Size:** variants × formats × rows. Confirm before exporting more than 50 files.
 3. Fill values per variant:
-   - `string` variables with an `ai` source: write the copy yourself from the variable's `instruction` and the thesis, with `references/copy.md` of the `studio` skill.
+   - `string` variables with an `ai` source: write the copy yourself from the variable's `instruction` and the thesis, with the `copywriting` skill.
    - `image` variables: for each variant, make the image composed for its slot (what this variant is about, the slot's shape, where the copy sits), by `references/images.md`'s prompt (the brand's image contract, the character first when it appears, the library's sheet for style), saved under `assets/` (`references/images.md`, "Compose it, then make it"); a library file only when it already is that composition, and never the same image on two variants of one post. Other parties' logos come from `metamorfiles_find_mark { name }`.
    - `table` variables: don't set them. Pass the table and each row becomes a variant filled from its columns. Call `metamorfiles_read_table { file: "data/products.csv" }` first to check columns and rows.
    - Only set the values that differ from the template defaults.

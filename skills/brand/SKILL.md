@@ -29,7 +29,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 5. Write `brand/DESIGN.md` with `metamorfiles_write_file { path: "brand/DESIGN.md", content }`, following the template. If `metamorfiles.json` names the brand differently from DESIGN.md (other spelling or capitals), write it with the brand's own name, so the control panel and the kit agree.
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
 7. Render each page of the brand's guidelines with `metamorfiles_render_preview { item: "templates/brand-board", format: "cover" }`: Studio draws them from DESIGN.md and the folders, one 16:9 page each (`cover`, `about`, `logo`, `logos`, `mark`, `colour`, `pairs`, `typefaces`, `scale`, `voice`, `messaging`, `rules`, and each asset folder by its name, such as `refs` and `mockups`; a section too long for one page continues as `refs-2`). The write that changes DESIGN.md lists them. Fix every check error through DESIGN.md and the folders.
-8. Get the independent review of the board with the `review` skill, in the foreground and before you present anything (in Claude Code, the Agent tool with `run_in_background: false`): it catches a logo on the wrong background or a pairing that reads badly. Fix what it marks **must fix** through DESIGN.md. What it reports as Studio's (how the board is drawn) isn't yours to fix: tell the user plainly, in a line.
+8. Get the independent review of the kit with the `review` skill (the `handover` queue) before you present anything: it catches a logo on the wrong background or a pairing that reads badly. Fix what it marks **must fix** through DESIGN.md or the files.
 9. Present it with the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
 
 ## Taking values from each source
@@ -83,14 +83,12 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 
 ## Prose
 
+- The prose is the copywriter's: write every section with the `copywriting` skill (Overview, Colors, Typography, Logo, Imagery, Voice and Messaging), as the brand's guideline.
 - The spec's sections, in order, only those the brand has: Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts.
 - Then Studio's sections: Logo, Imagery, Voice, Messaging, Audience, Sources, Known gaps.
-- The brand's name is text wherever text names it (a sentence, a caption, a page of a document), set in the brand's text faces; only where the logo stands is it the logo.
-- Name tokens instead of repeating values: `**Ink** {colors.ink} carries all text`. Values belong in the tokens and in Sources.
-- Describe rules and intent, not layouts, unless the brand really has a fixed layout rule. A specific reference ("a 1970s lecture handout") carries more than adjectives ("clean, modern").
-- Keep Do's and Don'ts short and intentional, and never add brand facts such as claims, prices or awards.
-- **Messaging** is the brand described, ready to copy into a shop, a profile or an About page: the brand in one line, in one sentence and in one paragraph, then up to three key messages, each one line. Only facts from the sources or the brief: no claims, no prices, no awards, no tagline (a tagline is a piece, made when the user asks). Quote the brand's own description word for word where it has one. Words to use and avoid belong in Voice.
-- **Voice is a chart, not a paragraph**: three concepts, each with its characteristics and the lines the brand does and doesn't say. Every Do is quoted from the brand's own copy. See `references/voice-chart.md`; the board draws the chart and the templates write to it.
+- Describe rules and intent, not layouts, unless the brand really has a fixed layout rule.
+- Keep Do's and Don'ts short and intentional, and never add brand facts such as claims, prices or awards. It isn't printed: it holds the rules agents follow when they design.
+- For a brand that exists, every Do of the Voice chart is quoted from its own copy and recorded in Sources.
 - **Sources** is a table: value, origin (file or URL), original name (variable, class or element), confidence (exact, sampled, inferred or proposed), plus what was deliberately not carried over. `proposed` is anything you supplied rather than observed; say what you derived it from.
 - **Known gaps** lists what the brand doesn't define and what you need from the user.
 
@@ -107,8 +105,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 - When no file suits a background and the user declines a variant, the official logo sits on a plate of its own background color.
 - A logo the brand has only as a picture (a PNG or JPEG) stays as it is: the kit gives it no print file. Offer once to trace it into a vector for print; on a yes, `metamorfiles_import_image { path: "brand/sources/yours/logo.png", name: "logo", folder: "brand/logos", trace: { colors: ["#1f1a17"] } }` with the logo's exact colours, show the result beside the original, and record `traced from the user's <file>, approved on <date>` in its `source` and in Sources.
 - A brand with no logo at all gets one designed with the `logo` skill, only when the user asks for it.
-- The Logo section says which file goes on which background, the clear space, and that logos are never recolored. The clear space is the brand's own rule; when its guidelines give none, propose one and mark it `proposed` in Sources, as a guide for layouts rather than a rule of the brand. It is a real measure, a share of the logo's height or px at a stated size, never a part of a letter.
-- The prose sections (Overview, Imagery, Voice, Messaging, Logo) are printed on the guideline pages: write them for the brand's reader, with no file paths or process notes; Studio warns on the board where one reads as a working note. Do's and Don'ts isn't printed: it holds the rules agents follow when they design.
+- The clear space is the brand's own rule; when its guidelines give none, propose one and mark it `proposed` in Sources, as a guide for layouts rather than a rule of the brand.
 
 ## DESIGN.md template
 

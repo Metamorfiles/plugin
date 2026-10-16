@@ -36,5 +36,5 @@ fixed by an edit, placed with `metamorfiles_make_mockup` only when an edit can't
 first is saved, list the folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`.
 They are one board, like the logos and the images, and nothing is asked: say which three you made in
 one `say`. The user can redo one from its board, or pick one of its earlier takes back; a mockup made
-again takes the old one's place (`replaces`), and the old one stays an earlier take. Get the review of
-the board (`mockups`) before the final check.
+again takes the old one's place (`replaces`), and the old one stays an earlier take. They're
+reviewed in the `handover` queue, with the library.
