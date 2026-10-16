@@ -60,7 +60,7 @@ One rendering for this character, from the chosen direction and from what the ch
 direction's words for how its figures are drawn set the hand (the line, its weight, the edges), and
 the character is drawn in the brand's colours, filled. A drawing in one ink, a line with no fills,
 is for a brief that asks for it; the logo's one-colour version comes from the full-colour drawing
-(the `logo` skill, step 5). A figure with limbs and a face holds at 32 px through an outline;
+(the `logo` skill, step 5). A figure with limbs and a face reads through an outline;
 flat shapes with inner colours suit a simple, chunky body. The families, their words and their trace colours:
 `references/styles.md`. The look's paragraph is pasted unchanged into every prompt. What a strong
 character looks like, and what goes wrong: `references/taste.md`.
@@ -88,8 +88,7 @@ into its prompt (`references/drawn.md` of the `logo` skill).
 
 For each candidate:
 - read the trace at full size (`metamorfiles_read_file`, `asImage`);
-- run `metamorfiles_check_logo` on it: the blurred and one-colour versions show the silhouette, the
-  32 px one whether its face still reads;
+- run `metamorfiles_check_logo` on it: the blurred and one-colour versions show the silhouette;
 - hold it against `references/taste.md`: a personality in the pose and the face, one feature that
   makes it itself, doing this business's thing; none of its defaults to recognise, unless the brief
   asked for it; and not a character another business could use unchanged.

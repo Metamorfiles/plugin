@@ -32,9 +32,9 @@ gap of the ground's colour around a part where it overlaps another.
 ## Judging it
 
 Sizes, gaps and positions are decided by eye for this logo, not by formula. Look at the lockup large
-and at 64 px: the parts should feel like one piece with room to breathe; a round or pointed part
+and blurred: the parts should feel like one piece with room to breathe; a round or pointed part
 standing on the baseline looks short and overshoots it a little (`shift`); the part that disappears
-first when small is too small or too light. `metamorfiles_check_logo` gives each part's stroke weight
+first in the blur is too small or too light. `metamorfiles_check_logo` gives each part's stroke weight
 and the thinnest's share of the heaviest: parts drawn in one hand are close to each other's weight.
 
 Every lockup keeps its settings beside it (`<file>.svg.json`); change one thing with

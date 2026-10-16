@@ -13,7 +13,7 @@ The trace keeps what the drawing gives it, so the drawing is made clean:
   shadow. The brand's colours and any others the design needs (a gem's facets in six greens): every
   flat area is kept as drawn.
 - **No line thinner than about a hundredth of the drawing's width.** Thinner lines break up in the
-  trace and vanish at small sizes anyway.
+  trace.
 - **Large and centred**, with space around it: a detail drawn small is traced small.
 
 ## Tracing

@@ -86,8 +86,8 @@ composition move (`references/taste.md`), so the user chooses between ideas.
 
 Run `metamorfiles_check_logo` on every route's logo. Read the sheet and the numbers, fix what fails,
 and run it again: `references/checks.md`. The user should never be the one to find a drawn letter
-that's wrong or a one-colour version that doesn't read. The reversed version and the small sizes are
-made and checked after the choice (step 8): a route is never drawn again for them.
+that's wrong or a one-colour version that doesn't read. The reversed version and the small mark are
+made after the choice (step 8): a route is never drawn again for them.
 
 ### 6. Each route's files
 
@@ -127,18 +127,17 @@ asked with `metamorfiles_ask_user { step: "character" }`; the small mark waits f
 
 The small mark is next, before the imagery or anything else: it stands for the whole name, and with a
 mascot it may be the mascot's head or bust, made from the chosen mascot as the `character` skill says.
-Run `metamorfiles_check_logo` on the chosen logo and look at the pieces it loses at 32 and 16 px.
 
-- **A part of it holds up small** (the logo's own mark, its first letter or a monogram of its initials,
-  the seal's middle, or the whole logo at 32 px): cut it from the logo's file,
+- **A part of it stands for the brand on its own** (the logo's own mark, its first letter or a monogram
+  of its initials, the seal's middle, or the whole logo when it's compact): cut it from the logo's file,
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<chosen>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x: 0, y: 0, width: 0.3, height: 1 }, square: true }`.
 - **None does** (fine detail, texture, a long name): never clean or redraw the logo for it. Have the
-  image model draw the mark from the logo, the prompt naming the part and saying it is simplified to
-  read at 16 px in the logo's own drawing and colours, and trace it:
+  image model draw the mark from the logo, the prompt naming the part and saying it is simplified,
+  in the logo's own drawing and colours, and trace it:
   `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
 
-Never another letter alone: a lone e reads as "e", not as the brand. Offer one to three, check each at
-32 and 16 px with `metamorfiles_check_logo`, write them into `brand/process/logo.md` as `marks`, each
+Never another letter alone: a lone e reads as "e", not as the brand. Offer one to three, check each
+with `metamorfiles_check_logo`, write them into `brand/process/logo.md` as `marks`, each
 `{ file, title }` and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`.
 Studio shows them on their own page as a profile picture and an app icon, records the answer as
 `mark`, and starts nothing of the imagery until it's answered. Then the imagery.
@@ -164,8 +163,8 @@ by <model> and traced", "created and approved by the user on <date>") and clear 
 small mark with `small: true`.
 
 Last, compose the small mark for where it's used small: the profile picture, which platforms crop to
-a circle, and the favicon and app icons, squares. Studio places the mark by its ink and shows each at
-its real size on the guidelines' `mark` page
+a circle, and the app icons, squares. Studio places the mark by its ink and shows each on the
+guidelines' `mark` page
 (`metamorfiles_render_preview { item: "templates/brand-board", format: "mark" }`). Look at each as
 it will be seen and decide its composition for that mark: how much of the circle or square it fills,
 where it sits, its ground, or another version of it (the reversed mark on a brand colour). Write what

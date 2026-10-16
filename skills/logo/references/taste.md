@@ -103,7 +103,7 @@ that changes from file to file.
 - **Same hand as the letters.** A cut-paper name gets a cut-paper mark; a monoline script gets a
   monoline mark. The hand is the line weight, the edges and the corners; a character keeps its face
   and its drawing, never turned into a silhouette to match a heavy face.
-- **One idea, simple enough to cut out,** and still itself at 32 px in one colour.
+- **One idea, simple enough to cut out,** and still itself in one colour.
 - **From the business, not the category.** Left alone, the image model reaches for the category's
   symbol (a mountain for climbing, wheat for a bakery, a lotus for wellness, a bean for a café) and
   adds it even when nobody asked. It belongs in the logo only when the direction chose it.
