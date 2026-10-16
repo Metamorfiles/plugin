@@ -252,10 +252,12 @@ its frame shows each file as it arrives, so the user watches the step come toget
    Voice (the chart in `references/voice-chart.md` of the `brand` skill, and its lines in the
    brand's own words, `references/copy.md` of the `studio` skill) and its Messaging (as the `brand` skill
    describes it, from the brief's facts), then hand back to the designer. Overview ends with one
-   paragraph on why the chosen direction and logo fit the brief, and what they leave out of the
-   category's usual look. The guideline pages print every prose section, so each is written for the
-   brand's reader the first time: no file paths, no process notes ("the seeds the user approved",
-   "chosen on step 2"), and every measure a real one (a clear space as a share of the logo's height
+   paragraph for whoever uses the brand (staff, printers, partners): what the logo and the look
+   have to do, and what they leave out of the category's usual look, never how they were chosen.
+   The guideline pages print every prose section, so each is written for the brand's reader the
+   first time: no file paths, no process notes ("the seeds the user approved", "chosen on step 2",
+   "the brief asked for"), nothing about how its images were made (generated, stand-ins, to be
+   replaced by photographs), and every measure a real one (a clear space as a share of the logo's height
    or in px at a stated size, never "the K's x-height"); Studio warns on the board where a section
    reads as a working note.
    The chosen direction, logo and imagery become `brand/DESIGN.md` as the `brand` skill
