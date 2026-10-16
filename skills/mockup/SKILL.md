@@ -15,7 +15,7 @@ edit. Only a print it can't make exact is placed by Studio on a blank photo.
 ## Checklist
 
 ```
-- [ ] 1. The shots chosen: one idea each, different from each other
+- [ ] 1. The shots chosen: one idea each, different from each other; the packs one system
 - [ ] 2. What's printed on each object decided: the logo alone, or artwork with it
 - [ ] 3. Each photograph made whole, from its prompt and the brand's files; all together
 - [ ] 4. Each one checked: the logo, the words, the physics, the photograph
@@ -40,6 +40,12 @@ plain product standing on a plain floor:
 | **The detail** | a macro of the print, the paper, the emboss or the foil, shallow depth |
 | **In its place** | on the shelf, the counter, the door, the street; real light and shadows falling across it |
 | **One witty moment** | a single unexpected prop or balance, used once, when the brand's voice allows it |
+
+Across the shots, the brand's products are one packaging system, as a real range is: every pack is
+the same design, and a shot shows a line or a variant of it (a flavour in its colour, another size,
+the pouch beside the cup), never a new pack design. Or show one product, or none, and give the other
+shots to what the business uses besides its packs: merch, a sign, a shelf strip, a bag, a placement
+(a poster, a bus shelter, a post on a phone).
 
 For each, decide in your notes:
 - **The backdrop:** a saturated seamless colour picked from the palette or set against it, or a real
@@ -77,7 +83,9 @@ proposes names in the brand's voice, recorded for the user to confirm (a new bra
 
 ### 3. Make each photograph
 
-All the shots together, each
+All the shots together, except those that show a pack another shot shows: make the shot that
+designs the pack first and, once it passes its check, give it to the others as a reference ("Image
+2 is the brand's pack: the same design, only the flavour's colour and name change"). Each
 `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "brand/artwork/can-wrap.png"], folder: "brand/mockups", name: "can-on-peppers", wait: false }`,
 collected with `metamorfiles_image_status { id }`. The references are the brand's real files, numbered
 by role: image 1 the logo file the object's ground calls for (the reversed one on a dark object), kept

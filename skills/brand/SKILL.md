@@ -85,6 +85,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 
 - The spec's sections, in order, only those the brand has: Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts.
 - Then Studio's sections: Logo, Imagery, Voice, Messaging, Audience, Sources, Known gaps.
+- The brand's name is text wherever text names it (a sentence, a caption, a page of a document), set in the brand's text faces; only where the logo stands is it the logo.
 - Name tokens instead of repeating values: `**Ink** {colors.ink} carries all text`. Values belong in the tokens and in Sources.
 - Describe rules and intent, not layouts, unless the brand really has a fixed layout rule. A specific reference ("a 1970s lecture handout") carries more than adjectives ("clean, modern").
 - Keep Do's and Don'ts short and intentional, and never add brand facts such as claims, prices or awards.

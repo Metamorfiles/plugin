@@ -113,7 +113,7 @@ search for it:
 ## Paths
 
 1. **Morning batch:** the hour the first loaves come out as the brand's number; avoids beige
-   minimalism. Search: bakery opening hours poster.
+   minimalism. Search: bakery poster.
 ```
 
 A path is a guess the research tests: one that finds nothing good changes or gives way to a better
@@ -122,9 +122,11 @@ one the references show, and its line in the brief changes with it.
 ## The reference hunt
 
 Designers start from the best of what exists, the way they browse it, one hunt for each path:
-- **Search** with `metamorfiles_search_references { query: "bakery opening hours poster" }`, in the
-  path's plain words. It returns the covers of the most viewed and the featured projects, numbered
-  on one sheet.
+- **Search** Studio's index of the design press (BP&O's reviews, logos and collections, Identity
+  Designed) with `metamorfiles_search_references { query: "bakery packaging" }`, in the words those
+  sites file work under: the kind of business with the kind of work (packaging, mascot, lettering,
+  signage, menu), a colour or a place. It returns the best matches' covers, numbered on one sheet; a
+  search that finds nothing lists the words to use instead.
 - **Choose from the covers** the three projects worth opening, genuinely good whatever their
   category, and pass their links with the path's name as
   `metamorfiles_collect_references { links: [...], path: "Morning batch" }`, which keeps about eight
@@ -133,19 +135,14 @@ Designers start from the best of what exists, the way they browse it, one hunt f
 - `metamorfiles_look_at_page { url: "https://..." }` shows a single page when you need to read one
   more closely, such as a type specimen or the business's own website.
 
-When Studio says it won't open a site (it refused this computer, or it's off), never try it again
-and never ask the user about it. Hunt on the open web instead:
-- **Search** with your own web search, in each path's plain words with "branding" or "case study",
-  across the design press (BP&O, Identity Designed, Mindsparkle Mag, Brand New, Dieline for
-  packaging) and the studios' own sites those name.
-- **Choose** three projects per path from the results: real, credited work with its images on the
-  page.
-- **Collect** them the same way, `metamorfiles_collect_references { links: [...], path: "Morning batch" }`.
-  A link on a site Studio won't open is skipped, and the result says so.
+When the index has nothing good for a path, search the open web with your own web search, in the
+path's plain words with "branding" or "case study" (the Dieline for packaging, Brand New, the
+studios' own sites), choose three real, credited projects with their images on the page, and
+collect them the same way. A link on a site Studio won't open is skipped, and the result says so;
+never try that site again and never ask the user about it.
 
-Each sort of a search and each project opened spends one of the project's 15 pages a day: three paths,
-each one search (two sorts) and three projects, spend all 15, so pages spent on the subject come off
-the projects.
+Each project opened spends one of the project's 15 pages a day; a search's covers spend none. Three
+paths of three projects spend nine, so pages spent on the subject come off the rest.
 
 ## Directions
 

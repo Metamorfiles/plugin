@@ -55,12 +55,14 @@ Only the character: no letters, words or numbers, no ground line or shadow, no f
   presentation boards.
 - Colours are the palette with a job each, never a colour per limb: the model gives them to the
   shapes it draws, and a part in a colour the brand doesn't have is caught at the check.
-- Each candidate has its own Who, Face and Doing (`design.md`, "Three ideas for one character");
-  the Look and the Palette are the same in all three, and so is what it is and its build.
+- Each candidate has its own Who, Face and Doing, and its own build (`design.md`, "Three designs
+  for one character"); the Look and the Palette are the same in all three, and so is what the brief
+  fixes it to be.
 - A reference goes in only when it shows a figure drawn in the chosen look ("Image 1 is a style
   reference: take its drawing hand and line weight; never copy its character, pose or layout").
-  Never the wordmark while the character is explored: the first image is the one the model keeps
-  most, and a typeface isn't a drawing hand. With no such reference, the Look paragraph carries the
+  Never a wordmark set in type while the character is explored, unless it is a new brand's chosen
+  logo (`SKILL.md`, "In a new brand"): the first image is the one the model keeps most, and a
+  typeface isn't a drawing hand. With no such reference, the Look paragraph carries the
   hand alone. Once kept for a logo, it is drawn onto the set word (`references/symbol.md` of
   the `logo` skill, "Compose it on the word").
 - Draw it at `width: 1024, height: 1024` with `trace: { colors: [...] }` listing the style's trace
