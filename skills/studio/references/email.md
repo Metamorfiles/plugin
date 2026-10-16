@@ -1,6 +1,6 @@
 # Email signatures
 
-Read before you make an email signature. `design.md` and `copy.md` still apply; this is what mail apps allow.
+Read before you make an email signature. `design.md` and the `copywriting` skill still apply; this is what mail apps allow.
 
 ## What it holds
 

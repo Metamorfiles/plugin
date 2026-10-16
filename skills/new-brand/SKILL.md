@@ -26,9 +26,9 @@ Copy it into your notes and tick each step as you go:
 - [ ] 1. Direction: three paths in the brief, references collected for each, directions written, asked, chosen
 - [ ] 2. Logo: three routes with the `logo` skill (a character with the `character` skill), reviewed, asked, chosen
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
-- [ ] Kit: DESIGN.md (its voice by the copywriter), final logos, fonts, library (each batch reviewed), imagery guide
+- [ ] Kit: DESIGN.md (its prose by the copywriter), final logos, fonts, library (each batch reviewed), imagery guide
 - [ ] Mockups: three shots of the brand on its own objects, last, reviewed
-- [ ] Final check: every planned change made first, then the `review` skill of the whole kit in the foreground, fixes made
+- [ ] Final check: every planned change made first, then the `review` skill of the `handover` queue, fixes made
 - [ ] Handover: finished: true with the summary
 ```
 
@@ -37,7 +37,7 @@ Copy it into your notes and tick each step as you go:
 | 1. Direction | two or three directions, each its references, palette in proportion and type pairing, set in the brand's words | `designer` | `references/research.md`, `references/look.md`, `references/fonts.md` | chooses one, or says what to change or mix |
 | 2. Logo | three routes or more from the chosen direction: drawn whole by AI, real fonts with a generated part, type alone; each in colour and in one colour | `designer` | the `logo` skill; the `character` skill for a mascot | chooses one, or asks for another |
 | 3. Imagery | the style in words and four seed images | `imager` | `references/imagery.md` | uses them, or has single ones redone |
-| Kit | DESIGN.md and the brand board: the guideline pages and the images | `designer`, `copywriter` for the voice | `brand` | asks for any change they want |
+| Kit | DESIGN.md and the brand board: the guideline pages and the images | `designer`, `copywriter` for the prose | `brand`, `copywriting` | asks for any change they want |
 | Mockups, last | three shots of the brand on its own objects, on their own board | `designer`, `imager` for the photographs | `references/mockups.md`, the `mockup` skill | redoes one, or picks an earlier take back |
 
 `references/principles.md` holds what separates studio work from generated work, with tests for each
@@ -135,36 +135,29 @@ started.
 Whoever made something is the worst judge of it, so the reviewer looks at each piece of work before
 the user does, and at whatever is made again: a logo tried again, an image redone, a mockup remade,
 any change the user asks for in their own words. Finish every change you plan to a piece (its
-wording, a size, a crop) before it goes to the reviewer: a change after a pass sends it back. Run the
-`review` skill in the foreground and wait for its verdict, naming only the frames that are new or
-changed:
+wording, a size, a crop) before it goes to the reviewer: a change after a pass sends that piece back.
+Studio keeps what waits, piece by piece; run the `review` skill on the queue and wait for its verdict:
 
-| When | Frames | What it judges |
+| When | Queue | What it judges |
 |---|---|---|
-| `logo.md` written, before asking | `process-logo` | every letter; one colour |
-| The mascots written, before asking | `process-logo` | each a figure drawn in the chosen logo's hand and colours, with no letters; its anatomy and face; three designs built differently, or the logo's own character on model |
-| The character sheet written, before the small mark | `process-logo` | eight figures in the grid's order, the same character as the anchor in all eight: its face, its one feature, its proportions, its colours |
-| `imagery.md` written, before asking | `process-imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
-| Each batch of the library | the imagery folder's frame, by the folder's name (`refs`) | the same, against the anchors |
-| The three mockups, and any made again | the mockups' board, by its folder's name (`mockups`) | the logo against its file, every word, how each object sits and opens |
-| The finished kit | the whole board | the final check, under Kit |
-
-A change to one option after its frame passed (a route tried again, a seed redone, the user's change
-to one option) is reviewed alone: name it as `process-<step>:<option id>`
-(`process-logo:adesivo`), with the file it replaced. The other options keep their pass.
+| `logo.md` written, before asking | `logo` | every letter; one colour |
+| The mascots, and in the logo's own case their sheet, before asking | `character` | each a figure in the chosen logo's hand and colours, with no letters; designs built differently; the sheet's eight figures the same character |
+| The small marks, before asking | `mark` | cut or drawn from the chosen logo; holds at small sizes |
+| `imagery.md` written, before asking | `imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
+| The library and the mockups made, then the kit written | `handover` | each image, each mockup's logo and words, each final logo file, DESIGN.md's printed sections |
 
 Report it as the reviewer: `metamorfiles_team_update { task, role: "reviewer", status: "reviewing" }`,
-then the same with `status: "done"`; Studio shows the frames being checked as the reviewer renders
-them. The reviewer records its verdict in Studio, and the thread shows what it caught. Fix only the **must fixes**,
-once, as the role that made the piece, with a method that can fix it (a version that recolouring
-makes muddy is drawn again from the logo), and have it reviewed again; if that look still sends one
-back, make the failing option again from scratch. Suggestions are taste: weigh them, but never
-remake work for one before the user has seen it. The user's choice is the judgement that counts. Nothing reaches the user with a must fix standing: Studio won't ask a step, or
-let the brand be handed over, until its frames pass as they are now. Only when an option made
-again still fails is the step asked anyway, with
+then the same with `status: "done"`. The reviewer records its verdict in Studio, and the thread
+shows what it caught. Fix only the **must fixes**, once, as the role that made the piece, with a
+method that can fix it (a version that recolouring makes muddy is drawn again from the logo), and
+have it looked at again: only what changed waits. A piece looked at twice without passing is made
+again from scratch, or the step is asked anyway with
 `metamorfiles_ask_user { task, step: "logo", cannot: "<one line>" }`: one plain line on what
-couldn't be made, which the user reads beside the question. The brief and the directions aren't
-reviewed: they are the user's taste. The reviewer judges the work in each option, never which option is better.
+couldn't be made, which the user reads beside the question. Suggestions go to the user on the
+review's card; act on one only when it's worth that piece's next look. Nothing reaches the user
+with a must fix standing: Studio won't ask a step, or hand the brand over, while a piece waits. The
+brief and the directions aren't reviewed: they are the user's taste. The reviewer judges the work
+in each option, never which option is better.
 
 ## The steps' files
 
@@ -253,18 +246,9 @@ its frame shows each file as it arrives, so the user watches the step come toget
    `brand/process/imagery/`. The seeds the user keeps are the anchors. Start them (`wait: false`)
    once the small mark is answered; the chosen logo's cleanup (step 8 of the `logo` skill) runs while
    they're made, and its final logo files wait for the kit.
-4. **Kit.** The words are the copywriter's, always: report as `copywriter` while you write DESIGN.md's
-   Voice (the chart in `references/voice-chart.md` of the `brand` skill, and its lines in the
-   brand's own words, `references/copy.md` of the `studio` skill) and its Messaging (as the `brand` skill
-   describes it, from the brief's facts), then hand back to the designer. Overview ends with one
-   paragraph for whoever uses the brand (staff, printers, partners): what the logo and the look
-   have to do, and what they leave out of the category's usual look, never how they were chosen.
-   The guideline pages print the prose sections (all but Do's and Don'ts), so each is written for
-   the brand's reader the first time: no file paths, no process notes ("the seeds the user approved", "chosen on step 2",
-   "the brief asked for"), nothing about how its images were made (generated, stand-ins, to be
-   replaced by photographs), and every measure a real one (a clear space as a share of the logo's height
-   or in px at a stated size, never "the K's x-height"); Studio warns on the board where a section
-   reads as a working note.
+4. **Kit.** The words are the copywriter's, always: report as `copywriter` while you write
+   DESIGN.md's prose (Overview, Colors, Typography, Logo, Imagery, Voice and Messaging) with the
+   `copywriting` skill, from the brief's facts and the chosen steps, then hand back to the designer.
    The chosen direction, logo and imagery become `brand/DESIGN.md` as the `brand` skill
    describes, with the final logos in `brand/logos/` (step 8 of the `logo` skill) and every face
    with its role (the logo's own face named for it). A folder in `assets` must exist, and its frame
@@ -283,7 +267,7 @@ its frame shows each file as it arrives, so the user watches the step come toget
      their own board, never asked.
 
    The brand board then holds it all after the steps, as the brand's guideline pages: the logo,
-   colour, type, voice, the images and the mockups. Get the final check (the `review` skill, in the foreground, waiting for its verdict),
+   colour, type, voice, the images and the mockups. Get the final check (the `review` skill of the `handover` queue, waiting for its verdict),
    fix what it marks, and hand over as `references/presenting.md` of the `brand` skill says. Make
    no templates or pages: the kit is the brand.
 
@@ -308,7 +292,7 @@ icons, fonts and colours, the fonts, the guidelines, the brand's words and a pag
 - **Facts are never created**: no claims, prices, awards, history, addresses or customers beyond
   what the user gave. What a template will need goes to Known gaps.
 - **Product names can be proposed, never presented as facts.** When the brief names no products,
-  the copywriter proposes three or four names for the range in the brand's voice, for the mockups'
+  the copywriter proposes three or four names for the range (the `copywriting` skill), for the mockups'
   packaging, and writes them in the brief's research as `**Product names (proposed):** …`. The
   handover names them as proposals for the user to confirm. Weights, prices, ingredients and claims
   are never proposed.

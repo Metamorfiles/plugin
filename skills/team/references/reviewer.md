@@ -6,7 +6,7 @@ The team's first review is yours: nothing has been changed yet, so there's no au
 
 ## 1. Review
 
-Judge the frames in scope with the rubric of the `review` skill (its steps 1 to 3, and its **must fix** and **suggestion**). Say what already works, in two or three items: the other roles keep those while they fix the rest.
+Judge what's in scope with the rubric of the `review` skill (its steps 1 to 3, and its **must fix** and **suggestion**). Say what already works, in two or three items: the other roles keep those while they fix the rest.
 
 ## 2. Route
 
@@ -16,7 +16,7 @@ Owners: words go to the copywriter, images to the image maker, everything visual
 
 ## 3. Final check, by a separate reviewer
 
-After the fixes, hand the check to a reviewer that made none of the changes: the reviewer agent Studio's request names, or else as the `review` skill describes. Give it only the project path, the item (`pages/<id>` or `templates/<id>`), the frames the task changed, the task id, the brief in one sentence, the task's decisions (what the user answered and what Auto chose), the sources researched for its facts, and on a second look the must fixes it sent: never what you changed or what not to flag. It records its verdict in Studio on that task, which holds the task to it. Its verdict is input for you, never your summary: every **must fix** goes back to its owner, then it reviews again.
+After the fixes, hand the check to a reviewer that made none of the changes: the reviewer agent Studio's request names, or else as the `review` skill describes. Give it only the project path, what to review (`pages/<id>`, `templates/<id>`, or a new brand's queue), the task id, the brief in one sentence, the task's decisions (what the user answered and what Auto chose), the sources researched for its facts, and on a second look the must fixes it sent: never what you changed or what not to flag. It records its verdict in Studio on that task, which holds the task to it. Its verdict is input for you, never your summary: every **must fix** goes back to its owner, then it reviews again.
 
 Classify what comes back:
 

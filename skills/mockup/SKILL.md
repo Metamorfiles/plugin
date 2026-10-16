@@ -78,7 +78,7 @@ thermal-print, paint, vinyl, sticker, embroidery, engraving, emboss, foil, displ
 (`new` or `used` for a business starting out; `worn` or `weathered` only when its age or trade is the
 point) and its form (flat, curved or soft). You decide them, never the image model. Real words only:
 the brand's name, the brief's words and its product names; when the brief gives none, the copywriter
-proposes names in the brand's voice, recorded for the user to confirm (a new brand's brief,
+proposes names in the brand's voice (the `copywriting` skill), recorded for the user to confirm (a new brand's brief,
 `**Product names (proposed):** …`). Never a weight, price, ingredient, claim or small print.
 
 ### 3. Make each photograph
@@ -128,8 +128,8 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
 - **A weak shot:** made again with `replaces`; the one it replaces stays on the board as an earlier
   take the user can pick back.
 
-Then get the review (the `review` skill) of the mockups' board, the brand board's frame named for
-their folder (`mockups`), and fix what it sends back. The user sees them last.
+Then get the review (the `review` skill): in a new brand the `handover` queue holds them, and
+anywhere else the page or template they're in. Fix what it sends back. The user sees them last.
 
 ## Placing it
 

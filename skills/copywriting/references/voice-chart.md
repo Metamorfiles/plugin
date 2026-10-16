@@ -37,10 +37,11 @@ The line under each concept is its characteristics: three adjectives, or one sho
 
 ## Where the lines come from
 
-**Every `Do` is quoted from the brand's own copy** — its site, its app, its README, its docs. It is
-evidence, like a hex value, and it is recorded in Sources like one. If a concept has no real line
-behind it, it is not one of this brand's three concepts yet; say so in Known gaps rather than
-writing the line yourself.
+**For a brand that exists, every `Do` is quoted from its own copy** — its site, its app, its README,
+its docs. It is evidence, like a hex value, and it is recorded in Sources like one. If a concept has
+no real line behind it, it is not one of this brand's three concepts yet; say so in Known gaps
+rather than writing the line yourself. **For a new brand, you write the `Do` lines** in the voice
+its direction set, as lines the brand would really say on its pack, its site or its posts.
 
 **Every `Don't` is yours to write.** It is the plausible wrong version — what a template would
 produce if nobody had written the chart. Make it close enough to be tempting. A `Don't` nobody

@@ -26,7 +26,7 @@ an existing one is reused only when its layouts already serve this plan, and the
 
 When the brief asks for something only the user knows and didn't give it (their routine, a result,
 a date), the plan says so once, with the exact question, and the slide is reframed to what's true
-and still useful ("Grounding" in `copy.md`), never invented and never a line repeating another.
+and still useful ("Grounding" in the `copywriting` skill's copy guide), never invented and never a line repeating another.
 
 - **Length:** what the idea needs, usually 6 to 10 slides; one idea per carousel.
 - **Cover, then a promise:** the cover stops the scroll; slide 2 says exactly what the reader gets
@@ -58,7 +58,7 @@ Pick the one the idea is, and say it in the plan:
 - **The end asks for what the content earns:** save for something to come back to, share for
   something a friend needs, comment for an opinion, follow for a series. One ask.
 - **The caption** opens with its own hook in the first line, says what's inside, and ends with the ask.
-- Every fact comes from the brief, the brand, the user or research done for this post, kept with its source and date ("Research" in `copy.md`); a post about news is researched before it's planned. Copy craft and voice: `copy.md`.
+- Every fact comes from the brief, the brand, the user or research done for this post, kept with its source and date ("Research" in the `copywriting` skill's copy guide); a post about news is researched before it's planned. Copy craft and voice: `copy.md`.
 
 ## The design
 
