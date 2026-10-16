@@ -142,7 +142,8 @@ changed:
 | When | Frames | What it judges |
 |---|---|---|
 | `logo.md` written, before asking | `process-logo` | every letter; one colour |
-| The character sheet written, before the imagery | `process-logo` | eight figures in the grid's order, the same character as the anchor in all eight: its face, its one feature, its proportions, its colours |
+| The mascots written, before asking | `process-logo` | each a figure drawn in the chosen logo's hand and colours, with no letters; its anatomy and face |
+| The character sheet written, before the small mark | `process-logo` | eight figures in the grid's order, the same character as the anchor in all eight: its face, its one feature, its proportions, its colours |
 | `imagery.md` written, before asking | `process-imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
 | Each batch of the library | the imagery folder's frame, by the folder's name (`refs`) | the same, against the anchors |
 | The three mockups, and any made again | the mockups' board, by its folder's name (`mockups`) | the logo against its file, every word, how each object sits and opens |
@@ -235,14 +236,16 @@ its frame shows each file as it arrives, so the user watches the step come toget
    type. Each route checked with one
    `metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#1f1a17" }`, which draws it in colour
    on its paper, reversed and in one colour on one sheet; in `logo.md` each route has two files, in
-   colour and in one colour, each with its `ground`. Once a logo is chosen, the small mark is the
-   next step: cut from the logo, or drawn from it by the image model and traced where no part of it
-   reads small, and asked with `metamorfiles_ask_user { step: "mark" }` (the logo skill's step 8).
-   Studio starts nothing of the imagery until it's answered. A mascot is designed with the
-   `character` skill.
-   **Once a logo with a character is chosen,** draw its character sheet (`references/sheet.md` of
-   the `character` skill) once the mark is asked, write it into `logo.md` as `sheet`, and have the
-   reviewer check it: every image of the character after that is made from it.
+   colour and in one colour, each with its `ground`; `mascot: true` when the brand has a mascot.
+   Once a logo is chosen, in this order (the logo skill's step 8):
+   - **The mascot,** when the brand has one: drawn from the chosen logo with the `character` skill
+     ("In a new brand"), written as `characters` and asked with
+     `metamorfiles_ask_user { step: "character" }`; then its character sheet from the one chosen
+     (`references/sheet.md` of the `character` skill), written into `logo.md` as `sheet` and checked
+     by the reviewer: every image of the character after that is made from it.
+   - **The small mark:** cut from the logo, drawn from it by the image model and traced where no part
+     of it reads small, or the mascot's head or bust; asked with `metamorfiles_ask_user { step: "mark" }`.
+   Studio starts nothing of the imagery until both are answered.
 3. **Imagery** (`references/imagery.md`). The mode the brand needs (illustration, photography, a
    character, graphic or 3D), the style block, and four seeds made together, one per option, saved in
    `brand/process/imagery/`. The seeds the user keeps are the anchors. Start them (`wait: false`)

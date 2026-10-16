@@ -22,7 +22,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
 - [ ] 6. Each route's two files: colour, and one colour
 - [ ] 7. Routes shown and one recommended
-- [ ] 8. After the choice: the small mark first (cut, or drawn from the logo and traced) and asked; then, while the imagery is made, cleaned, the final files, the small uses composed
+- [ ] 8. After the choice: the mascot first when the brand has one (drawn from the chosen logo) and asked; then the small mark (cut, drawn from the logo, or the mascot's head) and asked; then, while the imagery is made, cleaned, the final files, the small uses composed
 ```
 
 ### 1. What the brand already decided
@@ -110,15 +110,23 @@ right that holds the direction another way, a second mark that holds the idea. E
 option, checked and given its files like a route (steps 5 and 6), up to six in all, so nothing worth
 choosing stays in your notes.
 
-In a new brand, write them as the options of `brand/process/logo.md`, one `recommended: true`, and
-ask as the `new-brand` skill says: Studio draws each large on its ground with its
+In a new brand, write them as the options of `brand/process/logo.md`, one `recommended: true`, with
+`mascot: true` beside them when the brand has a mascot (its brief asks for one, or a route carries a
+character), and ask as the `new-brand` skill says: Studio draws each large on its ground with its
 one-colour version beside it on the brand board, a logo made from a drawing as the drawing itself and its
 one-colour version from its trace. Outside it, show the check sheets and say in a line what each is and why,
 the recommended one first.
 
 ### 8. After the choice
 
-The small mark is the next step, before the imagery or anything else: it stands for the whole name.
+When the brand has a mascot, it comes first, drawn from the logo the user chose, never from a route
+they passed over: the `character` skill, "In a new brand". Write the mascots into
+`brand/process/logo.md` as `characters`, each `{ file, title }`, and ask with
+`metamorfiles_ask_user { step: "character" }`. Studio records the answer as `character`, and the
+mascot's sheet and the small mark wait for it.
+
+The small mark is next, before the imagery or anything else: it stands for the whole name, and with a
+mascot it may be the mascot's head or bust, made from the chosen mascot as the `character` skill says.
 Run `metamorfiles_check_logo` on the chosen logo and look at the pieces it loses at 32 and 16 px.
 
 - **A part of it holds up small** (the logo's own mark, its first letter or a monogram of its initials,
@@ -132,8 +140,8 @@ Run `metamorfiles_check_logo` on the chosen logo and look at the pieces it loses
 Never another letter alone: a lone e reads as "e", not as the brand. Offer one to three, check each at
 32 and 16 px with `metamorfiles_check_logo`, write them into `brand/process/logo.md` as `marks`, each
 `{ file, title }` and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`.
-Studio shows them on their own page as a profile picture, an app icon and at 32 and 16 px, records
-the answer as `mark`, and starts nothing of the imagery until it's answered. Then the imagery.
+Studio shows them on their own page as a profile picture and an app icon, records the answer as
+`mark`, and starts nothing of the imagery until it's answered. Then the imagery.
 
 While the imagery is made, clean the chosen logo's traced files for the final files, in the
 background: one `logo-cleaner` agent per file, given the project path, the traced file and what it is

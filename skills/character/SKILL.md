@@ -108,9 +108,25 @@ folder as `01-front`:
 Studio adds a short id to the name, so list the full file name it returns (`01-front-1a2b3c4d.svg`)
 in the folder's `anchors`.
 
+### In a new brand
+
+The mascot is decided once the logo is chosen, and drawn from the logo the user chose, never from a
+route they passed over unless they ask for it:
+- **The chosen route carries the character:** its traced character is the one mascot.
+- **Otherwise:** write this brand's brief (step 1) and draw three ideas (step 3) with the chosen logo
+  as image 1, so the mascot is drawn in its hand: "Image 1 is the brand's chosen logo: take its
+  drawing hand, line weight, corners and colours, never its letters or its layout."
+  `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`
+
+Write them into `brand/process/logo.md` as `characters`, each `{ file, title }` and one
+`recommended: true`, have the reviewer check them, and ask with
+`metamorfiles_ask_user { step: "character" }`; a lone one is taken without asking. Studio checks each
+was drawn from the chosen logo. The one chosen (`character`) is the anchor: its sheet is drawn from it
+(step 6), then the small mark, which may be its head or bust (step 7).
+
 ### 6. The character sheet
 
-As soon as the anchor is approved (in a new brand, the logo with the character is chosen), draw the
+As soon as the anchor is approved (in a new brand, the mascot is chosen), draw the
 **character sheet**: one image of the character from every side and in four poses, made in one
 generation so all eight match. It is the character's reference from then on: every image of it,
 any scene, any pose, any movement, passes the sheet as image 1, and a model that sees the character
