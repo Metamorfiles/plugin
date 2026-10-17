@@ -1,6 +1,6 @@
 ---
 name: mockup
-description: Use to show a brand on its real objects in Metamorfiles Studio, as photography a design publication would feature: a pack, a tin, a bottle, a box, a range, a bag, a sign, a card, a tag, a cup, a garment, merchandise. Each shot is art-directed and made whole by the image model from one prompt and the brand's real files as references (the logo, artwork designed flat, the mascot), then checked and fixed by an edit; placed by Studio on a blank photo only when the model can't make it exact. Use it for a new brand's mockups and whenever the user wants to see their brand, a product or a range on the real thing, even if they only say "a mockup" or "show it on a can".
+description: Use to show a brand on its real objects in Metamorfiles Studio, as photography a design publication would feature: a pack, a tin, a bottle, a box, a range, a bag, a sign, a card, a tag, a cup, a garment, merchandise. Each shot is art-directed and made whole by the image model from one prompt and the brand's real files as references (the logo, artwork designed flat, the mascot), a flat print (a sticker, a poster, a sign) designed flat first and then photographed from that file, then checked and fixed by an edit; placed by Studio on a blank photo only when the model can't make it exact. Use it for a new brand's mockups and whenever the user wants to see their brand, a product or a range on the real thing, even if they only say "a mockup" or "show it on a can".
 license: MIT
 ---
 
@@ -16,7 +16,7 @@ edit. Only a print it can't make exact is placed by Studio on a blank photo.
 
 ```
 - [ ] 1. The shots chosen: one idea each, different from each other; the packs one system
-- [ ] 2. What's printed on each object decided: the logo alone, or artwork with it
+- [ ] 2. What's printed on each object decided: the logo alone, artwork with it, or a flat print designed first
 - [ ] 3. Each photograph made whole, from its prompt and the brand's files; all together
 - [ ] 4. Each one checked: the logo, the words, the physics, the photograph
 - [ ] 5. Fixed by an edit, or placed when an edit can't; reviewed; then the user sees them
@@ -70,6 +70,13 @@ really make it:
   type inspire the design, in variants and adaptations made for this object (a new pose of the
   mascot, the pattern scaled to the box, an illustration in the imagery's style). Only the logo and
   the words are exact.
+- **A flat print** (a sticker, a poster, a sign, a menu, a card on a wall or glass): two steps. First
+  the image model designs it flat, the whole print straight on and filling the image, see-through
+  around a die-cut, from the logo and the brand's files, as the best prints in its category are
+  designed:
+  `metamorfiles_generate_image { prompt, references: ["brand/logos/logo.svg", "brand/refs/serum-morning.jpg"], width: 1600, height: 1600, transparent: true, folder: "brand/mockups/artwork", name: "mirror-sticker" }`.
+  Check its logo and words, then photograph it from that file (step 3). A flat print drawn in the
+  photograph at once comes out as a graphic laid over it.
 - **Artwork that must be exact** (a label a printer would get as a file, a precise illustration):
   designed flat first with the `artwork` skill, then given to the model as the object's print.
 
@@ -105,6 +112,15 @@ sections, in this order:
   and artwork made flat exactly as designed; the rest is designed freely in the brand's style. No
   other logo, mark, badge, claim, price or small print.
 
+A flat print is photographed from its artwork, given as image 1 alone, and the scene leads the
+prompt. Shoot its surface at an angle, a three-quarter view 30 to 40 degrees off square, never
+square-on: the print turns with the surface (a round sticker on a door seen at an angle is an
+ellipse in the plane of the glass). Describe it as a physical thing in that light: its material,
+the shadows and glare that fall across it, the reflections and drops that run over it as over the
+surface around it, and say its design is image 1's, printed as it is. Name its colours, never as
+hex, and never ask for it "exactly as drawn": either makes it a flat graphic laid over the photo.
+`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/mockups/artwork/mirror-sticker-1a2b3c4d.png"], folder: "brand/mockups", name: "mirror-sticker", wait: false }`
+
 ### 4. Check each one
 
 Look at each with `metamorfiles_read_file`, as the photograph a design publication would run:
@@ -112,17 +128,23 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
   it: no letter wrong, missing or added, no shape changed, the right colours.
 - **The words:** character by character, against the words the prompt quoted; nothing else written.
 - **The physics:** the object as the real one is made and used.
-- **The photograph:** the idea reads at a glance, the light is real, the print looks made, not pasted.
+- **The photograph:** the idea reads at a glance, the light is real, and the print sits in it: in
+  its surface's perspective, under the light, shadows and reflections around it. A print facing the
+  camera on a surface that doesn't, or untouched by the light around it, floats.
 
 ### 5. Fix, place when it can't be fixed, and review
 
 - **A logo or word wrong:** an edit of that place only, the image first and the logo file after it:
   `metamorfiles_generate_image { prompt: "Make the logo on the can exactly the logo in image 2", references: ["brand/mockups/can-on-peppers-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, region: { x: 0.3, y: 0.2, width: 0.4, height: 0.4 }, width: 1600, height: 2000, folder: "brand/mockups" }`.
+- **A print that floats:** an edit of its region, the photograph first and the print's artwork
+  after it, saying only that the print sits on its surface in the scene's perspective and light.
+  Never made again from the floating take: a reference carries its fault.
 - **Still wrong after two edits** (long copy, small type, a screen of text): place it. Make the photo
   with the print's surface left blank (the same prompt, the surface "completely blank, fully in frame
   and unobstructed", into `brand/mockups/blanks`), then
   `metamorfiles_make_mockup { name: "can-on-peppers", photo: "brand/mockups/blanks/can-on-peppers-blank-5e6f7a8b.png", surface: { object: "a drinks can", material: "aluminium", method: "print", condition: "new", form: "curved", text: ["Hearth"] }, layers: [{ file: "brand/artwork/can-wrap.png", corners: [[385, 260], [746, 260], [746, 1140], [385, 1140]], cover: true, curve: { wrap: 150, bend: [8, 14] } }], replaces: "brand/mockups/can-on-peppers-1a2b3c4d.png" }`:
   `corners` the surface's top-left, top-right, bottom-right and bottom-left in the photo's pixels,
+  read from the surface as it stands in the photo (an angled door's are never a rectangle),
   `size` and `at` to place a logo in it, `cover` to fill it, `curve` for a can, cup or bottle; Studio
   bakes the files in and the model finishes the photograph.
 - **A weak shot:** made again with `replaces`; the one it replaces stays on the board as an earlier
