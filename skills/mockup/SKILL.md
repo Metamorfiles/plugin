@@ -113,9 +113,10 @@ sections, in this order:
   other logo, mark, badge, claim, price or small print.
 
 A flat print is photographed from its artwork, given as image 1 alone, and the scene leads the
-prompt. Shoot its surface at an angle, a three-quarter view 30 to 40 degrees off square, never
-square-on: the print turns with the surface (a round sticker on a door seen at an angle is an
-ellipse in the plane of the glass). Describe it as a physical thing in that light: its material,
+prompt, with the camera the shot's own (step 1). Whatever the camera, the print lies in its
+surface and turns with it: say how the surface stands to the camera and that the print is
+foreshortened with it (a round sticker on a door that recedes reads as an ellipse in the plane of
+the glass). Describe it as a physical thing in that light: its material,
 the shadows and glare that fall across it, the reflections and drops that run over it as over the
 surface around it, and say its design is image 1's, printed as it is. Name its colours, never as
 hex, and never ask for it "exactly as drawn": either makes it a flat graphic laid over the photo.
