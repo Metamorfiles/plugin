@@ -53,6 +53,8 @@ For each, decide in your notes:
 - **The light:** hard sun or window light with crisp shadows, or one dramatic studio light. Never
   flat, even light.
 - **The people:** cropped hands, arms and sleeves; a face only when the shot is about a person.
+  Each one posed as `references/posing.md` of the `photography` skill says: one action, each hand's
+  job and grip.
 - **The idea:** one line, the shot's composition: what it shows, from where, what leads.
 - **The physics:** how this object really sits, opens and holds its contents: a lid off rests beside
   its container, an opened pack shows its real contents, a card's corners are as the brand cuts them,

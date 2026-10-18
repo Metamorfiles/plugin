@@ -64,7 +64,7 @@ Before any image, decide, as a packaging designer would, in your notes:
 ### 2. The picture
 
 Generate it with
-`metamorfiles_generate_image { prompt, width: 2400, height: 1000, references: ["templates/brand-board#<library folder>"], name: "can-wrap" }`, written as `images.md` of the `studio` skill says ("The prompt": the brand's image contract, and the character first when it appears).
+`metamorfiles_generate_image { prompt, width: 2400, height: 1000, references: ["templates/brand-board#<library folder>"], name: "can-wrap" }`, planned with the `illustration` skill (its idea, composition and figures) and written as `images.md` of the `studio` skill says ("The prompt": the brand's image contract, and the character first when it appears).
 It saves into `assets/` (or a brand folder given as `folder`), and the template uses the path it
 returned as the image's value.
 
