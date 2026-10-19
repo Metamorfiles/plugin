@@ -74,8 +74,13 @@ models read it as well):
 2. **Scene:** the frame's composition, word for word from its `composition` line (`design.md`, "The
    composition"): where the subject is, its scale and crop, which way it faces, what stays empty and
    the shape ("portrait, 4:5"); then the setting and the light.
-3. **Subject:** what it shows, plainly, named each time, never "it". With the character: its pose,
-   which way its head turns and its expression, then its Character lines pasted whole.
+3. **Subject:** what it shows, plainly, named each time, never "it". A person or an animal in one
+   line: who (age, gender, clothing), the one action, where they look, the one object they handle
+   and how ("hands gripping the handlebar"), and the framing ("full body visible, feet included", or
+   cropped at the waist). Nothing more about the body: never which hand, arm or leg does what,
+   unless the task decides it (a guitar's fretting hand). A photograph of people is candid and
+   unposed, caught mid-moment. With the character: its pose, which way its head turns and its
+   expression, then its Character lines pasted whole.
 4. **Style:** the guide's style paragraph, pasted whole.
 5. **Constraints,** plain and early enough to survive a host that rewrites prompts: "exactly one
    <the character>", "nothing about <the character> changes: its colours, its one feature, its proportions", "no text
@@ -94,7 +99,7 @@ Then the craft, for every model, and that model family's file for what differs (
 
 - **Concrete words.** Materials, colours as hex tied to what they paint, shapes; never vague praise
   ("beautiful", "premium") and never a colour's name in the brand kit (the model doesn't know
-  "Roxo"; it knows #3a1c8c). Keep the scene and subject short (30 to 80 words); the guide's blocks go
+  "Roxo"; it knows #3a1c8c). Keep the scene and subject short (60 to 100 words together); the guide's blocks go
   in as they are.
 - **Place the empty space and describe it as a thing**: "a bare off-white plaster wall across the left
   third". Name positions (thirds, corners) and the shape: several models, ChatGPT among them, compose
@@ -105,6 +110,10 @@ Then the craft, for every model, and that model family's file for what differs (
   that carries words is a logo drawn whole (`references/drawn.md` of the `logo` skill).
 - **One or two style anchors at most, never contradictory instructions:** given two rules that
   compete (an accent quota and the character's colours), the model picks one, and not always yours.
+- **Detail matches the brief.** A specific brief is reorganised into the sections, not rewritten; a
+  vague one gets only what the picture needs to work. Never add a person, an object, an action or a
+  story beat the brief doesn't imply, and never put something on one side (left, right) without a
+  reason.
 - **Light is the biggest lever**: its direction, softness and time of day. Camera words set framing
   and depth.
 - **The product and the logo come from real files.** Never ask a model to draw packaging text, a logo
@@ -198,6 +207,9 @@ raster is kept where the gradient is the design. The brand's logo is made by the
 from a render of it, and another party's mark is never traced (`metamorfiles_find_mark`).
 
 ## Check
+
+Look at the result, then change one thing at a time: an edit or a new take says what changes and
+repeats what must stay.
 
 Look at every generated image at full size before you use it or show it. Image models make the same
 mistakes again and again; redo an image that has any of them, saying what to fix and what to keep:
