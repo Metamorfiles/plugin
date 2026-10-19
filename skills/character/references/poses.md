@@ -27,9 +27,6 @@ The pose: <the pose, in one sentence: what it does, where its limbs are, which w
 Alone on a transparent background, flat colours only, no letters, no ground line or shadow.
 ```
 
-Plan the pose first, as `references/gesture.md` of the `illustration` skill poses a figure: one
-action, its weight, each hand's or paw's job.
-
 Draw it anew rather than editing image 1. An edit keeps what is already in the image, so the head
 stays at its old angle and size while a new body is painted under it, and the pose looks pasted
 together. A new drawing lets the head turn and the body move, and image 1 with the identity block

@@ -37,10 +37,7 @@ An image that carries a piece is made for that piece.
 
 1. **Compose the frame first** (`references/design.md`, "The composition"): its idea, its picture and
    the image's slot, its shape and size.
-2. **Plan the picture** with the skill for its medium: the `photography` skill for a photograph, the
-   `illustration` skill for a drawing or painting. The plan decides the moment or idea, the shot or
-   composition and every figure's pose, and fills the prompt's Scene and Subject.
-3. **Make it for that slot** with the prompt below, `width` and `height` the slot's size. It's saved
+2. **Make it for that slot** with the prompt below, `width` and `height` the slot's size. It's saved
    under `assets/`: a piece's images are the piece's, never added to the brand's library, whose
    images are reviewed as a set (the library grows only through the brand's library step).
    - **A character or product is a cutout:** `transparent: true`, drawn alone on a transparent
@@ -50,7 +47,7 @@ An image that carries a piece is made for that piece.
      set `ground`, and place it as a field, not a cutout.
    - **A scene** keeps the type's region empty in the picture itself, as its Scene says. A band, a
      plate or a scrim is CSS, never painted in: a shape in the pixels makes every type change a new image.
-4. **Use a library image as it is** only when it already is that composition: a pattern, a texture, a
+3. **Use a library image as it is** only when it already is that composition: a pattern, a texture, a
    small spot used as decoration, or the very picture the brief names. A near fit is still the wrong
    image: a generic picture on a slide about something specific reads as filler.
 
@@ -76,11 +73,9 @@ models read it as well):
    - a product or a source image: what must stay exactly as it is.
 2. **Scene:** the frame's composition, word for word from its `composition` line (`design.md`, "The
    composition"): where the subject is, its scale and crop, which way it faces, what stays empty and
-   the shape ("portrait, 4:5"); then the shot or the setting, and the light, from the plan.
-3. **Subject:** what it shows, plainly, named each time, never "it": the moment or idea, then each
-   person or animal as the plan poses them (who, the action, the weight, each hand's job). With the
-   character: its pose, which way its head turns and its expression, then its Character lines pasted
-   whole.
+   the shape ("portrait, 4:5"); then the setting and the light.
+3. **Subject:** what it shows, plainly, named each time, never "it". With the character: its pose,
+   which way its head turns and its expression, then its Character lines pasted whole.
 4. **Style:** the guide's style paragraph, pasted whole.
 5. **Constraints,** plain and early enough to survive a host that rewrites prompts: "exactly one
    <the character>", "nothing about <the character> changes: its colours, its one feature, its proportions", "no text
@@ -206,13 +201,8 @@ from a render of it, and another party's mark is never traced (`metamorfiles_fin
 
 Look at every generated image at full size before you use it or show it. Image models make the same
 mistakes again and again; redo an image that has any of them, saying what to fix and what to keep:
-- **Each figure, walked:** for every person or animal, against its pose in the plan, one line each:
-  follow each visible arm from the shoulder to its hand and each leg from the hip to its foot (the
-  hand or foot fits the limb it ends: a right hand on a right arm); each grip is really on what it
-  holds, and the held thing meets what it should (a bottle's mouth at the lips, fingers round a
-  handle, a foot on its pedal); what the figure uses is whole and works (a handlebar, a crank, a
-  phone); its weight rests on something; and a person could hold the pose. Then the details: extra
-  or missing fingers, fused hands, a third arm, a face that melts at the edges.
+- **Hands and bodies:** extra or missing fingers, fused hands, a limb bending the wrong way, a third
+  arm, a body in a pose it couldn't hold, faces that melt at the edges.
 - **Objects:** duplicated parts (a cup with two handles, a bike with three pedals), warped or bent
   straight things, parts that float or pass through each other, a strap that goes nowhere.
 - **Physics and light:** shadows that point different ways, reflections of nothing, steam or liquid

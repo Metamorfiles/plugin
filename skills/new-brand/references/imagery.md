@@ -7,10 +7,9 @@ locked style, anchors the user approves, and a library grown from them.
 ## The mode
 
 Decide it from the chosen direction and the brief, and say it in the thread:
-- **Illustration:** drawings carry the brand, directed with the `illustration` skill. Common for food, kids, community and culture brands,
+- **Illustration:** drawings carry the brand. Common for food, kids, community and culture brands,
   and any brand with humour.
-- **Photography:** real product, place and people, directed with the `photography` skill. Lumen,
-  the example brand, is photographic.
+- **Photography:** real product, place and people. Lumen, the example brand, is photographic.
 - **A character:** one recurring figure or a family of them hosts the brand (below).
 - **Graphic:** shapes, a pattern, or type itself as the image, with no pictures at all. Common for
   technology, finance, professional services and cultural institutions. Seeds are compositions:
@@ -50,9 +49,7 @@ a look to recognise, not rules to count.
    what the business makes and uses); a generic symbol standing in for it (a star, a sparkle, a
    lightning bolt, a heart) is the default to recognise and replace. A character brand makes its
    seeds from the character sheet, as `images.md` of the `studio` skill says ("The prompt").
-   Plan each seed with the skill for the mode, the `photography` skill for photographs and the
-   `illustration` skill for drawings: its moment or idea, its shot or composition and every
-   figure's pose. Each is
+   Each is
    `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["templates/brand-board#process-direction:<chosen id>"], folder: "brand/process/imagery", ground: "#f6f1ea", wait: false }`,
    the prompt starting "Image 1 is the chosen direction: take its palette, light and mood, never its
    pictures"; the logo never goes in, since a model shown a logo draws it into the picture;
