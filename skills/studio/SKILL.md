@@ -84,8 +84,6 @@ Every workflow uses the same craft, one file each. Read the one you need before 
 | make anything printed: a business card, a flyer, a poster, a letterhead | [references/print.md](references/print.md) |
 | make an email signature | [references/email.md](references/email.md) |
 | make, place or crop an image, or bring one in | [references/images.md](references/images.md) |
-| plan a photograph: its moment, shot, light and people (after `images.md`) | the `photography` skill |
-| plan an illustration: its idea, composition and figures (after `images.md`) | the `illustration` skill |
 | prompt a given model (after `images.md`) | its family's file: [images-openai.md](references/images-openai.md), [images-gemini.md](references/images-gemini.md), [images-flux.md](references/images-flux.md), [images-other.md](references/images-other.md) |
 
 From another skill, read them in this skill's folder, or with `metamorfiles_get_guide { name: "studio", file: "references/design.md" }`.
