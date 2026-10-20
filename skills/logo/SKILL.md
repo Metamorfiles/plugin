@@ -129,7 +129,7 @@ The small mark is next, before the imagery or anything else: it stands for the w
 mascot it may be the mascot's head or bust, made from the chosen mascot as the `character` skill says.
 
 - **A part of it stands for the brand on its own** (the logo's own mark, its first letter or a monogram
-  of its initials, the seal's middle, or the whole logo when it's compact): cut it from the logo's file,
+  of its initials, the seal's middle, or the whole logo when it's compact: about as tall as it is wide, never a wordmark or a logo wider than about 1.5:1): cut it from the logo's file,
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<chosen>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x: 0, y: 0, width: 0.3, height: 1 }, square: true }`.
   A logo put together from parts (its `.svg.json` lists `parts`) is cut from the part's own file instead.
 - **None does** (fine detail, texture, a long name): never clean or redraw the logo for it. Have the
@@ -137,10 +137,10 @@ mascot it may be the mascot's head or bust, made from the chosen mascot as the `
   in the logo's own drawing and colours, and trace it:
   `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
 
-Never another letter alone: a lone e reads as "e", not as the brand. Offer one to three, check each
+Never another letter alone: a lone e reads as "e", not as the brand. Offer two or three, check each
 with `metamorfiles_check_logo`, write them into `brand/process/logo.md` as `marks`, each
 `{ file, title }` and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`.
-Studio shows them on their own page as a profile picture and an app icon, records the answer as
+Studio shows them on the `process-logo` frame's last page as a profile picture and an app icon, records the answer as
 `mark`, and starts nothing of the imagery until it's answered. Then the imagery.
 
 While the imagery is made, clean the chosen logo's traced files for the final files, in the
