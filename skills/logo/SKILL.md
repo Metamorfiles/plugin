@@ -131,6 +131,7 @@ mascot it may be the mascot's head or bust, made from the chosen mascot as the `
 - **A part of it stands for the brand on its own** (the logo's own mark, its first letter or a monogram
   of its initials, the seal's middle, or the whole logo when it's compact): cut it from the logo's file,
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<chosen>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x: 0, y: 0, width: 0.3, height: 1 }, square: true }`.
+  A logo put together from parts (its `.svg.json` lists `parts`) is cut from the part's own file instead.
 - **None does** (fine detail, texture, a long name): never clean or redraw the logo for it. Have the
   image model draw the mark from the logo, the prompt naming the part and saying it is simplified,
   in the logo's own drawing and colours, and trace it:

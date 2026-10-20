@@ -53,10 +53,10 @@ Finish every role with `status: "done"`.
 1. **Reviewer** first, `reviewing` the frames in scope: judge, then hand each problem to its owner.
 2. **Copywriter** before the designer when words change, since layout has to fit the final copy.
 3. **Image maker** (`imager`) next when an image changes, for the same reason.
-4. **Designer** last: fit the layout to the copy and images as they now are.
+4. **Designer** last: fit the layout to the copy and images as they now are. A change to what a frame's composition line names (its ground, its subject, its crop) updates that line in the same step, `metamorfiles_edit { item, changes: [{ do: "variant", variant, set: { composition } }] }`; a line is never rewritten to match a render the reviewer sent back.
 5. **Final check** of what you changed, by a separate reviewer: [references/reviewer.md](references/reviewer.md), step 3. Report it as `reviewer` (`reviewing`, then `done`). It records its verdict in Studio, and Studio doesn't end the task until everything it changed has passed as it is now.
 
-Skip the roles a task doesn't need; never skip the first review or the final check. Fix only the must fixes, once, then have the reviewer look again at those fixes; after that look, finish, and the summary says what remains. Suggestions are the user's to weigh: never a round of their own. Give the reviewer the task's decisions (what the user answered in the thread, and what Auto chose), which stand: they're never sent back.
+Skip the roles a task doesn't need; never skip the first review or the final check. Fix only the must fixes, once, then have the reviewer look again at those fixes; after that look, finish, and the summary says what remains. Suggestions are the user's to weigh: never a round of their own. Give the reviewer the task's decisions (what the user answered in the thread, and what was picked for them in Auto), which stand: they're never sent back.
 
 ## Scope
 
@@ -79,9 +79,9 @@ Ask at most once per role per task (a new brand asks once per step), and never a
 
 ## Handoffs
 
-When one role passes work to the next, the next role's first update says what it got, as `say`:
+When one role passes work to the next, the role that finishes says it on its own `done` update: what it found or made, and who takes it next. The thread labels each `say` with the role in the call, so the next role's `working` update says only what that role will do, if anything.
 
-> The story headline breaks into four lines and the price sits on the photo. The copywriter shortens the headline to two lines, then the designer moves the price onto the paper band.
+`metamorfiles_team_update { task, role: "reviewer", status: "done", say: "The story headline breaks into four lines and the price sits on the photo. The copywriter shortens the headline to two lines, then the designer moves the price onto the paper band." }`
 
 The thread already shows who is speaking, with its name and shape, so a `say` never starts with a name or a label ("Reviewer:", "Final check:").
 
@@ -103,4 +103,4 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 
 End the task with `metamorfiles_team_update { task, role: "designer", finished: true, summary: "<what changed and where>" }`, as the role that finishes: the task is done at once, and a later call of yours doesn't reopen it. Studio refuses to end it while anything it changed hasn't passed the final check as it is now, and says what: have that reviewed, then finish. Only new work reported as `working`, or a new question, does. Finish everything first: every check, every fix, every subagent. Never end on work still running or promised ("I'll wrap up once the verdict arrives"): wait for it, then summarise.
 
-End with a plain summary of one or two sentences: what changed and where. Plain sentences, not a document: no headings or bold labels. A question for the user at the end is `metamorfiles_ask_user` before you finish, never a line of the summary. In a task Studio started it shows in a small thread beside the canvas, where the user already sees the frames; anywhere, every extra line buries the answer. The only third sentence allowed is a choice the user still has about this task (in Auto, the option you picked for them). Nothing about other frames, items, or problems that were there before the task, even ones the final check found. Talk as `SKILL.md` of the `studio` skill says.
+End with a plain summary of one or two sentences: what changed and where. Plain sentences, not a document: no headings or bold labels. A question for the user at the end is `metamorfiles_ask_user` before you finish, never a line of the summary. In a task Studio started it shows in a small thread beside the canvas, where the user already sees the frames; anywhere, every extra line buries the answer. The only third sentence allowed is a choice the user still has about this task: in Auto, the option you picked for them, said in your own voice ("I went with …"), never naming the mode. A fact you didn't have is said as missing, never as a pick. Nothing about other frames, items, or problems that were there before the task, even ones the final check found. Talk as `SKILL.md` of the `studio` skill says.
