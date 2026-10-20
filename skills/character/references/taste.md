@@ -23,7 +23,7 @@ The logo's own page is `references/taste.md` of the `logo` skill.
 - **Shown as a set:** the same character in four to nine poses and expressions. A set proves it's a
   character and not one drawing.
 - **On model in every pose:** the same face, hair, clothes, proportions and line from pose to pose.
-- **Read at the size it meets:** a head or bust that still reads as a profile picture.
+- **Reads as a profile picture:** a head or bust that still reads in a circle, as the mark page shows it.
 
 ## Weak, and why it happens
 

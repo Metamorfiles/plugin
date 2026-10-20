@@ -17,7 +17,7 @@ the `character` skill.
 - **Character is a choice, not noise.** Uneven widths, a bounce, a cut edge are drawn on purpose and
   repeated with intent. Accidents look like accidents.
 - **Made for its world.** It already looks like it belongs on this business's cup, box, sign, apron
-  or app icon, at the size it meets there.
+  or app icon.
 - **A family, not a file.** A strong logo comes as a small set: the main lockup, a one-line version,
   the mark alone, often a seal or tag. Each is the same parts rearranged, never redrawn.
 

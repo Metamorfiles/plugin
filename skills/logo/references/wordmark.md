@@ -64,5 +64,5 @@ A tagline, the trade, the place, the words around a seal: real type, set as text
 `metamorfiles_compose_logo`, flat, with the same controls beside the part's own (`size`, `gap`,
 `shift`), and `curve` to set them on an arc, each letter whole (a line under an arched drawing, a
 seal's line): `{ text: "SINCE 2024", font: "brand/fonts/Inter.woff2", color: "#3b2e27", tracking: 0.12, size: 0.3 }`.
-Where they sit and how large is a design decision for this logo; look at the lockup large and small
-to judge it.
+Where they sit and how large is a design decision for this logo; judge it on the whole lockup with
+`metamorfiles_check_logo`.

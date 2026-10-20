@@ -181,7 +181,7 @@ picture, favicon and app icons are exactly these.
 | --- | --- |
 | [references/taste.md](references/taste.md) | What a strong logo, lockup and mark look like |
 | [references/drawn.md](references/drawn.md) | Route 1, the logo drawn whole by AI |
-| [references/wordmark.md](references/wordmark.md) | The type study, setting the name, the small-size version |
+| [references/wordmark.md](references/wordmark.md) | The type study, setting the name |
 | [references/symbol.md](references/symbol.md) | A generated mark or a drawn letter |
 | [references/lockups.md](references/lockups.md) | Putting the parts together |
 | [references/seal.md](references/seal.md) | A seal, badge or monogram |
@@ -200,5 +200,5 @@ mascot is designed with the `character` skill; how to prompt each image model is
 - **A mark is drawn by the image model, never geometry typed as SVG by you.** Only Studio's shapes (a
   ring, a disc, a star, a diamond, a facet, a rule) are built without a drawing.
 - **Supporting words are real type,** in every route.
-- **A route's logo is never drawn again to fix another file** (a mark, a version, a small size): the
+- **A route's logo is never drawn again to fix another file** (a mark, a version): the
   file changes, or the user hears what can't be made.
