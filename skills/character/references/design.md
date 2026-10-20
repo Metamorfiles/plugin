@@ -11,8 +11,7 @@ looks, and let the drawing find the body's shapes; judge the result by eye.
   every candidate is the category's mascot.
 - **What makes it this brand's**: the detail from the business's own world it wears, holds or does.
 - **Its face**, from its attitude: the lids, the brows, where it looks, the mouth, in three to five
-  concrete terms, with one thing uneven. The face is where a character's personality reads, at 32
-  px as on a poster.
+  concrete terms, with one thing uneven. The face is where a character's personality reads.
 - **Its pose**: one gesture with the business's own object, smaller than the character.
 - **What it leaves out**: only what the brief or the category's codes rule out.
 
