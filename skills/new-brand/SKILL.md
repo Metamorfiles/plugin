@@ -52,6 +52,9 @@ it asks once per step rather than once per role, and its handover is the one
 Studio draws everything on one item, the brand board: the brief first, then each step as its own
 frame, then the kit's frames. A step's frame shows its slots while you make it, its options once you
 write its file, and stays as the record after the choice. You never lay any of it out yourself.
+Render a frame by its name, as `metamorfiles_get_project` lists them in `board.frames`: `process-brief`,
+`process-direction`, `process-logo` (its last pages hold the mascot and the small marks, which live in
+`logo.md`), `process-imagery`, then the kit's pages; a page that runs on is `<name>-2`.
 
 ## Where it starts
 

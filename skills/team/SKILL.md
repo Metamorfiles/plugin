@@ -85,7 +85,7 @@ When one role passes work to the next, the role that finishes says it on its own
 
 The thread already shows who is speaking, with its name and shape, so a `say` never starts with a name or a label ("Reviewer:", "Final check:").
 
-Each specialist ends with one of four outcomes, and the next step follows from it:
+Each specialist ends with one of five outcomes, and the next step follows from it:
 
 | Outcome | Next |
 | --- | --- |
@@ -93,6 +93,7 @@ Each specialist ends with one of four outcomes, and the next step follows from i
 | Done with a concern | Hand off, and name the concern in `say`. |
 | Needs the user | `metamorfiles_ask_user`. |
 | Blocked (a missing font, a logo file, a fact nobody gave) | Stop that part, say what's missing in `say`, carry on with the rest. |
+| Stopped by the app (a Studio tool its approval setting refuses, a usage limit, Studio's tools missing) | Stop the task. One `say` and the summary name what stopped it and the one thing the user does: allow Studio's tools in the app's settings, or try again after the time the app gave and say "continue". Never work around it. |
 
 ## Gotchas
 
