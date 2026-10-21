@@ -101,15 +101,20 @@ character sheet, a pattern, one or two of the imagery's anchors. Write the promp
 sections, in this order:
 
 - **Shot:** "Editorial product photograph", its shape, the idea in one line, the camera and the lens.
-- **Set and light:** the backdrop, the light and where the shadows fall.
+- **Set and light:** the backdrop, the light and where the shadows fall. Weather or wear (rain, dust,
+  steam, scuffs), when the shot has it, is said once here and stays light: it never covers the print.
 - **Objects:** what's in frame and how each really sits, opens and holds its contents.
 - **The print:** what is on the object and how it's designed: the logo from image 1, where and how
   large (as "Placing it" says); the design around it, drawn from which images and how it adapts them
   (the mascot from image 3 in a new pose, the imagery of image 4 as the label's illustration); how
-  it's applied (printed, screen-printed, embroidered, painted, a sticker, a screen).
+  it's applied (printed, screen-printed, embroidered, painted, a sticker, a screen). A method that
+  remakes the drawing (embroidery, emboss or deboss, engraving, foil, paint by hand) shows the logo
+  as that method makes it: its letters, shapes and colours, in the method's own material (thread and
+  stitches, a raised edge, cut metal, brushwork).
 - **Words:** every word that appears, quoted exactly, and that no other word, number or label does.
-- **Keep:** the logo from image 1 exactly as drawn (every letter, shape and colour, its proportions),
-  and artwork made flat exactly as designed; the rest is designed freely in the brand's style. No
+- **Keep:** the logo from image 1 (every letter, shape and colour, its proportions): exactly as drawn
+  when it's printed, and as its method makes it when the method remakes the drawing; and artwork made
+  flat exactly as designed; the rest is designed freely in the brand's style. No
   other logo, mark, badge, claim, price or small print.
 
 A flat print is photographed from its artwork, given as image 1 alone, and the scene leads the
@@ -129,6 +134,10 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
   it: no letter wrong, missing or added, no shape changed, the right colours.
 - **The words:** character by character, against the words the prompt quoted; nothing else written.
 - **The physics:** the object as the real one is made and used.
+- **The shot:** it shows what the Shot section asked for: its figures, their action and the place. A
+  photograph that dropped them is made again before the review.
+- **The method:** the brand looks made the way the prompt says (stitched thread reads as embroidery,
+  ink sits in the paper, a sign is a built object), never a flat graphic laid on top.
 - **The photograph:** the idea reads at a glance, the light is real, and the print sits in it: in
   its surface's perspective, under the light, shadows and reflections around it. A print facing the
   camera on a surface that doesn't, or untouched by the light around it, floats.

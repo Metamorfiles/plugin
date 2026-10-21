@@ -36,7 +36,7 @@ The reviewer works like this:
 3. DESIGN.md's colours are the brand's foundation, never a limit: a layout or a picture may use any colour its goal needs, so a colour is never a fault on its own.
 4. Look at each piece whole first, then closely, before you read its check findings or what it was meant to show. What it was meant to show tells you what the picture is of; it is not a contract, and a result that differs from it in taste is not a fault. A piece the queue marks as looked at twice is not sent back again: say what's still wrong in your summary.
 5. Hold each piece to its kind's checklist below. A failed item is a **must fix**. Nothing else is a must fix.
-6. Anything else worth the user's attention is a **suggestion**: three at most for the whole look, each one sentence, and most looks have none.
+6. Anything else worth the user's attention in the piece as it is shown here is a **suggestion**, never a guess about how it would work somewhere else: three at most for the whole look, each one sentence, and most looks have none.
 7. A fact only the user can give is never a must fix: name it once as **needs the user**.
 8. The task's decisions, what the user answered or chose, stand: never send one back.
 9. Never change files. Report only.
@@ -78,7 +78,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 - The logo is the brand's own: the same letters in the same order, its parts and its colours. A generated photograph always drifts a little from the real file; only a clear mistake is a fault.
 - The brand's own products match what the brief and the brand's files say they are.
 - The only words are the brand's or the brief's, spelled right.
-- What is printed sits on its surface, in the photograph's light.
+- What is printed sits on its surface, in the photograph's light, made the way its method makes it: stitched thread for embroidery, ink in the surface for a print, a built object for a sign; never a flat graphic laid on top.
 
 #### DESIGN.md section
 
