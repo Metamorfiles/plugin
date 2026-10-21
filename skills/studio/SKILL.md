@@ -212,7 +212,7 @@ Any other size is inline: `{ "id": "banner", "width": 1500, "height": 500 }`. **
 
 Every `metamorfiles_render_preview { item: "templates/launch-post", format: "instagram-story" }` (add `variant` for a page, `values` to try copy) returns design checks measured on the rendered image:
 - **Errors:** clipped text, text that spills out of its box, text outside the image or the safe margin, fonts that fell back, broken or stretched images, contrast below 3:1 against what's actually behind the text, photo included.
-- **Warnings:** upscaled images, off-palette colors, small text below 4.5:1.
+- **Warnings:** upscaled images, small text below 4.5:1.
 
 After every edit, preview the frames it changed: every declared format when you changed the design itself, only the variants and formats whose values or edits you changed otherwise. Fix every error, and every warning that isn't a deliberate choice, then preview again. The checks can't judge composition, so also look at each image as `references/design.md` says. Stress it once with the longest plausible copy and every boolean or enum option that changes the layout. Then get the independent review (the `review` skill says when) before you hand the work over.
 
