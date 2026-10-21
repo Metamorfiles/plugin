@@ -143,18 +143,18 @@ Studio keeps what waits, piece by piece; run the `review` skill on the queue and
 
 | When | Queue | What it judges |
 |---|---|---|
-| `logo.md` written, before asking | `logo` | every letter; one colour |
+| `logo.md` written, before asking | `logo` | the name as the brief spells it; drawn letters; nothing from a reference |
 | The mascots, and in the logo's own case their sheet, before asking | `character` | each a figure in the chosen logo's hand and colours, with no letters; designs built differently; the sheet's eight figures the same character |
 | The small marks, before asking | `mark` | cut or drawn from the chosen logo, or the mascot's head |
 | `imagery.md` written, before asking | `imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
-| The library and the mockups made, then the kit written | `handover` | each image, each mockup's logo and words, each final logo file, DESIGN.md's printed sections |
+| The library and the mockups made, then the kit written | `handover` | each picture, each mockup's logo, products and words, each final logo file, DESIGN.md's printed sections |
 
 Report it as the reviewer: `metamorfiles_team_update { task, role: "reviewer", status: "reviewing" }`,
 then the same with `status: "done"`. The reviewer records its verdict in Studio, and the thread
 shows what it caught. Fix only the **must fixes**, once, as the role that made the piece, with a
 method that can fix it (a version that recolouring makes muddy is drawn again from the logo), and
-have it looked at again: only what changed waits. A piece looked at twice without passing is made
-again from scratch, or the step is asked anyway with
+have it looked at again: only what changed waits. A piece looked at twice without passing is never
+made again: the step is asked as it is, with
 `metamorfiles_ask_user { task, step: "logo", cannot: "<one line>" }`: one plain line on what
 couldn't be made, which the user reads beside the question. Suggestions go to the user on the
 review's card; act on one only when it's worth that piece's next look. Nothing reaches the user

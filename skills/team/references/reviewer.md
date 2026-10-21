@@ -16,7 +16,7 @@ Owners: words go to the copywriter, images to the image maker, everything visual
 
 ## 3. Final check, by a separate reviewer
 
-After the fixes, hand the check to a reviewer that made none of the changes: the reviewer agent Studio's request names, or else as the `review` skill describes. Give it only the project path, what to review (`pages/<id>`, `templates/<id>`, or a new brand's queue), the task id, the brief in one sentence, the task's decisions (what the user answered and what was picked for them in Auto), the sources researched for its facts, and on a second look the must fixes it sent: never what you changed or what not to flag. It records its verdict in Studio on that task, which holds the task to it. Its verdict is input for you, never your summary: every **must fix** goes back to its owner, then it reviews again.
+After the fixes, hand the check to a reviewer that made none of the changes: the reviewer agent Studio's request names, or else as the `review` skill describes. Give it only the project path, what to review (`pages/<id>`, `templates/<id>`, or a new brand's queue), the task id, the brief in one sentence, the task's decisions (what the user answered and what was picked for them in Auto), and the sources researched for its facts: never what you changed or what not to flag. Studio shows it what it sent back last time. It records its verdict in Studio on that task, which holds the task to it. Its verdict is input for you, never your summary: every **must fix** goes back to its owner, then it reviews again.
 
 Classify what comes back:
 
