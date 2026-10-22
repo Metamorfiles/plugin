@@ -86,7 +86,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 
 #### Page or template
 
-- No check errors left, and nothing cut off, overlapping or unreadable.
+- No check errors left. Text a reader needs (a headline, a name, a date, a call to action) is whole and readable: nothing they need is cut by its box or the frame, hidden, or run into other text by accident. Type cropped, bled or overlapped as part of the composition is design, never a fault.
 - DESIGN.md's fonts in the layout; the brand's real logo file, unaltered, on a ground DESIGN.md allows.
 - No claim, price or fact that the brief, the brand, the data or a source read for it doesn't give.
 - Another party's mark is its real file, never redrawn or larger than the brand's logo; another party's image carries the credit its licence asks for.
