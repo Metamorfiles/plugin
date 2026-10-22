@@ -28,7 +28,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 
 - **Anatomy:** every figure is whole and possible: count each one's limbs, hands, fingers and head on its own body, also where figures overlap. A part hidden behind something or cut by the frame is fine.
 - **Physics:** every object is possible and works the way its kind works: it holds together, rests on something, opens where it opens.
-- **Lettering:** no garbled, misspelled or invented words, unless the brief gives the words.
+- **Lettering:** every line set in the picture says exactly what it was asked to say, unless the brief gives the words. Read each line enlarged, letter by letter, accents and punctuation included: a stray, missing or doubled mark is a fault, as a misspelled word is.
 - **Subject:** it shows the figures, objects and action it was meant to show. What was meant as distinct is distinct: a set is never one figure or object repeated.
 - **Character:** the brand's character is itself, as its sheet shows it, in every figure of a sheet and every picture.
 - **Medium:** the same medium as the brand's other pictures.
