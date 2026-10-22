@@ -89,6 +89,10 @@ because it's there is a stock photo of your own brand.
   into the image: a shape in the pixels makes every change a new image.
 - **A crop is a choice.** A subject cut by the frame's edge is fine when the composition names it; a
   cut through a face, a hand or a product's label never is.
+- **Type can be composition.** A numeral cropped by the frame, letters laid over each other, a word
+  bled off the edge: mark that element `aria-hidden="true"` and say its message in the variant's `alt`.
+  Studio's checks then leave it to the design. Text the reader needs (the headline, a name, a date, the
+  call to action) is never marked: it stays whole and readable.
 - **Other parties are shown by their real marks**, set in the layout beside the image, never drawn in
   it: `metamorfiles_find_mark { name }` (`references/images.md`, "Other parties' marks and images").
 
