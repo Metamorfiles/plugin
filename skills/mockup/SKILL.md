@@ -9,8 +9,8 @@ license: MIT
 A mockup sells the brand made real. The best ones are art-directed photographs: one clear idea per
 shot, light with intent, a backdrop that makes the object sing, and what's printed on it designed as
 a system. The image model makes each photograph whole, from one prompt that directs the shot and the
-brand's real files given as references; what it prints is checked against those files and fixed by an
-edit. Only a print it can't make exact is placed by Studio on a blank photo.
+brand's real files given as references; what it prints keeps the logo's identity, checked against
+those files and fixed by an edit. Only a fault two edits can't fix is placed by Studio on a blank photo.
 
 ## Checklist
 
@@ -95,8 +95,8 @@ designs the pack first and, once it passes its check, give it to the others as a
 2 is the brand's pack: the same design, only the flavour's colour and name change"). Each
 `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "brand/artwork/can-wrap.png"], folder: "brand/mockups", name: "can-on-peppers", wait: false }`,
 collected with `metamorfiles_image_status { id }`. The references are the brand's real files, numbered
-by role: image 1 the logo file the object's ground calls for (the reversed one on a dark object), kept
-exact; then what the design draws on, as inspiration: the artwork made flat when there is one, the
+by role: image 1 the logo file the object's ground calls for (the reversed one on a dark object), its
+letters and parts kept; then what the design draws on, as inspiration: the artwork made flat when there is one, the
 character sheet, a pattern, one or two of the imagery's anchors. Write the prompt in labelled
 sections, in this order:
 
@@ -114,9 +114,9 @@ sections, in this order:
   interface (a button, a field, a card) gives each part the colours DESIGN.md gives it, its fill and
   its text alike ("an orange button with dark ink letters"), named as colours.
 - **Words:** every word that appears, quoted exactly, and that no other word, number or label does.
-- **Keep:** the logo from image 1 (every letter, shape and colour, its proportions): exactly as drawn
-  when it's printed, and as its method makes it when the method remakes the drawing; and artwork made
-  flat exactly as designed; the rest is designed freely in the brand's style. No
+- **Keep:** the logo from image 1, every letter and every part of its mark as image 1 draws them, in
+  its colours and proportions, as its method makes it; its perspective, light and material are the
+  photograph's. Artwork made flat as designed; the rest is designed freely in the brand's style. No
   other logo, mark, badge, claim, price or small print.
 
 A flat print is photographed from its artwork, given as image 1 alone, and the scene leads the
@@ -132,9 +132,13 @@ hex, and never ask for it "exactly as drawn": either makes it a flat graphic lai
 ### 4. Check each one
 
 Look at each with `metamorfiles_read_file`, as the photograph a design publication would run:
-- **The logo:** enlarged beside the logo file (`metamorfiles_read_file { path, region }` on the
-  print), part by part, accents included: no letter, bar, dot or piece of the mark wrong, missing,
-  added or doubled, no shape changed, the right colours.
+- **The logo:** this brand's logo, applied the way the shot means it, judged as the review skill's
+  Mockup checklist says: whole first, then enlarged (`metamorfiles_read_file { path, region }`) only to
+  confirm a fault you suspect. A fault breaks its identity (a letter or a part of the mark wrong,
+  missing, extra, doubled or merged; other colours; stretched beyond its surface's shape; upright on a
+  turned object, or turned on an upright one). Its
+  perspective, light, curve, crop, method and a small drift that leaves every part in place are the
+  photograph's, never fixed.
 - **The words:** character by character, against the words the prompt quoted; nothing else written.
 - **The physics:** the object as the real one is made and used.
 - **The shot:** it shows what the Shot section asked for: its figures, their action and the place. A
@@ -147,8 +151,9 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
 
 ### 5. Fix, place when it can't be fixed, and review
 
-- **A logo or word wrong:** an edit of that place only, the image first and the logo file after it:
-  `metamorfiles_generate_image { prompt: "Make the logo on the can exactly the logo in image 2", references: ["brand/mockups/can-on-peppers-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, region: { x: 0.3, y: 0.2, width: 0.4, height: 0.4 }, width: 1600, height: 2000, folder: "brand/mockups" }`.
+- **A logo or word wrong:** an edit of that place only, the image first and the logo file after it,
+  the prompt naming the fault and keeping the photograph's perspective and light:
+  `metamorfiles_generate_image { prompt: "On the can, the logo's second r is missing: draw it as image 2 does, in the can's curve and light", references: ["brand/mockups/can-on-peppers-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, region: { x: 0.3, y: 0.2, width: 0.4, height: 0.4 }, width: 1600, height: 2000, folder: "brand/mockups" }`.
 - **A print that floats:** an edit of its region, the photograph first and the print's artwork
   after it, saying only that the print sits on its surface in the scene's perspective and light.
   Never made again from the floating take: a reference carries its fault.
@@ -157,7 +162,8 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
   and unobstructed", into `brand/mockups/blanks`), then
   `metamorfiles_make_mockup { name: "can-on-peppers", photo: "brand/mockups/blanks/can-on-peppers-blank-5e6f7a8b.png", surface: { object: "a drinks can", material: "aluminium", method: "print", condition: "new", form: "curved", text: ["Hearth"] }, layers: [{ file: "brand/artwork/can-wrap.png", corners: [[385, 260], [746, 260], [746, 1140], [385, 1140]], cover: true, curve: { wrap: 150, bend: [8, 14] } }], replaces: "brand/mockups/can-on-peppers-1a2b3c4d.png" }`:
   `corners` the surface's top-left, top-right, bottom-right and bottom-left in the photo's pixels,
-  read from the surface as it stands in the photo (an angled door's are never a rectangle),
+  read from the surface as it stands in the photo, turned and angled with it (an angled door's, or a
+  fob held at a slant, are never an upright rectangle),
   `size` and `at` to place a logo in it, `cover` to fill it, `curve` for a can, cup or bottle; Studio
   bakes the files in and the model finishes the photograph.
 - **A weak shot:** made again with `replaces`; the one it replaces stays on the board as an earlier

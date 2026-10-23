@@ -161,11 +161,12 @@ show the real thing, never a drawing of it.
 
 ## Generate and place, edit or redraw
 
-- **Make or place.** Anything that must match a file exactly (the logo, a label, its words) comes
-  from that file: on a designed piece it's placed in its template; on a mockup photograph the image
-  model makes the shot whole with the file as a reference, checked against it and fixed by an edit,
-  and placed with `metamorfiles_make_mockup` on a blank photo only when an edit can't make it exact
-  (the `mockup` skill). Anything new (a scene, a picture, a
+- **Make or place.** Anything that must match a file (the logo, a label, its words) comes from that
+  file: on a designed piece it's placed exactly in its template; on a mockup photograph the image
+  model makes the shot whole with the file as a reference, and the logo keeps its identity (its
+  letters and parts) while its perspective, light and material are the photograph's. A fault in its
+  identity is fixed by an edit, and placed with `metamorfiles_make_mockup` on a blank photo only when
+  two edits can't fix it (the `mockup` skill). Anything new (a scene, a picture, a
   pattern, a stylised mascot) is made by the image model. A piece that needs both makes the picture,
   then places the files on it (the `artwork` skill). Decide it per piece, from its goal, its
   composition and its surface.
