@@ -83,8 +83,10 @@ feel, where it is today (its site, profiles or handles, as they gave them) and t
 full https links (`name` and `what` are required). Studio draws
 the brief on the board at once and opens the same questions as New brand, filled in with your
 reading, for the user to complete, above all the work they like. From the user's own app it returns
-at once with the panel link and a question id: write the link in your reply, say the questions are
-open there and that they can answer in the chat instead, then keep calling
+at once with the panel link and a question id. When it says Studio's team makes the brand once the
+brief is answered, write what it asks and end your turn: the brand is made in Studio, and when you're
+told so later, leave it there. Otherwise write the link in your reply, say the questions are open
+there and that they can answer in the chat instead, then keep calling
 `metamorfiles_ask_user { task, waitFor: "<id>" }` until they answer. An answer in the chat goes back
 as `metamorfiles_ask_user { task, waitFor, answer }`. Either way Studio writes
 `brand/process/brief.md`; read it before the direction. Never write the brief yourself: the user's
