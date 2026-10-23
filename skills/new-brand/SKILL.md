@@ -82,12 +82,11 @@ with your reading of what the user said: the brand's name, what it is, who it's 
 feel, where it is today (its site, profiles or handles, as they gave them) and the work they love as
 full https links (`name` and `what` are required). Studio draws
 the brief on the board at once and opens the same questions as New brand, filled in with your
-reading, for the user to complete, above all the work they like. From the user's own app Studio
-also asks them in your app's own question form where it can, and returns their answer. When it says
-to ask in your reply instead, write the link and your reading there, say they can complete it in
-Studio or answer in the chat, and end your turn. When they reply, call
-`metamorfiles_ask_user { task, waitFor: "<id>", answer: "<their words>" }`, or with `waitFor` alone
-when they answered in Studio. Either way Studio writes
+reading, for the user to complete, above all the work they like. From the user's own app it returns
+at once with the panel link and a question id: write the link in your reply, say the questions are
+open there and that they can answer in the chat instead, then keep calling
+`metamorfiles_ask_user { task, waitFor: "<id>" }` until they answer. An answer in the chat goes back
+as `metamorfiles_ask_user { task, waitFor, answer }`. Either way Studio writes
 `brand/process/brief.md`; read it before the direction. Never write the brief yourself: the user's
 taste is what the direction starts from. The brief's first line (`# <name>`) is the brand's name
 everywhere Studio shows it until DESIGN.md names it: a name is a word or two, never the user's
@@ -106,11 +105,11 @@ started.
   Studio will ask and the options as the user will see them.
 - **Ask with `metamorfiles_ask_user { task, step: "logo" }`** (`direction`, `logo` or `imagery`).
   Studio asks the step's own question with the options' titles, the panel offers to bring the step's
-  frame into view, and the user chooses there, in the thread, in your app's own question form or in
-  your chat. When the result says to ask in your reply, write the panel link and the options as Studio
-  lettered them, the recommended one first with its reason, and end your turn; when they reply, call
-  `metamorfiles_ask_user { task, waitFor: "<id>" }` (with `answer` when they answered in the chat).
-  In Auto the recommended option is taken at once; say so in the thread.
+  frame into view, and the user chooses there, in the thread or in your chat. From the user's own app
+  it returns at once: write the panel link and the options in your reply as Studio lettered them,
+  the recommended one first with its reason, then keep calling
+  `metamorfiles_ask_user { task, waitFor: "<id>" }`. In Auto the recommended option is taken at once;
+  say so in the thread.
 - **Studio records the choice** in the step's file, however the user made it, and the next step's
   frame appears. Never write `chosen` yourself.
 - **An answer in their own words is the answer.** "A is better but not good enough" means rework A

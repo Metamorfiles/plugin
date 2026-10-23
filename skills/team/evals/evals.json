@@ -21,13 +21,13 @@
     {
       "id": 2,
       "name": "copy-choice-asked-in-chat-mode",
-      "prompt": "The Metamorfiles project is at /path/to/project; pass that path to metamorfiles_get_project.\n\nYou are Studio's team on task t2, working on Serum launch (pages/serum-launch). The user asked: Make the headline punchier\n\nFollow the team skill (if this app didn't load it, call metamorfiles_get_guide with name \"team\" first): report every step with metamorfiles_team_update and task \"t2\", and ask choices with metamorfiles_ask_user. This task runs in Chat: metamorfiles_ask_user puts the question to the user in the control panel; end your turn when it says so, and Studio continues you with their answer.\n\nFor the final check, use the design-reviewer agent.\n\nYou're running in the background and the user is watching in the control panel: don't include its link.",
-      "expected_output": "The copywriter offers two or three headline angles with metamorfiles_ask_user, one recommended, ends its turn on the question, writes the answer within maxLength, and the designer re-fits the layout.",
+      "prompt": "The Metamorfiles project is at /path/to/project; pass that path to metamorfiles_get_project.\n\nYou are Studio's team on task t2, working on Serum launch (pages/serum-launch). The user asked: Make the headline punchier\n\nFollow the team skill (if this app didn't load it, call metamorfiles_get_guide with name \"team\" first): report every step with metamorfiles_team_update and task \"t2\", and ask choices with metamorfiles_ask_user. This task runs in Chat: metamorfiles_ask_user waits for the user's answer.\n\nFor the final check, use the design-reviewer agent.\n\nYou're running in the background and the user is watching in the control panel: don't include its link.",
+      "expected_output": "The copywriter offers two or three headline angles with metamorfiles_ask_user, one recommended, waits for the answer, writes it within maxLength, and the designer re-fits the layout.",
       "files": [],
       "assertions": [
         "Calls metamorfiles_ask_user with 2 to 4 options and exactly one recommended",
         "Options differ in angle, not only in wording",
-        "Ends its turn when metamorfiles_ask_user says the question is in the panel",
+        "Keeps calling with waitFor while the answer is waiting",
         "The chosen headline fits the variable's maxLength",
         "Introduces no claim, number or price that isn't in the brand or the page"
       ]
@@ -50,7 +50,7 @@
     {
       "id": 4,
       "name": "user-message-mid-task",
-      "prompt": "The Metamorfiles project is at /path/to/project; pass that path to metamorfiles_get_project.\n\nYou are Studio's team on task t4, working on Serum launch (pages/serum-launch). The user asked: Tighten the spacing on the stories.\n\nFollow the team skill (if this app didn't load it, call metamorfiles_get_guide with name \"team\" first): report every step with metamorfiles_team_update and task \"t4\", and ask choices with metamorfiles_ask_user. This task runs in Chat: metamorfiles_ask_user puts the question to the user in the control panel; end your turn when it says so, and Studio continues you with their answer.\n\nFor the final check, use the design-reviewer agent.\n\nYou're running in the background and the user is watching in the control panel: don't include its link.\n\n(During the task, a metamorfiles_team_update result says: The user said: \"Leave variant A as it is.\")",
+      "prompt": "The Metamorfiles project is at /path/to/project; pass that path to metamorfiles_get_project.\n\nYou are Studio's team on task t4, working on Serum launch (pages/serum-launch). The user asked: Tighten the spacing on the stories.\n\nFollow the team skill (if this app didn't load it, call metamorfiles_get_guide with name \"team\" first): report every step with metamorfiles_team_update and task \"t4\", and ask choices with metamorfiles_ask_user. This task runs in Chat: metamorfiles_ask_user waits for the user's answer.\n\nFor the final check, use the design-reviewer agent.\n\nYou're running in the background and the user is watching in the control panel: don't include its link.\n\n(During the task, a metamorfiles_team_update result says: The user said: \"Leave variant A as it is.\")",
       "expected_output": "After the update returns the user's message, the team stops changing variant A and continues on the rest.",
       "files": [],
       "assertions": [
