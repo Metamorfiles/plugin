@@ -52,7 +52,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 #### Mockup
 
 - The picture checks above.
-- The logo is the brand's own: the same letters in the same order, its parts and its colours. A generated photograph always drifts a little from the real file; only a clear mistake is a fault.
+- The logo is the brand's own: the same letters in the same order, its parts and its colours. Look at it enlarged beside its file (`metamorfiles_read_file { path: "brand/mockups/<file>.png", region: { x: 0.3, y: 0.4, width: 0.3, height: 0.15 } }` on the print), part by part: a letter, bar, dot or piece of its mark added, missing, doubled or reshaped is a fault. A generated photograph always drifts a little from the real file in its light and print; only a clear mistake in a part is a fault.
 - The brand's own products match what the brief and the brand's files say they are.
 - The only words are the brand's or the brief's, spelled right.
 - What is printed sits on its surface, in the photograph's light, made the way its method makes it: stitched thread for embroidery, ink in the surface for a print, a built object for a sign; never a flat graphic laid on top.
