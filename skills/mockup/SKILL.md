@@ -110,7 +110,9 @@ sections, in this order:
   it's applied (printed, screen-printed, embroidered, painted, a sticker, a screen). A method that
   remakes the drawing (embroidery, emboss or deboss, engraving, foil, paint by hand) shows the logo
   as that method makes it: its letters, shapes and colours, in the method's own material (thread and
-  stitches, a raised edge, cut metal, brushwork).
+  stitches, a raised edge, cut metal, brushwork). A screen or print that shows the brand's own
+  interface (a button, a field, a card) gives each part the colours DESIGN.md gives it, its fill and
+  its text alike ("an orange button with dark ink letters"), named as colours.
 - **Words:** every word that appears, quoted exactly, and that no other word, number or label does.
 - **Keep:** the logo from image 1 (every letter, shape and colour, its proportions): exactly as drawn
   when it's printed, and as its method makes it when the method remakes the drawing; and artwork made
@@ -130,8 +132,9 @@ hex, and never ask for it "exactly as drawn": either makes it a flat graphic lai
 ### 4. Check each one
 
 Look at each with `metamorfiles_read_file`, as the photograph a design publication would run:
-- **The logo:** against the logo file, letter by letter, accents included, at the size a viewer sees
-  it: no letter wrong, missing or added, no shape changed, the right colours.
+- **The logo:** enlarged beside the logo file (`metamorfiles_read_file { path, region }` on the
+  print), part by part, accents included: no letter, bar, dot or piece of the mark wrong, missing,
+  added or doubled, no shape changed, the right colours.
 - **The words:** character by character, against the words the prompt quoted; nothing else written.
 - **The physics:** the object as the real one is made and used.
 - **The shot:** it shows what the Shot section asked for: its figures, their action and the place. A
