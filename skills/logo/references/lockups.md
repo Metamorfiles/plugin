@@ -20,8 +20,9 @@ sets a mark standing on the word's baseline, a little taller than the word. A lo
   `size` is a share of the widest part's width.
 - `badge`: layers on one circle (`seal.md`).
 - `place`: parts at points of the first one (`at: { x: 0.1, y: 0.6 }`, the part's left and bottom
-  edges as shares of the first part's width and height): a mark perched on a letter, a monogram's
-  letters overlapping, a character peeking over the name.
+  edges as shares of the first part's width and height): a monogram's letters overlapping, a mark set
+  in a space the word leaves. A part that meets the letters (standing on one, peeking over the name)
+  is drawn onto the word instead (`symbol.md`, "Compose it on the word").
 - `pattern`: the small mark repeated in a grid, turned one way and the other, with
   `pattern: { columns: 4, rows: 3, turn: 15 }` beside `parts`.
 
@@ -34,7 +35,10 @@ gap of the ground's colour around a part where it overlaps another.
 Sizes, gaps and positions are decided by eye for this logo, not by formula. Look at the lockup large
 and blurred: the parts should feel like one piece with room to breathe; a round or pointed part
 standing on the baseline looks short and overshoots it a little (`shift`); the part that disappears
-first in the blur is too small or too light. `metamorfiles_check_logo` gives each part's stroke weight
+first in the blur is too small or too light. Supporting words follow the word's own axis: centred
+under a word with no straight edge (a drawn or slanted first letter), flush only to an edge the word
+really has. The lockup is what the route's composition says: a part meant to meet the letters
+touches them. `metamorfiles_check_logo` gives each part's stroke weight
 and the thinnest's share of the heaviest: parts drawn in one hand are close to each other's weight.
 
 Every lockup keeps its settings beside it (`<file>.svg.json`); change one thing with
