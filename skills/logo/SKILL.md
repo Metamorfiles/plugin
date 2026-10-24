@@ -123,7 +123,7 @@ the recommended one first.
 
 ### 8. After the choice
 
-When the brand has a mascot, it comes first, from the logo the user chose, never from a route they
+Start the chosen logo's cleanup at once, below, then go on. When the brand has a mascot, it comes first, from the logo the user chose, never from a route they
 passed over: the `character` skill, "In a new brand". A chosen route that carries the character
 gives its poses and sheet, approved with "Use these"; any other gets three mascot designs drawn from
 it, one chosen, then its sheet. Both are written into `brand/process/logo.md` as `characters` and
@@ -147,14 +147,16 @@ with `metamorfiles_check_logo`, write them into `brand/process/logo.md` as `mark
 Studio shows them on the `process-logo` frame's last page as a profile picture and an app icon, records the answer as
 `mark`, and starts nothing of the imagery until it's answered. Then the imagery.
 
-While the imagery is made, clean the chosen logo's traced files for the final files, in the
-background: one `logo-cleaner` agent per file, given the project path, the traced file and what it is
-in one sentence (in an app without the plugin's agents, a subagent whose instructions are exactly what
-`metamorfiles_get_guide { name: "logo-cleaner" }` returns). Each writes `<name>-clean.svg` beside its
-trace; look at it over the drawing with
+Clean each traced file of the chosen logo for the final files from the moment it's chosen: the logo's
+as soon as the user chooses it, a traced small mark's as soon as it's chosen. Start one `logo-cleaner`
+agent per file in the background and go on with the next step while it works (in Claude Code, the
+Agent tool with `run_in_background: true`; in an app without the plugin's agents, a subagent whose
+instructions are exactly what `metamorfiles_get_guide { name: "logo-cleaner" }` returns), given the
+project path, the traced file and what it is in one sentence. Each writes `<name>-clean.svg` beside its
+trace. Nothing the user is asked waits for it, and a cleaner still at work ends with your run: before
+the final files, wait for every one you started, then look at each over the drawing with
 `metamorfiles_compare_trace { file: "brand/process/logo/<name>-clean.svg", against: "brand/process/logo/<name>.svg" }`.
-The cleaned file keeps every part of the drawing, with only its edges straightened or smoothed. Nothing
-the user is asked waits for it.
+The cleaned file keeps every part of the drawing, with only its edges straightened or smoothed.
 
 Then make the final files in `brand/logos/` from the cleaned files, with the same tools and settings,
 each with an `output` there. A cleaned drawing reaches it as one part:

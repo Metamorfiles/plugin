@@ -249,8 +249,8 @@ its frame shows each file as it arrives, so the user watches the step come toget
 3. **Imagery** (`references/imagery.md`). The mode the brand needs (illustration, photography, a
    character, graphic or 3D), the style block, and four seeds made together, one per option, saved in
    `brand/process/imagery/`. The seeds the user keeps are the anchors. Start them (`wait: false`)
-   once the small mark is answered; the chosen logo's cleanup (step 8 of the `logo` skill) runs while
-   they're made, and its final logo files wait for the kit.
+   once the small mark is answered. The chosen logo's cleanup (step 8 of the `logo` skill) runs in the
+   background from the logo's answer on, and its final logo files wait for the kit.
 4. **Kit.** The words are the copywriter's, always: report as `copywriter` while you write
    DESIGN.md's prose (Overview, Colors, Typography, Logo, Imagery, Voice and Messaging) with the
    `copywriting` skill, from the brief's facts and the chosen steps, then hand back to the designer.
