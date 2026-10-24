@@ -12,8 +12,8 @@ part belongs to the others.
   perfectly even geometric capitals come out nearly right, and a trace keeps every flaw. When the
   direction's lettering is like that, draw only what the model can draw (a mark, a mascot, a
   detail) and set the name in route 2, or leave this route out and say why.
-- **Supporting words** (a tagline, the trade, the place) are set in real type and composed around the
-  traced drawing (`lockups.md`), not drawn.
+- **Supporting words** (a tagline, the trade, the place), when the route has them, are set in real
+  type and composed with the traced drawing (`lockups.md`), not drawn.
 
 ## The prompt
 
@@ -50,7 +50,7 @@ Read every word letter by letter in the drawing, accents included, and see that 
 apart; draw it again when one differs. The logo step shows the user the drawing itself. Draw two or three together (each with `wait: false`, then
 `metamorfiles_image_status { id }` for each) and keep each whose letters are right and whose
 drawing holds the direction: the best is the route, and another as good, another way, is its own
-option (`SKILL.md`, step 7). Compose the supporting words around each and run
+option (`SKILL.md`, step 7). Compose each with its route's supporting words, if it has them, and run
 `metamorfiles_check_logo`.
 
 ## Other versions of it

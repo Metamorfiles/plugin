@@ -9,7 +9,7 @@ model instead (`symbol.md`, "Compose it on the word"). Decide the route's compos
 
 `metamorfiles_compose_logo { layout: "row", align: "baseline", parts: [{ file: "<the mark .svg>", size: 1.3, gap: 0.12 }, { file: "<the wordmark .svg>" }], output: "brand/process/logo/lockup.svg" }`
 sets a mark standing on the word's baseline, a little taller than the word. A logo drawn whole
-(route 1) is one part, with its supporting words composed around it.
+(route 1) is one part, with its route's supporting words, if any, composed with it.
 
 ## Layouts
 
@@ -46,6 +46,7 @@ Every lockup keeps its settings beside it (`<file>.svg.json`); change one thing 
 
 ## The set
 
-Each route has the lockup, and the name alone and the mark alone when it has a mark (`small: true`
+Each route has the lockup, the lockup without its supporting words when it has them (they're dropped
+at small sizes), and the name alone and the mark alone when it has a mark (`small: true`
 on its entry in the option's `files` in `brand/process/logo.md`). Once fixed, the
 parts' sizes and positions stay the same from file to file.
