@@ -62,7 +62,7 @@ Constraints. Then the reviewer checks it before anyone builds on it.
 
 - **While a brand is made:** on the logo step, beside the chosen logo, as `sheet` in
   `brand/process/logo.md` (`sheet: { file: "process/character/<name>-sheet-….png", name: "<name>" }`).
-  The board shows it under the logos, with Redo.
+  The board shows it under the logos, with Edit.
 - **In the kit:** brought into the character's folder,
   `metamorfiles_import_image { path: "<the sheet>", name: "00-sheet", folder: "brand/<the character's folder>" }`,
   and listed first in that folder's `anchors`, so it heads the character's frame on the brand board.

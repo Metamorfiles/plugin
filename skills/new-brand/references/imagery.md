@@ -58,7 +58,8 @@ a look to recognise, not rules to count.
    takes no `ground`); collect each with `metamorfiles_image_status { id }`. The step's
    frame fills as each arrives.
 2. Each seed is one option of the imagery step, titled by what it shows ("The knit close-up"). The
-   user uses them all, or has single ones redone first ("Redo the knit close-up").
+   user uses them all, or has single ones redone or edited first ("Redo the knit close-up", "Edit
+   the knit close-up …: warmer light").
 3. Redo a rejected seed from the ones the user liked, passed as references, never from the rejected
    one; a seed with the character is redone from the character sheet, never from another seed, since
    a seed copied as a reference brings its head and face with it. Say what to keep ("the same composition") and what to change ("fewer, bolder lines"). The

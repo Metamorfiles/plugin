@@ -118,7 +118,10 @@ started.
   and ask again; "the palette of A with the type of B" means write that option and ask again; "C has
   a cup with two handles" means redo C before anything else.
 - **From the frame** the answer can also be "Try another logo instead of <title>" or "Redo <title>":
-  replace that one option, keep the others as they are, and ask again. "Direction: <title>" means
+  replace that one option, keep the others as they are, and ask again. "Edit <title> (<file>),
+  keeping the earlier take: <what to change>" is an edit of that image as image 1
+  (`metamorfiles_generate_image { prompt, references: ["<file>"], edit: true, replaces: "<file>" }`), only what
+  the user named changing; the others stay, and ask again. "Direction: <title>" means
   the user went back and chose again on an earlier step: Studio has cleared the steps after it, so
   make them again from the new choice.
 - **A verdict on quality is a rethink.** "Redo all, the quality is low", "none of these work": write
