@@ -57,8 +57,12 @@ idea comes from a different source: one from the name (its sound, its letters, a
 join), one from the product (what it is, how it's made, what it's used for), one from the place, the
 people or the feeling it promises. The composition says how the logo is built: what leads, how big
 the other parts are against the word's cap height, whether they share its baseline, overlap it, tuck
-into a letter or stand apart. A name that arches or bounces is drawn whole (route 1). Read
-the three together against `references/taste.md`, "Defaults to recognise": three ideas in one
+into a letter or stand apart. It also says the route's words: the name alone, or with a supporting
+line that makes this idea stronger (a tagline, the trade, a place, written in the brand's voice) and
+where it sits. Each route decides its own words; a line that would sit the same under every route
+belongs to none. What the brief says the category keeps (a clear descriptor, say) the brand as a
+whole keeps, in its messaging and layouts, not every logo. A name that arches or bounces is drawn
+whole (route 1). Read the three together against `references/taste.md`, "Defaults to recognise": three ideas in one
 arrangement (a mark centred above the word, three times) are one answer. Each line goes on its
 route's option as `composition` in `brand/process/logo.md`, for the reviewer; the user sees the route's `line`, written for them.
 
@@ -69,7 +73,7 @@ composition move (`references/taste.md`), so the user chooses between ideas.
 
 1. **Drawn whole by AI.** The image model draws the logo as one composition: lettering alone, or
    lettering with a mark, a mascot or ornaments, all in one style, with proper spacing between its
-   parts. Studio traces it; supporting words are set in real type around it: `references/drawn.md`.
+   parts. Studio traces it; its supporting words, if the route has them, are set in real type: `references/drawn.md`.
 2. **Real fonts with a generated part.** The name set from real fonts with its kerning, ligatures and
    spacing, with a generated mark, a mascot or a drawn letter in a letter's place. The word comes
    first. A drawn letter is set into it (`references/symbol.md`, "A drawn letter"); a mark or mascot
@@ -199,6 +203,6 @@ mascot is designed with the `character` skill; how to prompt each image model is
   (the `brand` skill); a new seal or icon for it is a proposal the user approves first.
 - **A mark is drawn by the image model, never geometry typed as SVG by you.** Only Studio's shapes (a
   ring, a disc, a star, a diamond, a facet, a rule) are built without a drawing.
-- **Supporting words are real type,** in every route.
+- **Supporting words are real type,** never drawn.
 - **A route's logo is never drawn again to fix another file** (a mark, a version): the
   file changes, or the user hears what can't be made.
