@@ -74,13 +74,15 @@ composition move (`references/taste.md`), so the user chooses between ideas.
 1. **Drawn whole by AI.** The image model draws the logo as one composition: lettering alone, or
    lettering with a mark, a mascot or ornaments, all in one style, with proper spacing between its
    parts. Studio traces it; its supporting words, if the route has them, are set in real type: `references/drawn.md`.
-2. **Real fonts with a generated part.** The name set from real fonts with its kerning, ligatures and
-   spacing, with a generated mark, a mascot or a drawn letter in a letter's place. The word comes
-   first. A drawn letter is set into it (`references/symbol.md`, "A drawn letter"); a mark or mascot
-   is drawn alone, kept, then drawn by the image model onto the set word as the route's composition
-   says (`references/symbol.md`, "Compose it on the word"), so the two meet in one hand. The route
-   keeps the name alone, the real wordmark file, beside the lockup and the mark: `references/wordmark.md`.
-   A mascot is designed with the `character` skill.
+2. **Real fonts with a generated mark.** The name set from real fonts with its kerning, ligatures and
+   spacing, with a generated mark or mascot that stands on its own, drawn alone and kept, then locked
+   up with the name: beside it, after it, or centred above it, by the mark's shape and the name's
+   length (`references/lockups.md`). A mark that meets the letters (lying on them, an arm over a stem)
+   is drawn onto the set word (`references/symbol.md`, "Compose it on the word"). A drawn letter in a
+   letter's place only when the object already has that letter's shape and the word still reads at a
+   glance (`references/symbol.md`, "A drawn letter"). The route keeps the name alone, the real
+   wordmark file, beside the lockup and the mark: `references/wordmark.md`. A mascot is designed with
+   the `character` skill.
 3. **Type alone.** The name set straight in its face with kerning, ligatures, alternates and the
    face's own features, at most one letter moved for a reason, in a simple composition, or a seal or
    monogram when the brand needs one:

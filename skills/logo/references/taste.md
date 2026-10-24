@@ -78,8 +78,11 @@ and vintage.
 
 The ways the parts meet, chosen by the brand's world and where the logo will live:
 - **The name alone,** with its one anomaly.
-- **A letter swapped for an object that still reads as the letter**: a cookie for an O, a fruit for a
-  dot, a citrus slice for an accent. The object takes the letters' weight and colour, its details cut
+- **The mark beside the name,** standing on its baseline a little taller than the capitals, or
+  after it, closing the word.
+- **The mark centred above the name,** for a compact or tall mark over a short name.
+- **A letter swapped for an object that has the letter's shape and still reads as it**: a cookie for
+  an O, a fruit for a dot, a citrus slice for an accent. The object takes the letters' weight and colour, its details cut
   out as holes.
 - **A letter that becomes the mark:** a G that is a face, an m inside a pebble, initials packed into
   a shield.
@@ -122,7 +125,8 @@ What a generator produces when nothing was decided. They aren't forbidden; they'
 direction chose them, and recognised when it didn't:
 - a stock bubble, geometric or script face set untouched as the "custom" lettering;
 - the category's symbol added to every route;
-- everything centred, one size, even gaps; a mark centred above the word in every route;
+- everything centred, one size, even gaps; one arrangement in every route (a mark above the word
+  three times, a letter swapped three times);
 - a letter lifted or turned alone, off the word's line, with nothing it leans into;
 - real type bent through an arc or a warp: it reads as WordArt, where drawn lettering curves;
 - a badge or a frame around a name that didn't need one;

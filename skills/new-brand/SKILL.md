@@ -230,7 +230,7 @@ its frame shows each file as it arrives, so the user watches the step come toget
    its `sample`.
 2. **Logo** (the `logo` skill), made from the brief and the chosen direction. Three
    routes: a logo drawn whole by the image model and traced; the name set from real fonts with a
-   generated mark, mascot or letter; and the name in type alone. Supporting words, where a route has
+   generated mark or mascot locked up with it; and the name in type alone. Supporting words, where a route has
    them, are always real type. Each route checked with one
    `metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#1f1a17" }`, which draws it in colour
    on its paper, reversed and in one colour on one sheet; in `logo.md` each route has two files, in

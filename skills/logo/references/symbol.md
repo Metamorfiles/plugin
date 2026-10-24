@@ -1,7 +1,7 @@
 # Generated marks and letters
 
-What route 2 draws to go with a name set in real type: a mark, a mascot, or a drawn letter in a
-letter's place. The image model draws it alone; Studio traces it (`vector.md`) and it is composed
+What route 2 draws to go with a name set in real type: a mark or a mascot, and now and then a drawn
+letter in a letter's place. The image model draws it alone; Studio traces it (`vector.md`) and it is composed
 with the name (`lockups.md`). A mascot is designed with the `character` skill and then
 placed the same way.
 
@@ -34,8 +34,9 @@ Only the drawing: no letters, words or numbers, no frame, no shadow, no gradient
 
 ## Compose it on the word
 
-A mark or mascot that goes with the name is drawn onto the set word, so they meet as one drawing:
-lying on its letters, an arm over a stem, under an arch of the word. Image 1 is the wordmark, image 2
+A mark or mascot that meets the letters, as the route's composition says, is drawn onto the set
+word, so they meet as one drawing: lying on its letters, an arm over a stem, under an arch of the
+word. One that stands beside or above the name is composed with it instead (`lockups.md`). Image 1 is the wordmark, image 2
 the kept mark:
 `metamorfiles_generate_image { prompt, references: ["<the wordmark .svg>", "<the kept mark .svg>"], edit: true, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
 The prompt keeps the letters and places the mark by the route's composition: "Edit image 1: keep
@@ -49,7 +50,10 @@ wordmark alone and the mark alone.
 
 ## A drawn letter
 
-A drawn part can take a letter's place (a donut for an O) or its accent's (a flame for an acute).
+A drawn part can take a letter's place (a donut for an O) or its accent's (a flame for an acute),
+only when the object already has that letter's shape (a cookie for an o, a candle for an l, a cherry
+for a dot) and the word still reads at a glance. A shape the letter doesn't have, a square window
+for an o, goes beside or above the name instead.
 Draw it at the letter's proportions against the wordmark in image 1, then set the wordmark again
 with it: `metamorfiles_make_wordmark { text, font, color, output, part: { file: "<the traced .svg>", replaces: "o" } }`,
 its file under `brand/process/` or `brand/logos/`. Studio fits its ink to the letter's lines (its
