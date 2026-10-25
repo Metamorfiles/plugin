@@ -54,6 +54,7 @@ or a weak result is made again.
 | The user wants                                                         | Use                        |
 | ---------------------------------------------------------------------- | -------------------------- |
 | Set up, import or change the brand: voice, colors, fonts, logos        | `brand`       |
+| Imagery or mockups for a brand that exists                             | `brand`       |
 | A new brand from nothing: direction, logo, imagery, kit                | `new-brand` |
 | A logo, wordmark, mark, seal or lockup for a brand that has none       | `logo`        |
 | A mascot or character, or new poses of one                             | `character`   |
