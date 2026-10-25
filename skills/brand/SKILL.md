@@ -1,6 +1,6 @@
 ---
 name: brand
-description: Use when the user wants to set up, import or change an existing brand in a Metamorfiles project, for example from their website, their app's theme or styles, a brand guidelines PDF, logos, fonts or reference images, or to change its colours, type, voice or logo files. Translates the brand into brand/DESIGN.md (the design.md format), from which Studio generates the brand tokens and the brand board. A brand made from nothing is the new-brand skill.
+description: Use when the user wants to set up, import or change an existing brand in a Metamorfiles project, for example from their website, their app's theme or styles, a brand guidelines PDF, logos, fonts or reference images, to change its colours, type, voice or logo files, or to make imagery or mockups for a brand that exists. Translates the brand into brand/DESIGN.md (the design.md format), from which Studio generates the brand tokens and the brand board. A brand made from nothing is the new-brand skill.
 license: MIT
 ---
 
@@ -19,7 +19,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 ## Steps
 
 1. Call `metamorfiles_get_project` and read `brand`. If the project already has a kit for another brand (a different name, website or product), this brand gets its own project: call `metamorfiles_get_project { create: true, name: "<brand>" }`, as `SKILL.md` of the `studio` skill says, and build the kit there. Rebuild a kit only for the same brand; then take every value again from the brand's sources as below, never from the previous DESIGN.md.
-2. Gather the sources. Start with the brand's own website and profiles: `metamorfiles_look_at_page { url: "https://example.com", collect: true }` for each address, which reads the colours and fonts the page really renders and saves its screens, logo candidates, icons and share image into `brand/sources/<site>/` with where each came from. Files the user gave are in `brand/sources/yours/`. Then the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. **Go and find the imagery, don't wait to be handed it**: look in `public/`, `static/`, `assets/` and `src/assets/`; follow what the app's own components reference (a component naming `/images/serum-morning.jpg` is telling you that file is brand imagery); read the Open Graph and Twitter card images in the app's metadata; and take what the live site renders in its hero and section bands. Icons, favicons, UI chrome and framework defaults (`next.svg`, `vercel.svg`) are not imagery. Ask only for what you cannot find and cannot do without, such as the font files or the logo.
+2. Gather the sources. Start with the brand's own website and profiles: `metamorfiles_look_at_page { url: "https://example.com", collect: true }` for each address, which reads the colours and fonts the page really renders and saves its screens, logo candidates, icons and share image into `brand/sources/<site>/` with where each came from. Files the user gave are in `brand/sources/yours/`. Then the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. **Go and find the imagery, don't wait to be handed it**: look in `public/`, `static/`, `assets/` and `src/assets/`; follow what the app's own components reference (a component naming `/images/serum-morning.jpg` is telling you that file is brand imagery); read the Open Graph and Twitter card images in the app's metadata; and take what the live site renders in its hero and section bands. A share image (a card of the logo and words), screenshots of the site or app, icons, favicons, UI chrome and framework defaults (`next.svg`, `vercel.svg`) are not imagery. Ask only for what you cannot find and cannot do without, such as the font files or the logo.
 3. Copy the files into the project, unchanged:
    - fonts: a Google Fonts family with `metamorfiles_add_font { family: "Fraunces" }`; any other face is the user's own file, left where it is under `brand/sources/` and listed in DESIGN.md's fonts by that path (`sources/yours/Brand-Regular.otf`);
    - official logos in `brand/logos/`, each from the user's files: `metamorfiles_import_image { path: "brand/sources/yours/logo.svg", name: "logo", folder: "brand/logos" }`;
@@ -30,7 +30,47 @@ Your goal is a complete board the user can use, quickly. Four principles:
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
 7. Render each page of the brand's guidelines with `metamorfiles_render_preview { item: "templates/brand-board", format: "cover" }`: Studio draws them from DESIGN.md and the folders, one 16:9 page each (`cover`, `about`, `logo`, `logos`, `mark`, `colour`, `pairs`, `typefaces`, `scale`, `voice`, `messaging`, and each asset folder by its name, such as `refs` and `mockups`; a section too long for one page continues as `refs-2`). The write that changes DESIGN.md lists them. Fix every check error through DESIGN.md and the folders.
 8. Get the independent review of the kit with the `review` skill (the `handover` queue) before you present anything: it catches a logo on the wrong background or a pairing that reads badly. Fix what it marks **must fix** through DESIGN.md or the files.
-9. Present it with the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
+9. Ask what the team should make, before any image is generated, as "What the team makes next" says. Make what the user chooses, and have it reviewed.
+10. Present it with the note in `references/presenting.md` — what the brand is, what you decided for them, what genuinely needs them, one question. Read that file before you write the message. Never hold the board back for an answer, and never list your own values, checks or tools.
+
+## What the team makes next
+
+Most brands come in without imagery of their own, and the posts and ads Studio makes need it. Once
+the kit has passed its review, ask what to make with
+`metamorfiles_ask_user { task, question: "Lumen Skincare has no imagery of its own yet. What should the team make?", options: [{ label: "Imagery and mockups", recommended: true }, { label: "Mockups only" }, { label: "Nothing for now" }] }`,
+the question in the brand's name. A brand with imagery of its own is asked whether to grow it: "More
+imagery and mockups", "Mockups only", "Nothing for now". Generate nothing before the answer. A user who
+asked for imagery or mockups in their request has answered, and so has "make imagery for my brand"
+on a brand already in Studio. Make imagery first, then the mockups.
+
+### Imagery
+
+The imagery step of a new brand, on the same board and question: follow `references/imagery.md` of
+the `new-brand` skill (`metamorfiles_get_guide { name: "new-brand", file: "references/imagery.md" }`)
+and its step file, `brand/process/imagery.md`, as `SKILL.md` of the `new-brand` skill writes it. What
+differs:
+- It starts from the brand as it is, in place of a brief and a chosen direction: DESIGN.md (Overview,
+  Colors, Audience), what the business makes and uses as its site shows it, and its own pictures.
+- Each seed's first reference is the brand's own picture when it has one ("Image 1 is the brand's own
+  imagery: take its medium, light and palette"), else its colour page
+  `templates/brand-board#colour` ("Image 1 is the brand's palette: take its colours, never its
+  layout"). The logo never goes in.
+- Its own pictures stay its anchors: the seeds are new pictures in their look, never its products
+  made up.
+
+Ask with `metamorfiles_ask_user { task, step: "imagery" }` once the `imagery` queue has passed. Then
+the library, `brand/imagery-guide.md`, the folder in `assets` and DESIGN.md's Imagery section, as
+"In the kit" of that file says.
+
+### The brand in use
+
+Three mockups, chosen as `references/mockups.md` of the `new-brand` skill says
+(`metamorfiles_get_guide { name: "new-brand", file: "references/mockups.md" }`), from the brand's own
+touchpoints: what it makes and where its customers meet it, read from its site and DESIGN.md. A
+brand with a site or an app shows its real screens, the ones `metamorfiles_look_at_page` saved,
+placed exactly on a laptop or a phone with `metamorfiles_make_mockup`: every pixel of a screen is the
+brand's. The other shots are objects it really uses (merch, a sign, its packaging), made with the
+`mockup` skill. They're reviewed in the `handover` queue.
 
 ## Taking values from each source
 
@@ -77,7 +117,7 @@ Ask the user only for what you cannot derive and what changes the result: the fo
 - **`fonts`** (Studio): every family the roles use, with its local file (relative to `brand/`) and weight range.
 - **`logos`** (Studio): each file with the `background` it's made for (a token reference) and its `source`; the brand's small mark (its icon, the mark alone, a monogram) with `small: true`, since the favicon and profile picture are made from it. Look at them on the guidelines' `mark` page, at their real sizes, and set each use's composition where Studio's placement isn't right for this mark (`profile` and `icon`, as the `logo` skill's step 8 says).
 - **`casing`** (Studio): the letter case a role is set in, when the brand sets one: `upper`, `lower` or `title`, such as `display: upper` for headlines in capitals (a site's `text-transform`, or copy typed in capitals). The spec's typography has no case, so without it every template and the board guess.
-- **`assets`** (Studio): the brand's asset folders under `brand/`, each drawn as a frame of the brand board: `{ folder, kind, title, note?, anchors? }`, the kind one of `imagery` (photos or drawings, whole and framed, with the `anchors` that set its look marked), `character` (a mascot's turnaround and poses), `icons`, `pattern` and `in-use` (mockups of the brand on its objects, never imagery). Without it, `brand/refs/` is the brand's imagery. Each folder is shown whole on pages of its own, and the about page shows the first imagery folder's first anchor.
+- **`assets`** (Studio): list an imagery folder only for imagery the brand has, or that the user had the team make. The brand's asset folders under `brand/`, each drawn as a frame of the brand board: `{ folder, kind, title, note?, anchors? }`, the kind one of `imagery` (photos or drawings, whole and framed, with the `anchors` that set its look marked), `character` (a mascot's turnaround and poses), `icons`, `pattern` and `in-use` (mockups of the brand on its objects, never imagery). Without it, `brand/refs/` is the brand's imagery, so anything else (a share image, screenshots) stays in `brand/sources/`. Each folder is shown whole on pages of its own, and the about page shows the first imagery folder's first anchor.
 
 Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the brand to each image: the body size becomes the frame's body size (`--brand-type-base`, 3vmin), and every other size, radius and space keeps its ratio to it.
 
@@ -85,7 +125,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 
 - The prose is the copywriter's: write every section with the `copywriting` skill (Overview, Colors, Typography, Logo, Imagery, Voice and Messaging), as the brand's guideline.
 - The spec's sections, in order, only those the brand has: Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts.
-- Then Studio's sections: Logo, Imagery, Voice, Messaging, Audience, Sources, Known gaps.
+- Then Studio's sections: Logo, Imagery, Voice, Messaging, Audience, Sources, Known gaps. Imagery describes the brand's own pictures, or those the imagery step made; a brand with neither has no Imagery section.
 - Describe rules and intent, not layouts, unless the brand really has a fixed layout rule.
 - Keep Do's and Don'ts short and intentional, and never add brand facts such as claims, prices or awards. It isn't printed: it holds the rules agents follow when they design.
 - For a brand that exists, every Do of the Voice chart is quoted from its own copy and recorded in Sources.
@@ -95,6 +135,7 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 ## Logos
 
 - Use only official files, copied unchanged. Never recolor, redraw, retype, stretch or crop a logo, add effects, or place it on a background it isn't made for.
+- A colour an official file paints is the brand's, even when another file has a near one (a favicon's off-white beside the logo's): name it in `colors` with its source in Sources, and never recolour a file to match another.
 - **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--clay)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant { file: "brand/sources/logo.tsx", output: "brand/logos/logo-dark.svg", colors: { "var(--clay)": "#e39a7f" }, background: "#1f1a17" }` with that theme's exact values, one file per theme, and record it as the brand's own variant.
 - **Generated variants need the user's approval, each one, before you make it.** Offer only what's missing:
   - one-color black and white versions (map `"*"` to the color, and paper-colored inner shapes to `"knockout"`);

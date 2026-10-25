@@ -171,8 +171,10 @@ DESIGN.md `logos` with their grounds, sources ("set in <face> as outlines with a
 by <model> and traced", "created and approved by the user on <date>") and clear space, and the
 small mark with `small: true`.
 
-Last, compose the small mark for where it's used small: the profile picture, which platforms crop to
-a circle, and the app icons, squares. Studio places the mark by its ink and shows each on the
+Last, compose the small mark for where it's used small: in a circle (`profile`), the profile
+picture platforms crop to one and the phone's app icon, which keeps the circle's composition inside
+its rounded corners; in a square (`icon`), the favicon and the browser's icons, clear unless it names
+a ground. Studio places the mark by its ink and shows each on the
 guidelines' `mark` page
 (`metamorfiles_render_preview { item: "templates/brand-board", format: "mark" }`). Look at each as
 it will be seen and decide its composition for that mark: how much of the circle or square it fills,

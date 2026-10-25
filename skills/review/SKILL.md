@@ -70,7 +70,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 
 #### Final logo file
 
-- It is the chosen logo, in DESIGN.md's colours. Its other versions are recolours of it: what a recolour can't keep is never a fault.
+- It is the chosen logo, in DESIGN.md's colours. Its other versions are recolours of it: what a recolour can't keep is never a fault. A colour in the brand's own file (one it brought in) that DESIGN.md doesn't name is fixed by naming it there, never by recolouring the file: say so in the fix.
 - A cleaned file is its trace: hold it over the trace, `metamorfiles_compare_trace { file: "brand/process/logo/<name>-clean.svg", against: "brand/process/logo/<name>.svg" }`. A part lost, added or changed in shape is a must fix.
 
 #### Mockup

@@ -28,7 +28,9 @@ when the brand was made. Its sections:
 - **Writing a scene:** how the brand's scenes are described.
 
 A brand without the guide (translated from an existing one) takes its look from DESIGN.md's Imagery
-section and its reference images; write the same parts from them in your notes and use them alike.
+section and its own pictures; write the same parts from them in your notes and use them alike. A
+brand with neither has no look to keep yet: its images follow DESIGN.md's colours, and the user can
+have the team make its imagery (the `brand` skill, "What the team makes next").
 
 ## Compose it, then make it
 
