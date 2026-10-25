@@ -136,7 +136,9 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
   Mockup checklist says: whole first, then enlarged (`metamorfiles_read_file { path, region }`) only to
   confirm a fault you suspect. A fault breaks its identity (a letter or a part of the mark wrong,
   missing, extra, doubled or merged; other colours; stretched beyond its surface's shape; upright on a
-  turned object, or turned on an upright one). Its
+  turned object, or turned on an upright one; turned the other way from its surface, its nearer side
+  on the surface's far side; flat to the camera on a surface that recedes, or foreshortened on one
+  that faces it). Its
   perspective, light, curve, crop, method and a small drift that leaves every part in place are the
   photograph's, never fixed.
 - **The words:** character by character, against the words the prompt quoted; nothing else written.
