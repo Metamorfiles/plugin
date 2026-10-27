@@ -17,7 +17,7 @@ Copy it into your notes and tick each step as you go:
 ```
 - [ ] 1. The brief and the chosen direction read, its reference images looked at
 - [ ] 2. Type study: the name in the faces the direction suggests and around them
-- [ ] 3. Three ideas: each route's idea and composition written before anything is drawn
+- [ ] 3. Three ideas: each route's id, idea and composition written before anything is drawn
 - [ ] 4. Three routes made: the word set first, a mark drawn to fit it
 - [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
 - [ ] 6. Each route's two files: colour, and one colour
@@ -65,6 +65,8 @@ whole keeps, in its messaging and layouts, not every logo. A name that arches or
 whole (route 1). Read the three together against `references/taste.md`, "Defaults to recognise": three ideas in one
 arrangement (a mark centred above the word, three times) are one answer. Each line goes on its
 route's option as `composition` in `brand/process/logo.md`, for the reviewer; the user sees the route's `line`, written for them.
+Name each route now with one lowercase word, its `id` in `logo.md` (`rim`, `seal`, `pots`): every file of
+the route starts with it (step 6), so the board shows each route's work in its own band as it arrives.
 
 ### 4. Three routes
 
@@ -107,7 +109,8 @@ with its inner details cut out.
 
 The reversed version, the small mark, and a version redrawn because it loses a part in one colour
 are made after the choice, for the chosen route only (step 8). Save every file under
-`brand/process/logo/`: `folder: "brand/process/logo"` for an image, an `output` there for the other tools.
+`brand/process/logo/`, its name starting with its route's id and a hyphen: `folder: "brand/process/logo"`
+and `name: "rim-drawn"` for an image, an `output` such as `brand/process/logo/rim-ink.svg` for the other tools.
 
 ### 7. Show them
 
