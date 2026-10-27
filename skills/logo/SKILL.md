@@ -71,7 +71,8 @@ the route starts with it (step 6), so the board shows each route's work in its o
 ### 4. Three routes
 
 Three answers, not three versions: each route a different idea and a different lettering family or
-composition move (`references/taste.md`), so the user chooses between ideas.
+composition move (`references/taste.md`), so the user chooses between ideas. A fourth route only for
+another idea: a variant of a route (its mark drawn longer, its lockup stacked) is never a route.
 
 1. **Drawn whole by AI.** The image model draws the logo as one composition: lettering alone, or
    lettering with a mark, a mascot or ornaments, all in one style, with proper spacing between its
@@ -143,7 +144,8 @@ mascot it may be the mascot's head or bust, made from the chosen mascot as the `
   A logo put together from parts (its `.svg.json` lists `parts`) is cut from the part's own file instead.
 - **None does** (fine detail, texture, a long name): never clean or redraw the logo for it. Have the
   image model draw the mark from the logo, the prompt naming the part and saying it is simplified,
-  in the logo's own drawing and colours, and trace it:
+  in the logo's own drawing, colours and proportions (never squarer or more compact: Studio composes
+  it in the circle and the square), and trace it:
   `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
 
 Never another letter alone: a lone e reads as "e", not as the brand. Offer one to three, check each
