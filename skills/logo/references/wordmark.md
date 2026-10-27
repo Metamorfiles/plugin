@@ -29,7 +29,7 @@ License, which allows logos and outlining the letters; the tool refuses any othe
 
 ## Setting the name
 
-`metamorfiles_make_wordmark { text: "Lumen Skincare", font: "brand/fonts/Fraunces.woff2", color: "#3b2e27", output: "brand/process/logo/wordmark.svg" }`
+`metamorfiles_make_wordmark { text: "Lumen Skincare", font: "brand/fonts/Fraunces.woff2", color: "#3b2e27", output: "brand/process/logo/lumen-word.svg" }`
 (all four required) sets the name as outlined letters, spaced for a logo, and lists the face's axes,
 features and the alternates it has for these letters. Its controls:
 
@@ -55,7 +55,7 @@ the strokes).
 ## Adjusting it
 
 Every wordmark keeps its settings beside it (`<file>.svg.json`). Change one thing without restating
-the rest: `metamorfiles_make_wordmark { from: "brand/process/logo/route-2.svg", kerning: { "ol": -0.02 }, output: "brand/process/logo/route-2.svg" }`.
+the rest: `metamorfiles_make_wordmark { from: "brand/process/logo/lumen-word.svg", kerning: { "ol": -0.02 }, output: "brand/process/logo/lumen-word.svg" }`.
 Objects merge key by key, so one kerning pair changes and the others stay.
 
 ## Supporting words
