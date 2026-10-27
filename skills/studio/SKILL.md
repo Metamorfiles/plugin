@@ -46,8 +46,8 @@ Write and change every project file with `metamorfiles_write_file`, never with a
 a place, one part of a composed logo) changes in its file or in the logo's saved settings (`from`),
 with no image made. A change to an image or a drawing (one part swapped, a detail fixed) is an edit
 of it, `edit: true` with the image first in `references`, saying only what changes: Studio asks the
-model to keep the rest and keeps every part the edit didn't change exactly as it was. Only a new idea
-or a weak result is made again.
+model to keep the rest and takes what it draws whole; give `region` when everything outside one place
+must stay exactly as it is. Only a new idea or a weak result is made again.
 
 ## Workflows
 
