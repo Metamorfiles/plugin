@@ -105,6 +105,10 @@ started.
   top, from the step and the files you make, so leave out `line`.
 - **Write the step's file** (below). The result says what's wrong with it, or gives the question
   Studio will ask and the options as the user will see them.
+- **Say what's on the board.** Once a step's options are written, the role that made them says in
+  its `done` update what each one is, in the board's order, and why the recommended one leads:
+  exactly the options offered, never one you dropped. What you said you'd make before the work
+  never stands in for it.
 - **Ask with `metamorfiles_ask_user { task, step: "logo" }`** (`direction`, `logo` or `imagery`).
   Studio asks the step's own question with the options' titles, the panel offers to bring the step's
   frame into view, and the user chooses there, in the thread or in your chat. From the user's own app
@@ -155,8 +159,8 @@ Studio keeps what waits, piece by piece; run the `review` skill on the queue and
 | The library and the mockups made, then the kit written | `handover` | each picture, each mockup's logo, products and words, each final logo file, DESIGN.md's printed sections |
 
 Report it as the reviewer: `metamorfiles_team_update { task, role: "reviewer", status: "reviewing" }`,
-then the same with `status: "done"`. The reviewer records its verdict in Studio, and the thread
-shows what it caught. Fix only the **must fixes**, once, as the role that made the piece, with a
+then the same with `status: "done"` and no `say`. The reviewer records its verdict in Studio, and
+the thread shows what it caught. Fix only the **must fixes**, once, as the role that made the piece, with a
 method that can fix it (a version that recolouring makes muddy is drawn again from the logo), and
 have it looked at again: only what changed waits. A piece looked at twice without passing is never
 made again: the step is asked as it is, with

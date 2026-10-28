@@ -33,7 +33,7 @@ The reviewer works like this:
 
 1. Call `metamorfiles_get_project { path: "<the absolute project path you were given>" }`. A brand still being made has no DESIGN.md yet: read `brand/process/brief.md` and the chosen option of each step in `brand/process/`. Any other brand: `metamorfiles_read_file { path: "brand/DESIGN.md" }`. Note the name exactly as written, the colours, the fonts, and what the brief says the business and its products are.
 2. Get what waits: `metamorfiles_review_queue { for: "logo" }`, with what you were given (`pages/<id>`, `templates/<id>`, or `logo`, `character`, `mark`, `imagery`, `handover`). It lists each piece not passed as it is now, its kind, where to see it whole, what it shows, and the checklist for each kind; judge those pieces and nothing else. A page is every frame of it, with `metamorfiles_render_preview { item: "pages/<id>", variant: "<id>", format: "instagram-story" }`: its two riskiest variants (the longest copy, the busiest image) in every format, and a carousel in every slide. A template is every format it declares, with its own defaults.
-3. DESIGN.md's colours are the brand's foundation, never a limit: a layout or a picture may use any colour its goal needs, so a colour is never a fault on its own.
+3. DESIGN.md's colours are the brand's foundation, never a limit: a layout or a picture may use any colour its goal needs, so a colour is never a fault on its own. A rule DESIGN.md's Do's and Don'ts set is the brand's own, and the checklists below hold every piece to it.
 4. Look at each piece whole first, then closely, before you read its check findings or what it was meant to show. What it was meant to show tells you what the picture is of; it is not a contract, and a result that differs from it in taste is not a fault. A piece the queue marks as looked at twice is not sent back again: say what's still wrong in your summary.
 5. Hold each piece to its kind's checklist below. A failed item is a **must fix**. Nothing else is a must fix.
 6. Anything else worth the user's attention in the piece as it is shown here is a **suggestion**, never a guess about how it would work somewhere else: three at most for the whole look, each one sentence, and most looks have none.
@@ -56,6 +56,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 - **Character:** the brand's character is itself, as its sheet shows it, in every figure of a sheet and every picture.
 - **Medium:** the same medium as the brand's other pictures.
 - **Real people and events:** no generated photograph of a real person or a real event.
+- **The brand's own rules:** once DESIGN.md exists, the picture keeps every rule its Do's and Don'ts set for a piece like it (a colour used once per piece, the logo's clear space).
 
 #### Logo route
 
@@ -86,6 +87,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 #### DESIGN.md section
 
 - It reads as guidance for people using the brand: no notes on how it was made, no file paths.
+- Every fact in it is right, and every sentence reads one way only.
 
 #### Page or template
 
@@ -95,3 +97,4 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 - Another party's mark is its real file, never redrawn or larger than the brand's logo; another party's image carries the credit its licence asks for.
 - Its pictures pass the picture checks.
 - A template looks right with its own defaults, in every format it declares.
+- It keeps every rule DESIGN.md's Do's and Don'ts set for a piece like it.
