@@ -1,23 +1,23 @@
 ---
 name: variants
-description: Use when the user wants variations of a Metamorfiles template as a deliverable, for example A/B test creatives from a thesis, copy or image alternatives for client approval, one asset per row of a CSV or product feed, a carousel series from a template, or a set of social or ad images in several formats to export. Plans the variants, makes a page from the template with them and exports it. A one-off post or carousel is a page from its own design (the team skill, A new piece); to change a page that exists, use the team skill.
+description: Plans variations of a Metamorfiles template, makes a page from the template with them and exports it. Use when the user wants variations of a template as a deliverable, for example A/B test creatives from a thesis, copy or image alternatives for client approval, one asset per row of a CSV or product feed, a carousel series from a template, or a set of social or ad images in several formats to export. A one-off post or carousel is a page from its own design (the team skill, A new piece); to change a page that exists, use the team skill.
 license: MIT
 ---
 
 # Make a page of variants
 
-A page is one deliverable made from a template: its own copy of the design, and every variant in every format. You write the variant values yourself, and make each variant's images composed for its frame, by the prompt in `references/images.md` of the `studio` skill ("Compose it, then make it").
+A page is one deliverable made from a template: its own copy of the design, and every variant in every format. You write the variant values yourself.
 
 ## Steps
 
-1. Call `metamorfiles_get_project`. Read the brand guide, the template's variables and sources, and the pages that already exist. If the right template doesn't exist, use the `template` workflow first.
+1. Call `metamorfiles_get_project`. Read `brand` (DESIGN.md), the template's variables and sources, and the pages that already exist. If the right template doesn't exist, use the `template` skill first.
 2. Plan it, and say the plan in one message as you start:
    - **Goal:** A/B test, client options, catalog fill or campaign set.
    - **Axes:** what varies. For A/B tests, one thesis per variant, and change one idea at a time so results are readable. Name each variant by its thesis, so results can be traced.
    - **Size:** variants × formats × rows. Confirm before exporting more than 50 files.
 3. Fill values per variant:
    - `string` variables with an `ai` source: write the copy yourself from the variable's `instruction` and the thesis, with the `copywriting` skill.
-   - `image` variables: for each variant, make the image composed for its slot (what this variant is about, the slot's shape, where the copy sits), by `references/images.md`'s prompt (the brand's image contract, the character first when it appears, the library's sheet for style), saved under `assets/` (`references/images.md`, "Compose it, then make it"); a library file only when it already is that composition, and never the same image on two variants of one post. Other parties' logos come from `metamorfiles_find_mark { name }`.
+   - `image` variables: an image made for each variant's slot, as `references/images.md` of the `studio` skill says ("Compose it, then make it"); never the same image on two variants. Other parties' logos come from `metamorfiles_find_mark { name }`.
    - `table` variables: don't set them. Pass the table and each row becomes a variant filled from its columns. Call `metamorfiles_read_table { file: "data/products.csv" }` first to check columns and rows.
    - Only set the values that differ from the template defaults.
 4. Preview before making the page: two or three representative variants as `metamorfiles_render_preview { item: "templates/launch-post", format: "instagram-story", values: { headline: "…" } }` in the most constrained format. Fix copy that overflows, then continue.
@@ -29,12 +29,11 @@ A page is one deliverable made from a template: its own copy of the design, and 
 
 ## Carousels
 
-A carousel is a page whose variants are the slides of one post, in order: pass `carousel: true` to `metamorfiles_create_page`. The first slide is the cover, the last the end, the rest the body.
+A carousel is a page whose variants are the slides of one post, in order: pass `carousel: true` to `metamorfiles_create_page`. The first slide is the cover, the last the end, the rest the body. Its plan, words and design come first, from `references/carousels.md` of the `studio` skill (`metamorfiles_get_guide { name: "studio", file: "references/carousels.md" }`); this section is the mechanics.
 
-- **Plan it first.** Before the template, plan the slides as `references/carousels.md` of the `studio` skill describes (`metamorfiles_get_guide { name: "studio", file: "references/carousels.md" }`): one line per slide with what it gives, its pattern and its layout. The copywriter and the designer both work from that plan, and say it in one message as you start.
-- **One design carries every slide.** A one-off carousel is a page from its own design, made by the new-piece order of work in the `team` skill (`metamorfiles_create_page { name, design, carousel: true, variants }`); a series the user will repeat is a template built the same way. Either way the frame gets `data-slide="cover|body|end"`, `--slide-index` and `data-variant="<slide id>"`, so the CSS gives the cover its headline, the end its action, and each slide its own composition over one shared system of margins, type roles and a running cue (`html[data-variant="mods"] .art { … }`); body layouts a series repeats are a `layout` enum variable. Slides differ in their values and their own rules, never in copies of the design. On its own, a template shows its cover, a body slide and its end with its defaults (`metamorfiles_render_preview { item: "templates/<id>", variant: "body" }`; `cover` and `end` likewise): each must read right with those defaults, since that's what the user sees when they open the template.
+- **One design carries every slide.** A one-off carousel is a page from its own design, made by the new-piece order of work in the `team` skill (`metamorfiles_create_page { name, design, carousel: true, variants }`); a series the user will repeat is a template built the same way. Either way the frame gets `data-slide="cover|body|end"`, `--slide-index` and `data-variant="<slide id>"`, so each slide gets its own rules over the shared design (`html[data-variant="mods"] .art { … }`); body layouts a series repeats are a `layout` enum variable. Slides differ in their values and their own rules, never in copies of the design. On its own, a template shows its cover, a body slide and its end with its defaults (`metamorfiles_render_preview { item: "templates/<id>", variant: "body" }`; `cover` and `end` likewise): each must read right with those defaults, since that's what the user sees when they open the template.
 - **Seamless** carousels, where a background or an image runs across the seams, put that layer in an element with `data-span`: it spans every slide, and each slide shows its own part of it, lined up exactly.
-- **Platform limits:** Instagram up to 20 slides, all in one shape; LinkedIn takes the carousel as a PDF, which the export writes; TikTok 35; Threads 20; Bluesky 10; Pinterest 5; X 4. The check warns past a platform's limit.
+- **Platform limits:** the check warns past one. LinkedIn takes the carousel as the PDF the export writes.
 - The export names slides in order (`<page>-<format>-01.png` …) and writes one PDF per format.
 
 ## page.json
@@ -55,7 +54,7 @@ A carousel is a page whose variants are the slides of one post, in order: pass `
 - Studio writes it when it makes the page; `template.hash` is how it tells that the template changed since. `metamorfiles_create_page` takes no page-wide `values`, `caption` or `captions`: add those after it with `metamorfiles_edit { item: "pages/<id>", changes: [{ do: "value", variable: "badge", value: "New" }, { do: "page", set: { caption: "…" } }] }`.
 - Variant ids are short kebab-case and unique; `name` is what the user sees. Exported files are named `<page>-<variant>-<format>.<ext>`. On a carousel, the order of `variants` is the order of the slides.
 - Values stack from wide to narrow: the page's `values` (every frame), then a variant's `values` (every format of that variant), then its `formats: { "instagram-story": { "headline": "…" } }` (one frame). The narrower one wins. The user makes all three in the control panel; keep them when you change the page, and write to the level the user means: "everywhere", "in this variant" or "just the story".
-- A variant's `caption` is the words posted with it, `captions` its own per platform where one needs different words, keyed by Studio's platform names exactly (`{ "LinkedIn": "…" }`; also Instagram, Facebook, X, Threads, Bluesky, Pinterest, TikTok, YouTube), and `alt` its alt text, each set in its entry of `variants`; a carousel's caption is the page's `caption`, and each slide keeps its `alt`. Write them with `references/copy.md` of the `studio` skill whenever the user will post the page. The export writes them to `post.md` beside the images, and the alt text into each image file.
+- A variant's `caption` is the words posted with it, `captions` per platform (names in `references/copy.md` of the `copywriting` skill), and `alt` its alt text, each set in its entry of `variants`; a carousel's caption is the page's `caption`, and each slide keeps its `alt`. Write them with that file whenever the user will post the page. The export writes them to `post.md` beside the images, and the alt text into each image file.
 - `output.type` is `png`, `jpeg` or `webp`, `scale` from 0.25 to 4.
 - The page's formats are in the manifest of its own `index.html`, as in a template. A page made from a template (`template` or `from`) takes `formats` in `metamorfiles_create_page` when it needs different ones; a page from its own `design` declares them in that design's manifest only.
 - With `table` (`{ "file": "data/products.csv", "rows": "1-20", "idColumn": "sku" }`), each row becomes a variant named by `idColumn` or `row-N`, with its values copied in, so the page doesn't change when the CSV does. Listed `variants` then apply to every row, giving rows × variants.

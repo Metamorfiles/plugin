@@ -6,6 +6,14 @@ decide the look. This is how to tell a strong version of that look from a weak o
 image model gets wrong on the way. A character has its own page: `references/taste.md` of
 the `character` skill.
 
+## Contents
+- The point of view
+- Lettering families
+- Composition moves
+- Marks
+- Colour in the logo
+- Defaults to recognise
+
 ## The point of view
 
 - **One idea, one hand.** A logo is one idea drawn by one hand: the letters, the mark, the character
@@ -132,9 +140,3 @@ direction chose them, and recognised when it didn't:
 - a badge or a frame around a name that didn't need one;
 - gradients, shadows, glows or textures on the logo itself;
 - three routes that are one idea in three fonts.
-
-## Three routes, three answers
-
-The three routes are three answers, not three versions: each from a different lettering family or
-composition move, each holding the direction, each strong in its own terms. The user should be
-choosing between ideas.

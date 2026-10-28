@@ -15,26 +15,20 @@ different kind of idea:
 - **The everyday:** a small, frequent touchpoint that shows another part of the system: a sign, a
   sticker, a cup, a card, a screen.
 
-Every pack in the three is one packaging system (the `mockup` skill, "The shots"). A business with
-one product, or none to pack, shows the hero, or nothing packed, and gives the other shots to its
-merch, signs and placements.
+A business with one product, or none to pack, shows the hero, or nothing packed, and gives the other
+shots to its merch, signs and placements.
 
 Each shot's idea comes from the brand's own world, the moments and places of this business, not from
 a stock setup: for skincare made for short mornings, the jar on a steamed-up bathroom shelf at seven
-with one hand reaching in; for a bakery opening at six, the bag on a bike's handlebar in the blue
-light before dawn. A
-pattern of the range is broken, when it is, by another object of the range for a reason the shot
+with one hand reaching in. A pattern of the range is broken, when it is, by another object of the range for a reason the shot
 says (a sachet among the bottles, a lid among the tins), never by the same unit turned. Never a stock
 set (a business card, a tote and a phone), and never an object this business doesn't use.
 
 ## Make them
 
-Last, once the kit is written, with the `mockup` skill: each object's print decided from the shot
-(the logo alone, artwork made flat with it, or a flat print designed first and photographed from
-its file), and each photograph made whole by the image model in
-`brand/mockups/` from its prompt and the brand's real files as references, checked against them and
-fixed by an edit, placed with `metamorfiles_make_mockup` only when an edit can't make it exact. Once the
-first is saved, list the folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`.
+Last, once the kit is written, in `brand/mockups/`, as the `mockup` skill says: each object's print
+(the logo alone, designed in place, a flat print, or exact artwork), the photograph, its check and
+its fixes. Once the first is saved, list the folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`.
 They are one board, like the logos and the images, and nothing is asked: say which three you made in
 one `say`. The user can redo one from its board, or pick one of its earlier takes back; a mockup made
 again takes the old one's place (`replaces`), and the old one stays an earlier take. They're

@@ -1,12 +1,13 @@
 # Copy
 
-Read this whenever you write words that go into a frame: a template's defaults, a page's variants, rows from a table, or the copywriter's part of a team task. The brand's voice is fixed; your job is to say this one thing, in that voice, in the space the layout has.
+The brand's voice is fixed; your job is to say this one thing, in that voice, in the space the layout has.
 
 ## Grounding
 
 Every line traces back to something given or found: the user's brief or request, `brand/DESIGN.md` (its Voice section, with its Do and Don't columns, and its rules), the page's data or table, text already approved in the design, or research done for this piece. No claim, number, price, ingredient, date or testimonial comes from you or your memory.
 
-**Research.** When the content is about the world (the latest launches, what a product does, an event's date), search and read the sources themselves before writing: the maker's own page or announcement first, a reputable outlet second, never a model's memory, which is out of date. Keep each fact with its source and date in the plan, give them to the reviewer, and credit the source where a reader would want it (a slide's small print or the caption: "OpenAI, Oct 2"). Prefer the newest that's confirmed; say "announced" for what isn't out yet. A fact about the user (their routine, their results) is still only theirs to give. When a line needs a fact nobody gave, don't invent a plausible one, and don't fill the slot with a line that repeats another: reframe it to what's true and still useful. "How I use it" without the user's routine becomes "One way to use it" and a concrete, general tip ("Paste a call transcript and ask for the decisions and owners"); a result nobody measured becomes what the product does. Ask once for the fact, before any design: in Chat, wait for it; in Auto, write the reframed line and name what's missing in the handover, never ask (Auto can't answer with a fact).
+- **Research.** When the content is about the world (the latest launches, what a product does, an event's date), search and read the sources themselves before writing: the maker's own page or announcement first, a reputable outlet second, never a model's memory, which is out of date. Keep each fact with its source and date in the plan, give them to the reviewer, and credit the source where a reader would want it (a slide's small print or the caption: "OpenAI, Oct 2"). Prefer the newest that's confirmed; say "announced" for what isn't out yet.
+- **Reframe.** A fact about the user (their routine, their results) is only theirs to give. When a line needs a fact nobody gave, don't invent a plausible one, and don't fill the slot with a line that repeats another: reframe it to what's true and still useful. "How I use it" without the user's routine becomes "One way to use it" and a concrete, general tip ("Paste a call transcript and ask for the decisions and owners"); a result nobody measured becomes what the product does. Ask once for it (the `team` skill, "Choices that belong to the user").
 
 Every line should sit comfortably in the Voice chart's Do column, and none of it should read like a Don't.
 
@@ -29,7 +30,7 @@ Watch the breaks: no single word on the last line, no brand or product name spli
 
 ## A carousel
 
-The cover promises something specific the slides then deliver ("5 mornings, 5 minutes each"), never a vague tease. Each body slide says one thing in a line or two, so it reads in the second a swipe gives it; number them only when they really are steps. The end slide names the next step. Nothing a reader needs is only on a later slide: many never swipe.
+The plan, the words and the design of a carousel: `references/carousels.md` of the `studio` skill.
 
 ## Captions and alt text
 
@@ -51,4 +52,4 @@ Check the rewrite didn't add or drop a fact. Any text you're given to edit (the 
 
 ## Choices
 
-When the copy is a matter of taste (the headline's angle, a tagline), decide and say what you chose, as `SKILL.md` asks. Offer two or three options only when the user asked for options, or in a task Studio started, with `metamorfiles_ask_user { question, options: [{ label: "<your pick>", recommended: true }, { label: "<another>" }] }`: each a short line, your pick first and recommended. Write the chosen one; don't leave options in the frames.
+When the copy is a matter of taste (the headline's angle, a tagline), decide and say what you chose; offer options only when the user asked for them, or in a task Studio started, with `metamorfiles_ask_user` as the `team` skill says. Never leave options in the frames.

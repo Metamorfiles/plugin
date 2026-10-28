@@ -1,16 +1,16 @@
 # Poses and expressions
 
-A single new drawing of the character for the brand's files: a pose for a sticker, a bust for the
-small mark. Every scene of it in a post is an image, made from the character sheet
-(`references/sheet.md`). A new drawing stays on model when it starts from the sheet, repeats the
-character's identity word for word, and states its own pose, head angle and expression.
+A single new drawing of the character for the brand's files, such as a pose for a sticker (the small
+mark is made as step 8 of the `logo` skill says). Every scene of it in a post is an image, made from the character sheet
+(`references/sheet.md`). A new drawing stays on model when it starts from the sheet, repeats its
+Character lines word for word, and states its own pose, head angle and expression.
 
-## The identity block
+## The Character lines
 
-Write it once from the brief, a short paragraph of what never changes: who it is, the one feature
+Written once from the brief (`SKILL.md`, step 1), what never changes: who it is, the one feature
 that makes it itself, how its face is made (the shape of its eyes and pupils, its brows, its mouth,
-a fang or a gap), the markings, its palette, the style. Never an expression or a head angle: those
-are each drawing's own, and a fixed one makes every drawing the same face. Paste it unchanged
+a fang or a gap), the markings, its palette, its look (line, fill and rendering). Never an expression or a head angle: those
+are each drawing's own, and a fixed one makes every drawing the same face. Paste them unchanged
 into every prompt for this character, with no rewording. A synonym is a different instruction.
 
 ## A new pose
@@ -21,7 +21,7 @@ A new drawing of the character, with the sheet attached first in `references`:
 ```
 Image 1 is the reference sheet of the character from every side: draw exactly one of it, in a new
 pose, the same character in every way.
-Who it is: <the identity block>.
+Who it is: <the Character lines>.
 Nothing about it changes; nothing added to hold or do anything.
 The pose: <the pose, in one sentence: what it does, where its limbs are, which way it and its head face>.
 Alone on a transparent background, flat colours only, no letters, no ground line or shadow.
@@ -29,7 +29,7 @@ Alone on a transparent background, flat colours only, no letters, no ground line
 
 Draw it anew rather than editing image 1. An edit keeps what is already in the image, so the head
 stays at its old angle and size while a new body is painted under it, and the pose looks pasted
-together. A new drawing lets the head turn and the body move, and image 1 with the identity block
+together. A new drawing lets the head turn and the body move, and image 1 with the Character lines
 keeps it the same character. Edit (`edit: true`, the image to change first in `references`, the
 prompt starting "Edit image 1:", then what stays exactly as it is) only for a change that keeps the
 pose: an expression, a prop swapped, a colour fixed.
@@ -60,8 +60,8 @@ under `brand/` with `-` for `/`):
 - no mistakes of the image model (a third arm, a limb bending the wrong way; the list is in
   `references/images.md` of the `studio` skill).
 
-A drawing that drifted is drawn again from the sheet, with the drifted part named in its "Keep
-exactly" line. The user should never be the one to find it.
+A drawing that drifted is drawn again from the sheet, with the drifted part named in its "Nothing
+about it changes" line.
 
 ## Files
 

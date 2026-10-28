@@ -55,8 +55,6 @@ anything that isn't a list of what needs them.
 
 ## What this message never contains
 
-- Hex values, contrast ratios, pixel sizes or token names. They are on the board and in DESIGN.md.
-- A report of what you ran: checks, the linter, renders, file writes, tool names.
 - A list of everything marked `proposed`. Name the few that would surprise them; the Sources table
   is the complete record and it is one file away.
 - A menu of approvals, or a question to close with. The work is done; the offer is enough.

@@ -1,10 +1,13 @@
 # Fonts
 
-Type carries most of a new brand's personality, so it is chosen for the idea, never by habit. Use
-only fonts under the SIL Open Font License, which allows logos, embedding in images and outlining
-the letters. Every family here is on Google Fonts under that licence. Other free fonts often forbid
-converting the files or offering them in a design tool, so leave them out unless the user brings
-their own licensed files.
+Type carries most of a new brand's personality, so it is chosen for the idea, never by habit.
+`add_font` takes only OFL Google Fonts families; a user's own licensed files are the exception.
+
+## Contents
+- Getting the files
+- Choosing
+- Overused
+- By character
 
 ## Getting the files
 
@@ -15,8 +18,8 @@ their own licensed files.
 - Add a family with `metamorfiles_add_font { family: "Fraunces", italic: true }`, by its Google Fonts
   name, with `italic` only when the design uses the italic.
 - It writes complete WOFF2 files to `brand/fonts/`, one per style for a variable family and one per
-  weight for a static one. It returns the `@font-face` rules for a template.
-- Never download, subset or copy font files yourself. The tool refuses a family that isn't OFL.
+  weight for a static one (such as `brand/fonts/Anton-400.woff2`). It returns the `@font-face` rules for a template.
+- Never download, subset or copy font files yourself.
 - The render's font check says when a glyph falls back, so check the name, the place and the
   headline in the brief's language.
 
@@ -28,14 +31,11 @@ their own licensed files.
 - Start from one family. Try its weights, widths, case and tracking first. Add a second face only
   for a job the first can't do: a display face for headlines, a workhorse for everything that
   informs, or a mono for data. Two faces at most.
-- Pair faces that share a skeleton and differ in flesh, or contrast them on purpose. Never pair two
-  faces that compete in contrast, width or personality.
-- Pair the expressive with the plain: a display face with character over a quiet text face.
 - The direction step's options differ in type logic (`look.md`), so they never share a family.
 
 ## Overused
 
-These are the most used families on Google Fonts, and the faces AI tools default to. A direction
+These are the faces AI tools default to. A direction
 uses one only when the idea needs it, and says why on its board:
 
 Inter, Montserrat, Poppins, Roboto, Open Sans, Lato, DM Sans, Nunito, Playfair Display, Manrope,
@@ -45,11 +45,9 @@ Bebas Neue, Anton.
 
 ## By character
 
-The number is the family's rank by use on Google Fonts, when it matters: higher is rarer.
-
 **Neutral grotesques**
 - Schibsted Grotesk: sturdy, newspaper-like; serious and editorial brands.
-- Host Grotesk (#404): plain and current; product brands that shouldn't look like Inter.
+- Host Grotesk: plain and current; product brands that shouldn't look like Inter.
 - Mona Sans and Hubot Sans: width axis; engineering and technical brands.
 - Zalando Sans: width axis; one family for a large system.
 - Radio Canada Big: slightly quirky and civic.
@@ -122,7 +120,6 @@ The number is the family's rank by use on Google Fonts, when it matters: higher 
 - Alfa Slab One: a heavy poster slab.
 
 **Inline, shaded and engraved, for signs and wordmarks**
-- Castoro Titling: engraved capitals.
 - Rye and Sancreek: Western wood type with spurs.
 - Ewert: ornamented wood type with a drop shadow.
 - Vast Shadow: a wide slab with a cut shadow.
@@ -143,7 +140,6 @@ These carry their finish inside the face. For a finish on another face, add Stud
 - Noto Serif JP: the neutral serif.
 - Zen Kaku Gothic New: a clean gothic.
 - Zen Maru Gothic: a rounded gothic; friendly and soft.
-- Dela Gothic One: heavy and blunt display.
 
 Japanese files are large, so a type study of them takes minutes: study three to five.
 
@@ -204,25 +200,3 @@ A script is set as the wordmark or one line, never as text.
 - Reenie Beanie: a quick, light hand.
 
 A handwritten face is for a line or a mark, never for text.
-
-## Stand-ins for licensed faces
-
-When translating an existing brand whose face can't be used, use the closest open alternative, never
-the same face. Mark it `proposed` in Sources, name the real face in Known gaps, and never call the
-stand-in by the brand's font's name.
-
-| Licensed face | Open stand-in |
-|---|---|
-| Helvetica, Arial | Arimo (Arial's metrics), or Host Grotesk |
-| Futura | Jost |
-| Gotham, Proxima Nova | Montserrat |
-| Avenir | Nunito Sans |
-| Circular | Albert Sans or Figtree |
-| Franklin Gothic | Libre Franklin |
-| Acumin Pro Condensed, Trade Gothic Condensed | Archivo Narrow or Barlow Condensed |
-| Garamond | EB Garamond |
-| Baskerville | Libre Baskerville |
-| Caslon | Libre Caslon Text |
-| Didot, Bodoni | Bodoni Moda |
-| Times | Tinos (Times's metrics) |
-| Georgia | Gelasio (Georgia's metrics) |

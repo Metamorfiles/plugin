@@ -9,6 +9,23 @@ them. They are never a score to show the user: the user's eye decides.
 
 Each brief adds what is only true of it (`research.md`). These are the floor, not the ceiling.
 
+## Contents
+- 1. One idea, taken from the business's own reality
+- 2. A position on the category's codes
+- 3. An asset only this brand could own
+- 4. A mark with one idea and one anomaly
+- 5. One expressive element, one disciplined partner
+- 6. A device that is the mark's own grammar
+- 7. Colour: one owned signal, rationed and named
+- 8. Type with a job and a feature
+- 9. Imagery with one strict, honest rule
+- 10. Words that only this brand could say
+- 11. The business's own touchpoints, each using the system differently
+- 12. A system someone else can run
+- 13. Craft that looks labored over
+- 14. Fit
+- Levels, and what they mean
+
 ## 1. One idea, taken from the business's own reality
 
 A studio identity starts from one concrete thing the business owns, does or is: its name, material,
@@ -57,11 +74,10 @@ cover the name; one element still says which brand it is.
 
 ## 4. A mark with one idea and one anomaly
 
-The wordmark is the default: the name is already the brand's. It earns character through one small
-anomaly: one changed letter, one glyph, a full stop, a cut. A symbol needs a reason, and then it is
-a member or container of the brand's own device family, simple enough to cut from paper. A second reading may hide in the negative space, as a bonus, never a requirement.
-Marks made from something real (a hand, a print, a tear) keep their imperfections; a drawn imitation
-of them doesn't count.
+The wordmark is the default, with one small anomaly: one changed letter, one glyph, a full stop, a
+cut (the logo's version: `references/taste.md` of the `logo` skill, "The point of view"). A symbol
+belongs to the brand's own device family (principle 6). Marks made from something real (a hand, a
+print, a tear) keep their imperfections; a drawn imitation of them doesn't count.
 
 **Test:** describe the mark after one look. Does it hold in one colour? Is its anomaly
 tied to the idea?
@@ -80,8 +96,9 @@ tied to the idea?
 
 ## 5. One expressive element, one disciplined partner
 
-Studios spend boldness in one place and pair it with something plain, and they say which parts never
-move and which are free.
+Studios spend boldness in one place and pair it with something plain (in the logo:
+`references/taste.md` of the `logo` skill, "The point of view"), and they say which parts never move
+and which are free.
 
 **Test:** point to the one loud thing. Is everything else quieter and exact?
 
@@ -121,8 +138,7 @@ category's colour code avoided or used knowingly?
 - **1:**
   - five or six equal swatches;
   - the category's default palette;
-  - AI defaults: cream, serif and terracotta; indigo-violet; navy and electric blue; beige and
-    sage; black and acid green.
+  - the generated-brand palettes in `look.md`.
 - **3:** a tasteful palette with no signal colour or no reason.
 - **5:** a named signal colour from the business's own world, rationed.
   - `castil`: the RAL powder-coat chart.

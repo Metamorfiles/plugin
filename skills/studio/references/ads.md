@@ -1,6 +1,6 @@
 # Ads
 
-Read before you make an ad or a set of ads. `design.md`, `images.md` and the `copywriting` skill still apply; this is what paid placements add.
+`design.md`, `images.md` and the `copywriting` skill still apply; this is what paid placements add.
 
 ## The set
 
@@ -16,7 +16,7 @@ An ad runs where the platform puts it, so make each placement the user buys, fro
 
 ## The platforms' covered areas
 
-On 9:16 placements Meta keeps about 14% at the top and 35% at the bottom for its own interface, and 6% at each side: nothing that matters there. The story and reel presets carry these zones and the checks name them.
+On 9:16 placements Meta covers part of the top, the bottom and the sides with its own interface: nothing that matters there. The presets carry these zones and the checks name them.
 
 ## Claims
 

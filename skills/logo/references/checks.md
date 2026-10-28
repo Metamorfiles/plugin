@@ -1,7 +1,6 @@
 # Checks
 
-Every route is checked before anyone sees it, and checked again after every fix. The user should
-never be the one to find what fails. Before the choice, a route's letters and its one-colour version
+Every route is checked before anyone sees it, and checked again after every fix. Before the choice, a route's letters and its one-colour version
 count; the reversed version counts after the choice, for the chosen route.
 
 ## The check loop

@@ -7,7 +7,7 @@ that meets the letters (lying on them, tucked under an arch) is drawn onto the s
 model instead (`symbol.md`, "Compose it on the word"). Decide the route's composition first
 (SKILL.md, step 3): what leads, and how the parts meet.
 
-`metamorfiles_compose_logo { layout: "row", align: "baseline", parts: [{ file: "<the mark .svg>", size: 1.3, gap: 0.12 }, { file: "<the wordmark .svg>" }], output: "brand/process/logo/hearth.svg" }`
+`metamorfiles_compose_logo { layout: "row", align: "baseline", parts: [{ file: "<the mark .svg>", size: 1.3, gap: 0.12 }, { file: "<the wordmark .svg>" }], output: "brand/process/logo/lumen.svg" }`
 sets a mark standing on the word's baseline, a little taller than the word. A logo drawn whole
 (route 1) is one part, with its route's supporting words, if any, composed with it.
 
@@ -42,7 +42,7 @@ touches them. `metamorfiles_check_logo` gives each part's stroke weight
 and the thinnest's share of the heaviest: parts drawn in one hand are close to each other's weight.
 
 Every lockup keeps its settings beside it (`<file>.svg.json`); change one thing with
-`metamorfiles_compose_logo { from: "brand/process/logo/hearth.svg", align: "cap", output: "brand/process/logo/hearth.svg" }`.
+`metamorfiles_compose_logo { from: "brand/process/logo/lumen.svg", align: "cap", output: "brand/process/logo/lumen.svg" }`.
 
 ## The set
 

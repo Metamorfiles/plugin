@@ -1,6 +1,6 @@
 ---
 name: review
-description: Use before delivering a new or changed Metamorfiles template, page, repurposed set or brand kit, again after any layout change to one, or when the user asks for a design review. Gets an independent review of the renders against brand/DESIGN.md, with fixes, from a reviewer that didn't make the design.
+description: Gets an independent review of the renders against brand/DESIGN.md, with fixes, from a reviewer that didn't make the design. Use before delivering a new or changed Metamorfiles template, page, repurposed set or brand kit, a new brand's logo, mascot, imagery or mockups, or print artwork; again after any layout change to one; or when the user asks for a design review.
 license: MIT
 ---
 
@@ -23,7 +23,7 @@ Whoever made a design is the worst judge of it. The review looks only at the ren
    - **Anywhere else:** do the review yourself as a separate pass. Judge only the images, the findings and DESIGN.md.
 3. Give the reviewer only this: the project's absolute path, what to review (`pages/<id>` or `templates/<id>`, or in a new brand the queue: `logo`, `character`, `mark`, `imagery` or `handover`), the task id when there is one, the user's brief in one sentence, the task's decisions (what the user answered, and what was picked for them in Auto), and the sources researched for its facts (each fact with its link and date). Don't explain your design choices.
 4. Fix every **must fix**, once, in the piece itself (a page or template with `metamorfiles_write_file` and a `note` such as "Review fixes: phone pinned to the bottom", a new version of the same item, never a copy), and have it looked at again: only what changed waits. A piece looked at twice without passing goes to the user as it is: a step is asked with `cannot`, one plain line on what couldn't be made; a page or template names it in the summary. Act on a suggestion only when it's worth that piece's next look.
-5. Deliver once, as `SKILL.md` of the `studio` skill says: what the review changed in a line, and one question. The user doesn't need the review's list.
+5. Deliver once, as `SKILL.md` of the `studio` skill says: what the review changed in a line, and one question (a brand kit's handover: `references/presenting.md` of the `brand` skill). The user doesn't need the review's list.
 
 ## Rubric
 

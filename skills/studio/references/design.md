@@ -1,6 +1,15 @@
 # Design
 
-Read this whenever you lay out a frame: a new template, a page's formats, a repurposed set, or the designer's part of a team task. It covers layout, type, color, spacing and crops. The brand kit sets the materials; you decide how they're used in this frame. A social image gets about a second in a feed, so every choice serves what the reader takes in during that second. The contract (`SKILL.md`) says what the HTML must be; this says how to make it good.
+The brand kit sets the materials; you decide how they're used in this frame. A social image gets about a second in a feed, so every choice serves what the reader takes in during that second. The contract (`references/contract.md`) says what the HTML must be; this says how to make it good.
+
+## Contents
+- Before you touch anything
+- Where a change goes
+- Judge with the render, not the code
+- Taste
+- The composition
+- A carousel
+- Done
 
 ## Before you touch anything
 
@@ -22,13 +31,10 @@ Fix at the widest level the problem really has. A headline that overflows in eve
 After each change, render the frames you changed and look at them the way a reader would:
 
 - **At a glance**: shrink the image in your mind to a phone in a feed. The first thing you notice should be the thing the reading path starts with, and the rest should follow in order.
-- **Grouping**: a price belongs to its product, a name to its title. Distance says what belongs together, so the space inside a group is clearly smaller than the space between groups.
-- **Spacing**: a few steps from the brand's spacing scale, used on purpose. One identical gap everywhere reads as unplanned.
 - **Type**: sizes and weights from DESIGN.md's type roles, with a visible step between levels. If a line needs a size no role has, the layout is asking for too much.
-- **The hardest variant**: check the one with the longest copy and the busiest image. A layout that only works with the default copy isn't done.
-- **Edges**: elements share alignment lines and the margins match. The safe margin and what each platform covers are the contract's rules (Layout rules in `SKILL.md`), and the checks enforce both.
+- **Edges**: elements share alignment lines and the margins match. The safe margin and what each platform covers are the contract's rules (`references/contract.md`, "Layout rules"), and the checks enforce both.
 - **Text**: headlines use `text-wrap: balance`, and no text touches an edge or runs into the logo.
-- **Photos**: `object-fit: cover` with an `object-position` chosen for this subject, checked in every format that shows it.
+- **Photos**: an `object-position` chosen for this subject, checked in every format that shows it.
 
 ## Taste
 
@@ -58,28 +64,15 @@ card with new words. Ideas come in kinds, and three ideas of one kind are one id
 - the object itself, alone and large, when it is the news;
 - the empty frame: one small subject in a lot of space, when the point is calm or absence.
 
-**What composition does**, so you can choose by the effect you need:
-- one focal point, the strongest by size, contrast or isolation; everything else quieter;
-- contrast of scale and weight makes the order of reading; even sizes make none;
-- tension: a crop by the frame's edge, a diagonal, a subject entering the frame, against the calm of a
-  centred, framed subject;
-- empty space is a shape, placed where the eye should rest or the words should go;
-- a gaze, a gesture or a line leads the eye, so point it at the words;
-- symmetry reads calm and formal, asymmetry reads alive;
-- in a sequence, rhythm: the same grid and type roles on every frame, and what is big, the crop and
-  figure and ground changing with what each frame does.
-The brand's direction and the brief choose among them; none is a default.
-
 **Choose the idea yourself.** Weigh two or three ideas of different kinds in your notes and keep the
-strongest for this frame, this brand and what it says. The user sees finished work, never a wireframe
-or a choice between empty layouts; a note from them about the look is a rethink of the idea. In a
-carousel the slides share one system: the grid and type roles stay, and what is big, the crop and
-figure and ground change with each slide's idea.
+strongest for this frame, this brand and what it says; the brand's direction and the brief choose
+among the kinds, and none is a default. The user sees finished work, never a wireframe or a choice
+between empty layouts; a note from them about the look is a rethink of the idea. A carousel's slides:
+`references/carousels.md`.
 
 **The composition decides the image.** The image is made for its slot, and its prompt's Scene is the
 composition line's picture, word for word: where the subject is, its scale, its crop, which way it
-faces and what stays empty (`references/images.md`, "The prompt"). A picture picked from `brand/refs/`
-because it's there is a stock photo of your own brand.
+faces and what stays empty (`references/images.md`, "The prompt").
 
 - **Three modes that never collide.** A character or product is a **cutout** (a transparent image),
   placed and scaled by the layout: it can run off the frame, sit huge, or overlap the headline on
@@ -98,10 +91,8 @@ because it's there is a stock photo of your own brand.
 
 ## A carousel
 
-- **One system, read as a swipe.** Every slide keeps the same margins, grid and type roles, so the eye finds the text in the same place each time. Judge the slides side by side in the panel, as a reader swipes them, not one at a time.
-- **The cover is the loud one.** It has to stop the scroll on its own in the feed; body slides are quieter and carry one idea each; the end slide carries the action and the logo.
-- **Across a seam**, only the spanning layer (`data-span`) crosses: an image or a shape that continues into the next slide invites the swipe. Text never crosses a seam, since each slide is cut there.
+The slides' shared system, the cover, the end and the seams: `references/carousels.md`.
 
 ## Done
 
-Every frame you changed renders with no check error, every **must fix** for your frames is solved, and what worked still works. Then the review your workflow asks for.
+Every frame you changed renders with no check error, every **must fix** for your frames is solved, and what worked still works. Then the review your skill asks for.

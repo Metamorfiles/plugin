@@ -21,8 +21,3 @@ direction and the category decide what the piece is.
 - **Flat boxes of colour with type on them,** where the category carries pictures: the artwork was
   built in markup alone. Paint the picture.
 - **The logo alone on a field of colour** on an object printed all over in real life.
-- **Words drawn by the image model:** letters warp and change. Every word is set in step 3.
-- **A picture with no room for the type,** and boxes laid under the words to save it: paint the
-  picture again with calm zones.
-- **A different style from the brand's imagery:** a glossy 3D scene on a brand drawn in flat
-  sticker shapes, in the brand's image contract (`brand/imagery-guide.md`).

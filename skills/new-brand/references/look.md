@@ -23,7 +23,7 @@ Each direction comes with a pairing, and the pairings differ too:
   wherever a sentence names it; the logo's lettering is made on the logo step (the `logo` skill).
 - Choose the faces from `fonts.md`, by what the direction needs. Add each with
   `metamorfiles_add_font { family: "Fraunces" }` before you write the option, and give the option
-  the file it returned (a static family has one per weight, such as `brand/fonts/Anton-400.woff2`).
+  the file it returned.
 - **Every face covers the languages the brand writes in.** A business in Seoul posts in Korean, one in
   Athens in Greek: each face has those letters, or the pairing names the face that sets them (a
   Korean face beside a Latin display face, sized to sit together). Set the option's `sample` in that
