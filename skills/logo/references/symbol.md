@@ -30,7 +30,7 @@ Only the drawing: no letters, words or numbers, no frame, no shadow, no gradient
 - List every colour it uses in `trace`, the light ones inside it too:
   `metamorfiles_generate_image { prompt, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
   The path it returns is the traced .svg.
-- Follow the image model's own file of the `studio` skill (`references/images.md` names it).
+- Follow the image model's own file, which `references/images.md` of the `studio` skill names.
 
 ## Compose it on the word
 

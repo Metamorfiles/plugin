@@ -4,6 +4,15 @@ Read this for the imagery step of `SKILL.md`, after `images.md` of the `studio` 
 holds how to prompt each image model. This file is what a new brand's imagery needs on top: a
 locked style, anchors the user approves, and a library grown from them.
 
+## Contents
+- The mode
+- The style block
+- Seeds, then anchors
+- Check every image before anyone sees it
+- The library
+- A character
+- In the kit
+
 ## The mode
 
 Decide it from the chosen direction and the brief, and say it in the thread:
@@ -24,8 +33,8 @@ every mode: a locked style, seeds the user approves, and a library grown from th
 
 One paragraph, written once and pasted unchanged after every scene, so every image is drawn by the
 same hand. Describe the look the way an art director briefs an illustrator, in what it is ("flat
-cut-paper shapes in a few colours, little or no shading"), not as a list of bans: a model draws
-what it reads, and a ban names the very thing it then draws. The reviewer reads it the same way, as
+cut-paper shapes in a few colours, little or no shading"), not as a list of bans
+(`images.md` of the `studio` skill, "The prompt"). The reviewer reads it the same way, as
 a look to recognise, not rules to count.
 - **For illustration:** the line (its weight as a share of the width, caps, how loose), the fills
   (flat, plus a material colour such as wood when the drawings need one), how much light and texture
@@ -57,9 +66,9 @@ a look to recognise, not rules to count.
    direction's paper for drawings on a flat paper field, so they already sit on it (a photograph
    takes no `ground`); collect each with `metamorfiles_image_status { id }`. The step's
    frame fills as each arrives.
-2. Each seed is one option of the imagery step, titled by what it shows ("The knit close-up"). The
-   user uses them all, or has single ones redone or edited first ("Redo the knit close-up", "Edit
-   the knit close-up …: warmer light").
+2. Each seed is one option of the imagery step, titled by what it shows ("The serum close-up"). The
+   user uses them all, or has single ones redone or edited first ("Redo the serum close-up", "Edit
+   the serum close-up …: warmer light").
 3. Redo a rejected seed from the ones the user liked, passed as references, never from the rejected
    one; a seed with the character is redone from the character sheet, never from another seed, since
    a seed copied as a reference brings its head and face with it. Say what to keep ("the same composition") and what to change ("fewer, bolder lines"). The
@@ -75,10 +84,8 @@ a look to recognise, not rules to count.
 ## Check every image before anyone sees it
 
 Look at each image at full size, and redo it from the anchors when it shows any of the mistakes
-image models make (the list is in `images.md` of the `studio` skill, under Check): a cup with
-two handles, a hand with six fingers, a limb that bends the wrong way, a warped object, garbled
-letters, a stray figure in the background. The user should never be the one to find it. When they
-do, the redo comes before anything else. After your own look, the reviewer checks the seeds before
+image models make (the list is in `images.md` of the `studio` skill, under Check). When the user
+finds one, the redo comes before anything else. After your own look, the reviewer checks the seeds before
 they're asked, and the library in the `handover` queue (`SKILL.md`, "Reviewed before the user sees
 it").
 
@@ -103,11 +110,11 @@ A brand whose imagery is a character designs it with the `character` skill: its 
 and its look, candidates drawn alone and traced, one anchor the user approves, and right after,
 its character sheet (`references/sheet.md` of the `character` skill), drawn before any seed. Its
 seeds on this step are the character in the brand's moments, each made from the sheet, and every
-image of it, seeds and library alike, carries its Character lines (who it is, the one thing that
-makes it itself, how its face is made, its palette, that nothing about it changes) with the sheet first in the references,
-so the model adds nothing a pose seems to need and paints no part another colour. List its folder in
-`assets` with `kind: character`, its `note` holding those lines, and write them into the imagery
-guide.
+image of it, seeds and library alike, carries its Character lines (`SKILL.md` of the `character`
+skill, step 1) with the sheet first in the references, so the model adds nothing a pose seems to
+need and paints no part another colour. A character scene's Style line takes the style block; the
+character's own look is in its Character lines. List its folder in `assets` with `kind: character`,
+its `note` holding those lines, and write them into the imagery guide.
 
 ## In the kit
 
@@ -116,9 +123,7 @@ guide.
 - `brand/imagery-guide.md` is the brand's image contract, which every later image reads first
   (`images.md` of the `studio` skill). Write it with these sections, in this order:
   - **Style:** the style block, word for word as the seeds used it.
-  - **Character** (a character brand): the character's lines from its brief: who it is, the one
-    thing that makes it itself, how its face is made, its palette, its look, and that nothing about
-    it changes, word for word.
+  - **Character** (a character brand): its Character lines, word for word.
   - **Colour roles:** each colour's hex and what it paints in a scene; the accent's role (light, the
     scene's own props), never on the character, never a count.
   - **Writing a scene:** one or two example scenes in the brand's words, subject first.

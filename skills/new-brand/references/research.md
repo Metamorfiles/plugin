@@ -47,14 +47,14 @@ research:
   ```markdown
   ## The category's codes
 
-  Bakeries in the old town.
+  Skincare for busy mornings.
 
   What the category always does, and this brand avoids:
-  - wheat sheaves and rolling pins in the mark
-  - kraft brown on everything
+  - a woman's profile and flowing scripts in the mark
+  - blush pink with gold, and marble
 
   What it keeps, because it earns trust:
-  - the hours on the door, large: people plan around them
+  - the ingredients listed plainly on the pack: people check them
   ```
 
 | Category | Codes to avoid by default |
@@ -89,7 +89,7 @@ They decide what the kit shows the brand on (`mockups.md`) and which templates c
 ## Where ideas come from
 
 A direction starts from something only this business has, never from a mood. "Warm and modern" gives
-nothing to draw from; "the hour the first batch comes out is the brand's number" does.
+nothing to draw from; "the two minutes of a morning routine are the brand's number" does.
 
 | Source | Look for | It becomes |
 |---|---|---|
@@ -112,8 +112,8 @@ search for it:
 ```markdown
 ## Paths
 
-1. **Morning batch:** the hour the first loaves come out as the brand's number; avoids beige
-   minimalism. Search: bakery poster.
+1. **Morning shelf:** the two-minute morning routine as the brand's number; avoids blush pink with
+   gold. Search: skincare packaging.
 ```
 
 A path is a guess the research tests: one that finds nothing good changes or gives way to a better
@@ -123,13 +123,13 @@ one the references show, and its line in the brief changes with it.
 
 Designers start from the best of what exists, the way they browse it, one hunt for each path:
 - **Search** Studio's index of the design press (BP&O's reviews, logos and collections, Identity
-  Designed) with `metamorfiles_search_references { query: "bakery packaging" }`, in the words those
+  Designed) with `metamorfiles_search_references { query: "skincare packaging" }`, in the words those
   sites file work under: the kind of business with the kind of work (packaging, mascot, lettering,
   signage, menu), a colour or a place. It returns the best matches' covers, numbered on one sheet; a
   search that finds nothing lists the words to use instead.
 - **Choose from the covers** the three projects worth opening, genuinely good whatever their
   category, and pass their links with the path's name as
-  `metamorfiles_collect_references { links: [...], path: "Morning batch" }`, which keeps about eight
+  `metamorfiles_collect_references { links: [...], path: "Morning shelf" }`, which keeps about eight
   images of each (the logo, lettering, mascot and palette pages come with them). Links the user
   pasted come first, with no path: they are their taste.
 - `metamorfiles_look_at_page { url: "https://..." }` shows a single page when you need to read one

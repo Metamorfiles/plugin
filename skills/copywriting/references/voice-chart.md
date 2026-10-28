@@ -2,13 +2,11 @@
 
 The examples below come from Lumen Skincare, Studio's fictional example brand.
 
-`## Voice` in DESIGN.md is a chart, not a paragraph. A paragraph describes a voice; a chart is
-something a template can write to, and something the reviewer can hold a headline against.
+`## Voice` in DESIGN.md is a chart, not a paragraph.
 
 ## Shape
 
-Three concepts. Not two, not six — three is enough to steer a writer and few enough to remember.
-Each one is a real principle of this brand, named in a single word or two.
+Three concepts, each a real principle of this brand in a word or two.
 
 ```md
 ## Voice
@@ -59,13 +57,6 @@ place.
 | Ad | Shorter still. One claim, one price. |
 | Night range | Quieter. Fewer words, lower light. |
 ```
-
-## What it is for
-
-Every template that writes copy checks its headline and its call to action against the chart before
-rendering. The reviewer does the same. A kit whose Voice section is prose gives them nothing to
-check, which is how templates end up writing "Elevate your workflow" over a brand that never once
-said "elevate".
 
 ## When a brand has no copy to quote
 

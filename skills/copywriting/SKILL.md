@@ -1,6 +1,6 @@
 ---
 name: copywriting
-description: Use to write the words a brand says in Metamorfiles Studio, as its copywriter. Covers the prose of a brand's DESIGN.md written as a real brand guideline (Overview, Colors, Typography, Logo, Imagery), its Voice chart and Messaging, and the copy of templates, pages, posts, carousels, captions and alt text. Use whenever a brand kit is written or changed, a piece needs words, or the user asks for headlines, captions, a tagline, product names or brand words, even if they only say "write it" or "fix the text".
+description: Writes the words a brand says in Metamorfiles Studio, as its copywriter: the prose of a brand's DESIGN.md written as a real brand guideline (Overview, Colors, Typography, Logo, Imagery), its Voice chart and Messaging, and the copy of templates, pages, posts, carousels, captions and alt text. Use whenever a brand kit is written or changed, a piece needs words, or the user asks for headlines, captions, a tagline, product names or brand words, even if they only say "write it" or "fix the text".
 license: MIT
 ---
 

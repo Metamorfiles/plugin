@@ -24,7 +24,7 @@ what it has, as its brief says.
 
 ## The prompt
 
-The anchor first, the prompt in the labelled parts of `references/images.md` of the `metamorfiles`
+The anchor first, the prompt in the labelled parts of `references/images.md` of the `studio`
 skill:
 
 ```
@@ -35,8 +35,8 @@ figures of the same <name> at the same scale on one shared ground line, evenly s
 Top row, with <name>'s resting face as in image 1: front; three-quarter facing left; side profile facing left; back.
 Bottom row: walking mid-stride; sitting, holding a small cup in both hands; arms up, cheering, mouth
 open; thinking, one hand on the chin, sceptical.
-<name>: <the brief's lines: who it is, the one thing that makes it itself, how its face is made, its palette>; nothing about <name> changes.
-Style: <the character's style paragraph>.
+<name>: <its Character lines>; nothing about <name> changes.
+Style: <the style block>.
 Constraints: <name>'s colours and proportions never change between figures; exactly eight figures;
 nothing added that a pose seems to need; no text.
 ```

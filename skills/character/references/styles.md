@@ -1,7 +1,7 @@
 # Styles and the prompt
 
 One rendering per character, from the chosen direction and from what the character needs, written
-once as a paragraph that is pasted unchanged into every prompt. A figure with limbs and a face reads
+once as its style block, a paragraph pasted unchanged into every prompt. A figure with limbs and a face reads
 through an outline, and goes to one colour as line art; flat shapes with inner colours suit
 a simple, chunky body. Each style traces cleanly because it is flat: no gradient, shading or
 texture.
@@ -14,7 +14,7 @@ open shapes, no fill.
 
 Trace colours: the line colour only.
 
-**Solid silhouette.** One flat shape in one colour, for a faceless figure that reads by its outline
+**Solid silhouette.** One flat shape in one colour, cut-paper or stencil-like, for a faceless figure that reads by its outline
 alone (a running fox, a leaping fish). A face cut into a silhouette as holes reads as a mask, so a
 character with a face takes another style.
 > One solid flat shape in a single colour, its pose readable from the outline alone; smooth edges,
@@ -30,12 +30,19 @@ the darkest; no outlines.
 Trace colours: every colour, the light ones inside it too.
 
 **Thick outline with flat fills.** A heavy even outline in the darkest colour around flat fills, like
-a sticker or a cartoon.
+a sticker (often with a thick white sticker edge) or a cartoon.
 > A heavy, even outline in <ink> around flat fills of <colours>, round joins; no inner shading.
 
 Trace colours: the outline colour and every fill.
 
-Others are possible when the direction asks for them. A style anchor can sharpen the look, one at most: "in the manner of a 1930s rubber-hose cartoon", "a
+Other families seen in strong work, when the direction asks for one:
+- **Rubber-hose cartoon:** an even black line, solid black and white fills, gloves or sneakers,
+  bendy limbs, a white sticker outline.
+- **Loose line doodle:** one wobbly line, a tiny face, almost a scribble.
+- **Engraving:** hatching that follows the form, one ink, for heritage; drawn coarse enough to trace.
+- **Children's-book ink:** a loose pen line, some solid fills, a warm, ordinary person.
+
+A style anchor can sharpen the look, one at most: "in the manner of a 1930s rubber-hose cartoon", "a
 mid-century flat illustration", "a Japanese mascot, round and soft". Never name a living artist or a
 brand's mascot.
 
@@ -46,7 +53,7 @@ Draw one character on a transparent background, alone, centred, with space aroun
 Who: <the brief: who it is, what it's like, the one thing that makes it itself, in two or three sentences>.
 Face: <its expression in three to five concrete terms from its attitude: the lids, the brows, where it looks, the mouth, one thing uneven>.
 Doing: <one gesture with this business's own object, smaller than the character; no scene around it>.
-Look: <the rendering paragraph>.
+Look: <the style block>.
 Palette: <the brand's colours as hex, each with its job: the body in the product's own colour, the features in the ink>, flat.
 Only the character: no letters, words or numbers, no ground line or shadow, no frame, no scenery.
 ```
@@ -62,7 +69,7 @@ Only the character: no letters, words or numbers, no ground line or shadow, no f
   reference: take its drawing hand and line weight; never copy its character, pose or layout").
   Never a wordmark set in type while the character is explored, unless it is a new brand's chosen
   logo (`SKILL.md`, "In a new brand"): the first image is the one the model keeps most, and a
-  typeface isn't a drawing hand. With no such reference, the Look paragraph carries the
+  typeface isn't a drawing hand. With no such reference, the style block carries the
   hand alone. Once kept for a logo, it is drawn onto the set word (`references/symbol.md` of
   the `logo` skill, "Compose it on the word").
 - Draw it at `width: 1024, height: 1024` with `trace: { colors: [...] }` listing the style's trace
@@ -70,4 +77,4 @@ Only the character: no letters, words or numbers, no ground line or shadow, no f
   on a transparent background (its own file says so) gets "on a plain flat field of <the paper's
   hex>" in place of the first line's transparent background, and `ground: "<the paper's hex>"` in
   the call, so the trace leaves the field out.
-- Follow the image model's own file of the `studio` skill (`references/images.md` names it).
+- Follow the image model's own file, which `references/images.md` of the `studio` skill names.

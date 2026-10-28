@@ -22,10 +22,8 @@ becomes part of the brand until you add it.
 
 A brand usually has a face for its logo, one for headlines and one for text. The logo's face is
 chosen for the one word it sets, so it can be louder than anything the brand sets as text. Add it
-with `metamorfiles_add_font { family: "Fraunces" }`: the file it returns (`brand/fonts/Fraunces.woff2`,
-or `brand/fonts/Anton-400.woff2` for a face with one file per weight) is the `font` the name is set
-from. In the kit it is named for the logo. Only faces under the SIL Open Font
-License, which allows logos and outlining the letters; the tool refuses any other.
+with `metamorfiles_add_font { family: "Fraunces" }`: the file it returns is the `font` the name is
+set from. In the kit it is named for the logo.
 
 ## Setting the name
 

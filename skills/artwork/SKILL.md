@@ -1,6 +1,6 @@
 ---
 name: artwork
-description: Use to make artwork in Metamorfiles Studio: print and packaging to print for real with the logo on it (a can's wrap, a box's face, a label, a poster, merch with the logo), branded artwork without the logo (a stylised mascot or logo for a T-shirt, new mascot poses, a branded pattern) and free artwork in the brand's drawing style alone (a one-colour print, a themed piece). The image model paints the picture and Studio sets the real logo and type exactly, so nothing reads as drawn in code. Use it whenever an object's printed face or a piece of art is designed, even if the user only says "a label", "the packaging" or "a shirt design".
+description: Makes artwork in Metamorfiles Studio: print and packaging to print for real with the logo on it (a can's wrap, a box's face, a label, a poster, merch with the logo), branded artwork without the logo (a stylised mascot or logo for a T-shirt, new mascot poses, a branded pattern) and free artwork in the brand's drawing style alone (a one-colour print, a themed piece). The image model paints the picture and Studio sets the real logo and type exactly, so nothing reads as drawn in code. Use whenever an object's printed face or a piece of art is designed, even if the user only says "a label", "the packaging" or "a shirt design".
 license: MIT
 ---
 
@@ -22,18 +22,16 @@ draws a letter or the logo, and the picture is never a CSS gradient.
 | **Free** | a one-colour print, a themed piece (a Halloween poster) in the brand's drawing style | made whole from the style alone |
 
 **Branded:**
-`metamorfiles_generate_image { prompt, width: 2400, height: 2400, references: ["<the character's anchor>", "templates/brand-board#<library folder>"], name: "mascot-tee" }`:
-the character's anchor first when it appears, its lines from `brand/imagery-guide.md` in the prompt
-(the `character` skill), the library's sheet for the style, the logo file as a reference for a
-stylised version of it, and the brand's colours named. Its words, when it has any, are set in a
-template as below.
+`metamorfiles_generate_image { prompt, width: 2400, height: 2400, references: ["<the character sheet>", "templates/brand-board#<library folder>"], name: "mascot-tee" }`,
+written as `references/images.md` of the `studio` skill says (the character sheet first when it
+appears), with the logo file as a reference for a stylised version of it and the brand's colours
+named. Its words, when it has any, are set in a template as below.
 
 **Free:** the same call with the library's sheet alone, named "only its style, never its subjects or
 colours", and the piece's own colours (one ink for a one-colour print). No brand colours or logo
 unless the user asks.
 
-Either one printed in flat colour (screen print, cut vinyl, apparel) is traced as it's made, with
-`trace` and `inks` ("Vector versions" in `references/images.md` of the `studio` skill).
+Printed in flat colour: traced as step 2 says.
 
 ## With the logo
 
@@ -42,20 +40,19 @@ Either one printed in flat colour (screen print, cut vinyl, apparel) is traced a
 - [ ] 2. The picture painted by the image model, with calm room for the type
 - [ ] 3. Composed: the picture full bleed, the real logo and type on it
 - [ ] 4. Checked flat, as a printed piece, then reviewed
-- [ ] 5. A template to print
+- [ ] 5. For a mockup: handed to the `mockup` skill
 ```
 
 ### 1. Plan the piece
 
-Before any image, decide, as a packaging designer would, in your notes:
+Read [references/taste.md](references/taste.md) before planning the piece. Before any image,
+decide, as a packaging designer would, in your notes:
 
 - **The face.** Its real proportions: a can's full wrap, a box's dieline, a label's shape, at its
   printed size.
 - **The category's codes.** How packaging in this category looks on a shelf, and which code the
-  brand keeps or breaks (the brief's research, `references/research.md` of
-  the `new-brand` skill). Craft drinks wear full illustration; skincare leans on type and
-  space; snacks on bold colour and appetite. The picture's kind follows: an illustration, a repeat
-  pattern, a scene, or a photograph.
+  brand keeps or breaks (the brief's research, `references/research.md` of the `new-brand` skill).
+  The picture's kind follows: an illustration, a repeat pattern, a scene, or a photograph.
 - **The hierarchy,** read from a shelf or across a room: the brand, then what the product is (its
   name, flavour or variant), then one descriptor line, then the small print. One hero.
 - **The zones.** Where the logo and the words sit, and where the picture has the stage. Write them
@@ -64,35 +61,32 @@ Before any image, decide, as a packaging designer would, in your notes:
 ### 2. The picture
 
 Generate it with
-`metamorfiles_generate_image { prompt, width: 2400, height: 1000, references: ["templates/brand-board#<library folder>"], name: "can-wrap" }`, written as `images.md` of the `studio` skill says ("The prompt": the brand's image contract, and the character first when it appears).
+`metamorfiles_generate_image { prompt, width: 2400, height: 1000, references: ["templates/brand-board#<library folder>"], name: "can-wrap" }`, written as `images.md` of the `studio` skill says ("The prompt": the brand's image contract, and the character sheet first when it appears).
 It saves into `assets/` (or a brand folder given as `folder`), and the template uses the path it
 returned as the image's value.
 
 - **At the face's proportions,** `width` and `height` in pixels at the face's ratio, the long side
   at most 4096, so nothing is stretched or cropped to fit.
-- **In the brand's imagery style,** with the library's sheet as a style reference (its folder's frame
-  on the brand board, `templates/brand-board#<folder>`), the character's anchor first when it appears, and the
-  Imagery section's words, so it belongs with the rest of the brand. A character keeps its body
-  line in the prompt (the `character` skill).
+- **In the brand's imagery style,** with the library's sheet as a style reference
+  (`templates/brand-board#<folder>`).
 - **No words, letters, numbers, logos or labels in it,** asked for plainly: they are set in step 3.
 - **The zones in the prompt:** where it stays calm and open for the logo and the type, and where its
   subject sits. A picture that fills every corner leaves the type nowhere to go.
 - **The brand's colours as its guide,** named as the brand names them; the picture may bring
   colours of its own where the composition needs them.
 - **Printed in flat colour** (screen print, cut vinyl, apparel): traced as it's made, with `trace`
-  ("Vector versions" in `references/images.md` of the `studio` skill), the brand's colours listed and
-  `inks` the number of colours the print allows.
+  (`references/vector.md` of the `studio` skill), the brand's colours listed and `inks` the number of
+  colours the print allows.
 
-Look at it before going on, with the image-model mistakes in mind (`references/images.md` of
-`metamorfiles`): a wrong body, an extra part, garbled marks, a gradient the brand rules out. Make
+Look at it before going on, as "Check" in `references/images.md` of the `studio` skill says. Make
 it again rather than covering a flaw with type.
 
 ### 3. Compose
 
 Write the artwork as the template's `index.html`, with
 `metamorfiles_write_file { path: "templates/<id>/index.html", content }`, following the contract
-of the `template` skill, its format the piece's size in mm (step 5): the picture full bleed as
-the face's background, and on it the brand's real logo file and its words in the brand's own fonts
+of the `template` skill, its format the piece's size in mm with its bleed, exported as PDF: the
+picture full bleed as the face's background, and on it the brand's real logo file and its words in the brand's own fonts
 and tokens (`var(--brand-…)`, files from `../../brand/…`).
 
 - The logo at the size this object carries it, in the version made for the ground it sits on.
@@ -109,10 +103,8 @@ printed piece, before it goes anywhere: the hierarchy from a shelf, every word, 
 picture on brand. Then get the review (the `review` skill) of `templates/<id>` as a printed
 piece.
 
-### 5. A template to print
+### 5. For a mockup
 
-A template (the `template` skill) whose format is the piece's size in mm with its bleed, the
-composition in its `index.html`, exported as PDF. To show it on the object, a mockup of it is made
-with the `mockup` skill, with the flat artwork as a reference.
-
-What strong and weak artwork looks like is in [references/taste.md](references/taste.md).
+For a mockup, export the page as PNG with `metamorfiles_export_page`, bring the face into the brand
+with `metamorfiles_import_image { path: "pages/<id>/exports/<file>.png", folder: "brand/artwork", name: "<name>" }`,
+and give that file to the `mockup` skill.

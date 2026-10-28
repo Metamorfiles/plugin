@@ -6,17 +6,21 @@ looks, and let the drawing find the body's shapes; judge the result by eye.
 
 ## What the brief says
 
-- **Who it is**, as behaviour rather than an adjective: what it's doing and feeling right now.
+- **Its name**, and **who it is**, as behaviour rather than an adjective: what it's doing and feeling right now.
 - **The one thing** that makes it itself: a feature, a habit, a prop it's never without. Without it,
   every candidate is the category's mascot.
 - **What makes it this brand's**: the detail from the business's own world it wears, holds or does.
 - **Its face**, from its attitude: the lids, the brows, where it looks, the mouth, in three to five
-  concrete terms, with one thing uneven. The face is where a character's personality reads.
+  concrete terms, with one thing uneven; eyes open, unless sleep is the idea. The face is where a
+  character's personality reads.
 - **Its pose**: one gesture with the business's own object, smaller than the character.
 - **What it leaves out**: only what the brief or the category's codes rule out.
 
-Not in the brief: a count of limbs, where each one goes, a colour per part, a list of bans against
-clichés. That is an assembly diagram, and the model builds a thing standing still. Colours go in the
+An object that comes alive is built from its own shape (a bottle's cap its hat, a jar's lid its
+hair, a dropper's bulb its head), never a smiling lump with a face drawn on.
+
+Not in the brief: a count of limbs, where each one goes, a colour per part. That is an assembly
+diagram, and the model builds a thing standing still. Colours go in the
 prompt as the brand's palette with a job each (`styles.md`).
 
 ## The face
@@ -70,4 +74,5 @@ design are not three candidates.
 
 Change the brief, never describe the failed drawing back to the model, and draw again. Once a
 drawing is kept, it is the anchor and then the sheet: from then on the identity lives in images, and
-the words say who it is, how its face is made and that nothing about it changes (`poses.md`).
+its Character lines say who it is, how its face is made and that nothing about it changes
+(`poses.md`).

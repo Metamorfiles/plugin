@@ -64,10 +64,10 @@ A version of a logo drawn whole is made the cheapest way that keeps it the logo'
   badge): cut the shape's colour out first, which leaves the letter as its own piece, then take it:
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-letters.svg", colors: { "#efe1b4": "knockout" } }`,
   then `keep` on that file as above. No image is made.
-- **A part that touches or overlaps others** (a mascot over the letters), or one drawn anew (the bust
-  for the full body), is an edit of it, made only after the choice and on the user's word: the traced
-  file first in `references`, `edit: true`, the same `folder` and `trace` colours, saying only what
-  changes, with `region` around the part so every letter outside it stays exactly as it was.
+- **A part that touches or overlaps others** (a mascot over the letters) is an edit of the logo,
+  made only after the choice and on the user's word: the traced file first in `references`, `edit:
+  true`, the same `folder` and `trace` colours, saying only what changes, with `region` around the
+  part so every letter outside it stays exactly as it was. A small mark is made as `SKILL.md`, step 8, says.
 - **A version that loses a part in one colour,** redrawn after the choice, for the chosen logo only.
   The reversed and one-colour versions are recolours
   of the file (`metamorfiles_make_logo_variant`) unless `metamorfiles_check_logo` reports

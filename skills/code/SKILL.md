@@ -1,12 +1,12 @@
 ---
 name: code
-description: Applies a Metamorfiles brand to a website or app's codebase - colours, type, radii and spacing as the project's own theme (Tailwind v4, CSS variables, shadcn), the brand's fonts, the favicon and app icons, and the shared-link image - from the brand kit Studio exports. Use when the user asks to put their brand on their website or app, to theme a project with the brand, or to add its fonts, favicon or icons to their code.
+description: Applies a Metamorfiles brand to a website or app's codebase - colours, type, radii and spacing as the project's own theme (Tailwind v4, CSS variables, shadcn), the brand's fonts, the favicon and app icons, and the shared-link image - from the kit Studio exports. Use when the user asks to put their brand on their website or app, to theme a project with the brand, or to add its fonts, favicon or icons to their code.
 license: MIT
 ---
 
 # The brand in code
 
-The brand's files come from its kit; the edits are yours, with your own file tools, in the user's codebase. Studio's tools only read and write the brand's project.
+The brand's files come from its exported kit; the edits are yours, with your own file tools, in the user's codebase. Studio's tools only read and write the brand's project.
 
 ## Steps
 
@@ -31,4 +31,4 @@ The brand's files come from its kit; the edits are yours, with your own file too
 5. **The icons and the shared-link image**: copy the icons, `site.webmanifest` and `og-image.png` to the site's root (`public/` in most frameworks), and add `snippet.html`'s lines to the page head (or the framework's metadata: Next.js's `metadata.icons` and `openGraph.images`). Replace any framework default icons they supersede.
 6. **Check it**: build or run the project, open a page, and confirm the brand's fonts load (no fallback), the colours read, and the favicon shows. Tell the user what changed, in plain words, and what they should look at.
 
-Never change the brand itself here: a colour or a font that doesn't work in the product goes back to the brand (the `brand` skill), so the kit and the code stay the same brand.
+Never change the brand itself here: a colour or a font that doesn't work in the product goes back to the brand (the `brand` skill), so the brand kit and the code stay the same brand.

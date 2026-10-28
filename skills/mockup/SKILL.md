@@ -1,24 +1,21 @@
 ---
 name: mockup
-description: Use to show a brand on its real objects in Metamorfiles Studio, as photography a design publication would feature: a pack, a tin, a bottle, a box, a range, a bag, a sign, a card, a tag, a cup, a garment, merchandise. Each shot is art-directed and made whole by the image model from one prompt and the brand's real files as references (the logo, artwork designed flat, the mascot), a flat print (a sticker, a poster, a sign) designed flat first and then photographed from that file, then checked and fixed by an edit; placed by Studio on a blank photo only when the model can't make it exact. Use it for a new brand's mockups and whenever the user wants to see their brand, a product or a range on the real thing, even if they only say "a mockup" or "show it on a can".
+description: Shows a brand on its real objects as art-directed product photography in Metamorfiles Studio: a pack, tin, bottle, box, range, bag, sign, card, tag, cup, garment or merchandise. Use for a new brand's mockups and whenever the user wants to see their brand, a product or a range on the real thing, even if they only say "a mockup" or "show it on a can".
 license: MIT
 ---
 
 # Mockups
 
-A mockup sells the brand made real. The best ones are art-directed photographs: one clear idea per
-shot, light with intent, a backdrop that makes the object sing, and what's printed on it designed as
-a system. The image model makes each photograph whole, from one prompt that directs the shot and the
-brand's real files given as references; what it prints keeps the logo's identity, checked against
-those files and fixed by an edit. Only a fault two edits can't fix is placed by Studio on a blank photo.
+A mockup is an art-directed photograph: one clear idea per shot, light with intent, the print
+designed as a system.
 
 ## Checklist
 
 ```
 - [ ] 1. The shots chosen: one idea each, different from each other; the packs one system
-- [ ] 2. What's printed on each object decided: the logo alone, artwork with it, or a flat print designed first
+- [ ] 2. What's printed on each object decided: the logo alone, designed in place, a flat print or exact artwork
 - [ ] 3. Each photograph made whole, from its prompt and the brand's files; all together
-- [ ] 4. Each one checked: the logo, the words, the physics, the photograph
+- [ ] 4. Each one checked: the logo, the words, the physics, the scene
 - [ ] 5. Fixed by an edit, or placed when an edit can't; reviewed; then the user sees them
 ```
 
@@ -54,39 +51,38 @@ For each, decide in your notes:
   flat, even light.
 - **The people:** cropped hands, arms and sleeves; a face only when the shot is about a person.
 - **The idea:** one line, the shot's composition: what it shows, from where, what leads.
-- **The physics:** how this object really sits, opens and holds its contents: a lid off rests beside
-  its container, an opened pack shows its real contents, a card's corners are as the brand cuts them,
-  nothing floats unless the shot is meant to.
+- **The physics:** how this object really sits and opens, said in the Subject (step 3).
 
 ### 2. What's printed on each object
 
 Decide it per object, from the shot's goal, its composition and the surface, as the business would
 really make it:
-- **The logo alone** (a sign, a tag, a card, a sticker, an embroidered chest): the logo file the
-  ground calls for, placed the way a printer or signwriter would put it ("Placing it", below).
-- **The object designed in full** (a can's wrap, a box, a label, a poster, merch): the image model
-  designs it in the photograph, the way the best packaging and posters in its category are designed.
-  The brand's files are its references, not its limits: its imagery, character, pattern, palette and
-  type inspire the design, in variants and adaptations made for this object (a new pose of the
+- **The logo alone** (a tag, a business card's face, an embroidered chest, a fascia with only the
+  name): nothing but the logo file the ground calls for, placed the way a printer or signwriter would
+  put it ("Placing it", below).
+- **Designed in place** (a can's wrap, a box, a label, merch): the image model designs the object's
+  face in the photograph, the way the best packaging in its category is designed. The brand's files
+  are its references, not its limits: its imagery, character, pattern, palette and type inspire the
+  design, in variants and adaptations made for this object (a new pose of the
   mascot, the pattern scaled to the box, an illustration in the imagery's style). Only the logo and
   the words are exact.
-- **A flat print** (a sticker, a poster, a sign, a menu, a card on a wall or glass): two steps. First
-  the image model designs it flat, the whole print straight on and filling the image, see-through
+- **A flat print** (a sticker with art, a poster, a menu, a window vinyl with words, a sign with more
+  than the name): two steps. First the image model designs it flat, the whole print straight on and filling the image, see-through
   around a die-cut, from the logo and the brand's files, as the best prints in its category are
   designed:
   `metamorfiles_generate_image { prompt, references: ["brand/logos/logo.svg", "brand/refs/serum-morning.jpg"], width: 1600, height: 1600, transparent: true, folder: "brand/mockups/artwork", name: "mirror-sticker" }`.
   Check its logo and words, then photograph it from that file (step 3). A flat print drawn in the
   photograph at once comes out as a graphic laid over it.
-- **Artwork that must be exact** (a label a printer would get as a file, a precise illustration):
+- **Exact artwork** (a label a printer would get as a file, a precise illustration):
   designed flat first with the `artwork` skill, then given to the model as the object's print.
 
 Then the surface: what it is, its material, how the brand is applied (print, screen-print,
 thermal-print, paint, vinyl, sticker, embroidery, engraving, emboss, foil, display, lightbox), how worn
 (`new` or `used` for a business starting out; `worn` or `weathered` only when its age or trade is the
 point) and its form (flat, curved or soft). You decide them, never the image model. Real words only:
-the brand's name, the brief's words and its product names; when the brief gives none, the copywriter
-proposes names in the brand's voice (the `copywriting` skill), recorded for the user to confirm (a new brand's brief,
-`**Product names (proposed):** …`). Never a weight, price, ingredient, claim or small print.
+the brand's name, the brief's words and its product names; when the brief gives none, names are
+proposed as the `copywriting` skill's Names says. Never a weight, price, ingredient, claim or small
+print.
 
 ### 3. Make each photograph
 
@@ -98,10 +94,10 @@ collected with `metamorfiles_image_status { id }`. The references are the brand'
 by role: image 1 the logo file the object's ground calls for (the reversed one on a dark object), its
 letters and parts kept; then what the design draws on, as inspiration: the artwork made flat when there is one, the
 character sheet, a pattern, one or two of the imagery's anchors. Write the prompt in labelled
-sections, in this order:
+sections, in this order. Scene and Subject together stay near 100 words; The print, Words and Keep
+add what the object needs, so a whole mockup prompt runs about 300 to 450 words.
 
-- **Scene:** the frame as a photographer sets it up, the way every brand image's Scene is written
-  (`references/images.md` of the `studio` skill): "Editorial product photograph", its shape and lens;
+- **Scene:** the frame as a photographer sets it up: "Editorial product photograph", its shape and lens;
   what leads and where it sits (a third, a corner, the centre), its scale and crop; what else is in
   frame and where; what stays empty. Then the set, the light and where its shadows fall. Weather or
   wear (rain, dust, steam, scuffs), when the shot has it, is said once here and stays light: it never
@@ -117,47 +113,33 @@ sections, in this order:
   it's applied (printed, screen-printed, embroidered, painted, a sticker, a screen). A method that
   remakes the drawing (embroidery, emboss or deboss, engraving, foil, paint by hand) shows the logo
   as that method makes it: its letters, shapes and colours, in the method's own material (thread and
-  stitches, a raised edge, cut metal, brushwork). A screen or print that shows the brand's own
-  interface (a button, a field, a card) gives each part the colours DESIGN.md gives it, its fill and
-  its text alike ("an orange button with dark ink letters"), named as colours.
+  stitches, a raised edge, cut metal, brushwork). A screen shows the brand's real screen when it has
+  one: make the device photo with the screen blank and place the screenshot with
+  `metamorfiles_make_mockup`. A screen the model designs gives each part of the interface (a button,
+  a field, a card) the colours DESIGN.md gives it, its fill and its text alike, named as colours.
 - **Words:** every word that appears, quoted exactly, and that no other word, number or label does.
 - **Keep:** the logo from image 1, every letter and every part of its mark as image 1 draws them, in
   its colours and proportions, as its method makes it; its perspective, light and material are the
   photograph's. Artwork made flat as designed; the rest is designed freely in the brand's style. No
   other logo, mark, badge, claim, price or small print.
 
-A flat print is photographed from its artwork, given as image 1 alone, and the scene leads the
-prompt, with the camera the shot's own (step 1). Whatever the camera, the print lies in its
-surface and turns with it: say how the surface stands to the camera and that the print is
-foreshortened with it (a round sticker on a door that recedes reads as an ellipse in the plane of
-the glass). Describe it as a physical thing in that light: its material,
-the shadows and glare that fall across it, the reflections and drops that run over it as over the
-surface around it, and say its design is image 1's, printed as it is. Name its colours, never as
-hex, and never ask for it "exactly as drawn": either makes it a flat graphic laid over the photo.
+A flat print is photographed from its artwork, given as image 1 alone, with the camera the shot's
+own (step 1). A flat print's prompt has Scene, Subject and a short Print line (image 1's design, its
+material, light and foreshortening), with no Keep section. The print lies in its surface and turns
+with it (a round sticker on a door that recedes reads as an ellipse in the plane of the glass), under
+the shadows, glare and drops that fall on the surface around it. Name its colours, never as hex, and
+never ask for it "exactly as drawn": either makes it a flat graphic laid over the photo.
 `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/mockups/artwork/mirror-sticker-1a2b3c4d.png"], folder: "brand/mockups", name: "mirror-sticker", wait: false }`
 
 ### 4. Check each one
 
 Look at each with `metamorfiles_read_file`, as the photograph a design publication would run:
-- **The logo:** this brand's logo, applied the way the shot means it, judged as the review skill's
-  Mockup checklist says: whole first, then enlarged (`metamorfiles_read_file { path, region }`) only to
-  confirm a fault you suspect. A fault breaks its identity (a letter or a part of the mark wrong,
-  missing, extra, doubled or merged; other colours; stretched beyond its surface's shape; upright on a
-  turned object, or turned on an upright one; turned the other way from its surface, its nearer side
-  on the surface's far side; flat to the camera on a surface that recedes, or foreshortened on one
-  that faces it). Its
-  perspective, light, curve, crop, method and a small drift that leaves every part in place are the
-  photograph's, never fixed.
-- **The words:** character by character, against the words the prompt quoted; nothing else written.
+- **The logo, the words, the method and the print's fit:** as the Mockup checklist of the `review`
+  skill says (`metamorfiles_get_guide { name: "review" }`).
 - **The physics:** the object as the real one is made and used.
 - **The scene:** it is the frame the Scene set up and the moment the Subject named: what leads and
   where, every object in its state, each attached part on what it's attached to. A photograph that
   dropped or rearranged them is made again before the review.
-- **The method:** the brand looks made the way the prompt says (stitched thread reads as embroidery,
-  ink sits in the paper, a sign is a built object), never a flat graphic laid on top.
-- **The photograph:** the idea reads at a glance, the light is real, and the print sits in it: in
-  its surface's perspective, under the light, shadows and reflections around it. A print facing the
-  camera on a surface that doesn't, or untouched by the light around it, floats.
 
 ### 5. Fix, place when it can't be fixed, and review
 
@@ -170,7 +152,7 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
 - **Still wrong after two edits** (long copy, small type, a screen of text): place it. Make the photo
   with the print's surface left blank (the same prompt, the surface "completely blank, fully in frame
   and unobstructed", into `brand/mockups/blanks`), then
-  `metamorfiles_make_mockup { name: "can-on-peppers", photo: "brand/mockups/blanks/can-on-peppers-blank-5e6f7a8b.png", surface: { object: "a drinks can", material: "aluminium", method: "print", condition: "new", form: "curved", text: ["Hearth"] }, layers: [{ file: "brand/artwork/can-wrap.png", corners: [[385, 260], [746, 260], [746, 1140], [385, 1140]], cover: true, curve: { wrap: 150, bend: [8, 14] } }], replaces: "brand/mockups/can-on-peppers-1a2b3c4d.png" }`:
+  `metamorfiles_make_mockup { name: "can-on-peppers", photo: "brand/mockups/blanks/can-on-peppers-blank-5e6f7a8b.png", surface: { object: "a drinks can", material: "aluminium", method: "print", condition: "new", form: "curved", text: ["Lumen"] }, layers: [{ file: "brand/artwork/can-wrap.png", corners: [[385, 260], [746, 260], [746, 1140], [385, 1140]], cover: true, curve: { wrap: 150, bend: [8, 14] } }], replaces: "brand/mockups/can-on-peppers-1a2b3c4d.png" }`:
   `corners` the surface's top-left, top-right, bottom-right and bottom-left in the photo's pixels,
   read from the surface as it stands in the photo, turned and angled with it (an angled door's, or a
   fob held at a slant, are never an upright rectangle),

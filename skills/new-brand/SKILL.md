@@ -1,6 +1,6 @@
 ---
 name: new-brand
-description: Use to create a new brand from nothing in Metamorfiles Studio, when the user asks for a new brand or identity, says there is nothing to translate, or the project holds a brief in brand/process/brief.md (Studio's "New brand"). Three choices the user makes on the brand board (direction, logo, imagery), then the kit, its mockups last. Use it for "make me a brand", "I'm starting a bakery and need everything", "we need a logo" for a business with no logo, site or files yet, or a business name alone. Not for an existing company, website, logo or guidelines, which are translated (the brand skill).
+description: Creates a new brand from nothing in Metamorfiles Studio: three choices the user makes on the brand board (direction, logo, imagery), then the kit, its mockups last. Use when the user asks for a new brand or identity, says there is nothing to translate, or the project holds a brief in brand/process/brief.md (Studio's "New brand"), and for "make me a brand", "I'm starting a bakery and need everything", "we need a logo" for a business with no logo, site or files yet, or a business name alone. Not for an existing company, website, logo or guidelines, which are translated (the brand skill).
 license: MIT
 ---
 
@@ -77,20 +77,23 @@ the brand board.
   id as `task` to every `metamorfiles_team_update` and `metamorfiles_ask_user`, never start a second
   one, and continue from the first step that isn't chosen.
 
-**Asking for the brief.** Call `metamorfiles_ask_user { brief: { name, what, who, feel, own, links } }`
-with your reading of what the user said: the brand's name, what it is, who it's for, how it should
-feel, where it is today (its site, profiles or handles, as they gave them) and the work they love as
-full https links (`name` and `what` are required). Studio draws
-the brief on the board at once and opens the same questions as New brand, filled in with your
-reading, for the user to complete, above all the work they like. From the user's own app it returns
-at once with the panel link and a question id. When it says Studio's team makes the brand once the
-brief is answered, write what it asks and end your turn: the brand is made in Studio, and when you're
-told so later, leave it there. Otherwise write the link in your reply, say the questions are open
-there and that they can answer in the chat instead, then keep calling
-`metamorfiles_ask_user { task, waitFor: "<id>" }` until they answer. An answer in the chat goes back
-as `metamorfiles_ask_user { task, waitFor, answer }`. Either way Studio writes
-`brand/process/brief.md`; read it before the direction. Never write the brief yourself: the user's
-taste is what the direction starts from. The brief's first line (`# <name>`) is the brand's name
+**Asking for the brief:**
+
+1. Call `metamorfiles_ask_user { brief: { name, what, who, feel, own, links } }` with your reading
+   of what the user said: the brand's name, what it is, who it's for, how it should feel, where it is
+   today (its site, profiles or handles, as they gave them) and the work they love as full https
+   links (`name` and `what` are required). Studio draws the brief on the board at once and opens the
+   same questions as New brand, filled in with your reading, for the user to complete, above all the
+   work they like.
+2. When it says Studio's team makes the brand once the brief is answered, write what it asks and end
+   your turn: the brand is made in Studio, and when you're told so later, leave it there.
+3. Otherwise (from the user's own app it returns at once with the panel link and a question id),
+   write the link in your reply, say the questions are open there and that they can answer in the
+   chat instead, and keep waiting as the `team` skill says ("Choices that belong to the user").
+4. An answer in the chat goes back as `metamorfiles_ask_user { task, waitFor, answer }`.
+5. Studio writes `brand/process/brief.md`: read it before the direction.
+
+Never write the brief yourself: the user's taste is what the direction starts from. The brief's first line (`# <name>`) is the brand's name
 everywhere Studio shows it until DESIGN.md names it: a name is a word or two, never the user's
 request, so when they name the brand later, change that line.
 
@@ -113,9 +116,8 @@ started.
   Studio asks the step's own question with the options' titles, the panel offers to bring the step's
   frame into view, and the user chooses there, in the thread or in your chat. From the user's own app
   it returns at once: write the panel link and the options in your reply as Studio lettered them,
-  the recommended one first with its reason, then keep calling
-  `metamorfiles_ask_user { task, waitFor: "<id>" }`. In Auto the recommended option is taken at once;
-  say so in the thread.
+  the recommended one first with its reason, then wait as the `team` skill says ("Choices that
+  belong to the user").
 - **Studio records the choice** in the step's file, however the user made it, and the next step's
   frame appears. Never write `chosen` yourself.
 - **An answer in their own words is the answer.** "A is better but not good enough" means rework A
@@ -135,7 +137,7 @@ started.
 - **Fonts are Studio's to tidy.** It deletes the fonts a brand doesn't use: a direction's when another
   is chosen, every face the kit doesn't list when the brand is handed over. Never remove a font yourself.
 - **Back to a version they saw is a swap.** "Change it back", "the earlier one was better": put that
-  version back, `metamorfiles_use_take { step: "logo", option: "painted-door", take: 1 }` (a route's
+  version back, `metamorfiles_use_take { step: "logo", option: "rising", take: 1 }` (a route's
   `takes` in `logo.md`, a seed's earlier files), and ask again. Never make it again.
 - **A change is local.** "Warmer", "the other S", "redo the second one": rework that step only, and
   what depends on it. A new palette recolours the logo routes; it never restarts the research.
@@ -144,29 +146,26 @@ started.
 
 ## Reviewed before the user sees it
 
-Whoever made something is the worst judge of it, so the reviewer looks at each piece of work before
-the user does, and at whatever is made again: a logo tried again, an image redone, a mockup remade,
+Whoever made something is the worst judge of it, and the user should never be the one to find its
+mistakes, so the reviewer looks at each piece of work before the user does, and at whatever is made again: a logo tried again, an image redone, a mockup remade,
 any change the user asks for in their own words. Finish every change you plan to a piece (its
 wording, a size, a crop) before it goes to the reviewer: a change after a pass sends that piece back.
 Studio keeps what waits, piece by piece; run the `review` skill on the queue and wait for its verdict:
 
-| When | Queue | What it judges |
-|---|---|---|
-| `logo.md` written, before asking | `logo` | the name as the brief spells it; drawn letters; nothing from a reference |
-| The mascots, and in the logo's own case their sheet, before asking | `character` | each a figure in the chosen logo's hand and colours, with no letters; designs built differently; the sheet's eight figures the same character |
-| The small marks, before asking | `mark` | cut or drawn from the chosen logo, or the mascot's head |
-| `imagery.md` written, before asking | `imagery` | image-model mistakes; none in another medium; a character's seeds not the same head angle and face |
-| The library and the mockups made, then the kit written | `handover` | each picture, each mockup's logo, products and words, each final logo file, DESIGN.md's printed sections |
+| When | Queue |
+|---|---|
+| `logo.md` written, before asking | `logo` |
+| The mascots, and in the logo's own case their sheet, before asking | `character` |
+| The small marks, before asking | `mark` |
+| `imagery.md` written, before asking | `imagery` |
+| The library and the mockups made, then the kit written | `handover` |
 
 Report it as the reviewer: `metamorfiles_team_update { task, role: "reviewer", status: "reviewing" }`,
 then the same with `status: "done"` and no `say`. The reviewer records its verdict in Studio, and
-the thread shows what it caught. Fix only the **must fixes**, once, as the role that made the piece, with a
-method that can fix it (a version that recolouring makes muddy is drawn again from the logo), and
-have it looked at again: only what changed waits. A piece looked at twice without passing is never
-made again: the step is asked as it is, with
-`metamorfiles_ask_user { task, step: "logo", cannot: "<one line>" }`: one plain line on what
-couldn't be made, which the user reads beside the question. Suggestions go to the user on the
-review's card; act on one only when it's worth that piece's next look. Nothing reaches the user
+the thread shows what it caught. Fix as step 4 of the `review` skill's Run it says, as the role that
+made the piece, with a method that can fix it (a recolour that turns muddy is redrawn from the logo).
+A piece looked at twice without passing is asked as it is, with
+`metamorfiles_ask_user { task, step: "logo", cannot: "<one line>" }`. Nothing reaches the user
 with a must fix standing: Studio won't ask a step, or hand the brand over, while a piece waits. The
 brief and the directions aren't reviewed: they are the user's taste. The reviewer judges the work
 in each option, never which option is better.
@@ -205,8 +204,7 @@ Each option can carry:
   colour a logo file is shown on) and, for a logo route's mark, `small: true`;
 - `colors`: up to 10, each `{ name, hex: "#rrggbb", share }` with `share` 0 to 100, in the order and
   proportion they are used;
-- `fonts`: up to 4, each `{ family, file, role }`, `file` the one `metamorfiles_add_font` returned (a
-  static family has one per weight, such as `brand/fonts/Anton-400.woff2`);
+- `fonts`: up to 4, each `{ family, file, role }`, `file` the one `metamorfiles_add_font` returned;
 - `sample`: at most 120 characters, the words the fonts are set in, from the brand's own voice.
 
 Up to six options: two or three directions; every logo route and every other candidate as good, at
@@ -222,41 +220,14 @@ its frame shows each file as it arrives, so the user watches the step come toget
 
 ## The steps
 
-1. **Direction** (`references/research.md`, `references/look.md`). First read what the user gave
-   about the brand itself, its site, profiles or handles (`references/research.md`, "The subject,
-   first"); never search for it by name. The brief's facts
-   with their sources, touchpoints, category codes and three paths go into `brief.md`
-   (`references/research.md`, "Three paths"). For each path, search Studio's index of the design press with
-   `metamorfiles_search_references { query: "bakery poster" }`, choose the projects
-   worth opening from the covers, and collect them with
-   `metamorfiles_collect_references { links: [...], path: "Morning batch" }`, the user's own links
-   first; they appear on the brief's frame under their path as they arrive. Each path that holds up
-   becomes a direction, and they differ in feel. Each option is a whole direction: four to eight
-   references by attribute (logo, colour, type, imagery, layout), captioned with the project and
-   what to take; its palette with shares; its type pairing, each face added with `metamorfiles_add_font { family: "Fraunces" }`; and
-   its `sample`.
-2. **Logo** (the `logo` skill), made from the brief and the chosen direction. Three
-   routes: a logo drawn whole by the image model and traced; the name set from real fonts with a
-   generated mark or mascot locked up with it; and the name in type alone. Supporting words, where a route has
-   them, are always real type. Each route checked with one
-   `metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#1f1a17" }`, which draws it in colour
-   on its paper, reversed and in one colour on one sheet; in `logo.md` each route has two files, in
-   colour and in one colour, each with its `ground`; `mascot: true` at the top when the brand has a
-   mascot, and on each route whose logo carries it.
-   Once a logo is chosen, in this order (the logo skill's step 8):
-   - **The mascot,** when the brand has one, from the chosen logo with the `character` skill ("In a
-     new brand"): the logo's own character in poses with its sheet, approved with "Use these", or
-     three designs drawn from the logo, one chosen, then its sheet (`references/sheet.md` of the
-     `character` skill). Written into `logo.md` as `characters` and `sheet`, checked by the reviewer
-     and asked with `metamorfiles_ask_user { step: "character" }`: every image of the character
-     after that is made from its sheet.
-   - **The small mark:** cut from the logo, drawn from it by the image model and traced where no part
-     of it reads small, or the mascot's head or bust; asked with `metamorfiles_ask_user { step: "mark" }`.
-   Studio starts nothing of the imagery until both are answered.
+1. **Direction:** brief facts, touchpoints, codes and three paths into `brief.md`; references per
+   path; one option per path that holds up (`references/research.md`, then `references/look.md`).
+2. **Logo** (the `logo` skill, steps 1-7, written into `logo.md`), then its step 8 once one is chosen.
+   When `logo.md` has `mascot: true` at the top, the mascot comes first: the `character` skill, "In a new brand".
 3. **Imagery** (`references/imagery.md`). The mode the brand needs (illustration, photography, a
    character, graphic or 3D), the style block, and four seeds made together, one per option, saved in
-   `brand/process/imagery/`. The seeds the user keeps are the anchors. Start them (`wait: false`)
-   once the small mark is answered. The chosen logo's cleanup (step 8 of the `logo` skill) runs in the
+   `brand/process/imagery/`. The seeds the user keeps are the anchors. Start the seeds once the small
+   mark is answered. The chosen logo's cleanup (step 8 of the `logo` skill) runs in the
    background from the logo's answer on, and its final logo files wait for the kit.
 4. **Kit.** The words are the copywriter's, always: report as `copywriter` while you write
    DESIGN.md's prose (Overview, Colors, Typography, Logo, Imagery, Voice and Messaging) with the
@@ -266,15 +237,14 @@ its frame shows each file as it arrives, so the user watches the step come toget
    with its role (the logo's own face named for it). A folder in `assets` must exist, and its frame
    appears once it is listed, so work in this order:
    - Bring each kept seed into the library with
-     `metamorfiles_import_image { path: "<seed>", name: "knit-close-up", folder: "brand/refs" }`,
+     `metamorfiles_import_image { path: "<seed>", name: "serum-close-up", folder: "brand/refs" }`,
      and list the folder with the file names it returned as its anchors:
      `{ folder: refs, kind: imagery, title: Imagery, anchors: [...] }`. A character's folder is
      listed the same way, the character sheet brought in first and listed first in its `anchors`
      (`references/sheet.md` of the `character` skill).
    - Grow the library from the anchors into `brand/refs/` (`references/imagery.md`).
 
-   Write `brand/imagery-guide.md`, the brand's image contract, with its four sections (`references/imagery.md`,
-   In the kit): style, the character (a character brand), colour roles, writing a scene.
+   Write `brand/imagery-guide.md`, the brand's image contract (`references/imagery.md`, "In the kit").
    - Last, the mockups (`references/mockups.md`): three shots of the brand on its own objects, on
      their own board, never asked.
 
@@ -292,29 +262,19 @@ rather than handing over a kit with parts missing. An image that doesn't hold th
 again or taken out, never left for the user to find or listed for them to remove.
 
 The last call is `metamorfiles_team_update { task, role: "designer", finished: true, summary }`, with
-your handover as `summary`; when the
-mockups carry proposed product names, it names them as proposals for the user to confirm, one of the
-things that need them. The run ends there: Studio tells the user the brand is ready and offers to make the first posts, so the
-handover asks nothing. The user downloads the kit from the brand board in the panel, or any app writes it into `kit/` with
-`metamorfiles_export_kit {}`: the logos for screens and print, the profile picture, the website's
-icons, fonts and colours, the fonts, the guidelines, the brand's words and a page that says what's what.
+your handover as `summary`. The run ends there: Studio tells the user the brand is ready and offers
+to make the first posts, so the handover asks nothing. The user downloads the kit from the brand
+board in the panel, or any app writes it into `kit/` with `metamorfiles_export_kit {}` (what it holds:
+`references/presenting.md` of the `brand` skill).
 
 ## Rules
 
 - **Facts are never created**: no claims, prices, awards, history, addresses or customers beyond
   what the user gave. What a template will need goes to Known gaps.
-- **Product names can be proposed, never presented as facts.** When the brief names no products,
-  the copywriter proposes three or four names for the range (the `copywriting` skill), for the mockups'
-  packaging, and writes them in the brief's research as `**Product names (proposed):** …`. The
-  handover names them as proposals for the user to confirm. Weights, prices, ingredients and claims
-  are never proposed.
+- With no products in the brief, the copywriter proposes names (the `copywriting` skill, Names); the
+  handover names them as proposals.
 - **References are for study.** Never copy a reference's mark, layout or artwork, and never put one
   in the kit. An image model sees them only as style references for a logo's first drawings, told
   never to copy their letters, marks or layout (`references/drawn.md` of the `logo` skill).
-- **The web is used lightly.** Every page you open comes from the project's daily budget, because it
-  opens from the user's own address and busy sites block it. One search and a few projects is enough;
-  links the user pastes cost the same and are often better.
-- **Logos come from Studio's tools.** A name is set with `metamorfiles_make_wordmark`, or drawn in a
-  logo drawn whole and read letter by letter; marks and characters are drawn and traced;
-  every supporting word is set from a font (the `logo` skill). Words outside the logo are set in
-  the brand's fonts; mockups carry the logo file exactly, with the reviewer comparing it (`references/mockups.md`).
+- **Logos are made only with the `logo` skill**; words outside the logo are set in the brand's fonts,
+  and mockups keep the logo's identity, checked as the `review` skill's Mockup checklist says.

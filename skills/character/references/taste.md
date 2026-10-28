@@ -2,17 +2,8 @@
 
 What a strong brand character looks like, from a study of current identity work. It describes; it
 never decides: the brief and the chosen direction decide who the character is and how it's drawn.
-The logo's own page is `references/taste.md` of the `logo` skill.
-
-## Families seen in strong work
-
-- **Rubber-hose cartoon:** an even black line, solid black and white fills, gloves or sneakers,
-  bendy limbs, a white sticker outline.
-- **Flat sticker character:** flat colours, a dark outline, a thick white sticker edge.
-- **Loose line doodle:** one wobbly line, a tiny face, almost a scribble.
-- **Solid silhouette figure:** faceless, built from a few flat pieces, cut-paper or stencil-like.
-- **Engraving:** fine hatching that follows the form, one ink, for heritage.
-- **Children's-book ink:** a loose pen line, some solid fills, a warm, ordinary person.
+The logo's own page is `references/taste.md` of the `logo` skill; the families of rendering are in
+`styles.md`.
 
 ## Strong
 
@@ -28,9 +19,6 @@ The logo's own page is `references/taste.md` of the `logo` skill.
 ## Weak, and why it happens
 
 - **A generic mascot with no personality:** a smiling thing standing still.
-- **A face left to the model.** "A cheeky grin" or "happy eyes" gets the model's stock face on any
-  character. A face described from the attitude (the lids, the brows, where it looks, the mouth, one
-  thing uneven) gets this character's.
 - **Briefed as an assembly.** A prompt that counts limbs, places each one and paints each part a
   colour draws exactly that: an assembly standing still. Brief who it is, its face and what it's
   doing, and let the drawing find the body's shapes.
@@ -41,7 +29,7 @@ The logo's own page is `references/taste.md` of the `logo` skill.
   as one shape and carry it into every later pose: a barrel becomes part of the head. Say in each pose
   prompt what the prop is and that it isn't part of the character.
 - **Features invented between poses.** Without the character described in words, each pose adds its
-  own detail. Repeat the description in every prompt.
+  own detail. Repeat its Character lines in every prompt.
 - **Stray letters and symbols:** "zzz" over a sleeping character, sound words. Ask for none.
 
 ## Defaults to recognise

@@ -1,7 +1,6 @@
 # Carousels
 
-Read this for any carousel, as the copywriter and as the designer: the plan, the words and the
-design are one piece. A carousel is a short sequence someone swipes on purpose, so it earns each
+For the copywriter and the designer alike: the plan, the words and the design are one piece. A carousel is a short sequence someone swipes on purpose, so it earns each
 swipe, gives something on every slide and ends with a reason to keep it.
 
 ## Contents
@@ -31,7 +30,8 @@ and still useful ("Grounding" in the `copywriting` skill's copy guide), never in
 - **Length:** what the idea needs, usually 6 to 10 slides; one idea per carousel.
 - **Cover, then a promise:** the cover stops the scroll; slide 2 says exactly what the reader gets
   by the end, so they keep going.
-- **The end** completes the argument and asks for the one action that fits it.
+- **The end** completes the argument and asks for the one action that fits it. A logo alone is not
+  an ending.
 
 ## Formats
 
@@ -52,20 +52,24 @@ Pick the one the idea is, and say it in the plan:
 - **Slide patterns:** a tip (the point, then one line of example), a step ("Step 3" what to do, why),
   a contrast (wrong, then right), a figure (the number, then what it means), a quote or a prompt set
   as the object to copy.
-- **A reason to swipe:** a slide can end on the next one's question or a count ("3 of 5").
+- **A reason to swipe:** a slide can end on the next one's question.
+- **Numbers only for steps.** Number the slides ("Step 3 of 5") only when they really are steps, as
+  in a framework.
+- **Nothing a reader needs is only on a later slide:** many never swipe.
 - **The cover is written last,** once you know what the carousel delivers: specific and concrete,
   a number or a claim someone could disagree with, never a topic name.
 - **The end asks for what the content earns:** save for something to come back to, share for
   something a friend needs, comment for an opinion, follow for a series. One ask.
 - **The caption** opens with its own hook in the first line, says what's inside, and ends with the ask.
-- Every fact comes from the brief, the brand, the user or research done for this post, kept with its source and date ("Research" in the `copywriting` skill's copy guide); a post about news is researched before it's planned. Copy craft and voice: `copy.md`.
+- Every fact comes from the brief, the brand, the user or research done for this post, kept with its source and date ("Research" in the `copywriting` skill's copy guide); a post about news is researched before it's planned. Copy craft and voice: `references/copy.md` of the `copywriting` skill.
 
 ## The design
 
-One system, many arrangements. Readers feel the relationship between slides more than any slide.
+One system, many arrangements. Readers feel the relationship between slides more than any slide, so
+judge the slides side by side in the panel, as a reader swipes them.
 
 - **Fixed:** the type families and scale, the palette, the margins and grid, and one running cue
-  (a counter, a corner mark, an edge that carries on). These make it one post.
+  (a corner mark, an edge that carries on; a counter only when the slides are steps). These make it one post.
 - **Varied:** each slide its own idea and picture over the shared system (its CSS by
   `data-variant`), or, in a series, two or three body layouts alternated by a `layout` enum. Change
   what is big, the crop and the surface every slide or two: type that fills the frame, then a quiet
@@ -73,9 +77,9 @@ One system, many arrangements. Readers feel the relationship between slides more
 - **One surprise** past the middle, a slide that breaks the pattern, keeps people to the end.
 - **The cover** is the boldest slide and reads at thumbnail size: one large claim, high contrast,
   the brand present but small.
-- **The end** mirrors the cover, so the post closes like it opened.
+- **The end** carries the action and mirrors the cover, so the post closes like it opened.
 - **Across the seams:** a shape, an image or a line can run from one slide into the next
-  (`data-span`), which pulls the swipe.
+  (`data-span`), which pulls the swipe. Text never crosses a seam, since each slide is cut there.
 
 ## Strong, and weak
 

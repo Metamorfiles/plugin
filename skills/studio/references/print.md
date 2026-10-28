@@ -1,6 +1,6 @@
 # Print
 
-Read before you make anything printed: a business card, a flyer, a poster, a letterhead. `design.md` and the `copywriting` skill still apply; this is what paper adds.
+`design.md` and the `copywriting` skill still apply; this is what paper adds.
 
 ## Contents
 - Sizes and the printer's template
@@ -19,14 +19,13 @@ Use a preset (`business-card`, `business-card-us`, `a6` to `a3`, `dl`, `us-lette
 
 - A background, a band or a photo that meets an edge runs on to the edge of the image, through the bleed: the cut wanders, and a background that stops at the trim leaves a white line.
 - Nothing that matters in the bleed or within 3 mm (⅛ in) inside the trim: the checks name both.
-- Type at 8 pt or more; 6 pt is the least that prints readably. A frame's px size converts as px × 72 / dpi.
-- Colour: design in the brand's colours as on screen. The kit gives the printer coated and uncoated CMYK; never convert colours yourself.
+- Colour: design in the brand's colours as on screen. The exported kit gives the printer coated and uncoated CMYK; never convert colours yourself.
 
 ## A business card
 
 Two sides, one page, its design's manifest declaring `"formats": ["business-card"]`: `metamorfiles_create_page { name: "Business card", kind: "business-card", design: "<index.html>", sides: true, variants: [{ id: "front" }, { id: "back" }] }`. The variants are the sides in order and export as one PDF with a page per side.
 
-A card is read in two seconds and kept for months. One side carries the brand (the logo or the small mark, or a pattern from the kit); the other carries the person: name, role, then the contact lines the user gave, in the order someone would use them. Never invent a phone, an address or a title: ask, or leave the line out.
+A card is read in two seconds and kept for months. One side carries the brand (the logo or the small mark, or a pattern from the brand kit); the other carries the person: name, role, then the contact lines the user gave, in the order someone would use them. Never invent a phone, an address or a title: ask, or leave the line out.
 
 ## A flyer or a poster
 
@@ -34,11 +33,11 @@ One message a passer-by reads from a distance: the headline the largest thing, t
 
 ## A letterhead
 
-The brand at the top or the foot, small; the contact line at the foot; the rest is room to write, at least two thirds of the page. A4 for most of the world, US Letter for the US and Canada: ask when it isn't clear.
+The brand at the top or the foot, small; the contact line at the foot; the rest is room to write, at least two thirds of the page.
 
 ## Images on paper
 
-An image needs about 300 pixels per inch at the size it prints; under 150 it looks soft, and the checks say so. An image the model makes is about 1,500 to 2,000 px: enough for a card, a small flyer panel or a postcard's corner, not a full-page photo on A4. Compose large pieces around type, the brand's graphics and vector artwork (the `artwork` skill), and use the user's own high-resolution photos for full-bleed photography.
+The checks say when an image is too small for its printed size. An image the model makes is about 1,500 to 2,000 px: enough for a card, a small flyer panel or a postcard's corner, not a full-page photo on A4. Compose large pieces around type, the brand's graphics and vector artwork (the `artwork` skill), and use the user's own high-resolution photos for full-bleed photography.
 
 ## The files
 
