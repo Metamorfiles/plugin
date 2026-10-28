@@ -17,7 +17,7 @@ Copy it into your notes and tick each step as you go:
 ```
 - [ ] 1. The brief and the chosen direction read, its reference images looked at
 - [ ] 2. Type study: the name in the faces the direction suggests and around them
-- [ ] 3. Three ideas: each route's id, idea and composition written before anything is drawn
+- [ ] 3. Three ideas: each route's id, idea and composition written before anything is drawn (in a new brand, into logo.md)
 - [ ] 4. Three routes made: the word set first, a mark drawn to fit it
 - [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
 - [ ] 6. Each route's two files: colour, and one colour
@@ -67,6 +67,12 @@ arrangement (a mark centred above the word, three times) are one answer. Each li
 route's option as `composition` in `brand/process/logo.md`, for the reviewer; the user sees the route's `line`, written for them.
 Name each route now with one lowercase word, its `id` in `logo.md` (`rim`, `seal`, `pots`): every file of
 the route starts with it (step 6), so the board shows each route's work in its own band as it arrives.
+
+In a new brand, write the three into `brand/process/logo.md` now, before anything is drawn: each
+option's `id`, `title`, `line` and `composition`, no `files` yet, in the order the user will see them.
+The board names each band from it while its work arrives, so the user watches each idea being made
+in the place it keeps. Keep that order to the end. A route you drop is replaced in its own place,
+under its new id.
 
 ### 4. Three routes
 
@@ -120,7 +126,8 @@ right that holds the direction another way, a second mark that holds the idea. E
 option, checked and given its files like a route (steps 5 and 6), up to six in all, so nothing worth
 choosing stays in your notes.
 
-In a new brand, write them as the options of `brand/process/logo.md`, one `recommended: true`, with
+In a new brand, give each option of `brand/process/logo.md` its files, in the order the plan set
+(a further candidate after them), one `recommended: true`, with
 `mascot: true` at the top when the brief asks for a mascot, and `mascot: true` on each route whose
 logo carries the character, and ask as the `new-brand` skill says: Studio draws each large on its ground with its
 one-colour version beside it on the brand board, a logo made from a drawing as the drawing itself and its
