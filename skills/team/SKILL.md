@@ -81,7 +81,9 @@ Ask at most once per role per task (a new brand asks once per step), and never a
 
 When one role passes work to the next, the role that finishes says it on its own `done` update: what it found or made, and who takes it next. The thread labels each `say` with the role in the call, so the next role's `working` update says only what that role will do, if anything.
 
-`metamorfiles_team_update { task, role: "reviewer", status: "done", say: "The story headline breaks into four lines and the price sits on the photo. The copywriter shortens the headline to two lines, then the designer moves the price onto the paper band." }`
+`metamorfiles_team_update { task, role: "copywriter", status: "done", say: "The headline is two lines now and leads with the price. The designer sets it on the paper band." }`
+
+The reviewer's verdict is already in the thread, in its words, so the reviewer's `done` update carries no `say`.
 
 The thread already shows who is speaking, with its name and shape, so a `say` never starts with a name or a label ("Reviewer:", "Final check:").
 
