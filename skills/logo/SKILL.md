@@ -132,15 +132,17 @@ the recommended one first.
 Start the chosen logo's cleanup at once (`references/final.md`), then go on. When `logo.md` has `mascot: true` at
 the top, the mascot comes first: the `character` skill, "In a new brand"; the small mark waits for its answer.
 
-The small mark is next, before the imagery or anything else: it stands for the whole name. It is cut
-from the chosen logo's own file, or made as an edit of it, never a new drawing on its own. With a
+The small mark is next, before the imagery or anything else: it stands for the whole name. It is the
+logo's own mark, cut from the chosen logo's file, or made as an edit of it, never a new drawing on its own. With a
 mascot it may be the mascot's head or bust, made the same way from the logo (from the mascot's
 anchor drawing when the logo doesn't carry it).
 
-- **A part of it stands for the brand on its own** (the logo's own mark, its first letter or a monogram
-  of its initials, the seal's middle, or the whole logo): cut it from the logo's file,
+- **The logo has a mark of its own** (a logo put together from parts: its `.svg.json` lists `parts`):
+  that part's file already is the small mark. Nothing is cut; it is only set in its square,
+  `metamorfiles_make_logo_variant { file: "brand/process/logo/<the mark part>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x: 0, y: 0, width: 1, height: 1 }, square: true }`.
+- **A part of a drawn logo stands for the brand on its own** (its first letter or a monogram of its
+  initials, the seal's middle, or the whole logo): cut it from the logo's file,
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<chosen>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x: 0, y: 0, width: 0.3, height: 1 }, square: true }`.
-  A logo put together from parts (its `.svg.json` lists `parts`) is cut from the part's own file instead.
 - **None does** (fine detail, texture, a long name, a mascot's head): never clean or redraw the logo
   for it. Have the image model make the mark as an edit of the logo, its file first in `references`,
   the prompt naming the part and saying it is simplified, in the logo's own drawing, colours and
