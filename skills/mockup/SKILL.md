@@ -100,10 +100,17 @@ letters and parts kept; then what the design draws on, as inspiration: the artwo
 character sheet, a pattern, one or two of the imagery's anchors. Write the prompt in labelled
 sections, in this order:
 
-- **Shot:** "Editorial product photograph", its shape, the idea in one line, the camera and the lens.
-- **Set and light:** the backdrop, the light and where the shadows fall. Weather or wear (rain, dust,
-  steam, scuffs), when the shot has it, is said once here and stays light: it never covers the print.
-- **Objects:** what's in frame and how each really sits, opens and holds its contents.
+- **Scene:** the frame as a photographer sets it up, the way every brand image's Scene is written
+  (`references/images.md` of the `studio` skill): "Editorial product photograph", its shape and lens;
+  what leads and where it sits (a third, a corner, the centre), its scale and crop; what else is in
+  frame and where; what stays empty. Then the set, the light and where its shadows fall. Weather or
+  wear (rain, dust, steam, scuffs), when the shot has it, is said once here and stays light: it never
+  covers the print.
+- **Subject:** the one moment the shot catches, in one line, and every object as it is at that
+  instant: a lid being lifted is still on its box, one lifted off rests beside it; a pack being opened
+  is still closed, an open one shows its real contents. A part that hangs, runs or ties says what it
+  is attached to and where it goes (a tag on the bag's handle, a strap from the bag to the shoulder).
+  Hands as that Subject says: cropped, one action, never which finger does what.
 - **The print:** what is on the object and how it's designed: the logo from image 1, where and how
   large (as "Placing it" says); the design around it, drawn from which images and how it adapts them
   (the mascot from image 3 in a new pose, the imagery of image 4 as the label's illustration); how
@@ -143,8 +150,9 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
   photograph's, never fixed.
 - **The words:** character by character, against the words the prompt quoted; nothing else written.
 - **The physics:** the object as the real one is made and used.
-- **The shot:** it shows what the Shot section asked for: its figures, their action and the place. A
-  photograph that dropped them is made again before the review.
+- **The scene:** it is the frame the Scene set up and the moment the Subject named: what leads and
+  where, every object in its state, each attached part on what it's attached to. A photograph that
+  dropped or rearranged them is made again before the review.
 - **The method:** the brand looks made the way the prompt says (stitched thread reads as embroidery,
   ink sits in the paper, a sign is a built object), never a flat graphic laid on top.
 - **The photograph:** the idea reads at a glance, the light is real, and the print sits in it: in
