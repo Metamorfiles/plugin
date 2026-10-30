@@ -124,11 +124,14 @@ started.
 - **An answer in their own words is the answer.** "A is better but not good enough" means rework A
   and ask again; "the palette of A with the type of B" means write that option and ask again; "C has
   a cup with two handles" means redo C before anything else.
-- **From the frame** the answer can also be "Try another logo instead of <title>" or "Redo <title>":
-  replace that one option, keep the others as they are, and ask again. "Edit <title> (<file>),
-  keeping the earlier take: <what to change>" is an edit of that image as image 1
+- **From the frame** the answer can also be "Redo <title>": that option made again from its own
+  idea, a new take; the others stay as they are, and ask again. "Edit <title> (<file>), keeping the
+  earlier take: <what to change>" is an edit of that image as image 1
   (`metamorfiles_generate_image { prompt, references: ["<file>"], edit: true, replaces: "<file>" }`), only what
-  the user named changing; the others stay, and ask again. "Direction: <title>" means
+  the user named changing; the others stay, and ask again. "Edit the <title> logo (<file>), keeping
+  the earlier take: <what to change>" changes that route only as the words say, with the tools that
+  made it (its lockup composed again from its settings, a part drawn again, a drawn logo edited), and
+  writes it into `logo.md`, where Studio keeps the earlier take. "Direction: <title>" means
   the user went back and chose again on an earlier step: Studio has cleared the steps after it, so
   make them again from the new choice.
 - **A verdict on quality is a rethink.** "Redo all, the quality is low", "none of these work": write

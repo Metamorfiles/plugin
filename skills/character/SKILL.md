@@ -96,7 +96,7 @@ route has `mascot: true` when its character is in the logo.
   chosen logo as image 1, so it is drawn in its hand: "Image 1 is the brand's chosen logo: take its
   drawing hand, line weight, corners and colours, never its letters or its layout."
   `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`
-  Write them as `characters`, each `{ file, title }` and one `recommended: true`, have the reviewer
+  Write them as `characters`, each `{ file, title, line }` (the line: the idea, in the user's words) and one `recommended: true`, have the reviewer
   check them, and ask with `metamorfiles_ask_user { step: "character" }`. The one chosen
   (`character`) is the anchor: draw its sheet from it (step 6) and have the reviewer check it.
 

@@ -40,7 +40,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 - The name is spelled exactly as the brief writes it.
 - Letters set in a font are the font's own: their shapes are never judged. Drawn letters each read as themselves.
 - Nothing is taken from a reference the direction shows.
-- The lockup is what its composition line says and reads as one piece: a part meant to meet the letters touches them, never floats beside them; supporting words sit on the word's axis or on an edge it really has.
+- The lockup is what its composition line says and reads as one piece: a part meant to meet the letters touches them, never floats beside them; a mark set beside the name stands clearly apart from its letters, never at a letter's space where it reads as one more letter; supporting words sit on the word's axis or on an edge it really has.
 
 #### Small mark
 

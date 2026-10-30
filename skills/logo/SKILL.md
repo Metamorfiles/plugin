@@ -152,7 +152,7 @@ anchor drawing when the logo doesn't carry it).
 
 Never another letter alone: a lone e reads as "e", not as the brand. Offer one to three, check each
 with `metamorfiles_check_logo`, write them into `brand/process/logo.md` as `marks`, each
-`{ file, title }` and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`.
+`{ file, title, line }` (the line: what it is and why it fits) and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`.
 Studio shows them on the `process-logo` frame's last page as a profile picture and an app icon, records the answer as
 `mark`, and starts nothing of the imagery until it's answered. Then the imagery, while the final
 files are made (`references/final.md`).
