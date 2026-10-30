@@ -154,7 +154,11 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
 - **A print that floats:** an edit of its region, the photograph first and the print's artwork
   after it, saying only that the print sits on its surface in the scene's perspective and light.
   Never made again from the floating take: a reference carries its fault.
-- **Still wrong after two edits** (long copy, small type, a screen of text): place it. Make the photo
+- **A print at the wrong size or place** (too big for its face, off-centre, too close to an edge): made
+  again from its prompt with `replaces`, saying the size, the place and the room it needs. Never placed
+  for it: a placed file takes its angle from four corners read by eye and lies flat where the surface
+  bends, while a print drawn in the photograph keeps the photograph's perspective.
+- **Words still wrong after two edits** (long copy, small type, a screen of text): place them. Make the photo
   with the print's surface left blank (the same prompt, the surface "completely blank, fully in frame
   and unobstructed", into `brand/mockups/blanks`), then
   `metamorfiles_make_mockup { name: "can-on-peppers", photo: "brand/mockups/blanks/can-on-peppers-blank-5e6f7a8b.png", surface: { object: "a drinks can", material: "aluminium", method: "print", condition: "new", form: "curved", text: ["Lumen"] }, layers: [{ file: "brand/artwork/can-wrap.png", corners: [[385, 260], [746, 260], [746, 1140], [385, 1140]], cover: true, curve: { wrap: 150, bend: [8, 14] } }], replaces: "brand/mockups/can-on-peppers-1a2b3c4d.png" }`:
