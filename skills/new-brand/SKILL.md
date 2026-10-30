@@ -110,8 +110,9 @@ started.
   Studio will ask and the options as the user will see them.
 - **Say what's on the board.** Once a step's options are written, the role that made them says in
   its `done` update what each one is, in the board's order, and why the recommended one leads:
-  exactly the options offered, never one you dropped. What you said you'd make before the work
-  never stands in for it.
+  exactly the options offered, never one you dropped; when they change before you ask (one dropped
+  or redrawn after the review), say them again. What you said you'd make before the work never
+  stands in for it. Studio asks only what the thread last said.
 - **Ask with `metamorfiles_ask_user { task, step: "logo" }`** (`direction`, `logo` or `imagery`).
   Studio asks the step's own question with the options' titles, the panel offers to bring the step's
   frame into view, and the user chooses there, in the thread or in your chat. From the user's own app
