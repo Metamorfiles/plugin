@@ -60,12 +60,16 @@ really make it:
 - **The logo alone** (a tag, a business card's face, an embroidered chest, a fascia with only the
   name): nothing but the logo file the ground calls for, placed the way a printer or signwriter would
   put it ("Placing it", below).
-- **Designed in place** (a can's wrap, a box, a label, merch): the image model designs the object's
-  face in the photograph, the way the best packaging in its category is designed. The brand's files
-  are its references, not its limits: its imagery, character, pattern, palette and type inspire the
-  design, in variants and adaptations made for this object (a new pose of the
-  mascot, the pattern scaled to the box, an illustration in the imagery's style). Only the logo and
-  the words are exact.
+- **Designed in place** (a can's wrap, a box, a label, merch): design the face first, as a packaging
+  designer would: one graphic idea from the brand that carries the whole face (the mark at a scale
+  the edges crop, a colour per variant, the name set huge, the pattern as the material), said in one
+  line, and what reads first, second and third. Every word and part sits as that designer would set
+  it, aligned to the others, with a margin all round and room around what leads. The image model
+  then draws the face in the photograph from the idea, the way the best packaging in its category
+  is designed: give it the idea, what leads and the materials, never a layout measured out part by
+  part, which it copies as given. The brand's files are its references, not its limits: its imagery,
+  character, pattern, palette and type inspire the design, in variants and adaptations made for this
+  object. Only the logo and the words are exact.
 - **A flat print** (a sticker with art, a poster, a menu, a window vinyl with words, a sign with more
   than the name): two steps. First the image model designs it flat, the whole print straight on and filling the image, see-through
   around a die-cut, from the logo and the brand's files, as the best prints in its category are
@@ -107,7 +111,8 @@ add what the object needs, so a whole mockup prompt runs about 300 to 450 words.
   is still closed, an open one shows its real contents. A part that hangs, runs or ties says what it
   is attached to and where it goes (a tag on the bag's handle, a strap from the bag to the shoulder).
   Hands as that Subject says: cropped, one action, never which finger does what.
-- **The print:** what is on the object and how it's designed: the logo from image 1, where and how
+- **The print:** what is on the object and how it's designed: the face's idea and what reads first;
+  the logo from image 1, where and how
   large (as "Placing it" says); the design around it, drawn from which images and how it adapts them
   (the mascot from image 3 in a new pose, the imagery of image 4 as the label's illustration); how
   it's applied (printed, screen-printed, embroidered, painted, a sticker, a screen). A method that
