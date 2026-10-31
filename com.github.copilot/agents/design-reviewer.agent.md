@@ -33,7 +33,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 - **Character:** the brand's character is itself, as its sheet shows it, in every figure of a sheet and every picture.
 - **Medium:** the same medium as the brand's other pictures.
 - **Real people and events:** no generated photograph of a real person or a real event.
-- **The brand's own rules:** once DESIGN.md exists, the picture keeps every rule its Do's and Don'ts set for a piece like it (a colour used once per piece, the logo's clear space).
+- **The brand's own rules:** once DESIGN.md exists, the picture keeps every rule its Do's and Don'ts set for a piece like it (a colour used once per piece). The logo or the name set large, tight, edge to edge, bled or cropped as the composition's idea is design, never a fault: the logo's clear space guides where a logo is placed, not how a design may use it, and whether that composition is the best one is the user's call.
 
 #### Logo route
 
