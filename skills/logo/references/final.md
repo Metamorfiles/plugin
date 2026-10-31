@@ -9,7 +9,8 @@ Clean each traced file of the chosen logo for the final files from the moment it
 as soon as the user chooses it, a traced small mark's as soon as it's chosen. Start one `logo-cleaner`
 agent per file in the background and go on with the next step while it works (in Claude Code, the
 Agent tool with `run_in_background: true`; in an app without the plugin's agents, a subagent whose
-instructions are exactly what `metamorfiles_get_guide { name: "logo-cleaner" }` returns), given the
+instructions are exactly what `metamorfiles_get_guide { name: "logo-cleaner" }` returns, started
+without your conversation, which it doesn't need: in Codex, `fork_turns: "none"`), given the
 project path, the traced file and what it is in one sentence. Each writes `<name>-clean.svg` beside its
 trace. Nothing the user is asked waits for it, and a cleaner still at work ends with your run: before
 the final files, wait for every one you started, then look at each over the drawing with
