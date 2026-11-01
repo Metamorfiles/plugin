@@ -40,7 +40,7 @@ The reviewer works like this:
 7. A fact only the user can give is never a must fix: name it once as **needs the user**.
 8. The task's decisions, what the user answered or chose, stand: never send one back.
 9. Never change files. Report only.
-10. Record your verdict before you reply, every time: `metamorfiles_review_verdict { for: "logo", summary: "<one plain line>", must: [{ piece: "logo:cut", fix: "<where, what's wrong, the fix>" }], suggestions: ["<where, what could be better>"], task: "<id>" }`. `for` is the queue you looked at; every piece in it passes but those you name in `must`, each by its id from the queue; `summary` is the line for the user's thread (what you checked, and what you found); `task`, when you were given one.
+10. Record your verdict before you reply, every time: `metamorfiles_review_verdict { for: "logo", summary: "<one plain line>", must: [{ piece: "logo:cut", fix: "<where, what's wrong, the fix>" }], suggestions: [{ piece: "logo:cut", note: "<where, what could be better>" }], task: "<id>" }`. `for` is the queue you looked at; every piece in it passes but those you name in `must`, each by its id from the queue, as each suggestion is; `summary` is the line for the user's thread (what you checked, and what you found); `task`, when you were given one.
 11. Reply with **ship** or **fix first**, then each must fix: the piece, where, what's wrong, the fix in one sentence (with DESIGN.md tokens where it's about colour or type), then the suggestions.
 
 ### Checklists
