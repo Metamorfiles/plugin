@@ -91,10 +91,10 @@ another idea: a variant of a route (its mark drawn longer, its lockup stacked) i
    monogram when the brand needs one:
    `references/wordmark.md`, `references/seal.md`.
 
-### 5. Check, fix, check again
+### 5. Check
 
-Run `metamorfiles_check_logo` on every route's logo. Read the sheet and the numbers, fix what fails,
-and run it again: `references/checks.md`. The reversed version and the small mark are
+Run `metamorfiles_check_logo` on every route's logo and act on what it reports:
+`references/checks.md`. The reversed version and the small mark are
 made after the choice (step 8): a route is never drawn again for them.
 
 ### 6. Each route's files
@@ -114,10 +114,8 @@ and `name: "rim-drawn"` for an image, an `output` such as `brand/process/logo/ri
 
 ### 7. Show them
 
-Show every route, and every other candidate as good as one: a second drawing with every letter
-right that holds the direction another way, a second mark that holds the idea. Each is its own
-option, checked and given its files like a route (steps 5 and 6), up to six in all, so nothing worth
-choosing stays in your notes.
+Show every route the plan set, each checked and given its files (steps 5 and 6). The user chooses
+between them, never you.
 
 In a new brand, give each option of `brand/process/logo.md` its files, in the order the plan set
 (a further candidate after them), one `recommended: true`, with

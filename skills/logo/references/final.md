@@ -12,10 +12,8 @@ Agent tool with `run_in_background: true`; in an app without the plugin's agents
 instructions are exactly what `metamorfiles_get_guide { name: "logo-cleaner" }` returns, started
 without your conversation, which it doesn't need: in Codex, `fork_turns: "none"`), given the
 project path, the traced file and what it is in one sentence. Each writes `<name>-clean.svg` beside its
-trace. Nothing the user is asked waits for it, and a cleaner still at work ends with your run: before
-the final files, wait for every one you started, then look at each over the drawing with
-`metamorfiles_compare_trace { file: "brand/process/logo/<name>-clean.svg", against: "brand/process/logo/<name>.svg" }`.
-The cleaned file keeps every part of the drawing, with only its edges straightened or smoothed.
+trace and replies with its match against the drawing. Nothing the user is asked waits for it, and a
+cleaner still at work ends with your run: before the final files, wait for every one you started.
 
 ## The final files
 
@@ -24,9 +22,9 @@ each with an `output` there. A cleaned drawing reaches it as one part:
 `metamorfiles_compose_logo { layout: "stack", parts: [{ file: "<the cleaned .svg>" }], output: "brand/logos/logo.svg" }`
 (`metamorfiles_generate_image` never saves into `brand/logos/`). The other colours come from
 `metamorfiles_make_logo_variant { file, output: "brand/logos/logo-reversed.svg", colors: { ... } }`:
-the reversed version is made here for the first time, the same way as the one colour, and a version
-that loses a part in one colour is redrawn now. A version of a logo drawn whole: `drawn.md`, "Other
-versions of it". Run `metamorfiles_check_logo` on each. Declare them in DESIGN.md `logos` with their
+the reversed version is made here for the first time, the same way as the one colour. Run
+`metamorfiles_check_logo` on each: one it reports `lostInOneColour` is redrawn now (`drawn.md`,
+"Other versions of it"). Declare them in DESIGN.md `logos` with their
 grounds, sources ("set in <face> as outlines with a drawn part", "drawn by <model> and traced",
 "created and approved by the user on <date>") and clear space, and the small mark with `small: true`.
 

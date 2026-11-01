@@ -62,12 +62,8 @@ own shape. `scale` grows it evenly above and below, as a round letter overshoots
 letter's lines: `dx`, `dy` and `rotate` move it off them only when the move is the idea, said in the
 route's `composition`. It still reads as that letter in the word.
 
-## Draw several, keep the good ones
+## One drawing
 
-Draw two or three versions together, each from its own prompt with a different take on the idea
-(another shape it's built from, another detail it keeps), each with `wait: false`, then collect each
-with `metamorfiles_image_status { id }`: one prompt drawn three times gives three copies. A mascot's
-candidates are three briefs (the `character` skill, step 3). Keep the one that holds the idea best and passes
-`metamorfiles_check_logo`; another that holds it as well, another way, is its own option
-(`SKILL.md`, step 7), and the rest stay in the folder. When all miss, change the description and
-draw again, never describing the failed drawing.
+Draw it once, from the description above. A mascot's candidates are three briefs (the `character`
+skill, step 3). One the reviewer sends back as the wrong idea is drawn again from a changed
+description, never by describing the failed drawing.

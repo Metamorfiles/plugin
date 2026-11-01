@@ -27,8 +27,8 @@ set (a business card, a tote and a phone), and never an object this business doe
 ## Make them
 
 Last, once the kit is written, in `brand/mockups/`, as the `mockup` skill says: each object's print
-(the logo alone, designed in place, a flat print, or exact artwork), the photograph, its check and
-its fixes. Once the first is saved, list the folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`.
+(the logo alone, designed in place, a flat print, or exact artwork), the photograph and its
+fixes. Once the first is saved, list the folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`.
 They are one board, like the logos and the images, and nothing is asked: say which three you made in
 one `say`. The user can redo one from its board, or pick one of its earlier takes back; a mockup made
 again takes the old one's place (`replaces`), and the old one stays an earlier take. They're

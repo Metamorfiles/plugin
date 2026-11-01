@@ -11,7 +11,6 @@ Studio keeps every image whole, as the model made it: it never crops a file to f
 - Other parties' marks and images
 - Getting an image
 - Generate and place, edit or redraw
-- Check
 
 ## The brand's image contract
 
@@ -162,39 +161,17 @@ show the real thing, never a drawing of it.
 
 ## Generate and place, edit or redraw
 
+Studio checks every result and says what came back: made or failed, its size and shape, whether
+it is see-through, a trace's match. Never look at a result to confirm it or to judge it: the
+reviewer judges it (the `review` skill). Look at an image only when your next design decision
+depends on what is in it: where its subject sits for the crop and the type, a made pack the next
+shot is given, which seed to build on.
+
 - **Make or place.** Anything that must match a file is placed exactly on a designed piece. A mockup
   photograph follows the `mockup` skill; a piece that needs a picture and the files follows the
   `artwork` skill.
 - Pass `width` and `height` as the size the image is used at, and Studio saves the result whole under `assets/`. The model composes for that shape as far as it can, but each source makes only some shapes (OpenAI's models between 3:1 and 1:3; on a ChatGPT plan OpenAI sets the size itself), so a slot longer than that, such as a shelf strip or a long banner, gets back a shorter picture. Plan such a slot from the start: its subjects made as cutouts (`transparent: true`) that the layout places and scales, or a picture whose ends are calm ground the slot can lose. For an image several formats show, pass the format it matters most in, and compose with room around the subject so every other format can crop it well. Make it once and reuse it across variants when the variant isn't about the image.
 - The result can be another size and shape than the one passed, and says so. Fit the design to the image that came back: every subject whole, and any crop only through calm ground or as the composition named it. Cropping through a subject to make the picture fit is never the fix: change the slot, or make the picture again in a shape the source makes. When the result says it's smaller than the frame, the design will enlarge it and it may look soft: tell the user, and let them decide on a source that makes larger images.
 - For choices between directions, make each option as the real thing: the one the user chooses is the image used, never made again, since a new one would be a different image.
-- **Edit or redraw.** Edit when one part should change and the rest stay: `metamorfiles_generate_image { prompt: "the lid lies beside the tin, open side up", width, height, references: ["/assets/<file>.png"], edit: true }`, the image first in `references` and the prompt only what changes. Studio asks the model to keep the rest and takes what it draws whole, so check the result as you would a new image; `region` names the one place it may change, and nothing outside it does. One change per edit. Redraw from the prompt when the composition, a pose or the subject is wrong: an edit keeps what's in the image, so a new pose drawn by an edit keeps the old head on a changed body (`references/poses.md` of the `character` skill). Never use a generated image as a style reference for the next: copies of copies drift.
+- **Edit or redraw.** An image changes only for a reviewer's must fix or the user's word. Edit it when its composition works: `metamorfiles_generate_image { prompt: "the lid lies beside the tin, open side up", width, height, references: ["/assets/<file>.png"], edit: true }`, the image first in `references`, the prompt saying only what changes and what stays; `region` names the one place it may change, and nothing outside it does. One change per edit. Draw it again from its prompt only when the idea, the composition, a pose or the subject is what's wrong: an edit keeps what's in the image, so a new pose drawn by an edit keeps the old head on a changed body (`references/poses.md` of the `character` skill). Never use a generated image as a style reference for the next: copies of copies drift.
 - Place it through the variable's value, the path the result gives exactly as it is (`/assets/<file>.png`, leading slash kept): `metamorfiles_edit { item: "pages/<id>", changes: [{ do: "value", variable: "photo", value: "/assets/<file>.png", variant: "<id>" }] }` for one variant, without `variant` for the whole page, on the template for its default. Then render every format that shows it: a crop that works in the post can cut the product in the story. Set each format's crop with the design's `object-position`.
-
-## Check
-
-Look at the result, then change one thing at a time: an edit or a new take says what changes and
-repeats what must stay.
-
-Look at every generated image at full size before you use it or show it. Image models make the same
-mistakes again and again; redo an image that has any of them, saying what to fix and what to keep:
-- **Hands and bodies:** extra or missing fingers, fused hands, a limb bending the wrong way, a third
-  arm, a body in a pose it couldn't hold, faces that melt at the edges.
-- **Objects:** duplicated parts (a cup with two handles, a bike with three pedals), warped or bent
-  straight things, parts that float or pass through each other, a strap that goes nowhere.
-- **Physics and light:** shadows that point different ways, reflections of nothing, steam or liquid
-  that ignores gravity.
-- **Text:** any lettering at all, which comes out garbled; the brand's words are set in the design.
-- **Background:** stray figures, extra objects, repeated patterns and smeared detail behind the
-  subject.
-- **The character:** the same character as its sheet, by eye: the face, the one feature, the
-  proportions and the colours. A part in a colour the character doesn't have (a gold paw) or a part
-  its kind doesn't have (an arm on a bird) is as wrong as an extra arm. Only what you can see counts:
-  a part hidden by the pose, an object or the edge isn't missing.
-- **The brand:** a colour outside the guide's roles, or the style broken (shading in a flat style).
-
-Then:
-- The crop is the one the composition names (`design.md`, "A crop is a choice").
-- Nothing stretched, soft or upscaled past its size (the checks flag these).
-- The copy sits on a calm area, or the design adds a scrim.
-- The image looks like the brand's references, not like stock.

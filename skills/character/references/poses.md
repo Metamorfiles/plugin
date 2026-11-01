@@ -47,22 +47,6 @@ as artwork on its own (a sticker, a sign): serving, waving, carrying the one pro
 on a pose already drawn is an edit: "Change only the expression: surprised, round eyes and a small O
 mouth".
 
-## Checking the set
-
-Look at every new drawing beside the sheet, at the same size (`metamorfiles_read_file`, `asImage`,
-or the character's frame on the brand board,
-`metamorfiles_render_preview { item: "templates/brand-board", format: "<folder>" }`, its folder's path
-under `brand/` with `-` for `/`):
-- the same proportions and the same number of features;
-- the defining feature the same shape and size;
-- the same colours, each for what it paints, and nothing added (a nose, fingers, an outline);
-- the same line weight, or the same flat fills;
-- no mistakes of the image model (a third arm, a limb bending the wrong way; the list is in
-  `references/images.md` of the `studio` skill).
-
-A drawing that drifted is drawn again from the sheet, with the drifted part named in its "Nothing
-about it changes" line.
-
 ## Files
 
 In the character's folder, numbered in the order the board shows them, by `name`: `00-sheet`,
