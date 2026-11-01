@@ -1,6 +1,6 @@
 # Design
 
-The brand kit sets the materials; you decide how they're used in this frame. A social image gets about a second in a feed, so every choice serves what the reader takes in during that second. The contract (`references/contract.md`) says what the HTML must be; this says how to make it good.
+The brand kit sets the materials; you decide how they're used in this piece: a social frame, a print, a pack's face, a sticker, a sign. A social image gets about a second in a feed and a sticker a glance across a shop, so every choice serves what the reader takes in during that moment. The contract (`references/contract.md`) says what the HTML must be; this says how to make any designed piece good, whether Studio sets it in code or the image model draws it whole.
 
 ## Contents
 - Before you touch anything
@@ -30,11 +30,15 @@ Fix at the widest level the problem really has. A headline that overflows in eve
 
 After each change, render the frames you changed and look at them the way a reader would:
 
-- **At a glance**: shrink the image in your mind to a phone in a feed. The first thing you notice should be the thing the reading path starts with, and the rest should follow in order.
+- **At a glance**: shrink the image in your mind to a phone in a feed, or the print to across a room. The first thing you notice should be the thing the reading path starts with, and the rest should follow in order.
+- **Squinted**: blur it until the words are grey bars. Two or three large masses with clear size steps lead the eye; many medium ones mean nothing leads.
+- **The logo covered**: the piece still belongs to this brand. If a competitor's name would fit it as well, the idea is missing, and that comes before every other fix.
 - **Type**: sizes and weights from DESIGN.md's type roles, with a visible step between levels. If a line needs a size no role has, the layout is asking for too much.
 - **Edges**: elements share alignment lines and the margins match. The safe margin and what each platform covers are the contract's rules (`references/contract.md`, "Layout rules"), and the checks enforce both.
 - **Text**: headlines use `text-wrap: balance`, and no text touches an edge or runs into the logo.
 - **Photos**: an `object-position` chosen for this subject, checked in every format that shows it.
+
+Fix in this order, since a later fix can't rescue an earlier problem: the idea, the hierarchy, the composition, the type, the imagery, the colour, the details. When taking something out leaves a gap, enlarge what's left or give the room to a picture or a field of colour; never refill it with an ornament.
 
 ## Taste
 
@@ -45,16 +49,32 @@ After each change, render the frames you changed and look at them the way a read
 
 ## The composition
 
-Every frame is decided as an idea, then as a picture, in your notes, before any image or CSS exists.
-Imagine it from what the piece is for: its goal (what the viewer should feel, know or do), its format
-and how it's met (a feed post judged in a second, a story seen full height, a carousel swiped on
-purpose, a print held in the hand), and the story it tells (one beat, or a sequence with a cover, a
-build and an end). Then build it with the tools.
+Every piece is decided as an idea, then as a picture, in your notes, before any image or CSS exists:
+a frame, a print, a pack's face, a sticker or a sign alike, whether Studio sets it in code or the
+image model draws it. Imagine it from what the piece is for: its goal (what the viewer should feel,
+know or do), its format and how it's met (a feed post judged in a second, a story seen full height, a
+carousel swiped on purpose, a print held in the hand, a sticker read across a shop), and the story it
+tells (one beat, or a sequence with a cover, a build and an end). Then build it with the tools.
 
-**The idea.** One visual idea per frame, from what this frame says and the brand's own world (its
-objects, place, name, people, character), named in a phrase: "the parcel too big to carry" for a post
-about shipping costs. A layout name (a statement, a figure, a split) is not an idea: it draws the same
-card with new words. Ideas come in kinds, and three ideas of one kind are one idea:
+**The subject.** Ideas come from what only this business has: its name and what it means, its place,
+what it makes and from what, its rituals and its people, the printed things of its world (a tag, a
+receipt, a crate's stamp). Note the few that fit this piece. The category's usual symbol is what
+every competitor already has.
+
+**The best of its kind.** Before deciding a piece, see how the best designers made one: search
+Studio's index for that kind of piece in that kind of business,
+`metamorfiles_search_references { query: "skincare poster" }`, and look at the covers (a search
+spends none of the day's pages), or at the references the brand's research already collected when
+they show this kind of piece. Name what the strongest do with the space (how they compose, not what
+they show), and take one way of composing on whole: blended with your usual layout, it becomes the
+usual layout. They set the standard to reach; their subjects and marks stay theirs.
+
+**The idea.** One visual idea per piece, from what this piece says and the subject, named in a phrase:
+"the parcel too big to carry" for a post about shipping costs. Say it as what of the subject becomes
+what in the piece ("the morning's two minutes become the poster's clock face"); a sentence that fits a
+competitor's piece as well is the category, not an idea. A layout name (a statement, a figure, a
+split) is not an idea either: it draws the same card with new words. Ideas come in kinds, and three
+ideas of one kind are one idea:
 - a metaphor: the subject stands for the point (a maze for a confusing process);
 - an exaggeration: one thing at an impossible scale or amount;
 - the demonstration: the thing doing what the copy says, literally;
@@ -70,9 +90,18 @@ among the kinds, and none is a default. The user sees finished work, never a wir
 between empty layouts; a note from them about the look is a rethink of the idea. A carousel's slides:
 `references/carousels.md`.
 
+**Full, not thin.** The idea fills the piece: its hero at a scale that takes the space, type large
+enough to be part of the picture, colour as whole fields, the brand's real imagery. A piece with
+nothing wrong and nothing in it reads as a template too; in blind comparisons the richer piece wins.
+Parts stacked one under another (a band with the logo, a picture, the name below it) are a layout,
+not a design: one idea holds them together.
+
 **The composition decides the image.** The image is made for its slot, and its prompt's Scene is the
 composition line's picture, word for word: where the subject is, its scale, its crop, which way it
-faces and what stays empty (`references/images.md`, "The prompt").
+faces and what stays empty (`references/images.md`, "The prompt"). When the image model draws the
+whole piece itself (a flat print, a pack's face drawn in its photograph), its prompt gives the idea,
+what reads first, second and third, and the brand's materials, and leaves the placing to the model:
+a layout measured out part by part is copied as given and reads as parts stacked.
 
 - **Three modes that never collide.** A character or product is a **cutout** (a transparent image),
   placed and scaled by the layout: it can run off the frame, sit huge, or overlap the headline on
