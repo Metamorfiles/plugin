@@ -8,7 +8,6 @@ locked style, anchors the user approves, and a library grown from them.
 - The mode
 - The style block
 - Seeds, then anchors
-- Check every image before anyone sees it
 - The library
 - A character
 - In the kit
@@ -55,8 +54,8 @@ a look to recognise, not rules to count.
    interior, a character, a detail. They differ on purpose: in the pose, which way the head turns,
    the framing (a close-up, the full body, from behind, from above) and the expression, never four
    versions of one drawing in new props. The props come from the brief's own world (its list of
-   what the business makes and uses); a generic symbol standing in for it (a star, a sparkle, a
-   lightning bolt, a heart) is the default to recognise and replace. A character brand makes its
+   what the business makes and uses), never a generic symbol standing in for it (a star, a sparkle,
+   a lightning bolt, a heart). A character brand makes its
    seeds from the character sheet, as `images.md` of the `studio` skill says ("The prompt").
    Each is
    `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["templates/brand-board#process-direction:<chosen id>"], folder: "brand/process/imagery", ground: "#f6f1ea", wait: false }`,
@@ -74,20 +73,12 @@ a look to recognise, not rules to count.
    a seed copied as a reference brings its head and face with it. Say what to keep ("the same composition") and what to change ("fewer, bolder lines"). The
    new take goes first in the option's `files` and the earlier one stays after it: the board shows
    it small and dimmed under "Earlier takes", so the user can ask for it back, and then it moves
-   first again. Remove a take only when it has an image-model mistake.
+   first again.
 4. The seeds the user keeps are the **anchors**: the kit brings each into the library folder
    (`SKILL.md`, Kit) and DESIGN.md lists the file names that returned. The library below is grown
    from two or three of them as references (`references: ["brand/refs/<anchor>", ...]`), since the
    library sheet doesn't exist yet; every image after the kit takes the library's sheet instead
    (`images.md` of the `studio` skill, "The prompt").
-
-## Check every image before anyone sees it
-
-Look at each image at full size, and redo it from the anchors when it shows any of the mistakes
-image models make (the list is in `images.md` of the `studio` skill, under Check). When the user
-finds one, the redo comes before anything else. After your own look, the reviewer checks the seeds before
-they're asked, and the library in the `handover` queue (`SKILL.md`, "Reviewed before the user sees
-it").
 
 ## The library
 
@@ -99,10 +90,6 @@ brand's paper; a photograph never takes a `ground`. Each is made at the shape
 it will be used at (1024 × 1024 for a spot, 1600 × 2000 for a 4:5 scene):
 - **Spots:** single objects the business sells or uses, centred with space around them.
 - **Scenes:** the business's moments and people, with calm space above for a headline.
-
-Check each one against the anchors: the same medium, line and fills. Redo from the anchors when one
-has an image-model mistake or is plainly in another medium; a small drift in a tint or a detail is
-not worth a redo.
 
 ## A character
 

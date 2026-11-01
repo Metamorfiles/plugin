@@ -282,5 +282,5 @@ being sold and to whom.
 
 An option reaches studio level when principles 1, 3, 4, 11 and 14 score 5 and nothing scores below
 3.
-One 1 anywhere is a failure: fix it before anyone sees it. An average around 3 is exactly the
+One 1 anywhere means the option is rethought before it's made. An average around 3 is exactly the
 competent, interchangeable work a generator can already do, and it is not good enough.

@@ -44,8 +44,8 @@ Write and change every project file with `metamorfiles_write_file`, never with a
 
 **Change the least that answers the request.** A value or a composed part (a word, a colour, a size,
 a place, one part of a composed logo) changes in its file or in the logo's saved settings (`from`),
-with no image made. An image or drawing is edited, not remade: `references/images.md`, "Generate
-and place, edit or redraw".
+with no image made. An image or drawing changes as `references/images.md`, "Generate and place,
+edit or redraw", says.
 
 ## Which skill
 

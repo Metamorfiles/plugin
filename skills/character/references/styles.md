@@ -61,7 +61,7 @@ Only the character: no letters, words or numbers, no ground line or shadow, no f
 - Describe it as a character, never as a logo or an icon: those words bring letters, frames and
   presentation boards.
 - Colours are the palette with a job each, never a colour per limb: the model gives them to the
-  shapes it draws, and a part in a colour the brand doesn't have is caught at the check.
+  shapes it draws.
 - Each candidate has its own Who, Face and Doing, and its own build (`design.md`, "Three designs
   for one character"); the Look and the Palette are the same in all three, and so is what the brief
   fixes it to be.
@@ -70,7 +70,7 @@ Only the character: no letters, words or numbers, no ground line or shadow, no f
   Never a wordmark set in type while the character is explored, unless it is a new brand's chosen
   logo (`SKILL.md`, "In a new brand"): the first image is the one the model keeps most, and a
   typeface isn't a drawing hand. With no such reference, the style block carries the
-  hand alone. Once kept for a logo, it is drawn onto the set word (`references/symbol.md` of
+  hand alone. For a logo, it is then drawn onto the set word (`references/symbol.md` of
   the `logo` skill, "Compose it on the word").
 - Draw it at `width: 1024, height: 1024` with `trace: { colors: [...] }` listing the style's trace
   colours, and the `folder` it belongs in (the call: step 3 of the skill). A model that can't draw

@@ -35,7 +35,7 @@ The logo's own page is `references/taste.md` of the `logo` skill; the families o
 ## Defaults to recognise
 
 What the image model draws when the brief left it to choose. A default is not a choice: when the
-brief asks for one, it's right; when it didn't, the candidate is drawn again from a changed brief.
+brief asks for one, it's right; when it didn't, the brief names what it should be instead.
 - two closed, happy crescents for eyes and a wide grin, on any character;
 - an object with a face drawn on it, standing still, arms out;
 - stick limbs ending in round mitts;
@@ -45,5 +45,5 @@ brief asks for one, it's right; when it didn't, the candidate is drawn again fro
 - a cocky smirk with one raised brow and a fang, when nothing in the brief is cocky;
 - glossy 3D, or big sparkling eyes in a tiny body, when the direction is flat.
 
-Two questions for every candidate: could you guess it from the category alone? Could another
-business use it unchanged? Either yes, and the idea isn't this brand's yet.
+Two questions for every brief, before it's drawn: could you guess it from the category alone? Could
+another business use it unchanged? Either yes, and the idea isn't this brand's yet.

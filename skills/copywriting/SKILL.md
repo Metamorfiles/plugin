@@ -23,10 +23,3 @@ memory or invention.
 When a piece needs a name the brief doesn't give (a product, a range, a flavour), propose three or
 four in the brand's voice, each one line, and record them for the user to confirm (a new brand's
 brief: `**Product names (proposed):** …`). Never present a proposed name as the brand's.
-
-## Read it back
-
-Before you hand words over, read them as the person they're for: a shopper glancing at a post, or a
-printer, partner or new designer holding the guideline with nothing else. Every sentence is a fact
-about the brand or something they can act on. A sentence that only makes sense to someone who
-watched the work being made goes to Sources or Known gaps, or goes.

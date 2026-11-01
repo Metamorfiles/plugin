@@ -1,6 +1,6 @@
 ---
 name: character
-description: Designs a brand character (a mascot, a creature, a person, an object with a face) in Metamorfiles Studio and draws it on model in new poses and expressions, for a brand's logo or its imagery. Briefs it by who it is, its attitude, its face and its look, draws three designs as candidates alone on a transparent background, traces the one kept into a vector, and grows every later drawing from its character sheet. Use whenever a brand needs a mascot or character, or the user asks for one doing something new, even if they only describe what it should look like.
+description: Designs a brand character (a mascot, a creature, a person, an object with a face) in Metamorfiles Studio and draws it on model in new poses and expressions, for a brand's logo or its imagery. Briefs it by who it is, its attitude, its face and its look, draws three designs as candidates alone on a transparent background, traced into vectors, for the user to choose, and grows every later drawing from its character sheet. Use whenever a brand needs a mascot or character, or the user asks for one doing something new, even if they only describe what it should look like.
 license: MIT
 ---
 
@@ -9,8 +9,7 @@ license: MIT
 A brand character is briefed the way an illustrator is briefed: who it is, what it's like, what it's
 doing, its face, and the hand it's drawn in. The face carries the personality, so the brief says
 how it looks in a few concrete terms. Three candidates are three designs, each with its own
-brief. Then the character is drawn alone, traced, and every later drawing of it starts from the
-character sheet the user approved.
+brief, and the user chooses. Then every later drawing of it starts from the character sheet.
 
 ## Checklist
 
@@ -20,10 +19,9 @@ Copy it into your notes and tick each step as you go:
 - [ ] 1. The brief: who it is, why it's this brand's, what it's like, its face, what it's doing
 - [ ] 2. The look: one rendering, chosen for this character, in the direction's words
 - [ ] 3. Three designs, a brief each; drawn together, alone, on transparent; traced
-- [ ] 4. Judged against the defaults; one kept, or the briefs changed
-- [ ] 5. Shown to the user; the kept one is the anchor
-- [ ] 6. The character sheet from the anchor: every side and four poses, the reference for every image of it
-- [ ] 7. Placed: in the logo, in the imagery, as the small mark
+- [ ] 4. Reviewed, then shown to the user; the chosen one is the anchor
+- [ ] 5. The character sheet from the anchor: every side and four poses, the reference for every image of it
+- [ ] 6. Placed: in the logo, in the imagery, as the small mark
 ```
 
 ### 1. The brief
@@ -59,25 +57,14 @@ with `folder: "brand/process/imagery"` for the imagery step; the path it returns
 In a logo drawn whole, where the character and the name are drawn as one, the same brief and look go
 into its prompt (`references/drawn.md` of the `logo` skill).
 
-### 4. Judge, and keep one
+### 4. The anchor
 
-For each candidate:
-- read the trace at full size (`metamorfiles_read_file`, `asImage`);
-- run `metamorfiles_check_logo` on it: the blurred and one-colour versions show the silhouette;
-- hold it against `references/taste.md`: a personality in the pose and the face, one feature that
-  makes it itself, doing this business's thing; none of its defaults to recognise, unless the brief
-  asked for it; and not a character another business could use unchanged.
-
-Keep the one that is most a character. When a candidate lands on a default, change its brief and
-draw it again (`references/design.md`, "When a drawing misses"). When the user turns the candidates down, the briefs are rewritten: the attitude,
-the face and the idea, keeping what they liked; a new look alone changes nothing they objected to.
-
-### 5. The anchor
-
-Show the kept one (in a new brand, as a logo route or an imagery option). The one the user approves
-is the **anchor**: every later drawing of the character is made from it. Put it in the character's
-folder as `01-front`:
-`metamorfiles_import_image { path: "<the kept .svg>", name: "01-front", folder: "brand/<the character's folder>" }`.
+Have the reviewer look at the three (the `review` skill), then show them all to the user (in a new
+brand, as a logo route or an imagery option). The one the user chooses is the **anchor**: every later
+drawing of the character is made from it. When the user turns the candidates down, the briefs are
+rewritten: the attitude, the face and the idea, keeping what they liked; a new look alone changes
+nothing they objected to. Put the anchor in the character's folder as `01-front`:
+`metamorfiles_import_image { path: "<the chosen .svg>", name: "01-front", folder: "brand/<the character's folder>" }`.
 Studio adds a short id to the name, so list the full file name it returns (`01-front-1a2b3c4d.svg`)
 in the folder's `anchors`.
 
@@ -89,7 +76,7 @@ route has `mascot: true` when its character is in the logo.
 
 - **The chosen logo carries the character:** that character is the mascot, so there is nothing to
   choose. Draw it in one to three poses (`references/poses.md`, from its traced drawing in the logo)
-  and its sheet (step 6), write the poses as `characters` and the sheet as `sheet`, have the
+  and its sheet (step 5), write the poses as `characters` and the sheet as `sheet`, have the
   reviewer check them, and ask with `metamorfiles_ask_user { step: "character" }`: the user approves
   them with "Use these", like the imagery.
 - **Otherwise:** write this brand's briefs (step 1) and draw three designs (step 3), each with the
@@ -98,24 +85,24 @@ route has `mascot: true` when its character is in the logo.
   `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`
   Write them as `characters`, each `{ file, title, line }` (the line: the idea, in the user's words) and one `recommended: true`, have the reviewer
   check them, and ask with `metamorfiles_ask_user { step: "character" }`. The one chosen
-  (`character`) is the anchor: draw its sheet from it (step 6) and have the reviewer check it.
+  (`character`) is the anchor: draw its sheet from it (step 5) and have the reviewer check it.
 
 Studio checks that each was drawn from the chosen logo, and the sheet from the mascot. The small mark
 comes next: step 8 of the `logo` skill.
 
-### 6. The character sheet
+### 5. The character sheet
 
 As soon as the anchor is approved (in a new brand, the mascot is chosen), draw the
 **character sheet**: one image of the character from every side and in four poses, made in one
 generation so all eight match. It is the character's reference from then on: every image of it,
 any scene, any pose, any movement, passes the sheet as image 1, and a model that sees the character
-from every side learns the character instead of copying one drawing. The grid, the prompt, the check
-and where it goes: `references/sheet.md`.
+from every side learns the character instead of copying one drawing. The grid, the prompt and
+where it goes: `references/sheet.md`.
 
 A single new drawing for the brand's files (a pose for a sticker) is made from the sheet too:
 `references/poses.md`. The small mark is made as step 8 of the `logo` skill says.
 
-### 7. Where it goes
+### 6. Where it goes
 
 - **In a logo**: composed with the name set in type (`references/lockups.md` of the `logo` skill).
 - **As the small mark**: its head or bust, made as step 8 of the `logo` skill says.
@@ -129,7 +116,7 @@ A single new drawing for the brand's files (a pose for a sticker) is made from t
 | [references/taste.md](references/taste.md) | What a strong character looks like, and what goes wrong |
 | [references/design.md](references/design.md) | Writing the brief |
 | [references/styles.md](references/styles.md) | Choosing its rendering, and the prompt |
-| [references/sheet.md](references/sheet.md) | The character sheet: its grid, the prompt, the check, where it goes |
+| [references/sheet.md](references/sheet.md) | The character sheet: its grid, the prompt, where it goes |
 | [references/poses.md](references/poses.md) | A single new drawing for the brand's files, from the sheet |
 
 How to prompt each image model is in `references/images.md` of the `studio` skill, and how a

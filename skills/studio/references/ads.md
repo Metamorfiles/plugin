@@ -12,7 +12,7 @@ An ad runs where the platform puts it, so make each placement the user buys, fro
 - **The brand in the first look.** The logo or the small mark is visible without reading; the brand's colours and imagery do the rest. A viewer who doesn't stop should still know whose ad it was.
 - **The offer or the action stated:** "Book a table", "20% off this week", "New: the night range". Never a vague "Learn more" when the action is concrete.
 - **Little text on the image.** The headline and the action; everything else goes in the ad's caption (the variant's `caption`).
-- **Readable at thumb size:** look at each frame at a quarter of its size before you hand it over.
+- **Readable at thumb size:** set it to read at a quarter of its size.
 
 ## The platforms' covered areas
 

@@ -44,14 +44,11 @@ Draw it at the lockup's shape, listing every colour it uses:
 Studio has it drawn on a transparent background and traces each colour in the brand's exact value
 (`vector.md`); the path it returns is the traced .svg.
 
-## Read every letter
+## One drawing
 
-Read every word letter by letter in the drawing, accents included, and see that the words stand
-apart; draw it again when one differs. The logo step shows the user the drawing itself. Draw two or three together (each with `wait: false`, then
-`metamorfiles_image_status { id }` for each) and keep each whose letters are right and whose
-drawing holds the direction: the best is the route, and another as good, another way, is its own
-option (`SKILL.md`, step 7). Compose each with its route's supporting words, if it has them, and run
-`metamorfiles_check_logo`.
+Draw it once. The logo step shows the user the drawing itself, and its letters are the reviewer's to
+read: a letter it sends back is fixed by an edit (`references/images.md` of the `studio` skill).
+Compose it with its route's supporting words, if it has them, and run `metamorfiles_check_logo`.
 
 ## Other versions of it
 
@@ -79,8 +76,7 @@ A version of a logo drawn whole is made the cheapest way that keeps it the logo'
   the boxes being the merged ones the check reported. Every piece outside them is the logo's own
   file; the version's entry in `logo.md` carries the same boxes as `redrawn`, so the card says what
   was redrawn and the reviewer judges only that.
-- **Another layout** (one line, stacked) is drawn at its new shape; read every letter against the
-  original and check it like the original.
+- **Another layout** (one line, stacked) is drawn at its new shape and checked like the original.
 
 Recolourings stay `metamorfiles_make_logo_variant`.
 

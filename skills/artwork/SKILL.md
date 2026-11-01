@@ -39,7 +39,7 @@ Printed in flat colour: traced as step 2 says.
 - [ ] 1. The piece planned: its idea, its face, its hierarchy, its zones
 - [ ] 2. The picture painted by the image model, with calm room for the type
 - [ ] 3. Composed: the picture full bleed, the real logo and type on it
-- [ ] 4. Checked flat, as a printed piece, then reviewed
+- [ ] 4. Reviewed as a printed piece
 - [ ] 5. For a mockup: handed to the `mockup` skill
 ```
 
@@ -85,9 +85,6 @@ returned as the image's value.
   (`references/vector.md` of the `studio` skill), the brand's colours listed and `inks` the number of
   colours the print allows.
 
-Look at it before going on, as "Check" in `references/images.md` of the `studio` skill says. Make
-it again rather than covering a flaw with type.
-
 ### 3. Compose
 
 Write the artwork as the template's `index.html`, with
@@ -101,16 +98,13 @@ and tokens (`var(--brand-…)`, files from `../../brand/…`).
 - The logo at the size this object carries it, in the version made for the ground it sits on.
 - Every word real: the brand's voice and what the brief says, never an invented price, figure,
   ingredient or claim.
-- Type sits on the calm zones the picture left. When it doesn't read there, change the picture's
-  zones and paint it again, rather than laying a box under the words.
+- Type sits on the calm zones the picture left, never on a box laid under the words.
 - Margins and a bleed edge like a real print: nothing that matters near the edge.
 
-### 4. Check it, flat
+### 4. Review it
 
-Render it with `metamorfiles_render_preview { item: "templates/<id>" }` and look at it flat, as the
-printed piece, before it goes anywhere: the hierarchy from a shelf, every word, the logo intact, the
-picture on brand. Then get the review (the `review` skill) of `templates/<id>` as a printed
-piece.
+Fix the check errors `metamorfiles_render_preview { item: "templates/<id>" }` reports, then get the
+review (the `review` skill) of `templates/<id>` as a printed piece.
 
 ### 5. For a mockup
 

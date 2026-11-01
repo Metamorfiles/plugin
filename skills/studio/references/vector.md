@@ -22,9 +22,6 @@ or `metamorfiles_import_image`:
 - **Not traced:** a photograph, a gradient or textured art. It stays a raster, printed at its
   resolution: make it at the largest size the source gives.
 
-The result lists each colour with its share and says how much of the drawing the trace keeps. Under
-90%, the drawing isn't flat colour: keep the raster, or draw it again flat. A colour reported beyond
-the trace's is part of the design (trace again with it listed, or with more `inks`) or a shade the
-model added (draw again without it); an area reported as a gradient is drawn again flat, or the
-raster is kept where the gradient is the design. The brand's logo is made by the `logo` skill, never traced
+The result lists each colour with its share, how much of the drawing the trace keeps and any
+gradient, and says what to do about each. The brand's logo is made by the `logo` skill, never traced
 from a render of it, and another party's mark is never traced (`metamorfiles_find_mark`).

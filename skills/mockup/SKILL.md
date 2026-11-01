@@ -15,8 +15,7 @@ designed as a system.
 - [ ] 1. The shots chosen: one idea each, different from each other; the packs one system
 - [ ] 2. What's printed on each object decided: the logo alone, designed in place, a flat print or exact artwork
 - [ ] 3. Each photograph made whole, from its prompt and the brand's files; all together
-- [ ] 4. Each one checked: the logo, the words, the physics, the scene
-- [ ] 5. Fixed by an edit, or placed when an edit can't; reviewed; then the user sees them
+- [ ] 4. Reviewed; each must fix made by an edit, or placed when an edit can't
 ```
 
 ### 1. The shots
@@ -77,8 +76,8 @@ really make it:
   against the best prints of its kind, and its prompt gives the idea, what reads first, second and
   third, and the brand's materials:
   `metamorfiles_generate_image { prompt, references: ["brand/logos/logo.svg", "brand/refs/serum-morning.jpg"], width: 1600, height: 1600, transparent: true, folder: "brand/mockups/artwork", name: "mirror-sticker" }`.
-  Check its logo and words, then photograph it from that file (step 3). A flat print drawn in the
-  photograph at once comes out as a graphic laid over it.
+  Then photograph it from that file (step 3). A flat print drawn in the photograph at once comes out
+  as a graphic laid over it.
 - **Exact artwork** (a label a printer would get as a file, a precise illustration):
   designed flat first with the `artwork` skill, then given to the model as the object's print.
 
@@ -93,7 +92,7 @@ print.
 ### 3. Make each photograph
 
 All the shots together, except those that show a pack another shot shows: make the shot that
-designs the pack first and, once it passes its check, give it to the others as a reference ("Image
+designs the pack first, look at its pack, and give it to the others as a reference ("Image
 2 is the brand's pack: the same design, only the flavour's colour and name change"). That holds
 wherever the brand's products appear, behind another piece too (the cans on the shelf a sticker is
 on): they're the packs the brand designed, from that shot, never blank or unlabelled stand-ins. Each
@@ -140,17 +139,11 @@ the shadows, glare and drops that fall on the surface around it. Name its colour
 never ask for it "exactly as drawn": either makes it a flat graphic laid over the photo.
 `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/mockups/artwork/mirror-sticker-1a2b3c4d.png"], folder: "brand/mockups", name: "mirror-sticker", wait: false }`
 
-### 4. Check each one
+### 4. Review, and fix
 
-Look at each with `metamorfiles_read_file`, as the photograph a design publication would run:
-- **The logo, the words, the method and the print's fit:** as the Mockup checklist of the `review`
-  skill says (`metamorfiles_get_guide { name: "review" }`).
-- **The physics:** the object as the real one is made and used.
-- **The scene:** it is the frame the Scene set up and the moment the Subject named: what leads and
-  where, every object in its state, each attached part on what it's attached to. A photograph that
-  dropped or rearranged them is made again before the review.
-
-### 5. Fix, place when it can't be fixed, and review
+Get the review (the `review` skill): in a new brand the `handover` queue holds them, and anywhere
+else the page or template they're in. A shot changes only for a must fix or the user's word, as
+`references/images.md` of the `studio` skill says ("Edit or redraw"):
 
 - **A logo or word wrong:** an edit of that place only, the image first and the logo file after it,
   the prompt naming the fault and keeping the photograph's perspective and light:
@@ -158,10 +151,11 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
 - **A print that floats:** an edit of its region, the photograph first and the print's artwork
   after it, saying only that the print sits on its surface in the scene's perspective and light.
   Never made again from the floating take: a reference carries its fault.
-- **A print at the wrong size or place** (too big for its face, off-centre, too close to an edge): made
-  again from its prompt with `replaces`, saying the size, the place and the room it needs. Never placed
-  for it: a placed file takes its angle from four corners read by eye and lies flat where the surface
-  bends, while a print drawn in the photograph keeps the photograph's perspective.
+- **A print at the wrong size or place** (too big for its face, off-centre, too close to an edge): an
+  edit of its region saying the size, the place and the room it needs; when an edit can't move it,
+  made again from its prompt with `replaces`. Never placed for it: a placed file takes its angle from
+  four corners read by eye and lies flat where the surface bends, while a print drawn in the
+  photograph keeps the photograph's perspective.
 - **Words still wrong after two edits** (long copy, small type, a screen of text): place them. Make the photo
   with the print's surface left blank (the same prompt, the surface "completely blank, fully in frame
   and unobstructed", into `brand/mockups/blanks`), then
@@ -171,11 +165,8 @@ Look at each with `metamorfiles_read_file`, as the photograph a design publicati
   fob held at a slant, are never an upright rectangle),
   `size` and `at` to place a logo in it, `cover` to fill it, `curve` for a can, cup or bottle; Studio
   bakes the files in and the model finishes the photograph.
-- **A weak shot:** made again with `replaces`; the one it replaces stays on the board as an earlier
-  take the user can pick back.
-
-Then get the review (the `review` skill): in a new brand the `handover` queue holds them, and
-anywhere else the page or template they're in. Fix what it sends back. The user sees them last.
+- **The idea, the composition or the subject wrong:** made again with `replaces`, on the
+  reviewer's or the user's word only; the one it replaces stays on the board as an earlier take the user can pick back.
 
 ## Placing it
 

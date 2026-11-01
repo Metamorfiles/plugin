@@ -45,18 +45,7 @@ nothing added that a pose seems to need; no text.
 
 It is raster, never traced: a reference, not artwork.
 
-## Check it
-
-At full size (`metamorfiles_read_file { path, asImage: true }`), figure by figure:
-- exactly eight figures, in the grid's order;
-- the same character in all eight as the anchor, by eye: the face, the one feature, the markings,
-  the colours; nothing added that a pose seemed to need (a hand, a prop, a nose);
-- the same proportions in all eight (head to body, ear size, tail length), and the same face shape
-  across the turnaround;
-- the three expressions of the bottom row clearly different from each other and from the top row.
-
-A figure that drifted means the sheet is drawn again, with the drifted part named in the
-Constraints. Then the reviewer checks it before anyone builds on it.
+The reviewer looks at it before anything is built on it (the `review` skill).
 
 ## Where it goes
 

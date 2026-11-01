@@ -2,7 +2,7 @@
 
 Brief the character the way an art director briefs an illustrator: who, attitude, the face, the
 thing it's doing, the hand. Short and concrete. Say what the character is like and how its face
-looks, and let the drawing find the body's shapes; judge the result by eye.
+looks, and let the drawing find the body's shapes.
 
 ## What the brief says
 
@@ -70,9 +70,10 @@ What the brief fixes stays (a drop of Lumen's serum), and so do the look and the
 construction, the proportions, the face, the one feature and who it is change. Three poses of one
 design are not three candidates.
 
-## When a drawing misses
+## When a drawing is sent back
 
-Change the brief, never describe the failed drawing back to the model, and draw again. Once a
-drawing is kept, it is the anchor and then the sheet: from then on the identity lives in images, and
+When the reviewer or the user says its idea, pose or subject is wrong, change the brief, never
+describe the failed drawing back to the model, and draw again. Once the user chooses a drawing, it is
+the anchor and then the sheet: from then on the identity lives in images, and
 its Character lines say who it is, how its face is made and that nothing about it changes
 (`poses.md`).

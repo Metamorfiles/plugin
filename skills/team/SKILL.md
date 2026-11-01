@@ -8,11 +8,11 @@ license: MIT
 
 The user watches the team in the control panel, and one Undo all reverts the task: work in the open, one step at a time, changing only what the task needs.
 
-You play the specialists yourself, one at a time, because their work depends on each other: a shorter headline changes the layout, a new photo changes where the copy can sit. The one exception is the final check, which a separate reviewer does, since whoever made a change is the worst judge of it.
+You play the three makers yourself, one at a time, because their work depends on each other: a shorter headline changes the layout, a new photo changes where the copy can sit. The reviewer is never you: a separate reviewer does the final check, since whoever made a change is the worst judge of it.
 
 | Role | Owns | Works with |
 | --- | --- | --- |
-| `reviewer` | Judging renders against `brand/DESIGN.md`: what's wrong, how bad, who fixes it. Never changes files. | [references/reviewer.md](references/reviewer.md) |
+| `reviewer` | The final check, by a separate reviewer: renders against `brand/DESIGN.md`, what's wrong, who fixes it. Never changes files. | [references/reviewer.md](references/reviewer.md) |
 | `designer` | Layout, type, color, spacing, crops: the design's HTML and CSS, and `edits.css`. | `references/design.md` of the `studio` skill, and `references/carousels.md` of the `studio` skill for a carousel |
 | `copywriter` | Every word: headlines, body, calls to action, and the research the words need (sources read, with dates). | the `copywriting` skill, and `references/carousels.md` of the `studio` skill for a carousel |
 | `imager` | Images: each one made for its slot with `metamorfiles_generate_image`; never a picture picked from `brand/refs/` because it's there. | `references/images.md` of the `studio` skill |
@@ -44,24 +44,23 @@ Finish every role with `status: "done"`.
 3. **Image maker** (`imager`): each slot's image made for its picture by the prompt in `references/images.md` of the `studio` skill (the brand's image contract, the character sheet first, the library's sheet for style; a cutout for a character or product, a scene only where the type has its own region: "Compose it, then make it"), at the slot's shape the plan names, saved under `assets/`, and the logos found. A design with no images is one the plan chose and says why, never because the library had pictures.
 4. **Designer**: the page from its own design, with the images in place and each slide's composition line in its variant:
    `metamorfiles_create_page { name: "AI weekly drop", design: "<the index.html>", carousel: true, variants: [{ id: "cover", composition: "Idea: the week's news as one heavy stack. Frame: Dew under a tower of papers, cut by the top edge; the headline on the lower half of plain paper", values: { headline: "…" } }] }`.
-   Render it, judge it as a sequence, and fit the layout to the copy and the images as they are.
+   Render it, fix what its checks report, and fit the layout to the copy and the images as they are.
 5. Say what you made in one `say`.
 6. **Final check**, as below.
 
 **A change** to an existing piece:
 0. A note from the user about the look, the images or the composition ("generic", "better composition", "don't stack everything on cards") is a rethink, not a fix: back to the plan's ideas and pictures (step 1 of a new piece), then the images, then the design, never a change to the CSS of what is there.
-1. **Reviewer** first, `reviewing` the frames in scope: judge, then hand each problem to its owner.
-2. **Copywriter** before the designer when words change, since layout has to fit the final copy.
-3. **Image maker** (`imager`) next when an image changes, for the same reason.
-4. **Designer** last: fit the layout to the copy and images as they now are. A change to what a frame's composition line names (its ground, its subject, its crop) updates that line in the same step, `metamorfiles_edit { item, changes: [{ do: "variant", variant, set: { composition } }] }`; a line is never rewritten to match a render the reviewer sent back.
-5. **Final check** of what you changed, by a separate reviewer: [references/reviewer.md](references/reviewer.md), step 3. Report it as `reviewer` (`reviewing`, then `done`). It records its verdict in Studio, and Studio doesn't end the task until everything it changed has passed as it is now.
+1. **Copywriter** before the designer when words change, since layout has to fit the final copy.
+2. **Image maker** (`imager`) next when an image changes, for the same reason.
+3. **Designer** last: fit the layout to the copy and images as they now are. A change to what a frame's composition line names (its ground, its subject, its crop) updates that line in the same step, `metamorfiles_edit { item, changes: [{ do: "variant", variant, set: { composition } }] }`; a line is never rewritten to match a render the reviewer sent back.
+4. **Final check** of what you changed, by a separate reviewer: [references/reviewer.md](references/reviewer.md). Report it as `reviewer` (`reviewing`, then `done`). It records its verdict in Studio, and Studio doesn't end the task until everything it changed has passed as it is now.
 
-Skip the roles a task doesn't need; never skip the first review or the final check. Fixes and the second look follow the `review` skill's Run it, step 4.
+Skip the roles a task doesn't need; never skip the final check. Fixes and the second look follow the `review` skill's Run it, step 4.
 
 ## Scope
 
-- **Review and fix** (the request lists flagged frames): review and change only those frames, fixing what the checks found. Other frames are out of scope even if you'd improve them.
-- **An ask from the user**: Studio names where they asked from (the page, template or project they had open). A change or a fix stays there, and nothing else changes. A request for something new ("make a carousel about…", "a new post") is a new piece, made as a new page from its own design (a template only when the user wants reuse): the page they had open is context, never rewritten into something else. When a request is vague ("make it pop"), the reviewer's design read decides the one change that would matter most.
+- **Review and fix** (the request lists flagged frames): change only those frames, fixing what the checks found. Other frames are out of scope even if you'd improve them.
+- **An ask from the user**: Studio names where they asked from (the page, template or project they had open). A change or a fix stays there, and nothing else changes. A request for something new ("make a carousel about…", "a new post") is a new piece, made as a new page from its own design (a template only when the user wants reuse): the page they had open is context, never rewritten into something else. When a request is vague ("make it pop"), make the one change you'd defend and say it in one `say`, so the user can redirect it.
 
 ## Choices that belong to the user
 

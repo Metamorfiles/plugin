@@ -110,8 +110,8 @@ started.
   Studio will ask and the options as the user will see them.
 - **Say what's on the board.** Once a step's options are written, the role that made them says in
   its `done` update what each one is, in the board's order, and why the recommended one leads:
-  exactly the options offered, never one you dropped; when they change before you ask (one dropped
-  or redrawn after the review), say them again. What you said you'd make before the work never
+  exactly the options offered, never one you dropped; when they change before you ask (one redrawn
+  after the review), say them again. What you said you'd make before the work never
   stands in for it. Studio asks only what the thread last said.
 - **Ask with `metamorfiles_ask_user { task, step: "logo" }`** (`direction`, `logo` or `imagery`).
   Studio asks the step's own question with the options' titles, the panel offers to bring the step's
@@ -123,7 +123,7 @@ started.
   frame appears. Never write `chosen` yourself.
 - **An answer in their own words is the answer.** "A is better but not good enough" means rework A
   and ask again; "the palette of A with the type of B" means write that option and ask again; "C has
-  a cup with two handles" means redo C before anything else.
+  a cup with two handles" means C is fixed before anything else.
 - **From the frame** the answer can also be "Redo <title>": that option made again from its own
   idea, a new take; the others stay as they are, and ask again. "Edit <title> (<file>), keeping the
   earlier take: <what to change>" is an edit of that image as image 1
@@ -148,11 +148,13 @@ started.
 - **Going back from the chat.** "Back to the logo": write the logo step's file again without its
   `chosen`, and ask again.
 
-## Reviewed before the user sees it
+## Reviewed before the user chooses
 
 Whoever made something is the worst judge of it, and the user should never be the one to find its
-mistakes, so the reviewer looks at each piece of work before the user does, and at whatever is made again: a logo tried again, an image redone, a mockup remade,
-any change the user asks for in their own words. Finish every change you plan to a piece (its
+mistakes. The board shows each piece as it arrives, its controls waiting while the team holds it
+(being made, waiting for the reviewer, being looked at); the user chooses it once the reviewer has
+passed it. The reviewer looks at each piece, and at whatever is made again: a logo tried again, an
+image redone, a mockup remade, any change the user asks for in their own words. Finish every change you plan to a piece (its
 wording, a size, a crop) before it goes to the reviewer: a change after a pass sends that piece back.
 Studio keeps what waits, piece by piece; run the `review` skill on the queue and wait for its verdict:
 
@@ -167,8 +169,7 @@ Studio keeps what waits, piece by piece; run the `review` skill on the queue and
 Report it as the reviewer: `metamorfiles_team_update { task, role: "reviewer", status: "reviewing" }`,
 then the same with `status: "done"` and no `say`. The reviewer records its verdict in Studio, and
 the thread shows what it caught. Fix as step 4 of the `review` skill's Run it says, as the role that
-made the piece, with a method that can fix it (a recolour that turns muddy is redrawn from the logo).
-A piece looked at twice without passing is asked as it is, with
+made the piece, with a method that can fix it. A piece it sends to the user as it is is asked with
 `metamorfiles_ask_user { task, step: "logo", cannot: "<one line>" }`. Nothing reaches the user
 with a must fix standing: Studio won't ask a step, or hand the brand over, while a piece waits. The
 brief and the directions aren't reviewed: they are the user's taste. The reviewer judges the work
@@ -211,8 +212,7 @@ Each option can carry:
 - `fonts`: up to 4, each `{ family, file, role }`, `file` the one `metamorfiles_add_font` returned;
 - `sample`: at most 120 characters, the words the fonts are set in, from the brand's own voice.
 
-Up to six options: two or three directions; every logo route and every other candidate as good, at
-least three; one per seed on the imagery step.
+Up to six options: two or three directions; every logo route the plan set, at least three; one per seed on the imagery step.
 Each `title` is at most 60 characters, what the user will call it, and each `line` at most 200, one
 sentence on why it fits the brief; the board marks the recommended one itself, so the line never
 says so. On the direction and logo steps one option is `recommended: true`; the imagery step asks
@@ -262,8 +262,7 @@ its frame shows each file as it arrives, so the user watches the step come toget
 Finish the kit before you hand it over. An image that fails is retried by Studio; if its source
 keeps failing, wait a minute and make it again, and if it still fails, ask the user
 (`metamorfiles_ask_user { task, question, options: [{ label: "Wait and try again", recommended: true }, { label: "Another image model" }] }`)
-rather than handing over a kit with parts missing. An image that doesn't hold the style is made
-again or taken out, never left for the user to find or listed for them to remove.
+rather than handing over a kit with parts missing.
 
 The last call is `metamorfiles_team_update { task, role: "designer", finished: true, summary }`, with
 your handover as `summary`. The run ends there: Studio tells the user the brand is ready and offers
@@ -281,4 +280,4 @@ board in the panel, or any app writes it into `kit/` with `metamorfiles_export_k
   in the kit. An image model sees them only as style references for a logo's first drawings, told
   never to copy their letters, marks or layout (`references/drawn.md` of the `logo` skill).
 - **Logos are made only with the `logo` skill**; words outside the logo are set in the brand's fonts,
-  and mockups keep the logo's identity, checked as the `review` skill's Mockup checklist says.
+  and mockups keep the logo's identity (the `mockup` skill).
