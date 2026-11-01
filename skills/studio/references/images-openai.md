@@ -19,6 +19,6 @@ For ChatGPT Images (`chatgpt/images`, the user's ChatGPT plan) and `gpt-image` m
 - **On a ChatGPT plan, a chat model writes the image prompt from yours.** It keeps what is stated first and plainly, so put the subject and the hard constraints there. The prompt the image model received is saved in the image's record (`<image>.json`, `revisedPrompt`): read it when a result misses something, to see whether the rewrite dropped it before you change your own prompt.
 - When a colour lands wrong, read `revisedPrompt` to see which rule the rewrite kept.
 - **Transparent backgrounds** are asked for, not guaranteed: when the result says it came back opaque, it isn't a cutout. Tell the user, and use it only where its background belongs.
-- **On a ChatGPT plan, OpenAI sets the size**, about 1.6 megapixels in the shape the prompt names: enough for a feed post, not for a 9:16 story's full width or anything printed.
+- **On a ChatGPT plan, OpenAI sets the size**, about 1.6 megapixels in the shape the prompt names, between 3:1 and 1:3: enough for a feed post, not for a 9:16 story's full width or anything printed.
 
 Sources: OpenAI's [image generation tool](https://developers.openai.com/api/docs/guides/tools-image-generation), [image generation guide](https://developers.openai.com/api/docs/guides/image-generation) and [image prompting guide](https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide).

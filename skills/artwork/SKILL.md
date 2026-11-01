@@ -70,8 +70,10 @@ Generate it with
 It saves into `assets/` (or a brand folder given as `folder`), and the template uses the path it
 returned as the image's value.
 
-- **At the face's proportions,** `width` and `height` in pixels at the face's ratio, the long side
-  at most 4096, so nothing is stretched or cropped to fit.
+- **At the face's proportions where the model makes them,** `width` and `height` in pixels at the
+  face's ratio, the long side at most 4096. A face longer than the image model makes (a shelf strip,
+  a long band) gets its subjects as cutouts that step 3 places, or a picture whose ends are calm
+  ground ("Generate and place" in `references/images.md` of the `studio` skill).
 - **In the brand's imagery style,** with the library's sheet as a style reference
   (`templates/brand-board#<folder>`).
 - **No words, letters, numbers, logos or labels in it,** asked for plainly: they are set in step 3.
@@ -94,6 +96,8 @@ of the `template` skill, its format the piece's size in mm with its bleed, expor
 picture full bleed as the face's background, and on it the brand's real logo file and its words in the brand's own fonts
 and tokens (`var(--brand-…)`, files from `../../brand/…`).
 
+- The picture as it came back, at its real size and shape: every subject whole on the face, never
+  cut by the trim or the die-cut to make the picture fit.
 - The logo at the size this object carries it, in the version made for the ground it sits on.
 - Every word real: the brand's voice and what the brief says, never an invented price, figure,
   ingredient or claim.
