@@ -61,19 +61,21 @@ really make it:
   name): nothing but the logo file the ground calls for, placed the way a printer or signwriter would
   put it ("Placing it", below).
 - **Designed in place** (a can's wrap, a box, a label, merch): design the face first, as a packaging
-  designer would: one graphic idea from the brand that carries the whole face (the mark at a scale
-  the edges crop, a colour per variant, the name set huge, the pattern as the material), said in one
-  line, and what reads first, second and third. Every word and part sits as that designer would set
-  it, aligned to the others, with a margin all round and room around what leads. The image model
-  then draws the face in the photograph from the idea, the way the best packaging in its category
-  is designed: give it the idea, what leads and the materials, never a layout measured out part by
-  part, which it copies as given. The brand's files are its references, not its limits: its imagery,
+  designer would, the way "The composition" in `references/design.md` of the `studio` skill decides
+  any piece: one graphic idea from the brand's world, measured against the best packs of its kind,
+  that carries the whole face (the mark at a scale the edges crop, a colour per variant, the name set
+  huge, the pattern as the material), said in one line, and what reads first, second and third.
+  Every word and part sits as that designer would set it, aligned to the others, with a margin all
+  round and room around what leads. The image model then draws the face in the photograph from the
+  idea, what leads and the materials. The brand's files are its references, not its limits: its imagery,
   character, pattern, palette and type inspire the design, in variants and adaptations made for this
   object. Only the logo and the words are exact.
 - **A flat print** (a sticker with art, a poster, a menu, a window vinyl with words, a sign with more
-  than the name): two steps. First the image model designs it flat, the whole print straight on and filling the image, see-through
-  around a die-cut, from the logo and the brand's files, as the best prints in its category are
-  designed:
+  than the name): two steps. First the image model designs it flat, the whole print straight on and
+  filling the image, see-through around a die-cut, from the logo and the brand's files. It's
+  decided as "The composition" in `references/design.md` of the `studio` skill says, measured
+  against the best prints of its kind, and its prompt gives the idea, what reads first, second and
+  third, and the brand's materials:
   `metamorfiles_generate_image { prompt, references: ["brand/logos/logo.svg", "brand/refs/serum-morning.jpg"], width: 1600, height: 1600, transparent: true, folder: "brand/mockups/artwork", name: "mirror-sticker" }`.
   Check its logo and words, then photograph it from that file (step 3). A flat print drawn in the
   photograph at once comes out as a graphic laid over it.
@@ -92,7 +94,9 @@ print.
 
 All the shots together, except those that show a pack another shot shows: make the shot that
 designs the pack first and, once it passes its check, give it to the others as a reference ("Image
-2 is the brand's pack: the same design, only the flavour's colour and name change"). Each
+2 is the brand's pack: the same design, only the flavour's colour and name change"). That holds
+wherever the brand's products appear, behind another piece too (the cans on the shelf a sticker is
+on): they're the packs the brand designed, from that shot, never blank or unlabelled stand-ins. Each
 `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "brand/artwork/can-wrap.png"], folder: "brand/mockups", name: "can-on-peppers", wait: false }`,
 collected with `metamorfiles_image_status { id }`. The references are the brand's real files, numbered
 by role: image 1 the logo file the object's ground calls for (the reversed one on a dark object), its
@@ -128,8 +132,8 @@ add what the object needs, so a whole mockup prompt runs about 300 to 450 words.
   photograph's. Artwork made flat as designed; the rest is designed freely in the brand's style. No
   other logo, mark, badge, claim, price or small print.
 
-A flat print is photographed from its artwork, given as image 1 alone, with the camera the shot's
-own (step 1). A flat print's prompt has Scene, Subject and a short Print line (image 1's design, its
+A flat print is photographed from its artwork, given as image 1, with the camera the shot's own
+(step 1); the brand's pack shot is image 2 when its products are in frame. A flat print's prompt has Scene, Subject and a short Print line (image 1's design, its
 material, light and foreshortening), with no Keep section. The print lies in its surface and turns
 with it (a round sticker on a door that recedes reads as an ellipse in the plane of the glass), under
 the shadows, glare and drops that fall on the surface around it. Name its colours, never as hex, and

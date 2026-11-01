@@ -36,7 +36,7 @@ Printed in flat colour: traced as step 2 says.
 ## With the logo
 
 ```
-- [ ] 1. The piece planned: its face, its zones, its hierarchy, its picture
+- [ ] 1. The piece planned: its idea, its face, its hierarchy, its zones
 - [ ] 2. The picture painted by the image model, with calm room for the type
 - [ ] 3. Composed: the picture full bleed, the real logo and type on it
 - [ ] 4. Checked flat, as a printed piece, then reviewed
@@ -48,6 +48,10 @@ Printed in flat colour: traced as step 2 says.
 Read [references/taste.md](references/taste.md) before planning the piece. Before any image,
 decide, as a packaging designer would, in your notes:
 
+- **The idea.** One idea that holds the picture, the logo and the words together, decided as "The
+  composition" in `references/design.md` of the `studio` skill decides any piece: from the brand's
+  world, measured against the best pieces of its kind, said in one sentence. The rest of the plan
+  serves it.
 - **The face.** Its real proportions: a can's full wrap, a box's dieline, a label's shape, at its
   printed size.
 - **The category's codes.** How packaging in this category looks on a shelf, and which code the
@@ -55,8 +59,9 @@ decide, as a packaging designer would, in your notes:
   The picture's kind follows: an illustration, a repeat pattern, a scene, or a photograph.
 - **The hierarchy,** read from a shelf or across a room: the brand, then what the product is (its
   name, flavour or variant), then one descriptor line, then the small print. One hero.
-- **The zones.** Where the logo and the words sit, and where the picture has the stage. Write them
-  as plain positions ("the top third calm, the otter low on the right, a clear band under the logo").
+- **The zones.** Where the idea puts the logo and the words, and where the picture has the stage.
+  Write them as plain positions ("the top third calm, the otter low on the right, a clear band under
+  the logo"): Studio sets the type there, so the picture has to leave that room.
 
 ### 2. The picture
 
