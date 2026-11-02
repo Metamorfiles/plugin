@@ -74,7 +74,8 @@ research:
 
 The objects and screens this business's customers really meet, moment by moment: finding it,
 arriving or opening it, buying or signing up, using it, taking it home or receiving it, coming back.
-Write them in the brief, specific to this business, never a category's stock list:
+Write them in the brief, specific to this business, never a category's stock list, starting with
+every piece and scene the brief's "What they want made" names:
 
 | Kind of business | Its touchpoints might be |
 |---|---|

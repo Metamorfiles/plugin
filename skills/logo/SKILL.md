@@ -119,7 +119,7 @@ between them, never you.
 
 In a new brand, give each option of `brand/process/logo.md` its files, in the order the plan set
 (a further candidate after them), one `recommended: true`, with
-`mascot: true` at the top when the brief asks for a mascot, and `mascot: true` on each route whose
+`mascot: true` at the top when the brief asks for a mascot anywhere in it, and `mascot: true` on each route whose
 logo carries the character, and ask as the `new-brand` skill says: Studio draws each large on its ground with its
 one-colour version beside it on the brand board, a logo made from a drawing as the drawing itself and its
 one-colour version from its trace. Outside it, show the check sheets and say in a line what each is and why,
