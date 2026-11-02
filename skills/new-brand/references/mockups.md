@@ -8,7 +8,8 @@ templates.
 ## Which three
 
 Three shots, from the brief's touchpoints (`research.md`), each a different part of the system and a
-different kind of idea:
+different kind of idea. A scene the user asked to see (the brief's "What they want made") is one of
+the three, as they described it:
 
 - **The hero:** the most public object, designed in full (the pack, the bottle, the tin, the box).
 - **The range:** the hero's family together, a colour per variant: the hero's design, never a new one.

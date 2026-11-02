@@ -79,10 +79,12 @@ the brand board.
 
 **Asking for the brief:**
 
-1. Call `metamorfiles_ask_user { brief: { name, what, who, feel, own, links } }` with your reading
-   of what the user said: the brand's name, what it is, who it's for, how it should feel, where it is
-   today (its site, profiles or handles, as they gave them) and the work they love as full https
-   links (`name` and `what` are required). Studio draws the brief on the board at once and opens the
+1. Call `metamorfiles_ask_user { brief: { name, what, who, feel, want, own, links } }` with your
+   reading of what the user said: the brand's name, what it is, who it's for, how it should feel,
+   where it is today (its site, profiles or handles, as they gave them) and the work they love as
+   full https links (`name` and `what` are required). `want` is everything they asked to have made or
+   shown (a mascot, labels, a sign, the scenes they want to see it in), in their own words: the team
+   reads only the brief, so what you leave out of it is never made. Studio draws the brief on the board at once and opens the
    same questions as New brand, filled in with your reading, for the user to complete, above all the
    work they like.
 2. When it says Studio's team makes the brand once the brief is answered, write what it asks and end
