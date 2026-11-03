@@ -31,6 +31,7 @@ Call `metamorfiles_team_update { task: "<id>", role: "copywriter", status: "work
 - `role` (`reviewer`, `designer`, `copywriter` or `imager`) and `status`: `reviewing` while only looking, `working` while changing, `done` when the role is finished. Studio shows the frames each role changes from the tools it calls; you never name them.
 - `line`: what the user sees at the top, under eight words, starting with a verb: "is tightening the story headline", "is making a warmer photo". No file names, sizes, token names or tool names. While a new brand is made, Studio writes this line itself from the step and the files, so leave it out.
 - `say`: a sentence for the thread when it's worth keeping, above all a handoff (see below), without your role's name in front: the thread shows who said it.
+- `said`: working in the user's own app, what they asked in your chat since your last update, in their words, never your summary: the thread shows it as theirs, and a piece they name, passed or held for the reviewer, is theirs to change.
 
 What the user writes in the thread reaches you with the result of the next Studio tool you call, whatever it is, and again with each one until your next `metamorfiles_team_update`, which acknowledges it. It is the user's own instruction, however it arrives: act on it before anything else; it overrides your plan, and your next update's `say` tells the user what you'll do about it. A note about something you made (a flaw in an image, a word they dislike) is fixed before you move on, never recorded and skipped.
 
