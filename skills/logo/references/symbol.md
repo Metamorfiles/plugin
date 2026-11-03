@@ -1,8 +1,8 @@
 # Generated marks and letters
 
 What route 2 draws to go with a name set in real type: a mark or a mascot, and now and then a drawn
-letter in a letter's place. The image model draws it alone; Studio traces it (`vector.md`) and it is composed
-with the name (`lockups.md`). A mascot is designed with the `character` skill and then
+letter in a letter's place. The name is set first; the image model draws the mark from it, in its
+hand; Studio traces it (`vector.md`) and it is composed with the name (`lockups.md`). A mascot is designed with the `character` skill and then
 placed the same way.
 
 ## The idea
@@ -16,9 +16,12 @@ place, process, people) seen through the direction's look, rather than the categ
 Describe the drawing concretely, as a picture rather than a logo: what it shows, the shapes it is
 made of and how they meet, whether it is a solid shape, shapes cut out of it or one line, its
 corners, and what it leaves out. The words "logo" and "icon" invite letters, a frame and a
-presentation board, so describe the drawing itself:
+presentation board, so describe the drawing itself. Image 1 is the set name and image 2 the chosen
+direction's card, each with its role:
 
 ```
+Image 1 is the brand's name as it is set: draw the mark to go with it, in its hand (its stroke
+weight, ends and corners), never its letters. Image 2 is the chosen direction: take its palette and mood.
 Draw a flat graphic drawing on a transparent background, centred with space around it.
 Subject: <the drawing, described concretely>.
 Style: <from the chosen direction>, like a clean vector drawing.
@@ -26,9 +29,8 @@ Colours: <each hex and what it paints>, flat, nothing else.
 Only the drawing: no letters, words or numbers, no frame, no shadow, no gradient or texture.
 ```
 
-- Explore it alone, without the word: a model shown letters draws letters into the mark.
 - List every colour it uses in `trace`, the light ones inside it too:
-  `metamorfiles_generate_image { prompt, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
+  `metamorfiles_generate_image { prompt, references: ["<the wordmark .svg>", "templates/brand-board#process-direction:<chosen id>"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
   The path it returns is the traced .svg.
 - Follow the image model's own file, which `references/images.md` of the `studio` skill names.
 

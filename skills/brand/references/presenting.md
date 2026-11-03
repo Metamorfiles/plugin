@@ -17,7 +17,7 @@ the `studio` skill; this is the shape of this particular message.
 5. **What they can do next,** as an offer, never a question: the kit downloads from the brand board
    (or `metamorfiles_export_kit {}` writes it into `kit/`), with the logos for print and screens, the
    website's icons and colours, the guidelines and the brand's words; and the team can make anything
-   with the brand, first the pieces the brief's "What they want made" names, else posts, a business
+   with the brand, first the pieces the brief's "What they asked for" names, else posts, a business
    card, covers, a flyer. Studio shows the same offer at the top of the panel, so
    nothing waits for an answer.
 
