@@ -78,8 +78,8 @@ another idea: a variant of a route (its mark drawn longer, its lockup stacked) i
    lettering with a mark, a mascot or ornaments, all in one style, with proper spacing between its
    parts. Studio traces it; its supporting words, if the route has them, are set in real type: `references/drawn.md`.
 2. **Real fonts with a generated mark.** The name set from real fonts with its kerning, ligatures and
-   spacing, with a generated mark or mascot that stands on its own, drawn alone and kept, then locked
-   up with the name: beside it, after it, or centred above it, by the mark's shape and the name's
+   spacing, set first, with a generated mark or mascot that stands on its own, drawn from the set name
+   so it shares its hand, then locked up with the name: beside it, after it, or centred above it, by the mark's shape and the name's
    length (`references/lockups.md`). A mark that meets the letters (lying on them, an arm over a stem)
    is drawn onto the set word (`references/symbol.md`, "Compose it on the word"). A drawn letter in a
    letter's place only when the object already has that letter's shape and the word still reads at a
