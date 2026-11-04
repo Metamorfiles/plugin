@@ -18,7 +18,7 @@ Copy it into your notes and tick each step as you go:
 ```
 - [ ] 1. The brief: who it is, why it's this brand's, what it's like, its face, what it's doing
 - [ ] 2. The look: one rendering, chosen for this character, in the direction's words
-- [ ] 3. Chosen on its own: three designs, a brief each; drawn together, alone, on transparent; traced. Carried by the chosen logo: taken from it ("In a new brand")
+- [ ] 3. Chosen on its own: three designs, a brief each; drawn together, alone, on transparent; traced. Carried by the chosen logo: taken from it ("In a new brand"). For a brand that has its kit: drawn into the character's own folder ("For a brand that has one")
 - [ ] 4. Reviewed, then shown to the user; the one chosen, or the one taken from the logo, is the chosen drawing
 - [ ] 5. The character sheet from the chosen drawing: every side and four poses, the reference for every image of it
 - [ ] 6. Placed: in the logo, in the imagery, as the small mark
@@ -106,6 +106,25 @@ its character is in the logo.
 
 Studio checks that each was drawn from the chosen logo, and the sheet from the mascot. The small mark
 comes next: step 8 of the `logo` skill.
+
+### For a brand that has one
+
+A character the user asks for once the brand has its kit lives in its own folder of the kit from
+the start, so the board shows it and the kit's review sees it:
+
+1. Its look (step 2) comes from `brand/imagery-guide.md`. Draw the three designs (step 3) into the
+   character's folder, each with the brand's logo file as image 1, as "In a new brand" says:
+   `metamorfiles_generate_image { prompt, references: ["brand/logos/logo.svg"], width: 1024, height: 1024, folder: "brand/<name>", name: "<design's title>", trace: { colors: [...] }, wait: false }`.
+2. List the folder in DESIGN.md `assets` (`kind: character`, its Character lines as `note`). The
+   three then show on its frame and wait in the kit's queue, `metamorfiles_review_queue { for: "handover" }`
+   (the `review` skill).
+3. Once they pass, the user chooses:
+   `metamorfiles_ask_user { task, role: "designer", question: "Which one is <name>?", options: [{ label: "<title>", recommended: true }, { label: "<title>" }, { label: "<title>" }] }`.
+   The two passed over go to the trash, where they can be brought back:
+   `metamorfiles_write_file { path: "brand/<name>/<file>", remove: true }`.
+4. The sheet from the chosen drawing (step 5), into the folder as `00-sheet` (`references/sheet.md`),
+   reviewed the same way; then `anchors` as step 6 says. New poses come from the sheet
+   (`references/poses.md`).
 
 ### 5. The character sheet
 
