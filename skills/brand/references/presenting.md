@@ -35,8 +35,8 @@ For Lumen Skincare, Studio's fictional example brand:
 > **I decided a few things for you.** A dark theme for the night range, built from your walnut and
 > ink, and a spacing scale around the one step your site uses. Say the word and I'll change either.
 >
-> **One for you.** Your site never says what the serums are made with, so the kit's words leave
-> ingredients out until you tell me which to name.
+> **One for you.** Your site never says where Lumen ships, so the kit's words leave delivery out
+> until you tell me.
 >
 > The kit downloads from the brand board, and I can make the first posts whenever you like.
 
@@ -52,7 +52,7 @@ one and the summary is its short form. The same shape, much shorter:
 3. **What needs them**, each a short line of its own, at most two.
 
 No offer and no question: Studio shows "<Brand> is ready" with **Make the first posts** at the top.
-About 80 words. Plain sentences: no headings, no bold labels, no bullets for
+Short: a few lines the user reads at a glance. Plain sentences: no headings, no bold labels, no bullets for
 anything that isn't a list of what needs them.
 
 ## What this message never contains

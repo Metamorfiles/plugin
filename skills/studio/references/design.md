@@ -62,7 +62,7 @@ they show), and take one way of composing on whole: blended with your usual layo
 usual layout. They set the standard to reach; their subjects and marks stay theirs.
 
 **The idea.** One visual idea per piece, from what this piece says and the subject, named in a phrase:
-"the parcel too big to carry" for a post about shipping costs. Say it as what of the subject becomes
+"the cream at work while the clock sleeps" for a post about the night cream. Say it as what of the subject becomes
 what in the piece ("the morning's two minutes become the poster's clock face"); a sentence that fits a
 competitor's piece as well is the category, not an idea. A layout name (a statement, a figure, a
 split) is not an idea either: it draws the same card with new words. Ideas come in kinds, and three

@@ -4,7 +4,7 @@ For ChatGPT Images (`chatgpt/images`, the user's ChatGPT plan) and `gpt-image` m
 
 ## Prompting
 
-- **Start with the verb.** "Draw…" for a new image, "Edit image 1…" to change one. To combine images, edit one with the other: "Edit image 1 by adding the ceramic cup from image 2 on the left of the counter", never "combine" or "merge".
+- **Start with the verb.** "Draw…" for a new image, "Edit image 1…" to change one. To combine images, edit one with the other: "Edit image 1 by adding the serum bottle from image 2 to the shelf", never "combine" or "merge".
 - **Order and labels.** Scene first, then the subject, the details, then the constraints on a line of their own. Short labeled parts ("Use: background for a feed post. Constraints: …") are read well.
 - **Photo look.** Say it's a photograph (professional product photography, photorealistic), with real texture (the grain of the stone, the wear on the handle), or it drifts toward illustration.
 - **Keeping things exact.** List what must not change ("the bottle's shape, label and color stay exactly as in image 1") and repeat the list every time you change something else; this family follows such lists better than most.

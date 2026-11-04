@@ -1,6 +1,6 @@
 # FLUX
 
-For `flux` models (FLUX.2, klein, Kontext), reached through Black Forest Labs, fal, Replicate or Together. Read with [images.md](images.md), whose rules still hold.
+For `flux` models, reached through Black Forest Labs, fal, Replicate or Together. Read with [images.md](images.md), whose rules still hold.
 
 - **Word order is everything.** The main subject first, then what it does, the style, the setting, the light, the technical details. What comes early wins.
 - There's no negative prompt; a negation tends to add the thing.
@@ -11,6 +11,6 @@ For `flux` models (FLUX.2, klein, Kontext), reached through Black Forest Labs, f
 
 ## Model notes
 
-- klein doesn't expand prompts: give it fuller sentences (about 40 to 70 words).
+- A klein model doesn't expand prompts: give it fuller sentences (about 40 to 70 words).
 
-Sources: Black Forest Labs' [FLUX.2 prompting guide](https://docs.bfl.ai/guides/prompting_guide_flux2) and their [prompting skills](https://github.com/black-forest-labs/skills).
+Sources: Black Forest Labs' [FLUX prompting guide](https://docs.bfl.ai/guides/prompting_guide_flux2) and their [prompting skills](https://github.com/black-forest-labs/skills).

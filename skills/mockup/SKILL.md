@@ -95,7 +95,7 @@ the photographs only from passed flats. A flat drawn by the image model is revie
 `metamorfiles_review_queue { for: "mockups" }`), its must fixes made as step 5 says. A flat made as a
 page is reviewed once, as its page, before it's exported (the `artwork` skill); the file it brings
 in isn't looked at again. A brand's real screen, brought in as it is (step 5 of the `artwork`
-skill), waits in the `mockups` queue with the drawn flats.
+skill), is the brand's own file and is never reviewed.
 
 ### 4. Make each photograph
 
@@ -162,13 +162,14 @@ image's new take, as `references/images.md` of the `studio` skill says ("Edit or
   perspective and light, made by the method named.
 - **A figure or the character wrong** (Anatomy, Character): an edit of its region, the character
   sheet after the image when it's the character; made again from its prompt when the pose or the
-  figure itself is the fault, since an edit keeps the old figure.
+  figure itself is the fault (`references/images.md` of the `studio` skill, "Edit or redraw").
 - **The physics or the subject wrong** (an object that couldn't exist, the moment missing): made
   again from its prompt with the physics or the moment said plainly, never from the faulty take: a
   reference carries its fault.
 
-A mockup or flat still failing after its two looks stays as it is and goes to the user: the
-handover summary names it in a new brand, anywhere else the task's `done` update or your reply. Its size, its
+A mockup or flat looked at twice without passing goes to the user as the `review` skill's Run it,
+step 4, says: the handover summary names it in a new brand, anywhere else the task's `done` update
+or your reply. Its size, its
 place, the idea or the composition change only on the user's word, made again as its new take.
 Back to an earlier take, when the user asks:
 `metamorfiles_use_take { step: "mockups", option: "brand/mockups/serum-on-shelf-1a2b3c4d.png", take: 1 }`;

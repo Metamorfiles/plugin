@@ -4,7 +4,7 @@
 before the choice, its letters and its one-colour version; after it, the chosen route's reversed
 version, small mark and final files.
 
-`metamorfiles_check_logo { file, ground: "#f6f1ea", dark: "#3b2e27" }`, with its ground and the
+`metamorfiles_check_logo { file, ground: "#f4f3ef", dark: "#1b1d1f" }`, with its ground and the
 brand's dark colour. Act on what it reports and nothing else; the look is the reviewer's (the
 `review` skill):
 

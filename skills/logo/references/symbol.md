@@ -52,7 +52,7 @@ in the drawing and reports how much of its letters were kept (`checks.md`).
 ## A drawn letter
 
 A drawn part can take a letter's place or its accent's only when the object already has that
-letter's shape (a round drop for an o, a leaf for an accent) and the word still reads at a glance. A
+letter's shape (a round drop for an o, a dropper's bulb for an i's dot) and the word still reads at a glance. A
 shape the letter doesn't have goes beside or above the name instead.
 Draw it at the letter's proportions against the wordmark in image 1, then set the wordmark again
 with it: `metamorfiles_make_wordmark { text, font, color, output, part: { file: "<the traced .svg>", replaces: "o" } }`,

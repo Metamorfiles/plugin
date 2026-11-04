@@ -32,7 +32,7 @@ the category's usual look.
 token first, then its job (where it goes, what goes on it). The guideline prints each colour's job
 from its own line, so give each colour a line, or its own clause when two share one.
 
-> - **Clay** {colors.clay} is the one accent: a price, a button or a single highlight per image.
+> - **Clay** {colors.clay} is the accent: a price, a button, the light on the product.
 >   It carries ink text, and is never used as text on paper.
 
 **Typography.** Each face, the roles it sets and what it brings, in a sentence or two.

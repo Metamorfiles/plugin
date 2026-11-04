@@ -12,7 +12,8 @@
         "Changes only pages/serum-launch instagram-story variant b",
         "Changes no file for other variants or formats",
         "Every metamorfiles_team_update line is a few words, starts with a verb and names no file or tool",
-        "Hands the final check to the design-reviewer agent with only the project, item, changed frames and brief, before finishing",
+        "Hands the final check to the design-reviewer agent, in the foreground, with only what the review skill's Run it, step 3, lists (the project path, the item and its changed frames, the task id, the brief, and the task's decisions and researched sources when there are any), never its design reasoning, before finishing",
+        "Fixes each must fix once, in the frame itself, and has it looked at again",
         "Renders the changed frame again and leaves no check error",
         "Ends each role with status done",
         "The final summary is the agent's own, with no control panel link, hex value or pixel size, and ends on an offer, not a question"
@@ -22,21 +23,22 @@
       "id": 2,
       "name": "copy-choice-asked-in-chat-mode",
       "prompt": "The Metamorfiles project is at /path/to/project; pass that path to metamorfiles_get_project.\n\nYou are Studio's team on task t2, working on Serum launch (pages/serum-launch). The user asked: Show me a few headline options for the story\n\nFollow the team skill (if this app didn't load it, call metamorfiles_get_guide with name \"team\" first): report every step with metamorfiles_team_update and task \"t2\", and ask choices with metamorfiles_ask_user. This task runs in Chat: metamorfiles_ask_user asks the user, you end your turn, and their answer comes as your next message.\n\nFor the final check, use the design-reviewer agent.\n\nYou're running in the background and the user is watching in the control panel: don't include its link.",
-      "expected_output": "The copywriter offers two to four headline angles with metamorfiles_ask_user, one recommended, ends its turn when it returns asked, then writes the chosen one within maxLength, and the designer re-fits the layout.",
+      "expected_output": "The copywriter offers two to four headline angles with metamorfiles_ask_user, one recommended, ends its turn when it returns asked, then writes the chosen one within maxLength, the designer re-fits the layout, and the design-reviewer agent looks at the changed frames before the task ends.",
       "files": [],
       "assertions": [
         "Calls metamorfiles_ask_user with 2 to 4 options and exactly one recommended",
         "Options differ in angle, not only in wording",
         "Ends its turn after metamorfiles_ask_user returns asked, without writing the options into the frames",
         "The chosen headline fits the variable's maxLength",
-        "Introduces no claim, number or price that isn't in the brand or the page"
+        "Introduces no claim, number or price that isn't in the brand or the page",
+        "Has the design-reviewer agent look at the changed frames before finishing"
       ]
     },
     {
       "id": 3,
       "name": "new-image-in-auto-mode",
       "prompt": "The Metamorfiles project is at /path/to/project; pass that path to metamorfiles_get_project.\n\nYou are Studio's team on task t3, working on launch-post (templates/launch-post). The user asked: The photo feels cold, make it warmer\n\nFollow the team skill (if this app didn't load it, call metamorfiles_get_guide with name \"team\" first): report every step with metamorfiles_team_update and task \"t3\", and ask choices with metamorfiles_ask_user. This task runs in Auto: metamorfiles_ask_user takes your recommended option.\n\nFor the final check, use the design-reviewer agent.\n\nYou're running in the background and the user is watching in the control panel: don't include its link.",
-      "expected_output": "Warmer is a note about one quality: the image maker edits the photo's warmth, keeping its composition, with a prompt written from the brand's imagery guide and that model family's rules, generates without a model, places it and renders every format that shows it for where its subject sits. Nothing is asked, and the summary says what was decided.",
+      "expected_output": "Warmer is a note about one quality: the image maker edits the photo's warmth, keeping its composition, with a prompt written from the brand's imagery guide and that model family's rules, generates without a model, saves it as a new image and sets it as the template's photo, renders every format that shows it for where its subject sits, and the design-reviewer agent looks at the changed frames. Nothing is asked, and the summary says what was decided.",
       "files": [],
       "assertions": [
         "Reads brand/imagery-guide.md, or DESIGN.md's Imagery when the brand has no guide, before writing the prompt",
@@ -44,7 +46,9 @@
         "Calls metamorfiles_generate_image without a model, as an edit of the current photo (edit: true, the photo first in references)",
         "Changes no layout, copy or other image: the piece's idea is not re-planned",
         "The prompt asks for no text or logo and quotes no words",
+        "Saves the warmer photo as a new image under assets/ and sets it as the template's photo with metamorfiles_edit; the brand's library in brand/refs is unchanged",
         "Renders every format that shows the image",
+        "Has the design-reviewer agent look at the changed frames before finishing",
         "Does not call metamorfiles_ask_user; the summary says what it decided"
       ]
     },
@@ -69,6 +73,7 @@
         "Does not call metamorfiles_ask_user",
         "Changes only the headline and what its new length needs in the layout",
         "The new headline fits the variable's maxLength and adds no claim, number or price",
+        "Has the design-reviewer agent look at the changed frames before finishing",
         "The summary names the headline it chose and ends on an offer, not a question"
       ]
     }

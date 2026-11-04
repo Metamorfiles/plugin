@@ -7,7 +7,7 @@ real type, shapes and drawn marks.
 
 A `badge` lockup, its layers centred on one circle: `ring` and `disc` shapes, text parts set
 `around: true`, and whatever sits in the middle (a mark, a monogram, the name):
-`metamorfiles_compose_logo { layout: "badge", parts: [{ shape: "ring", color: "#3b2e27" }, { text: "LUMEN SKINCARE · MADE FOR MORNINGS ·", font: "brand/fonts/Fraunces.woff2", color: "#3b2e27", around: true, size: <its share> }, { shape: "ring", color: "#3b2e27", size: <its share> }, { file: "<the mark .svg>", size: <its share> }], output: "brand/process/logo/rising-seal.svg" }`,
+`metamorfiles_compose_logo { layout: "badge", parts: [{ shape: "ring", color: "#1b1d1f" }, { text: "LUMEN SKINCARE · MADE FOR MORNINGS ·", font: "brand/fonts/HostGrotesk.woff2", color: "#1b1d1f", around: true, size: <its share> }, { shape: "ring", color: "#1b1d1f", size: <its share> }, { file: "<the mark .svg>", size: <its share> }], output: "brand/process/logo/list-seal.svg" }`,
 each layer's `size` its share of the badge's width, set for this seal. What goes in it, and how
 much, is the design's decision; Studio fits and spaces the text in its band.
 A phrase on the bottom half follows the ring or turns to read upright (`bottom: "upright"`), as the

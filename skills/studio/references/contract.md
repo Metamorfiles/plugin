@@ -26,7 +26,7 @@ A template is one HTML file. It declares formats and variables in a JSON script 
       {
         "formats": ["instagram-post", "instagram-story", "linkedin-link"],
         "variables": [
-          { "id": "headline", "type": "string", "label": "Headline", "default": "Glow that lasts all day", "maxLength": 60,
+          { "id": "headline", "type": "string", "label": "Headline", "default": "Brighter skin in two weeks", "maxLength": 60,
             "source": { "kind": "ai", "instruction": "Benefit-led hook, max 6 words" } },
           { "id": "price", "type": "string", "label": "Price", "default": "$38", "source": { "kind": "table", "column": "price" } },
           { "id": "photo", "type": "image", "label": "Photo", "default": "photo.jpg" },
@@ -50,7 +50,7 @@ A template is one HTML file. It declares formats and variables in a JSON script 
   </head>
   <body>
     <img class="photo" data-var-src="photo" src="photo.jpg" alt="" />
-    <h1 class="headline" data-var-text="headline">Glow that lasts all day</h1>
+    <h1 class="headline" data-var-text="headline">Brighter skin in two weeks</h1>
     <span class="price" data-var-show="showPrice" data-var-text="price">$38</span>
     <img class="logo" data-var-anchor="logoPosition" src="../../brand/logos/logo.svg" alt="" />
   </body>

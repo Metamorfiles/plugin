@@ -5,7 +5,7 @@ draws its name (`drawn.md`).
 
 ## The type study
 
-`metamorfiles_type_study { text: "Lumen Skincare", faces: ["Fraunces", { family: "Inter", weight: 800 }] }`
+`metamorfiles_type_study { text: "Lumen", faces: ["Host Grotesk", { family: "Schibsted Grotesk", weight: 700 }] }`
 sets the name in many faces on one sheet, one row each. Faces the brand has are used from
 `brand/fonts/`; any other open-licence Google Fonts family is fetched into a study folder and never
 becomes part of the brand until you add it.
@@ -20,12 +20,12 @@ becomes part of the brand until you add it.
 ## The logo face
 
 The logo's face is chosen for the one word it sets, so it can be louder than anything the brand sets
-as text. Add it with `metamorfiles_add_font { family: "Fraunces" }`: the file it returns is the `font`
+as text. Add it with `metamorfiles_add_font { family: "Host Grotesk" }`: the file it returns is the `font`
 the name is set from. In the kit it is named for the logo.
 
 ## Setting the name
 
-`metamorfiles_make_wordmark { text: "Lumen Skincare", font: "brand/fonts/Fraunces.woff2", color: "#3b2e27", output: "brand/process/logo/rising-word.svg" }`
+`metamorfiles_make_wordmark { text: "Lumen", font: "brand/fonts/HostGrotesk.woff2", color: "#1b1d1f", output: "brand/process/logo/minutes-word.svg" }`
 sets the name as outlined letters, spaced optically for a logo, and lists the face's axes, features
 and the alternates it has for these letters.
 
@@ -37,7 +37,7 @@ and the alternates it has for these letters.
 - **A drawn part** in a letter's place or its accent's: `symbol.md`, "A drawn letter".
 
 Every wordmark keeps its settings beside it (`<file>.svg.json`). Change one thing without restating
-the rest: `metamorfiles_make_wordmark { from: "brand/process/logo/rising-word.svg", kerning: { "ol": -0.02 }, output: "brand/process/logo/rising-word.svg" }`.
+the rest: `metamorfiles_make_wordmark { from: "brand/process/logo/minutes-word.svg", kerning: { "Lu": -0.02 }, output: "brand/process/logo/minutes-word.svg" }`.
 Objects merge key by key, so one kerning pair changes and the others stay.
 
 ## Supporting words
@@ -45,6 +45,6 @@ Objects merge key by key, so one kerning pair changes and the others stay.
 A tagline, the trade, the place, the words around a seal: real type, set as text parts of
 `metamorfiles_compose_logo`, flat, with the wordmark's controls beside the part's own, and `curve`
 to set them on an arc, each letter whole (a line under an arched drawing):
-`{ text: "SINCE 2024", font: "brand/fonts/Inter.woff2", color: "#3b2e27", tracking: 0.12 }`.
+`{ text: "SKINCARE", font: "brand/fonts/HostGrotesk.woff2", color: "#1b1d1f", tracking: 0.12 }`.
 Where they sit and how large is a design decision for this logo, set from the word's axis and the
 spacing the lockup's result reports (`lockups.md`).

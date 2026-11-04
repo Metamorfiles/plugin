@@ -71,7 +71,7 @@ assets:
   - { folder: refs, kind: imagery, title: Photographs, anchors: [serum-morning.jpg] }
 logos:
   primary: { file: logos/logo.svg, background: "{colors.background}", source: the site's logo component with the light theme's values }
-  mark: { file: logos/mark.svg, background: "{colors.background}", source: the app icon, as the site serves it, small: true }
+  mark: { file: logos/mark.svg, background: "{colors.background}", source: "the app icon, as the site serves it", small: true }
 ---
 
 ## Overview

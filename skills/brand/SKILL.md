@@ -33,7 +33,7 @@ Your goal is a complete board the user can use, quickly. Four principles:
 
 Most brands come in without imagery of their own, and the posts and ads Studio makes need it. Once
 the kit has passed its review, ask what to make with
-`metamorfiles_ask_user { task, question: "Lumen Skincare has no imagery of its own yet. What should the team make?", options: [{ label: "Imagery and mockups", recommended: true }, { label: "Mockups only" }, { label: "Nothing for now" }] }`,
+`metamorfiles_ask_user { task, question: "<Brand> has no imagery of its own yet. What should the team make?", options: [{ label: "Imagery and mockups", recommended: true }, { label: "Mockups only" }, { label: "Nothing for now" }] }`,
 the question in the brand's name. A brand with imagery of its own is asked whether to grow it: "More
 imagery and mockups", "Mockups only", "Nothing for now". Generate nothing before the answer. A user who
 asked for imagery or mockups in their request has answered, and so has "make imagery for my brand"
@@ -66,7 +66,8 @@ touchpoints: what it makes and where its customers meet it, read from its site a
 brand with a site or an app shows its real screens: a screenshot `metamorfiles_look_at_page` saved
 is the screen's flat, brought in as it is with no page (step 5 of the `artwork` skill). The other
 shots are objects it really uses (merch, a sign, its packaging), made with the `mockup` skill. They
-and their flats are reviewed in the `mockups` queue, the flats first (the `mockup` skill).
+and their flats are reviewed in the `mockups` queue, the flats first (the `mockup` skill); a real
+screen is the brand's own file and is never reviewed.
 
 ## Taking values from each source
 
@@ -79,7 +80,7 @@ and their flats are reviewed in the `mockups` queue, the flats first (the `mocku
 | Fonts recognized by eye | "Looks like X". Ask for the files. | inferred |
 
 Evidence rules:
-- A value seen once is a value. A literal color in a component (for example `text-[#eef0ea]` on a band) belongs in `components`.
+- A value seen once is a value. A literal color in a component (for example `text-[#e9dccb]` on a band) belongs in `components`.
 - Take the whole scale a source defines, not only the steps it happens to use. A radius scale with a step missing is a hole a template will fill badly.
 - What the source leaves open, derive in proportion to what it shows and mark `proposed`. What the source contradicts, don't.
 - When sources disagree, the brand's own files win over the website, and the website over screenshots. Note the other value in Sources.
@@ -101,12 +102,12 @@ When the source is thin — a photograph, a screenshot, a one-page brief, a site
 
 - Use only official files, copied unchanged. Never recolor, redraw, retype, stretch or crop a logo, add effects, or place it on a background it isn't made for.
 - A colour an official file paints is the brand's, even when another file has a near one (a favicon's off-white beside the logo's): name it in `colors` with its source in Sources, and never recolour a file to match another.
-- **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--clay)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant { file: "brand/sources/yours/logo.tsx", output: "brand/logos/logo-dark.svg", colors: { "var(--clay)": "#e39a7f" }, background: "#1f1a17" }` with that theme's exact values, one file per theme, and record it as the brand's own variant.
-- **Generated logo files need the user's approval, each one, before you make it.** Offer only what's missing:
+- **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--clay)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant { file: "brand/sources/yours/logo.tsx", output: "brand/logos/logo-dark.svg", colors: { "var(--ink)": "#f6f1ea" }, background: "#1f1a17" }` with that theme's exact values, one file per theme, and record it as the brand's own variant.
+- **Generated logo files are made only on the user's yes, each one.** Offer only what's missing, with `metamorfiles_ask_user`:
   - one-color black and white versions (map `"*"` to the color, and paper-colored inner shapes to `"knockout"`);
   - a dark or light version from the brand's palette.
 
-  Show the preview from `metamorfiles_make_logo_variant`, check that its colors meeting the background reach 3:1, and ask for the approval with `metamorfiles_ask_user`. Palette tokens the brand leaves open, a dark theme included, are not files: derive them and mark them `proposed` ("Complete the kit"). Then write `generated from <file>, approved by the user on <date>` in the logo's `source` and in Sources.
+  On a yes, make it with `metamorfiles_make_logo_variant`, check that its colors meeting the background reach 3:1, and show it. Palette tokens the brand leaves open, a dark theme included, are not files: derive them and mark them `proposed` ("Complete the kit"). Then write `generated from <file>, approved by the user on <date>` in the logo's `source` and in Sources.
 - When no file suits a background and the user declines a variant, the official logo sits on a plate of its own background color.
 - A logo the brand has only as a picture (a PNG or JPEG) stays as it is: the kit gives it no print file. Offer once to trace it into a vector for print, with `metamorfiles_ask_user`; on a yes, `metamorfiles_import_image { path: "brand/sources/yours/logo.png", name: "logo", folder: "brand/logos", trace: { colors: ["#1f1a17"] } }` with the logo's exact colours, show the result beside the original, and record `traced from the user's <file>, approved on <date>` in its `source` and in Sources.
 - A brand with no logo at all gets one designed with the `logo` skill, only when the user asks for it.
