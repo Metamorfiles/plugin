@@ -5,7 +5,7 @@ The brand kit sets the materials; you decide how they're used in this piece: a s
 ## Contents
 - Before you touch anything
 - Where a change goes
-- Judge with the render, not the code
+- Look at the render while you make it
 - Taste
 - The composition
 - A carousel
@@ -26,17 +26,9 @@ The brand kit sets the materials; you decide how they're used in this piece: a s
 
 Fix at the widest level the problem really has. A headline that overflows in every story frame is a story-format rule, not four frame edits.
 
-## Judge with the render, not the code
+## Look at the render while you make it
 
-After each change, render the frames you changed and look at them the way a reader would:
-
-- **At a glance**: shrink the image in your mind to a phone in a feed, or the print to across a room. The first thing you notice should be the thing the reading path starts with, and the rest should follow in order.
-- **Squinted**: blur it until the words are grey bars. Two or three large masses with clear size steps lead the eye; many medium ones mean nothing leads.
-- **The logo covered**: the piece still belongs to this brand. If a competitor's name would fit it as well, the idea is missing, and that comes before every other fix.
-- **Type**: sizes and weights from DESIGN.md's type roles, with a visible step between levels. If a line needs a size no role has, the layout is asking for too much.
-- **Edges**: elements share alignment lines and the margins match. The safe margin and what each platform covers are the contract's rules (`references/contract.md`, "Layout rules"), and the checks enforce both.
-- **Text**: headlines use `text-wrap: balance`, and no text touches an edge or runs into the logo.
-- **Photos**: an `object-position` chosen for this subject, checked in every format that shows it.
+A layout is made by looking at it, as a designer works on the artboard: render the frames you change (as `references/contract.md` says) and see them the way a reader would, at a glance (a phone in a feed, a print across a room) and squinted until the words are grey bars, against the layout items of the `review` skill's page checklist, which the reviewer will hold them to. Its pictures are the reviewer's to judge. Headlines use `text-wrap: balance`. If a line needs a size no type role has, the layout is asking for too much. Once you hand the piece over, it changes as the `review` skill's Run it, step 4, says.
 
 Fix in this order, since a later fix can't rescue an earlier problem: the idea, the hierarchy, the composition, the type, the imagery, the colour, the details. When taking something out leaves a gap, enlarge what's left or give the room to a picture or a field of colour; never refill it with an ornament.
 

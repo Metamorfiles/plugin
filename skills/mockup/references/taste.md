@@ -19,9 +19,9 @@ describes; it never decides: the brand's direction and what it makes decide the 
 - **Parts stacked, not designed:** a strip with the logo, a window with a photograph, the name under
   it. No idea holds the face together. The brand's photographs go on a pack only when the idea is a
   photograph.
-- **A redrawn or misspelled logo:** the prompt didn't hold the model to image 1. Edit it back.
+- **A redrawn or misspelled logo:** the prompt didn't hold the model to image 1. Say what image 1 is and that its letters stay exactly as they are.
 - **Garbled small print:** the prompt asked for text the brief doesn't give. Ask for none.
 - **Objects that couldn't exist:** a lid fused to its tin, an opening on the wrong face, contents
-  outside their pack. The physics weren't said; say them and edit.
+  outside their pack. The physics weren't said; say them.
 - **A glossy, rendered look:** smooth plastic surfaces and perfect reflections. Name a textured,
   matte finish.

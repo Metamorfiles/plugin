@@ -2,10 +2,10 @@
 
 What separates identities that juries and critics single out from competent and generated ones,
 drawn from the reference library (`library/`, 30 identities across every kind of business) and from
-how the best studios work. Each principle has a test you can run on an image, and three levels
-anchored in real work: **1** is what a generator or a template produces, **3** is competent and
-interchangeable, **5** is studio work. Use them to make each step's options stronger before you show
-them. They are never a score to show the user: the user's eye decides.
+how the best studios work. Each principle has a test to put to an option's plan before it's made,
+and three levels anchored in real work: **1** is what a generator or a template produces, **3** is
+competent and interchangeable, **5** is studio work. Use them to make each step's plans stronger.
+Once made, a piece is the reviewer's to judge and the user's to choose: never a score you give it.
 
 Each brief adds what is only true of it (`research.md`). These are the floor, not the ceiling.
 
@@ -32,8 +32,7 @@ A studio identity starts from one concrete thing the business owns, does or is: 
 process, tools, place, people, archive, unit of measure, hours, habits. Everything else derives
 from it, so a many-part system feels inevitable.
 
-**Test:** say the idea in one sentence from the images alone, then point to the fact in the brief it
-comes from.
+**Test:** say the idea in one sentence, then point to the fact in the brief it comes from.
 
 - **1:** a mood ("warm and modern") or a category symbol; no idea to state.
 - **3:** an idea stated in a caption or the story, visible only in the mark.
@@ -79,7 +78,7 @@ cut (the logo's version: `references/taste.md` of the `logo` skill, "The point o
 belongs to the brand's own device family (principle 6). Marks made from something real (a hand, a
 print, a tear) keep their imperfections; a drawn imitation of them doesn't count.
 
-**Test:** describe the mark after one look. Does it hold in one colour? Is its anomaly
+**Test:** describe the mark in one sentence. Will it hold in one colour? Is its anomaly
 tied to the idea?
 
 - **1:**
@@ -207,7 +206,7 @@ and still read as one brand.
 - Are these the objects this business really uses?
 - Does each use the system in its own way?
 - Is there a set that varies by a rule?
-- Are they finished, at real proportions, or empty frames?
+- Are they planned as finished objects at real proportions, or as empty frames?
 
 - **1:** the stock mockup set (business card, tote, phone) with the logo pasted in the centre of
   each, or a few empty outlines.
@@ -226,7 +225,7 @@ and still read as one brand.
 A few explicit rules let the owner, staff or another designer keep going: layers, one size, a kit of
 parts, a tool.
 
-**Test:** can you write the system in three rules from the images?
+**Test:** can you write the system in three rules?
 
 - **1:** no rules; each piece is its own design.
 - **3:** consistency by habit, not by rule.
@@ -253,7 +252,8 @@ parts, a tool.
 **Presentation**
 - Shown as if it already exists, in use.
 
-**Test:** at full size, is anything uneven, crowded, mismatched or accidental?
+**Test:** none on the plan: craft is in the making, by what the tools measure, and the reviewer
+judges it on the made piece.
 
 - **1:** misaligned, crowded or clip-art: mixed perspectives, outlines, generic shadows, placeholder
   text.
@@ -269,7 +269,7 @@ parts, a tool.
 Everything suits this product and this audience: colour, type, imagery and voice feel like what is
 being sold and to whom.
 
-**Test:** show it to the audience without the name. Do they feel the product?
+**Test:** without the name, would the audience feel the product?
 
 - **1:** it contradicts the product: a tech look for soft bedding, a spa look for a gym.
 - **3:** neutral: it could suit this business or many others.
@@ -280,7 +280,6 @@ being sold and to whom.
 
 ## Levels, and what they mean
 
-An option reaches studio level when principles 1, 3, 4, 11 and 14 score 5 and nothing scores below
-3.
-One 1 anywhere means the option is rethought before it's made. An average around 3 is exactly the
-competent, interchangeable work a generator can already do, and it is not good enough.
+Aim every plan at 5, above all on principles 1, 3, 4, 11 and 14. A plan at 1 on any principle is rethought before it's made. An average around
+3 is exactly the competent, interchangeable work a generator can already do, and it is not good
+enough.

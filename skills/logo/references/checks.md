@@ -11,3 +11,5 @@ brand's dark colour. Act on what it reports; the look is the reviewer's (the `re
 | --- | --- |
 | `lostInOneColour`, with `merged` boxes | That part only worked through colour. Its version is redrawn after the choice, for the chosen route only (`drawn.md`, "Other versions of it") |
 | `lettersKept` under 0.85 | The model redrew letters: draw it again holding them (`symbol.md`, "Compose it on the word") |
+| `off`, letters moved off their line | Keep a move the route's composition means; set back one it doesn't |
+| Stroke weights of a lockup's parts | Facts for the reviewer; nothing to act on |

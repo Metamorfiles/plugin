@@ -33,12 +33,13 @@ grounds, sources ("set in <face> as outlines with a drawn part", "drawn by <mode
 Last, compose the small mark for where it's used small: in a circle (`profile`), the profile
 picture platforms crop to one and the phone's app icon, which keeps the circle's composition inside
 its rounded corners; in a square (`icon`), the favicon and the browser's icons, clear unless it names
-a ground. Studio places the mark by its ink and shows each on the guidelines' `mark` page
-(`metamorfiles_render_preview { item: "templates/brand-board", format: "mark" }`). Look at each as
-it will be seen and decide its composition for that mark: how much of the circle or square it fills,
-where it sits, its ground, or another version of it (the reversed mark on a brand colour). Write what
-differs from Studio's placement on the small mark's entry, `profile` and `icon`:
-`{ file: logos/mark.svg, small: true, profile: { size: 0.9, ground: "{colors.ember}", file: logos/mark-reversed.svg }, icon: { size: 1 } }`
+a ground. Studio places the mark by its ink, on the guidelines' `mark` page. Where its shape asks
+for another composition (a long mark fills less of a circle than a round one; a mark with no ground
+of its own may want the brand colour behind it), decide it from the mark's shape and the brand's
+colours: how much of the circle or square it fills, where it sits, its ground, or another version of
+it (the reversed mark on a brand colour). Write what differs from Studio's placement on the small
+mark's entry, `profile` and `icon`:
+`{ file: logos/mark.svg, small: true, profile: { size: 0.9, ground: "{colors.clay}", file: logos/mark-reversed.svg }, icon: { size: 1 } }`
 (`size` is the share of the circle, from its centre to the mark's farthest point, or of the square,
 its longer side, that the mark spans; above 1 it is cropped; `at` its centre). The kit's profile
 picture, favicon and app icons are exactly these.

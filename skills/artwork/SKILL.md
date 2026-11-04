@@ -109,5 +109,8 @@ review (the `review` skill) of `templates/<id>` as a printed piece.
 ### 5. For a mockup
 
 For a mockup, export the page as PNG with `metamorfiles_export_page`, bring the face into the brand
-with `metamorfiles_import_image { path: "pages/<id>/exports/<file>.png", folder: "brand/artwork", name: "<name>" }`,
-and give that file to the `mockup` skill.
+with `metamorfiles_import_image { path: "pages/<id>/exports/<file>.png", folder: "brand/mockups/artwork", name: "<name>" }`,
+and give that file to the `mockup` skill as a reference. A screen is a page too: the brand's real
+screen when it has one, else its interface as a page at the device's screen size in points,
+designed with the `frontend-design` skill inside the brand's DESIGN.md (its fonts, colours and
+tokens lead), exported and brought in the same way.

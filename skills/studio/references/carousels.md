@@ -66,7 +66,7 @@ Pick the one the idea is, and say it in the plan:
 ## The design
 
 One system, many arrangements. Readers feel the relationship between slides more than any slide, so
-judge the slides side by side in the panel, as a reader swipes them.
+look at the slides side by side in the panel as you make them, as a reader swipes them.
 
 - **Fixed:** the type families and scale, the palette, the margins and grid, and one running cue
   (a corner mark, an edge that carries on; a counter only when the slides are steps). These make it one post.
