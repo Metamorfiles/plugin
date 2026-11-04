@@ -67,10 +67,12 @@ really make it:
 - **A flat print** (a sticker with art, a sign with the name, a poster that is a picture and the
   name, and any pack another shot shows too, when its only words are the logo and at most a short
   line the brief gives): the image model draws it flat, the whole print straight on and filling the
-  image, see-through around a die-cut, from the logo and the brand's files, decided as "The
+  image, on a plain field of the brand's paper colour (`ground`), a die-cut's edge drawn as part of
+  the print, never on a transparent background (the model's cutout cuts into the design itself), from
+  the logo and the brand's files, decided as "The
   composition" says and prompted with its idea, what reads first, second and third, and the
   brand's materials:
-  `metamorfiles_generate_image { prompt, references: ["brand/logos/logo.svg", "brand/refs/<an anchor>"], width: 1600, height: 1600, transparent: true, folder: "brand/mockups/artwork", name: "mirror-sticker" }`.
+  `metamorfiles_generate_image { prompt, references: ["brand/logos/logo.svg", "brand/refs/<an anchor>"], width: 1600, height: 1600, ground: "<the paper colour>", folder: "brand/mockups/artwork", name: "mirror-sticker" }`.
   A flat print drawn in the photograph at once comes out as a graphic laid over it.
 - **Set copy** (a menu, a label's text, a poster with copy, exact artwork a printer would get as a
   file): designed in code as a page with the `artwork` skill, which brings it into
