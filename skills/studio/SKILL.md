@@ -65,7 +65,7 @@ edit or redraw", says.
 | An independent review before delivering, and after any layout change   | `review`      |
 | A change to an existing template or page: a fix, an improvement, a new format, or any task Studio hands you | `team` |
 | To see, tweak, edit elements or export by hand                         | `metamorfiles_open_panel { item: "pages/<id>" }`, give the URL |
-| An earlier version back                                                | `metamorfiles_list_history { item }`, then `metamorfiles_restore_version { item, version }` |
+| An earlier version back                                                | `metamorfiles_list_history { item }`, then `metamorfiles_restore_version { item, version }`; a mockup's or a new brand's earlier take: `metamorfiles_use_take` (the `mockup` and `new-brand` skills) |
 
 If that skill is not loaded, call `metamorfiles_get_guide { name: "<skill>" }`, such as the `variants` skill.
 

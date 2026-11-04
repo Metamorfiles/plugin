@@ -1,7 +1,7 @@
 # Palette and type
 
-Read this for the direction step of `SKILL.md`: each direction's palette and type pairing, taken
-from its references and set in the brand's own words.
+Read this for the direction step of `SKILL.md`: each direction's palette and faces, taken from its
+references and set in the brand's own words.
 
 ## Palettes
 
@@ -10,48 +10,43 @@ Each direction has a complete palette, not a swatch list:
   order they are used, each with its **share**, as the direction's references use them.
 - **Text pairs work:** the ink on the ground at 4.5:1 or more, the ground on the dark colour too.
   Check the accent: if it can't carry text, say so, and keep it for shapes.
-- **Differ in logic, not in hue.** One direction warm and light, one dark or saturated, one built
-  from the place or the product. Two palettes one tint apart are one direction.
+- **Differ in logic, not in hue.** Each palette's logic comes from its path's source: the place's
+  own colours, the product's material, the category's habit reversed. Two palettes one tint apart
+  are one direction.
 - Avoid the generated-brand palettes unless the idea needs them: cream with a high-contrast serif
   and terracotta, indigo to violet, navy with electric blue, beige with sage, black with acid green.
 
 ## Type
 
-Each direction comes with a pairing, and the pairings differ too:
-- **A face with character for the one line that matters** (headlines, product names), and **a quiet
-  workhorse for everything that informs.** Two faces for every text, the brand's name included
-  wherever a sentence names it; the logo's lettering is made on the logo step (the `logo` skill).
-- Choose the faces from `fonts.md`, by what the direction needs. Add each with
-  `metamorfiles_add_font { family: "Fraunces" }` before you write the option, and give the option
-  the file it returned.
-- **Every face covers the languages the brand writes in.** A business in Seoul posts in Korean, one in
-  Athens in Greek: each face has those letters, or the pairing names the face that sets them (a
-  Korean face beside a Latin display face, sized to sit together). Set the option's `sample` in that
-  language too, so the board shows it.
+- **Each direction names its faces and the job of each,** chosen as `fonts.md` says ("Choosing"),
+  and the directions' faces differ. The logo's lettering is made on the logo step (the `logo` skill).
+- Add each face with `metamorfiles_add_font { family: "<family>" }` before you write the option, and
+  give the option the file it returned.
 - **Set them in the brand's words,** the option's `sample`: a line from the brief or the brand's
-  voice, never the alphabet or "Lorem".
+  voice, in the language the brand writes in, never the alphabet or "Lorem".
 
 ## The option
 
 With its references from `research.md`, a direction is one option. Each file is the path the tool
-returned, as it returned it:
+returned, as it returned it. One direction for Lumen, from the path "every ingredient listed"; a
+direction proposes its own colours and names, so this one isn't the example kit's palette:
 
 ```yaml
-  - id: morning
-    title: Morning shelf
-    line: Warm paper and ink with one clay accent; the calm of an early bathroom shelf.
+  - id: label
+    title: The full label
+    line: Lumen lists every ingredient, so the brand reads like an honest label, with the amber of its bottles as the one signal.
     recommended: true
     files:
-      - { file: brand/process/references/shelf-study/1.jpg, caption: "Shelf study · ink type on warm paper" }
-      - { file: brand/process/references/linen-co/2.jpg, caption: "Linen Co · one accent, rationed" }
+      - { file: brand/process/references/label-works/1.jpg, caption: "Label Works · the list itself set as the design" }
+      - { file: brand/process/references/glass-study/2.jpg, caption: "Glass Study · one colour taken from the product's own glass" }
     colors:
-      - { name: Paper, hex: "#f6f1ea", share: 55 }
-      - { name: Ink, hex: "#1f1a17", share: 25 }
-      - { name: Sand, hex: "#e9dccb", share: 12 }
-      - { name: Clay, hex: "#c9785b", share: 8 }
+      - { name: Tile, hex: "#f4f3ef", share: 60 }
+      - { name: Ink, hex: "#1b1d1f", share: 25 }
+      - { name: Grout, hex: "#c9cac6", share: 10 }
+      - { name: Amber, hex: "#b4621b", share: 5 }
     fonts:
-      - { family: Fraunces, file: brand/fonts/Fraunces.woff2, role: headlines }
-      - { family: Inter, file: brand/fonts/Inter.woff2, role: everything that informs }
+      - { family: Host Grotesk, file: brand/fonts/HostGrotesk.woff2, role: "everything, in a few sizes: plain, so every line reads as fact" }
+      - { family: Chivo Mono, file: brand/fonts/ChivoMono.woff2, role: "the ingredient lists and the minutes, set like a label's data" }
     sample: Two minutes in the morning. Then get on with your day.
 ```
 

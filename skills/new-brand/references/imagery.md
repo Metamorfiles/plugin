@@ -1,15 +1,15 @@
 # Imagery
 
 Read this for the imagery step of `SKILL.md`, after `images.md` of the `studio` skill, which
-holds how to prompt each image model. This file is what a new brand's imagery needs on top: a
-locked style, anchors the user approves, and a library grown from them.
+holds how to prompt each image model and which images may be passed as references. This file is
+what a new brand's imagery needs on top: a locked style, anchors the user approves, and a library
+grown from them.
 
 ## Contents
 - The mode
 - The style block
 - Seeds, then anchors
 - The library
-- A character
 - In the kit
 
 ## The mode
@@ -18,7 +18,8 @@ Decide it from the chosen direction and the brief, and say it in the thread:
 - **Illustration:** drawings carry the brand. Common for food, kids, community and culture brands,
   and any brand with humour.
 - **Photography:** real product, place and people. Lumen, the example brand, is photographic.
-- **A character:** one recurring figure or a family of them hosts the brand (below).
+- **A character:** the brand's mascot hosts its pictures. Only when the logo step gave the brand one
+  (step 8 of the `logo` skill); otherwise the imagery takes another mode.
 - **Graphic:** shapes, a pattern, or type itself as the image, with no pictures at all. Common for
   technology, finance, professional services and cultural institutions. Seeds are compositions:
   made with the image model in a flat graphic style, or drawn by you as SVG when they are pure
@@ -35,14 +36,13 @@ same hand. Describe the look the way an art director briefs an illustrator, in w
 cut-paper shapes in a few colours, little or no shading"), not as a list of bans
 (`images.md` of the `studio` skill, "The prompt"). The reviewer reads it the same way, as
 a look to recognise, not rules to count.
-- **For illustration:** the line (its weight as a share of the width, caps, how loose), the fills
-  (flat, plus a material colour such as wood when the drawings need one), how much light and texture
-  there is, how people are drawn, and a calm ground in the brand's paper colour.
-- **Colours as hex, each tied to what it paints** ("outline #14101c, ground #3a1c8c"), never by the
-  kit's names, which the model doesn't know. An accent colour is given a role (light, a prop the scene
-  has, a spark), never a quota: a rule like "one accent object per image" competes with everything
-  else in the scene, and the model resolves it by painting the accent wherever it can, the character
-  included.
+- **For illustration:** the line as a look (heavy and even, thin and wavering, like a felt pen), its
+  ends and how loose it is; the fills (flat, plus a material colour such as wood when the drawings
+  need one); how much light and texture there is; how people are drawn; and a calm ground in the
+  brand's paper colour.
+- **Colours as hex, each tied to what it paints** ("outline #1f1a17, ground #f6f1ea"), never by
+  the kit's names, which the model doesn't know; the accent as `images.md` of the `studio` skill
+  says ("The brand's image contract", Colour roles).
 - **For photography:** the light (hard morning sun, on-camera flash), the lens and distance, the grade,
   real materials, how many props at most.
 - **For both:** no text, letters or logos anywhere. Keep the category's and the place's clichés
@@ -50,15 +50,12 @@ a look to recognise, not rules to count.
 
 ## Seeds, then anchors
 
-1. Make four seeds together, each a different job: a scene with people, an object alone, an
-   interior, a character, a detail. They differ on purpose: in the pose, which way the head turns,
-   the framing (a close-up, the full body, from behind, from above) and the expression, never four
-   versions of one drawing in new props. The props come from the brief's own world (its list of
-   what the business makes and uses), never a generic symbol standing in for it (a star, a sparkle,
-   a lightning bolt, a heart). A character brand makes its
-   seeds from the character sheet, as `images.md` of the `studio` skill says ("The prompt").
-   Each is
-   `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["templates/brand-board#process-direction:<chosen id>"], folder: "brand/process/imagery", ground: "#f6f1ea", wait: false }`,
+1. Make four seeds together, each testing the style on a different job the brand's images will
+   really do (the touchpoints and the kit's uses: a different subject, scale and framing each), so
+   the user sees whether the style holds across them. Their props come from the brief's own world:
+   what the business makes and uses. A character brand's seeds are the character in the brand's
+   moments, each made from its sheet (`images.md` of the `studio` skill, "The prompt"). Each is
+   `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["templates/brand-board#process-direction:<chosen id>"], folder: "brand/process/imagery", ground: "<the direction's paper>", wait: false }`,
    the prompt starting "Image 1 is the chosen direction: take its palette, light and mood, never its
    pictures"; the logo never goes in, since a model shown a logo draws it into the picture;
    each at the shape the brand's images will mostly be used at (here 4:5), `ground` the chosen
@@ -67,18 +64,17 @@ a look to recognise, not rules to count.
    frame fills as each arrives.
 2. Each seed is one option of the imagery step, titled by what it shows ("The serum close-up"). The
    user uses them all, or has single ones redone or edited first ("Redo the serum close-up", "Edit
-   the serum close-up …: warmer light").
-3. Redo a rejected seed from the ones the user liked, passed as references, never from the rejected
-   one; a seed with the character is redone from the character sheet, never from another seed, since
-   a seed copied as a reference brings its head and face with it. Say what to keep ("the same composition") and what to change ("fewer, bolder lines"). The
-   new take goes first in the option's `files` and the earlier one stays after it: the board shows
-   it small and dimmed under "Earlier takes", so the user can ask for it back, and then it moves
-   first again.
-4. The seeds the user keeps are the **anchors**: the kit brings each into the library folder
+   the serum close-up …: warmer light"), each the seed's new take with `replaces` (`SKILL.md`,
+   "At every step"). A redo takes as references only images the user approved or the reviewer
+   passed (`images.md` of the `studio` skill): the other seeds the reviewer passed, or for a seed
+   with the character its sheet alone, since a seed passed in brings its figure's face with it;
+   never the seed it replaces. Say what to keep ("the same composition")
+   and what to change ("fewer, bolder lines").
+3. The seeds the user keeps are the **anchors**: the kit brings each into the library folder
    (`SKILL.md`, Kit) and DESIGN.md lists the file names that returned. The library below is grown
-   from two or three of them as references (`references: ["brand/refs/<anchor>", ...]`), since the
-   library sheet doesn't exist yet; every image after the kit takes the library's sheet instead
-   (`images.md` of the `studio` skill, "The prompt").
+   from two or three of them (`references: ["brand/refs/<anchor>", ...]`), since the library sheet
+   doesn't exist yet; every image after the kit takes the library's sheet instead (`images.md` of
+   the `studio` skill, "The prompt").
 
 ## The library
 
@@ -91,27 +87,18 @@ it will be used at (1024 × 1024 for a spot, 1600 × 2000 for a 4:5 scene):
 - **Spots:** single objects the business sells or uses, centred with space around them.
 - **Scenes:** the business's moments and people, with calm space above for a headline.
 
-## A character
-
-A brand whose imagery is a character designs it with the `character` skill: its brief
-and its look, candidates drawn alone and traced, one anchor the user approves, and right after,
-its character sheet (`references/sheet.md` of the `character` skill), drawn before any seed. Its
-seeds on this step are the character in the brand's moments, each made from the sheet, and every
-image of it, seeds and library alike, carries its Character lines (`SKILL.md` of the `character`
-skill, step 1) with the sheet first in the references, so the model paints no part another colour
-and adds nothing the scene's action doesn't need: a prop only when the action needs one, said not
-to be part of the character (`references/poses.md` of the `character` skill). A character scene's Style line takes the style block; the
-character's own look is in its Character lines. List its folder in `assets` with `kind: character`,
-its `note` holding those lines, and write them into the imagery guide.
+A character's images carry its sheet first and its Character lines (`images.md` of the `studio`
+skill, "The prompt").
 
 ## In the kit
 
 - DESIGN.md's Imagery section describes the mode and the look, and names the anchors.
-- `assets` lists the folder with `kind: imagery` (or `character`) and its `anchors`.
+- `assets` lists the folder with `kind: imagery` and its `anchors`; a character's folder as
+  `references/sheet.md` of the `character` skill says, its `note` holding the Character lines.
 - `brand/imagery-guide.md` is the brand's image contract, which every later image reads first
   (`images.md` of the `studio` skill). Write it with these sections, in this order:
   - **Style:** the style block, word for word as the seeds used it.
   - **Character** (a character brand): its Character lines, word for word.
-  - **Colour roles:** each colour's hex and what it paints in a scene; the accent's role (light, the
-    scene's own props), never on the character, never a count.
+  - **Colour roles:** each colour's hex and what it paints in a scene, as `images.md` of the
+    `studio` skill says.
   - **Writing a scene:** one or two example scenes in the brand's words, subject first.

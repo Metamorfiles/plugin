@@ -67,9 +67,10 @@ the library, `brand/imagery-guide.md`, the folder in `assets` and DESIGN.md's Im
 Three mockups, chosen as `references/mockups.md` of the `new-brand` skill says
 (`metamorfiles_get_guide { name: "new-brand", file: "references/mockups.md" }`), from the brand's own
 touchpoints: what it makes and where its customers meet it, read from its site and DESIGN.md. A
-brand with a site or an app shows its real screens, the ones `metamorfiles_look_at_page` saved, as
-the `mockup` skill says for a screen. The other shots are objects it really uses (merch, a sign, its packaging), made with the
-`mockup` skill. They're reviewed in the `handover` queue.
+brand with a site or an app shows its real screens: a screenshot `metamorfiles_look_at_page` saved
+is the screen's flat, brought in as it is with no page (step 5 of the `artwork` skill). The other
+shots are objects it really uses (merch, a sign, its packaging), made with the `mockup` skill. They
+and their flats are reviewed in the `mockups` queue, the flats first (the `mockup` skill).
 
 ## Taking values from each source
 

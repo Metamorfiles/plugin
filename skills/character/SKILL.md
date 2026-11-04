@@ -54,8 +54,8 @@ the `new-brand` skill): that one is the default, not a candidate. Then write thr
 different design (`references/design.md`, "Three designs for one character"), and draw the three
 together, each from its own prompt (`references/styles.md`, "The prompt"), each with `wait: false`,
 then `metamorfiles_image_status { id }` for each:
-`metamorfiles_generate_image { prompt, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`,
-with `folder: "brand/process/imagery"` for the imagery step; the path it returns is the traced .svg.
+`metamorfiles_generate_image { prompt, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`;
+the path it returns is the traced .svg.
 
 Three designs are drawn where the character is chosen on its own: a new brand's mascot after the
 logo choice ("In a new brand"), or a character the user asks for. Inside a logo route, before the
@@ -91,7 +91,8 @@ its character is in the logo.
   Where the letters touch it, so no box holds it alone, the image model draws it out of the logo as
   an edit, the logo's file first in `references`, the prompt asking for the character alone, whole
   and exactly as the logo draws it, traced in the logo's colours. That file is the chosen drawing:
-  draw the sheet from it (step 5), then one to three poses from the sheet (`references/poses.md`). Write the poses as `characters` and the sheet as `sheet`, have
+  draw the sheet from it (step 5), write it as `sheet` and have the reviewer pass it; then one to
+  three poses from the passed sheet (`references/poses.md`). Write the poses as `characters`, have
   the reviewer check them, and ask with `metamorfiles_ask_user { step: "character" }`: the user
   approves them with "Use these", like the imagery.
 - **Otherwise:** write this brand's briefs (step 1) and draw three designs (step 3), each with the

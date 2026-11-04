@@ -1,36 +1,22 @@
 # The brand in use
 
-Read this for the mockups, the last part of the kit. Mockups show the new brand made
-real on this business's own objects, so the user can judge the whole system at a glance. They are
-presentation, never the brand's imagery: Studio keeps them in their own folder and refuses them in
-templates.
+Read this for the mockups, the last part of the kit (in a new brand, once DESIGN.md, the library
+and the imagery guide are written). Mockups show the brand made real on this business's own
+objects, so the user can judge the whole system at a glance. They are presentation, never the
+brand's imagery: Studio keeps them in their own folder and refuses them in templates.
 
 ## Which three
 
-Three shots, from the brief's touchpoints (`research.md`), each a different part of the system and a
-different kind of idea. A scene the user asked to see (the brief's "What they asked for") is one of
-the three, as they described it:
-
-- **The hero:** the most public object, designed in full (the pack, the bottle, the tin, the box).
-- **The range:** the hero's family together, a colour per variant: the hero's design, never a new one.
-- **The everyday:** a small, frequent touchpoint that shows another part of the system: a sign, a
-  sticker, a cup, a card, a screen.
-
-A business with one product, or none to pack, shows the hero, or nothing packed, and gives the other
-shots to its merch, signs and placements.
-
-Each shot's idea comes from the brand's own world, the moments and places of this business, not from
-a stock setup: for skincare made for short mornings, the jar on a steamed-up bathroom shelf at seven
-with one hand reaching in. A pattern of the range is broken, when it is, by another object of the range for a reason the shot
-says (a sachet among the bottles, a lid among the tins), never by the same unit turned. Never a stock
-set (a business card, a tote and a phone), and never an object this business doesn't use.
+Three shots, from the touchpoints the research found (`research.md`), and among them anything the
+user asked to see (the brief's "What they asked for"), as they described it. Each shows a different
+part of the system. Only products the brief names: a shot never invents one, and a business with
+none to show gives its shots to what it uses besides (a sign, merch, a placement). How each shot is
+chosen, designed and made: the `mockup` skill.
 
 ## Make them
 
-Last, once the kit is written, in `brand/mockups/`, as the `mockup` skill says: each object's print
-(the logo alone, designed in place, a flat print, or exact artwork), the photograph and its
-fixes. Once the first is saved, list the folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`.
-They are one board, like the logos and the images, and nothing is asked: say which three you made in
-one `say`. The user can redo one from its board, or pick one of its earlier takes back; a mockup made
-again takes the old one's place (`replaces`), and the old one stays an earlier take. They're
-reviewed in the `handover` queue, with the library.
+In `brand/mockups/`, as the `mockup` skill says, flats first. Once the first is saved, list the
+folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`; the `handover`
+review is the final gate for them with the rest of the kit. They are one board, like the logos and
+the images, and nothing is asked: say which three you made in one `say`. The user can redo one from
+its board, or pick one of its earlier takes back.
