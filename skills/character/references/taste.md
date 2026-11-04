@@ -8,11 +8,10 @@ The logo's own page is `references/taste.md` of the `logo` skill; the families o
 ## Strong
 
 - **A personality in the pose and the face:** a grin, a wink, a run, a lean, a slurp.
-- **One feature that makes it itself:** sunglasses, a bob with a fringe, a pastry's swirl, dark ear
-  tips.
+- **One feature that makes it itself:** a thing it wears, a marking, a habit.
 - **Doing this business's things:** carrying the product, serving it, eating it, making it.
-- **Shown as a set:** the same character in four to nine poses and expressions. A set proves it's a
-  character and not one drawing.
+- **Shown as a set:** the same character across poses and expressions proves it's a character and
+  not one drawing; its sheet is that proof.
 - **On model in every pose:** the same face, hair, clothes, proportions and line from pose to pose.
 - **Reads as a profile picture:** a head or bust that still reads in a circle, as the mark page shows it.
 
@@ -20,16 +19,14 @@ The logo's own page is `references/taste.md` of the `logo` skill; the families o
 
 - **A generic mascot with no personality:** a smiling thing standing still.
 - **Briefed as an assembly.** A prompt that counts limbs, places each one and paints each part a
-  colour draws exactly that: an assembly standing still. Brief who it is, its face and what it's
-  doing, and let the drawing find the body's shapes.
-- **A scene instead of a character.** A board, a wave and the spray around it take over the drawing. One gesture and one object, smaller than the character; scenes belong to the
-  imagery.
+  colour draws exactly that: an assembly standing still (what a brief says instead: `design.md`).
+- **A scene instead of a character.** A setting around it takes over the figure. One gesture, the
+  character the whole subject; scenes belong to the imagery.
 - **Detail that vanishes when small:** fine textures, tiny accessories.
 - **Props merged into the body.** When a prop overlaps the head or body, the model can read the two
-  as one shape and carry it into every later pose: a barrel becomes part of the head. Say in each pose
-  prompt what the prop is and that it isn't part of the character.
+  as one shape and carry it into every later pose (how a prompt names a prop: `poses.md`).
 - **Features invented between poses.** Without the character described in words, each pose adds its
-  own detail. Repeat its Character lines in every prompt.
+  own detail, which its Character lines prevent (`SKILL.md`, step 1).
 - **Stray letters and symbols:** "zzz" over a sleeping character, sound words. Ask for none.
 
 ## Defaults to recognise
@@ -40,9 +37,7 @@ brief asks for one, it's right; when it didn't, the brief names what it should b
 - an object with a face drawn on it, standing still, arms out;
 - stick limbs ending in round mitts;
 - waving at the viewer, or a thumbs-up;
-- the category's stock character (a chef's hat on food, a fox for anything clever, a robot for
-  tech);
-- a cocky smirk with one raised brow and a fang, when nothing in the brief is cocky;
+- the category's stock character, the one anyone would draw for it;
 - glossy 3D, or big sparkling eyes in a tiny body, when the direction is flat.
 
 Two questions for every brief, before it's drawn: could you guess it from the category alone? Could

@@ -1,54 +1,52 @@
 # Poses and expressions
 
-A single new drawing of the character for the brand's files, such as a pose for a sticker (the small
-mark is made as step 8 of the `logo` skill says). Every scene of it in a post is an image, made from the character sheet
-(`references/sheet.md`). A new drawing stays on model when it starts from the sheet, repeats its
-Character lines word for word, and states its own pose, head angle and expression.
-
-## The Character lines
-
-Written once from the brief (`SKILL.md`, step 1), what never changes: who it is, the one feature
-that makes it itself, how its face is made (the shape of its eyes and pupils, its brows, its mouth,
-a fang or a gap), the markings, its palette, its look (line, fill and rendering). Never an expression or a head angle: those
-are each drawing's own, and a fixed one makes every drawing the same face. Paste them unchanged
-into every prompt for this character, with no rewording. A synonym is a different instruction.
+A single new drawing of the character for the brand's files, such as a pose for a sticker. Every
+scene of it in a post is an image, made from the character sheet too (`references/sheet.md`). A new
+drawing stays on model when it starts from the sheet, repeats its Character lines word for word
+(`SKILL.md`, step 1), and states its own pose and expression.
 
 ## A new pose
 
 A new drawing of the character, with the sheet attached first in `references`:
-`metamorfiles_generate_image { prompt, references: ["<the character sheet>"], width: 1024, height: 1024, folder: "brand/<the character's folder>", name: "02-stirring", trace: { colors: [...] } }`.
+`metamorfiles_generate_image { prompt, references: ["<the character sheet>"], width: 1024, height: 1024, folder: "brand/<the character's folder>", name: "02-stirring", trace: { colors: [...] } }`,
+with `folder: "brand/process/character"` while a brand is made, before the kit lists its folder.
 
 ```
 Image 1 is the reference sheet of the character from every side: draw exactly one of it, in a new
 pose, the same character in every way.
 Who it is: <the Character lines>.
-Nothing about it changes; nothing added to hold or do anything.
-The pose: <the pose, in one sentence: what it does, where its limbs are, which way it and its head face>.
+Nothing about it changes.
+The pose: <in one sentence, what it is doing and feeling, and which way its head turns>.
+<Only when the pose's idea needs a prop: it holds <the brand's own object>, which is not part of it.>
 Alone on a transparent background, flat colours only, no letters, no ground line or shadow.
 ```
 
-Draw it anew rather than editing image 1. An edit keeps what is already in the image, so the head
-stays at its old angle and size while a new body is painted under it, and the pose looks pasted
-together. A new drawing lets the head turn and the body move, and image 1 with the Character lines
-keeps it the same character. Edit (`edit: true`, the image to change first in `references`, the
-prompt starting "Edit image 1:", then what stays exactly as it is) only for a change that keeps the
-pose: an expression, a prop swapped, a colour fixed.
+The pose line says what the character is doing and feeling, never where its limbs go: the drawing
+finds them (`design.md`, "What the brief says"). In any drawing of the character, a candidate or a
+pose, a prop is named only when the drawing's idea needs it (the brand's own object), and the prompt
+says it isn't part of the character, so the model doesn't merge the two and carry the prop into
+every later drawing.
+
+A new pose is drawn anew, never as an edit of image 1: an edit keeps what is already in the image,
+so the old head stays on a newly drawn body. An edit (`edit: true`, the image to change first in `references`, the
+prompt starting "Edit image 1:", then what stays exactly as it is) is only for a change that keeps
+the pose: an expression, a prop swapped, a colour fixed.
 
 - **One change per drawing.** A new pose, or a new expression, or a prop: never two at once.
 - **Always from the sheet**, never from a pose or a scene made from it: copies of copies drift.
 - **Several at once**: start each with `wait: false`, each from the sheet, then wait for each with
   `metamorfiles_image_status { id }`.
-- Save each into the character's folder with the same `trace` colours as the anchor.
+- Save each into the character's folder with the same `trace` colours as the chosen drawing.
 
 ## The set
 
-The sheet already holds the turnaround and the range. Draw single poses only for what the brand uses
-as artwork on its own (a sticker, a sign): serving, waving, carrying the one product. An expression
-on a pose already drawn is an edit: "Change only the expression: surprised, round eyes and a small O
-mouth".
+The sheet already is the proof that the character holds across poses, its turnaround and its range.
+Draw single poses only for what the brand uses as artwork on its own (a sticker, a sign), each doing
+one of the brand's own things. An expression on a pose already drawn is an edit: "Change only the
+expression: surprised, round eyes and a small O mouth".
 
 ## Files
 
 In the character's folder, numbered in the order the board shows them, by `name`: `00-sheet`,
-`01-front` (the anchor), `02-stirring`; Studio adds a short id to each. The sheet and the anchor are
-listed, in that order, by their full file names in the folder's `anchors`.
+`01-front` (the chosen drawing), `02-stirring`; Studio adds a short id to each. The sheet and the
+chosen drawing are listed, in that order, by their full file names in the folder's `anchors`.

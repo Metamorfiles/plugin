@@ -1,17 +1,17 @@
 # The logo drawn whole
 
-Route 1. The image model draws the logo as one composition, lettering and all, and Studio makes it a
-vector: lettering alone, or lettering with a mark, a mascot or ornaments, drawn in one style so every
-part belongs to the others.
+The image model draws the logo as one drawing, lettering and all, and Studio makes it a vector:
+lettering alone, or lettering with a mark, a mascot or ornaments, drawn in one style so every part
+belongs to the others.
 
 ## What the model draws well, and what it doesn't
 
 - **Expressive lettering draws well**: scripts, chubby, soft, bouncy or hand-cut letters, where the
   hand's irregularity is part of the look.
 - **Precise lettering doesn't**: carved or faceted strokes, engraved capitals, fine hairline serifs,
-  perfectly even geometric capitals come out nearly right, and a trace keeps every flaw. When the
-  direction's lettering is like that, draw only what the model can draw (a mark, a mascot, a
-  detail) and set the name in route 2, or leave this route out and say why.
+  perfectly even geometric capitals come out nearly right, and a trace keeps every flaw. An idea
+  that needs such lettering is made with real fonts and a generated part instead, or replaced by
+  another idea (`SKILL.md`, step 4).
 - **Supporting words** (a tagline, the trade, the place), when the route has them, are set in real
   type and composed with the traced drawing (`lockups.md`), not drawn.
 
@@ -21,10 +21,9 @@ Write the prompt from the chosen direction and the brief, as a designer's brief,
 - the look and feel, in the direction's own terms;
 - the lettering, described in a designer's words;
 - the layout: how the parts sit together and the space between them;
-- any mark, mascot or ornament, in the same hand and weight as the letters, and its size against
-  them (as tall as the capitals, its head over the word): a mascot is briefed with
-  the `character` skill, by who it is, its face, what it's doing and its look, never as a list
-  of parts;
+- any mark, mascot or ornament, in the same hand and weight as the letters, and how it meets them
+  (over the word, closing it, beside it); a mascot is briefed with the `character` skill, by who it
+  is, its face, what it's doing and its look, never as a list of parts;
 - each colour for what it paints, from the direction's palette;
 - the name in quotes, exactly as written, an uncommon one spelled letter by letter;
 - "flat vector artwork, like a brand designer's final logo file", and no other text.
@@ -42,41 +41,45 @@ direction.
 Draw it at the lockup's shape, listing every colour it uses:
 `metamorfiles_generate_image { prompt, references: ["templates/brand-board#process-direction:<chosen id>", "brand/process/references/<project>/2.jpg"], width: 1536, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
 Studio has it drawn on a transparent background and traces each colour in the brand's exact value
-(`vector.md`); the path it returns is the traced .svg.
-
-## One drawing
-
-Draw it once. The logo step shows the user the drawing itself, and its letters are the reviewer's to
-read: a letter it sends back is fixed by an edit (`references/images.md` of the `studio` skill).
-Compose it with its route's supporting words, if it has them, and run `metamorfiles_check_logo`.
+(`vector.md`); the path it returns is the traced .svg. The logo step shows the user the drawing
+itself. Run `metamorfiles_check_logo` on it (`checks.md`).
 
 ## Other versions of it
 
-A version of a logo drawn whole is made the cheapest way that keeps it the logo's own drawing:
+Every other version of a logo is made the cheapest way that keeps it the logo's own drawing.
 
-- **A part that is its own piece** (a letter, a mark with space around it), taken out as it is:
-  `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-mark.svg", keep: { x: 0.81, y: 0.03, width: 0.19, height: 0.88 }, square: true }`,
-  its box from the boxes `metamorfiles_check_logo` lists. No image is made; the logo's mark is this.
-- **A letter or mark sitting on a shape of another colour** (a letter on a strip of tape, a mark on a
-  badge): cut the shape's colour out first, which leaves the letter as its own piece, then take it:
-  `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-letters.svg", colors: { "#efe1b4": "knockout" } }`,
-  then `keep` on that file as above. No image is made.
-- **A part that touches or overlaps others** (a mascot over the letters) is an edit of the logo,
-  made only after the choice and on the user's word: the traced file first in `references`, `edit:
-  true`, the same `folder` and `trace` colours, saying only what changes, with `region` around the
-  part so every letter outside it stays exactly as it was. A small mark is made as `SKILL.md`, step 8, says.
-- **A version that loses a part in one colour,** redrawn after the choice, for the chosen logo only.
-  The reversed and one-colour versions are recolours
-  of the file (`metamorfiles_make_logo_variant`) unless `metamorfiles_check_logo` reports
-  `lostInOneColour` with `merged` boxes: a face's features that merge into one ink, a gem's cut that
-  disappears. Then that version is drawn as an edit of the logo's own drawing (`edit: true`, the
-  traced file first in `references`, the same `folder` and `trace` colours, saying only what changes in
-  the merged parts: an outline cut between the features, a facet left open) and traced, and lined up
-  with the logo: `metamorfiles_align_version { file: "brand/process/logo/<file>.svg", version: "brand/process/logo/<file>-ink-draft.svg", output: "brand/process/logo/<file>-ink.svg", redrawn: [{ x: 0.81, y: 0.03, width: 0.19, height: 0.88 }] }`,
-  the boxes being the merged ones the check reported. Every piece outside them is the logo's own
-  file; the version's entry in `logo.md` carries the same boxes as `redrawn`, so the card says what
-  was redrawn and the reviewer judges only that.
-- **Another layout** (one line, stacked) is drawn at its new shape and checked like the original.
+### Every route, before the choice
 
-Recolourings stay `metamorfiles_make_logo_variant`.
+What `SKILL.md`, step 6, gives each route:
 
+- **Its one colour**, a recolour: `metamorfiles_make_logo_variant` with `colors`, as step 6 says.
+- **A part taken out as it is** (the mark alone, the name alone): `metamorfiles_make_logo_variant`
+  with `keep`. Its box always comes from the `boxes` `metamorfiles_check_logo` reports for that file,
+  around that part's pieces, never a fixed share. A part sitting on a shape of another colour (a
+  letter on a band, a mark on a badge) is freed first by cutting that colour out,
+  `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-free.svg", colors: { "<the shape's colour>": "knockout" } }`,
+  then `keep` on that file. No image is made.
+
+### The chosen logo, after the choice
+
+The planned flow, with no extra word from the user:
+
+- **The reversed version**, a recolour made with the final files (`final.md`).
+- **The small mark** (`SKILL.md`, step 8) and **the character** of a logo that carries one (the
+  `character` skill, "In a new brand"): parts taken out as above, or drawn from the logo as an edit
+  where no box holds them alone.
+- **The version redrawn where one colour loses a part**: when `metamorfiles_check_logo` reported
+  `lostInOneColour` with `merged` boxes (features that merge into one ink), the one-colour version is
+  drawn as an edit of the logo's own drawing (`edit: true`, the traced file first in `references`,
+  the same `folder` and `trace` colours, saying only what changes in the merged parts: an outline cut
+  between the features, a gap left open) and traced, then lined up with the logo:
+  `metamorfiles_align_version { file: "brand/process/logo/<file>.svg", version: "brand/process/logo/<file>-ink-draft.svg", output: "brand/process/logo/<file>-ink.svg", redrawn: [<the merged boxes>] }`.
+  Every piece outside them is the logo's own file. It takes the place of the one-colour file in the
+  chosen option's `files` in `logo.md`, its entry carrying the same boxes as `redrawn`, so the card
+  says what was redrawn and the reviewer judges only that. It is a traced file of the chosen logo, so
+  it is cleaned like the logo (`final.md`, "Cleaning"), and the final one-colour and reversed files
+  are recoloured from its cleaned copy.
+
+### Only on the user's word
+
+**Another layout** (one line, stacked), drawn at its new shape and checked like the original.

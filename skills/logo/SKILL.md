@@ -1,6 +1,6 @@
 ---
 name: logo
-description: Designs a logo in Metamorfiles Studio for a brand that has none: three routes (a logo drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, and one in type alone), then, once the user chooses, its small mark and its small uses. Use for the logo step of a new brand, or when the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a brand whose DESIGN.md already sets its look. A business with nothing made yet, even when the user asks only for a logo, starts with the new-brand skill, whose logo step this is. Not for a brand that already has a logo, whose official files are never redrawn (the brand skill).
+description: Designs a logo in Metamorfiles Studio for a brand that has none: three routes, three different ideas, each made by the method that serves it (drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, or type alone), then, once the user chooses, its small mark and its small uses. Use for the logo step of a new brand, or when the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a brand whose DESIGN.md already sets its look. A business with nothing made yet, even when the user asks only for a logo, starts with the new-brand skill, whose logo step this is. Not for a brand that already has a logo, whose official files are never redrawn (the brand skill).
 license: MIT
 ---
 
@@ -18,21 +18,24 @@ Copy it into your notes and tick each step as you go:
 - [ ] 1. The brief and the chosen direction read, its reference images looked at
 - [ ] 2. Type study: the name in the faces the direction suggests and around them
 - [ ] 3. Three ideas: each route's id, idea and composition written before anything is drawn (in a new brand, into logo.md)
-- [ ] 4. Three routes made: the word set first, a mark drawn to fit it
+- [ ] 4. Three routes made, each by its method
 - [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
-- [ ] 6. Each route's two files: colour, and one colour
+- [ ] 6. Each route's files: colour and one colour, plus the parts it shows
 - [ ] 7. Routes shown and one recommended
-- [ ] 8. After the choice: the mascot first when `logo.md` has `mascot: true` (the `character` skill, "In a new brand"); the small mark, asked; then the final files and small uses (`references/final.md`)
+- [ ] 8. After the choice: the mascot first when the brand has one; the small mark, asked; then the final files and small uses (`references/final.md`)
 ```
 
 ### 1. What the brand already decided
 
 Read `brand/process/brief.md` and the chosen option of `brand/process/direction.md`, and look at its
-reference images with `metamorfiles_read_file`. They set the look; the logo's idea comes from the
-brief, the business's own reality, not the category's usual symbol. Outside a new brand, the user's
-request and the brand's DESIGN.md do the same. With neither a brief nor a DESIGN.md, the brand is new:
-follow the `new-brand` skill instead, which comes back here for its logo step. Read `references/taste.md` for what a strong version
-of that look is, and what the image model tends to get wrong.
+reference images with `metamorfiles_read_file`. They set the look. The logo's idea comes from the
+brief: the business's own reality (its product, place, process, people) seen through the
+direction's look, not the category's usual symbol, which the image model reaches for when nobody
+asked and which belongs in the logo only when the direction chose it. Outside a new brand, the
+user's request and the brand's DESIGN.md do the same. With neither a brief nor a DESIGN.md, the
+brand is new: follow the `new-brand` skill instead, which comes back here for its logo step. Read
+`references/taste.md` before writing the ideas (step 3), for what a strong version of that look is
+and what the image model tends to get wrong; the result is the reviewer's to judge.
 
 When a route needs a part the references don't show well (the lettering, a mascot, a mark), start a
 search for it in the background as you begin, with the category and the part:
@@ -46,21 +49,22 @@ Study and choose each route's face: `references/wordmark.md`.
 
 ### 3. Three ideas
 
-Before anything is drawn, write each route's idea and composition in one line in your notes. Each
-idea comes from a different source: one from the name (its sound, its letters, a pair that could
-join), one from the product (what it is, how it's made, what it's used for), one from the place, the
-people or the feeling it promises. The composition says how the logo is built, in words, never in
-measurements: what leads, and how the other parts meet the word (on its baseline, over it, tucked
-into a letter, or apart from it). It's the plan, not a spec: the made logo settles its proportions. It also says the route's words: the name alone, or with a supporting
-line that makes this idea stronger (a tagline, the trade, a place, written in the brand's voice) and
-where it sits. Each route decides its own words; a line that would sit the same under every route
-belongs to none. What the brief says the category keeps (a clear descriptor, say) the brand as a
-whole keeps, in its messaging and layouts, not every logo. A name that arches or bounces is drawn
-whole (route 1). Read the three together against `references/taste.md`, "Defaults to recognise": three ideas in one
-arrangement (a mark centred above the word, three times) are one answer. Each line goes on its
-route's option as `composition` in `brand/process/logo.md`, for the reviewer; the user sees the route's `line`, written for them.
-Name each route now with one lowercase word, its `id` in `logo.md` (`rim`, `seal`, `pots`): every file of
-the route starts with it (step 6), so the board shows each route's work in its own band as it arrives.
+Before anything is drawn, write each route's idea and composition in one line in your notes. Three
+different ideas: drawing them from different sources (the name's sound and letters, the product and
+how it's made or used, the place, the people or the feeling it promises) keeps them apart, a habit
+rather than a quota. How studios find such ideas: `references/principles.md` of the `new-brand`
+skill. The composition says how the logo is built, in words, never in measurements: what leads, and
+how the other parts meet the word (on its baseline, over it, tucked into a letter, or apart from
+it). It's the plan, not a spec: the made logo settles its proportions. It also says the route's
+words: the name alone, or with a supporting line that makes this idea stronger (a tagline, the
+trade, a place, written in the brand's voice) and where it sits. Each route decides its own words; a
+line that would sit the same under every route belongs to none. Read the three together against
+`references/taste.md`, "Defaults to recognise".
+
+Each line goes on its route's option as `composition` in `brand/process/logo.md`, for the reviewer;
+the user sees the route's `line`, written for them. Name each route now with one lowercase word, its
+`id` in `logo.md` (`rising`, `open`): every file of the route starts with it (step 6), so the
+board shows each route's work in its own band as it arrives.
 
 In a new brand, write the three into `brand/process/logo.md` now, before anything is drawn: each
 option's `id`, `title`, `line` and `composition`, no `files` yet, in the order the user will see them.
@@ -70,48 +74,56 @@ under its new id.
 
 ### 4. Three routes
 
-Three answers, not three versions: each route a different idea and a different lettering family or
-composition move (`references/taste.md`), so the user chooses between ideas. A fourth route only for
-another idea: a variant of a route (its mark drawn longer, its lockup stacked) is never a route.
-Make each to pass the Logo route checklist of the `review` skill's Rubric, which the reviewer holds it to.
+Three answers, not three versions: each route is a different idea, made by the method that serves
+it, so the user chooses between ideas. The three methods below are a toolset, never a slot per
+route. A fourth route only for another idea: a variant of a route (its mark drawn longer, its lockup
+stacked) is never a route. An idea the medium can't make (`references/drawn.md` says what the model
+draws well) is replaced by another idea in its place, so three are still shown. Make each to pass the
+Logo route checklist of the `review` skill's Rubric, which the reviewer holds it to.
 
-1. **Drawn whole by AI.** The image model draws the logo as one composition: lettering alone, or
-   lettering with a mark, a mascot or ornaments, all in one style, with proper spacing between its
-   parts. Studio traces it; its supporting words, if the route has them, are set in real type: `references/drawn.md`.
-2. **Real fonts with a generated mark.** The name set from real fonts with its kerning, ligatures and
-   spacing, set first, with a generated mark or mascot that stands on its own, drawn from the set name
-   so it shares its hand, then locked up with the name: beside it, after it, or centred above it, by the mark's shape and the name's
-   length (`references/lockups.md`). A mark that meets the letters (lying on them, an arm over a stem)
-   is drawn onto the set word (`references/symbol.md`, "Compose it on the word"). A drawn letter in a
-   letter's place only when the object already has that letter's shape and the word still reads at a
-   glance (`references/symbol.md`, "A drawn letter"). The route keeps the name alone, the real
-   wordmark file, beside the lockup and the mark: `references/wordmark.md`. A mascot is designed with
-   the `character` skill.
-3. **Type alone.** The name set straight in its face with kerning, ligatures, alternates and the
-   face's own features, at most one letter moved for a reason, in a simple composition, or a seal or
-   monogram when the brand needs one:
-   `references/wordmark.md`, `references/seal.md`.
+- **Drawn whole by AI.** The image model draws the logo as one drawing: lettering alone, or
+  lettering with a mark, a mascot or ornaments, all in one style. Studio traces it; its supporting
+  words, if the route has them, are set in real type: `references/drawn.md`.
+- **Real fonts with a generated part.** The name set first from real fonts (`references/wordmark.md`),
+  then a mark or mascot drawn to go with it (`references/symbol.md`), now and then a drawn letter in
+  a letter's place (`references/symbol.md`, "A drawn letter"). A part that stands beside, after or
+  above the name is locked up with it (`references/lockups.md`); one that meets the letters is drawn
+  onto the set word (`references/symbol.md`, "Compose it on the word"). A mascot is briefed with the
+  `character` skill.
+- **Type alone.** The name set straight in its face with kerning, ligatures, alternates and the
+  face's own features, at most one letter moved for a reason, simply arranged, or a seal or
+  monogram when the brand needs one: `references/wordmark.md`, `references/seal.md`.
 
 ### 5. Check
 
 Run `metamorfiles_check_logo` on every route's logo and act on what it reports:
-`references/checks.md`. The reversed version and the small mark are
-made after the choice (step 8): a route is never drawn again for them.
+`references/checks.md`. Before the review, a piece is made again only for a failure Studio measures
+and reports: an opaque result, letters the check says the model redrew, or a trace the result says
+falls short (a colour of the route's palette left out, a colour, shade or gradient the prompt
+didn't ask for, a trace that strays from its drawing); how to make each again is in `references/vector.md`
+and `references/checks.md`. Its look is never the maker's to judge, and a maker never draws a piece
+again because of how it looks. After the review, it changes only as the `review` skill's Run it,
+step 4, says.
 
 ### 6. Each route's files
 
-Two files a route: the logo in colour on the ground it's made for, then in one colour on white,
-each with its `ground`. One colour is what tells routes apart: it shows whether the drawing holds
-without its fills. A drawing of lines with coloured fills becomes line art in one colour: its line
-colour to the ink and every fill cut out (`metamorfiles_make_logo_variant`, each fill's colour to
-`"knockout"`), so the ground shows through the drawing. Recolouring every paint to one colour turns
-it into a silhouette, and the details are gone. A drawing of solid shapes becomes one solid shape
-with its inner details cut out.
+A route's files before the choice: its logo in colour on the ground it's made for, and in one colour
+on white, each with its `ground`, plus the parts it's built from (the name alone, the mark alone,
+with `small: true` on the mark's entry so the board never leads with it) when the route means to
+show them. The reversed version, the small mark and the version redrawn where one colour loses a
+part (`references/drawn.md`, "Other versions of it") are made after the choice, for the chosen route
+only (step 8).
 
-The reversed version, the small mark, and a version redrawn because it loses a part in one colour
-are made after the choice, for the chosen route only (step 8). Save every file under
-`brand/process/logo/`, its name starting with its route's id and a hyphen: `folder: "brand/process/logo"`
-and `name: "rim-drawn"` for an image, an `output` such as `brand/process/logo/rim-ink.svg` for the other tools.
+One colour is what tells routes apart: it shows whether the drawing holds without its fills. A
+drawing of lines with coloured fills becomes line art in one colour: its line colour to the ink and
+every fill cut out (`metamorfiles_make_logo_variant`, each fill's colour to `"knockout"`), so the
+ground shows through the drawing. Recolouring every paint to one colour turns it into a silhouette,
+and the details are gone. A drawing of solid shapes becomes one solid shape with its inner details
+cut out.
+
+Save every file under `brand/process/logo/`, its name starting with its route's id and a hyphen:
+`folder: "brand/process/logo"` and `name: "rising-drawn"` for an image, an `output` such as
+`brand/process/logo/rising-ink.svg` for the other tools.
 
 ### 7. Show them
 
@@ -119,55 +131,63 @@ Show every route the plan set, each checked and given its files (steps 5 and 6).
 between them, never you.
 
 In a new brand, give each option of `brand/process/logo.md` its files, in the order the plan set
-(a further candidate after them), one `recommended: true`, with
-`mascot: true` at the top when the brief asks for a mascot anywhere in it, and `mascot: true` on each route whose
-logo carries the character, and ask as the `new-brand` skill says: Studio draws each large on its ground with its
-one-colour version beside it on the brand board, a logo made from a drawing as the drawing itself and its
-one-colour version from its trace. Outside it, show the check sheets and say in a line what each is and why,
-the recommended one first.
+(a further candidate after them), one `recommended: true`, with `mascot: true` at the top when the
+brief asks for a mascot anywhere in it, and `mascot: true` on each route whose logo carries the
+character, and ask as the `new-brand` skill says: Studio draws each large on its ground with its
+one-colour version beside it on the brand board, a logo made from a drawing as the drawing itself
+and its one-colour version from its trace. Outside it, show the check sheets and say in a line what
+each is and why, the recommended one first.
 
 ### 8. After the choice
 
-Start the chosen logo's cleanup at once (`references/final.md`), then go on. When `logo.md` has `mascot: true` at
-the top, the mascot comes first: the `character` skill, "In a new brand"; the small mark waits for its answer.
+Start the chosen logo's cleanup at once (`references/final.md`), then go on. The brand has a mascot
+when `logo.md` has `mascot: true` at the top or the chosen route has it (Studio checks both): then the
+mascot comes first, the `character` skill, "In a new brand", and the small mark waits for the
+mascot's answer.
 
-The small mark is next, before the imagery or anything else: it stands for the whole name. It is the
-logo's own mark, cut from the chosen logo's file, or made as an edit of it, never a new drawing on its own. With a
-mascot it may be the mascot's head or bust, made the same way from the logo (from the mascot's
-anchor drawing when the logo doesn't carry it).
+The small mark is next, before the imagery or anything else. It is a part of the logo that stands for
+the whole brand on its own, cut from the logo's own file, or, when no part reads alone, drawn from
+the logo in the same hand. A single letter qualifies only when it carries the logo's idea. With a
+mascot it may be the mascot's head or bust, taken the same way from the logo, or from the chosen
+mascot's drawing when the logo doesn't carry it. A part is cut as `references/drawn.md`, "Other
+versions of it", says. Everything this step and `references/final.md` make is the planned flow and
+needs no extra word from the user: the mascot cut or drawn out of the chosen logo, the small mark
+(an edit of the logo included), the version redrawn where one colour loses a part, and the final
+files. Only a new layout or version the user didn't ask for needs their word first.
 
 - **The logo has a mark of its own** (a logo put together from parts: its `.svg.json` lists `parts`):
   that part's file already is the small mark. Nothing is cut; it is only set in its square,
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<the mark part>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x: 0, y: 0, width: 1, height: 1 }, square: true }`.
-- **A part of a drawn logo stands for the brand on its own** (its first letter or a monogram of its
-  initials, the seal's middle, or the whole logo): cut it from the logo's file,
-  `metamorfiles_make_logo_variant { file: "brand/process/logo/<chosen>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x: 0, y: 0, width: 0.3, height: 1 }, square: true }`.
-- **None does** (fine detail, texture, a long name, a mascot's head): never clean or redraw the logo
-  for it. Have the image model make the mark as an edit of the logo, its file first in `references`,
-  the prompt naming the part and saying it is simplified, in the logo's own drawing, colours and
-  proportions (never squarer or more compact: Studio composes it in the circle and the square), and
-  trace it:
+- **A part of a drawn logo reads alone** (a monogram of its initials, a seal's middle, the drawing
+  without its letters, or the whole logo): cut it from the logo's file,
+  `metamorfiles_make_logo_variant { file: "brand/process/logo/<chosen>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x, y, width, height }, square: true }`.
+- **No part reads alone** (fine detail, a long name, a mascot's head over the letters): never clean or
+  redraw the logo for it. Have the image model make the mark as an edit of the logo, its file first
+  in `references`, the prompt naming the part and saying it is simplified, in the logo's own drawing,
+  colours and proportions, and trace it:
   `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], edit: true, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
 
-Never another letter alone: a lone e reads as "e", not as the brand. Offer one to three, check each
-with `metamorfiles_check_logo`, write them into `brand/process/logo.md` as `marks`, each
-`{ file, title, line }` (the line: what it is and why it fits) and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`.
-Studio shows them on the `process-logo` frame's last page as a profile picture and an app icon, records the answer as
-`mark`, and starts nothing of the imagery until it's answered. Then the imagery, while the final
-files are made (`references/final.md`).
+Offer one to three, check each with `metamorfiles_check_logo`, write them into
+`brand/process/logo.md` as `marks`, each `{ file, title, line }` (the line: what it is and why it
+fits) and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`. Studio
+shows them on the `process-logo` frame's last page as a profile picture and an app icon, records the
+answer as `mark`, and starts nothing of the imagery until it's answered. Then the imagery, while the
+final files are made (`references/final.md`): first the chosen logo's redrawn version, when
+`metamorfiles_check_logo` reported a part lost in one colour (`references/drawn.md`, "Other
+versions of it").
 
 ## References
 
 | Read | When |
 | --- | --- |
 | [references/taste.md](references/taste.md) | What a strong logo, lockup and mark look like |
-| [references/drawn.md](references/drawn.md) | Route 1, the logo drawn whole by AI |
+| [references/drawn.md](references/drawn.md) | A logo drawn whole by AI, and every other version of a logo |
 | [references/wordmark.md](references/wordmark.md) | The type study, setting the name |
-| [references/symbol.md](references/symbol.md) | A generated mark or a drawn letter |
+| [references/symbol.md](references/symbol.md) | A generated mark or mascot for a set name, or a drawn letter |
 | [references/lockups.md](references/lockups.md) | Putting the parts together |
 | [references/seal.md](references/seal.md) | A seal, badge or monogram |
-| [references/vector.md](references/vector.md) | How a drawing is made and traced |
-| [references/checks.md](references/checks.md) | The check loop |
+| [references/vector.md](references/vector.md) | How a drawing is made and traced, and what to do with the trace's result |
+| [references/checks.md](references/checks.md) | What metamorfiles_check_logo reports, and the fix for each |
 | [references/final.md](references/final.md) | Once the user has chosen a logo: cleaning, the final files, the small uses |
 
 The faces worth studying are in `references/fonts.md` of the `new-brand` skill; a
@@ -182,5 +202,6 @@ mascot is designed with the `character` skill; how to prompt each image model is
 - **A mark is drawn by the image model, never geometry typed as SVG by you.** Only Studio's shapes (a
   ring, a disc, a star, a diamond, a facet, a rule) are built without a drawing.
 - **Supporting words are real type,** never drawn.
-- **A route's logo is never drawn again to fix another file** (a mark, a version): the
-  file changes, or the user hears what can't be made.
+- **A route's logo is never drawn again whole to make another file** (a mark, a version): that file
+  is made from the logo's own (step 8; `references/drawn.md`, "Other versions of it"), or the user
+  hears what can't be made.

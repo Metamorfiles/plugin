@@ -22,19 +22,19 @@ each with an `output` there. A cleaned drawing reaches it as one part:
 `metamorfiles_compose_logo { layout: "stack", parts: [{ file: "<the cleaned .svg>" }], output: "brand/logos/logo.svg" }`
 (`metamorfiles_generate_image` never saves into `brand/logos/`). The other colours come from
 `metamorfiles_make_logo_variant { file, output: "brand/logos/logo-reversed.svg", colors: { ... } }`:
-the reversed version is made here for the first time, the same way as the one colour. Run
-`metamorfiles_check_logo` on each: one it reports `lostInOneColour` is redrawn now (`drawn.md`,
-"Other versions of it"). Declare them in DESIGN.md `logos` with their
+the reversed version is made here for the first time, the same way as the one colour, both from the
+redrawn version's cleaned copy when the chosen logo has one (`drawn.md`, "Other versions of it"). Run
+`metamorfiles_check_logo` on each. Declare them in DESIGN.md `logos` with their
 grounds, sources ("set in <face> as outlines with a drawn part", "drawn by <model> and traced",
 "created and approved by the user on <date>") and clear space, and the small mark with `small: true`.
 
 ## The small uses
 
 Last, compose the small mark for where it's used small: in a circle (`profile`), the profile
-picture platforms crop to one and the phone's app icon, which keeps the circle's composition inside
+picture platforms crop to one and the phone's app icon, which keeps the circle's placement inside
 its rounded corners; in a square (`icon`), the favicon and the browser's icons, clear unless it names
 a ground. Studio places the mark by its ink, on the guidelines' `mark` page. Where its shape asks
-for another composition (a long mark fills less of a circle than a round one; a mark with no ground
+for another placement (a long mark fills less of a circle than a round one; a mark with no ground
 of its own may want the brand colour behind it), decide it from the mark's shape and the brand's
 colours: how much of the circle or square it fills, where it sits, its ground, or another version of
 it (the reversed mark on a brand colour). Write what differs from Studio's placement on the small

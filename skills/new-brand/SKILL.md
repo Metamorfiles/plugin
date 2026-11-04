@@ -11,8 +11,8 @@ that exists, a website, a logo, files or images all mean Translate: follow the `
 invent nothing.
 
 A created brand is made the way a studio makes one: real references first, then a direction, a logo
-with the name set in a chosen face and a drawing of its own, imagery from a few approved anchors, and
-a kit that works in production. The user's taste decides every step. You prepare two or three strong
+chosen from three different ideas, imagery from a few approved anchors, and a kit that works in
+production. The user's taste decides every step. You prepare two or three strong
 options, recommend one with a reason, and do what they choose. You never judge taste for them.
 
 The examples below use Lumen Skincare, Studio's made-up example brand.
@@ -35,7 +35,7 @@ Copy it into your notes and tick each step as you go:
 | Step | You prepare | Speaks as | Read | The user |
 |---|---|---|---|---|
 | 1. Direction | two or three directions, each its references, palette in proportion and type pairing, set in the brand's words | `designer` | `references/research.md`, `references/look.md`, `references/fonts.md` | chooses one, or says what to change or mix |
-| 2. Logo | three routes or more from the chosen direction: drawn whole by AI, real fonts with a generated part, type alone; each in colour and in one colour | `designer` | the `logo` skill; the `character` skill for a mascot | chooses one, or asks for another |
+| 2. Logo | three routes or more from the chosen direction, three different ideas, each made by the method that serves it (drawn whole by AI, real fonts with a generated part, or type alone); each in colour and in one colour | `designer` | the `logo` skill; the `character` skill for a mascot | chooses one, or asks for another |
 | 3. Imagery | the style in words and four seed images | `imager` | `references/imagery.md` | uses them, or has single ones redone |
 | Kit | DESIGN.md and the brand board: the guideline pages and the images | `designer`, `copywriter` for the prose | `brand`, `copywriting` | asks for any change they want |
 | Mockups, last | three shots of the brand on its own objects, on their own board | `designer`, `imager` for the photographs | `references/mockups.md`, the `mockup` skill | redoes one, or picks an earlier take back |
@@ -194,22 +194,24 @@ options:
     recommended: true
     files:
       - { file: brand/process/logo/rising.svg, ground: "#f6f1ea" }
-      - { file: brand/process/logo/rising-paper.svg, ground: "#1f1a17" }
       - { file: brand/process/logo/rising-ink.svg, ground: "#ffffff" }
-      - { file: brand/process/logo/rising-mark.svg, ground: "#f6f1ea", small: true }
-  - id: lumen-u
+      - { file: brand/process/logo/rising-sun.svg, ground: "#f6f1ea", small: true }
+  - id: open
     title: The open u
     line: The name alone, its u opened like light over a horizon.
-    files: [{ file: brand/process/logo/open-u.svg, ground: "#f6f1ea" }]
+    files:
+      - { file: brand/process/logo/open.svg, ground: "#f6f1ea" }
+      - { file: brand/process/logo/open-ink.svg, ground: "#ffffff" }
 ---
 
 Notes for the record: why each option, what the user said.
 ```
 
 Each option can carry:
-- `files`: up to 16 images or SVGs, each `{ file, caption, ground, small }` with all but `file`
-  optional: `caption` (at most 140 characters: a credit, what to take), `ground` (`"#rrggbb"`, the
-  colour a logo file is shown on) and, for a logo route's mark, `small: true`;
+- `files`: up to 16 images or SVGs, each `{ file, caption, ground, small, redrawn }` with all but
+  `file` optional: `caption` (at most 140 characters: a credit, what to take), `ground`
+  (`"#rrggbb"`, the colour a logo file is shown on), for a logo route's mark `small: true`, and for
+  a logo version redrawn in part, `redrawn` (`references/drawn.md` of the `logo` skill);
 - `colors`: up to 10, each `{ name, hex: "#rrggbb", share }` with `share` 0 to 100, in the order and
   proportion they are used;
 - `fonts`: up to 4, each `{ family, file, role }`, `file` the one `metamorfiles_add_font` returned;
@@ -230,7 +232,7 @@ its frame shows each file as it arrives, so the user watches the step come toget
 1. **Direction:** brief facts, touchpoints, codes and three paths into `brief.md`; references per
    path; one option per path that holds up (`references/research.md`, then `references/look.md`).
 2. **Logo** (the `logo` skill, steps 1-7, written into `logo.md`), then its step 8 once one is chosen.
-   When `logo.md` has `mascot: true` at the top, the mascot comes first: the `character` skill, "In a new brand".
+   When the brand has a mascot (step 8 of the `logo` skill says when), the mascot comes first: the `character` skill, "In a new brand".
 3. **Imagery** (`references/imagery.md`). The mode the brand needs (illustration, photography, a
    character, graphic or 3D), the style block, and four seeds made together, one per option, saved in
    `brand/process/imagery/`. The seeds the user keeps are the anchors. Start the seeds once the small

@@ -40,9 +40,10 @@ An image that carries a piece is made for that piece.
 2. **Make it for that slot** with the prompt below, `width` and `height` the slot's size. It's saved
    under `assets/`: a piece's images are the piece's, never added to the brand's library, whose
    images are reviewed as a set (the library grows only through the brand's library step).
-   - **A character or product is a cutout:** `transparent: true`. ChatGPT and OpenAI models make
-     transparent images; ask the others for a flat field in the brand's paper colour, set `ground`,
-     and place it as a field. Cutouts, scenes and type in one frame: `references/design.md`, "The
+   - **A character or product is a cutout:** `transparent: true`. Whether a model makes transparent
+     images is its `transparent` flag in `metamorfiles_image_models`; for a model that doesn't, or a
+     result that comes back opaque, do as `references/vector.md` of the `logo` skill says, and place
+     it as a field. Cutouts, scenes and type in one frame: `references/design.md`, "The
      composition".
 3. **Use a library image as it is** only when it already is that composition: a pattern, a texture, a
    small spot used as decoration, or the very picture the brief names. A near fit is still the wrong
@@ -105,7 +106,7 @@ Then the craft, for every model, and that model family's file for what differs (
   "an empty street" instead, and keep exclusions to the Constraints line. Keep text out with "clean,
   unmarked surfaces", and never put a word in quotation marks: a quoted word is drawn. The one image
   that carries words is a logo drawn whole (`references/drawn.md` of the `logo` skill).
-- **One or two style anchors at most, never contradictory instructions:** given two rules that
+- **One style anchor at most, and never contradictory instructions:** given two rules that
   compete (an accent quota and the character's colours), the model picks one, and not always yours.
 - **Detail matches the brief.** A specific brief is reorganised into the sections, not rewritten; a
   vague one gets only what the picture needs to work. Never add a person, an object, an action or a
@@ -122,10 +123,10 @@ One exception: a mockup photograph names its colours in words and quotes its wor
 Example, a character brand's carousel slide:
 
 > Image 1 is the reference sheet of Dew, the brand's water drop, from every side: keep its identity, anatomy and colours exactly; draw exactly one Dew, in this scene's own pose. Image 2 is the brand's image library: take only its drawing style, palette and texture; never copy its subjects or compositions.
-> Scene: a bathroom shelf at dawn lit by one soft window from the right; portrait 4:5; the top third stays calm, plain #1d2a44 for the headline.
-> Subject: Dew stretching beside an unlabelled serum bottle, one arm raised in a yawn, head turned three-quarter to the left, one eye cracked open. Dew: a sleepy water drop, wider at the bottom, its point curling like a bed-head curl, body #bfe3f0, lids and mouth #2b1d14; nothing about Dew changes.
-> Style: flat poster illustration, thick even #121212 outline, flat fills, strong contrast, little or no shading.
-> Constraints: exactly one Dew; nothing about Dew changes; the lamp's glow is the only #ffc21a; no text or lettering.
+> Scene: a bathroom shelf in early light from one soft window; portrait 4:5; the top third stays calm, plain #f6f1ea for the headline.
+> Subject: Dew stretching awake beside an unlabelled serum bottle, yawning, head turned three-quarter, one eye cracked open. Dew: a sleepy water drop, wider at the bottom, its point curling like a bed-head curl, body #e9dccb, lids and mouth #3b2e27; nothing about Dew changes.
+> Style: flat poster illustration, an even #1f1a17 outline, flat fills, little or no shading.
+> Constraints: exactly one Dew; nothing about Dew changes; the bottle's cap is the only #c9785b; no text or lettering.
 
 ## Other parties' marks and images
 
