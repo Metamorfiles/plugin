@@ -13,7 +13,8 @@ the `studio` skill; this is the shape of this particular message.
 3. **What you decided for them.** Up to four, in plain words, no values. End with one line telling
    them a sentence is enough to change any of it.
 4. **What genuinely needs them.** Never more than two, and only real ones: a gap you cannot fill, a
-   choice that is theirs. If there is nothing, say nothing.
+   fact only they have. If there is nothing, say nothing. A choice that is theirs was asked with
+   `metamorfiles_ask_user` before the handover, never as a question here.
 5. **What they can do next,** as an offer, never a question: the kit downloads from the brand board
    (or `metamorfiles_export_kit {}` writes it into `kit/`), with the logos for print and screens, the
    website's icons and colours, the guidelines and the brand's words; and the team can make anything
@@ -34,8 +35,8 @@ For Lumen Skincare, Studio's fictional example brand:
 > **I decided a few things for you.** A dark theme for the night range, built from your walnut and
 > ink, and a spacing scale around the one step your site uses. Say the word and I'll change either.
 >
-> **One for you.** Your clay is too light to carry text on paper, so I kept it for prices and
-> buttons with ink on top. If you want clay headlines, it needs to go a shade darker.
+> **One for you.** Your site never says what the serums are made with, so the kit's words leave
+> ingredients out until you tell me which to name.
 >
 > The kit downloads from the brand board, and I can make the first posts whenever you like.
 

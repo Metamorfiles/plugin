@@ -13,7 +13,7 @@
 
 ## Sizes and the printer's template
 
-Use a preset (`business-card`, `business-card-us`, `a6` to `a3`, `dl`, `us-letter`, `tabloid`): each has its bleed and keeps the edge printers cut into clear. When the user names a printer and its template differs (MOO's card is 84 × 55 mm with 2 mm bleed), declare that size instead: `{ id: "card-moo", width: 84, height: 55, unit: "mm", bleed: 2 }`.
+Use a preset (`business-card`, `business-card-us`, `a6` to `a3`, `dl`, `us-letter`, `tabloid`): each has its bleed and keeps the edge printers cut into clear. When the user's printer has a template of its own that differs (another card size or bleed), declare that size instead: `{ id: "card-printer", width: 84, height: 55, unit: "mm", bleed: 2 }`.
 
 ## The page
 
@@ -29,15 +29,15 @@ A card is read in two seconds and kept for months. One side carries the brand (t
 
 ## A flyer or a poster
 
-One message a passer-by reads from a distance: the headline the largest thing, the date or the offer second, the rest small. A poster is read at three metres; a flyer in the hand. The brand's imagery leads when it carries the message; type alone is often stronger.
+One message a passer-by reads from a distance: the headline the largest thing, the date or the offer second, the rest small. A poster is read across a room; a flyer in the hand. The brand's imagery leads when it carries the message; type alone is often stronger.
 
 ## A letterhead
 
-The brand at the top or the foot, small; the contact line at the foot; the rest is room to write, at least two thirds of the page.
+The brand at the top or the foot, small; the contact line at the foot; the rest, most of the page, is room to write.
 
 ## Images on paper
 
-The checks say when an image is too small for its printed size. An image the model makes is about 1,500 to 2,000 px: enough for a card, a small flyer panel or a postcard's corner, not a full-page photo on A4. Compose large pieces around type, the brand's graphics and vector artwork (the `artwork` skill), and use the user's own high-resolution photos for full-bleed photography.
+The image's result and the checks say when an image is too small for its printed size: a model's image is enough for a card or a small panel, rarely for a full-page photograph. Compose large pieces around type, the brand's graphics and vector artwork (the `artwork` skill), and use the user's own high-resolution photos for full-bleed photography.
 
 ## The files
 

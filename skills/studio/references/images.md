@@ -42,22 +42,24 @@ An image that carries a piece is made for that piece.
 2. **Make it for that slot** with the prompt below, `width` and `height` the slot's size. It's saved
    under `assets/`: a piece's images are the piece's, never added to the brand's library, whose
    images are reviewed as a set (the library grows only through the brand's library step).
-   - **A character or product is a cutout:** `transparent: true`. Whether a model makes transparent
-     images is its `transparent` flag in `metamorfiles_image_models`; for a model that doesn't, or a
-     result that comes back opaque, do as `references/vector.md` of the `logo` skill says, and place
-     it as a field. Cutouts, scenes and type in one frame: `references/design.md`, "The
-     composition".
+   - **A cutout** (which images are cutouts, scenes or none: `references/design.md`, "The
+     composition") is made with `transparent: true`. Whether a model makes transparent images is its
+     `transparent` flag in `metamorfiles_image_models`; for a model that doesn't, or a result that
+     comes back opaque, do as `references/vector.md` of the `logo` skill says, and place it as a
+     field.
 3. **Use a library image as it is** only when it already is that composition: a pattern, a texture, a
    small spot used as decoration, or the very picture the brief names. A near fit is still the wrong
    image: a generic picture on a slide about something specific reads as filler.
 
-No image repeats within a page or post. The plan names each frame's image: "new:" with its subject and
-slot, or the library file and why it already fits.
+Make one image per distinct picture the plan needs. Variants that test something other than the
+image (a headline, an offer) share it, so the test reads one change; the slides of one post never
+repeat a picture. The plan names each frame's image: "new:" with its subject and slot, the image it
+shares, or the library file and why it already fits.
 
 ## The prompt
 
-One shape for every brand image but a mockup photograph (the `mockup` skill), in short labelled sections, the order OpenAI's guide gives (other
-models read it as well):
+One shape for every brand image but a mockup photograph (the `mockup` skill), in short labelled
+sections, in this order:
 
 1. **References,** numbered, each with its role. The image to keep goes first, since models preserve
    the first most closely:
@@ -79,17 +81,18 @@ models read it as well):
    character sheet, never library images. An image nobody approved or passed is never a reference
    for another image: it carries its faults into the next, and copies of copies drift. The image an
    edit changes is its own image 1, not a reference, so this never stops a fix.
-2. **Scene:** the frame's composition, word for word from its `composition` line (`design.md`, "The
-   composition"): where the subject is, its scale and crop, which way it faces, what stays empty and
-   the shape ("portrait, 4:5"); then the setting and the light.
+2. **Scene:** what the frame's composition decided (`design.md`, "The composition"): the idea, what
+   reads first and the room the type needs, as a thing in the picture; then the shape ("portrait,
+   4:5"), the setting and the light. Never a list of placements. A setting in a real place is named
+   where it is, and whatever of the outside the frame shows (out of a window, down a street, behind
+   a counter) is described as that place's own, or kept out of frame: an outside the prompt leaves
+   open, the model fills with a famous view of somewhere else.
 3. **Subject:** what it shows, plainly, named each time, never "it". A person or an animal in one
-   line: who (age, gender, clothing), the one action, where they look, the one object they handle
-   and how ("hands cupping an open jar of cream"), and the framing ("full body visible, feet
-   included", or cropped at the waist). Nothing more about the body: never which hand, arm or leg
-   does what, unless the task decides it (the hand that holds a serum's dropper over the other
-   palm). A photograph of people is candid and
-   unposed, caught mid-moment. With the character: what it does and feels, in one line, then its
-   Character lines pasted whole.
+   line: who (age, gender, clothing), the action stated plainly, and the framing ("full body
+   visible", or cropped at the waist); how people are shown (posed or caught in the moment, looking
+   in or away) is the brand's imagery guide's. Nothing more about the body: never which hand, arm or
+   leg does what, unless the task decides it. With the character: what it does and feels, in one
+   line, then its Character lines pasted whole.
 4. **Style:** the style block (the guide's Style), pasted whole.
 5. **Constraints,** plain and early enough to survive a host that rewrites prompts: "exactly one
    <the character>", "nothing about <the character> changes: its colours, its one feature, its proportions", "no text
@@ -110,9 +113,8 @@ Then the craft, for every model, and that model family's file for what differs (
   ("beautiful", "premium") and never a colour's name in the brand kit (the model doesn't know
   "Clay"; it knows #c9785b). Keep the scene and subject to what the picture needs; the guide's blocks go
   in as they are.
-- **Place the empty space and describe it as a thing**: "a bare off-white plaster wall across the left
-  third". Name positions (thirds, corners) and the shape: several models, ChatGPT among them, compose
-  for the shape the prompt states.
+- **Describe the type's room as a thing**, and where it is: "a bare off-white plaster wall across the
+  left third". State the shape too: models compose for the shape the prompt states.
 - **Ask for what should be there.** Most models read a bare "no people" as a request for people; say
   "an empty street" instead, and keep exclusions to the Constraints line. Keep text out with "clean,
   unmarked surfaces", and never put a word in quotation marks: a quoted word is drawn. The images
@@ -120,10 +122,10 @@ Then the craft, for every model, and that model family's file for what differs (
   exception below.
 - **One style anchor at most, and never contradictory instructions:** given two rules that
   compete, the model picks one, and not always yours.
-- **Detail matches the brief.** A specific brief is reorganised into the sections, not rewritten; a
-  vague one gets only what the picture needs to work. Never add a person, an object, an action or a
-  story beat the brief doesn't imply, and never put something on one side (left, right) without a
-  reason.
+- **The image carries what the composition decided.** A specific brief is reorganised into the
+  sections, not rewritten; a vague one gets only what the picture needs to work. Nothing the
+  composition doesn't call for goes in: no person, object, action or story beat beyond it, your own
+  ideas included, and a side or a facing only when the composition needs it.
 - **Light is the biggest lever**: its direction, softness and time of day. Camera words set framing
   and depth.
 - **The product and the logo come from real files.** On a designed piece, never ask a model to draw
@@ -146,9 +148,9 @@ Example, a character brand's carousel slide:
 When the content names someone else (the tools in a post, a partner, a sponsor, an event, a launch),
 show the real thing, never a drawing of it.
 
-- **A logo or icon:** `metamorfiles_find_mark { name: "Perplexity" }` shows the candidates (Simple
+- **A logo or icon:** `metamorfiles_find_mark { name: "<their name>" }` shows the candidates (Simple
   Icons first, one colour in its brand's colour; SVGL for colour logos and wordmarks), then
-  `metamorfiles_find_mark { name: "Perplexity", use: "simple-icons:perplexity" }` saves the chosen one
+  `metamorfiles_find_mark { name: "<their name>", use: "<the candidate's id>" }` saves the chosen one
   into `assets/marks/`. Pass `color` for a one-colour version on a dark or busy ground. With none
   found, the owner's press kit: `metamorfiles_import_image { url, credit, license }`.
 - **A photo of a real event, product or person:** only one you may use, with its source: the user's
@@ -179,14 +181,14 @@ Write every prompt to pass the picture checks of the `review` skill's Rubric, wh
 the result to. Studio checks every result and says what came back: made or failed, its size and shape,
 whether it is see-through, a trace's match. Never look at a result to confirm it or to judge it: the
 reviewer judges it (the `review` skill). Look at an image only when your next design decision
-depends on what is in it: where its subject sits for the crop and the type, a passed flat
-the next shot is given, which seed to build on.
+depends on what is in it: where its subject sits for the crop and the type, or which passed flat
+the next shot is given.
 
 - **Make or place.** Anything that must match a file is placed exactly on a designed piece. A mockup
   photograph follows the `mockup` skill; a piece that needs a picture and the files follows the
   `artwork` skill.
-- Pass `width` and `height` as the size the image is used at, and Studio saves the result whole under `assets/`. The model composes for that shape as far as it can, but each source makes only some shapes (OpenAI's models between 3:1 and 1:3; on a ChatGPT plan OpenAI sets the size itself), so a slot longer than that, such as a shelf strip or a long banner, gets back a shorter picture. Plan such a slot from the start: its subjects made as cutouts (`transparent: true`) that the layout places and scales, or a picture whose ends are calm ground the slot can lose. For an image several formats show, pass the format it matters most in, and compose with room around the subject so every other format can crop it well. Make it once and reuse it across variants when the variant isn't about the image.
+- Pass `width` and `height` as the size the image is used at, and Studio saves the result whole under `assets/`. The model composes for that shape as far as it can, but each source makes only some shapes (its family's file says which), so a slot longer than that, such as a shelf strip or a long banner, gets back a shorter picture. Plan such a slot from the start: its subjects made as cutouts (`transparent: true`) that the layout places and scales, or a picture whose ends are calm ground the slot can lose. For an image several formats show, pass the format it matters most in, and compose with room around the subject so every other format can crop it well.
 - The result can be another size and shape than the one passed, and says so. Fit the design to the image that came back: every subject whole, and any crop only through calm ground or as the composition named it. Cropping through a subject to make the picture fit is never the fix: change the slot, or make the picture again in a shape the source makes. When the result says it's smaller than the frame, the design will enlarge it and it may look soft: tell the user, and let them decide on a source that makes larger images.
 - For choices between directions, make each option as the real thing: the one the user chooses is the image used, never made again, since a new one would be a different image.
 - **Edit or redraw.** An image changes only as the `review` skill's Run it, step 4, says. Edit it when its composition works: `metamorfiles_generate_image { prompt: "the cap lies beside the bottle, open side up", width, height, references: ["brand/<folder>/<file>.png"], edit: true, replaces: "brand/<folder>/<file>.png" }`, the image first in `references`, the prompt saying only what changes and what stays; `region` names the one place it may change, and nothing outside it does. One change per edit. Draw it again from its prompt only when the idea, the composition, a pose or the subject is what's wrong: an edit keeps what's in the image, so a new pose drawn by an edit keeps the old head on a changed body (`references/poses.md` of the `character` skill). Where the fix lands: a brand image Studio keeps takes of (a sample image, a library image, a mockup, a flat design) passes `replaces: "<file>"`, so the new image is its next take and Studio keeps the earlier one for the user to pick back (an edit of a sample image or a mockup does this by itself); a logo step's file (a route, a mascot, its sheet, a small mark) is a new file written into `brand/process/logo.md`, where Studio keeps its versions; a page's or template's picture is a new file set with `metamorfiles_edit`, so the page gets its version and its review. A generated image is passed in only as "The prompt" says (References).
-- Place it through the variable's value, the path the result gives exactly as it is (`/assets/<file>.png`, leading slash kept): `metamorfiles_edit { item: "pages/<id>", changes: [{ do: "value", variable: "photo", value: "/assets/<file>.png", variant: "<id>" }] }` for one variant, without `variant` for the whole page, on the template for its default. Then render every format that shows it: a crop that works in the post can cut the product in the story. Set each format's crop with the design's `object-position`.
+- Place it through the variable's value, the path the result gives exactly as it is (`/assets/<file>.png`, leading slash kept): `metamorfiles_edit { item: "pages/<id>", changes: [{ do: "value", variable: "photo", value: "/assets/<file>.png", variant: "<id>" }] }` for one variant, without `variant` for the whole page, on the template for its default. Then render every format that shows it, for where its subject sits: a crop that works in the post can cut the product in the story. Set each format's crop with the design's `object-position`.

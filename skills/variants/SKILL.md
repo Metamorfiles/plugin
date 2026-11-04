@@ -1,6 +1,6 @@
 ---
 name: variants
-description: Plans variations of a Metamorfiles template, makes a page from the template with them and exports it. Use when the user wants variations of a template as a deliverable, for example A/B test creatives from a thesis, copy or image alternatives for client approval, one asset per row of a CSV or product feed, a carousel series from a template, or a set of social or ad images in several formats to export. A one-off post or carousel is a page from its own design (the team skill, A new piece); to change a page that exists, use the team skill.
+description: Plans variations of a Metamorfiles template, makes a page from the template with them, gets it reviewed and exports it. Use when the user wants variations of a template as a deliverable, for example A/B test creatives from a thesis, copy or image alternatives for client approval, one asset per row of a CSV or product feed, a carousel series from a template, or a set of social or ad images in several formats to export. A one-off post or carousel is a page from its own design (the team skill, A new piece); to change a page that exists, use the team skill.
 license: MIT
 ---
 
@@ -17,15 +17,15 @@ A page is one deliverable made from a template: its own copy of the design, and 
    - **Size:** variants × formats × rows. Confirm before exporting more than 50 files.
 3. Fill values per variant:
    - `string` variables with an `ai` source: write the copy yourself from the variable's `instruction` and the thesis, with the `copywriting` skill.
-   - `image` variables: an image made for each variant's slot, as `references/images.md` of the `studio` skill says ("Compose it, then make it"); never the same image on two variants. Other parties' logos come from `metamorfiles_find_mark { name }`.
+   - `image` variables: one image per distinct picture, as `references/images.md` of the `studio` skill says ("Compose it, then make it"). Other parties' logos come from `metamorfiles_find_mark { name }`.
    - `table` variables: don't set them. Pass the table and each row becomes a variant filled from its columns. Call `metamorfiles_read_table { file: "data/products.csv" }` first to check columns and rows.
    - Only set the values that differ from the template defaults.
 4. Preview before making the page: two or three representative variants as `metamorfiles_render_preview { item: "templates/launch-post", format: "instagram-story", values: { headline: "…" } }` in the most constrained format. Fix copy that overflows, then continue.
-5. Call `metamorfiles_create_page { name: "Spring headline test", template: "launch-post", variants: [{ id: "price-led", name: "Price-led", thesis: "…", values: { headline: "…" } }] }` (or `table` in place of `variants`), named for the deliverable as the user would say it, not a date or an id. When a variant's values don't fit the template, it refuses and names them: fix those variants and call it again. Fix any warning in its check by changing `page.json`. Make each deliverable once: when the design needs fixing, fix the template and bring the page along with `metamorfiles_update_page { page: "<id>" }` (new `variants` too, if they change), never a new page, so the user keeps watching the same one.
-6. Call `metamorfiles_export_page { page: "<id>" }`, with `zip: true` when the user wants to send the files. If it reports the export is still running, call `metamorfiles_export_status { page: "<id>" }` until it's done.
-7. Read the `checks` in the result: files with errors need their values fixed (usually copy that's too long) or the page's design fixed. Fix them in the page and export again.
-8. Get the independent review with the `review` skill before you deliver it.
-9. Hand it over: every variant in every format sits side by side in the panel; say what each variant tests, and one question.
+5. Call `metamorfiles_create_page { name: "Spring headline test", template: "launch-post", variants: [{ id: "price-led", name: "Price-led", thesis: "…", values: { headline: "…" } }] }` (or `table` in place of `variants`), named for the deliverable as the user would say it, not a date or an id. When a variant's values don't fit the template, it refuses and names them: fix those variants and call it again. Fix any warning in its check by changing `page.json`. Make each deliverable once: when the design needs fixing, fix the template and bring the page along with `metamorfiles_update_page { page: "<id>" }` (new `variants` too, if they change), never a new page, so the user keeps watching the same one. Report each step as the `team` skill says.
+6. Get the independent review with the `review` skill, and fix every **must fix**.
+7. Call `metamorfiles_export_page { page: "<id>" }`, with `zip: true` when the user wants to send the files. If it reports the export is still running, call `metamorfiles_export_status { page: "<id>" }` until it's done.
+8. Read the `checks` in the result: files with errors need their values fixed (usually copy that's too long) or the page's design fixed. Fix them in the page, have the frames that changed reviewed, and export again.
+9. Hand it over as the `studio` skill's How you talk says: every variant in every format sits side by side in the panel; say what each variant tests, and the next step as an offer.
 
 ## Carousels
 

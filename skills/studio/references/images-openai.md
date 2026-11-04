@@ -12,12 +12,11 @@ For ChatGPT Images (`chatgpt/images`, the user's ChatGPT plan) and `gpt-image` m
 - **References.** Label each by number and role ("Image 1: the product photo, keep it exactly. Image 2: only the light and palette"), then say how they combine. A reference an edit changes is image 1.
 - **Words in the image** only where the image carries them (a logo drawn whole): the exact words in quotes, an uncommon one spelled letter by letter, and where they sit.
 - **Camera words** set framing loosely; they don't produce an exact lens.
-- Weak at exact positions in dense layouts, and at the same person or character across images: pass the character's sheet as image 1 each time, say "do not redesign the character", and name each part with its colour ("two arms with dark #2b1d14 paws") rather than describing it in general.
+- Weak at exact positions in dense layouts, and at the same person or character across images: pass the character's sheet as image 1 each time, say "do not redesign the character", and name each part with its colour ("lids and mouth #3b2e27") rather than describing it in general.
 
-## Model notes (checked 2026-10)
+## Model notes
 
-- **On a ChatGPT plan, a chat model writes the image prompt from yours.** It keeps what is stated first and plainly, so put the subject and the hard constraints there. The prompt the image model received is saved in the image's record (`<image>.json`, `revisedPrompt`): when the reviewer sends an image back for something it misses (a part, a colour), read it to see whether the rewrite dropped it before you change your own prompt.
-- **Transparent backgrounds** are asked for, not guaranteed: when the result says it came back opaque, it isn't a cutout. Tell the user, and use it only where its background belongs.
+- **On a ChatGPT plan, a chat model writes the image prompt from yours.** It keeps what is stated first and plainly, so put the subject and the hard constraints there. After a reviewer's must fix for something the image lacks, read the prompt the model received (`revisedPrompt` in `<image>.json`) before you change yours.
 - **On a ChatGPT plan, OpenAI sets the size**, about 1.6 megapixels in the shape the prompt names, between 3:1 and 1:3: enough for a feed post, not for a 9:16 story's full width or anything printed.
 
 Sources: OpenAI's [image generation tool](https://developers.openai.com/api/docs/guides/tools-image-generation), [image generation guide](https://developers.openai.com/api/docs/guides/image-generation) and [image prompting guide](https://developers.openai.com/cookbook/examples/multimodal/image-gen-models-prompting-guide).

@@ -4,7 +4,7 @@ Flat-colour artwork that is printed, cut or scaled (a T-shirt or tote print, a s
 poster, a pattern) is traced into an SVG as it's saved, with `trace` on `metamorfiles_generate_image`
 or `metamorfiles_import_image`:
 
-`metamorfiles_generate_image { prompt, width: 2048, height: 2048, name: "tee-front", trace: { colors: ["#1b1a17", "#f4efe6"], inks: 6 } }`
+`metamorfiles_generate_image { prompt, width: 2048, height: 2048, name: "tee-front", trace: { colors: ["#1f1a17", "#f6f1ea"], inks: 6 } }`
 
 - **`colors`:** the brand colours the piece uses, as DESIGN.md gives them. Each one the drawing has
   lands on its exact value; one it doesn't have takes nothing. List only what the piece is meant

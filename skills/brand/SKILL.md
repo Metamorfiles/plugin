@@ -20,16 +20,12 @@ Your goal is a complete board the user can use, quickly. Four principles:
 
 1. Call `metamorfiles_get_project` and read `brand` (another brand gets its own project: the `studio` skill, Start every session). Rebuild a kit only for the same brand; then take every value again from the brand's sources as below, never from the previous DESIGN.md.
 2. Gather the sources. Start with the brand's own website and profiles: `metamorfiles_look_at_page { url: "https://example.com", collect: true }` for each address, which reads the colours and fonts the page really renders and saves its screens, logo candidates, icons and share image into `brand/sources/<site>/` with where each came from. Files the user gave are in `brand/sources/yours/`. Then the app's theme (for example a shadcn or Tailwind `globals.css`), the logo files or logo component, the live website, guidelines, fonts and reference images. **Go and find the imagery, don't wait to be handed it:** the code's image folders and what its image components reference, the live site's hero bands and product shots. A share image (a card of the logo and words), screenshots of the site or app, icons, favicons, UI chrome and framework defaults (`next.svg`, `vercel.svg`) are not imagery. Ask only for what you cannot find and cannot do without, such as the font files or the logo. A face the brand uses that the project can't have (not one `metamorfiles_add_font` takes, which is only OFL Google Fonts families, and no file from the user) gets an open stand-in: read [references/licensed-faces.md](references/licensed-faces.md) when you meet one.
-3. Copy the files into the project, unchanged:
-   - fonts: a Google Fonts family with `metamorfiles_add_font { family: "Fraunces" }`; any other face is the user's own file, left where it is under `brand/sources/` and listed in DESIGN.md's fonts by that path (`sources/yours/Brand-Regular.otf`);
-   - official logos in `brand/logos/`, each from the user's files: `metamorfiles_import_image { path: "brand/sources/yours/logo.svg", name: "logo", folder: "brand/logos" }`;
-   - reference images in `brand/refs/` (or the asset folders the kit lists);
-   - the files you translate from (theme CSS, a logo component, a guidelines PDF) in `brand/sources/`, so the values can be checked later.
+3. Bring the files in unchanged, each as the `studio` skill's Changing files says: official logos into `brand/logos/`, the brand's imagery into `brand/refs/` (or the asset folders the kit lists), the user's own font files into `brand/sources/yours/`, listed in DESIGN.md's fonts by that path (`sources/yours/Brand-Regular.otf`), and a logo component into `brand/sources/yours/`; a guidelines PDF or a theme's CSS is read where it is. Every value's origin goes in Sources, so it can be checked later.
 4. Take the values from each source as described below.
 5. Write `brand/DESIGN.md` with `metamorfiles_write_file { path: "brand/DESIGN.md", content }`, following [references/design-md.md](references/design-md.md) (read it before writing). If `metamorfiles.json` names the brand differently from DESIGN.md (other spelling or capitals), write it with the brand's own name, so the control panel and the kit agree.
 6. Read the check in the result. Fix every error and write again. Warnings starting with `design.md lint` come from the official linter: fix them, or leave them only when the Sources explain why.
-7. Studio draws the brand's guideline pages from DESIGN.md and the folders, one 16:9 page each, and the write that changes DESIGN.md lists them. Get each page's check findings with `metamorfiles_render_preview { item: "templates/brand-board", format: "cover" }` and fix every check error through DESIGN.md and the folders; their look is the review's (step 8).
-8. Get the independent review of the kit with the `review` skill (the `handover` queue) before you present anything: it catches a logo on the wrong background or a pairing that reads badly. Fix what it marks **must fix** through DESIGN.md or the files.
+7. Studio draws the brand's guideline pages from DESIGN.md and the folders, one 16:9 page each, and the write that changes DESIGN.md lists them. Get each page's check findings with `metamorfiles_render_preview { item: "templates/brand-board", format: "cover" }` and fix every check error through DESIGN.md and the folders before moving on; their look is the review's (step 8). An error you can't fix through DESIGN.md is a Studio defect: tell the user plainly, don't walk past it.
+8. Get the handover review with the `review` skill (the `handover` queue) before you present anything, and fix each **must fix** through DESIGN.md or the files.
 9. Ask what the team should make, before any image is generated, as "What the team makes next" says. Make what the user chooses, and have it reviewed.
 10. Present it as [references/presenting.md](references/presenting.md) says; read it before you write the message.
 
@@ -54,7 +50,7 @@ differs:
 - Each seed's first reference is the brand's own picture when it has one ("Image 1 is the brand's own
   imagery: take its medium, light and palette"), else its colour page
   `templates/brand-board#colour` ("Image 1 is the brand's palette: take its colours, never its
-  layout"). The logo never goes in.
+  layout").
 - Its own pictures stay its anchors: the seeds are new pictures in their look, never its products
   made up.
 
@@ -105,20 +101,18 @@ When the source is thin — a photograph, a screenshot, a one-page brief, a site
 
 - Use only official files, copied unchanged. Never recolor, redraw, retype, stretch or crop a logo, add effects, or place it on a background it isn't made for.
 - A colour an official file paints is the brand's, even when another file has a near one (a favicon's off-white beside the logo's): name it in `colors` with its source in Sources, and never recolour a file to match another.
-- **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--clay)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant { file: "brand/sources/logo.tsx", output: "brand/logos/logo-dark.svg", colors: { "var(--clay)": "#e39a7f" }, background: "#1f1a17" }` with that theme's exact values, one file per theme, and record it as the brand's own variant.
-- **Generated variants need the user's approval, each one, before you make it.** Offer only what's missing:
+- **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--clay)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant { file: "brand/sources/yours/logo.tsx", output: "brand/logos/logo-dark.svg", colors: { "var(--clay)": "#e39a7f" }, background: "#1f1a17" }` with that theme's exact values, one file per theme, and record it as the brand's own variant.
+- **Generated logo files need the user's approval, each one, before you make it.** Offer only what's missing:
   - one-color black and white versions (map `"*"` to the color, and paper-colored inner shapes to `"knockout"`);
-  - a dark or light version from the brand's palette;
-  - a derived dark palette, when the brand has no dark theme, with every on-* pair at 4.5:1 or more.
+  - a dark or light version from the brand's palette.
 
-  Show the preview from `metamorfiles_make_logo_variant`, check that its colors meeting the background reach 3:1, and wait for a yes. Then write `generated from <file>, approved by the user on <date>` in the logo's `source` and in Sources.
+  Show the preview from `metamorfiles_make_logo_variant`, check that its colors meeting the background reach 3:1, and ask for the approval with `metamorfiles_ask_user`. Palette tokens the brand leaves open, a dark theme included, are not files: derive them and mark them `proposed` ("Complete the kit"). Then write `generated from <file>, approved by the user on <date>` in the logo's `source` and in Sources.
 - When no file suits a background and the user declines a variant, the official logo sits on a plate of its own background color.
-- A logo the brand has only as a picture (a PNG or JPEG) stays as it is: the kit gives it no print file. Offer once to trace it into a vector for print; on a yes, `metamorfiles_import_image { path: "brand/sources/yours/logo.png", name: "logo", folder: "brand/logos", trace: { colors: ["#1f1a17"] } }` with the logo's exact colours, show the result beside the original, and record `traced from the user's <file>, approved on <date>` in its `source` and in Sources.
+- A logo the brand has only as a picture (a PNG or JPEG) stays as it is: the kit gives it no print file. Offer once to trace it into a vector for print, with `metamorfiles_ask_user`; on a yes, `metamorfiles_import_image { path: "brand/sources/yours/logo.png", name: "logo", folder: "brand/logos", trace: { colors: ["#1f1a17"] } }` with the logo's exact colours, show the result beside the original, and record `traced from the user's <file>, approved on <date>` in its `source` and in Sources.
 - A brand with no logo at all gets one designed with the `logo` skill, only when the user asks for it.
 - The clear space is the brand's own rule; when its guidelines give none, propose one and mark it `proposed` in Sources, as a guide for layouts rather than a rule of the brand.
 
 ## Rules
 
 - Put the brand's own CSS, such as textures and logo lockups, in `brand.css` below the `metamorfiles:tokens` markers.
-- Fix every check error on the brand board before moving on. One you can't fix through DESIGN.md is a Studio defect: tell the user plainly, don't walk past it.
-- Changing DESIGN.md changes every template and every page, since they all use `brand/brand.css`. Tell the user which will look different, and re-render them.
+- Changing DESIGN.md restyles every template and page, since they all use `brand/brand.css`: tell the user which will look different. What Studio then lists as stale changes as the `studio` skill's Start every session says.

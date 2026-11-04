@@ -33,7 +33,7 @@ prompt starting "Edit image 1:", then what stays exactly as it is) is only for a
 the pose: an expression, a prop swapped, a colour fixed.
 
 - **One change per drawing.** A new pose, or a new expression, or a prop: never two at once.
-- **Always from the sheet**, never from a pose or a scene made from it: copies of copies drift.
+- **Always from the sheet**: which images may be references is `references/images.md` of the `studio` skill's ("The prompt").
 - **Several at once**: start each with `wait: false`, each from the sheet, then wait for each with
   `metamorfiles_image_status { id }`.
 - Save each into the character's folder with the same `trace` colours as the chosen drawing.

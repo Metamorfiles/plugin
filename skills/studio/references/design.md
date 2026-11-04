@@ -5,7 +5,7 @@ The brand kit sets the materials; you decide how they're used in this piece: a s
 ## Contents
 - Before you touch anything
 - Where a change goes
-- Look at the render while you make it
+- What a render is for
 - Taste
 - The composition
 - A carousel
@@ -26,15 +26,15 @@ The brand kit sets the materials; you decide how they're used in this piece: a s
 
 Fix at the widest level the problem really has. A headline that overflows in every story frame is a story-format rule, not four frame edits.
 
-## Look at the render while you make it
+## What a render is for
 
-A layout is made by looking at it, as a designer works on the artboard: render the frames you change (as `references/contract.md` says) and see them the way a reader would, at a glance (a phone in a feed, a print across a room) and squinted until the words are grey bars, against the layout items of the `review` skill's page checklist, which the reviewer will hold them to. Its pictures are the reviewer's to judge. Headlines use `text-wrap: balance`. If a line needs a size no type role has, the layout is asking for too much. Once you hand the piece over, it changes as the `review` skill's Run it, step 4, says.
+Render the frames you change (as `references/contract.md` says) for Studio's check findings and for the facts your next decision needs: where a picture's subject sits, for the crop and the type. Never to judge the look: the reviewer judges it (the `review` skill), and once you hand the piece over it changes as that skill's Run it, step 4, says. The judgment you bring is in the plan, before anything is made ("The composition").
 
-Fix in this order, since a later fix can't rescue an earlier problem: the idea, the hierarchy, the composition, the type, the imagery, the colour, the details. When taking something out leaves a gap, enlarge what's left or give the room to a picture or a field of colour; never refill it with an ornament.
+Decide in this order, since a later choice can't rescue an earlier one: the idea, the hierarchy, the composition, the type, the imagery, the colour, the details. Headlines use `text-wrap: balance`. If a line needs a size no type role has, the layout is asking for too much.
 
 ## Taste
 
-- **One hero per frame.** Decide the single thing that has to register in that second (the product, the price, a face, the offer) and make it unmistakably the strongest element; everything else supports it. Then take away the weakest element and look again: if the frame reads better, leave it out.
+- **One hero per frame.** Decide the single thing that has to register in that second (the product, the price, a face, the offer) and make it unmistakably the strongest element; everything else supports it. Plan without the weakest element: what the frame doesn't need, it leaves out. When leaving something out leaves a gap, enlarge what's left or give the room to a picture or a field of colour; never refill it with an ornament.
 - **Improve what's there first.** Tighter alignment, a better crop or a clearer size step usually does more than a new shape, badge or line.
 - **Each format is composed for its size.** A landscape frame isn't a shrunken portrait: put the image beside the copy rather than above it, and let a story use its height.
 - **Only this brand.** Build from what the brand has and a competitor doesn't: its photography, its colors in their stated roles, its type, its voice. A decorative device the brand kit doesn't use (a badge, a card, a gradient, an icon, numbering, an emoji) needs a reason in the content, not just empty space to fill. The brand kit and the brief always win over these preferences.
@@ -79,21 +79,27 @@ ideas of one kind are one idea:
 **Choose the idea yourself.** Weigh two or three ideas of different kinds in your notes and keep the
 strongest for this frame, this brand and what it says; the brand's direction and the brief choose
 among the kinds, and none is a default. The user sees finished work, never a wireframe or a choice
-between empty layouts; a note from them about the look is a rethink of the idea. A carousel's slides:
-`references/carousels.md`.
+between empty layouts. A carousel's slides: `references/carousels.md`.
 
 **Full, not thin.** The idea fills the piece: its hero at a scale that takes the space, type large
 enough to be part of the picture, colour as whole fields, the brand's real imagery. A piece with
-nothing wrong and nothing in it reads as a template too; in blind comparisons the richer piece wins.
-Parts stacked one under another (a band with the logo, a picture, the name below it) are a layout,
-not a design: one idea holds them together.
+nothing wrong and nothing in it reads as a template too. Parts stacked one under another (a band
+with the logo, a picture, the name below it) are a layout, not a design: one idea holds them
+together.
 
-**The composition decides the image.** The image is made for its slot, and its prompt's Scene is the
-composition line's picture, word for word: where the subject is, its scale, its crop, which way it
-faces and what stays empty (`references/images.md`, "The prompt"). When the image model draws the
-whole piece itself (a flat print, a pack's face drawn in its photograph), its prompt gives the idea,
-what reads first, second and third, and the brand's materials, and leaves the placing to the model:
-a layout measured out part by part is copied as given and reads as parts stacked.
+**Ask it of the plan, before anything is made.** At a glance, the way the piece is met (a phone in a
+feed, a print across a room), what does the reader take in? Squinted until the words are grey bars,
+does the hierarchy still hold? With the logo covered, is it still this brand's? A plan that fails one
+is changed now, while it is words.
+
+**The composition line is a plan.** Each frame's line (its variant's `composition`) says the idea,
+the reading order (what reads first, second and third) and the room the type needs, in words, never
+in measurements. The image is made for its slot from it: its prompt carries the idea, what reads first
+and the room the type needs, never a list of placements (`references/images.md`, "The prompt"). When
+the image model draws the whole piece itself (a flat print, a pack's face drawn in its photograph),
+its prompt adds the brand's materials and leaves the placing to the model: a layout measured out part
+by part is copied as given and reads as parts stacked. When the piece that's kept differs from its
+plan, the line follows the piece.
 
 - **Three modes that never collide.** A character or product is a **cutout** (a transparent image),
   placed and scaled by the layout: it can run off the frame, sit huge, or overlap the headline on
@@ -116,4 +122,4 @@ The slides' shared system, the cover, the end and the seams: `references/carouse
 
 ## Done
 
-Every frame you changed renders with no check error, every **must fix** for your frames is solved, and what worked still works. Then the review your skill asks for.
+Every frame you changed renders with no check error and every **must fix** for your frames is solved. Then the review your skill asks for.
