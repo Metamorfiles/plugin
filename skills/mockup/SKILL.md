@@ -114,7 +114,8 @@ character sheet, one or two of the imagery's anchors (which images may go in:
 sections, in this order; each carries only what its label says, and nothing else goes in.
 
 - **Scene:** the frame as a photographer sets it up: "Editorial product photograph", its shape and
-  lens; what leads and what stays empty; the set, the light and where its shadows fall. Weather or
+  lens; what leads and what stays empty; the set (where it is and what of the outside shows, as
+  "Scene" in `references/images.md` of the `studio` skill says), the light and where its shadows fall. Weather or
   wear (rain, dust, steam, scuffs), when the shot has it, is said once here and stays light: it never
   covers the print.
 - **Subject:** the one moment the shot catches, in one line, and every object as it is at that

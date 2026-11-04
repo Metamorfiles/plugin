@@ -7,7 +7,7 @@ For `gemini` image models (Nano Banana) and `imagen`. Read with [images.md](imag
 - **References.** Refer to them as "image 1", "image 2". To keep one exact, describe it in detail and say it stays completely unchanged.
 - **Say what it's for**, and for a complex scene, describe it step by step.
 
-## Model notes (checked 2026-10)
+## Model notes
 
 - Lite models make small images only.
 - Every Gemini image carries Google's invisible SynthID watermark.

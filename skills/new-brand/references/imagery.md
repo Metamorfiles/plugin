@@ -40,13 +40,12 @@ a look to recognise, not rules to count.
   ends and how loose it is; the fills (flat, plus a material colour such as wood when the drawings
   need one); how much light and texture there is; how people are drawn; and a calm ground in the
   brand's paper colour.
-- **Colours as hex, each tied to what it paints** ("outline #1f1a17, ground #f6f1ea"), never by
-  the kit's names, which the model doesn't know; the accent as `images.md` of the `studio` skill
-  says ("The brand's image contract", Colour roles).
+- **Colours and the accent** as `images.md` of the `studio` skill says ("The prompt", Concrete
+  words; "The brand's image contract", Colour roles).
 - **For photography:** the light (hard morning sun, on-camera flash), the lens and distance, the grade,
   real materials, how many props at most.
-- **For both:** no text, letters or logos anywhere. Keep the category's and the place's clichés
-  out by choosing the subjects, not by listing them.
+- **For both:** keep the category's and the place's clichés out by choosing the subjects, not by
+  listing them; words and logos stay out as `images.md` of the `studio` skill says.
 
 ## Seeds, then anchors
 

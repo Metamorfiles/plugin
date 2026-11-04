@@ -6,7 +6,7 @@ license: MIT
 
 # Create a template
 
-A template is a reusable design whose changeable parts are declared variables, made when the user wants reuse: a one-off piece is a page from its own design instead (the `team` skill, A new piece). From an existing page, read its `index.html`, declare as variables what will change between uses, and write the template. The contract and the quality loop are in `references/contract.md` of the `studio` skill, the craft in its other references; follow them exactly.
+A template is a reusable design whose changeable parts are declared variables, made when the user wants reuse: a one-off piece is a page from its own design instead (the `team` skill, A new piece). From an existing page, read its `index.html`, declare as variables what will change between uses, and write the template. The contract and its checks are in `references/contract.md` of the `studio` skill, the craft in its other references; follow them exactly.
 
 ## Steps
 
@@ -16,12 +16,11 @@ A template is a reusable design whose changeable parts are declared variables, m
    For a carousel, plan its slides first with `references/carousels.md` of the `studio` skill, and the Carousels section of the `variants` skill: the plan decides the template's slide layouts.
 4. Plan the variables before writing HTML:
    - Copy that varies becomes `string` variables with `maxLength`, sized so the longest value still fits.
-   - Photos and illustrations become `image` variables: an image made for each variant's slot, as `references/images.md` of the `studio` skill says ("Compose it, then make it"); never the same image on two variants. One that carries the piece gets `"source": { "kind": "ai", "instruction": "…" }`, naming what it shows and its slot. A library image as its default only shows the look. Other parties' logos are separate `image` variables, filled with `metamorfiles_find_mark`.
+   - Photos and illustrations become `image` variables, made for their slot, one per distinct picture, as `references/images.md` of the `studio` skill says ("Compose it, then make it"). One that carries the piece gets `"source": { "kind": "ai", "instruction": "…" }`, naming what it shows and its slot. A library image as its default only shows the look. Other parties' logos are separate `image` variables, filled with `metamorfiles_find_mark`.
    - Values coming from a CSV use `"source": { "kind": "table", "column": "…" }`. Call `metamorfiles_read_table { file: "data/products.csv" }` first to get the exact column names.
    - Useful design switches become `enum`, `boolean`, `anchor`, `color` or `number` variables. Keep them few and meaningful.
    - Defaults must be real, on-brand content, so the default render is a finished design: write them with `references/design.md` of the `studio` skill and the `copywriting` skill, and images with `references/images.md` of the `studio` skill.
 5. Choose a short kebab-case id and write the template with `metamorfiles_write_file { path: "templates/launch-post/index.html", content, note }`. Link `../../brand/brand.css`, and use brand images and logos in place, as the contract says.
-6. Read the check in the `metamorfiles_write_file` result. Fix every error and warning, then write again.
-7. Run the quality loop in every declared format, until every format looks designed for its size.
-8. Get the independent review with the `review` skill and fix every **must fix**.
-9. Hand it over: what the design does, the variables the user can change in the panel, and one question, usually whether to make the first page from it.
+6. Read the check in the `metamorfiles_write_file` result, and get every declared format's findings with the previews `references/contract.md` of the `studio` skill describes ("The checks"); fix them as it says, then write again.
+7. Get the independent review with the `review` skill and fix every **must fix**.
+8. Hand it over as the `studio` skill's How you talk says: what the design does, the variables the user can change in the panel, and the next step as an offer, usually the first page from it.

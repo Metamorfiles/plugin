@@ -19,15 +19,14 @@ library file only when it already is that picture: "Compose it, then make it" in
 and any other party's mark or photo it shows, found with `metamorfiles_find_mark { name }` or
 imported with its credit ("Other parties' marks and images" in `images.md`).
 Read it top to bottom: every slide earns its place, the order builds, and no two neighbours share
-figure and ground unless they're a pair on purpose. Then make the images for the plan's pictures, build the
-page with them (each slide's composition line in its variant), and read it as a swipe. A template is made only when the user wants a series to repeat, and
-an existing one is reused only when its layouts already serve this plan, and the plan says so.
+figure and ground unless they're a pair on purpose. Then make the images for the plan's pictures and
+build the page with them (each slide's composition line in its variant). A template is made only when
+the user wants a series to repeat, and an existing one is reused only when its layouts already serve
+this plan, and the plan says so.
 
-When the brief asks for something only the user knows and didn't give it (their routine, a result,
-a date), the plan says so once, with the exact question, and the slide is reframed to what's true
-and still useful ("Grounding" in the `copywriting` skill's copy guide), never invented and never a line repeating another.
+A slide that needs a fact only the user has follows "Grounding" in `references/copy.md` of the `copywriting` skill.
 
-- **Length:** what the idea needs, usually 6 to 10 slides; one idea per carousel.
+- **Length:** what the idea needs, and one idea per carousel.
 - **Cover, then a promise:** the cover stops the scroll; slide 2 says exactly what the reader gets
   by the end, so they keep going.
 - **The end** completes the argument and asks for the one action that fits it. A logo alone is not
@@ -45,8 +44,8 @@ Pick the one the idea is, and say it in the plan:
 ## The words
 
 - **The header carries the point.** Someone skimming reads only the big line of each slide: it must
-  say the thing, not label it ("Granola writes the meeting notes", not "Meeting notes").
-- **Short:** a header of a few words and at most about 30 words under it. More is two slides.
+  say the thing, not label it ("Two minutes is the whole routine", not "The routine").
+- **Short:** a header of a few words and a line or two under it. More is two slides.
 - **Something to use on every slide:** a name and what it does, a step, a prompt to copy, a number,
   an example. A slide that only announces what's coming is filler.
 - **Slide patterns:** a tip (the point, then one line of example), a step ("Step 3" what to do, why),
@@ -61,12 +60,12 @@ Pick the one the idea is, and say it in the plan:
 - **The end asks for what the content earns:** save for something to come back to, share for
   something a friend needs, comment for an opinion, follow for a series. One ask.
 - **The caption** opens with its own hook in the first line, says what's inside, and ends with the ask.
-- Every fact comes from the brief, the brand, the user or research done for this post, kept with its source and date ("Research" in the `copywriting` skill's copy guide); a post about news is researched before it's planned. Copy craft and voice: `references/copy.md` of the `copywriting` skill.
+- Facts, research and voice: `references/copy.md` of the `copywriting` skill; a post about news is researched before it's planned.
 
 ## The design
 
 One system, many arrangements. Readers feel the relationship between slides more than any slide, so
-look at the slides side by side in the panel as you make them, as a reader swipes them.
+plan the slides side by side, as a reader swipes them.
 
 - **Fixed:** the type families and scale, the palette, the margins and grid, and one running cue
   (a corner mark, an edge that carries on; a counter only when the slides are steps). These make it one post.
@@ -74,17 +73,18 @@ look at the slides side by side in the panel as you make them, as a reader swipe
   `data-variant`), or, in a series, two or three body layouts alternated by a `layout` enum. Change
   what is big, the crop and the surface every slide or two: type that fills the frame, then a quiet
   slide; the brand's ground, then its strongest colour.
-- **One surprise** past the middle, a slide that breaks the pattern, keeps people to the end.
-- **The cover** is the boldest slide and reads at thumbnail size: one large claim, high contrast,
-  the brand present but small.
-- **The end** carries the action and mirrors the cover, so the post closes like it opened.
+- **A turn:** a slide that breaks the pattern, often past the middle, can keep people to the end,
+  when the content has one.
+- **The cover** is the boldest slide, built to read at thumbnail size: one large claim, high
+  contrast, the brand present but small.
+- **The end** carries the action. Echoing the cover is one way to close the post like it opened.
 - **Across the seams:** a shape, an image or a line can run from one slide into the next
   (`data-span`), which pulls the swipe. Text never crosses a seam, since each slide is cut there.
 
 ## Strong, and weak
 
 - **Strong:** a cover you'd stop for; slide 2 makes a clear promise; every slide useful on its own
-  and worth a screenshot; a rhythm you can feel in the thumbnails; one surprise; an end that pays off.
+  and worth a screenshot; a rhythm you can feel in the thumbnails; an end that pays off.
 - **The same card five times:** one body layout repeated with new words. Vary the arrangement by
   what each slide does.
 - **Title cards:** slides that name a topic ("Launches") and give nothing. Put the thing on the slide.

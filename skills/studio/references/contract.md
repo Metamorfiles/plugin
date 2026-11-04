@@ -10,7 +10,7 @@ What a template's or page's HTML must be, and how to check it. Read it before yo
 - Rules the check enforces
 - Element edits
 - Layout rules
-- Quality loop
+- The checks
 
 ## The file
 
@@ -99,7 +99,7 @@ Any other size is inline: `{ "id": "banner", "width": 1500, "height": 500 }`. Pr
 
 ## Rules the check enforces
 
-- No remote URLs and no remote `@import`. Use brand images in place from `brand/refs/` and `brand/logos/`, never a copy (whether a library image fits or a new one is made: `references/images.md`, "Compose it, then make it"); save other images into the template folder or `assets/`, fonts into `brand/fonts/`.
+- No remote URLs and no remote `@import`. Use brand images in place from `brand/refs/` and `brand/logos/`, never a copy (whether a library image fits or a new one is made: `references/images.md`, "Compose it, then make it"); save other images into the template folder or `assets/`, and bring fonts in as `SKILL.md`'s Changing files says.
 - No `<script>` tags besides the manifest. Use variables and CSS.
 - Every binding references a declared variable of a matching type. Unused variables are warnings.
 - Default images must exist. Font defaults must be listed in DESIGN.md `fonts`.
@@ -115,13 +115,13 @@ These keep every format working.
 
 - The body is exactly the format size. Size the root with `100vw` and `100vh`, and use `vmin` for type, spacing and radii.
 - Adapt structure with `@media (min-aspect-ratio: 5/4)` for landscape formats and `html[data-format="…"]` for specific formats.
-- Use brand tokens for colors, type and spacing: `--brand-<color>` (text on a surface uses its `on-` color, like `--brand-on-primary` on `--brand-primary`, or a component's pair), `--brand-<role>-font`, `-size`, `-weight`, `-tracking` and `-case` (the role's letter case, such as capitals for headlines: `text-transform: var(--brand-display-case, none)`), `--brand-safe-margin`. Never hardcode a color the brand already names.
+- Use brand tokens for colors, type and spacing (every one: `references/design-md.md` of the `brand` skill, "CSS variables"). Text on a surface uses its `on-` color, like `--brand-on-primary` on `--brand-primary`, or a component's pair; a role's letter case is set with `text-transform: var(--brand-display-case, none)`. Never hardcode a color the brand already names.
 - Keep every text inside `--brand-safe-margin`, and text and logos clear of what the platform covers: a story's profile and reply bars, a cover's cropped edges, a profile photo's corners. The checks name the zone.
 
-## Quality loop
+## The checks
 
 Every `metamorfiles_render_preview { item: "templates/launch-post", format: "instagram-story" }` (add `variant` for a page, `values` to try copy) returns design checks measured on the rendered image:
 - **Errors:** clipped text, text that spills out of its box, text outside the image or the safe margin, fonts that fell back, broken or stretched images, contrast below 3:1 against what's actually behind the text, photo included.
 - **Warnings:** upscaled images, small text below 4.5:1.
 
-After every edit, preview the frames it changed: every declared format when you changed the design itself, only the variants and formats whose values or edits you changed otherwise. Fix every error, and every warning that isn't a deliberate choice, then preview again. The checks can't judge composition, so also look at each image as `references/design.md` says. Stress it once with the longest plausible copy and every boolean or enum option that changes the layout. Then get the independent review (the `review` skill says when) before you hand the work over.
+After every edit, preview the frames it changed: every declared format when you changed the design itself, only the variants and formats whose values or edits you changed otherwise. Fix every error, and every warning that isn't a deliberate choice, then preview again. Stress it once with the longest plausible copy and every boolean or enum option that changes the layout. The look is not the checks' to judge, nor yours: get the independent review (the `review` skill says when) before you hand the work over.

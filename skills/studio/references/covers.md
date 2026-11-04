@@ -14,4 +14,4 @@ The brand's profile picture is in the exported kit (`Profile picture.png`, from 
 
 ## One set, one idea
 
-Covers for several platforms come from one composition made for each shape, not one image cropped to each: the `repurpose` skill.
+Covers for several platforms come from one composition made for each shape, not one image cropped to each: one page whose design declares every cover's format. Covers that exist, for more platforms: the `repurpose` skill.
