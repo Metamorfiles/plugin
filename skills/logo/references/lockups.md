@@ -2,51 +2,36 @@
 
 A route is often more than one file: a name, a mark or a mascot, a supporting line.
 `metamorfiles_compose_logo` puts them together as one SVG, each part nested untouched, and every text
-part set from a real font: a mark beside the name, the supporting words, a seal. A mark or mascot
-that meets the letters (lying on them, tucked under an arch) is drawn onto the set word by the image
-model instead (`symbol.md`, "Compose it on the word"). Decide the route's composition first
-(SKILL.md, step 3): what leads, and how the parts meet.
+part set from a real font: a mark beside the name, the supporting words, a seal. A part that meets the
+letters is drawn onto the set word instead (`symbol.md`, "Compose it on the word"). The route's
+composition (`SKILL.md`, step 3) says what leads and how the parts meet.
 
-`metamorfiles_compose_logo { layout: "row", align: "baseline", parts: [{ file: "<the mark .svg>", size: 1.3, gap: 0.4 }, { file: "<the wordmark .svg>" }], output: "brand/process/logo/lumen.svg" }`
-sets a mark standing on the word's baseline, a little taller than the word, apart from it. A logo drawn whole
-(route 1) is one part, with its route's supporting words, if any, composed with it.
+`metamorfiles_compose_logo { layout: "row", align: "baseline", parts: [{ file: "<the mark .svg>" }, { file: "<the wordmark .svg>" }], output: "brand/process/logo/rising.svg" }`
+sets a mark standing on the word's baseline, before it. A logo drawn whole is one part, with its
+route's supporting words, if any, composed with it.
 
-## Layouts
+## Choosing a layout
 
-- `row`: parts side by side. `align` lines them up: `baseline` (a wordmark's baseline, curved or
-  straight, with any other part standing on it), `cap` (a wordmark's cap height, any other part's top
-  on it), `start` (tops), `end` (bottoms) or `centre`. `size` is a share of the tallest part's height.
-- `stack`: parts one under the other, `align` `centre`, `start` (flush left) or `end` (flush right).
-  `size` is a share of the widest part's width.
-- `badge`: layers on one circle (`seal.md`).
-- `place`: parts at points of the first one (`at: { x: 0.1, y: 0.6 }`, the part's left and bottom
-  edges as shares of the first part's width and height): a monogram's letters overlapping, a mark set
-  in a space the word leaves. A part that meets the letters (standing on one, peeking over the name)
-  is drawn onto the word instead (`symbol.md`, "Compose it on the word").
-- `pattern`: the small mark repeated in a grid, turned one way and the other, with
-  `pattern: { columns: 4, rows: 3, turn: 15 }` beside `parts`.
-
-`gap` is the space after a part (negative overlaps the next), and `shift` moves it across the flow,
-in the layout's units. `behind: true` draws a part beneath the others; `knockout: { color }` cuts a
-gap of the ground's colour around a part where it overlaps another.
+- `row`, for a mark beside or after the name. `baseline` when the mark stands on the word's line,
+  `cap` when its top meets the capitals', `centre` for a mark that floats level with a word.
+- `stack`, for a mark above the name, or a name broken over lines.
+- `badge`, for a seal (`seal.md`).
+- `place`, for parts set at points of the first one: a monogram's letters overlapping, a mark in a
+  space the word leaves.
+- `pattern`, for the small mark repeated as a surface.
 
 ## Spacing it
 
-Sizes, gaps and positions are set for this logo, from what its results report. A mark beside the
-name stands apart from its letters, the space clearly wider than any space between two letters: a
-row's result gives that space as `spacing`, against the word's widest letter space and its height. Only a mark meant to be read as a letter keeps the letters'
-spacing. A round or pointed part standing on the baseline overshoots it a little (`shift`).
-Supporting words follow the word's own axis: centred under a word with no straight edge (a drawn or
-slanted first letter), flush only to an edge the word really has. `metamorfiles_check_logo` gives
-each part's stroke weight and the thinnest's share of the heaviest: parts drawn in one hand are
-close to each other's weight.
+Sizes, gaps and positions are set for this logo, from what its results report, never copied from
+another logo. A mark beside the name stands apart from its letters, the space clearly wider than any
+space between two letters, so it never reads as one more letter: a row's result reports that space as
+`spacing`, beside the word's own letter spaces, as information for the setting. Only a mark meant to
+be read as a letter keeps the letters' spacing. A round or pointed part standing on the baseline
+overshoots it a little (`shift`), as round letters do. Supporting words follow the word's own axis:
+centred under a word with no straight edge (a drawn or slanted first letter), flush only to an edge
+the word really has.
 
 Every lockup keeps its settings beside it (`<file>.svg.json`); change one thing with
-`metamorfiles_compose_logo { from: "brand/process/logo/lumen.svg", align: "cap", output: "brand/process/logo/lumen.svg" }`.
-
-## The set
-
-Each route has the lockup, the lockup without its supporting words when it has them (they're dropped
-at small sizes), and the name alone and the mark alone when it has a mark (`small: true`
-on its entry in the option's `files` in `brand/process/logo.md`). Once fixed, the
-parts' sizes and positions stay the same from file to file.
+`metamorfiles_compose_logo { from: "brand/process/logo/rising.svg", align: "cap", output: "brand/process/logo/rising.svg" }`.
+Every file made from the same parts keeps their sizes and positions. Which files a route has before
+the choice: `SKILL.md`, step 6.

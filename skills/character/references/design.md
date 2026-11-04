@@ -11,9 +11,9 @@ looks, and let the drawing find the body's shapes.
   every candidate is the category's mascot.
 - **What makes it this brand's**: the detail from the business's own world it wears, holds or does.
 - **Its face**, from its attitude: the lids, the brows, where it looks, the mouth, in three to five
-  concrete terms, with one thing uneven; eyes open, unless sleep is the idea. The face is where a
-  character's personality reads.
-- **Its pose**: one gesture with the business's own object, smaller than the character.
+  concrete terms, with one thing uneven. The face is where a character's personality reads.
+- **Its pose**: one gesture, what it's doing; an object only when the idea needs one
+  (`poses.md`).
 - **What it leaves out**: only what the brief or the category's codes rule out.
 
 An object that comes alive is built from its own shape (a bottle's cap its hat, a jar's lid its
@@ -34,7 +34,7 @@ The words that change a face, a few at a time:
 
 The face follows the attitude, so a sleepy character and a proud one get different faces. Generic
 words ("a cheeky grin", "happy eyes", "a big smile") read as no instruction, and the model
-fills them with its stock face: two closed crescents and a smile.
+fills them with its stock face (`taste.md`, "Defaults to recognise").
 
 ## Two briefs for the same character
 
@@ -45,10 +45,10 @@ Weak:
 > cheerful smile; two short arms ending in round mitts, one raised.
 
 Strong:
-> Dew is a sleepy water drop who loves slow mornings: leaning back mid-stretch, one little arm
-> raised in a yawn. Heavy half-closed lids, one eye cracked open to check the time, brows loose and
-> uneven, its mouth a lopsided yawning O. Its point curls over at the top like a bed-head curl. It
-> is the drop of serum Lumen puts on your skin, and it never hurries.
+> Dew is a sleepy water drop who loves slow mornings: leaning back mid-stretch, yawning. Heavy
+> half-closed lids, one eye cracked open to check the time, brows loose and uneven, its mouth a
+> lopsided yawning O. Its point curls over at the top like a bed-head curl. It is the drop of serum
+> Lumen puts on your skin, and it never hurries.
 
 The weak brief gets a drop with sticks for arms and the stock face. The strong one says what Dew is
 like and how its face shows it, and leaves the body's shapes to the illustrator.
@@ -58,13 +58,12 @@ like and how its face shows it, and leaves the body's shapes to the illustrator.
 The three candidates are three designs: each is built differently and is someone different. For
 Dew, beside the sleepy drop above:
 
-> Dew is a round bead of serum, almost a ball, sitting on its own reflection: stubby legs, no
-> arms, a wide flat face across its middle. Calm, a little smug: eyes as two short level dashes, a
-> small closed smile tucked to one side. Its one shine never moves.
+> Dew is a round bead of serum, almost a ball, sitting on its own reflection, a wide flat face
+> across its middle. Calm, a little smug: eyes as two short level dashes, a small closed smile
+> tucked to one side. Its one shine never moves.
 
-> Dew is a tall thin drop with a long drawn-out tip it twirls like a moustache: a lanky body, long
-> arms, a small head at the top of the curve. A showman, mid-bow: one eye winking, one brow up, a
-> wide open grin.
+> Dew is a tall, lanky drop with a long drawn-out tip it twirls like a moustache, its small head at
+> the top of the curve. A showman, mid-bow: one eye winking, one brow up, a wide open grin.
 
 What the brief fixes stays (a drop of Lumen's serum), and so do the look and the palette. The
 construction, the proportions, the face, the one feature and who it is change. Three poses of one
@@ -72,8 +71,8 @@ design are not three candidates.
 
 ## When a drawing is sent back
 
-When the reviewer or the user says its idea, pose or subject is wrong, change the brief, never
-describe the failed drawing back to the model, and draw again. Once the user chooses a drawing, it is
-the anchor and then the sheet: from then on the identity lives in images, and
-its Character lines say who it is, how its face is made and that nothing about it changes
-(`poses.md`).
+When the reviewer or the user says its idea, pose or subject is wrong, or the user turns the
+candidates down, the brief is rewritten (the attitude, the face and the idea), keeping what they
+liked, and drawn again; never describe the failed drawing back to the model. A new look alone
+changes nothing they objected to. Once the user chooses a drawing, the identity lives in images: the
+chosen drawing, then its sheet.

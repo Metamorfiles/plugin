@@ -1,13 +1,12 @@
 # The name in type
 
-How the name is set from real fonts in routes 2 and 3, and every supporting word in all three. Route 1
-draws the name (`drawn.md`).
+How the name is set from real fonts, and every supporting word in every route. A logo drawn whole
+draws its name (`drawn.md`).
 
 ## The type study
 
 `metamorfiles_type_study { text: "Lumen Skincare", faces: ["Fraunces", { family: "Inter", weight: 800 }] }`
-sets the name in up to 24 faces on one sheet, one row each: each face a family name, or
-`{ family, weight, italic }` to judge it at a weight. Faces the brand has are used from
+sets the name in many faces on one sheet, one row each. Faces the brand has are used from
 `brand/fonts/`; any other open-licence Google Fonts family is fetched into a study folder and never
 becomes part of the brand until you add it.
 
@@ -20,47 +19,32 @@ becomes part of the brand until you add it.
 
 ## The logo face
 
-A brand usually has a face for its logo, one for headlines and one for text. The logo's face is
-chosen for the one word it sets, so it can be louder than anything the brand sets as text. Add it
-with `metamorfiles_add_font { family: "Fraunces" }`: the file it returns is the `font` the name is
-set from. In the kit it is named for the logo.
+The logo's face is chosen for the one word it sets, so it can be louder than anything the brand sets
+as text. Add it with `metamorfiles_add_font { family: "Fraunces" }`: the file it returns is the `font`
+the name is set from. In the kit it is named for the logo.
 
 ## Setting the name
 
-`metamorfiles_make_wordmark { text: "Lumen Skincare", font: "brand/fonts/Fraunces.woff2", color: "#3b2e27", output: "brand/process/logo/lumen-word.svg" }`
-(all four required) sets the name as outlined letters, spaced for a logo, and lists the face's axes,
-features and the alternates it has for these letters. Its controls:
+`metamorfiles_make_wordmark { text: "Lumen Skincare", font: "brand/fonts/Fraunces.woff2", color: "#3b2e27", output: "brand/process/logo/rising-word.svg" }`
+sets the name as outlined letters, spaced optically for a logo, and lists the face's axes, features
+and the alternates it has for these letters.
 
-- **Weight, width and italic** on a variable face's axes.
-- **Spacing.** Optical by default: pairs a text face leaves loose at display size close to the
-  face's own rhythm, and a script's joins are kept. `tracking` in em opens or closes the whole word
-  (never applied between joined letters); `kerning` adjusts a pair (`{ "Te": -0.03 }`).
-- **Alternates and features**: the face's own alternate glyphs (`{ "S": "S.alt" }`) and OpenType
-  features (`ss01`, `dlig`, `liga`, a swash set).
-- **`thicken`**, in em: heavier strokes for a face a little too light.
-- **`moves`**: one letter turned or lifted, when the composition has a reason for it (the letter
-  that leans into the mark): `moves: [{ at: 2, rotate: -4 }]`, `at` counting every character from 1,
-  spaces included. A turn pivots on the letter's foot, so it stays on the line; `dy` lifts it off, and
-  the result names every letter off its line. A name that bounces, arches or waves is lettering, drawn
-  whole (`drawn.md`), never real type bent or jiggled: bent type reads as WordArt.
-- **`part`**: a drawn shape in a letter's place or its accent's, spaced by its own shape
-  (`symbol.md`).
-
-`metamorfiles_compose_logo` adds finishes to a text part: `depth: { color, amount }` (a side in a
-second colour, as on a painted or carved sign) and `inline: { color, inset, width }` (a line inside
-the strokes).
-
-## Adjusting it
+- **A moved letter** (`moves`) only when the route's composition has a reason for it, the letter that leans
+  into the mark: a turn pivots on the letter's foot, so it stays on the line, and the result names
+  every letter off its line.
+- **A name that bounces, arches or waves is lettering,** drawn whole (`drawn.md`), never real type
+  bent or jiggled: bent type reads as WordArt, where drawn lettering curves.
+- **A drawn part** in a letter's place or its accent's: `symbol.md`, "A drawn letter".
 
 Every wordmark keeps its settings beside it (`<file>.svg.json`). Change one thing without restating
-the rest: `metamorfiles_make_wordmark { from: "brand/process/logo/lumen-word.svg", kerning: { "ol": -0.02 }, output: "brand/process/logo/lumen-word.svg" }`.
+the rest: `metamorfiles_make_wordmark { from: "brand/process/logo/rising-word.svg", kerning: { "ol": -0.02 }, output: "brand/process/logo/rising-word.svg" }`.
 Objects merge key by key, so one kerning pair changes and the others stay.
 
 ## Supporting words
 
 A tagline, the trade, the place, the words around a seal: real type, set as text parts of
-`metamorfiles_compose_logo`, flat, with the same controls beside the part's own (`size`, `gap`,
-`shift`), and `curve` to set them on an arc, each letter whole (a line under an arched drawing, a
-seal's line): `{ text: "SINCE 2024", font: "brand/fonts/Inter.woff2", color: "#3b2e27", tracking: 0.12, size: 0.3 }`.
+`metamorfiles_compose_logo`, flat, with the wordmark's controls beside the part's own, and `curve`
+to set them on an arc, each letter whole (a line under an arched drawing):
+`{ text: "SINCE 2024", font: "brand/fonts/Inter.woff2", color: "#3b2e27", tracking: 0.12 }`.
 Where they sit and how large is a design decision for this logo, set from the word's axis and the
-spacing the lockup's result reports.
+spacing the lockup's result reports (`lockups.md`).

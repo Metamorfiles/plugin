@@ -98,8 +98,9 @@ and its look, candidates drawn alone and traced, one anchor the user approves, a
 its character sheet (`references/sheet.md` of the `character` skill), drawn before any seed. Its
 seeds on this step are the character in the brand's moments, each made from the sheet, and every
 image of it, seeds and library alike, carries its Character lines (`SKILL.md` of the `character`
-skill, step 1) with the sheet first in the references, so the model adds nothing a pose seems to
-need and paints no part another colour. A character scene's Style line takes the style block; the
+skill, step 1) with the sheet first in the references, so the model paints no part another colour
+and adds nothing the scene's action doesn't need: a prop only when the action needs one, said not
+to be part of the character (`references/poses.md` of the `character` skill). A character scene's Style line takes the style block; the
 character's own look is in its Character lines. List its folder in `assets` with `kind: character`,
 its `note` holding those lines, and write them into the imagery guide.
 

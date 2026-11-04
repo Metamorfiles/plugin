@@ -1,10 +1,11 @@
 # The character sheet
 
 One image of the character from every side and in four poses, drawn in one generation from the
-approved anchor. Image models redraw a character a little differently every time, and given one
-drawing as a reference they copy it, head angle and face included. Given the same character from
-every side, they learn it, and draw it anew in any scene. So the sheet, not the anchor, is what
-every later image of the character starts from.
+chosen drawing (`SKILL.md`, step 4; for a logo that carries the character, the character cut from
+it). Image models redraw a character a little differently every time, and given one drawing as a
+reference they copy it, head angle and face included. Given the same character from
+every side, they learn it, and draw it anew in any scene. So the sheet, not the chosen drawing, is
+what every later image of the character starts from.
 
 ## The grid
 
@@ -15,16 +16,18 @@ labels, numbers or panel borders: lettering comes out garbled, and the order bel
 | Row | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- | --- |
 | The turnaround, its own resting face | front | three-quarter, facing left | side profile, facing left | back |
-| The range | walking mid-stride | sitting, holding a small object in both hands | arms up, cheering, mouth open | thinking, one hand on the chin, sceptical |
+| The range | walking | sitting, holding a small object from the brand's world | cheering | thinking, sceptical |
 
-The top row gives every angle of the head and body, with the face the anchor has (a neutral face
-there would teach the model a blank character); the bottom one gives motion, hands, a seated body
-and three expressions. A character with no hands (a moth, a fish) does the bottom row with
-what it has, as its brief says.
+The top row gives every angle of the head and body, with the face the chosen drawing has (a
+neutral face there would teach the model a blank character); the bottom one gives motion, a seated body, a
+held object and three expressions. Each figure is named by what it is doing, never by where a limb
+goes: the drawing finds the limbs, and a character built without hands does each with what it has.
+The one object is there because holding is that figure's action, and it is said not to be part of
+the character.
 
 ## The prompt
 
-The anchor first, the prompt in the labelled parts of `references/images.md` of the `studio`
+The chosen drawing first, the prompt in the labelled parts of `references/images.md` of the `studio`
 skill:
 
 ```
@@ -33,15 +36,15 @@ Draw a character sheet of <name>: one landscape image, four columns and two rows
 figures of the same <name> at the same scale on one shared ground line, evenly spaced, on plain
 <paper hex>, no labels, numbers or borders.
 Top row, with <name>'s resting face as in image 1: front; three-quarter facing left; side profile facing left; back.
-Bottom row: walking mid-stride; sitting, holding a small cup in both hands; arms up, cheering, mouth
-open; thinking, one hand on the chin, sceptical.
+Bottom row: walking; sitting, holding a small object from the brand's world, which is not part of
+<name>; cheering; thinking, sceptical.
 <name>: <its Character lines>; nothing about <name> changes.
 Style: <the style block>.
 Constraints: <name>'s colours and proportions never change between figures; exactly eight figures;
-nothing added that a pose seems to need; no text.
+nothing added but the one small object; no text.
 ```
 
-`metamorfiles_generate_image { prompt, width: 1536, height: 1024, references: ["<the anchor>"], folder: "brand/process/character", name: "<name>-sheet" }`
+`metamorfiles_generate_image { prompt, width: 1536, height: 1024, references: ["<the chosen drawing>"], folder: "brand/process/character", name: "<name>-sheet" }`
 
 It is raster, never traced: a reference, not artwork.
 

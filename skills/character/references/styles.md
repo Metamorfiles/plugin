@@ -15,7 +15,7 @@ open shapes, no fill.
 Trace colours: the line colour only.
 
 **Solid silhouette.** One flat shape in one colour, cut-paper or stencil-like, for a faceless figure that reads by its outline
-alone (a running fox, a leaping fish). A face cut into a silhouette as holes reads as a mask, so a
+alone (a figure in motion). A face cut into a silhouette as holes reads as a mask, so a
 character with a face takes another style.
 > One solid flat shape in a single colour, its pose readable from the outline alone; smooth edges,
 > no inner lines.
@@ -42,9 +42,9 @@ Other families seen in strong work, when the direction asks for one:
 - **Engraving:** hatching that follows the form, one ink, for heritage; drawn coarse enough to trace.
 - **Children's-book ink:** a loose pen line, some solid fills, a warm, ordinary person.
 
-A style anchor can sharpen the look, one at most: "in the manner of a 1930s rubber-hose cartoon", "a
-mid-century flat illustration", "a Japanese mascot, round and soft". Never name a living artist or a
-brand's mascot.
+A style anchor can sharpen the look (how many: `references/images.md` of the `studio` skill): "in
+the manner of a 1930s rubber-hose cartoon", "a mid-century flat illustration", "a Japanese mascot,
+round and soft". Never name a living artist or a brand's mascot.
 
 ## The prompt
 
@@ -52,29 +52,26 @@ brand's mascot.
 Draw one character on a transparent background, alone, centred, with space around it.
 Who: <the brief: who it is, what it's like, the one thing that makes it itself, in two or three sentences>.
 Face: <its expression in three to five concrete terms from its attitude: the lids, the brows, where it looks, the mouth, one thing uneven>.
-Doing: <one gesture with this business's own object, smaller than the character; no scene around it>.
+Doing: <one gesture, in a sentence; an object only as `poses.md` says; no scene around it>.
 Look: <the style block>.
-Palette: <the brand's colours as hex, each with its job: the body in the product's own colour, the features in the ink>, flat.
+Palette: <the brand's colours as hex, each with its job>, flat.
 Only the character: no letters, words or numbers, no ground line or shadow, no frame, no scenery.
 ```
 
-- Describe it as a character, never as a logo or an icon: those words bring letters, frames and
-  presentation boards.
+- Describe it as a character, never as a logo or an icon (why: `references/symbol.md` of the `logo`
+  skill, "The prompt").
 - Colours are the palette with a job each, never a colour per limb: the model gives them to the
   shapes it draws.
 - Each candidate has its own Who, Face and Doing, and its own build (`design.md`, "Three designs
   for one character"); the Look and the Palette are the same in all three, and so is what the brief
   fixes it to be.
-- A reference goes in only when it shows a figure drawn in the chosen look ("Image 1 is a style
-  reference: take its drawing hand and line weight; never copy its character, pose or layout").
-  Never a wordmark set in type while the character is explored, unless it is a new brand's chosen
-  logo (`SKILL.md`, "In a new brand"): the first image is the one the model keeps most, and a
-  typeface isn't a drawing hand. With no such reference, the style block carries the
-  hand alone. For a logo, it is then drawn onto the set word (`references/symbol.md` of
-  the `logo` skill, "Compose it on the word").
+- In a logo, the references are the logo's (`SKILL.md`, step 3), and a mascot drawn after the
+  choice has the chosen logo as image 1 (`SKILL.md`, "In a new brand"). Outside a logo, a reference
+  goes in only when it shows a figure drawn in the chosen look ("Image 1 is a style reference: take
+  its drawing hand and line weight; never copy its character, pose or layout"), never a wordmark set
+  in type: the first image is the one the model keeps most, and a typeface alone isn't a drawing
+  hand. With no such reference, the style block carries the hand alone.
 - Draw it at `width: 1024, height: 1024` with `trace: { colors: [...] }` listing the style's trace
-  colours, and the `folder` it belongs in (the call: step 3 of the skill). A model that can't draw
-  on a transparent background (its own file says so) gets "on a plain flat field of <the paper's
-  hex>" in place of the first line's transparent background, and `ground: "<the paper's hex>"` in
-  the call, so the trace leaves the field out.
+  colours, and the `folder` it belongs in (the call: step 3 of the skill). A model that can't draw on
+  a transparent background: `references/vector.md` of the `logo` skill.
 - Follow the image model's own file, which `references/images.md` of the `studio` skill names.
