@@ -49,9 +49,9 @@ Study and choose each route's face: `references/wordmark.md`.
 Before anything is drawn, write each route's idea and composition in one line in your notes. Each
 idea comes from a different source: one from the name (its sound, its letters, a pair that could
 join), one from the product (what it is, how it's made, what it's used for), one from the place, the
-people or the feeling it promises. The composition says how the logo is built: what leads, how big
-the other parts are against the word's cap height, whether they share its baseline, overlap it, tuck
-into a letter or stand apart. It also says the route's words: the name alone, or with a supporting
+people or the feeling it promises. The composition says how the logo is built, in words, never in
+measurements: what leads, and how the other parts meet the word (on its baseline, over it, tucked
+into a letter, or apart from it). It's the plan, not a spec: the made logo settles its proportions. It also says the route's words: the name alone, or with a supporting
 line that makes this idea stronger (a tagline, the trade, a place, written in the brand's voice) and
 where it sits. Each route decides its own words; a line that would sit the same under every route
 belongs to none. What the brief says the category keeps (a clear descriptor, say) the brand as a
@@ -73,6 +73,7 @@ under its new id.
 Three answers, not three versions: each route a different idea and a different lettering family or
 composition move (`references/taste.md`), so the user chooses between ideas. A fourth route only for
 another idea: a variant of a route (its mark drawn longer, its lockup stacked) is never a route.
+Make each to pass the Logo route checklist of the `review` skill's Rubric, which the reviewer holds it to.
 
 1. **Drawn whole by AI.** The image model draws the logo as one composition: lettering alone, or
    lettering with a mark, a mascot or ornaments, all in one style, with proper spacing between its

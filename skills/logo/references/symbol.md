@@ -44,10 +44,10 @@ the kept mark:
 The prompt keeps the letters and places the mark by the route's composition: "Edit image 1: keep
 every letter exactly as it is, the same shapes, size and place. Add <the mark> from image 2, <where
 and how it meets the letters>, drawn as image 2 draws it, its lines as heavy as the letters'
-strokes." Then compare the letters with the font:
+strokes." Then check the letters against the font:
 `metamorfiles_check_logo { file: "<the lockup .svg>", word: "<the wordmark .svg>" }` finds the word
-in the drawing, says how much of its letters were kept, and outlines the font's letters in red on
-it. A letter the model redrew is drawn again, never kept. The route's files are this lockup, the
+in the drawing and reports how much of its letters were kept (`lettersKept`, as `checks.md` says).
+A letter the model redrew is drawn again, never kept. The route's files are this lockup, the
 wordmark alone and the mark alone.
 
 ## A drawn letter

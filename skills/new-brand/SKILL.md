@@ -41,7 +41,7 @@ Copy it into your notes and tick each step as you go:
 | Mockups, last | three shots of the brand on its own objects, on their own board | `designer`, `imager` for the photographs | `references/mockups.md`, the `mockup` skill | redoes one, or picks an earlier take back |
 
 `references/principles.md` holds what separates studio work from generated work, with tests for each
-step; read it before the first step and use it to make each step's options stronger. Its
+step's plans; read it before the first step and use it to make each step's options stronger. Its
 `library/` describes published identities by kind of business, for study.
 
 This skill is the order of work for a new brand, in place of the team skill's: there is no first
@@ -52,7 +52,7 @@ it asks once per step rather than once per role, and its handover is the one
 Studio draws everything on one item, the brand board: the brief first, then each step as its own
 frame, then the kit's frames. A step's frame shows its slots while you make it, its options once you
 write its file, and stays as the record after the choice. You never lay any of it out yourself.
-Render a frame by its name, as `metamorfiles_get_project` lists them in `board.frames`: `process-brief`,
+Its frames are named as `metamorfiles_get_project` lists them in `board.frames`: `process-brief`,
 `process-direction`, `process-logo` (its last pages hold the mascot and the small marks, which live in
 `logo.md`), `process-imagery`, then the kit's pages; a page that runs on is `<name>-2`.
 

@@ -33,9 +33,8 @@ gap of the ground's colour around a part where it overlaps another.
 ## Spacing it
 
 Sizes, gaps and positions are set for this logo, from what its results report. A mark beside the
-name stands apart from its letters, the space clearly wider than any space between two letters,
-often about the name's x-height: a row's result gives that space as `spacing`, against the word's
-widest letter space and its height. Only a mark meant to be read as a letter keeps the letters'
+name stands apart from its letters, the space clearly wider than any space between two letters: a
+row's result gives that space as `spacing`, against the word's widest letter space and its height. Only a mark meant to be read as a letter keeps the letters'
 spacing. A round or pointed part standing on the baseline overshoots it a little (`shift`).
 Supporting words follow the word's own axis: centred under a word with no straight edge (a drawn or
 slanted first letter), flush only to an edge the word really has. `metamorfiles_check_logo` gives

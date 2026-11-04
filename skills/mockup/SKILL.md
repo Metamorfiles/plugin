@@ -7,7 +7,8 @@ license: MIT
 # Mockups
 
 A mockup is an art-directed photograph: one clear idea per shot, light with intent, the print
-designed as a system.
+designed as a system. The image model always makes it whole: the brand's real files and the flat
+designs made for it are references it draws from, never pasted onto a photograph.
 
 ## Checklist
 
@@ -15,7 +16,7 @@ designed as a system.
 - [ ] 1. The shots chosen: one idea each, different from each other; the packs one system
 - [ ] 2. What's printed on each object decided: the logo alone, designed in place, a flat print or exact artwork
 - [ ] 3. Each photograph made whole, from its prompt and the brand's files; all together
-- [ ] 4. Reviewed; each must fix made by an edit, or placed when an edit can't
+- [ ] 4. Reviewed; each must fix made once, the way its fault calls for
 ```
 
 ### 1. The shots
@@ -57,8 +58,8 @@ For each, decide in your notes:
 Decide it per object, from the shot's goal, its composition and the surface, as the business would
 really make it:
 - **The logo alone** (a tag, a business card's face, an embroidered chest, a fascia with only the
-  name): nothing but the logo file the ground calls for, placed the way a printer or signwriter would
-  put it ("Placing it", below).
+  name): nothing but the logo file the ground calls for, applied the way a printer or signwriter would
+  put it ("On the object", below).
 - **Designed in place** (a can's wrap, a box, a label, merch): design the face first, as a packaging
   designer would, the way "The composition" in `references/design.md` of the `studio` skill decides
   any piece: one graphic idea from the brand's world, measured against the best packs of its kind,
@@ -79,7 +80,8 @@ really make it:
   Then photograph it from that file (step 3). A flat print drawn in the photograph at once comes out
   as a graphic laid over it.
 - **Exact artwork** (a label a printer would get as a file, a precise illustration):
-  designed flat first with the `artwork` skill, then given to the model as the object's print.
+  designed flat first with the `artwork` skill (a screen's interface too, step 5 there), then given
+  to the model as the object's print or the screen it shows.
 
 Then the surface: what it is, its material, how the brand is applied (print, screen-print,
 thermal-print, paint, vinyl, sticker, embroidery, engraving, emboss, foil, display, lightbox), how worn
@@ -91,12 +93,13 @@ print.
 
 ### 3. Make each photograph
 
+Make each to pass the Mockup checklist of the `review` skill's Rubric, which the reviewer holds it to.
 All the shots together, except those that show a pack another shot shows: make the shot that
 designs the pack first, look at its pack, and give it to the others as a reference ("Image
 2 is the brand's pack: the same design, only the flavour's colour and name change"). That holds
 wherever the brand's products appear, behind another piece too (the cans on the shelf a sticker is
 on): they're the packs the brand designed, from that shot, never blank or unlabelled stand-ins. Each
-`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "brand/artwork/can-wrap.png"], folder: "brand/mockups", name: "can-on-peppers", wait: false }`,
+`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "brand/mockups/artwork/can-wrap.png"], folder: "brand/mockups", name: "can-on-peppers", wait: false }`,
 collected with `metamorfiles_image_status { id }`. The references are the brand's real files, numbered
 by role: image 1 the logo file the object's ground calls for (the reversed one on a dark object), its
 letters and parts kept; then what the design draws on, as inspiration: the artwork made flat when there is one, the
@@ -116,14 +119,13 @@ add what the object needs, so a whole mockup prompt runs about 300 to 450 words.
   Hands as that Subject says: cropped, one action, never which finger does what.
 - **The print:** what is on the object and how it's designed: the face's idea and what reads first;
   the logo from image 1, where and how
-  large (as "Placing it" says); the design around it, drawn from which images and how it adapts them
+  large (as "On the object" says); the design around it, drawn from which images and how it adapts them
   (the mascot from image 3 in a new pose, the imagery of image 4 as the label's illustration); how
   it's applied (printed, screen-printed, embroidered, painted, a sticker, a screen). A method that
   remakes the drawing (embroidery, emboss or deboss, engraving, foil, paint by hand) shows the logo
   as that method makes it: its letters, shapes and colours, in the method's own material (thread and
-  stitches, a raised edge, cut metal, brushwork). A screen shows the brand's real screen when it has
-  one: make the device photo with the screen blank and place the screenshot with
-  `metamorfiles_make_mockup`. A screen the model designs gives each part of the interface (a button,
+  stitches, a raised edge, cut metal, brushwork). A screen shows its flat design (step 2) as a reference the
+  screen shows exactly, as any flat print is. A screen the model designs gives each part of the interface (a button,
   a field, a card) the colours DESIGN.md gives it, its fill and its text alike, named as colours.
 - **Words:** every word that appears, quoted exactly, and that no other word, number or label does.
 - **Keep:** the logo from image 1, every letter and every part of its mark as image 1 draws them, in
@@ -142,8 +144,8 @@ never ask for it "exactly as drawn": either makes it a flat graphic laid over th
 ### 4. Review, and fix
 
 Get the review (the `review` skill): in a new brand the `handover` queue holds them, and anywhere
-else the page or template they're in. A shot changes only for a must fix or the user's word, as
-`references/images.md` of the `studio` skill says ("Edit or redraw"):
+else the page or template they're in. Each must fix is made once, as `references/images.md` of the
+`studio` skill says ("Edit or redraw"):
 
 - **A logo or word wrong:** an edit of that place only, the image first and the logo file after it,
   the prompt naming the fault and keeping the photograph's perspective and light:
@@ -151,24 +153,13 @@ else the page or template they're in. A shot changes only for a must fix or the 
 - **A print that floats:** an edit of its region, the photograph first and the print's artwork
   after it, saying only that the print sits on its surface in the scene's perspective and light.
   Never made again from the floating take: a reference carries its fault.
-- **A print at the wrong size or place** (too big for its face, off-centre, too close to an edge): an
-  edit of its region saying the size, the place and the room it needs; when an edit can't move it,
-  made again from its prompt with `replaces`. Never placed for it: a placed file takes its angle from
-  four corners read by eye and lies flat where the surface bends, while a print drawn in the
-  photograph keeps the photograph's perspective.
-- **Words still wrong after two edits** (long copy, small type, a screen of text): place them. Make the photo
-  with the print's surface left blank (the same prompt, the surface "completely blank, fully in frame
-  and unobstructed", into `brand/mockups/blanks`), then
-  `metamorfiles_make_mockup { name: "can-on-peppers", photo: "brand/mockups/blanks/can-on-peppers-blank-5e6f7a8b.png", surface: { object: "a drinks can", material: "aluminium", method: "print", condition: "new", form: "curved", text: ["Lumen"] }, layers: [{ file: "brand/artwork/can-wrap.png", corners: [[385, 260], [746, 260], [746, 1140], [385, 1140]], cover: true, curve: { wrap: 150, bend: [8, 14] } }], replaces: "brand/mockups/can-on-peppers-1a2b3c4d.png" }`:
-  `corners` the surface's top-left, top-right, bottom-right and bottom-left in the photo's pixels,
-  read from the surface as it stands in the photo, turned and angled with it (an angled door's, or a
-  fob held at a slant, are never an upright rectangle),
-  `size` and `at` to place a logo in it, `cover` to fill it, `curve` for a can, cup or bottle; Studio
-  bakes the files in and the model finishes the photograph.
+- **A print the user wants at another size or place** (too big for its face, off-centre, too close
+  to an edge): an edit of its region saying the size, the place and the room it needs.
 - **The idea, the composition or the subject wrong:** made again with `replaces`, on the
-  reviewer's or the user's word only; the one it replaces stays on the board as an earlier take the user can pick back.
+  reviewer's or the user's word only; the one it replaces stays on the board as an earlier take the
+  user can pick back.
 
-## Placing it
+## On the object
 
 Mockups look made when the brand sits on the object the way a printer or signwriter would put it:
 
