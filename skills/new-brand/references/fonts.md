@@ -12,26 +12,29 @@ Type carries most of a new brand's personality, so it is chosen for the idea, ne
 ## Getting the files
 
 - Compare candidates first with
-  `metamorfiles_type_study { text: "Lumen", faces: ["Fraunces", { family: "Inter", weight: 700 }, ...] }`:
+  `metamorfiles_type_study { text: "Lumen", faces: ["<family>", { family: "<family>", weight: 700 }, ...] }`:
   it sets the brand's name (at most 40 characters) in many faces on one sheet, each a Google Fonts
   family name or `{ family, weight }`, without adding any to the brand.
-- Add a family with `metamorfiles_add_font { family: "Fraunces", italic: true }`, by its Google Fonts
+- Add a family with `metamorfiles_add_font { family: "<family>", italic: true }`, by its Google Fonts
   name, with `italic` only when the design uses the italic.
 - It writes complete WOFF2 files to `brand/fonts/`, one per style for a variable family and one per
-  weight for a static one (such as `brand/fonts/Anton-400.woff2`). It returns the `@font-face` rules for a template.
+  weight for a static one (such as `brand/fonts/<Family>-400.woff2`). It returns the `@font-face` rules for a template.
 - Never download, subset or copy font files yourself.
 - The render's font check says when a glyph falls back, so check the name, the place and the
   headline in the brief's language.
 
 ## Choosing
 
-- Choose by what the idea needs. Then look at the face's skeleton (open and humanist, closed and
-  rational, geometric), its contrast and serifs, and its details, and match them to the mark: round
-  with round, sharp with sharp, the same stroke weight.
-- Start from one family. Try its weights, widths, case and tracking first. Add a second face only
-  for a job the first can't do: a display face for headlines, a workhorse for everything that
-  informs, or a mono for data. Two faces at most.
-- The direction step's options differ in type logic (`look.md`), so they never share a family.
+- **For the idea.** Choose by what the idea needs, then by the face's skeleton (open and humanist,
+  closed and rational, geometric), its contrast and serifs, and its details. The logo step matches
+  its mark to the set word (the `logo` skill), never the other way round.
+- **As few faces as the system needs, each with a job.** One family across its weights, widths,
+  case and tracking is often the whole system; another face comes in only for a job the first
+  can't do (a display face, a workhorse for everything that informs, a mono for data).
+- **A face for each script the brand writes in.** A business in Seoul posts in Korean, one in
+  Athens in Greek: each face has those letters, or a face made for that script sets them beside the
+  Latin one, sized to sit together.
+- The direction step's options differ in type logic, so they never share a family.
 
 ## Overused
 
@@ -141,7 +144,8 @@ These carry their finish inside the face. For a finish on another face, add Stud
 - Zen Kaku Gothic New: a clean gothic.
 - Zen Maru Gothic: a rounded gothic; friendly and soft.
 
-Japanese files are large, so a type study of them takes minutes: study three to five.
+Faces for Japanese, Chinese, Korean and other large scripts have large files, so a type study of
+them takes minutes: study few.
 
 **Chunky and soft**
 - Lilita One: heavy, slightly condensed, softly rounded corners; friendly and loud.

@@ -21,8 +21,10 @@ when the brand was made. Its sections:
 - **Character** (a brand with a character): who it is, the one thing that makes it itself, how its
   face is made, its palette and its look, in two or three lines, and that nothing about it changes. Pasted whole into
   every prompt that shows the character, with its character sheet first in the references.
-- **Colour roles:** what each colour is for in a scene. An accent is a role for objects and light
-  (a balloon, a lamp, a spark), never a colour on the character or a quota per image.
+- **Colour roles:** what each colour paints in a scene, each tied to what it paints. An accent is a
+  role for objects and light (a lamp, a prop the scene has, a spark), never a colour on the
+  character and never a count per image: a quota competes with everything else in the scene, and
+  the model paints the accent wherever it can.
 - **Writing a scene:** how the brand's scenes are described.
 
 A brand without the guide (translated from an existing one) takes its look from DESIGN.md's Imagery
@@ -54,7 +56,7 @@ slot, or the library file and why it already fits.
 
 ## The prompt
 
-One shape for every brand image, in short labelled sections, the order OpenAI's guide gives (other
+One shape for every brand image but a mockup photograph (the `mockup` skill), in short labelled sections, the order OpenAI's guide gives (other
 models read it as well):
 
 1. **References,** numbered, each with its role. The image to keep goes first, since models preserve
@@ -62,23 +64,32 @@ models read it as well):
    - a character: its sheet first (the first of its folder's `anchors` in DESIGN.md, or the logo
      step's `sheet` while a brand is made; `references/sheet.md` of the `character` skill): "Image 1
      is the reference sheet of <name> from every side: keep its identity, anatomy and colours exactly;
-     draw exactly one <name>, in this scene's own pose". The pose, which way the head turns and the
-     expression are this prompt's, never copied from image 1;
+     draw exactly one <name>, in this scene's own pose". What it does and feels is this prompt's, never
+     copied from image 1;
    - the library's sheet next, its folder's frame on the brand board
      (`templates/brand-board#<folder>`, such as `templates/brand-board#refs`): "Image 2 is the
      brand's image library: take only its drawing style, palette and texture; never copy its
      subjects or compositions";
    - a product or a source image: what must stay exactly as it is.
+
+   A generated image is a reference only once the user approved it or the reviewer passed it: the
+   chosen seeds, the passed character sheet, a passed flat design, and, once the kit's `handover`
+   review has passed it, the library's sheet. While a new brand's kit is made its library is not
+   yet reviewed, so images made then (its mockups and their flats) take the chosen seeds and the
+   character sheet, never library images. An image nobody approved or passed is never a reference
+   for another image: it carries its faults into the next, and copies of copies drift. The image an
+   edit changes is its own image 1, not a reference, so this never stops a fix.
 2. **Scene:** the frame's composition, word for word from its `composition` line (`design.md`, "The
    composition"): where the subject is, its scale and crop, which way it faces, what stays empty and
    the shape ("portrait, 4:5"); then the setting and the light.
 3. **Subject:** what it shows, plainly, named each time, never "it". A person or an animal in one
    line: who (age, gender, clothing), the one action, where they look, the one object they handle
-   and how ("hands gripping the handlebar"), and the framing ("full body visible, feet included", or
-   cropped at the waist). Nothing more about the body: never which hand, arm or leg does what,
-   unless the task decides it (a guitar's fretting hand). A photograph of people is candid and
-   unposed, caught mid-moment. With the character: its pose, which way its head turns and its
-   expression, then its Character lines pasted whole.
+   and how ("hands cupping an open jar of cream"), and the framing ("full body visible, feet
+   included", or cropped at the waist). Nothing more about the body: never which hand, arm or leg
+   does what, unless the task decides it (the hand that holds a serum's dropper over the other
+   palm). A photograph of people is candid and
+   unposed, caught mid-moment. With the character: what it does and feels, in one line, then its
+   Character lines pasted whole.
 4. **Style:** the style block (the guide's Style), pasted whole.
 5. **Constraints,** plain and early enough to survive a host that rewrites prompts: "exactly one
    <the character>", "nothing about <the character> changes: its colours, its one feature, its proportions", "no text
@@ -97,17 +108,18 @@ Then the craft, for every model, and that model family's file for what differs (
 
 - **Concrete words.** Materials, colours as hex tied to what they paint, shapes; never vague praise
   ("beautiful", "premium") and never a colour's name in the brand kit (the model doesn't know
-  "Roxo"; it knows #3a1c8c). Keep the scene and subject short (60 to 100 words together); the guide's blocks go
+  "Clay"; it knows #c9785b). Keep the scene and subject to what the picture needs; the guide's blocks go
   in as they are.
 - **Place the empty space and describe it as a thing**: "a bare off-white plaster wall across the left
   third". Name positions (thirds, corners) and the shape: several models, ChatGPT among them, compose
   for the shape the prompt states.
 - **Ask for what should be there.** Most models read a bare "no people" as a request for people; say
   "an empty street" instead, and keep exclusions to the Constraints line. Keep text out with "clean,
-  unmarked surfaces", and never put a word in quotation marks: a quoted word is drawn. The one image
-  that carries words is a logo drawn whole (`references/drawn.md` of the `logo` skill).
+  unmarked surfaces", and never put a word in quotation marks: a quoted word is drawn. The images
+  that carry words are a logo drawn whole (`references/drawn.md` of the `logo` skill) and the
+  exception below.
 - **One style anchor at most, and never contradictory instructions:** given two rules that
-  compete (an accent quota and the character's colours), the model picks one, and not always yours.
+  compete, the model picks one, and not always yours.
 - **Detail matches the brief.** A specific brief is reorganised into the sections, not rewritten; a
   vague one gets only what the picture needs to work. Never add a person, an object, an action or a
   story beat the brief doesn't imply, and never put something on one side (left, right) without a
@@ -118,13 +130,14 @@ Then the craft, for every model, and that model family's file for what differs (
   packaging text, a logo or an interface; place the real file in the layout, or pass it as a
   reference with what must stay.
 
-One exception: a mockup photograph names its colours in words and quotes its words: the `mockup` skill.
+One exception: a mockup photograph, or a flat print the image model draws, names its colours in
+words and quotes its words, as the `mockup` skill says.
 
 Example, a character brand's carousel slide:
 
 > Image 1 is the reference sheet of Dew, the brand's water drop, from every side: keep its identity, anatomy and colours exactly; draw exactly one Dew, in this scene's own pose. Image 2 is the brand's image library: take only its drawing style, palette and texture; never copy its subjects or compositions.
 > Scene: a bathroom shelf in early light from one soft window; portrait 4:5; the top third stays calm, plain #f6f1ea for the headline.
-> Subject: Dew stretching awake beside an unlabelled serum bottle, yawning, head turned three-quarter, one eye cracked open. Dew: a sleepy water drop, wider at the bottom, its point curling like a bed-head curl, body #e9dccb, lids and mouth #3b2e27; nothing about Dew changes.
+> Subject: Dew waking up beside an unlabelled serum bottle, sleepy and pleased with itself. Dew: a sleepy water drop, wider at the bottom, its point curling like a bed-head curl, body #e9dccb, lids and mouth #3b2e27; nothing about Dew changes.
 > Style: flat poster illustration, an even #1f1a17 outline, flat fills, little or no shading.
 > Constraints: exactly one Dew; nothing about Dew changes; the bottle's cap is the only #c9785b; no text or lettering.
 
@@ -166,8 +179,8 @@ Write every prompt to pass the picture checks of the `review` skill's Rubric, wh
 the result to. Studio checks every result and says what came back: made or failed, its size and shape,
 whether it is see-through, a trace's match. Never look at a result to confirm it or to judge it: the
 reviewer judges it (the `review` skill). Look at an image only when your next design decision
-depends on what is in it: where its subject sits for the crop and the type, a made pack the next
-shot is given, which seed to build on.
+depends on what is in it: where its subject sits for the crop and the type, a passed flat
+the next shot is given, which seed to build on.
 
 - **Make or place.** Anything that must match a file is placed exactly on a designed piece. A mockup
   photograph follows the `mockup` skill; a piece that needs a picture and the files follows the
@@ -175,5 +188,5 @@ shot is given, which seed to build on.
 - Pass `width` and `height` as the size the image is used at, and Studio saves the result whole under `assets/`. The model composes for that shape as far as it can, but each source makes only some shapes (OpenAI's models between 3:1 and 1:3; on a ChatGPT plan OpenAI sets the size itself), so a slot longer than that, such as a shelf strip or a long banner, gets back a shorter picture. Plan such a slot from the start: its subjects made as cutouts (`transparent: true`) that the layout places and scales, or a picture whose ends are calm ground the slot can lose. For an image several formats show, pass the format it matters most in, and compose with room around the subject so every other format can crop it well. Make it once and reuse it across variants when the variant isn't about the image.
 - The result can be another size and shape than the one passed, and says so. Fit the design to the image that came back: every subject whole, and any crop only through calm ground or as the composition named it. Cropping through a subject to make the picture fit is never the fix: change the slot, or make the picture again in a shape the source makes. When the result says it's smaller than the frame, the design will enlarge it and it may look soft: tell the user, and let them decide on a source that makes larger images.
 - For choices between directions, make each option as the real thing: the one the user chooses is the image used, never made again, since a new one would be a different image.
-- **Edit or redraw.** An image changes only as the `review` skill's Run it, step 4, says. Edit it when its composition works: `metamorfiles_generate_image { prompt: "the lid lies beside the tin, open side up", width, height, references: ["/assets/<file>.png"], edit: true }`, the image first in `references`, the prompt saying only what changes and what stays; `region` names the one place it may change, and nothing outside it does. One change per edit. Draw it again from its prompt only when the idea, the composition, a pose or the subject is what's wrong: an edit keeps what's in the image, so a new pose drawn by an edit keeps the old head on a changed body (`references/poses.md` of the `character` skill). Never use a generated image as a style reference for the next: copies of copies drift.
+- **Edit or redraw.** An image changes only as the `review` skill's Run it, step 4, says. Edit it when its composition works: `metamorfiles_generate_image { prompt: "the cap lies beside the bottle, open side up", width, height, references: ["brand/<folder>/<file>.png"], edit: true, replaces: "brand/<folder>/<file>.png" }`, the image first in `references`, the prompt saying only what changes and what stays; `region` names the one place it may change, and nothing outside it does. One change per edit. Draw it again from its prompt only when the idea, the composition, a pose or the subject is what's wrong: an edit keeps what's in the image, so a new pose drawn by an edit keeps the old head on a changed body (`references/poses.md` of the `character` skill). Where the fix lands: a brand image Studio keeps takes of (a sample image, a library image, a mockup, a flat design) passes `replaces: "<file>"`, so the new image is its next take and Studio keeps the earlier one for the user to pick back (an edit of a sample image or a mockup does this by itself); a logo step's file (a route, a mascot, its sheet, a small mark) is a new file written into `brand/process/logo.md`, where Studio keeps its versions; a page's or template's picture is a new file set with `metamorfiles_edit`, so the page gets its version and its review. A generated image is passed in only as "The prompt" says (References).
 - Place it through the variable's value, the path the result gives exactly as it is (`/assets/<file>.png`, leading slash kept): `metamorfiles_edit { item: "pages/<id>", changes: [{ do: "value", variable: "photo", value: "/assets/<file>.png", variant: "<id>" }] }` for one variant, without `variant` for the whole page, on the template for its default. Then render every format that shows it: a crop that works in the post can cut the product in the story. Set each format's crop with the design's `object-position`.

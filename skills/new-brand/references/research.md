@@ -16,21 +16,20 @@ its category looks like, three paths into it, and the directions their reference
 
 Read everything the user gave about the brand itself before any reference: the brief's "Where it is
 today" links, and any site, profile or handle in their words. Open each with
-`metamorfiles_look_at_page { url: "<the page>" }` (it shares the daily page budget with the reference
-searches) or a web fetch.
+`metamorfiles_look_at_page { url: "<the page>" }` (it spends the daily page budget, as collecting
+references does) or a web fetch.
 - **A person:** what they've made, the words they use about themselves, what they post and how their
   feed looks.
 - **A business:** its offer and prices, its place, its reviews' phrases, its founders, one odd fact.
 - **Behind a login or empty:** take what's public, never guess.
 
 Never search for the brand or the person by name: a name finds namesakes, and what represents them is
-theirs to give. With nothing given, build from their words and the category. The brief is the user's
-page: no note about sources, dates or what was given in it.
+theirs to give. With nothing given, build from their words and the category.
 
 ## The brief
 
-`brand/process/brief.md` starts with what the user said. Add below it, briefly, from the subject's
-research:
+`brand/process/brief.md` starts with the user's answers: they are theirs, never rewritten. Below
+them goes the team's research, written by you, briefly, from the subject's pages:
 - **Facts:** what it makes, for whom, where, at what price, the languages it speaks to its customers
   in, and anything true and specific: hours, process, tools, materials, founders, rituals, a word the
   customers use: three to five phrases from the subject's own pages or reviews, and one odd fact,
@@ -104,9 +103,9 @@ nothing to draw from; "the two minutes of a morning routine are the brand's numb
 ## Three paths
 
 Before any search, end the brief with three paths: three ways into the brand, each from a different
-source above, so each search looks for something different. They differ in feel, not in hue: in
-register (vernacular, heritage, minimal, loud, hand-made, character-led, editorial, material), in how
-the mark is made and in what the imagery is. Write each as a numbered line under `## Paths`: its
+source above, so each search looks for something different. They differ in feel: in register
+(vernacular, heritage, minimal, loud, hand-made, character-led, editorial, material), in how the mark
+is made and in what the imagery is. Write each as a numbered line under `## Paths`: its
 name, what it takes from the brief, which of the category's codes it avoids or keeps, and the plain words to
 search for it:
 
@@ -142,8 +141,8 @@ studios' own sites), choose three real, credited projects with their images on t
 collect them the same way. A link on a site Studio won't open is skipped, and the result says so;
 never try that site again and never ask the user about it.
 
-Each project opened spends one of the project's 15 pages a day; a search's covers spend none. Three
-paths of three projects spend nine, so pages spent on the subject come off the rest.
+Each project opened spends the project's daily page budget, and a search's covers spend none: spend
+it on the paths first. The tool reports what's left.
 
 ## Directions
 
@@ -153,7 +152,7 @@ Look at everything you collected first, every image whole and numbered on one sh
 that holds up becomes a direction, the references showing what it really is, and the best of any
 path may serve another. A direction is one feeling a reference set agrees on ("drawn
 neighbourhood", "quiet apothecary", "loud market stall"), and each is one option of the direction
-step, with its palette and pairing from `look.md`:
+step, with its palette and faces from `look.md`:
 - **Title:** the direction's name, in a few words.
 - **Line:** why it serves the brief: what it would feel like to meet this brand, and where it takes
   a risk.
@@ -162,5 +161,6 @@ step, with its palette and pairing from `look.md`:
 - **Captions:** the project, then what to take from it: "Harbour Study · a loose, confident script as the
   hero". What to take is a principle, never the look to copy.
 
-Recommend the direction that best fits the brief, and say why in its line. The user may mix two;
-write down what they took from each.
+Recommend the direction that best fits the brief: its line says why it fits, and why it leads goes
+in the thread's `done` update (`SKILL.md`, "At every step"). The user may mix two; write down what
+they took from each.
