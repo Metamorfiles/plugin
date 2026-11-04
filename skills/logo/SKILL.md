@@ -22,7 +22,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
 - [ ] 6. Each route's files: colour and one colour, plus the parts it shows
 - [ ] 7. Routes shown and one recommended
-- [ ] 8. After the choice: the mascot first when the brand has one; the small mark, asked; then the final files and small uses (`references/final.md`)
+- [ ] 8. After the choice: the mascot first when the brand has one; the small mark (the logo's own mark is recorded, several are asked); then the final files and small uses (`references/final.md`)
 ```
 
 ### 1. What the brand already decided
@@ -156,7 +156,8 @@ needs no extra word from the user: the mascot cut or drawn out of the chosen log
 files. Only a new layout or version the user didn't ask for needs their word first.
 
 - **The logo has a mark of its own** (a logo put together from parts: its `.svg.json` lists `parts`):
-  that part's file already is the small mark. Nothing is cut; it is only set in its square,
+  that part's file already is the small mark, the only one: there is nothing to choose, so nothing
+  else is made or offered. Nothing is cut; it is only set in its square,
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<the mark part>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x: 0, y: 0, width: 1, height: 1 }, square: true }`.
 - **A part of a drawn logo reads alone** (a monogram of its initials, a seal's middle, the drawing
   without its letters, or the whole logo): cut it from the logo's file,
@@ -167,11 +168,12 @@ files. Only a new layout or version the user didn't ask for needs their word fir
   colours and proportions, and trace it:
   `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], edit: true, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
 
-Offer one to three, check each with `metamorfiles_check_logo`, write them into
-`brand/process/logo.md` as `marks`, each `{ file, title, line }` (the line: what it is and why it
-fits) and one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`. Studio
-shows them on the `process-logo` frame's last page as a profile picture and an app icon, records the
-answer as `mark`, and starts nothing of the imagery until it's answered. Then the imagery, while the
+Check each with `metamorfiles_check_logo` and write them into `brand/process/logo.md` as `marks`,
+each `{ file, title, line }` (the line: what it is and why it fits). Studio shows them on the
+`process-logo` frame's last page as a profile picture and an app icon. One mark, the logo's own, is
+no choice: Studio records it as `mark` when it's written, and nothing is asked. Otherwise offer two
+or three, one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`; Studio
+records the answer as `mark` and starts nothing of the imagery until it's answered. Then the imagery, while the
 final files are made (`references/final.md`): first the chosen logo's redrawn version, when
 `metamorfiles_check_logo` reported a part lost in one colour (`references/drawn.md`, "Other
 versions of it").

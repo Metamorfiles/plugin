@@ -24,7 +24,7 @@ Copy it into your notes and tick each step as you go:
 ```
 - [ ] Brief: brand/process/brief.md, the user's answers and the research below them
 - [ ] 1. Direction: three paths in the brief, references collected for each, directions written, asked, chosen
-- [ ] 2. Logo: three routes with the `logo` skill, reviewed, asked, chosen; then its step 8: the mascot when the brand has one (`step: "character"`), then the small mark (`step: "mark"`), each reviewed and asked
+- [ ] 2. Logo: three routes with the `logo` skill, reviewed, asked, chosen; then its step 8: the mascot when the brand has one (`step: "character"`), then the small mark (`step: "mark"`, asked only when there are several), each reviewed
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
 - [ ] Kit: DESIGN.md (its prose by the copywriter), final logos, fonts and the library; then the imagery guide
 - [ ] Mockups: three shots, their flat designs first, each reviewed
@@ -247,7 +247,7 @@ its frame shows each file as it arrives, so the user watches the step come toget
    the small mark.
 3. **Imagery** (`references/imagery.md`). The mode the brand needs, the style block, and four seeds
    made together, one per option, saved in `brand/process/imagery/`. The seeds the user keeps are the
-   anchors. Start the seeds once the small mark is answered.
+   anchors. Start the seeds once the small mark is chosen.
 4. **Kit**, in this order, since a folder in `assets` must exist and its frame appears once it is
    listed:
    1. **DESIGN.md and the library.** The words are the copywriter's, always: report as `copywriter`
