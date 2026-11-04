@@ -80,8 +80,10 @@ really make it:
   Then photograph it from that file (step 3). A flat print drawn in the photograph at once comes out
   as a graphic laid over it.
 - **Exact artwork** (a label a printer would get as a file, a precise illustration):
-  designed flat first with the `artwork` skill (a screen's interface too, step 5 there), then given
-  to the model as the object's print or the screen it shows.
+  designed flat first with the `artwork` skill, then given to the model as the object's print.
+- **A screen** (a phone, a laptop, a display, a kiosk): its interface is always designed in code
+  first, as step 5 of the `artwork` skill says, never by the image model, then given to the model
+  as the screen it shows.
 
 Then the surface: what it is, its material, how the brand is applied (print, screen-print,
 thermal-print, paint, vinyl, sticker, embroidery, engraving, emboss, foil, display, lightbox), how worn
@@ -124,9 +126,8 @@ add what the object needs, so a whole mockup prompt runs about 300 to 450 words.
   it's applied (printed, screen-printed, embroidered, painted, a sticker, a screen). A method that
   remakes the drawing (embroidery, emboss or deboss, engraving, foil, paint by hand) shows the logo
   as that method makes it: its letters, shapes and colours, in the method's own material (thread and
-  stitches, a raised edge, cut metal, brushwork). A screen shows its flat design (step 2) as a reference the
-  screen shows exactly, as any flat print is. A screen the model designs gives each part of the interface (a button,
-  a field, a card) the colours DESIGN.md gives it, its fill and its text alike, named as colours.
+  stitches, a raised edge, cut metal, brushwork). A screen shows its designed interface (step 2) as a reference the
+  screen shows exactly, as any flat print is.
 - **Words:** every word that appears, quoted exactly, and that no other word, number or label does.
 - **Keep:** the logo from image 1, every letter and every part of its mark as image 1 draws them, in
   its colours and proportions, as its method makes it; its perspective, light and material are the
