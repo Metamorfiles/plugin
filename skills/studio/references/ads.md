@@ -10,7 +10,7 @@ An ad runs where the platform puts it, so make each placement the user buys, fro
 
 - **One message.** An ad is seen for a moment in a scroll: one claim, one picture, one action.
 - **The brand in the first look.** The logo or the small mark is visible without reading; the brand's colours and imagery do the rest. A viewer who doesn't stop should still know whose ad it was.
-- **The offer or the action stated:** "Book a table", "20% off this week", "New: the night range". Never a vague "Learn more" when the action is concrete.
+- **The offer or the action stated:** "Shop the serum", "New: the night range". Never a vague "Learn more" when the action is concrete.
 - **Little text on the image.** The headline and the action; everything else goes in the ad's caption (the variant's `caption`).
 - **Built for thumb size:** the claim and the action large enough to read on a phone at a glance; nothing that matters set small.
 

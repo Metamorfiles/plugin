@@ -20,7 +20,7 @@ Whoever made a design is the worst judge of it. The review looks only at the ren
 1. Finish your own loop first: every `metamorfiles_render_preview` check error fixed.
 2. Hand the review to a reviewer that didn't make the design, and wait for its verdict before you go on. Never start it in the background, and run one reviewer at a time:
    - **Apps that load the plugin's agents** (Claude Code, Cursor, GitHub Copilot, and OpenCode or Antigravity after `metamorfiles setup`): use the `design-reviewer` agent, in the foreground (in Claude Code, `run_in_background: false`).
-   - **ChatGPT desktop app or Codex:** their plugins can't include agents, so spawn a subagent whose instructions are exactly what `metamorfiles_get_guide { name: "design-reviewer" }` returns, started without your conversation (in Codex, `fork_turns: "none"`), and wait for it. A reviewer that has read how the design was made judges the reasoning, not the result, and reads all of it before it starts.
+   - **ChatGPT desktop app or Codex:** their plugins can't include agents, so spawn a subagent whose instructions are exactly what `metamorfiles_get_guide { name: "design-reviewer" }` returns, started without your conversation (in Codex, `fork_turns: "none"`), and wait for it.
    - **Anywhere else:** do the review yourself as a separate pass. Judge only the images, the findings and DESIGN.md.
 3. Give the reviewer only this: the project's absolute path, what to review (`pages/<id>` or `templates/<id>` and, for a change, the frames it touched, `mockups`, or in a new brand the queue: `logo`, `character`, `mark`, `imagery` or `handover`), the task id when there is one, the user's brief in one sentence, the task's decisions (what the user answered, and what was picked for them in Auto), and the sources researched for its facts (each fact with its link and date). Don't explain your design choices.
 4. A piece changes only for a **must fix** or the user's word, in the piece itself, never a copy: a page or template with `metamorfiles_write_file` and a `note` such as "Review fixes: phone pinned to the bottom", a new version of the same item; an image or drawing as `references/images.md` of the `studio` skill says ("Edit or redraw"). Then it is looked at again: only what changed waits. A piece looked at twice without passing goes to the user as it is, the reviewer naming what's still off: a step is asked with `cannot`, one plain line on what couldn't be made; a page or template names it in the summary.
@@ -42,7 +42,7 @@ The reviewer works like this:
 8. A fact only the user can give is never a must fix: name it once as **needs the user**.
 9. The task's decisions, what the user answered or chose, stand: never send one back.
 10. Never change files. Report only.
-11. Record your verdict before you reply, every time: `metamorfiles_review_verdict { for: "logo", summary: "<one plain line>", must: [{ piece: "logo:cut", fix: "<where, what's wrong, the fix>" }], suggestions: [{ piece: "logo:cut", note: "<where, what could be better>" }], task: "<id>" }`. `for` is the queue you looked at; every piece in it passes but those you name in `must`, each by its id from the queue, as each suggestion is; `summary` is the line for the user's thread (what you checked, and what you found); `task`, when you were given one.
+11. Record your verdict before you reply, every time: `metamorfiles_review_verdict { for: "logo", summary: "<one plain line>", must: [{ piece: "logo:minutes", fix: "<where, what's wrong, the fix>" }], suggestions: [{ piece: "logo:minutes", note: "<where, what could be better>" }], task: "<id>" }`. `for` is the queue you looked at; every piece in it passes but those you name in `must`, each by its id from the queue, as each suggestion is; `summary` is the line for the user's thread (what you checked, and what you found); `task`, when you were given one.
 12. Reply with **ship** or **fix first**, then each must fix: the piece, where, what's wrong, the fix in one sentence (with DESIGN.md tokens where it's about colour or type), then the suggestions.
 
 ### Calibration
@@ -50,9 +50,9 @@ The reviewer works like this:
 How the rubric reads, in examples. Hold every look to the same bar:
 
 - A mark set beside the name came out smaller and closer than its composition planned, still clearly apart from the letters and reading as one piece: **passes**. The plan was a plan.
-- A machine missing a part it needs to work, or a part with nothing holding it (a bicycle with no chain, a wheel beside its stand with nothing holding the axle): **must fix** (Physics). A part that passed the first look and the fix didn't touch: **passes** again, never judged a second way.
+- An object missing a part it needs to work, or a part with nothing holding it (a pump bottle with no pump on its neck, a dropper hanging in the air above its bottle): **must fix** (Physics). A part that passed the first look and the fix didn't touch: **passes** again, never judged a second way.
 - A figure with a limb too many, even where the fix you're checking is elsewhere in the picture: **must fix** (Anatomy), whenever it's seen.
-- A tool drawn bending where a rigid one can't: **must fix** (Physics).
+- A glass dropper drawn bending where glass can't: **must fix** (Physics).
 
 ### Checklists
 
@@ -67,7 +67,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 - **Character:** the brand's character is itself, as its sheet shows it, in every figure of a sheet and every picture. In a mockup or a print it stays recognisably itself: a stylisation the design means is not a fault.
 - **Medium:** the brand's own imagery (sample images, library images, mascots, sheets) is in the same medium as its other pictures. Mockups and flat prints are designed freely: their medium is never a fault.
 - **Real people and events:** no generated photograph of a real person or a real event.
-- **The brand's own rules:** once DESIGN.md exists, the picture keeps every rule its Do's and Don'ts set for a piece like it (a colour used once per piece). The logo or the name set large, tight, edge to edge, bled or cropped as the composition's idea is design, never a fault: the logo's clear space guides where a logo is placed, not how a design may use it, and whether that composition is the best one is the user's call.
+- **The brand's own rules:** once DESIGN.md exists, the picture keeps every rule its Do's and Don'ts set for a piece like it (the accent kept to its role). The logo or the name set large, tight, edge to edge, bled or cropped as the composition's idea is design, never a fault: the logo's clear space guides where a logo is placed, not how a design may use it, and whether that composition is the best one is the user's call.
 
 #### Logo route
 

@@ -26,7 +26,7 @@ The brand's files come from its exported kit; the edits are yours, with your own
    - **shadcn**: map the brand's roles onto its variables in `:root` (`--background`, `--foreground`, `--primary`, `--primary-foreground`, `--muted`, `--border`, `--radius`…) from `brand-web.css`'s `--brand-*` values, and keep its `@theme inline` mapping.
    - **CSS variables**: link or copy `brand-web.css` and use its `--brand-*` variables.
    - **Design tools that import tokens** (Figma variables, Style Dictionary): `brand.tokens.json`, in the W3C Design Tokens format.
-   Use the brand's names for its colours in what you write (`--brand-cut`), never hex values in components.
+   Use the brand's names for its colours in what you write (`--brand-clay`), never hex values in components.
 4. **The fonts**: copy `Website/fonts/` into the project's public or assets folder and load them with `@font-face` (as in `brand-web.css`), or with the framework's own loader (`next/font/local` in Next.js). Fonts from the user's own files keep their own licence: say which ones you used.
 5. **The icons and the shared-link image**: copy the icons, `site.webmanifest` and `og-image.png` to the site's root (`public/` in most frameworks), and add `snippet.html`'s lines to the page head (or the framework's metadata: Next.js's `metadata.icons` and `openGraph.images`). Replace any framework default icons they supersede.
 6. **Check it**: build or run the project, open a page, and confirm the brand's fonts load (no fallback), the colours read, and the favicon shows. Tell the user what changed, in plain words, and what they should look at.

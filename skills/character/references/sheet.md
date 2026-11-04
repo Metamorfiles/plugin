@@ -59,6 +59,6 @@ The reviewer looks at it before anything is built on it (the `review` skill).
   `metamorfiles_import_image { path: "<the sheet>", name: "00-sheet", folder: "brand/<the character's folder>" }`,
   and listed first in that folder's `anchors`, so it heads the character's frame on the brand board.
 - **Using it:** every image of the character passes the sheet as image 1, "Image 1 is the reference
-  sheet of <name> from every side: draw exactly one <name>, in this scene's own pose", and the pose,
-  the head's angle and the expression come from the scene's prompt, never from the sheet
+  sheet of <name> from every side: draw exactly one <name>, in this scene's own pose", and the pose
+  and the expression come from the scene's prompt, never from the sheet
   (`references/images.md` of the `studio` skill).

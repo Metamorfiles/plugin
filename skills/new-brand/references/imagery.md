@@ -53,10 +53,13 @@ a look to recognise, not rules to count.
    really do (the touchpoints and the kit's uses: a different subject, scale and framing each), so
    the user sees whether the style holds across them. Their props come from the brief's own world:
    what the business makes and uses. A character brand's seeds are the character in the brand's
-   moments, each made from its sheet (`images.md` of the `studio` skill, "The prompt"). Each is
+   moments. Each is
    `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["templates/brand-board#process-direction:<chosen id>"], folder: "brand/process/imagery", ground: "<the direction's paper>", wait: false }`,
    the prompt starting "Image 1 is the chosen direction: take its palette, light and mood, never its
-   pictures"; the logo never goes in, since a model shown a logo draws it into the picture;
+   pictures"; a character brand's seed passes its sheet first and the direction second,
+   `references: ["<the character sheet>", "templates/brand-board#process-direction:<chosen id>"]`,
+   identity before style (`images.md` of the `studio` skill, "The prompt"). The logo never goes in,
+   since a model shown a logo draws it into the picture;
    each at the shape the brand's images will mostly be used at (here 4:5), `ground` the chosen
    direction's paper for drawings on a flat paper field, so they already sit on it (a photograph
    takes no `ground`); collect each with `metamorfiles_image_status { id }`. The step's
@@ -71,9 +74,8 @@ a look to recognise, not rules to count.
    and what to change ("fewer, bolder lines").
 3. The seeds the user keeps are the **anchors**: the kit brings each into the library folder
    (`SKILL.md`, Kit) and DESIGN.md lists the file names that returned. The library below is grown
-   from two or three of them (`references: ["brand/refs/<anchor>", ...]`), since the library sheet
-   doesn't exist yet; every image after the kit takes the library's sheet instead (`images.md` of
-   the `studio` skill, "The prompt").
+   from two or three of them (`references: ["brand/refs/<anchor>", ...]`); which images are
+   references, then and after the kit: `images.md` of the `studio` skill, "The prompt".
 
 ## The library
 

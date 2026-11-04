@@ -63,7 +63,7 @@ line that would sit the same under every route belongs to none. Read the three t
 
 Each line goes on its route's option as `composition` in `brand/process/logo.md`, for the reviewer;
 the user sees the route's `line`, written for them. Name each route now with one lowercase word, its
-`id` in `logo.md` (`rising`, `open`): every file of the route starts with it (step 6), so the
+`id` in `logo.md` (`list`, `minutes`): every file of the route starts with it (step 6), so the
 board shows each route's work in its own band as it arrives.
 
 In a new brand, write the three into `brand/process/logo.md` now, before anything is drawn: each
@@ -122,8 +122,8 @@ and the details are gone. A drawing of solid shapes becomes one solid shape with
 cut out.
 
 Save every file under `brand/process/logo/`, its name starting with its route's id and a hyphen:
-`folder: "brand/process/logo"` and `name: "rising-drawn"` for an image, an `output` such as
-`brand/process/logo/rising-ink.svg` for the other tools.
+`folder: "brand/process/logo"` and `name: "shelf-drawn"` for an image, an `output` such as
+`brand/process/logo/minutes-ink.svg` for the other tools.
 
 ### 7. Show them
 

@@ -6,8 +6,8 @@ part set from a real font: a mark beside the name, the supporting words, a seal.
 letters is drawn onto the set word instead (`symbol.md`, "Compose it on the word"). The route's
 composition (`SKILL.md`, step 3) says what leads and how the parts meet.
 
-`metamorfiles_compose_logo { layout: "row", align: "baseline", parts: [{ file: "<the mark .svg>" }, { file: "<the wordmark .svg>" }], output: "brand/process/logo/rising.svg" }`
-sets a mark standing on the word's baseline, before it. A logo drawn whole is one part, with its
+`metamorfiles_compose_logo { layout: "row", align: "baseline", parts: [{ file: "<the wordmark .svg>" }, { file: "<the mark .svg>" }], output: "brand/process/logo/minutes.svg" }`
+sets a mark standing on the word's baseline, after it. A logo drawn whole is one part, with its
 route's supporting words, if any, composed with it.
 
 ## Choosing a layout
@@ -32,6 +32,6 @@ centred under a word with no straight edge (a drawn or slanted first letter), fl
 the word really has.
 
 Every lockup keeps its settings beside it (`<file>.svg.json`); change one thing with
-`metamorfiles_compose_logo { from: "brand/process/logo/rising.svg", align: "cap", output: "brand/process/logo/rising.svg" }`.
+`metamorfiles_compose_logo { from: "brand/process/logo/minutes.svg", align: "cap", output: "brand/process/logo/minutes.svg" }`.
 Every file made from the same parts keeps their sizes and positions. Which files a route has before
 the choice: `SKILL.md`, step 6.

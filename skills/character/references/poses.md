@@ -16,7 +16,7 @@ Image 1 is the reference sheet of the character from every side: draw exactly on
 pose, the same character in every way.
 Who it is: <the Character lines>.
 Nothing about it changes.
-The pose: <in one sentence, what it is doing and feeling, and which way its head turns>.
+The pose: <in one sentence, what it is doing and feeling>.
 <Only when the pose's idea needs a prop: it holds <the brand's own object>, which is not part of it.>
 Alone on a transparent background, flat colours only, no letters, no ground line or shadow.
 ```
@@ -27,8 +27,8 @@ pose, a prop is named only when the drawing's idea needs it (the brand's own obj
 says it isn't part of the character, so the model doesn't merge the two and carry the prop into
 every later drawing.
 
-A new pose is drawn anew, never as an edit of image 1: an edit keeps what is already in the image,
-so the old head stays on a newly drawn body. An edit (`edit: true`, the image to change first in `references`, the
+A new pose is drawn anew from the sheet, never as an edit (why: `references/images.md` of the
+`studio` skill, "Edit or redraw"). An edit (`edit: true`, the image to change first in `references`, the
 prompt starting "Edit image 1:", then what stays exactly as it is) is only for a change that keeps
 the pose: an expression, a prop swapped, a colour fixed.
 
@@ -37,6 +37,9 @@ the pose: an expression, a prop swapped, a colour fixed.
 - **Several at once**: start each with `wait: false`, each from the sheet, then wait for each with
   `metamorfiles_image_status { id }`.
 - Save each into the character's folder with the same `trace` colours as the chosen drawing.
+- **Reviewed before it's delivered**: outside a new brand, each new pose waits in the `handover`
+  queue (the `review` skill; the reviewer reads it with `metamorfiles_review_queue { for: "handover" }`),
+  and Studio holds the task until it passes.
 
 ## The set
 

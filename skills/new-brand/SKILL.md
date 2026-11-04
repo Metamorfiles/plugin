@@ -205,6 +205,13 @@ options:
       - { file: brand/process/logo/minutes.svg, ground: "#f4f3ef" }
       - { file: brand/process/logo/minutes-ink.svg, ground: "#ffffff" }
       - { file: brand/process/logo/minutes-dial.svg, ground: "#f4f3ef", small: true }
+  - id: shelf
+    title: The shelf
+    line: The name resting on the edge of a bathroom shelf, where every Lumen routine starts.
+    composition: Drawn whole in one hand-cut style, the name standing on the shelf's line, which runs on past its last letter.
+    files:
+      - { file: brand/process/logo/shelf-drawn-1a2b3c4d.svg, ground: "#f4f3ef" }
+      - { file: brand/process/logo/shelf-ink.svg, ground: "#ffffff" }
 ---
 
 Notes for the record: why each option, what the user said.
@@ -281,8 +288,8 @@ board in the panel, or any app writes it into `kit/` with `metamorfiles_export_k
 
 - **Facts are never created**: no claims, prices, awards, history, addresses or customers beyond
   what the user gave. What a template will need goes to Known gaps.
-- With no products in the brief, the copywriter proposes names (the `copywriting` skill, Names); the
-  handover names them as proposals.
+- With no products in the brief, the copywriter proposes names, and the handover lists them as
+  proposals (the `copywriting` skill, Names).
 - **Collected references are style only.** They, and the direction card made of them, may be shown
   to an image model for their hand, palette and light, never as content to copy: never a
   reference's letters, mark, layout or artwork. None of them ever goes in the kit.

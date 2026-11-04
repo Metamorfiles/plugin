@@ -18,7 +18,7 @@ Name the one reason the reader should care, from the brief: the outcome ("bright
 ## Write
 
 - Say the thing itself. A reader scrolling past gives a line one look, so the plain, concrete version wins over the witty one, and the words they'd use win over the brand's internal terms.
-- One idea per line. The headline makes the promise; the support line makes it believable; the call to action names the next step and what it gets them ("Shop the serum", "Claim a free sample").
+- One idea per line. The headline makes the promise; the support line makes it believable; the call to action names the next step and what it gets them ("Shop the serum", "See the night range").
 - Voice stays the same everywhere; tone can loosen or tighten with the format (a story can be looser than a feed post).
 - Capitalize as the brand does in DESIGN.md; with no rule there, only the first word and names. When DESIGN.md's `casing` sets a role in capitals, the design does it (`--brand-<role>-case`): write the words in sentence case and let it.
 

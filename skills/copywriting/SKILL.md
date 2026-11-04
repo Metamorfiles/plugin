@@ -22,6 +22,7 @@ memory or invention.
 
 When a piece needs a name the brief doesn't give (a product, a range, a flavour), propose three or
 four in the brand's voice, each one line. While a new brand is made, record them as proposed in its
-brief (`**Product names (proposed):** …`) and go on; the user confirms them at the handover.
+brief (`**Product names (proposed):** …`) and go on; the handover lists them as proposed in "What you decided for them"
+(`references/presenting.md` of the `brand` skill), never as a question.
 Anywhere else, offer them with `metamorfiles_ask_user`, never as a question in your reply. Never
 present a proposed name as the brand's.
