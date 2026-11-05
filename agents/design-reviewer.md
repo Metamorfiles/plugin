@@ -38,7 +38,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 
 - **Anatomy:** every figure is whole and possible: count each one's limbs, hands, fingers and head on its own body, also where figures overlap. A part hidden behind something or cut by the frame is fine.
 - **Physics:** every object is possible and works the way its kind works: it holds together, rests on something, opens where it opens.
-- **Lettering:** every line set in the picture says exactly what it was asked to say, unless the brief gives the words. Read words at the size the viewer meets them, and enlarge only to confirm a fault you suspect (`metamorfiles_read_file { path: "<the picture>", region: { x: 0.3, y: 0.4, width: 0.3, height: 0.15 } }`), letter by letter, accents and punctuation included, never to look for differences from a file: a stray, missing or doubled mark is a fault, as a misspelled word is.
+- **Lettering:** every line set in the picture says exactly what it was asked to say, unless the brief gives the words. Read words at the size the viewer meets them, and enlarge only to confirm a fault you suspect (`metamorfiles_read_file { path: "<the picture>", region: { x: 0.3, y: 0.4, width: 0.3, height: 0.15 } }`), letter by letter, accents and punctuation included, never to look for differences from a file (a logo is held to its file as its kind's checklist says): a stray, missing or doubled mark is a fault, as a misspelled word is.
 - **Subject:** it shows the figures, objects and action its idea rests on. What was meant as distinct is distinct: a set is never one figure or object repeated.
 - **Character:** the brand's character is itself, as its sheet shows it, in every figure of a sheet and every picture. In a mockup or a print it stays recognisably itself: a stylisation the design means is not a fault.
 - **Medium:** the brand's own imagery (sample images, library images, mascots, sheets) is in the same medium as its other pictures. Mockups and flat prints are designed freely: their medium is never a fault.
@@ -64,7 +64,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 #### Mockup
 
 - The picture checks above.
-- The logo is this brand's logo, applied the way the shot means it. Read what the shot intends from what it shows, look at the photograph whole first, and read its words as Lettering says.
+- The logo is this brand's logo, applied the way the shot means it. Look at the photograph whole first, then hold the mark to its file: the mark enlarged (`metamorfiles_read_file { path: "<the mockup>", region: { x: 0.3, y: 0.4, width: 0.3, height: 0.15 } }`) beside the logo file, letter by letter and part by part, for the faults below.
   - A fault breaks its identity: a letter wrong, missing, extra or merged, or the words changed; a part of the mark added, missing, doubled, merged or moved; stretched or squashed beyond what its surface's shape explains; colours other than its own, beyond what the light and the method explain; an effect on the artwork itself (an outline, a glow, a drop shadow).
   - Never a fault, since the shot means it: perspective and the logo turning with its object; the scene's light, shadows, glare and reflections; its surface's curves, folds and creases; cut by the frame or covered by a hand or an object; its method's look (thread and stitches, ink in the fibre, one-colour relief, detail the method can't hold); wear on a used object; a small drift in a curve or a proportion that leaves every part where it is.
 - The brand's own products match what the brief and the brand's files say they are.
@@ -76,7 +76,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 A print or a face the image model drew flat, that a mockup's photograph will be made from.
 
 - The picture checks above.
-- The logo is this brand's logo: every letter and every part of its mark as its file draws them, in its own colours and proportions, with no effect laid on it (an outline, a glow, a drop shadow).
+- The logo is this brand's logo, held to its file side by side, letter by letter: every letter and every part of its mark as the file draws them, in its own colours and proportions, with no effect laid on it (an outline, a glow, a drop shadow).
 - The only words are the brand's or the brief's, spelled right, read as Lettering says.
 - It reads as the print it's for: whole, and nothing that matters cut by the trim or the die-cut.
 

@@ -132,8 +132,7 @@ Then the craft, for every model, and that model family's file for what differs (
   packaging text, a logo or an interface; place the real file in the layout, or pass it as a
   reference with what must stay.
 
-One exception: a mockup photograph, or a flat print the image model draws, names its colours in
-words and quotes its words, as the `mockup` skill says.
+One exception: a mockup's photograph and its flat designs, whose prompts are the `mockup` skill's.
 
 Example, a carousel slide for Lumen with Dew as its mascot (a mascot is drawn, even where the brand's imagery is photographs):
 

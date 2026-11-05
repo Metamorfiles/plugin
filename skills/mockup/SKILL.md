@@ -1,191 +1,117 @@
 ---
 name: mockup
-description: Shows a brand on its real objects as art-directed product photography in Metamorfiles Studio: a pack, tin, bottle, box, range, bag, sign, card, tag, cup, garment or merchandise. Use for a new brand's mockups and whenever the user wants to see their brand, a product or a range on the real thing, even if they only say "a mockup" or "show it on a bottle".
+description: Shows a brand on its real objects as real photographs in Metamorfiles Studio: a pack, tin, bottle, box, range, bag, sign, card, tag, cup, garment or merchandise. Use for a new brand's mockups and whenever the user wants to see their brand, a product or a range on the real thing, even if they only say "a mockup" or "show it on a bottle".
 license: MIT
 ---
 
 # Mockups
 
-A mockup is an art-directed photograph: one clear idea per shot, light with intent, the print
-designed as a system. The image model always makes it whole. The brand's real files and the flat
-designs made for it are references it draws from: nothing is ever pasted, placed or baked onto a
-photograph, as a default or as a fallback.
+A mockup is a real photograph of the brand on a real object. The image model makes it whole, from
+the brand's real files as references: nothing is ever pasted or placed onto a photograph. Its hard
+part is the mark: image models redraw lettering, and no prompt holds a logo pixel-exact. So the
+prompt gives the model the master file and says how the mark is physically made on the object, and
+the reviewer holds the mark to that file.
 
 ## Checklist
 
 ```
-- [ ] 1. The shots chosen: one idea each, different from each other; the packs one system
-- [ ] 2. What's printed on each object decided: the logo alone, designed in place, a flat print, set copy or a screen
-- [ ] 3. The flat designs made and reviewed first
-- [ ] 4. Each photograph made whole, from its prompt, the brand's files and the passed flats; all together
-- [ ] 5. Reviewed (the `mockups` queue); each must fix made once, the way its fault calls for
+- [ ] 1. The shots: one idea each, from the brand's world
+- [ ] 2. Per shot, what's on the object: the logo alone, a face designed in place, or a flat design
+- [ ] 3. Each photograph made whole from one prompt, all together
+- [ ] 4. Reviewed; each must fix made once: the mark by an edit, anything else made again
 ```
 
 ### 1. The shots
 
-Read [references/taste.md](references/taste.md) first: what strong mockups do, and the weak ones to
-recognise. One idea per photograph, each a different idea and a different part of the system, from
-the brand's own world: what it really makes (its brief, its touchpoints) and the moments and places
-it lives in. For skincare made for short mornings: the serum on a steamed-up bathroom shelf at
-seven, one hand reaching in. Never a plain product standing on a plain floor.
+Read [references/taste.md](references/taste.md) first. One idea per photograph, each a different
+part of the system, from the brand's own world: what it really makes and the moments and places it
+lives in. For skincare made for short mornings: the serum on a steamed-up bathroom shelf at seven,
+one hand reaching in. Never a product standing alone on a plain floor. The brand's products are one
+packaging system across the shots, as a real range is; a business with no product to show gives its
+shots to what it uses (a sign, merch, a bag, a placement). People appear as cropped hands and arms,
+a face only when the shot is about a person.
 
-Cameras and sets to build an idea with, never the idea itself: the range as a pattern cropped by the
-frame; a stack; the product on what's inside it; in use, a cropped hand acting on it; the family
-in a row; a detail of the print or the material, shallow depth; in its place, real light falling
-across it; one witty moment, when the brand's voice allows it.
+### 2. What's on the object
 
-Across the shots, the brand's products are one packaging system, as a real range is: every pack is
-the same design, and a shot shows a line or a variant of it (a variant in its colour, another size),
-never a new pack design. Or show one product, or none, and give the other shots to what the
-business uses besides its packs: merch, a sign, a shelf strip, a bag, a placement (a poster, a bus
-shelter, a post on a phone).
+Decide it per object, from the shot's idea and the surface. The master is the file the model
+reproduces exactly: image 1 of the photograph.
 
-For each, decide in your notes:
-- **The backdrop and the light:** from the brand's direction and the shot's idea, a real place or a
-  set built for it. Never the weak default: flat, unconsidered light, or a void with no intent.
-- **The people:** cropped hands, arms and sleeves; a face only when the shot is about a person.
-- **The idea:** one line, the shot's composition: what it shows, from where, what leads.
-- **The physics:** how this object really sits and opens, said in the Subject (step 4).
+- **The logo alone** (a tag, a business card, an embroidered chest, a fascia with only the name):
+  the master is the logo file the object's ground calls for (the reversed one on a dark object).
+- **Designed in place** (a can, a box, a label, a deck's graphic, merch: a face whose only words are
+  the logo and a short line the brief gives, seen in one shot): design the face as a packaging
+  designer would, the way "The composition" in `references/design.md` of the `studio` skill decides
+  any piece, measured against the best of its kind (its search, or the packs the brand's research
+  collected): one graphic idea from the brand's world that carries the whole face (the mark at a
+  scale the edges crop, a colour per variant, the name set huge, the pattern as the material), said
+  in one line, and what reads first, second and third. The image model draws the face in the
+  photograph from that idea and places the parts itself. The brand's imagery, character, pattern,
+  palette and type inspire it, adapted for this object; only the logo and the words are exact. The
+  master is the logo file.
+- **A flat design** (a pack another shot shows too, a sticker with art, a poster that is a picture):
+  drawn flat by the image model, the whole print straight on, on a plain field of the brand's paper
+  colour, designed the same way, its prompt step 3's lines without Scene and Object:
+  `metamorfiles_generate_image { prompt, references: ["brand/logos/logo.svg", "brand/refs/<an anchor>"], width: 1600, height: 1600, ground: "<the paper colour>", folder: "brand/mockups/artwork", name: "serum-label" }`.
+  It's reviewed in the `mockups` queue before any photograph is made from it, and the passed flat
+  is the master, with the logo file as image 2, so every shot shows the same pack. A face with set
+  copy (a label's text, a menu) is a page in code, and a screen is the brand's real one or a page
+  (the `artwork` skill, step 5); its file is the master the same way.
 
-### 2. What's printed on each object
+Placed as the business would really make it: where, how large and by what method a printer,
+signwriter or factory puts a mark on this kind of object. Real words only: the brand's name, the
+brief's words and its product names (proposed as the `copywriting` skill's Names says when the
+brief gives none); small print only when its real words were supplied.
 
-Decide it per object, from the shot's goal, its composition and the surface, as the business would
-really make it:
-- **The logo alone** (a tag, a business card's face, an embroidered chest, a fascia with only the
-  name): nothing but the logo file the ground calls for, applied the way a printer or signwriter would
-  put it ("On the object", below).
-- **Designed in place** (a box, a label or merch shown in one shot, its only words the logo and a
-  short line the brief gives): design the face first, as a
-  packaging designer would, the way "The composition" in `references/design.md` of the `studio`
-  skill decides any piece: one graphic idea from the brand's world, measured against the best packs
-  of its kind, that carries the whole face (the mark at a scale the edges crop, a colour per
-  variant, the name set huge, the pattern as the material), said in one line, and what reads first,
-  second and third. The image model draws the face in the photograph from that idea, its hierarchy
-  and the materials, and places the parts itself. The brand's files are its references, not its
-  limits: its imagery, character, pattern, palette and type inspire the design, in variants and
-  adaptations made for this object. Only the logo and the words are exact.
-- **A flat print** (a sticker with art, a sign with the name, a poster that is a picture and the
-  name, and any pack another shot shows too, when its only words are the logo and at most a short
-  line the brief gives): the image model draws it flat, the whole print straight on and filling the
-  image, on a plain field of the brand's paper colour (`ground`), a die-cut's edge drawn as part of
-  the print, never on a transparent background (the model's cutout cuts into the design itself), from
-  the logo and the brand's files, decided as "The
-  composition" says and prompted with its idea, what reads first, second and third, and the
-  brand's materials:
-  `metamorfiles_generate_image { prompt, references: ["brand/logos/logo.svg", "brand/refs/<an anchor>"], width: 1600, height: 1600, ground: "<the paper colour>", folder: "brand/mockups/artwork", name: "mirror-sticker" }`.
-  A flat print drawn in the photograph at once comes out as a graphic laid over it.
-- **Set copy** (a menu, a label's text, a poster with copy, exact artwork a printer would get as a
-  file): designed in code as a page with the `artwork` skill, which brings it into
-  `brand/mockups/artwork`.
-- **A screen** (a phone, a laptop, a display, a kiosk): the brand's real screen when it has one,
-  brought in as it is; else its interface designed in code as a page, as step 5 of the `artwork`
-  skill says, never by the image model.
+### 3. The photograph
 
-Then the surface: what it is, its material, how the brand is applied (print, screen-print,
-thermal-print, paint, vinyl, sticker, embroidery, engraving, emboss, foil, display, lightbox), how worn
-(`new` or `used` for a business starting out; `worn` or `weathered` only when its age or trade is the
-point) and its form (flat, curved or soft). You decide them, never the image model. Real words only:
-the brand's name, the brief's words and its product names; when the brief gives none, names are
-proposed as the `copywriting` skill's Names says. Small print (a weight, an ingredient list, an
-address) only when its real words were supplied; never an invented price, claim or figure.
+All the shots together, each
+`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "brand/refs/<an anchor>"], folder: "brand/mockups", name: "serum-on-shelf", wait: false }`,
+collected with `metamorfiles_image_status { id }`, its shape the object's (portrait for a bottle,
+landscape for a sign). The master is image 1; then, each with one role, the logo when the
+master is a flat, a passed flat when the brand's pack is in frame, and what a face designed in
+place draws on (the character sheet, one or two of the imagery's anchors). Which images may go in:
+`references/images.md` of the `studio` skill, "The prompt", with its model family's file. Write the
+prompt in short labelled lines, in this order, each holding only its own:
 
-### 3. The flat designs, reviewed first
+- **Images:** each by number and role. "Image 1 is the brand's logo: reproduce it exactly."
+- **Scene:** a real photograph of a real moment, as someone there would take it: the place (as
+  "Scene" in `references/images.md` of the `studio` skill says), the light and its direction, the
+  camera's distance and angle, and a sign of real use. Studio wording ("professional", "editorial",
+  "studio", "cinematic") only for a shot that is a studio shot: it pulls toward a retouched ad.
+- **Object:** the complete object as it's really made, with its parts and hardware, how it sits or
+  is held, and the moment: a bottle's cap, glass and label stock; a box's folded seams; a tote's
+  handles and stitching. The model fills whatever isn't said with its defaults.
+- **Design** (a face designed in place): its idea in one line and what reads first, second and
+  third; which images it draws from and how it adapts them (the mascot from the character sheet in
+  a new pose, the anchor's imagery as the label's illustration). The model places the parts.
+- **Print:** the method and material (a printed paper label, screen-print on cotton, embroidery, a
+  foil stamp, paint on a sign), the master printed on it naturally:
+  following the surface's curve, grain or folds, in the scene's light and shadow, under the
+  object's hardware where it has some.
+- **Words:** every word that appears, quoted, appearing once; the brand's name spelled letter by
+  letter.
+- **Keep:** by name, what the master fixes: the logo's letters, their shapes, colours and
+  proportions; a passed flat as designed; the object's parts. The rest is designed freely in the
+  brand's style. No other text, logos, badges or watermarks.
 
-A design other pieces are made from is reviewed before it's reused, so the flats come first and
-the photographs only from passed flats. A flat drawn by the image model is reviewed in the
-`mockups` queue (the `review` skill; the reviewer reads it with
-`metamorfiles_review_queue { for: "mockups" }`), its must fixes made as step 5 says. A flat made as a
-page is reviewed once, as its page, before it's exported (the `artwork` skill); the file it brings
-in isn't looked at again. A brand's real screen, brought in as it is (step 5 of the `artwork`
-skill), is the brand's own file and is never reviewed.
+Describe what you want; never a guard like "only on the label", which makes the model lay the design
+over the photograph.
 
-### 4. Make each photograph
+### 4. Review, and fix
 
-Make each to pass the Mockup checklist of the `review` skill's Rubric, which the reviewer holds it
-to. All the shots together, each from the passed flats it shows: a pack in several shots is given
-to each as its passed flat ("Image 2 is the brand's pack: the same design, only the variant's
-colour and name change"), and that holds wherever the brand's products appear, behind another piece
-too: they're the packs the brand designed, never blank stand-ins. An unreviewed photograph is never
-a reference for another shot. Each
-`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/logos/logo.svg", "brand/mockups/artwork/serum-box-1a2b3c4d.png"], folder: "brand/mockups", name: "serum-on-shelf", wait: false }`,
-collected with `metamorfiles_image_status { id }`. The references are the brand's real files, numbered
-by role: image 1 the logo file the object's ground calls for (the reversed one on a dark object), its
-letters and parts kept; then the passed flats, and what the design draws on as inspiration: the
-character sheet, one or two of the imagery's anchors (which images may go in:
-`references/images.md` of the `studio` skill, "The prompt"). Write the prompt in labelled
-sections, in this order; each carries only what its label says, and nothing else goes in.
+Reviewed in the `mockups` queue (the `review` skill; in a new brand, `handover` is the final gate).
+A piece changes only for a must fix or the user's word, and each must fix gets one fix, as the
+image's new take (`references/images.md` of the `studio` skill, "Edit or redraw"):
 
-- **Scene:** the frame as a photographer sets it up: "Editorial product photograph", its shape and
-  lens; what leads and what stays empty; the set (where it is and what of the outside shows, as
-  "Scene" in `references/images.md` of the `studio` skill says), the light and where its shadows fall. Weather or
-  wear (rain, dust, steam, scuffs), when the shot has it, is said once here and stays light: it never
-  covers the print.
-- **Subject:** the one moment the shot catches, in one line, and every object as it is at that
-  instant: a lid being lifted is still on its jar, one lifted off rests beside it; a pack being
-  opened is still closed, an open one shows its real contents. A part that hangs, runs or ties says
-  what it is attached to and where it goes (a tag on the bag's handle, a strap from the bag to the
-  shoulder). Hands as that Subject says: cropped, one action, never which finger does what.
-- **The print:** what is on the object and how it's designed. The logo alone: from image 1, placed
-  as "On the object" says. A designed face: its idea and what reads first, second and third, the
-  model placing the parts; the design drawn from which images and how it adapts them (the mascot
-  from image 3 in a new pose, the imagery of image 4 as the label's illustration). A passed flat:
-  that image's design, as it is. How it's applied (printed, screen-printed, embroidered, painted, a
-  sticker, a screen). A method that remakes the drawing (embroidery, emboss or deboss, engraving,
-  foil, paint by hand) shows the logo as that method makes it: its letters, shapes and colours, in
-  the method's own material (thread and stitches, a raised edge, cut metal, brushwork).
-- **Words:** every word that appears, quoted exactly, and that no other word, number or label does.
-- **Keep:** the logo from image 1, every letter and every part of its mark as image 1 draws them, in
-  its colours and proportions, as its method makes it; its perspective, light and material are the
-  photograph's. A passed flat as designed; the rest is designed freely in the brand's style. No
-  other logo, mark, badge, claim, price or small print.
+- **The mark or a word wrong:** an edit of the take the reviewer sent back, its master after it,
+  in the region around the mark (the rest stays exactly as it was), naming the fault and restating
+  the Keep line:
+  `metamorfiles_generate_image { prompt: "Edit image 1: the label's wordmark is redrawn; draw the logo's letters as image 2 does, in the label's curve and light. Keep the bottle, the hand and the light.", references: ["brand/mockups/serum-on-shelf-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, region: { x: 0.3, y: 0.2, width: 0.4, height: 0.4 }, width: 1600, height: 2000, replaces: "brand/mockups/serum-on-shelf-1a2b3c4d.png" }`.
+- **Anything else** (a print laid over the photograph or made another way than named, the object
+  or its physics, a figure, the brand's products): made again from its prompt, with the line that
+  caused it said fully (`references/taste.md` names each fault's cause), never from the faulty take.
 
-A flat print photographed on its own (a sticker on a mirror, a poster on a wall) is given as image 1,
-with the camera the shot's own (step 1); the brand's pack is image 2 when its products are in frame.
-Its prompt has Scene, Subject and a short Print line (image 1's design, its material, light and
-foreshortening), with no Keep section. The print lies in its surface's plane and turns with it,
-under the shadows, glare and drops that fall on the surface around it. Name its colours, never as
-hex, and never ask for it "exactly as drawn": either makes it a flat graphic laid over the photo.
-`metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["brand/mockups/artwork/mirror-sticker-1a2b3c4d.png"], folder: "brand/mockups", name: "mirror-sticker", wait: false }`
-
-### 5. Review, and fix
-
-Get the review of the `mockups` queue (the `review` skill); in a new brand, `handover` is the final
-gate for the whole kit. A piece changes only for a must fix the Mockup or Flat design checklist
-names (its picture checks included), or for the user's word. Each must fix gets one fix, its method
-chosen from what the fault is before you act, never from looking at a failed attempt. A fix is the
-image's new take, as `references/images.md` of the `studio` skill says ("Edit or redraw"):
-
-- **The logo or a word wrong** (a letter, a part of the mark, a word): an edit of that place only,
-  the image first and the logo file after it, the prompt naming the fault and keeping the
-  photograph's perspective and light:
-  `metamorfiles_generate_image { prompt: "On the box, the logo's last letter is missing: draw it as image 2 does, in the box's plane and light", references: ["brand/mockups/serum-on-shelf-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, region: { x: 0.3, y: 0.2, width: 0.4, height: 0.4 }, width: 1600, height: 2000, replaces: "brand/mockups/serum-on-shelf-1a2b3c4d.png" }`.
-- **The method wrong, or a print that floats:** an edit of its region, the photograph first and the
-  print's passed flat after it, saying only that the print lies in its surface in the scene's
-  perspective and light, made by the method named.
-- **A figure or the character wrong** (Anatomy, Character): an edit of its region, the character
-  sheet after the image when it's the character; made again from its prompt when the pose or the
-  figure itself is the fault (`references/images.md` of the `studio` skill, "Edit or redraw").
-- **The physics or the subject wrong** (an object that couldn't exist, the moment missing): made
-  again from its prompt with the physics or the moment said plainly, never from the faulty take: a
-  reference carries its fault.
-
-A mockup or flat looked at twice without passing goes to the user as the `review` skill's Run it,
-step 4, says: the handover summary names it in a new brand, anywhere else the task's `done` update
-or your reply. Its size, its
-place, the idea or the composition change only on the user's word, made again as its new take.
-Back to an earlier take, when the user asks:
-`metamorfiles_use_take { step: "mockups", option: "brand/mockups/serum-on-shelf-1a2b3c4d.png", take: 1 }`;
-nothing is asked after it.
-
-## On the object
-
-For the logo alone: it looks made when it sits on the object the way a printer or signwriter would
-put it.
-
-- **A garment or apron** carries a small mark on the chest, high and to one side; a back print is the
-  one place a large one goes.
-- **A box, bag or lid** holds the logo with generous room around it.
-- **A sticker, badge, tag or label** fills its die-cut with a border of the material showing.
-- **A sign or fascia** sets the name large but with breathing room to its frame.
-- **A cup, jar or bottle** keeps the logo within the face you see.
-- **Small type stays small,** as on the real thing: a line under a logo, an address.
+A piece looked at twice without
+passing goes to the user as the `review` skill's Run it, step 4, says. Back to an earlier take,
+when the user asks:
+`metamorfiles_use_take { step: "mockups", option: "brand/mockups/serum-on-shelf-1a2b3c4d.png", take: 1 }`.

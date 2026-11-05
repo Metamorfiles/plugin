@@ -66,8 +66,8 @@ touchpoints: what it makes and where its customers meet it, read from its site a
 brand with a site or an app shows its real screens: a screenshot `metamorfiles_look_at_page` saved
 is the screen's flat, brought in as it is with no page (step 5 of the `artwork` skill). The other
 shots are objects it really uses (merch, a sign, its packaging), made with the `mockup` skill. They
-and their flats are reviewed in the `mockups` queue, the flats first (the `mockup` skill); a real
-screen is the brand's own file and is never reviewed.
+are reviewed in the `mockups` queue (the `mockup` skill); a real screen is the brand's own file and
+is never reviewed.
 
 ## Taking values from each source
 
