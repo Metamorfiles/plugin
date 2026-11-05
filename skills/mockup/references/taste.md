@@ -13,8 +13,6 @@ describes; it never decides: the brand's direction and what it makes decide the 
 
 ## Weak, and why it happens
 
-- **A twist with no reason:** a pattern broken with nothing in the shot's idea to explain it, because
-  the prompt asked for a break. It reads as an error; ask for none.
 - **A logo on a flat field of colour:** the prompt gave the face no idea, only the logo. The
   packaging wasn't designed, only labelled.
 - **Parts stacked, not designed:** a strip with the logo, a window with a photograph, the name under
@@ -22,8 +20,12 @@ describes; it never decides: the brand's direction and what it makes decide the 
   brand's photographs go on a pack only when the idea is a photograph.
 - **A redrawn or misspelled logo:** the prompt didn't hold the model to image 1. Say what image 1 is
   and that its letters stay exactly as they are.
+- **A print laid over the photograph:** the prompt didn't say how the mark is made, on what material,
+  following which surface, in which light. Say all four.
+- **An object missing its parts or out of shape:** the prompt didn't describe the whole object as
+  it's really made. Say its parts.
 - **Garbled small print:** the prompt asked for text the brief doesn't give. Ask for none.
 - **Objects that couldn't exist:** a lid fused to its jar, an opening on the wrong face, contents
   outside their pack. The physics weren't said; say them.
-- **A glossy, rendered look:** smooth plastic surfaces and perfect reflections. Name a textured,
-  matte finish.
+- **A glossy, rendered look:** smooth surfaces, perfect reflections, a retouched-ad feel. Describe a
+  real moment and its real materials, with signs of use, and no studio wording.

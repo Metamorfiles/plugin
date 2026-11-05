@@ -15,7 +15,7 @@ chosen, designed and made: the `mockup` skill.
 
 ## Make them
 
-In `brand/mockups/`, as the `mockup` skill says, flats first. Once the first is saved, list the
+In `brand/mockups/`, as the `mockup` skill says. Once the first is saved, list the
 folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`; the `handover`
 review is the final gate for them with the rest of the kit. They are one board, like the logos and
 the images, and nothing is asked: say which three you made in one `say`. The user can redo one from

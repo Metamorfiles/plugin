@@ -27,7 +27,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 2. Logo: three routes with the `logo` skill, reviewed, asked, chosen; then its step 8: the mascot when the brand has one (`step: "character"`), then the small mark (`step: "mark"`, asked only when there are several), each reviewed
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
 - [ ] Kit: DESIGN.md (its prose by the copywriter), final logos, fonts and the library; then the imagery guide
-- [ ] Mockups: three shots, their flat designs first, each reviewed
+- [ ] Mockups: three shots, each reviewed (the `mockup` skill)
 - [ ] Handover: the final review passed, then finished: true with the summary
 ```
 
@@ -171,7 +171,7 @@ skill on the queue and wait for its verdict:
 | The mascots, and in the logo's own case their sheet, before asking | `character` |
 | The small marks, before asking | `mark` |
 | `imagery.md` written, before asking | `imagery` |
-| The mockups' flat designs made, then their photographs | `mockups` |
+| The mockups, a flat design before its photograph | `mockups` |
 | The kit written: its logo files, its library, its mockups and DESIGN.md | `handover` |
 
 Report the reviewer's turn as the `team` skill says, and fix as step 4 of the `review` skill's Run

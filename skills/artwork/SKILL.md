@@ -34,8 +34,8 @@ unless the user asks.
 
 Printed in flat colour: traced as step 2 says.
 
-A mockup's flat whose only words are the logo and at most a short line (a sticker, a sign with the
-name) is drawn by the image model instead: which way each flat is made, the `mockup` skill decides
+A mockup's flat whose only words are the logo and at most a short line (a sticker with art, a poster
+that is a picture) is drawn by the image model instead: which way each flat is made, the `mockup` skill decides
 (step 2).
 
 ## With the logo
