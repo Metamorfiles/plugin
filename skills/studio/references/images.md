@@ -17,7 +17,8 @@ Studio keeps every image whole, as the model made it: it never crops a file to f
 Read `brand/imagery-guide.md` before any prompt: it's what every image of this brand shares, written
 when the brand was made. Its sections:
 - **Style:** one paragraph describing the look, with each colour's hex and what it paints. Pasted
-  whole into every prompt.
+  whole into every prompt, so it holds only how a picture looks; what each picture shows is its
+  own Scene.
 - **Character** (a brand with a character): who it is, the one thing that makes it itself, how its
   face is made, its palette and its look, in two or three lines, and that nothing about it changes. Pasted whole into
   every prompt that shows the character, with its character sheet first in the references.
@@ -25,7 +26,7 @@ when the brand was made. Its sections:
   role for objects and light (a lamp, a prop the scene has, a spark), tied to what it paints rather
   than to the character or a count per image: a quota competes with everything else in the scene, and
   the model paints the accent wherever it can.
-- **Writing a scene:** how the brand's scenes are described.
+- **Writing a scene:** one or two of the brand's scenes, written as "The prompt" below says.
 
 A brand without the guide (translated from an existing one) takes its look from DESIGN.md's Imagery
 section and its own pictures; write the same parts from them in your notes and use them alike. A
@@ -43,7 +44,8 @@ An image that carries a piece is made for that piece.
    under `assets/`: a piece's images are the piece's: the brand's library, reviewed as a set, grows only
    through the brand's library step.
    - **A cutout** (which images are cutouts, scenes or none: `references/design.md`, "The
-     composition") is made with `transparent: true`. Whether a model makes transparent images is its
+     composition") is made with `transparent: true`, its prompt saying the subject is whole and
+     alone on a fully transparent background, with no backdrop, scenery or shadow. Whether a model makes transparent images is its
      `transparent` flag in `metamorfiles_image_models`; for a model that doesn't, or a result that
      comes back opaque, do as `references/vector.md` of the `logo` skill says, and place it as a
      field.
@@ -58,8 +60,11 @@ shares, or the library file and why it already fits.
 
 ## The prompt
 
-One shape for every brand image but a mockup photograph (the `mockup` skill), in short labelled
-sections, in this order:
+Brief the model the way an art director briefs a photographer or an illustrator for one picture:
+what it is for, the moment it shows and where, how it is seen, and how it looks. A brief that holds
+together leaves the model the taste-driven choices inside it; separate rules each get drawn
+literally. One shape for every brand image but a mockup photograph (the `mockup` skill), in short
+labelled lines, in this order, each holding only its own:
 
 1. **References,** numbered, each with its role. The image to keep goes first, since models preserve
    the first most closely:
@@ -80,19 +85,30 @@ sections, in this order:
    has passed it, the library's sheet. While a new brand's kit is made its library is not yet
    reviewed, so images made then (its mockups and their flats) take only the chosen seeds and the
    character sheet. The image an edit changes is its own image 1, not a reference, so this never stops a fix.
-2. **Scene:** what the frame's composition decided (`design.md`, "The composition"): the idea, what
-   reads first and the room the type needs, each as a thing in the picture the model composes
-   around; then the shape ("portrait, 4:5"), the setting and the light. A setting in a real place is named
-   where it is, and whatever of the outside the frame shows (out of a window, down a street, behind
-   a counter) is described as that place's own, or kept out of frame: an outside the prompt leaves
-   open, the model fills with a famous view of somewhere else.
-3. **Subject:** what it shows, plainly, called by its name each time. A person or an animal in one
-   line: who (age, gender, clothing), the action stated plainly, and the framing ("full body
-   visible", or cropped at the waist); how people are shown (posed or caught in the moment, looking
-   in or away) is the brand's imagery guide's. The body stays at that: which hand, arm or leg does
-   what is the model's, unless the task decides it. With the character: what it does and feels, in one
-   line, then its Character lines pasted whole.
-4. **Style:** the style block (the guide's Style), pasted whole.
+2. **What it is:** the medium and the use in one line, which set how real or drawn and how
+   finished the model makes it: "A photorealistic photograph for Lumen's spring launch post", "A flat
+   poster illustration for a carousel slide".
+3. **Scene:** the picture as one moment, seen from one place, as the frame's composition decided
+   it (`design.md`, "The composition"):
+   - **What happens:** who or what, doing what, where, each called by its name every time. A person
+     or an animal in one line: who (age, gender, clothing), the action, where they look and what
+     they hold or touch; how people are shown (posed or caught in the moment) is the brand's imagery
+     guide's. Which hand, arm or leg does what is the model's, unless the task decides it. With the
+     character: what it does and feels, in one line, then its Character lines pasted whole.
+   - **The shot:** how close (close-up, medium, wide, top-down), the camera's height and angle, for a
+     photograph the lens, a figure's framing ("full body, feet included", "from the waist up"),
+     where the subject sits in the frame and what fills the rest. The type's room is part of what the
+     camera sees, where the composition put it: "she fills the lower half; the bare plaster wall rises
+     above her". Then the shape ("portrait, 4:5").
+   - **The light:** its direction, softness and time of day; for a night, low-light, neon, rainy or
+     wide scene, also its scale, atmosphere and colour, so the mood keeps the picture real.
+   - **A real place** is named where it is, and whatever of the outside the frame shows (out of a
+     window, down a street, behind a counter) is described as that place's own, or kept out of frame:
+     an outside the prompt leaves open, the model fills with a famous view of somewhere else.
+
+   Read it back as the photographer would: every phrase sets up the same single shot. The model
+   draws each phrase it is given, so two shots described at once come out as both.
+4. **Style:** the style block (the guide's Style), pasted whole: how every picture of the brand looks.
 5. **Constraints,** plain and early enough to survive a host that rewrites prompts: "exactly one
    <the character>", "nothing about <the character> changes: its colours, its one feature, its proportions", "no text
    or lettering", and anything the scene must not add.
@@ -109,34 +125,35 @@ Then the craft, for every model, and that model family's file for what differs (
 | anything else | [images-other.md](images-other.md) |
 
 - **Concrete words.** Materials, colours as hex tied to what they paint, shapes: the model knows
-  #c9785b, not the kit's name "Clay", and praise ("beautiful", "premium") gives it nothing to draw. Keep the scene and subject to what the picture needs; the guide's blocks go
+  #c9785b, not the kit's name "Clay", and praise ("beautiful", "premium") gives it nothing to draw. Keep the scene to what the picture needs; the guide's blocks go
   in as they are.
-- **Describe the type's room as a thing**, and where it is: "a bare off-white plaster wall across the
-  left third". State the shape too: models compose for the shape the prompt states.
 - **Ask for what should be there.** Say "an empty street": most models read a bare "no people" as a
   request for people. Exclusions go on the Constraints line alone. For no text, ask for "clean,
   unmarked surfaces" and write words without quotation marks, since a quoted word is drawn. The images
   that carry words are a logo drawn whole (`references/drawn.md` of the `logo` skill) and the
   exception below.
-- **One style anchor at most, and instructions that agree:** given two rules that
-  compete, the model picks one, and not always yours.
+- **One style anchor at most:** given two that compete, the model picks one, and not always yours.
 - **The image carries what the composition decided.** A specific brief is reorganised into the
   sections, not rewritten; a vague one gets only what the picture needs to work. Every person,
   object, action and story beat in it comes from the composition (an idea of yours goes there
   first), and a side or a facing only when the composition needs it.
-- **Light is the biggest lever**: its direction, softness and time of day. Camera words set framing
-  and depth.
 - **The product and the logo come from real files.** On a designed piece, never ask a model to draw
   packaging text, a logo or an interface; place the real file in the layout, or pass it as a
   reference with what must stay.
 
 One exception: a mockup's photograph and its flat designs, whose prompts are the `mockup` skill's.
 
-Example, a carousel slide for Lumen with Dew as its mascot (a mascot is drawn, even where the brand's imagery is photographs):
+Two examples for Lumen, a photograph and a slide with Dew, its mascot (a mascot is drawn, even where the brand's imagery is photographs):
 
-> Image 1 is the reference sheet of Dew, the brand's water drop, from every side: keep its identity, anatomy and colours exactly; draw exactly one Dew, in this scene's own pose. Image 2 is the brand's image library: take only its drawing style, palette and texture; never copy its subjects or compositions.
-> Scene: a bathroom shelf in early light from one soft window; portrait 4:5; the top third stays calm, plain #f6f1ea for the headline.
-> Subject: Dew waking up beside an unlabelled serum bottle with a #c9785b cap, sleepy and pleased with itself. Dew: a sleepy water drop, wider at the bottom, its point curling like a bed-head curl, body #e9dccb, lids and mouth #3b2e27; nothing about Dew changes.
+> Image 1 is the brand's image library: take only its light, grade and palette; never copy its subjects or compositions.
+> What it is: a photorealistic photograph for Lumen's spring launch post.
+> Scene: one unlabelled serum bottle with a #c9785b cap stands on a warm sandstone ledge by a bathroom window in the early morning, a drop of serum beaded on the stone beside it. A close shot at the ledge's height on a 50mm lens: the bottle stands in the lower right third, and the bare #f6f1ea plaster wall above the ledge fills the upper two thirds. Low sun from the window on the right throws long, soft shadows to the left. Portrait, 4:5.
+> Style: a real photograph in low side light, long soft shadows, shallow depth of field, a muted warm palette, the real texture of stone and glass.
+> Constraints: clean, unmarked surfaces; one bottle.
+
+> Image 1 is the reference sheet of Dew, the brand's water drop, from every side: keep its identity, anatomy and colours exactly; draw exactly one Dew, in this scene's own pose. Image 2 is the brand's image library: take only its palette and texture; never copy its subjects or compositions.
+> What it is: a flat poster illustration for a carousel slide.
+> Scene: Dew wakes up on a bathroom shelf beside an unlabelled serum bottle with a #c9785b cap, mid-stretch, sleepy and pleased with itself. Seen straight on at the shelf's height: Dew and the bottle stand in the lower third, and the plain #f6f1ea wall above the shelf fills the rest. Early light from one soft window on the left. Portrait, 4:5. Dew: a sleepy water drop, wider at the bottom, its point curling like a bed-head curl, body #e9dccb, lids and mouth #3b2e27; nothing about Dew changes.
 > Style: flat poster illustration, an even #1f1a17 outline, flat fills, little or no shading.
 > Constraints: exactly one Dew; nothing about Dew changes: its colours, its curl, its proportions; no text or lettering.
 
