@@ -58,19 +58,17 @@ Palette: <the brand's colours as hex, each with its job>, flat.
 Only the character: no letters, words or numbers, no ground line or shadow, no frame, no scenery.
 ```
 
-- Describe it as a character, never as a logo or an icon (why: `references/symbol.md` of the `logo`
-  skill, "The prompt").
-- Colours are the palette with a job each, never a colour per limb: the model gives them to the
-  shapes it draws.
+- Describe it as a character, the drawing itself (why: `references/symbol.md` of the `logo` skill,
+  "The prompt").
+- Colours are the palette with a job each: the model gives them to the shapes it draws.
 - Each candidate has its own Who, Face and Doing, and its own build (`design.md`, "Three designs
   for one character"); the Look and the Palette are the same in all three, and so is what the brief
   fixes it to be.
 - In a logo, the references are the logo's (`SKILL.md`, step 3), and a mascot drawn after the
   choice has the chosen logo as image 1 (`SKILL.md`, "In a new brand"). Outside a logo, a reference
   goes in only when it shows a figure drawn in the chosen look ("Image 1 is a style reference: take
-  its drawing hand and line weight; never copy its character, pose or layout"), never a wordmark set
-  in type: the first image is the one the model keeps most, and a typeface alone isn't a drawing
-  hand. With no such reference, the style block carries the hand alone.
+  its drawing hand and line weight; never copy its character, pose or layout"), since the first
+  image is the one the model keeps most and only a drawn figure carries a hand. With no such reference, the style block carries the hand alone.
 - Draw it at `width: 1024, height: 1024` with `trace: { colors: [...] }` listing the style's trace
   colours, and the `folder` it belongs in (the call: step 3 of the skill). A model that can't draw on
   a transparent background: `references/vector.md` of the `logo` skill.

@@ -41,7 +41,7 @@ them goes the team's research, written by you, briefly, from the subject's pages
 - **The category's codes:** the colours, symbols, type, imagery and voice its businesses share, as
   two lists under plain headings: what the category always does and this brand avoids (one to three,
   knowingly: room to be different), and what it keeps because it earns trust or helps a customer. A
-  place has codes too: its tourist look is a cliché unless the idea changes it.
+  place has codes too: its tourist look comes in only when the idea changes it.
 
   ```markdown
   ## The category's codes
@@ -56,25 +56,12 @@ them goes the team's research, written by you, briefly, from the subject's pages
   - the ingredients listed plainly on the pack: people check them
   ```
 
-| Category | Codes to avoid by default |
-|---|---|
-| Bakery, café | wheat, rolling pins, whisks, coffee beans and steam, chalkboard lettering, kraft brown only, beige minimalism |
-| Restaurant, bar | chef hats, crossed cutlery, red and yellow, faux-vintage "Est." badges |
-| Retail boutique | thin spaced serif capitals with a line monogram, rose-gold foil, terracotta arches |
-| Beauty, salon | scissors, a woman's profile, flowing scripts, blush pink with gold, marble |
-| Health, wellness | hearts, crosses, leaves, lotus, stones, ensō circles, clinical blue, sage and beige |
-| Fitness | dumbbells, flexed arms, lightning, italic capitals with speed lines, black with neon |
-| Services, agency | scales, columns, lightbulbs, puzzle pieces, handshakes, rising arrows, navy and gold |
-| E-commerce, DTC | pastel with a rounded sans, a lowercase wordmark with a dot, blobs, flat-lays on beige |
-| App, software | purple-to-blue gradients, a geometric lowercase sans, nodes and orbits, glossy 3D blobs |
-| Kids, education | crayon fonts, primary rainbow, apples, owls, pencils, handprints |
-
 ## Touchpoints
 
 The objects and screens this business's customers really meet, moment by moment: finding it,
 arriving or opening it, buying or signing up, using it, taking it home or receiving it, coming back.
-Write them in the brief, specific to this business, never a category's stock list, starting with
-every piece and scene the brief's "What they asked for" names:
+Write them in the brief, specific to this business, starting with every piece and scene the
+brief's "What they asked for" names:
 
 | Kind of business | Its touchpoints might be |
 |---|---|
@@ -88,8 +75,8 @@ They decide what the kit shows the brand on (`mockups.md`) and which templates c
 
 ## Where ideas come from
 
-A direction starts from something only this business has, never from a mood. "Warm and modern" gives
-nothing to draw from; "the two minutes of a morning routine are the brand's number" does.
+A direction starts from something only this business has, which gives it something to draw from:
+"the two minutes of a morning routine are the brand's number".
 
 | Source | Look for | It becomes |
 |---|---|---|

@@ -4,7 +4,7 @@ For ChatGPT Images (`chatgpt/images`, the user's ChatGPT plan) and `gpt-image` m
 
 ## Prompting
 
-- **Start with the verb.** "Draw…" for a new image, "Edit image 1…" to change one. To combine images, edit one with the other: "Edit image 1 by adding the serum bottle from image 2 to the shelf", never "combine" or "merge".
+- **Start with the verb.** "Draw…" for a new image, "Edit image 1…" to change one. To combine images, edit one with the other: "Edit image 1 by adding the serum bottle from image 2 to the shelf".
 - **Order and labels.** The scene, then the subject, its details, and the constraints last, on a line of their own. Short labelled lines read better than one long paragraph.
 - **Photo look.** Say it's a real photograph, with real texture and signs of use (the grain of the stone, the wear on the handle), or it drifts toward illustration. Words that imply studio polish ("professional", "cinematic", "flawless") pull toward a retouched ad; use them only for a studio shot.
 - **Keeping things exact.** Name what must not change ("the bottle's shape, label and colour stay as in image 1") and repeat the list on every edit; change one thing per edit.

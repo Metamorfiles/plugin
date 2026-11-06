@@ -20,8 +20,8 @@ labels, numbers or panel borders: lettering comes out garbled, and the order bel
 
 The top row gives every angle of the head and body, with the face the chosen drawing has (a
 neutral face there would teach the model a blank character); the bottom one gives motion, a seated body, a
-held object and three expressions. Each figure is named by what it is doing, never by where a limb
-goes: the drawing finds the limbs, and a character built without hands does each with what it has.
+held object and three expressions. Each figure is named by what it is doing: the drawing finds the
+limbs, and a character built without hands does each with what it has.
 The one object is there because holding is that figure's action, and it is said not to be part of
 the character.
 
@@ -46,7 +46,7 @@ nothing added but the one small object; no text.
 
 `metamorfiles_generate_image { prompt, width: 1536, height: 1024, references: ["<the chosen drawing>"], folder: "brand/process/character", name: "<name>-sheet" }`
 
-It is raster, never traced: a reference, not artwork.
+It stays raster: a reference, not artwork.
 
 The reviewer looks at it before anything is built on it (the `review` skill).
 
@@ -60,5 +60,5 @@ The reviewer looks at it before anything is built on it (the `review` skill).
   and listed first in that folder's `anchors`, so it heads the character's frame on the brand board.
 - **Using it:** every image of the character passes the sheet as image 1, "Image 1 is the reference
   sheet of <name> from every side: draw exactly one <name>, in this scene's own pose", and the pose
-  and the expression come from the scene's prompt, never from the sheet
-  (`references/images.md` of the `studio` skill).
+  and the expression come from the scene's prompt alone (`references/images.md` of the `studio`
+  skill).

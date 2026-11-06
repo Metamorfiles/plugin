@@ -7,8 +7,8 @@ looks, and let the drawing find the body's shapes.
 ## What the brief says
 
 - **Its name**, and **who it is**, as behaviour rather than an adjective: what it's doing and feeling right now.
-- **The one thing** that makes it itself: a feature, a habit, a prop it's never without. Without it,
-  every candidate is the category's mascot.
+- **The one thing** that makes it itself: a feature, a habit, a prop it's never without. It sets each
+  candidate apart from the category's mascot.
 - **What makes it this brand's**: the detail from the business's own world it wears, holds or does.
 - **Its face**, from its attitude: the lids, the brows, where it looks, the mouth, in three to five
   concrete terms, with one thing uneven. The face is where a character's personality reads.
@@ -63,7 +63,7 @@ Dew, beside the sleepy drop above:
 
 What the brief fixes stays (a drop of Lumen's serum), and so do the look and the palette. The
 construction, the proportions, the face, the one feature and who it is change. Three poses of one
-design are not three candidates.
+design are one candidate.
 
 ## When a drawing is sent back
 

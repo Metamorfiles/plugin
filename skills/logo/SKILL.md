@@ -30,8 +30,8 @@ Copy it into your notes and tick each step as you go:
 Read `brand/process/brief.md` and the chosen option of `brand/process/direction.md`, and look at its
 reference images with `metamorfiles_read_file`. They set the look. The logo's idea comes from the
 brief: the business's own reality (its product, place, process, people) seen through the
-direction's look, not the category's usual symbol, which the image model reaches for when nobody
-asked and which belongs in the logo only when the direction chose it. Outside a new brand, the
+direction's look. The category's usual symbol comes in only when the direction chose it, since the
+image model reaches for it unasked. Outside a new brand, the
 user's request and the brand's DESIGN.md do the same. With neither a brief nor a DESIGN.md, the
 brand is new: follow the `new-brand` skill instead, which comes back here for its logo step. Read
 `references/taste.md` before writing the ideas (step 3), for what a strong version of that look is;
@@ -53,15 +53,14 @@ Before anything is drawn, write each route's idea and composition in one line in
 different ideas: drawing them from different sources (the name's sound and letters, the product and
 how it's made or used, the place, the people or the feeling it promises) keeps them apart, a habit
 rather than a quota. How studios find such ideas: `references/principles.md` of the `new-brand`
-skill. The composition says how the logo is built, in words, never in measurements: what leads, and
-how the other parts meet the word (on its baseline, over it, tucked into a letter, or apart from
-it). It's the plan, not a spec: the made logo settles its proportions. It also says the route's
+skill. The composition says how the logo is built, in words: what leads, and how the other parts
+meet the word (on its baseline, over it, tucked into a letter, or apart from it). It's the plan;
+the made logo settles its proportions. It also says the route's
 words: the name alone, or with a supporting line that makes this idea stronger (a tagline, the
-trade, a place, written in the brand's voice) and where it sits. Each route decides its own words; a
-line that would sit the same under every route belongs to none. Then read the three together:
-each comes from this business's own reality rather than the category's usual symbol, each is built
-its own way (the parts meet differently), and each has letters drawn for its idea. A route that
-shares its idea or its build with another is rewritten now, while it is a line.
+trade, a place, written in the brand's voice) and where it sits. Each route decides its own words,
+a line only its idea could carry. Then read the three together: each comes from this business's own
+reality, each is built its own way (the parts meet differently), and each has letters drawn for its
+idea. A route that shares its idea or its build with another is rewritten now, while it is a line.
 
 Each line goes on its route's option as `composition` in `brand/process/logo.md`, for the reviewer;
 the user sees the route's `line`, written for them. Name each route now with one lowercase word, its
@@ -76,10 +75,10 @@ under its new id.
 
 ### 4. Three routes
 
-Three answers, not three versions: each route is a different idea, made by the method that serves
-it, so the user chooses between ideas. The three methods below are a toolset, never a slot per
-route. A fourth route only for another idea: a variant of a route (its mark drawn longer, its lockup
-stacked) is never a route. An idea the medium can't make (`references/drawn.md` says what the model
+Three answers: each route is a different idea, made by the method that serves it, so the user
+chooses between ideas. The three methods below are a toolset, picked for each idea. A fourth route
+is for another idea; a variant of a route (its mark drawn longer, its lockup stacked) stays part of
+that route. An idea the medium can't make (`references/drawn.md` says what the model
 draws well) is replaced by another idea in its place, so three are still shown. Make each to pass the
 Logo route checklist of the `review` skill's Rubric, which the reviewer holds it to.
 
@@ -103,15 +102,15 @@ Run `metamorfiles_check_logo` on every route's logo and act on what it reports:
 and reports: an opaque result, letters the check says the model redrew, or a trace the result says
 falls short (a colour of the route's palette left out, a colour, shade or gradient the prompt
 didn't ask for, a trace that strays from its drawing); how to make each again is in `references/vector.md`
-and `references/checks.md`. Its look is never the maker's to judge, and a maker never draws a piece
-again because of how it looks. After the review, it changes only as the `review` skill's Run it,
-step 4, says.
+and `references/checks.md`. Its look is the reviewer's to judge, so a maker draws a piece again only
+for what the check reports. After the review, it changes only as the `review` skill's Run it, step
+4, says.
 
 ### 6. Each route's files
 
 A route's files before the choice: its logo in colour on the ground it's made for, and in one colour
 on white, each with its `ground`, plus the parts it's built from (the name alone, the mark alone,
-with `small: true` on the mark's entry so the board never leads with it) when the route means to
+with `small: true` on the mark's entry so the board leads with the logo) when the route means to
 show them. The reversed version, the small mark and the version redrawn where one colour loses a
 part (`references/drawn.md`, "Other versions of it") are made after the choice, for the chosen route
 only (step 8).
@@ -119,8 +118,8 @@ only (step 8).
 One colour is what tells routes apart: it shows whether the drawing holds without its fills. A
 drawing of lines with coloured fills becomes line art in one colour: its line colour to the ink and
 every fill cut out (`metamorfiles_make_logo_variant`, each fill's colour to `"knockout"`), so the
-ground shows through the drawing. Recolouring every paint to one colour turns it into a silhouette,
-and the details are gone. A drawing of solid shapes becomes one solid shape with its inner details
+ground shows through the drawing and keeps its details, which one colour on every paint would fill
+into a silhouette. A drawing of solid shapes becomes one solid shape with its inner details
 cut out.
 
 Save every file under `brand/process/logo/`, its name starting with its route's id and a hyphen:
@@ -130,7 +129,7 @@ Save every file under `brand/process/logo/`, its name starting with its route's 
 ### 7. Show them
 
 Show every route the plan set, each checked and given its files (steps 5 and 6). The user chooses
-between them, never you.
+between them.
 
 In a new brand, give each option of `brand/process/logo.md` its files, in the order the plan set
 (a further candidate after them), one `recommended: true`, with `mascot: true` at the top when the

@@ -1,12 +1,12 @@
 # Artwork taste
 
-What strong print and packaging artwork looks like. It describes; it never decides: the brief, the
-direction and the category decide what the piece is.
+What strong print and packaging artwork looks like. It describes; the brief, the direction and the
+category decide what the piece is.
 
 ## Strong
 
 - **A picture that owns the face:** an illustration, a pattern or a scene drawn for this object,
-  wrapping it, not a small drawing floating in a field of colour.
+  wrapping it edge to edge.
 - **The brand's own hand:** the same line, fills, palette and character as the rest of the imagery,
   so the pack and the posters are plainly one brand.
 - **One hero, read from a distance:** the brand or the product name leads, everything else is

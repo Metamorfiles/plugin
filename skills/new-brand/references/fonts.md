@@ -1,12 +1,11 @@
 # Fonts
 
-Type carries most of a new brand's personality, so it is chosen for the idea, never by habit.
+Type carries most of a new brand's personality, so it is chosen for the idea.
 `add_font` takes only OFL Google Fonts families; a user's own licensed files are the exception.
 
 ## Contents
 - Getting the files
 - Choosing
-- Overused
 - By character
 
 ## Getting the files
@@ -27,30 +26,20 @@ Type carries most of a new brand's personality, so it is chosen for the idea, ne
 
 - **For the idea.** Choose by what the idea needs, then by the face's skeleton (open and humanist,
   closed and rational, geometric), its contrast and serifs, and its details. The logo step matches
-  its mark to the set word (the `logo` skill), never the other way round.
+  its mark to the set word (the `logo` skill), so the face leads.
 - **As few faces as the system needs, each with a job.** One family across its weights, widths,
   case and tracking is often the whole system; another face comes in only for a job the first
   can't do (a display face, a workhorse for everything that informs, a mono for data).
 - **A face for each script the brand writes in.** A business in Seoul posts in Korean, one in
   Athens in Greek: each face has those letters, or a face made for that script sets them beside the
   Latin one, sized to sit together.
-- The direction step's options differ in type logic, so they never share a family.
-
-## Overused
-
-These are the faces AI tools default to. A direction
-uses one only when the idea needs it, and says why on its board:
-
-Inter, Montserrat, Poppins, Roboto, Open Sans, Lato, DM Sans, Nunito, Playfair Display, Manrope,
-Outfit, Plus Jakarta Sans, Figtree, Space Grotesk, Cormorant Garamond, Instrument Serif, Fraunces,
-Geist, Bricolage Grotesque, Syne, Unbounded, Sora, Lexend, Urbanist, Work Sans, Archivo, Oswald,
-Bebas Neue, Anton.
+- The direction step's options differ in type logic, so each has families of its own.
 
 ## By character
 
 **Neutral grotesques**
 - Schibsted Grotesk: sturdy, newspaper-like; serious and editorial brands.
-- Host Grotesk: plain and current; product brands that shouldn't look like Inter.
+- Host Grotesk: plain and current; product brands that want a plain face of their own.
 - Mona Sans and Hubot Sans: width axis; engineering and technical brands.
 - Zalando Sans: width axis; one family for a large system.
 - Radio Canada Big: slightly quirky and civic.
@@ -69,7 +58,7 @@ Bebas Neue, Anton.
 
 **Geometric and rounded**
 - Parkinsans: geometric with quirks; health and charity.
-- Kumbh Sans: tidy geometry; startups avoiding the stock geometrics.
+- Kumbh Sans: tidy geometry; startups that want geometry of their own.
 - Gabarito: chunky and friendly.
 - Fredoka: rounded; kids and play.
 - DynaPuff: soft and inflated; toys and treats.
@@ -190,9 +179,8 @@ them takes minutes: study few.
 - Sedgwick Ave Display: a marker tag; street and youth.
 - Caveat Brush: a casual brush hand.
 - Sriracha: a light Thai-and-Latin hand.
-- Pacifico and Lobster are OFL too, but seen everywhere; use them only when the idea needs them.
 
-A script is set as the wordmark or one line, never as text.
+A script sets the wordmark or one line; text stays in a text face, where it reads.
 
 **Hands**
 - The Playwrite families (Playwrite US Trad, Playwrite GB S, Playwrite IT Moderna and others): refined
@@ -203,4 +191,4 @@ A script is set as the wordmark or one line, never as text.
 - Permanent Marker: bold marker.
 - Reenie Beanie: a quick, light hand.
 
-A handwritten face is for a line or a mark, never for text.
+A handwritten face is for a line or a mark; text stays in a text face.

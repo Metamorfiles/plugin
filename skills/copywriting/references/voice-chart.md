@@ -47,7 +47,7 @@ would ever write teaches nothing.
 
 ## Tone
 
-Under the chart, three rows and no more. Voice does not change; tone is how it lands in a given
+Under the chart, three rows. Voice does not change; tone is how it lands in a given
 place.
 
 ```md

@@ -21,18 +21,18 @@ The pose: <in one sentence, what it is doing and feeling>.
 Alone on a transparent background, flat colours only, no letters, no ground line or shadow.
 ```
 
-The pose line says what the character is doing and feeling, never where its limbs go: the drawing
-finds them (`design.md`, "What the brief says"). In any drawing of the character, a candidate or a
+The pose line says what the character is doing and feeling; the drawing finds where its limbs go
+(`design.md`, "What the brief says"). In any drawing of the character, a candidate or a
 pose, a prop is named only when the drawing's idea needs it (the brand's own object), and the prompt
 says it isn't part of the character, so the model doesn't merge the two and carry the prop into
 every later drawing.
 
-A new pose is drawn anew from the sheet, never as an edit (why: `references/images.md` of the
-`studio` skill, "Edit or redraw"). An edit (`edit: true`, the image to change first in `references`, the
+A new pose is drawn anew from the sheet (why: `references/images.md` of the `studio` skill, "Edit
+or redraw"). An edit (`edit: true`, the image to change first in `references`, the
 prompt starting "Edit image 1:", then what stays exactly as it is) is only for a change that keeps
 the pose: an expression, a prop swapped, a colour fixed.
 
-- **One change per drawing.** A new pose, or a new expression, or a prop: never two at once.
+- **One change per drawing:** a new pose, a new expression or a prop.
 - **Always from the sheet**: which images may be references is `references/images.md` of the `studio` skill's ("The prompt").
 - **Several at once**: start each with `wait: false`, each from the sheet, then wait for each with
   `metamorfiles_image_status { id }`.

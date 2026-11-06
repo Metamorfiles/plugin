@@ -39,8 +39,8 @@ Copy it into your notes and tick each step as you go:
 | Kit | DESIGN.md and the brand board: the guideline pages and the images | `designer`, `copywriter` for the prose | `brand`, `copywriting` | asks for any change they want |
 | Mockups, last | three shots of the brand on its own objects, on their own board | `designer`, `imager` for the photographs | `references/mockups.md`, the `mockup` skill | redoes one, or picks an earlier take back |
 
-`references/principles.md` holds what separates studio work from generated work: what to aim at
-when you plan each step's ideas. Read it before the first step. Its `library/` describes published
+`references/principles.md` holds what studio work does: what to aim at when you plan each step's
+ideas. Read it before the first step. Its `library/` describes published
 identities by kind of business, for study.
 
 Studio draws everything on one item, the brand board: the brief first, then each step as its own

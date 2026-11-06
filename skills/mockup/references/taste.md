@@ -1,7 +1,7 @@
 # Mockup taste
 
 What strong packaging photography looks like, from a study of work design publications feature. It
-describes; it never decides: the brand's direction and what it makes decide the shots.
+describes; the brand's direction and what it makes decide the shots.
 
 ## Strong
 

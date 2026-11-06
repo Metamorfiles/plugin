@@ -115,7 +115,7 @@ These keep every format working.
 
 - The body is exactly the format size. Size the root with `100vw` and `100vh`, and use `vmin` for type, spacing and radii.
 - Adapt structure with `@media (min-aspect-ratio: 5/4)` for landscape formats and `html[data-format="…"]` for specific formats.
-- Use brand tokens for colors, type and spacing (every one: `references/design-md.md` of the `brand` skill, "CSS variables"). Text on a surface uses its `on-` color, like `--brand-on-primary` on `--brand-primary`, or a component's pair; a role's letter case is set with `text-transform: var(--brand-display-case, none)`. Never hardcode a color the brand already names.
+- Use brand tokens for colors, type and spacing (every one: `references/design-md.md` of the `brand` skill, "CSS variables"). Text on a surface uses its `on-` color, like `--brand-on-primary` on `--brand-primary`, or a component's pair; a role's letter case is set with `text-transform: var(--brand-display-case, none)`. A color the brand names is always written as its token.
 - Keep every text inside `--brand-safe-margin`, and text and logos clear of what the platform covers: a story's profile and reply bars, a cover's cropped edges, a profile photo's corners. The checks name the zone.
 
 ## The checks
