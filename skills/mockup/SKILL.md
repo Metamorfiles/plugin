@@ -61,9 +61,9 @@ The image model draws a face the way its prompt describes it: given one idea, it
 around that idea; given a list of parts, it stacks them. So each face designed in place and each
 flat is designed first, as a packaging designer would, and written in your notes before any image:
 
-1. **The best of its kind.** Look at the projects the brand's research collected,
-   `metamorfiles_read_file { path: "brand/process/references" }`, and when none shows this kind of
-   object, search for it: `metamorfiles_search_references { query: "skincare packaging" }`. Name
+1. **The best of its kind.** Start from the brand's references, which `metamorfiles_get_project`
+   lists with what to take from each, and when none shows this kind of object, search for it:
+   `metamorfiles_search_references { query: "skincare packaging" }`. Name
    how the strongest use the face's space (how they compose it, not what they show) and take that
    way of composing whole. Their subjects and marks stay theirs.
 2. **The idea.** One graphic idea that carries the whole face, from what only this business has: its

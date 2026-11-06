@@ -59,8 +59,8 @@ the made logo settles its proportions. It also says the route's
 words: the name alone, or with a supporting line that makes this idea stronger (a tagline, the
 trade, a place, written in the brand's voice) and where it sits. Each route decides its own words,
 a line only its idea could carry. Then read the three together: each comes from this business's own
-reality, each is built its own way (the parts meet differently), and each has letters drawn for its
-idea. A route that shares its idea or its build with another is rewritten now, while it is a line.
+reality, each is built its own way (the parts meet differently), and each has letters made for its
+idea, drawn or set in a face chosen and tuned for it (step 4). A route that shares its idea or its build with another is rewritten now, while it is a line.
 
 Each line goes on its route's option as `composition` in `brand/process/logo.md`, for the reviewer;
 the user sees the route's `line`, written for them. Name each route now with one lowercase word, its
