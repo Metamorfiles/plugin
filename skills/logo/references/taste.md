@@ -2,8 +2,8 @@
 
 What a strong logo looks like, from a study of current identity work across food, drink, fashion,
 sport, culture, services and tech. It describes; it never decides. The brief and the chosen direction
-decide the look. Read it while planning the routes, for what a strong version of that look is and
-what the image model gets wrong on the way; judging the made logo is the reviewer's. A character has its own page: `references/taste.md` of
+decide the look. Read it while planning the routes, for what a strong version of that look is;
+judging the made logo is the reviewer's. A character has its own page: `references/taste.md` of
 the `character` skill.
 
 ## Contents
@@ -12,7 +12,6 @@ the `character` skill.
 - Composition moves
 - Marks
 - Colour in the logo
-- Defaults to recognise
 
 ## The point of view
 
@@ -31,56 +30,49 @@ the `character` skill.
 
 ## Lettering families
 
-Each is a direction the brand may choose. What makes it strong, and where generated versions fall
-short.
+Each is a direction the brand may choose, and what makes it strong.
 
 **Chunky and soft.** Heavy letters with rounded corners, tight enough to nearly touch, small
 counters.
-- Strong: each letter has one quirk of its own (a slot counter, a ball end, a flat foot, a lowercase
-  letter among capitals), and the word reads as one soft mass.
-- Weak: a stock bubble face with nothing drawn, every letter the same width.
+Strong when each letter has one quirk of its own (a slot counter, a ball end, a flat foot, a
+lowercase letter among capitals) and the word reads as one soft mass.
 
 **Cut and hand-cut.** Letters that look cut from paper or card: straight cuts, faceted corners, uneven
 widths and slants, a little lean.
-- Strong: the cut is consistent (same scissors, same directness), and the mark and figures are cut
-  by the same hand.
-- Weak: random jitter, curves sneaking in, letters that wobble without a cut's logic.
+Strong when the cut is consistent (same scissors, same directness, straight all through), and the
+mark and figures are cut by the same hand.
 
 **Casual script and brush.** Joined letters written fast (brush, marker or rounded monoline), a rising
 baseline, one long gesture (a tail, an underline, a swash off the last letter).
-- Strong: one generous gesture and everything else calm; joins a hand would make.
-- Weak: swashes everywhere, joins across words, letters that change pen halfway.
+Strong with one generous gesture and everything else calm, joined as a hand would join it, in one
+pen from first letter to last.
 
 **Monoline and signature.** One even line, like a single pen stroke: loose loops, open curves, wide
 spacing, a double letter drawn as one gesture.
-- Strong: the line never changes weight; the small words beside it are light, widely spaced
-  capitals.
-- Weak: the line thickens where it crosses, loops fill in.
+Strong when the line keeps one weight everywhere, crossings and open loops included, and the small
+words beside it are light, widely spaced capitals.
 
 **Formal script.** High-contrast pointed-pen or brush strokes, a big capital, one long flourish.
-- Strong: the flourish frames something (a line tucked under it, a number).
-- Weak: flourishes on every letter, a wedding-invitation look.
+Strong when the one flourish frames something (a line tucked under it, a number) and the other
+letters stay plain.
 
 **Retro display.** 70s soft serifs and slabs, flared stems, melting or wavy letters, sign-painter
 italics.
-- Strong: the period is felt in the shapes, not imitated with effects.
-- Weak: drop shadows and textures standing in for drawing.
+Strong when the period is drawn into the letters' shapes themselves.
 
 **Classic serif.** Calm display capitals, wedge serifs, even, open spacing, small capitals beside
 them.
-- Strong: restraint, generous space, one fine detail (a diamond dot, a ligature).
-- Weak: a text serif set tight and large with nothing of its own.
+Strong with restraint, generous space and one fine detail of its own (a diamond dot, a
+ligature).
 
 **Grotesque and geometric.** Plain sans letters: heavy and wide for a badge system, medium and tight
 for a modern company.
-- Strong: one letter redrawn to carry the idea (a cut in a corner, a stroke that becomes the idea), or a strict
-  system around a plain word.
-- Weak: a default sans beside a generic symbol.
+Strong with one letter redrawn to carry the idea (a cut in a corner, a stroke that becomes the
+idea), or a strict system around a plain word.
 
 **Condensed hand-drawn.** Tall, narrow capitals with a slight flare and an uneven hand, for heritage
 and vintage.
-- Strong: rhythm and evenness from a practised hand.
-- Weak: a stock condensed face pretending.
+Strong with the rhythm and evenness of a practised hand.
 
 ## Composition moves
 
@@ -105,9 +97,8 @@ The ways the parts meet, chosen by the brand's world and where the logo will liv
 - **A badge family:** ring, shield, pill, arch, tab and box, each in the same type and line weight.
 - **The name in a shape:** a square, a sticker outline, a scalloped frame.
 
-Strong: the parts share one line weight, the space between them is deliberate, and it stays the same
-in every file. Weak: everything centred and the same size, parts floating with no relation, a lockup
-that changes from file to file.
+Strong when the parts share one line weight, each has a size of its own, the space between them is
+deliberate, and the lockup stays the same in every file.
 
 ## Marks
 
@@ -119,18 +110,5 @@ that changes from file to file.
 ## Colour in the logo
 
 One or two inks are the norm: black on a colour, one colour on paper, cream on a deep tone. A third
-colour does one job (one small part, one accent). Counters and cut-outs show the ground; a model left alone tends
-to fill them with white, so say it in the prompt.
-
-## Defaults to recognise
-
-What a generator produces when nothing was decided. They aren't forbidden; they're used when the
-direction chose them, and recognised when it didn't:
-- a stock bubble, geometric or script face set untouched as the "custom" lettering;
-- the category's symbol, the first object anyone would draw for it, added to every route;
-- everything centred, one size, even gaps; one arrangement in every route (a mark above the word
-  three times, a letter swapped three times);
-- a letter lifted or turned alone, off the word's line, with nothing it leans into;
-- a badge or a frame around a name that didn't need one;
-- gradients, shadows, glows or textures on the logo itself;
-- three routes that are one idea in three fonts.
+colour does one job (one small part, one accent). Counters and cut-outs show the ground, and the
+prompt says so, since the model fills an unnamed counter with white.

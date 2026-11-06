@@ -17,11 +17,12 @@ looks, and let the drawing find the body's shapes.
 - **What it leaves out**: only what the brief or the category's codes rule out.
 
 An object that comes alive is built from its own shape (a bottle's cap its hat, a jar's lid its
-hair, a dropper's bulb its head), never a smiling lump with a face drawn on.
+hair, a dropper's bulb its head), so the object itself is the body.
 
-Not in the brief: a count of limbs, where each one goes, a colour per part. That is an assembly
-diagram, and the model builds a thing standing still. Colours go in the
-prompt as the brand's palette with a job each (`styles.md`).
+The brief leaves the body's shapes to the drawing: the model builds exactly the parts a brief lists,
+so a brief that counts and places them gets a figure assembled and standing still, while one that
+says what the character does gets a pose. Colours go in the prompt as the brand's palette with a job
+each (`styles.md`).
 
 ## The face
 
@@ -32,26 +33,21 @@ The words that change a face, a few at a time:
 - **the eyes themselves**: small pupils in big whites, big dark pupils, one eye bigger;
 - **the mouth**: lopsided, a small O, pressed shut, wide open laughing, a gap in the teeth.
 
-The face follows the attitude, so a sleepy character and a proud one get different faces. Generic
-words ("a cheeky grin", "happy eyes", "a big smile") read as no instruction, and the model
-fills them with its stock face (`taste.md`, "Defaults to recognise").
+The face follows the attitude, so a sleepy character and a proud one get different faces. Name it
+in these concrete terms, since a general word for a mood gives the model nothing to draw and it fills
+the face with its stock one.
 
-## Two briefs for the same character
+## A brief, written
 
 For Dew, the made-up mascot of Lumen, the example skincare brand:
 
-Weak:
-> A round water drop, wider at the bottom, its point curling at the top; two happy closed eyes and a
-> cheerful smile; two short arms ending in round mitts, one raised.
-
-Strong:
 > Dew is a sleepy water drop who loves slow mornings: leaning back mid-stretch, yawning. Heavy
 > half-closed lids, one eye cracked open to check the time, brows loose and uneven, its mouth a
 > lopsided yawning O. Its point curls over at the top like a bed-head curl. It is the drop of serum
 > Lumen puts on your skin, and it never hurries.
 
-The weak brief gets a drop with sticks for arms and the stock face. The strong one says what Dew is
-like and how its face shows it, and leaves the body's shapes to the illustrator.
+It says what Dew is like and how its face shows it, in concrete terms, and leaves the body's
+shapes to the illustrator.
 
 ## Three designs for one character
 
@@ -73,6 +69,7 @@ design are not three candidates.
 
 When the reviewer or the user says its idea, pose or subject is wrong, or the user turns the
 candidates down, the brief is rewritten (the attitude, the face and the idea), keeping what they
-liked, and drawn again; never describe the failed drawing back to the model. A new look alone
+liked, and drawn again from the new brief alone, since a prompt that describes the failed drawing
+draws it again. A new look alone
 changes nothing they objected to. Once the user chooses a drawing, the identity lives in images: the
 chosen drawing, then its sheet.

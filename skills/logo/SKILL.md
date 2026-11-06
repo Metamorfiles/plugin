@@ -34,8 +34,8 @@ direction's look, not the category's usual symbol, which the image model reaches
 asked and which belongs in the logo only when the direction chose it. Outside a new brand, the
 user's request and the brand's DESIGN.md do the same. With neither a brief nor a DESIGN.md, the
 brand is new: follow the `new-brand` skill instead, which comes back here for its logo step. Read
-`references/taste.md` before writing the ideas (step 3), for what a strong version of that look is
-and what the image model tends to get wrong; the result is the reviewer's to judge.
+`references/taste.md` before writing the ideas (step 3), for what a strong version of that look is;
+the result is the reviewer's to judge.
 
 When a route needs a part the references don't show well (the lettering, a mascot, a mark), start a
 search for it in the background as you begin, with the category and the part:
@@ -58,8 +58,10 @@ how the other parts meet the word (on its baseline, over it, tucked into a lette
 it). It's the plan, not a spec: the made logo settles its proportions. It also says the route's
 words: the name alone, or with a supporting line that makes this idea stronger (a tagline, the
 trade, a place, written in the brand's voice) and where it sits. Each route decides its own words; a
-line that would sit the same under every route belongs to none. Read the three together against
-`references/taste.md`, "Defaults to recognise".
+line that would sit the same under every route belongs to none. Then read the three together:
+each comes from this business's own reality rather than the category's usual symbol, each is built
+its own way (the parts meet differently), and each has letters drawn for its idea. A route that
+shares its idea or its build with another is rewritten now, while it is a line.
 
 Each line goes on its route's option as `composition` in `brand/process/logo.md`, for the reviewer;
 the user sees the route's `line`, written for them. Name each route now with one lowercase word, its

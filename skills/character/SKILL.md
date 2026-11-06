@@ -44,13 +44,14 @@ the character is drawn in the brand's colours, filled. A drawing in one ink, a l
 is for a brief that asks for it; the logo's one-colour version comes from the full-colour drawing
 (the `logo` skill, step 6). The families, which suits which body, their words and their trace
 colours: `references/styles.md`. Its style block is pasted unchanged into every prompt. What a
-strong character looks like, and what goes wrong, to read while writing the brief:
-`references/taste.md`; the drawing is the reviewer's to judge.
+strong character looks like, to read while writing the brief: `references/taste.md`; the drawing is
+the reviewer's to judge.
 
 ### 3. Three designs, then draw
 
 In the notes, name the character the category always gets (its codes in `research.md` of
-the `new-brand` skill): that one is the default, not a candidate. Then write three briefs, each a
+the `new-brand` skill), so the three designs start from what only this business has instead. Then
+write three briefs, each a
 different design (`references/design.md`, "Three designs for one character"), and draw the three
 together, each from its own prompt (`references/styles.md`, "The prompt"), each with `wait: false`,
 then `metamorfiles_image_status { id }` for each:
@@ -148,7 +149,7 @@ sticker) is made from the sheet too: `references/poses.md`.
 
 | Read | When |
 | --- | --- |
-| [references/taste.md](references/taste.md) | What a strong character looks like, and what goes wrong |
+| [references/taste.md](references/taste.md) | What a strong character looks like |
 | [references/design.md](references/design.md) | Writing the brief, and changing it when a drawing is sent back |
 | [references/styles.md](references/styles.md) | Choosing its rendering, and the prompt |
 | [references/sheet.md](references/sheet.md) | The character sheet: its grid, the prompt, where it goes |
