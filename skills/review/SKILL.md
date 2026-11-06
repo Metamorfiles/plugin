@@ -79,6 +79,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 #### Small mark
 
 - It is the chosen logo, a part of it, or drawn from it in the same hand and colours.
+- Seen alone, it reads as this name: a letter mark is the name's first letter or its initials, since a lone letter is read as an initial.
 
 #### Final logo file
 

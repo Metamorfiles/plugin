@@ -150,8 +150,9 @@ task Studio started.
   is chosen, every face the kit doesn't list when the brand is handed over. Never remove a font yourself.
 - **Back to a version they saw is a swap.** "Change it back", "the earlier one was better": put that
   version back, `metamorfiles_use_take { step: "logo", option: "list", take: 1 }` (the earlier
-  takes Studio keeps for a route or a seed, 1 the newest), and ask again; a mockup's with
-  `step: "mockups"` and its file as `option`, nothing asked. Never make it again.
+  takes Studio keeps for a route or a seed, 1 the newest), and ask again; any other kit image's (a
+  library image, a mockup) with `step: "image"` and its file as `option`, nothing asked. Never make
+  it again.
 - **A change is local.** "Warmer", "the other face", "redo the second one": rework that step only, and
   what depends on it. A new palette recolours the logo routes; it never restarts the research.
 - **Going back from the chat.** "Back to the logo": write the logo step's file again without its

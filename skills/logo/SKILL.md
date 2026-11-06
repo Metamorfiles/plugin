@@ -148,7 +148,8 @@ mascot's answer.
 
 The small mark is next, before the imagery or anything else. It is a part of the logo that stands for
 the whole brand on its own, cut from the logo's own file, or, when no part reads alone, drawn from
-the logo in the same hand. A single letter qualifies only when it carries the logo's idea. With a
+the logo in the same hand. A letter alone is read as the name's initial, so a letter mark is the
+name's first letter or its initials, and the logo's idea lives in how that letter is drawn. With a
 mascot it may be the mascot's head or bust, taken the same way from the logo, or from the chosen
 mascot's drawing when the logo doesn't carry it. A part is cut as `references/drawn.md`, "Other
 versions of it", says. Everything this step and `references/final.md` make is the planned flow and

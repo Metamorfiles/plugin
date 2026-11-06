@@ -142,4 +142,4 @@ image's new take (`references/images.md` of the `studio` skill, "Edit or redraw"
 A piece looked at twice without
 passing goes to the user as the `review` skill's Run it, step 4, says. Back to an earlier take,
 when the user asks:
-`metamorfiles_use_take { step: "mockups", option: "brand/mockups/serum-on-shelf-1a2b3c4d.png", take: 1 }`.
+`metamorfiles_use_take { step: "image", option: "brand/mockups/serum-on-shelf-1a2b3c4d.png", take: 1 }`.
