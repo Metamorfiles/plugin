@@ -36,7 +36,7 @@ How the rubric reads, in examples. Hold every look to the same bar:
 
 Sample images, library images, mascots, character sheets, mockups, and the pictures in a page or template.
 
-- **Anatomy:** every figure is whole and possible: count each one's limbs, hands, fingers and head on its own body, also where figures overlap. A part hidden behind something or cut by the frame is fine.
+- **Anatomy:** every figure is whole and possible: count each one's limbs, hands, fingers and head on its own body, also where figures overlap. A part may be hidden behind something in the picture or run past the frame's edge; every other part is there, whatever the plan said.
 - **Physics:** every object is possible and works the way its kind works: it holds together, rests on something, opens where it opens.
 - **Lettering:** every line set in the picture says exactly what it was asked to say, unless the brief gives the words. Read words at the size the viewer meets them, and enlarge only to confirm a fault you suspect (`metamorfiles_read_file { path: "<the picture>", region: { x: 0.3, y: 0.4, width: 0.3, height: 0.15 } }`), letter by letter, accents and punctuation included (a logo is held to its file as its kind's checklist says): a stray, missing or doubled mark is a fault, as a misspelled word is.
 - **Subject:** it shows the figures, objects and action its idea rests on. What was meant as distinct is distinct: each figure or object of a set is its own.

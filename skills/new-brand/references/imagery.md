@@ -34,25 +34,27 @@ every mode: a locked style, seeds the user approves, and a library grown from th
 One paragraph, written once and pasted unchanged after every scene, so every image is drawn by the
 same hand. Describe the look the way an art director briefs an illustrator, in what it is ("flat
 cut-paper shapes in a few colours, little or no shading"; `images.md` of the `studio` skill,
-"The prompt"). The reviewer reads it the same way, as a look to recognise.
+"The prompt"). The reviewer reads it the same way, as a look to recognise. It holds only how a
+picture looks, since every line of it lands in every prompt: what a picture shows, its props and
+which thing carries the accent are each scene's own.
 - **For illustration:** the line as a look (heavy and even, thin and wavering, like a felt pen), its
   ends and how loose it is; the fills (flat, plus a material colour such as wood when the drawings
   need one); how much light and texture there is; how people are drawn; and a calm ground in the
   brand's paper colour.
 - **Colours and the accent** as `images.md` of the `studio` skill says ("The prompt", Concrete
   words; "The brand's image contract", Colour roles).
-- **For photography:** the light (hard morning sun, on-camera flash), the lens and distance, the grade,
-  real materials, how many props at most.
-- **For both:** subjects from the brief's own world, which keeps the category's and the place's
-  clichés out; words and logos stay out as `images.md` of the `studio` skill says.
+- **For photography:** "real photograph", then the light (hard morning sun, on-camera flash), the
+  depth of field, the grade and grain, the texture of real materials. How close the camera stands,
+  from where and on which lens is each scene's shot, so it stays out of the block.
 
 ## Seeds, then anchors
 
 1. Make four seeds together, each testing the style on a different job the brand's images will
    really do (the touchpoints and the kit's uses: a different subject, scale and framing each), so
-   the user sees whether the style holds across them. Their props come from the brief's own world:
-   what the business makes and uses. A character brand's seeds are the character in the brand's
-   moments. Each is
+   the user sees whether the style holds across them. Their subjects and props come from the brief's
+   own world: what the business makes and uses, which keeps the category's and the place's clichés
+   out. A character brand's seeds are the character in the brand's moments. Each is written as
+   "The prompt" of `images.md` of the `studio` skill says, and made with
    `metamorfiles_generate_image { prompt, width: 1600, height: 2000, references: ["templates/brand-board#process-direction:<chosen id>"], folder: "brand/process/imagery", ground: "<the direction's paper>", wait: false }`,
    the prompt starting "Image 1 is the chosen direction: take its palette, light and mood, never its
    pictures"; a character brand's seed passes its sheet first and the direction second,
@@ -85,7 +87,8 @@ A drawing on a flat paper field also passes `ground: "{colors.background}"`, so 
 brand's paper; a photograph never takes a `ground`. Each is made at the shape
 it will be used at (1024 × 1024 for a spot, 1600 × 2000 for a 4:5 scene):
 - **Spots:** single objects the business sells or uses, centred with space around them.
-- **Scenes:** the business's moments and people, with calm space above for a headline.
+- **Scenes:** the business's moments and people, shot with room for a headline in what the camera
+  sees around them.
 
 A character's images carry its sheet first and its Character lines (`images.md` of the `studio`
 skill, "The prompt").
@@ -101,4 +104,4 @@ skill, "The prompt").
   - **Character** (a character brand): its Character lines, word for word.
   - **Colour roles:** each colour's hex and what it paints in a scene, as `images.md` of the
     `studio` skill says.
-  - **Writing a scene:** one or two example scenes in the brand's words, subject first.
+  - **Writing a scene:** one or two of the seeds' Scene lines, as they were sent.

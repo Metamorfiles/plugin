@@ -81,8 +81,9 @@ returned as the image's value.
 - **In the brand's imagery style,** with the style references `references/images.md` of the
   `studio` skill allows ("The prompt", References).
 - **No words, letters, numbers, logos or labels in it,** asked for plainly: they are set in step 3.
-- **The zones in the prompt:** where it stays calm and open for the logo and the type, and where its
-  subject sits. A picture that fills every corner leaves the type nowhere to go.
+- **The zones in the prompt,** as part of what the picture shows (its Scene): where its subject sits,
+  and what stays calm and open there for the logo and the type. A picture that fills every corner
+  leaves the type nowhere to go.
 - **The brand's colours as its guide,** named as the brand names them; the picture may bring
   colours of its own where the composition needs them.
 - **Printed in flat colour** (screen print, cut vinyl, apparel): traced as it's made, with `trace`
