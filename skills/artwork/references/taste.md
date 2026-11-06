@@ -15,9 +15,3 @@ direction and the category decide what the piece is.
   sizes a shopper reads.
 - **A system across a range:** flavours or variants as the same layout with a changed colour and
   picture, so the shelf reads as a family.
-
-## Weak, and why it happens
-
-- **Flat boxes of colour with type on them,** where the category carries pictures: the artwork was
-  built in markup alone. Paint the picture.
-- **The logo alone on a field of colour** on an object printed all over in real life.
