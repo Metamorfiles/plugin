@@ -53,11 +53,11 @@ what it makes and from what, its rituals and its people, the printed things of i
 receipt, a crate's stamp). Note the few that fit this piece. The category's usual symbol is what
 every competitor already has.
 
-**The best of its kind.** Before deciding a piece, see how the best designers made one: search
-Studio's index for that kind of piece in that kind of business,
-`metamorfiles_search_references { query: "skincare poster" }`, and look at the covers (a search
-spends none of the day's pages), or at the references the brand's research already collected when
-they show this kind of piece. Name what the strongest do with the space (how they compose, not what
+**The best of its kind.** Before deciding a piece, see how the best designers made one. The brand's
+references come first: `metamorfiles_get_project` lists the chosen direction's, each with what to
+take from it. When none shows this kind of piece, search Studio's index for it in that kind of
+business, `metamorfiles_search_references { query: "skincare poster" }`, and look at the covers (a
+search spends none of the day's pages). Name what the strongest do with the space (how they compose, not what
 they show), and take one way of composing on whole: blended with your usual layout, it becomes the
 usual layout. They set the standard to reach; their subjects and marks stay theirs.
 
