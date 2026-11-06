@@ -79,7 +79,7 @@ edit or redraw", says.
 | An independent review before delivering, and after any layout change | `review` |
 | Studio activated on this computer, or a download key entered | `activate` |
 | To see, tweak, edit elements or export by hand | `metamorfiles_open_panel { item: "pages/<id>" }`, give the URL |
-| An earlier version back | `metamorfiles_list_history { item }`, then `metamorfiles_restore_version { item, version }`; a mockup's or a new brand's earlier take: `metamorfiles_use_take` (the `mockup` and `new-brand` skills) |
+| An earlier version back | `metamorfiles_list_history { item }`, then `metamorfiles_restore_version { item, version }`; any kit image's earlier take (a library image, a mockup, a sample image): `metamorfiles_use_take`, never made again; `metamorfiles_read_file` of the image lists its takes |
 
 If that skill is not loaded, call `metamorfiles_get_guide { name: "<skill>" }`, such as the `variants` skill.
 
