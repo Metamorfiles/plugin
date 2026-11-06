@@ -6,15 +6,13 @@ references and set in the brand's own words.
 ## Palettes
 
 Each direction has a complete palette, not a swatch list:
-- **Colours named from the brand's world** (`paper`, `ink`, `clay`, never `primary-1`), in the
+- **Colours named from the brand's world** (`paper`, `ink`, `clay`), in the
   order they are used, each with its **share**, as the direction's references use them.
 - **Text pairs work:** the ink on the ground at 4.5:1 or more, the ground on the dark colour too.
   Check the accent: if it can't carry text, say so, and keep it for shapes.
 - **Differ in logic, not in hue.** Each palette's logic comes from its path's source: the place's
   own colours, the product's material, the category's habit reversed. Two palettes one tint apart
   are one direction.
-- Avoid the generated-brand palettes unless the idea needs them: cream with a high-contrast serif
-  and terracotta, indigo to violet, navy with electric blue, beige with sage, black with acid green.
 
 ## Type
 
@@ -23,7 +21,7 @@ Each direction has a complete palette, not a swatch list:
 - Add each face with `metamorfiles_add_font { family: "<family>" }` before you write the option, and
   give the option the file it returned.
 - **Set them in the brand's words,** the option's `sample`: a line from the brief or the brand's
-  voice, in the language the brand writes in, never the alphabet or "Lorem".
+  voice, in the language the brand writes in, so the faces are judged on what they will set.
 
 ## The option
 

@@ -4,32 +4,32 @@ The image model draws the logo as one drawing, lettering and all, and Studio mak
 lettering alone, or lettering with a mark, a mascot or ornaments, drawn in one style so every part
 belongs to the others.
 
-## What the model draws well, and what it doesn't
+## What the model draws well
 
 - **Expressive lettering draws well**: scripts, chubby, soft, bouncy or hand-cut letters, where the
   hand's irregularity is part of the look.
-- **Precise lettering doesn't**: carved or faceted strokes, engraved capitals, fine hairline serifs,
-  perfectly even geometric capitals come out nearly right, and a trace keeps every flaw. An idea
-  that needs such lettering is made with real fonts and a generated part instead, or replaced by
-  another idea (`SKILL.md`, step 4).
+- **Precise lettering** (carved or faceted strokes, engraved capitals, fine hairline serifs,
+  perfectly even geometric capitals) is made with real fonts and a generated part, or the idea is
+  replaced by another (`SKILL.md`, step 4): the model draws it nearly right, and a trace keeps
+  every flaw.
 - **Supporting words** (a tagline, the trade, the place), when the route has them, are set in real
-  type and composed with the traced drawing (`lockups.md`), not drawn.
+  type and composed with the traced drawing (`lockups.md`).
 
 ## The prompt
 
-Write the prompt from the chosen direction and the brief, as a designer's brief, never a font's name:
+Write the prompt from the chosen direction and the brief, as a designer's brief:
 - the look and feel, in the direction's own terms;
-- the lettering, described in a designer's words;
+- the lettering, described by its shapes in a designer's words, since the model draws shapes, not
+  font names;
 - the layout: how the parts sit together and the space between them;
 - any mark, mascot or ornament, in the same hand and weight as the letters, and how it meets them
   (over the word, closing it, beside it); a mascot is briefed with the `character` skill, by who it
-  is, its face, what it's doing and its look, never as a list of parts;
+  is, its face, what it's doing and its look, so the drawing finds its parts;
 - each colour for what it paints, from the direction's palette;
 - the name in quotes, exactly as written, an uncommon one spelled letter by letter;
 - "flat vector artwork, like a brand designer's final logo file", and no other text.
 
-A joined script joins letters within a word, never across the space between words: say each word is
-written on its own. Accents keep their shape and their place over their letter.
+A joined script joins letters within each word: say each word is written on its own. Accents keep their shape and their place over their letter.
 
 Show the model the look, not only describe it: the chosen direction's card first, then two or three
 of its reference images that show lettering, a mark or a mascot, and start the prompt with "Image 1
@@ -55,7 +55,7 @@ What `SKILL.md`, step 6, gives each route:
 - **Its one colour**, a recolour: `metamorfiles_make_logo_variant` with `colors`, as step 6 says.
 - **A part taken out as it is** (the mark alone, the name alone): `metamorfiles_make_logo_variant`
   with `keep`. Its box always comes from the `boxes` `metamorfiles_check_logo` reports for that file,
-  around that part's pieces, never a fixed share. A part sitting on a shape of another colour (a
+  around that part's pieces. A part sitting on a shape of another colour (a
   letter on a band, a mark on a badge) is freed first by cutting that colour out,
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<file>.svg", output: "brand/process/logo/<file>-free.svg", colors: { "<the shape's colour>": "knockout" } }`,
   then `keep` on that file. No image is made.

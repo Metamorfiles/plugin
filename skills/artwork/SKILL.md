@@ -7,11 +7,10 @@ license: MIT
 # Artwork
 
 Real packaging is a picture and a hierarchy working together: an illustration, a pattern or a
-photograph that fills the face, and the brand, the product and its words set on it with care. Built
-from flat boxes of colour and type alone, it looks made by code. So the work is split by what each
-does best: the image model paints the picture, in the brand's own style, and Studio sets the logo
-and every word exactly, from the real files and fonts. Neither does the other's job here: the model never
-draws a letter or the logo, and the picture is never a CSS gradient. (A print whose only words are the logo and a short line is drawn whole instead: step 2 of the `mockup` skill.)
+photograph that fills the face, and the brand, the product and its words set on it with care. So the
+work is split by what each does best: the image model paints the picture, in the brand's own style,
+and Studio sets the logo and every word exactly, from the real files and fonts. Each keeps to its
+job: every letter and the logo are Studio's, the picture always the model's. (A print whose only words are the logo and a short line is drawn whole instead: step 2 of the `mockup` skill.)
 
 ## Which artwork
 
@@ -29,8 +28,8 @@ named. Its words, when it has any, are set in a page as below. New poses of the 
 with the `character` skill (`references/poses.md` of the `character` skill).
 
 **Free:** the same call with the library's sheet alone, named "only its style, never its subjects or
-colours", and the piece's own colours (one ink for a one-colour print). No brand colours or logo
-unless the user asks.
+colours", and the piece's own colours (one ink for a one-colour print). Brand colours and the logo
+only when the user asks.
 
 Printed in flat colour: traced as step 2 says.
 
@@ -102,7 +101,7 @@ own fonts and tokens (`var(--brand-…)`, files from `../../brand/…`).
   ("Generate and place, edit or redraw").
 - The logo at the size this object carries it, in the version made for the ground it sits on.
 - Every word from the hierarchy (step 1), real.
-- Type sits on the calm zones the picture left, never on a box laid under the words.
+- Type sits straight on the calm zones the picture left.
 - Margins and bleed as `references/print.md` of the `studio` skill says.
 
 ### 4. Review, then export

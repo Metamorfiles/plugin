@@ -10,13 +10,14 @@ the `studio` skill; this is the shape of this particular message.
 2. **What the brand is**, in two or three sentences, in its own materials: the paper, the ink, the
    accent, what each typeface carries, and what the whole thing feels like. This is the only part
    that is yours to write, and it is what makes the kit feel made rather than extracted.
-3. **What you decided for them.** Up to four, in plain words, no values. End with one line telling
-   them a sentence is enough to change any of it.
-4. **What genuinely needs them.** Never more than two, and only real ones: a gap you cannot fill, a
-   fact only they have. If there is nothing, say nothing. A choice that is theirs was asked with
-   `metamorfiles_ask_user` before the handover, never as a question here.
-5. **What they can do next,** as an offer, never a question: the kit downloads from the brand board
-   (or `metamorfiles_export_kit {}` writes it into `kit/`), with the logos for print and screens, the
+3. **What you decided for them.** Up to four, the ones that would surprise them, in plain words, no
+   values: Sources is the complete record. End with one line telling them a sentence is enough to
+   change any of it.
+4. **What genuinely needs them.** At most two, and only real ones: a gap you cannot fill, a fact
+   only they have, each said as what the kit does until they answer. If there is nothing, say
+   nothing. A choice that is theirs was already asked with `metamorfiles_ask_user` before the
+   handover.
+5. **What they can do next,** as a stated offer: the kit downloads from the brand board (or `metamorfiles_export_kit {}` writes it into `kit/`), with the logos for print and screens, the
    website's icons and colours, the guidelines and the brand's words; and the team can make anything
    with the brand, first the pieces the brief's "What they asked for" names, else posts, a business
    card, covers, a flyer. Studio shows the same offer at the top of the panel, so
@@ -24,7 +25,7 @@ the `studio` skill; this is the shape of this particular message.
 
 ## Worked example
 
-For Lumen Skincare, Studio's fictional example brand:
+For Lumen Skincare, Studio's fictional example brand, handed over the way a designer would:
 
 > **Lumen Skincare**: your brand board is in the control panel, http://127.0.0.1:4747/_studio/?item=templates/brand-board
 >
@@ -51,25 +52,5 @@ one and the summary is its short form. The same shape, much shorter:
 2. **What you decided for them**, in one sentence.
 3. **What needs them**, each a short line of its own, at most two.
 
-No offer and no question: Studio shows "<Brand> is ready" with **Make the first posts** at the top.
-Short: a few lines the user reads at a glance. Plain sentences: no headings, no bold labels, no bullets for
-anything that isn't a list of what needs them.
-
-## What this message never contains
-
-- A list of everything marked `proposed`. Name the few that would surprise them; the Sources table
-  is the complete record and it is one file away.
-- A menu of approvals, or a question to close with. The work is done; the offer is enough.
-- An apology for what the brand doesn't have.
-
-## Getting it wrong
-
-The same handover, written as a report:
-
-*"Values I supplied rather than observed (all marked proposed in Sources): the dark theme
-(dark.background #1f1a17, dark.surface #3b2e27), spacing steps xs to 2xl, and on-error. One AA
-miss: clay #c9785b on paper #f6f1ea is 2.96:1, below 4.5:1, so primary is restricted to
-backgrounds."*
-
-Every word of it is true, and a buyer reads it as a build log from a tool rather than a handover
-from a designer. The information is not the problem; the room it is said in is.
+The offer is Studio's: it shows "<Brand> is ready" with **Make the first posts** at the top.
+Short: a few plain sentences the user reads at a glance.

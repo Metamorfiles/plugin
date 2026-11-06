@@ -22,9 +22,9 @@ route's supporting words, if any, composed with it.
 
 ## Spacing it
 
-Sizes, gaps and positions are set for this logo, from what its results report, never copied from
-another logo. A mark beside the name stands apart from its letters, the space clearly wider than any
-space between two letters, so it never reads as one more letter: a row's result reports that space as
+Sizes, gaps and positions are set for this logo, from what its results report. A mark beside the
+name stands apart from its letters, the space clearly wider than any space between two letters, so
+it reads as a mark of its own: a row's result reports that space as
 `spacing`, beside the word's own letter spaces, as information for the setting. Only a mark meant to
 be read as a letter keeps the letters' spacing. A round or pointed part standing on the baseline
 overshoots it a little (`shift`), as round letters do. Supporting words follow the word's own axis:

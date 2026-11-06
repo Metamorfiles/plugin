@@ -33,9 +33,8 @@ every mode: a locked style, seeds the user approves, and a library grown from th
 
 One paragraph, written once and pasted unchanged after every scene, so every image is drawn by the
 same hand. Describe the look the way an art director briefs an illustrator, in what it is ("flat
-cut-paper shapes in a few colours, little or no shading"), not as a list of bans
-(`images.md` of the `studio` skill, "The prompt"). The reviewer reads it the same way, as
-a look to recognise, not rules to count.
+cut-paper shapes in a few colours, little or no shading"; `images.md` of the `studio` skill,
+"The prompt"). The reviewer reads it the same way, as a look to recognise.
 - **For illustration:** the line as a look (heavy and even, thin and wavering, like a felt pen), its
   ends and how loose it is; the fills (flat, plus a material colour such as wood when the drawings
   need one); how much light and texture there is; how people are drawn; and a calm ground in the
@@ -44,8 +43,8 @@ a look to recognise, not rules to count.
   words; "The brand's image contract", Colour roles).
 - **For photography:** the light (hard morning sun, on-camera flash), the lens and distance, the grade,
   real materials, how many props at most.
-- **For both:** keep the category's and the place's clichés out by choosing the subjects, not by
-  listing them; words and logos stay out as `images.md` of the `studio` skill says.
+- **For both:** subjects from the brief's own world, which keeps the category's and the place's
+  clichés out; words and logos stay out as `images.md` of the `studio` skill says.
 
 ## Seeds, then anchors
 

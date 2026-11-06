@@ -1,7 +1,7 @@
 # Character taste
 
-What a strong brand character looks like, from a study of current identity work. It describes; it
-never decides: the brief and the chosen direction decide who the character is and how it's drawn.
+What a strong brand character looks like, from a study of current identity work. It describes; the
+brief and the chosen direction decide who the character is and how it's drawn.
 The logo's own page is `references/taste.md` of the `logo` skill; the families of rendering are in
 `styles.md`.
 

@@ -1,8 +1,8 @@
 # Logo taste
 
 What a strong logo looks like, from a study of current identity work across food, drink, fashion,
-sport, culture, services and tech. It describes; it never decides. The brief and the chosen direction
-decide the look. Read it while planning the routes, for what a strong version of that look is;
+sport, culture, services and tech. It describes; the brief and the chosen direction decide the
+look. Read it while planning the routes, for what a strong version of that look is;
 judging the made logo is the reviewer's. A character has its own page: `references/taste.md` of
 the `character` skill.
 
@@ -21,12 +21,12 @@ the `character` skill.
   there for a reason.
 - **Boldness in one place.** One loud part (the letters, the character, the swapped letter) held by
   quiet, exact partners (a plain line of small capitals, a thin ring).
-- **Character is a choice, not noise.** Uneven widths, a bounce, a cut edge are drawn on purpose and
-  repeated with intent. Accidents look like accidents.
+- **Character is a choice.** Uneven widths, a bounce, a cut edge are drawn on purpose and repeated
+  with intent, so they read as chosen.
 - **Made for its world.** It already looks like it belongs on this business's pack, box, sign
   or app icon.
 - **A family, not a file.** A strong logo comes as a small set: the main lockup, a one-line version,
-  the mark alone, often a seal or tag. Each is the same parts rearranged, never redrawn.
+  the mark alone, often a seal or tag. Each is the same parts, rearranged.
 
 ## Lettering families
 
@@ -104,7 +104,7 @@ deliberate, and the lockup stays the same in every file.
 
 - **Same hand as the letters.** A cut-paper name gets a cut-paper mark; a monoline script gets a
   monoline mark. The hand is the line weight, the edges and the corners; a character keeps its face
-  and its drawing, never turned into a silhouette to match a heavy face.
+  and its drawing beside a heavy face too.
 - **One idea, simple enough to cut out,** and still itself in one colour.
 
 ## Colour in the logo

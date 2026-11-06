@@ -18,8 +18,8 @@ Use a preset (`business-card`, `business-card-us`, `a6` to `a3`, `dl`, `us-lette
 ## The page
 
 - A background, a band or a photo that meets an edge runs on to the edge of the image, through the bleed: the cut wanders, and a background that stops at the trim leaves a white line.
-- Nothing that matters in the bleed or within 3 mm (⅛ in) inside the trim: the checks name both.
-- Colour: design in the brand's colours as on screen. The exported kit gives the printer coated and uncoated CMYK; never convert colours yourself.
+- Everything that matters sits at least 3 mm (⅛ in) inside the trim, clear of the bleed: the checks name both.
+- Colour: design in the brand's colours as on screen; the exported kit converts them, giving the printer coated and uncoated CMYK.
 
 ## A business card
 

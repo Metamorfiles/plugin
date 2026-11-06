@@ -12,15 +12,14 @@ or `metamorfiles_import_image`:
 - **`inks`:** how many colours the trace has in all. Beyond the brand's, the drawing keeps its own
   colours (a sky, a skin tone, a shade), largest first, up to this number (eight beyond the listed
   ones when left out). Artwork may use any colour
-  the composition needs: the brand's colours are its guide, never a limit. Ask the prompt for flat
+  the composition needs, with the brand's colours as its guide. Ask the prompt for flat
   colour in about that many colours, with no gradient, shading or texture. Leave `colors` out to
   trace an image in its own colours alone (the user's own file, art with no brand tie).
 - **`ground`:** an image on a paper or garment colour (an illustration from the library, a file on
   white) names it as `ground`, and that colour is left out of the trace, inside the drawing too, as a
   printer knocks out the garment.
 - **Edge to edge:** a full-bleed picture (a poster, a wrap) with no paper to name is traced whole.
-- **Not traced:** a photograph, a gradient or textured art. It stays a raster, printed at its
-  resolution: make it at the largest size the source gives.
+- **Kept a raster:** a photograph, a gradient or textured art, printed at its resolution: make it at the largest size the source gives.
 
 The result lists each colour with its share, how much of the drawing the trace keeps and any
 gradient, and says what to do about each. The brand's logo is made by the `logo` skill, never traced

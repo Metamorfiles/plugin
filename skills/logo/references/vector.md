@@ -1,8 +1,8 @@
 # From drawing to vector
 
 A mark, a character or a logo drawn whole is drawn by the image model and traced by Studio into a
-vector in the brand's exact colours. Type set from a font is never traced, and supporting words are
-never drawn: they are set from fonts (`wordmark.md`).
+vector in the brand's exact colours. Type and supporting words are set from fonts (`wordmark.md`),
+exact as they are.
 
 ## Drawn to be traced
 
@@ -14,7 +14,7 @@ The trace keeps what the drawing gives it, so the drawing is made clean:
   the field out.
 - **Flat colour only.** Each area a flat colour, with no gradient, shading, texture, glow or drop
   shadow. The brand's colours and any others the design needs: every flat area is kept as drawn.
-- **No hairlines.** A line too thin breaks up in the trace.
+- **Lines with weight.** Every line thick enough to trace whole: a hairline breaks up.
 - **Large and centred**, with space around it: a detail drawn small is traced small.
 
 ## Tracing

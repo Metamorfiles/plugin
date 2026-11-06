@@ -10,11 +10,10 @@ Messaging as you write them.
 ## How it sounds
 
 - The brand as it is, in the present tense: "The logo sits on paper or on a plate of paper over a
-  photograph." Never how it was made, chosen, approved or what it replaced.
+  photograph." Its history goes in Sources ("What goes elsewhere").
 - Rules stated plainly, with the brand's own reason where one helps: "One accent, so a price or a
   button is always the first thing seen."
-- A concrete reference over adjectives: "a bathroom shelf in early light" carries more than
-  "clean, warm, minimal".
+- A concrete reference carries the look: "a bathroom shelf in early light".
 - Colours and type named by their tokens, so values stay in one place: `**Clay** {colors.clay}`.
 - Every measure a real one: a share of the logo's height, or px at a stated size.
 - The brand's name is text wherever a sentence names it; only where the logo stands is it the logo.
@@ -49,7 +48,7 @@ The files are in `logos`; the section names the versions, never their paths.
 >   separate the sun from the word.
 
 **Imagery.** The kind of image, the picture every other one follows (what's in it, its light, its
-palette), and what never appears. Never how the images are made.
+palette), and what never appears.
 
 > Photographs, never illustrations: one product on warm stone, low morning sun from the side, long
 > soft shadows. Always a muted warm palette, plain labels, no text, no people.

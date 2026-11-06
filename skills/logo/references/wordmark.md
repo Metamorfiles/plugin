@@ -7,8 +7,8 @@ draws its name (`drawn.md`).
 
 `metamorfiles_type_study { text: "Lumen", faces: ["Host Grotesk", { family: "Schibsted Grotesk", weight: 700 }] }`
 sets the name in many faces on one sheet, one row each. Faces the brand has are used from
-`brand/fonts/`; any other open-licence Google Fonts family is fetched into a study folder and never
-becomes part of the brand until you add it.
+`brand/fonts/`; any other open-licence Google Fonts family is fetched into a study folder and
+becomes part of the brand only when you add it.
 
 - Start from the faces the chosen direction names, and add others with the same qualities from
   `references/fonts.md` of the `new-brand` skill, each at the weight it would be used at.
@@ -32,8 +32,8 @@ and the alternates it has for these letters.
 - **A moved letter** (`moves`) only when the route's composition has a reason for it, the letter that leans
   into the mark: a turn pivots on the letter's foot, so it stays on the line, and the result names
   every letter off its line.
-- **A name that bounces, arches or waves is lettering,** drawn whole (`drawn.md`), never real type
-  bent or jiggled: bent type reads as WordArt, where drawn lettering curves.
+- **A name that bounces, arches or waves is lettering,** drawn whole (`drawn.md`): drawn letters
+  curve with their line, where bent type reads as WordArt.
 - **A drawn part** in a letter's place or its accent's: `symbol.md`, "A drawn letter".
 
 Every wordmark keeps its settings beside it (`<file>.svg.json`). Change one thing without restating

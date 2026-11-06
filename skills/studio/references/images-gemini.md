@@ -2,7 +2,7 @@
 
 For `gemini` image models (Nano Banana) and `imagen`. Read with [images.md](images.md), whose rules still hold.
 
-- **Rich sentences, not keyword lists.** Describe the scene as you would to a photographer.
+- **Rich sentences.** Describe the scene as you would to a photographer.
 - **Product and negative-space shots** have a known shape here: the surface the product stands on, the light setup, the camera angle, the one detail to show; or the subject small in a named corner of a large empty field of one color, for text. The second is exactly a social-post background.
 - **References.** Refer to them as "image 1", "image 2". To keep one exact, describe it in detail and say it stays completely unchanged.
 - **Say what it's for**, and for a complex scene, describe it step by step.
