@@ -1,6 +1,6 @@
 ---
 name: logo
-description: Designs a logo in Metamorfiles Studio for a brand that has none: three routes, three different ideas, each made by the method that serves it (drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, or type alone), then, once the user chooses, its small mark and its small uses. Use for the logo step of a new brand, or when the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a brand whose DESIGN.md already sets its look. A business with nothing made yet, even when the user asks only for a logo, starts with the new-brand skill, whose logo step this is. Not for a brand that already has a logo, whose official files are never redrawn (the brand skill).
+description: Designs a logo in Metamorfiles Studio for a brand that has none: three routes, three different ideas, each made by the method that serves it (drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, or type alone), then, once the user chooses, its final files and how it's used small. Use for the logo step of a new brand, or when the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a brand whose DESIGN.md already sets its look. A business with nothing made yet, even when the user asks only for a logo, starts with the new-brand skill, whose logo step this is. Not for a brand that already has a logo, whose official files are never redrawn (the brand skill).
 license: MIT
 ---
 
@@ -22,7 +22,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
 - [ ] 6. Each route's files: colour and one colour, plus the parts it shows
 - [ ] 7. Routes shown and one recommended
-- [ ] 8. After the choice: the mascot first when the brand has one; the small mark (the logo's own mark is recorded, several are asked); then the final files and small uses (`references/final.md`)
+- [ ] 8. After the choice: the mascot when the brand has one; then the final files and the logo used small (`references/final.md`)
 ```
 
 ### 1. What the brand already decided
@@ -111,9 +111,9 @@ for what the check reports. After the review, it changes only as the `review` sk
 A route's files before the choice: its logo in colour on the ground it's made for, and in one colour
 on white, each with its `ground`, plus the parts it's built from (the name alone, the mark alone,
 with `small: true` on the mark's entry so the board leads with the logo) when the route means to
-show them. The reversed version, the small mark and the version redrawn where one colour loses a
-part (`references/drawn.md`, "Other versions of it") are made after the choice, for the chosen route
-only (step 8).
+show them. The reversed version and the version redrawn where one colour loses a part
+(`references/drawn.md`, "Other versions of it") are made after the choice, for the chosen route only
+(step 8).
 
 One colour is what tells routes apart: it shows whether the drawing holds without its fills. A
 drawing of lines with coloured fills becomes line art in one colour: its line colour to the ink and
@@ -143,42 +143,14 @@ each is and why, the recommended one first.
 
 Start the chosen logo's cleanup at once (`references/final.md`), then go on. The brand has a mascot
 when `logo.md` has `mascot: true` at the top or the chosen route has it (Studio checks both): then the
-mascot comes first, the `character` skill, "In a new brand", and the small mark waits for the
-mascot's answer.
+mascot comes first, the `character` skill, "In a new brand", and the imagery waits for its answer.
 
-The small mark is next, before the imagery or anything else. It is a part of the logo that stands for
-the whole brand on its own, cut from the logo's own file, or, when no part reads alone, drawn from
-the logo in the same hand. A letter alone is read as the name's initial, so a letter mark is the
-name's first letter or its initials, and the logo's idea lives in how that letter is drawn. With a
-mascot it may be the mascot's head or bust, taken the same way from the logo, or from the chosen
-mascot's drawing when the logo doesn't carry it. A part is cut as `references/drawn.md`, "Other
-versions of it", says. Everything this step and `references/final.md` make is the planned flow and
-needs no extra word from the user: the mascot cut or drawn out of the chosen logo, the small mark
-(an edit of the logo included), the version redrawn where one colour loses a part, and the final
-files. Only a new layout or version the user didn't ask for needs their word first.
-
-- **The logo has a mark of its own** (a logo put together from parts: its `.svg.json` lists `parts`):
-  that part's file already is the small mark, the only one: there is nothing to choose, so nothing
-  else is made or offered. Nothing is cut; it is only set in its square,
-  `metamorfiles_make_logo_variant { file: "brand/process/logo/<the mark part>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x: 0, y: 0, width: 1, height: 1 }, square: true }`.
-- **A part of a drawn logo reads alone** (a monogram of its initials, a seal's middle, the drawing
-  without its letters, or the whole logo): cut it from the logo's file,
-  `metamorfiles_make_logo_variant { file: "brand/process/logo/<chosen>.svg", output: "brand/process/logo/<name>-mark.svg", keep: { x, y, width, height }, square: true }`.
-- **No part reads alone** (fine detail, a long name, a mascot's head over the letters): never clean or
-  redraw the logo for it. Have the image model make the mark as an edit of the logo, its file first
-  in `references`, the prompt naming the part and saying it is simplified, in the logo's own drawing,
-  colours and proportions, and trace it:
-  `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], edit: true, width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] } }`.
-
-Check each with `metamorfiles_check_logo` and write them into `brand/process/logo.md` as `marks`,
-each `{ file, title, line }` (the line: what it is and why it fits). Studio shows them on the
-`process-logo` frame's last page as a profile picture and an app icon. One mark, the logo's own, is
-no choice: Studio records it as `mark` when it's written, and nothing is asked. Otherwise offer two
-or three, one `recommended: true`, and ask with `metamorfiles_ask_user { step: "mark" }`; Studio
-records the answer as `mark` and starts nothing of the imagery until it's answered. Then the imagery, while the
-final files are made (`references/final.md`): first the chosen logo's redrawn version, when
-`metamorfiles_check_logo` reported a part lost in one colour (`references/drawn.md`, "Other
-versions of it").
+Then the imagery, while the final files are made (`references/final.md`): first the chosen logo's
+redrawn version, when `metamorfiles_check_logo` reported a part lost in one colour
+(`references/drawn.md`, "Other versions of it"). Everything this step and `references/final.md` make
+is the planned flow and needs no extra word from the user: the mascot cut or drawn out of the chosen
+logo, the version redrawn where one colour loses a part, and the final files. Only a new layout or
+version the user didn't ask for needs their word first.
 
 ## References
 
@@ -192,7 +164,7 @@ versions of it").
 | [references/seal.md](references/seal.md) | A seal, badge or monogram |
 | [references/vector.md](references/vector.md) | How a drawing is made and traced, and what to do with the trace's result |
 | [references/checks.md](references/checks.md) | What metamorfiles_check_logo reports, and the fix for each |
-| [references/final.md](references/final.md) | Once the user has chosen a logo: cleaning, the final files, the small uses |
+| [references/final.md](references/final.md) | Once the user has chosen a logo: cleaning, the final files, the logo used small |
 
 The faces worth studying are in `references/fonts.md` of the `new-brand` skill; a
 mascot is designed with the `character` skill; how to prompt each image model is in

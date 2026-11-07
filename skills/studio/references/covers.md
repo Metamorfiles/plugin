@@ -4,7 +4,7 @@
 
 ## The set
 
-The brand's profile picture is in the exported kit (`Profile picture.png`, from its small mark). Covers are the wide images above or behind it, one per platform the user is on: `facebook-cover`, `linkedin-cover` (a person's page), `linkedin-company-cover`, `x-header`, `youtube-banner`, `bluesky-header`. Make only the ones for platforms the user names or the brief lists.
+The brand's profile picture is in the exported kit (`Profile picture.png`, from its logo used small). Covers are the wide images above or behind it, one per platform the user is on: `facebook-cover`, `linkedin-cover` (a person's page), `linkedin-company-cover`, `x-header`, `youtube-banner`, `bluesky-header`. Make only the ones for platforms the user names or the brief lists.
 
 ## What a cover is
 

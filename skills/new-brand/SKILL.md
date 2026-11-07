@@ -24,7 +24,7 @@ Copy it into your notes and tick each step as you go:
 ```
 - [ ] Brief: brand/process/brief.md, the user's answers and the research below them
 - [ ] 1. Direction: three paths in the brief, references collected for each, directions written, asked, chosen
-- [ ] 2. Logo: three routes with the `logo` skill, reviewed, asked, chosen; then its step 8: the mascot when the brand has one (`step: "character"`), then the small mark (`step: "mark"`, asked only when there are several), each reviewed
+- [ ] 2. Logo: three routes with the `logo` skill, reviewed, asked, chosen; then its step 8: the mascot when the brand has one (`step: "character"`), reviewed
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
 - [ ] Kit: DESIGN.md (its prose by the copywriter), final logos, fonts and the library; then the imagery guide
 - [ ] Mockups: three shots, each reviewed (the `mockup` skill)
@@ -111,8 +111,8 @@ task Studio started.
   exactly the options offered, never one you dropped; when they change before you ask (one redrawn
   after the review), say them again. What you said you'd make before the work never
   stands in for it. Studio asks only what the thread last said.
-- **Ask with `metamorfiles_ask_user { task, step: "logo" }`** (`direction`, `logo`, `character`,
-  `mark` or `imagery`).
+- **Ask with `metamorfiles_ask_user { task, step: "logo" }`** (`direction`, `logo`, `character` or
+  `imagery`).
   Studio asks the step's own question with the options' titles, the panel offers to bring the step's
   frame into view, and the user chooses there, in the thread or in your chat. From the user's own app
   it returns at once: write the panel link and the options in your reply as Studio lettered them,
@@ -170,7 +170,6 @@ skill on the queue and wait for its verdict:
 |---|---|
 | `logo.md` written, before asking | `logo` |
 | The mascots, and in the logo's own case their sheet, before asking | `character` |
-| The small marks, before asking | `mark` |
 | `imagery.md` written, before asking | `imagery` |
 | The mockups, a flat design before its photograph | `mockups` |
 | The kit written: its logo files, its library, its mockups and DESIGN.md | `handover` |
@@ -244,11 +243,10 @@ its frame shows each file as it arrives, so the user watches the step come toget
 1. **Direction:** brief facts, touchpoints, codes and three paths into `brief.md`; references per
    path; one option per path that holds up (`references/research.md`, then `references/look.md`).
 2. **Logo** (the `logo` skill, steps 1-7, written into `logo.md`), then its step 8 once one is
-   chosen: the mascot first when the brand has one (the `character` skill, "In a new brand"), then
-   the small mark.
+   chosen: the mascot when the brand has one (the `character` skill, "In a new brand").
 3. **Imagery** (`references/imagery.md`). The mode the brand needs, the style block, and four seeds
    made together, one per option, saved in `brand/process/imagery/`. The seeds the user keeps are the
-   anchors. Start the seeds once the small mark is chosen.
+   anchors. Start the seeds once the logo, and its mascot when the brand has one, are chosen.
 4. **Kit**, in this order, since a folder in `assets` must exist and its frame appears once it is
    listed:
    1. **DESIGN.md and the library.** The words are the copywriter's, always: report as `copywriter`

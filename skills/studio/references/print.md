@@ -25,7 +25,7 @@ Use a preset (`business-card`, `business-card-us`, `a6` to `a3`, `dl`, `us-lette
 
 Two sides, one page, its design's manifest declaring `"formats": ["business-card"]`: `metamorfiles_create_page { name: "Business card", kind: "business-card", design: "<index.html>", sides: true, variants: [{ id: "front" }, { id: "back" }] }`. The variants are the sides in order and export as one PDF with a page per side.
 
-A card is read in two seconds and kept for months. One side carries the brand (the logo or the small mark, or a pattern from the brand kit); the other carries the person: name, role, then the contact lines the user gave, in the order someone would use them. Never invent a phone, an address or a title: ask, or leave the line out.
+A card is read in two seconds and kept for months. One side carries the brand (the logo, its mark, or a pattern from the brand kit); the other carries the person: name, role, then the contact lines the user gave, in the order someone would use them. Never invent a phone, an address or a title: ask, or leave the line out.
 
 ## A flyer or a poster
 
