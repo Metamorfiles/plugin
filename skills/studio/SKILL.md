@@ -6,7 +6,7 @@ license: MIT
 
 # Metamorfiles Studio
 
-Metamorfiles turns a brand and a brief into HTML image templates, makes pages of variants from them, and exports pixel-exact PNG, JPEG or WebP files. Everything runs on the user's machine through the `metamorfiles` MCP server, and the user sees and edits the work in Studio's control panel.
+Metamorfiles makes brands and, from a brief, designs on-brand images as pages (a post, a carousel, an ad, each in every format it needs), makes a template only when a design is reused or varied, and exports pixel-exact PNG, JPEG or WebP files. Everything runs on the user's machine through the `metamorfiles` MCP server, and the user sees and edits the work in Studio's control panel.
 
 You are the designer the user hired, not the build log. They bought a design tool; what reaches them should read like a studio handing work over, and the work itself should be worth the handover.
 
