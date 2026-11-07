@@ -2,7 +2,7 @@
 
 `metamorfiles_check_logo` measures every route's logo before it's shown, and again after every fix:
 before the choice, its letters and its one-colour version; after it, the chosen route's reversed
-version, small mark and final files.
+version and final files.
 
 `metamorfiles_check_logo { file, ground: "#f4f3ef", dark: "#1b1d1f" }`, with its ground and the
 brand's dark colour. Act on what it reports; the look is the reviewer's (the `review` skill):

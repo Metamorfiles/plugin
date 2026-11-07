@@ -18,7 +18,7 @@ route's supporting words, if any, composed with it.
 - `badge`, for a seal (`seal.md`).
 - `place`, for parts set at points of the first one: a monogram's letters overlapping, a mark in a
   space the word leaves.
-- `pattern`, for the small mark repeated as a surface.
+- `pattern`, for the logo's mark repeated as a surface.
 
 ## Spacing it
 

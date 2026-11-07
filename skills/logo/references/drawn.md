@@ -65,9 +65,8 @@ What `SKILL.md`, step 6, gives each route:
 The planned flow, with no extra word from the user:
 
 - **The reversed version**, a recolour made with the final files (`final.md`).
-- **The small mark** (`SKILL.md`, step 8) and **the character** of a logo that carries one (the
-  `character` skill, "In a new brand"): parts taken out as above, or drawn from the logo as an edit
-  where no box holds them alone.
+- **The character** of a logo that carries one (the `character` skill, "In a new brand"): taken out
+  as above, or drawn from the logo as an edit where no box holds it alone.
 - **The version redrawn where one colour loses a part**: when `metamorfiles_check_logo` reported
   `lostInOneColour` with `merged` boxes (features that merge into one ink), the one-colour version is
   drawn as an edit of the logo's own drawing (`edit: true`, the traced file first in `references`,

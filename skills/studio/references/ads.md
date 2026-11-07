@@ -9,7 +9,7 @@ An ad runs where the platform puts it, so make each placement the user buys, fro
 ## What makes it work
 
 - **One message.** An ad is seen for a moment in a scroll: one claim, one picture, one action.
-- **The brand in the first look.** The logo or the small mark is visible without reading; the brand's colours and imagery do the rest. A viewer who doesn't stop should still know whose ad it was.
+- **The brand in the first look.** The logo, or its mark, is visible without reading; the brand's colours and imagery do the rest. A viewer who doesn't stop should still know whose ad it was.
 - **The offer or the action, stated as concretely as it is:** "Shop the serum", "New: the night range".
 - **Little text on the image.** The headline and the action; everything else goes in the ad's caption (the variant's `caption`).
 - **Built for thumb size:** the claim, the action and everything else that matters large enough to read on a phone at a glance.

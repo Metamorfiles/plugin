@@ -21,7 +21,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 3. Chosen on its own: three designs, a brief each; drawn together, alone, on transparent; traced. Carried by the chosen logo: taken from it ("In a new brand"). For a brand that has its kit: drawn into the character's own folder ("For a brand that has one")
 - [ ] 4. Reviewed, then shown to the user; the one chosen, or the one taken from the logo, is the chosen drawing
 - [ ] 5. The character sheet from the chosen drawing: every side and four poses, the reference for every image of it
-- [ ] 6. Placed: in the logo, in the imagery, as the small mark
+- [ ] 6. Placed: in the logo, in the imagery
 ```
 
 ### 1. The brief
@@ -105,8 +105,8 @@ its character is in the logo.
   `metamorfiles_ask_user { step: "character" }`. The one chosen (`character`) is the chosen drawing:
   draw its sheet from it (step 5) and have the reviewer check it.
 
-Studio checks that each was drawn from the chosen logo, and the sheet from the mascot. The small mark
-comes next: step 8 of the `logo` skill.
+Studio checks that each was drawn from the chosen logo, and the sheet from the mascot. The imagery
+comes next: step 3 of the `new-brand` skill.
 
 ### For a brand that has one
 
@@ -141,7 +141,6 @@ sticker) is made from the sheet too: `references/poses.md`.
 ### 6. Where it goes
 
 - **In a logo**: composed with the name set in type (`references/lockups.md` of the `logo` skill).
-- **As the small mark**: its head or bust, made as step 8 of the `logo` skill says.
 - **In the imagery**: its folder listed in DESIGN.md `assets` with `kind: character`, the sheet first
   in its `anchors` and the chosen drawing second, so the brand board shows the sheet first.
 
