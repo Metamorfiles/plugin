@@ -22,8 +22,8 @@ route's supporting words, if any, composed with it.
 
 ## Spacing it
 
-Sizes and positions are set for this logo. In a row, Studio spaces a mark from the name by itself,
-by the name's cap height, so it reads as its own piece of one logo: leave `gap` unset, and set it
+Sizes and positions are set for this logo. In a row or a stack, Studio spaces a mark from the name by
+itself, by the name's cap height, so it reads as its own piece of one logo: leave `gap` unset, and set it
 only when the composition means another space (a mark meant to be read as a letter, a part that
 meets or overlaps the letters). A round or pointed part standing on the baseline
 overshoots it a little (`shift`), as round letters do. Supporting words follow the word's own axis:
