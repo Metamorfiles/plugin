@@ -28,7 +28,7 @@ Keep the text sparse, the way a board is: a name, a line, a few labels, since th
 1. Call `metamorfiles_get_project`. Every brand is its own project, and a working folder can hold several: it opens the brand last worked on and lists the others in `otherBrands`. When the user names a brand, or its website or product is another brand's, open its project with `metamorfiles_get_project { name: "Lumen Skincare" }`. For a brand with no project yet, `metamorfiles_get_project { create: true, name: "<brand>" }`: Studio makes it a new project beside the others. Never rebuild one brand's kit for another: that would restyle every template and page of the first. Studio places it; pass an absolute `path` only if the user asks for another location. Pass `example: true` only when the user wants to explore the example brand and template.
 2. Read the returned `brand` before writing any copy or design. If there's no brand kit yet, it says what to do: an existing brand is translated with the `brand` skill, a new one is made with the `new-brand` skill, and a brand already being made is continued on the task it names. Its `stale` lists work made before the brand changed: tell the user, offer to bring it up to date, and change it only on their word.
 3. Pick the skill below.
-4. Every render and write returns a control panel link. The first render or question of a session opens the panel in the user's browser, unless it's open already.
+4. Every render and write returns a control panel link. The first team update, render or question of a session opens the panel in the user's browser, unless it's open already.
 
 ## Templates, pages and history
 
