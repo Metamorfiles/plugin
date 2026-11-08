@@ -56,9 +56,11 @@ rather than a quota. How studios find such ideas: `references/principles.md` of 
 skill. The composition says how the logo is built, in words: what leads, and how the other parts
 meet the word (on its baseline, over it, tucked into a letter, or apart from it). It's the plan;
 the made logo settles its proportions. It also says the route's
-words: the name alone, or with a supporting line that makes this idea stronger (a tagline, the
-trade, a place, written in the brand's voice) and where it sits. Each route decides its own words,
-a line only its idea could carry. Then read the three together: each comes from this business's own
+words. A logo carries the name, every word of it, and the route decides how they relate: one size,
+or one word leading and another small beside it. Other words (a tagline, the trade, a place, a date)
+join only when they are part of what the logo physically is, as the ring of a seal is, or when the
+name alone wouldn't make sense to someone meeting it: a line says more on the brand's signs, posts
+and messaging, and can change there without changing the logo. Then read the three together: each comes from this business's own
 reality, each is built its own way (the parts meet differently), and each has letters made for its
 idea, drawn or set in a face chosen and tuned for it (step 4). A route that shares its idea or its build with another is rewritten now, while it is a line.
 
