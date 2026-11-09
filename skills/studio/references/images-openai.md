@@ -6,7 +6,7 @@ For ChatGPT Images (`chatgpt/images`, the user's ChatGPT plan) and `gpt-image` m
 
 - **An edit starts with its verb**, "Edit image 1…". To combine images, edit one with the other: "Edit image 1 by adding the serum bottle from image 2 to the shelf".
 - **Photo look.** The word "photorealistic" switches on the model's photographic mode; with it, a moment caught as it happens and real texture and signs of use (the grain of the stone, the wear on the handle), or it drifts toward illustration. Words that imply studio polish ("professional", "cinematic", "flawless") pull toward a retouched ad; use them only for a studio shot.
-- **Keeping things exact.** Name what must not change ("the bottle's shape, label and colour stay as in image 1") and repeat the list on every edit; change one thing per edit.
+- **Keeping things exact.** Name what must not change ("the bottle's shape, label and colour stay as in image 1") and repeat the list on every edit.
 - **Exclusions work here.** A short "no other text, logos or watermarks" at the end is respected. Describe what you want first.
 - **References.** Label each by number and role ("Image 1: the logo, reproduce it exactly. Image 2: only the light and palette"), then say how they combine. The first image keeps the most detail, so it is the one that must survive (the logo, or the image an edit changes).
 - **Words in an image that carries them** (a logo, a mockup): the exact words in quotes, appearing once, an uncommon one or a brand name spelled letter by letter, and where they sit.
