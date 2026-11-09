@@ -62,8 +62,8 @@ which thing carries the accent are each scene's own.
    identity before style (`images.md` of the `studio` skill, "The prompt"). The logo never goes in,
    since a model shown a logo draws it into the picture;
    each at the shape the brand's images will mostly be used at (here 4:5), `ground` the chosen
-   direction's paper for drawings on a flat paper field, so they already sit on it (a photograph
-   takes no `ground`); collect each with `metamorfiles_image_status { id }`. The step's
+   direction's paper (the plain background its pictures sit on, never a colour a subject is painted
+   in) for drawings on a flat paper field, so they already sit on it (a photograph takes no `ground`); collect each with `metamorfiles_image_status { id }`. The step's
    frame fills as each arrives.
 2. Each seed is one option of the imagery step, titled by what it shows ("The serum close-up"). The
    user uses them all, or has single ones redone or edited first ("Redo the serum close-up", "Edit
