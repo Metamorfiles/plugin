@@ -34,7 +34,7 @@ and the alternates it has for these letters.
   every letter off its line.
 - **A name that bounces, arches or waves is lettering,** drawn whole (`drawn.md`): drawn letters
   curve with their line, where bent type reads as WordArt.
-- **A drawn part** in a letter's place or its accent's: `symbol.md`, "A drawn letter".
+- **A drawn part** in a letter's place or its mark's (an accent, the dot of i or j): `symbol.md`, "A drawn letter or mark".
 
 Every wordmark keeps its settings beside it (`<file>.svg.json`). Change one thing without restating
 the rest: `metamorfiles_make_wordmark { from: "brand/process/logo/minutes-word.svg", kerning: { "Lu": -0.02 }, output: "brand/process/logo/minutes-word.svg" }`.
