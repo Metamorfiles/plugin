@@ -1,6 +1,6 @@
 ---
 name: logo
-description: Designs a logo in Metamorfiles Studio for a brand that has none: three routes, three different ideas, each made by the method that serves it (drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, or type alone), then, once the user chooses, its final files and how it's used small. Use for the logo step of a new brand, or when the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a brand whose DESIGN.md already sets its look. A business with nothing made yet, even when the user asks only for a logo, starts with the new-brand skill, whose logo step this is. Not for a brand that already has a logo, whose official files are never redrawn (the brand skill).
+description: Designs a logo in Metamorfiles Studio for a brand that has none: three routes, three different ideas, each made by the method that serves it (drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, or type alone), then, once the user chooses, its final files and how it's used small. Use for the logo step of a new brand, or when the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a brand whose DESIGN.md already sets its look. A business with nothing made yet, even when the user asks only for a logo, starts with the new-brand skill, whose logo step this is. Not for a brand that already has a logo, whose official files are never redrawn (the brand skill), unless its owner asks for it drawn again.
 license: MIT
 ---
 
@@ -97,6 +97,9 @@ Logo route checklist of the `review` skill's Rubric, which the reviewer holds it
   face's own features, at most one letter moved for a reason, simply arranged, or a seal or
   monogram when the brand needs one: `references/wordmark.md`, `references/seal.md`.
 
+When the user asked for their own logo drawn again, it is one of the routes, its idea their logo
+itself: `references/drawn.md`, "The user's own logo".
+
 ### 5. Check
 
 Run `metamorfiles_check_logo` on every route's logo and act on what it reports:
@@ -175,8 +178,9 @@ mascot is designed with the `character` skill; how to prompt each image model is
 
 ## Rules
 
-- **Never redraw an existing logo.** A brand that has one keeps its official files
-  (the `brand` skill); a new seal or icon for it is a proposal the user approves first.
+- **Never redraw an existing logo unasked.** A brand that has one keeps its official files
+  (the `brand` skill); a new seal or icon for it is a proposal the user approves first. Drawn
+  again on its owner's word, it is a route (step 4).
 - **A mark is drawn by the image model, never geometry typed as SVG by you.** Only Studio's shapes (a
   ring, a disc, a star, a diamond, a facet, a rule) are built without a drawing.
 - **Supporting words are real type,** never drawn.

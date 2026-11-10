@@ -8,7 +8,10 @@ license: MIT
 
 Only when the user asks for a new brand, or says there is nothing to translate. The name of a company
 that exists, a website, a logo, files or images all mean Translate: follow the `brand` skill, and
-invent nothing.
+invent nothing. The exception is a new brand whose owner wants their own logo drawn again: it is
+one of the logo routes (the `logo` skill, step 4), and the rest is created here. Another business's
+logo the user loves is a reference, never drawn again. When they don't say whose a logo is, or
+whether theirs is kept or drawn again, ask.
 
 A created brand is made the way a studio makes one: real references first, then a direction, a logo
 chosen from three different ideas, imagery from a few approved anchors, and a kit that works in

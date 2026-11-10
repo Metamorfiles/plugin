@@ -100,7 +100,7 @@ When the source is thin — a photograph, a screenshot, a one-page brief, a site
 
 ## Logos
 
-- Use only official files, copied unchanged. Never recolor, redraw, retype, stretch or crop a logo, add effects, or place it on a background it isn't made for.
+- Use only official files, copied unchanged. Never recolor, redraw, retype, stretch or crop a logo, add effects, or place it on a background it isn't made for. A logo its owner asks to have drawn again is a route of the `logo` skill.
 - A colour an official file paints is the brand's, even when another file has a near one (a favicon's off-white beside the logo's): name it in `colors` with its source in Sources, and never recolour a file to match another.
 - **Variants the brand defines are official.** For example, a logo component drawn with CSS variables (`fill="var(--clay)"`, `currentColor`) has one version per theme: call `metamorfiles_make_logo_variant { file: "brand/sources/yours/logo.tsx", output: "brand/logos/logo-dark.svg", colors: { "var(--ink)": "#f6f1ea" }, background: "#1f1a17" }` with that theme's exact values, one file per theme, and record it as the brand's own variant.
 - **Generated logo files are made only on the user's yes, each one.** Offer only what's missing, with `metamorfiles_ask_user`:

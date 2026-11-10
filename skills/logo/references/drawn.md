@@ -44,6 +44,24 @@ Studio has it drawn on a transparent background and traces each colour in the br
 (`vector.md`); the path it returns is the traced .svg. The logo step shows the user the drawing
 itself. Run `metamorfiles_check_logo` on it (`checks.md`).
 
+## The user's own logo
+
+When the user asks for their own logo drawn again, the route's idea is their logo, so its prompt
+describes their file and nothing else. The model draws every word it is given: a detail the file
+doesn't have (from the direction's story, a mascot's brief or another route) becomes a new part of
+their logo.
+
+- Their file is the only image: `references: ["brand/sources/yours/<file>"]`, with the route's
+  `trace` colours taken from it.
+- Start with "Image 1 is the brand's own logo. Draw it again as it is: the same words, layout,
+  lettering and drawing, in its colours, cleaner and more even, as a brand designer's final file."
+- Then say what the file shows, part by part, as you see it: the words and their lines, the
+  lettering's shapes, each part of the drawing (its outline, its features and how many of each),
+  where each sits, and each colour for what it paints.
+- A change the user asked for is the one change, said as such.
+- The route's `composition` in `logo.md` names their file ("Their logo, brand/sources/yours/<file>,
+  drawn again"), so the reviewer holds the route to it.
+
 ## Other versions of it
 
 Every other version of a logo is made the cheapest way that keeps it the logo's own drawing.
