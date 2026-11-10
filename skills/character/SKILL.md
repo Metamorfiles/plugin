@@ -26,8 +26,8 @@ Copy it into your notes and tick each step as you go:
 
 ### 1. The brief
 
-Write the brief before drawing anything (`references/design.md`). Keep it in the notes of the step's
-file (below its YAML) while a brand is made. From it come the **Character lines**, the character's
+Write the brief before drawing anything (`references/design.md`). Keep it in the logo step's notes while a
+brand is made (`metamorfiles_change_step`, `{ do: "notes", text }`). From it come the **Character lines**, the character's
 fixed description: who it is, the one feature that makes it itself, how its face is made (the shape
 of its eyes and pupils, its brows, its mouth), its markings, its palette, its look (line, fill and
 rendering), and that nothing about it changes. The expression and the head angle are each
@@ -83,8 +83,8 @@ in the folder's `anchors`.
 
 When the brand has a mascot (step 8 of the `logo` skill says when). The mascot is decided once the
 logo is chosen, from the logo the user chose, never from a route they passed over unless they ask
-for it. Which case it is shows in `brand/process/logo.md`: the chosen route has `mascot: true` when
-its character is in the logo.
+for it. Which case it is shows on the logo step (`brand/process/logo.md`): the chosen route has
+`mascot: true` when its character is in the logo.
 
 - **The chosen logo carries the character:** that character is the mascot, so there is nothing to
   choose. Its drawing is taken from the chosen logo, a planned step (step 8 of the `logo` skill).
@@ -93,17 +93,20 @@ its character is in the logo.
   the `logo` skill, "Other versions of it"):
   `metamorfiles_make_logo_variant { file: "brand/process/logo/<chosen>.svg", output: "brand/process/logo/<name>-character.svg", keep: { x, y, width, height } }`.
   Where the letters touch it, so no box holds it alone, the image model draws it out of the logo as
-  an edit, the logo's file first in `references`, the prompt asking for the character alone, whole
-  and exactly as the logo draws it, traced in the logo's colours. That file is the chosen drawing:
-  draw the sheet from it (step 5), write it as `sheet` and have the reviewer pass it; then one to
-  three poses from the passed sheet (`references/poses.md`). Write the poses as `characters`, have
+  an edit, the logo's file first in `references` and `name: "<name>-character"` so it's a file of its
+  own, the prompt asking for the character alone, whole and exactly as the logo draws it, traced in
+  the logo's colours. That file is the chosen drawing:
+  draw the sheet from it (step 5), set it as the logo step's `sheet` and have the reviewer pass it;
+  then one to three poses from the passed sheet (`references/poses.md`). Give the poses to the logo
+  step as its `characters` (`metamorfiles_change_step`), have
   the reviewer check them, and ask with `metamorfiles_ask_user { step: "character" }`: the user
   approves them with "Use these", like the imagery.
 - **Otherwise:** write this brand's briefs (step 1) and draw three designs (step 3), each with the
   chosen logo as image 1, so it is drawn in its hand: "Image 1 is the brand's chosen logo: take its
   drawing hand, line weight, corners and colours, never its letters or its layout."
   `metamorfiles_generate_image { prompt, references: ["brand/process/logo/<chosen>.svg"], width: 1024, height: 1024, folder: "brand/process/logo", trace: { colors: [...] }, wait: false }`
-  Write them as `characters`, each `{ file, title, line }` (the line: the idea, in the user's words)
+  Give them to the logo step as its `characters` (`metamorfiles_change_step`), each
+  `{ file, title, line }` (the line: the idea, in the user's words)
   and one `recommended: true`, have the reviewer check them, and ask with
   `metamorfiles_ask_user { step: "character" }`. The one chosen (`character`) is the chosen drawing:
   draw its sheet from it (step 5) and have the reviewer check it.

@@ -18,7 +18,7 @@ Each direction has a complete palette, not a swatch list:
 
 - **Each direction names its faces and the job of each,** chosen as `fonts.md` says ("Choosing"),
   and the directions' faces differ. The logo's lettering is made on the logo step (the `logo` skill).
-- Add each face with `metamorfiles_add_font { family: "<family>" }` before you write the option, and
+- Add each face with `metamorfiles_add_font { family: "<family>" }` before you give the option its fonts, and
   give the option the file it returned.
 - **Set them in the brand's words,** the option's `sample`: a line from the brief or the brand's
   voice, in the language the brand writes in, so the faces are judged on what they will set.
@@ -29,24 +29,25 @@ With its references from `research.md`, a direction is one option. Each file is 
 returned, as it returned it. One direction for Lumen, from the path "every ingredient listed"; a
 direction proposes its own colours and names, so this one isn't the example kit's palette:
 
-```yaml
-  - id: label
-    title: The full label
-    line: Lumen lists every ingredient, so the brand reads like an honest label, with the amber of its bottles as the one signal.
-    recommended: true
-    files:
-      - { file: brand/process/references/label-works/1.jpg, caption: "Label Works · the list itself set as the design" }
-      - { file: brand/process/references/glass-study/2.jpg, caption: "Glass Study · one colour taken from the product's own glass" }
-    colors:
-      - { name: Tile, hex: "#f4f3ef", share: 60 }
-      - { name: Ink, hex: "#1b1d1f", share: 25 }
-      - { name: Grout, hex: "#c9cac6", share: 10 }
-      - { name: Amber, hex: "#b4621b", share: 5 }
-    fonts:
-      - { family: Host Grotesk, file: brand/fonts/HostGrotesk.woff2, role: "everything, in a few sizes: plain, so every line reads as fact" }
-      - { family: Chivo Mono, file: brand/fonts/ChivoMono.woff2, role: "the ingredient lists and the minutes, set like a label's data" }
-    sample: Two minutes in the morning. Then get on with your day.
+```
+metamorfiles_change_step { step: "direction", changes: [{
+  do: "option", id: "label", title: "The full label", recommended: true,
+  line: "Lumen lists every ingredient, so the brand reads like an honest label, with the amber of its bottles as the one signal.",
+  files: [
+    { file: "brand/process/references/label-works/1.jpg", caption: "Label Works · the list itself set as the design" },
+    { file: "brand/process/references/glass-study/2.jpg", caption: "Glass Study · one colour taken from the product's own glass" }
+  ],
+  colors: [
+    { name: "Tile", hex: "#f4f3ef", share: 60 }, { name: "Ink", hex: "#1b1d1f", share: 25 },
+    { name: "Grout", hex: "#c9cac6", share: 10 }, { name: "Amber", hex: "#b4621b", share: 5 }
+  ],
+  fonts: [
+    { family: "Host Grotesk", file: "brand/fonts/HostGrotesk.woff2", role: "everything, in a few sizes: plain, so every line reads as fact" },
+    { family: "Chivo Mono", file: "brand/fonts/ChivoMono.woff2", role: "the ingredient lists and the minutes, set like a label's data" }
+  ],
+  sample: "Two minutes in the morning. Then get on with your day."
+}] }
 ```
 
-The user may ask for the palette of one direction with the type of another: write that mix as the
-option, note what came from where under the YAML, and ask again.
+The user may ask for the palette of one direction with the type of another: make that mix the
+option, note what came from where in the step's notes, and ask again.

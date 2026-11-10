@@ -17,7 +17,7 @@ Copy it into your notes and tick each step as you go:
 ```
 - [ ] 1. The brief and the chosen direction read, its reference images looked at
 - [ ] 2. Type study: the name in the faces the direction suggests and around them
-- [ ] 3. Three ideas: each route's id, idea and composition written before anything is drawn (in a new brand, into logo.md)
+- [ ] 3. Three ideas: each route's id, idea and composition written before anything is drawn (in a new brand, on the logo step)
 - [ ] 4. Three routes made, each by its method
 - [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
 - [ ] 6. Each route's files: colour and one colour, plus the parts it shows
@@ -64,16 +64,17 @@ and messaging, and can change there without changing the logo. Then read the thr
 reality, each is built its own way (the parts meet differently), and each has letters made for its
 idea, drawn or set in a face chosen and tuned for it (step 4). A route that shares its idea or its build with another is rewritten now, while it is a line.
 
-Each line goes on its route's option as `composition` in `brand/process/logo.md`, for the reviewer;
-the user sees the route's `line`, written for them. Name each route now with one lowercase word, its
-`id` in `logo.md` (`list`, `minutes`): every file of the route starts with it (step 6), so the
+Each line goes on its route's option as `composition`, for the reviewer; the user sees the route's
+`line`, written for them. Name each route now with one lowercase word, its option's `id` (`list`,
+`minutes`): every file of the route starts with it (step 6), so the
 board shows each route's work in its own band as it arrives.
 
-In a new brand, write the three into `brand/process/logo.md` now, before anything is drawn: each
-option's `id`, `title`, `line` and `composition`, no `files` yet, in the order the user will see them.
+In a new brand, put the three on the logo step now, before anything is drawn: each option's `id`,
+`title`, `line` and `composition`, no `files` yet, in the order the user will see them, with
+`metamorfiles_change_step` (the `new-brand` skill, "The steps' files").
 The board names each band from it while its work arrives, so the user watches each idea being made
 in the place it keeps. Keep that order to the end. A route you drop is replaced in its own place,
-under its new id.
+under its new id (`replaces`).
 
 ### 4. Three routes
 
@@ -136,10 +137,9 @@ Save every file under `brand/process/logo/`, its name starting with its route's 
 Show every route the plan set, each checked and given its files (steps 5 and 6). The user chooses
 between them.
 
-In a new brand, give each option of `brand/process/logo.md` its files, in the order the plan set
-(a further candidate after them), one `recommended: true`, with `mascot: true` at the top when the
-brief asks for a mascot anywhere in it, and `mascot: true` on each route whose logo carries the
-character, and ask as the `new-brand` skill says: Studio draws each large on its ground with its
+In a new brand, give each route its files as they arrive, with `metamorfiles_change_step`, one
+route `recommended: true`, the step's `mascot` set when the brief asks for a mascot anywhere in it,
+and `mascot: true` on each route whose logo carries the character, and ask as the `new-brand` skill says: Studio draws each large on its ground with its
 one-colour version beside it on the brand board, a logo made from a drawing as the drawing itself
 and its one-colour version from its trace. Outside it, show the check sheets and say in a line what
 each is and why, the recommended one first.
@@ -147,7 +147,7 @@ each is and why, the recommended one first.
 ### 8. After the choice
 
 Start the chosen logo's cleanup at once (`references/final.md`), then go on. The brand has a mascot
-when `logo.md` has `mascot: true` at the top or the chosen route has it (Studio checks both): then the
+when the logo step has `mascot` set or the chosen route has it (Studio checks both): then the
 mascot comes first, the `character` skill, "In a new brand", and the imagery waits for its answer.
 
 Then the imagery, while the final files are made (`references/final.md`): first the chosen logo's

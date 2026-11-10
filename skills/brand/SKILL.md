@@ -43,7 +43,7 @@ on a brand already in Studio. Make imagery first, then the mockups.
 
 The imagery step of a new brand, on the same board and question: follow `references/imagery.md` of
 the `new-brand` skill (`metamorfiles_get_guide { name: "new-brand", file: "references/imagery.md" }`)
-and its step file, `brand/process/imagery.md` (the `new-brand` skill, "The steps' files"). What
+and its step, changed with `metamorfiles_change_step` (the `new-brand` skill, "The steps' files"). What
 differs:
 - It starts from the brand as it is, in place of a brief and a chosen direction: DESIGN.md (Overview,
   Colors, Audience), what the business makes and uses as its site shows it, and its own pictures.

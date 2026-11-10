@@ -60,7 +60,7 @@ of the file's own.
   parts meet, as a designer would brief it ("a striped cat lies across the word, a paw over the P"),
   and each colour for what it paints.
 - A change the user asked for is the one change, said as such.
-- The route's `composition` in `logo.md` names their file ("Their logo, brand/sources/yours/<file>,
+- The route's `composition` names their file ("Their logo, brand/sources/yours/<file>,
   drawn again"), so the reviewer holds the route to it.
 
 ## Other versions of it
@@ -93,7 +93,7 @@ The planned flow, with no extra word from the user:
   between the features, a gap left open) and traced, then lined up with the logo:
   `metamorfiles_align_version { file: "brand/process/logo/<file>.svg", version: "brand/process/logo/<file>-ink-draft.svg", output: "brand/process/logo/<file>-ink.svg", redrawn: [<the merged boxes>] }`.
   Every piece outside them is the logo's own file. It takes the place of the one-colour file in the
-  chosen option's `files` in `logo.md`, its entry carrying the same boxes as `redrawn`, so the card
+  chosen route's `files` (`metamorfiles_change_step`), its entry carrying the same boxes as `redrawn`, so the card
   says what was redrawn and the reviewer judges only that. It is a traced file of the chosen logo, so
   it is cleaned like the logo (`final.md`, "Cleaning"), and the final one-colour and reversed files
   are recoloured from its cleaned copy.

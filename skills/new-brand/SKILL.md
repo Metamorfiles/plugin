@@ -107,8 +107,8 @@ task Studio started.
 
 - **Say who is at work.** Call `metamorfiles_team_update { task, role: "designer", status: "working" }`
   before each part of the work, with the role doing it.
-- **Write the step's file** (below). The result says what's wrong with it, or gives the question
-  Studio will ask and the options as the user will see them.
+- **Change the step** with `metamorfiles_change_step` (below). The result says what to fix, or gives
+  the question Studio will ask and the options as the user will see them.
 - **Say what's on the board.** Once a step's options are written, the role that made them says in
   its `done` update what each one is, in the board's order, and why the recommended one leads:
   exactly the options offered, never one you dropped; when they change before you ask (one redrawn
@@ -138,8 +138,8 @@ task Studio started.
     only what the user named changing, and ask again.
   - "Edit the <title> logo (<file>), keeping the earlier take: <what to change>": that route changed
     only as the words say, with the tools that made it (its lockup composed again from its settings,
-    a part drawn again, a drawn logo edited), written into `logo.md`, where Studio keeps the earlier
-    take.
+    a part drawn again, a drawn logo edited), its files given to the route with
+    `metamorfiles_change_step` unless an edit took its file's place; Studio keeps the earlier take.
   - "Redo the <name> mockup (<file>): a new take, keeping the earlier one", or "Edit the <name>
     mockup (<file>), keeping the earlier take: <what to change>": made again or edited as its new
     take, as the `mockup` skill says; nothing is asked after it.
@@ -158,8 +158,8 @@ task Studio started.
   it again.
 - **A change is local.** "Warmer", "the other face", "redo the second one": rework that step only, and
   what depends on it. A new palette recolours the logo routes; it never restarts the research.
-- **Going back from the chat.** "Back to the logo": write the logo step's file again without its
-  `chosen`, and ask again.
+- **Going back from the chat.** "Back to the logo": take the user's choice off with
+  `metamorfiles_change_step { step: "logo", changes: [{ do: "reopen" }] }`, and ask again.
 
 ## Reviewed before the user chooses
 
@@ -171,9 +171,9 @@ skill on the queue and wait for its verdict:
 
 | When | Queue |
 |---|---|
-| `logo.md` written, before asking | `logo` |
+| The logo routes given their files, before asking | `logo` |
 | The mascots, and in the logo's own case their sheet, before asking | `character` |
-| `imagery.md` written, before asking | `imagery` |
+| The seeds given to the imagery step, before asking | `imagery` |
 | The mockups, a flat design before its photograph | `mockups` |
 | The kit written: its logo files, its library, its mockups and DESIGN.md | `handover` |
 
@@ -184,44 +184,49 @@ reviewed: they are the user's taste.
 
 ## The steps' files
 
-The brief and every step live in `brand/process/`: `direction.md`, `logo.md` and `imagery.md`, each a
-Markdown file with its options in YAML, written with
-`metamorfiles_write_file { path: "brand/process/logo.md", content }`. Each `file` is the path the
-tool that made it returned, as it returned it.
+The brief and every step live in `brand/process/`: `direction.md`, `logo.md` and `imagery.md`. Studio
+is a step's only writer: change it with `metamorfiles_change_step { step: "logo", changes: [...] }` and
+read it with `metamorfiles_read_file`. Studio applies the changes in order, all or none, and checks the
+step whole, so the board never shows one it can't; the result says what to fix, or gives the question
+Studio will ask with the options as the user will see them. The user's choice and a logo route's
+earlier versions are Studio's.
 
-```md
----
-options:
-  - id: list
-    title: The full list
-    line: The name set as the first line of an ingredient list, because Lumen lists every one.
-    composition: The name alone, set plainly in the direction's grotesk like a list's heading.
-    recommended: true
-    files:
-      - { file: brand/process/logo/list.svg, ground: "#f4f3ef" }
-      - { file: brand/process/logo/list-ink.svg, ground: "#ffffff" }
-  - id: minutes
-    title: Two minutes
-    line: A dial filled to two minutes after the name, the morning routine the brand is made for.
-    composition: The name leads; the dial stands apart after it, on its baseline.
-    files:
-      - { file: brand/process/logo/minutes.svg, ground: "#f4f3ef" }
-      - { file: brand/process/logo/minutes-ink.svg, ground: "#ffffff" }
-      - { file: brand/process/logo/minutes-dial.svg, ground: "#f4f3ef", small: true }
-  - id: shelf
-    title: The shelf
-    line: The name resting on the edge of a bathroom shelf, where every Lumen routine starts.
-    composition: Drawn whole in one hand-cut style, the name standing on the shelf's line, which runs on past its last letter.
-    files:
-      - { file: brand/process/logo/shelf-drawn-1a2b3c4d.svg, ground: "#f4f3ef" }
-      - { file: brand/process/logo/shelf-ink.svg, ground: "#ffffff" }
----
+Each change is one of:
+- `{ do: "option", id, title, line, composition, recommended, mascot, files, colors, fonts, sample }`:
+  adds the option with this `id`, or changes only the fields given of the one there;
+  `replaces: "<id>"` puts a new option in a dropped one's place;
+- `{ do: "remove", id }`;
+- `{ do: "mascot", mascot: true }`, on the logo step when the brief asks for a mascot;
+- `{ do: "characters", characters: [...] }` and `{ do: "sheet", file, name }`, on the logo step (the
+  `character` skill);
+- `{ do: "notes", text }`: adds a paragraph to the step's notes below its options (why each option,
+  what the user said, a character's lines);
+- `{ do: "reopen" }`: takes the user's choice off, to ask the step again.
 
-Notes for the record: why each option, what the user said.
+A logo plan named before anything is drawn, then one route's files as they arrive:
+
+```
+metamorfiles_change_step { step: "logo", changes: [
+  { do: "option", id: "list", title: "The full list", line: "The name set as the first line of an ingredient list, because Lumen lists every one.", composition: "The name alone, set plainly in the direction's grotesk like a list's heading.", recommended: true },
+  { do: "option", id: "minutes", title: "Two minutes", line: "A dial filled to two minutes after the name, the morning routine the brand is made for.", composition: "The name leads; the dial stands apart after it, on its baseline." },
+  { do: "option", id: "shelf", title: "The shelf", line: "The name resting on the edge of a bathroom shelf, where every Lumen routine starts.", composition: "Drawn whole in one hand-cut style, the name standing on the shelf's line." }
+] }
+
+metamorfiles_change_step { step: "logo", changes: [
+  { do: "option", id: "minutes", files: [
+    { file: "brand/process/logo/minutes.svg", ground: "#f4f3ef" },
+    { file: "brand/process/logo/minutes-ink.svg", ground: "#ffffff" },
+    { file: "brand/process/logo/minutes-dial.svg", ground: "#f4f3ef", small: true }
+  ] }
+] }
 ```
 
+Each `file` is the path the tool that made it returned, as it returned it. An image a step shows,
+edited under its own name, takes its place on the step by itself (`references/images.md` of the
+`studio` skill, "Edit or redraw").
+
 Each option can carry:
-- `files`: up to 16 images or SVGs, each `{ file, caption, ground, small, redrawn }` with all but
+- `files`: all of its images or SVGs, up to 16, each `{ file, caption, ground, small, redrawn }` with all but
   `file` optional: `caption` (at most 140 characters: a credit, what to take), `ground`
   (`"#rrggbb"`, the colour a logo file is shown on), for a logo route's mark `small: true`, and for
   a logo version redrawn in part, `redrawn` (`references/drawn.md` of the `logo` skill);
@@ -235,7 +240,7 @@ Each `title` is at most 60 characters, what the user will call it, and each `lin
 sentence on why this option fits the brief; the board marks the recommended one itself, and why it
 leads goes in the thread's `done` update ("At every step"). On the direction and logo steps one
 option is `recommended: true`; the imagery step asks
-whether to use the seeds, so none is. Writing the direction step
+whether to use the seeds, so none is. Changing the direction step
 also returns the contrast of every pair in each palette, so there is nothing to work out by hand.
 
 Save what a step makes in its own folder as you go (`brand/process/logo/`, `brand/process/imagery/`):
@@ -245,7 +250,7 @@ its frame shows each file as it arrives, so the user watches the step come toget
 
 1. **Direction:** brief facts, touchpoints, codes and three paths into `brief.md`; references per
    path; one option per path that holds up (`references/research.md`, then `references/look.md`).
-2. **Logo** (the `logo` skill, steps 1-7, written into `logo.md`), then its step 8 once one is
+2. **Logo** (the `logo` skill, steps 1-7, on the logo step), then its step 8 once one is
    chosen: the mascot when the brand has one (the `character` skill, "In a new brand").
 3. **Imagery** (`references/imagery.md`). The mode the brand needs, the style block, and four seeds
    made together, one per option, saved in `brand/process/imagery/`. The seeds the user keeps are the
