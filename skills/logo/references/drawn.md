@@ -46,18 +46,19 @@ itself. Run `metamorfiles_check_logo` on it (`checks.md`).
 
 ## The user's own logo
 
-When the user asks for their own logo drawn again, the route's idea is their logo, so its prompt
-describes their file and nothing else. The model draws every word it is given: a detail the file
-doesn't have (from the direction's story, a mascot's brief or another route) becomes a new part of
-their logo.
+When the user asks for their own logo drawn again, the route's idea is their logo, and their file
+holds every detail of it. The model draws every word as written, even where the file shows it
+otherwise, so the prompt names what the logo is and leaves the details to the file: a detail put in
+words (a count, a pose, a feature from the direction's story or a mascot's brief) is drawn in place
+of the file's own.
 
 - Their file is the only image: `references: ["brand/sources/yours/<file>"]`, with the route's
   `trace` colours taken from it.
-- Start with "Image 1 is the brand's own logo. Draw it again as it is: the same words, layout,
-  lettering and drawing, in its colours, cleaner and more even, as a brand designer's final file."
-- Then say what the file shows, part by part, as you see it: the words and their lines, the
-  lettering's shapes, each part of the drawing (its outline, its features and how many of each),
-  where each sits, and each colour for what it paints.
+- The prompt: "Image 1 is the brand's own logo. Draw it again exactly as image 1 draws it: the same
+  words, layout, lettering and drawing, in its colours, cleaner and more even, as a brand designer's
+  final file." Then the name in quotes as the file spells it, one line on what leads and how the
+  parts meet, as a designer would brief it ("a striped cat lies across the word, a paw over the P"),
+  and each colour for what it paints.
 - A change the user asked for is the one change, said as such.
 - The route's `composition` in `logo.md` names their file ("Their logo, brand/sources/yours/<file>,
   drawn again"), so the reviewer holds the route to it.

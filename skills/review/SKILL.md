@@ -60,7 +60,7 @@ How the rubric reads, in examples. Hold every look to the same bar:
 
 Sample images, library images, mascots, character sheets, mockups, and the pictures in a page or template.
 
-- **Anatomy:** every figure is whole and possible: count each one's limbs, hands, fingers and head on its own body, also where figures overlap. A part may be hidden behind something in the picture or run past the frame's edge; every other part is there, whatever the plan said.
+- **Anatomy:** every figure is whole and possible in its pose: no limb, hand, finger or head extra, missing or on the wrong body, also where figures overlap. A part hidden the way a real body hides it (a thumb behind the strap it grips, fingers curled into a fist), behind something else, or past the frame's edge is right as it is; judge each hand by whether a real hand looks like that in its pose and angle, never by how many fingers show, whatever the plan said.
 - **Physics:** every object is possible and works the way its kind works: it holds together, rests on something, opens where it opens.
 - **Lettering:** every line set in the picture says exactly what it was asked to say, unless the brief gives the words. Read words at the size the viewer meets them, and enlarge only to confirm a fault you suspect (`metamorfiles_read_file { path: "<the picture>", region: { x: 0.3, y: 0.4, width: 0.3, height: 0.15 } }`), letter by letter, accents and punctuation included (a logo is held to its file as its kind's checklist says): a stray, missing or doubled mark is a fault, as a misspelled word is.
 - **Subject:** it shows the figures, objects and action its idea rests on. What was meant as distinct is distinct: each figure or object of a set is its own.
@@ -74,7 +74,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 - The name is spelled exactly as the brief writes it.
 - Letters set in a font are the font's own and pass as the font draws them. Drawn letters each read as themselves.
 - Nothing is taken from a reference the direction shows.
-- A route that draws the user's own logo again holds to their file, side by side: every word and every part of its drawing there, as many and where the file has them, in its colours, nothing added; only the drawing is cleaner.
+- A route that draws the user's own logo again holds to their file, side by side: every word and every part of its drawing as the file draws it, in its colours, nothing added; only the drawing is cleaner.
 - The lockup carries its composition's idea and reads as one piece: a part meant to meet the letters touches them; a mark set beside the name stands clearly apart from its letters, farther than a letter's space, so it reads as a mark rather than one more letter; supporting words sit on the word's axis or on an edge it really has.
 
 #### Final logo file
