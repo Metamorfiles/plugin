@@ -32,7 +32,10 @@ fixed description: who it is, the one feature that makes it itself, how its face
 of its eyes and pupils, its brows, its mouth), its markings, its palette, its look (line, fill and
 rendering), and that nothing about it changes. The expression and the head angle are each
 drawing's own, since a fixed one makes every drawing the same face. They are pasted word for word
-into every prompt for this character: a synonym is a different instruction. Once the
+into every prompt for this character: a synonym is a different instruction. A character that
+already exists in a drawing (one in the user's own logo) needs no brief: its Character lines say
+what that drawing shows, part by part, and add nothing, since every word becomes a part of each
+drawing of it. Once the
 kit is written, they are the **Character** section of `brand/imagery-guide.md` (`images.md` of the
 `studio` skill) and the character folder's `note` in DESIGN.md `assets` (400 characters at most).
 

@@ -74,6 +74,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 - The name is spelled exactly as the brief writes it.
 - Letters set in a font are the font's own and pass as the font draws them. Drawn letters each read as themselves.
 - Nothing is taken from a reference the direction shows.
+- A route that draws the user's own logo again holds to their file, side by side: every word and every part of its drawing there, as many and where the file has them, in its colours, nothing added; only the drawing is cleaner.
 - The lockup carries its composition's idea and reads as one piece: a part meant to meet the letters touches them; a mark set beside the name stands clearly apart from its letters, farther than a letter's space, so it reads as a mark rather than one more letter; supporting words sit on the word's axis or on an edge it really has.
 
 #### Final logo file
