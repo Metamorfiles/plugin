@@ -1,14 +1,15 @@
 # Generated marks and letters
 
-What is drawn to go with a name set in real type: a mark or a mascot, and now and then a drawn letter
-in a letter's place. The name is set first (`wordmark.md`); the image model draws the part from it;
+What is drawn to go with a name set in real type: a mark or a mascot, and now and then a drawn part
+in a letter's place or its mark's. The name is set first (`wordmark.md`); the image model draws the part from it;
 Studio traces it (`vector.md`); it is composed with the name (`lockups.md`) or drawn onto it (below).
 Its idea comes from the brief (`SKILL.md`, step 1).
 
 ## The prompt
 
 Every part drawn to go with a set name, a mark or a mascot, is drawn with the set name as image 1
-and the chosen direction's card as image 2, each with its role line: the part then shares the
+and the chosen direction's card as image 2, each with its role line (a part in a letter's or a
+mark's place is drawn from that letter instead: "A drawn letter or mark"): the part then shares the
 letters' hand, which words alone don't carry. A mascot is briefed and prompted with the `character`
 skill, these two images first, with its own line for image 1: "Image 1 is the brand's name as it is
 set: draw <name> to go with it, in its hand (its line weight, ends and corners), never its letters."
@@ -49,14 +50,32 @@ strokes." Then check the letters against the font:
 `metamorfiles_check_logo { file: "<the lockup .svg>", word: "<the wordmark .svg>" }` finds the word
 in the drawing and reports how much of its letters were kept (`checks.md`).
 
-## A drawn letter
+## A drawn letter or mark
 
-A drawn part can take a letter's place or its accent's only when the object already has that
-letter's shape (a round drop for an o, a dropper's bulb for an i's dot) and the word still reads at a glance. A
-shape the letter doesn't have goes beside or above the name instead.
-Draw it at the letter's proportions against the wordmark in image 1, then set the wordmark again
-with it: `metamorfiles_make_wordmark { text, font, color, output, part: { file: "<the traced .svg>", replaces: "o" } }`,
-its file under `brand/process/` or `brand/logos/`. Studio fits its ink to the letter's lines (its
-baseline and x-height, or cap height), however the drawing is padded or turned, and spaces it by its
-own shape. It stays on the letter's lines: `dx`, `dy` and `rotate` move it off them only when the
-move is the idea, said in the route's `composition`. It still reads as that letter in the word.
+A drawn part can stand in for a letter, or for a letter's mark (an accent, or the dot of i or j),
+while the word still reads at a glance. In a letter's place it works when the object already has
+that letter's simple shape (a round drop for an o) and the letter is neither the name's first nor
+its last, which the eye reads the word by. A mark's place takes a small object (a flame for an
+acute, a sleeping cat for an i's dot). A shape the letter doesn't have goes beside or above the
+name instead.
+
+The letter itself is the drawing's guide to its place, size and stroke weight, followed closely but
+not exactly. Set that letter alone in the name's face, the accented letter or the i for a mark,
+`metamorfiles_make_wordmark { text: "o", font, color, output: "brand/process/logo/<route>-letter.svg" }`,
+and draw the part with it as image 1 and the set name as image 2, in place of the two images above:
+
+```
+Image 1 is the letter "o" as the brand's name sets it: draw <the object> in its place, about its
+size and outline, its strokes about as heavy as the letter's, so the word still reads that letter.
+Image 2 is the brand's name as it is set: take its hand (its stroke weight, ends and corners), never
+its letters.
+```
+
+For a mark, image 1's line names the mark: "draw <the object> as the i's dot, about the dot's size
+or a little larger". Then set the wordmark again with it:
+`metamorfiles_make_wordmark { text, font, color, output, part: { file: "<the traced .svg>", replaces: "o" } }`,
+its file under `brand/process/` or `brand/logos/`. Studio sets the part on the letter's own lines
+(baseline to x-height or cap height, centred where the letter stood), or in the mark's place
+(centred where it stood, standing where it sat; `scale` makes a mark larger, growing up from there),
+however the drawing is padded, and spaces it by its own shape. `dx`, `dy` and `rotate` move it only
+when the move is the idea, said in the route's `composition`.

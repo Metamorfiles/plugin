@@ -80,9 +80,9 @@ The ways the parts meet, chosen by the brand's world and where the logo will liv
 - **The name alone,** with its one anomaly.
 - **The mark beside the name,** standing on its baseline, or after it, closing the word.
 - **The mark centred above the name,** for a compact or tall mark over a short name.
-- **A letter swapped for an object that has the letter's shape and still reads as it**
-  (`symbol.md`, "A drawn letter"). The object takes the letters' weight and colour, its details cut
-  out as holes.
+- **A letter or its mark swapped for an object that has its shape and still reads as it**
+  (`symbol.md`, "A drawn letter or mark"). The object takes the letters' weight and colour, its
+  details cut out as holes.
 - **A letter that becomes the mark:** a letter that is a face, a letter inside a shape, initials
   packed into a shield.
 - **The mark in the stack's empty corner:** two lines of different lengths, the mark filling the gap.

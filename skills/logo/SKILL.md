@@ -88,8 +88,8 @@ Logo route checklist of the `review` skill's Rubric, which the reviewer holds it
   lettering with a mark, a mascot or ornaments, all in one style. Studio traces it; its supporting
   words, if the route has them, are set in real type: `references/drawn.md`.
 - **Real fonts with a generated part.** The name set first from real fonts (`references/wordmark.md`),
-  then a mark or mascot drawn to go with it (`references/symbol.md`), now and then a drawn letter in
-  a letter's place (`references/symbol.md`, "A drawn letter"). A part that stands beside, after or
+  then a mark or mascot drawn to go with it (`references/symbol.md`), now and then a drawn part in
+  a letter's or its mark's place (`references/symbol.md`, "A drawn letter or mark"). A part that stands beside, after or
   above the name is locked up with it (`references/lockups.md`); one that meets the letters is drawn
   onto the set word (`references/symbol.md`, "Compose it on the word"). A mascot is briefed with the
   `character` skill.
@@ -164,7 +164,7 @@ version the user didn't ask for needs their word first.
 | [references/taste.md](references/taste.md) | What a strong logo, lockup and mark look like |
 | [references/drawn.md](references/drawn.md) | A logo drawn whole by AI, and every other version of a logo |
 | [references/wordmark.md](references/wordmark.md) | The type study, setting the name |
-| [references/symbol.md](references/symbol.md) | A generated mark or mascot for a set name, or a drawn letter |
+| [references/symbol.md](references/symbol.md) | A generated mark or mascot for a set name, or a drawn letter or mark |
 | [references/lockups.md](references/lockups.md) | Putting the parts together |
 | [references/seal.md](references/seal.md) | A seal, badge or monogram |
 | [references/vector.md](references/vector.md) | How a drawing is made and traced, and what to do with the trace's result |
