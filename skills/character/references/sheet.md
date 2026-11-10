@@ -52,8 +52,9 @@ The reviewer looks at it before anything is built on it (the `review` skill).
 
 ## Where it goes
 
-- **While a brand is made:** on the logo step, beside the chosen logo, as `sheet` in
-  `brand/process/logo.md` (`sheet: { file: "process/character/<name>-sheet-….png", name: "<name>" }`).
+- **While a brand is made:** on the logo step, beside the chosen logo, as its sheet:
+  `metamorfiles_change_step { step: "logo", changes: [{ do: "sheet", file: "<the path it returned>", name: "<name>" }] }`.
+  An edit of the sheet under its own name takes its place by itself.
   The board shows it under the logos, with Edit.
 - **In the kit:** brought into the character's folder,
   `metamorfiles_import_image { path: "<the sheet>", name: "00-sheet", folder: "brand/<the character's folder>" }`,

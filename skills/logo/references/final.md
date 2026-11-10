@@ -28,7 +28,7 @@ grounds, sources ("set in <face> as outlines with a drawn part", "drawn by <mode
 "created and approved by the user on <date>") and clear space.
 
 The logo used small, where it's seen small (a profile picture, an app icon, a favicon), is the chosen
-route's own mark when it has one: its file marked `small: true` in `logo.md`. Make it into
+route's own mark when it has one: its file marked `small: true` in the route's files. Make it into
 `brand/logos/` with its versions like the others and declare it with `small: true`. A logo without a
 mark of its own declares none: Studio uses the main logo, and nothing is made or asked for it. A new
 avatar, favicon or icon the user asks for later is made as a page.
