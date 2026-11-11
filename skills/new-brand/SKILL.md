@@ -158,8 +158,9 @@ task Studio started.
   it again.
 - **A change is local.** "Warmer", "the other face", "redo the second one": rework that step only, and
   what depends on it. A new palette recolours the logo routes; it never restarts the research.
-- **Going back from the chat.** "Back to the logo": take the user's choice off with
-  `metamorfiles_change_step { step: "logo", changes: [{ do: "reopen" }] }`, and ask again.
+- **Going back from the chat.** "Back to the logo": ask that step again,
+  `metamorfiles_ask_user { task, step: "logo" }`. Their choice stays marked until they choose another:
+  the same answer changes nothing, and another redoes what was made from the one before.
 
 ## Reviewed before the user chooses
 
@@ -200,8 +201,7 @@ Each change is one of:
 - `{ do: "characters", characters: [...] }` and `{ do: "sheet", file, name }`, on the logo step (the
   `character` skill);
 - `{ do: "notes", text }`: adds a paragraph to the step's notes below its options (why each option,
-  what the user said, a character's lines);
-- `{ do: "reopen" }`: takes the user's choice off, to ask the step again.
+  what the user said, a character's lines).
 
 A logo plan named before anything is drawn, then one route's files as they arrive:
 
