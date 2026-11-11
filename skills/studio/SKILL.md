@@ -40,7 +40,7 @@ Keep the text sparse, the way a board is: a name, a line, a few labels, since th
 
 ## Changing files
 
-Write and change every project file with `metamorfiles_write_file`, never with a shell command, a script or another editor. It checks what you wrote and returns the findings, records the version in the history with your `note` (say why: "Review fixes: shorter headline"), and refuses a copy that is older than what is on disk, so you never overwrite the user's panel edits. A shell edit skips all three, and outside auto mode it makes the user approve every change. Write the whole file: read it with `metamorfiles_read_file { path }`, change what you need, write it back with `metamorfiles_write_file { path, content, note }`.
+Write and change every project file with Studio's tools, never with a shell command, a script or another editor: a page's or template's values, styles and formats with `metamorfiles_edit` (`references/design.md`, "Where a change goes"), a new brand's steps with `metamorfiles_change_step`, everything else with `metamorfiles_write_file`. Each checks what you wrote and returns the findings, records the version in the history with your `note` (say why: "Review fixes: shorter headline"), and refuses a copy that is older than what is on disk, so you never overwrite the user's panel edits. A shell edit skips all three, and outside auto mode it makes the user approve every change. Write the whole file: read it with `metamorfiles_read_file { path }`, change what you need, write it back with `metamorfiles_write_file { path, content, note }`.
 
 Files come in unchanged, each kind with its one tool, and never by a shell command. Files the user dropped in the control panel are in `brand/sources/yours/` already.
 

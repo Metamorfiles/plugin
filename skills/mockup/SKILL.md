@@ -19,7 +19,7 @@ the reviewer holds the mark to that file.
 - [ ] 2. Per shot, what's on the object: the logo alone, a face designed in place, or a flat design
 - [ ] 3. Each face designed in your notes before any image: the best of its kind, its idea, its composition
 - [ ] 4. Each photograph made whole from one prompt, all together
-- [ ] 5. Reviewed; each must fix made once: the mark by an edit, anything else made again
+- [ ] 5. Reviewed; each image fixed once per look, every must fix together: an edit when only the mark or a word is wrong, else made again
 ```
 
 ### 1. The shots
@@ -127,16 +127,16 @@ order, each a sentence or two holding only its own:
 ### 5. Review, and fix
 
 Reviewed in the `mockups` queue (the `review` skill; in a new brand, `handover` is the final gate).
-A piece changes only for a must fix or the user's word, and each must fix gets one fix, as the
-image's new take (`references/images.md` of the `studio` skill, "Edit or redraw"):
+A piece changes only for a must fix or the user's word, and an image gets one new take for each
+look, every must fix in it together (`references/images.md` of the `studio` skill, "Edit or redraw"):
 
-- **The mark or a word wrong:** an edit of the take the reviewer sent back, its master after it,
+- **Only the mark or a word wrong:** an edit of the take the reviewer sent back, its master after it,
   in the region around the mark (the rest stays exactly as it was), naming the fault and restating
   the Keep line:
   `metamorfiles_generate_image { prompt: "Edit image 1: the label's wordmark is redrawn; draw the logo's letters as image 2 does, in the label's curve and light. Keep the bottle, the hand and the light.", references: ["brand/mockups/serum-on-shelf-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, region: { x: 0.3, y: 0.2, width: 0.4, height: 0.4 }, width: 1600, height: 2000, replaces: "brand/mockups/serum-on-shelf-1a2b3c4d.png" }`.
-- **Anything else** (a print laid over the photograph or made another way than named, the object
-  or its physics, a figure, the brand's products): made again from its prompt as a new image (an edit
-  would keep the faulty take's composition), with the line that should have said it rewritten to describe what the photograph shows
+- **Anything else wrong** (a print laid over the photograph or made another way than named, the object
+  or its physics, a figure, the brand's products): made again from its prompt as a new image, answering
+  every must fix the look named, the mark's too (an edit would keep the faulty take's composition), with the line that should have said it rewritten to describe what the photograph shows
   instead (the design, the object and its moment, or the print, as step 4 says).
 
 A piece looked at twice without
