@@ -109,15 +109,12 @@ task Studio started.
   before each part of the work, with the role doing it.
 - **Change the step** with `metamorfiles_change_step` (below). The result says what to fix, or gives
   the question Studio will ask and the options as the user will see them.
-- **Say what's on the board.** Once a step's options are written, the role that made them says in
-  its `done` update what each one is, in the board's order, and why the recommended one leads:
-  exactly the options offered, never one you dropped; when they change before you ask (one redrawn
-  after the review), say them again. What you said you'd make before the work never
-  stands in for it. Studio asks only what the thread last said.
-- **Ask with `metamorfiles_ask_user { task, step: "logo" }`** (`direction`, `logo`, `character` or
-  `imagery`).
-  Studio asks the step's own question with the options' titles, the panel offers to bring the step's
-  frame into view, and the user chooses there, in the thread or in your chat. From the user's own app
+- **Ask once the reviewer has passed the step, saying what's on the board in the same call:**
+  `metamorfiles_ask_user { task, step: "logo", say: "<what each option is, in the board's order, and why the recommended one leads>" }`
+  (`direction`, `logo`, `character` or `imagery`). Said at the moment of asking, `say` describes the
+  options exactly as the user sees them, after any redraw. Studio writes it in the thread, then asks
+  the step's own question with the options' titles, the panel offers to bring the step's frame into
+  view, and the user chooses there, in the thread or in your chat. From the user's own app
   it returns at once: write the panel link and the options in your reply as Studio lettered them,
   the recommended one first with its reason, then wait as the `team` skill says ("Choices that
   belong to the user").
@@ -159,7 +156,7 @@ task Studio started.
 - **A change is local.** "Warmer", "the other face", "redo the second one": rework that step only, and
   what depends on it. A new palette recolours the logo routes; it never restarts the research.
 - **Going back from the chat.** "Back to the logo": ask that step again,
-  `metamorfiles_ask_user { task, step: "logo" }`. Their choice stays marked until they choose another:
+  `metamorfiles_ask_user { task, step: "logo", say: "<the routes as the board shows them>" }`. Their choice stays marked until they choose another:
   the same answer changes nothing, and another redoes what was made from the one before.
 
 ## Reviewed before the user chooses

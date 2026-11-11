@@ -54,7 +54,7 @@ differs:
 - Its own pictures stay its anchors: the seeds are new pictures in their look, never its products
   made up.
 
-Ask with `metamorfiles_ask_user { task, step: "imagery" }` once the `imagery` queue has passed. Then
+Ask with `metamorfiles_ask_user { task, step: "imagery", say: "<what each seed shows>" }` once the `imagery` queue has passed. Then
 the library, `brand/imagery-guide.md`, the folder in `assets` and DESIGN.md's Imagery section, as
 "In the kit" of that file says.
 

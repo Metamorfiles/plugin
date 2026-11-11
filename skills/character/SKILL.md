@@ -99,7 +99,7 @@ for it. Which case it is shows on the logo step (`brand/process/logo.md`): the c
   draw the sheet from it (step 5), set it as the logo step's `sheet` and have the reviewer pass it;
   then one to three poses from the passed sheet (`references/poses.md`). Give the poses to the logo
   step as its `characters` (`metamorfiles_change_step`), have
-  the reviewer check them, and ask with `metamorfiles_ask_user { step: "character" }`: the user
+  the reviewer check them, and ask with `metamorfiles_ask_user { step: "character", say: "<what each pose shows>" }`: the user
   approves them with "Use these", like the imagery.
 - **Otherwise:** write this brand's briefs (step 1) and draw three designs (step 3), each with the
   chosen logo as image 1, so it is drawn in its hand: "Image 1 is the brand's chosen logo: take its
@@ -108,7 +108,7 @@ for it. Which case it is shows on the logo step (`brand/process/logo.md`): the c
   Give them to the logo step as its `characters` (`metamorfiles_change_step`), each
   `{ file, title, line }` (the line: the idea, in the user's words)
   and one `recommended: true`, have the reviewer check them, and ask with
-  `metamorfiles_ask_user { step: "character" }`. The one chosen (`character`) is the chosen drawing:
+  `metamorfiles_ask_user { step: "character", say: "<what each design is, and why the recommended one leads>" }`. The one chosen (`character`) is the chosen drawing:
   draw its sheet from it (step 5) and have the reviewer check it.
 
 Studio checks that each was drawn from the chosen logo, and the sheet from the mascot. The imagery
