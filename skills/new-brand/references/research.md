@@ -29,7 +29,9 @@ theirs to give. With nothing given, build from their words and the category.
 ## The brief
 
 `brand/process/brief.md` starts with the user's answers: they are theirs, never rewritten. Below
-them goes the team's research, written by you, briefly, from the subject's pages:
+them goes the team's research, written by you, briefly, from the subject's pages. Save the file after
+each section, so the user reads the research on the board as it arrives, and keep the paths for last:
+the board opens the directions' pages once the brief has them.
 - **Facts:** what it makes, for whom, where, at what price, the languages it speaks to its customers
   in, and anything true and specific: hours, process, tools, materials, founders, rituals, a word the
   customers use: three to five phrases from the subject's own pages or reviews, and one odd fact,
