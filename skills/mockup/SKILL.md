@@ -131,9 +131,8 @@ A piece changes only for a must fix or the user's word, and an image gets one ne
 look, every must fix in it together (`references/images.md` of the `studio` skill, "Edit or redraw"):
 
 - **Only the mark or a word wrong:** an edit of the take the reviewer sent back, its master after it,
-  in the region around the mark (the rest stays exactly as it was), naming the fault and restating
-  the Keep line:
-  `metamorfiles_generate_image { prompt: "Edit image 1: the label's wordmark is redrawn; draw the logo's letters as image 2 does, in the label's curve and light. Keep the bottle, the hand and the light.", references: ["brand/mockups/serum-on-shelf-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, region: { x: 0.3, y: 0.2, width: 0.4, height: 0.4 }, width: 1600, height: 2000, replaces: "brand/mockups/serum-on-shelf-1a2b3c4d.png" }`.
+  as "Edit or redraw" says, naming the fault where it is and restating the Keep line:
+  `metamorfiles_generate_image { prompt: "Edit image 1: on the label at the centre of the bottle, redraw the wordmark with the logo's letters as image 2 draws them, in the label's curve and light. Keep the bottle, the hand and the light exactly as they are.", references: ["brand/mockups/serum-on-shelf-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, width: 1600, height: 2000, replaces: "brand/mockups/serum-on-shelf-1a2b3c4d.png" }`.
 - **Anything else wrong** (a print laid over the photograph or made another way than named, the object
   or its physics, a figure, the brand's products): made again from its prompt as a new image, answering
   every must fix the look named, the mark's too (an edit would keep the faulty take's composition), with the line that should have said it rewritten to describe what the photograph shows

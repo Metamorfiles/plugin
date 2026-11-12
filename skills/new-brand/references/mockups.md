@@ -1,7 +1,7 @@
 # The brand in use
 
-Read this for the mockups, the last part of the kit (in a new brand, once DESIGN.md, the library
-and the imagery guide are written). Mockups show the brand made real on this business's own
+Read this for the mockups, the kit's last images (in a new brand, started with the library, once
+the final logos and the imagery guide are made, while DESIGN.md is written). Mockups show the brand made real on this business's own
 objects, so the user can judge the whole system at a glance. They are presentation, never the
 brand's imagery: Studio keeps them in their own folder and refuses them in templates.
 

@@ -21,6 +21,6 @@ A template is a reusable design whose changeable parts are declared variables, m
    - Useful design switches become `enum`, `boolean`, `anchor`, `color` or `number` variables. Keep them few and meaningful.
    - Defaults must be real, on-brand content, so the default render is a finished design: write them with `references/design.md` of the `studio` skill and the `copywriting` skill, and images with `references/images.md` of the `studio` skill.
 5. Choose a short kebab-case id and write the template with `metamorfiles_write_file { path: "templates/launch-post/index.html", content, note }`. Link `../../brand/brand.css`, and use brand images and logos in place, as the contract says.
-6. Read the check in the `metamorfiles_write_file` result, and get every declared format's findings with the previews `references/contract.md` of the `studio` skill describes ("The checks"); fix them as it says, then write again.
+6. Read the check in the `metamorfiles_write_file` result, and get every declared format's findings with the previews `references/contract.md` of the `studio` skill describes ("The checks"); fix them as it says, each with a find and replace on the file.
 7. Get the independent review with the `review` skill and fix every **must fix**.
 8. Hand it over as the `studio` skill's How you talk says: what the design does, the variables the user can change in the panel, and the next step as an offer, usually the first page from it.
