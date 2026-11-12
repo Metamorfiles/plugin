@@ -70,8 +70,9 @@ labelled lines, in this order, each holding only its own:
    the first most closely:
    - a character: its sheet first (the first of its folder's `anchors` in DESIGN.md, or the logo
      step's `sheet` while a brand is made; `references/sheet.md` of the `character` skill): "Image 1
-     is the reference sheet of <name> from every side: keep its identity, anatomy and colours exactly;
-     draw exactly one <name>, in this scene's own pose". What it does and feels is this prompt's own,
+     is the reference sheet of <name> from every side: take who it is from it exactly, its body, how
+     its face is built, its colours and its line; draw exactly one <name>, in this scene's own pose
+     and expression". What it does and feels is this prompt's own,
      written for this scene;
    - the library's sheet next, its folder's frame on the brand board
      (`templates/brand-board#<folder>`, such as `templates/brand-board#refs`): "Image 2 is the

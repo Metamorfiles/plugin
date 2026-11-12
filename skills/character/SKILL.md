@@ -28,14 +28,16 @@ Copy it into your notes and tick each step as you go:
 
 Write the brief before drawing anything (`references/design.md`). Keep it in the logo step's notes while a
 brand is made (`metamorfiles_change_step`, `{ do: "notes", text }`). From it come the **Character lines**, the character's
-fixed description: who it is, the one feature that makes it itself, how its face is made (the shape
-of its eyes and pupils, its brows, its mouth), its markings, its palette, its look (line, fill and
-rendering), and that nothing about it changes. The expression and the head angle are each
-drawing's own, since a fixed one makes every drawing the same face. They are pasted word for word
+fixed description: who it is, the one feature that makes it itself, how its face is built (what its
+eyes, pupils, brows and mouth are made of, such as dots, rings or a single line), its markings, its
+palette, its look (line, fill and rendering), and that nothing about it changes. What its face and
+body are doing (the lids, where it looks, the set of the mouth, a gesture, the head angle) is each
+drawing's own and goes in that drawing's prompt, since whatever the lines fix, every drawing repeats. They are pasted word for word
 into every prompt for this character: a synonym is a different instruction. A character that
-already exists in a drawing (one in the user's own logo) needs no brief: its Character lines are
-written from that drawing and add nothing it doesn't show, since every word becomes a part of each
-drawing of it. Once the
+already exists in a drawing (the user's own logo, or the chosen logo it is taken from) needs no
+brief: its Character lines are written from that drawing and add nothing it doesn't show, since
+every word becomes a part of each drawing of it. They say what the character is; its pose and
+expression in that drawing stay that drawing's. Once the
 kit is written, they are the **Character** section of `brand/imagery-guide.md` (`images.md` of the
 `studio` skill) and the character folder's `note` in DESIGN.md `assets` (400 characters at most).
 

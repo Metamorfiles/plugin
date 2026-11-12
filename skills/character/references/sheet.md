@@ -15,13 +15,17 @@ labels, numbers or panel borders: lettering comes out garbled, and the order bel
 
 | Row | 1 | 2 | 3 | 4 |
 | --- | --- | --- | --- | --- |
-| The turnaround, its own resting face | front | three-quarter, facing left | side profile, facing left | back |
-| The range | walking | sitting, holding a small object from the brand's world | cheering | thinking, sceptical |
+| The turnaround, standing at rest with its everyday face | front | three-quarter, facing left | side profile, facing left | back |
+| The range, each with its own mood | walking | sitting, holding a small object from the brand's world | cheering | thinking, sceptical |
 
-The top row gives every angle of the head and body, with the face the chosen drawing has (a
-neutral face there would teach the model a blank character); the bottom one gives motion, a seated body, a
-held object and three expressions. Each figure is named by what it is doing: the drawing finds the
-limbs, and a character built without hands does each with what it has.
+The top row gives every angle of the head and body, with the character's everyday face: the look
+it has when nothing is happening, said in a few words from who it is (a blank face would teach the
+model a blank character); the bottom one gives motion, a seated body, a held object and three
+expressions. Each figure is named by what it is doing and, where the action doesn't say it, how it
+feels: the drawing finds the limbs and the face, and a character built without hands does each with
+what it has. Image 1 is named by what the model takes from it, the character, never its pose: any
+figure the prompt leaves without its own face and action is copied from image 1, arms and expression
+included.
 The one object is there because holding is that figure's action, and it is said not to be part of
 the character.
 
@@ -31,13 +35,15 @@ The chosen drawing first, the prompt in the labelled parts of `references/images
 skill:
 
 ```
-Image 1 is <name>, the brand's character: keep its identity, anatomy and colours exactly.
+Image 1 is <name>, the brand's character, in one drawing: take who it is from it exactly, its body,
+how its face is built, its colours and its line. Its pose and expression are that drawing's alone.
 Draw a character sheet of <name>: one landscape image, four columns and two rows, eight full-body
 figures of the same <name> at the same scale on one shared ground line, evenly spaced, on plain
 <paper hex>, no labels, numbers or borders.
-Top row, with <name>'s resting face as in image 1: front; three-quarter facing left; side profile facing left; back.
-Bottom row: walking; sitting, holding a small object from the brand's world, which is not part of
-<name>; cheering; thinking, sceptical.
+Top row, standing at rest, with <name>'s everyday face, <that face in a few words, from who it is>: front;
+three-quarter facing left; side profile facing left; back.
+Bottom row: walking, <its mood>; sitting, holding a small object from the brand's world, which is not
+part of <name>, <its mood>; cheering; thinking, sceptical.
 <name>: <its Character lines>; nothing about <name> changes.
 Style: <the style block>.
 Constraints: <name>'s colours and proportions never change between figures; exactly eight figures;
@@ -59,7 +65,5 @@ The reviewer looks at it before anything is built on it (the `review` skill).
 - **In the kit:** brought into the character's folder,
   `metamorfiles_import_image { path: "<the sheet>", name: "00-sheet", folder: "brand/<the character's folder>" }`,
   and listed first in that folder's `anchors`, so it heads the character's frame on the brand board.
-- **Using it:** every image of the character passes the sheet as image 1, "Image 1 is the reference
-  sheet of <name> from every side: draw exactly one <name>, in this scene's own pose", and the pose
-  and the expression come from the scene's prompt alone (`references/images.md` of the `studio`
-  skill).
+- **Using it:** every image of the character passes the sheet as image 1, and the pose and the
+  expression come from the scene's prompt alone (`references/images.md` of the `studio` skill).
