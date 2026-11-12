@@ -77,5 +77,6 @@ or a little larger". Then set the wordmark again with it:
 its file under `brand/process/` or `brand/logos/`. Studio sets the part on the letter's own lines
 (baseline to x-height or cap height, centred where the letter stood), or in the mark's place
 (centred where it stood, standing where it sat; `scale` makes a mark larger, growing up from there),
-however the drawing is padded, and spaces it by its own shape. `dx`, `dy` and `rotate` move it only
-when the move is the idea, said in the route's `composition`.
+however the drawing is padded, and spaces it by its own shape. It always stays in that place, where a
+reader looks for the letter or the mark; `rotate` turns it there, only when the turn is the idea, said
+in the route's `composition`.
