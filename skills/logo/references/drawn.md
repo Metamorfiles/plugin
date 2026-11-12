@@ -88,15 +88,13 @@ The planned flow, with no extra word from the user:
   as above, or drawn from the logo as an edit where no box holds it alone.
 - **The version redrawn where one colour loses a part**: when `metamorfiles_check_logo` reported
   `lostInOneColour` with `merged` boxes (features that merge into one ink), the one-colour version is
-  drawn as an edit of the logo's own drawing (`edit: true`, the traced file first in `references`,
-  the same `folder` and `trace` colours, saying only what changes in the merged parts: an outline cut
-  between the features, a gap left open) and traced, then lined up with the logo:
-  `metamorfiles_align_version { file: "brand/process/logo/<file>.svg", version: "brand/process/logo/<file>-ink-draft.svg", output: "brand/process/logo/<file>-ink.svg", redrawn: [<the merged boxes>] }`.
-  Every piece outside them is the logo's own file. It takes the place of the one-colour file in the
-  chosen route's `files` (`metamorfiles_change_step`), its entry carrying the same boxes as `redrawn`, so the card
-  says what was redrawn and the reviewer judges only that. It is a traced file of the chosen logo, so
-  it is cleaned like the logo (`final.md`, "Cleaning"), and the final one-colour and reversed files
-  are recoloured from its cleaned copy.
+  an edit of the logo's whole drawing, traced: `edit: true`, the traced file first in `references`,
+  `name: "<file>-ink"`, the same `folder`, and `trace` in the one ink. Its prompt says what changes,
+  where in the logo in place words (an outline cut between the features, a gap left open), and that
+  everything else stays as the drawing has it. It takes the place of the one-colour file in the chosen
+  route's `files` (`metamorfiles_change_step`). It is a traced file of the chosen logo, so it is
+  cleaned like the logo (`final.md`, "Cleaning"), and the final one-colour and reversed files are
+  recoloured from its cleaned copy.
 
 ### Only on the user's word
 

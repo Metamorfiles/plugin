@@ -29,7 +29,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 1. Direction: three paths in the brief, references collected for each, directions written, asked, chosen
 - [ ] 2. Logo: three routes with the `logo` skill, reviewed, asked, chosen; then its step 8: the mascot when the brand has one (`step: "character"`), reviewed
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
-- [ ] Kit: DESIGN.md (its prose by the copywriter), final logos, fonts and the library; then the imagery guide
+- [ ] Kit: final logos and the imagery guide; the library and mockups started; DESIGN.md (its prose by the copywriter) while they're drawn
 - [ ] Mockups: three shots, each reviewed (the `mockup` skill)
 - [ ] Handover: the final review passed, then finished: true with the summary
 ```
@@ -223,10 +223,9 @@ edited under its own name, takes its place on the step by itself (`references/im
 `studio` skill, "Edit or redraw").
 
 Each option can carry:
-- `files`: all of its images or SVGs, up to 16, each `{ file, caption, ground, small, redrawn }` with all but
+- `files`: all of its images or SVGs, up to 16, each `{ file, caption, ground, small }` with all but
   `file` optional: `caption` (at most 140 characters: a credit, what to take), `ground`
-  (`"#rrggbb"`, the colour a logo file is shown on), for a logo route's mark `small: true`, and for
-  a logo version redrawn in part, `redrawn` (`references/drawn.md` of the `logo` skill);
+  (`"#rrggbb"`, the colour a logo file is shown on), and for a logo route's mark `small: true`;
 - `colors`: up to 10, each `{ name, hex: "#rrggbb", share }` with `share` 0 to 100, in the order and
   proportion they are used;
 - `fonts`: up to 4, each `{ family, file, role }`, `file` the one `metamorfiles_add_font` returned;
@@ -252,23 +251,29 @@ its frame shows each file as it arrives, so the user watches the step come toget
 3. **Imagery** (`references/imagery.md`). The mode the brand needs, the style block, and four seeds
    made together, one per option, saved in `brand/process/imagery/`. The seeds the user keeps are the
    anchors. Start the seeds once the logo, and its mascot when the brand has one, are chosen.
-4. **Kit**, in this order, since a folder in `assets` must exist and its frame appears once it is
-   listed:
-   1. **DESIGN.md and the library.** The words are the copywriter's, always: report as `copywriter`
-      while you write DESIGN.md's prose (Overview, Colors, Typography, Logo, Imagery, Voice and
-      Messaging) with the `copywriting` skill, from the brief's facts and the chosen steps, then hand
-      back to the designer. The chosen direction, logo and imagery become `brand/DESIGN.md` as the
-      `brand` skill describes, with the final logos in `brand/logos/` (step 8 of the `logo` skill)
-      and every face with its role (the logo's own face named for it). Bring each kept seed into the
-      library with
-      `metamorfiles_import_image { path: "<seed>", name: "serum-close-up", folder: "brand/refs" }`,
-      and list the folder with the file names it returned as its anchors:
-      `{ folder: refs, kind: imagery, title: Imagery, anchors: [...] }`; a character's folder as
-      `references/sheet.md` of the `character` skill says. Then grow the library from the anchors
-      into `brand/refs/` (`references/imagery.md`).
-   2. **The imagery guide,** `brand/imagery-guide.md`, the brand's image contract
-      (`references/imagery.md`, "In the kit").
-   3. **The mockups** (`references/mockups.md`), on their own board, never asked.
+4. **Kit.** Its images take longest, so they are started first and the words are written while
+   they are drawn, in this order:
+   1. **What the images need.** The final logos in `brand/logos/` (step 8 of the `logo` skill). Each
+      kept seed brought into the library:
+      `metamorfiles_import_image { path: "<seed>", name: "serum-close-up", folder: "brand/refs" }`.
+      The imagery guide, `brand/imagery-guide.md`, the brand's image contract, from what the imagery
+      step settled (`references/imagery.md`, "In the kit").
+   2. **The images, started together.** The library grown from the anchors into `brand/refs/`
+      (`references/imagery.md`), and the mockups (`references/mockups.md`), on their own board,
+      never asked: each started with `wait: false`, collected as it arrives.
+   3. **DESIGN.md, while they are drawn.** The words are the copywriter's, always: report as
+      `copywriter` while you write DESIGN.md's prose (Overview, Colors, Typography, Logo, Imagery,
+      Voice and Messaging) with the `copywriting` skill, from the brief's facts and the chosen steps,
+      then hand back to the designer. The chosen direction, logo and imagery become `brand/DESIGN.md`
+      as the `brand` skill describes, every face with its role (the logo's own face named for it).
+      Its Imagery names the anchors, which exist already; it describes no image still being drawn.
+      List the library with the file names the import returned as its anchors:
+      `{ folder: refs, kind: imagery, title: Imagery, anchors: [...] }`, a character's folder as
+      `references/sheet.md` of the `character` skill says; its frame shows each image as it arrives.
+      The mockups folder is listed once the first is saved (`references/mockups.md`). A mockup's flat
+      designed as a page (the `artwork` skill) is made once DESIGN.md exists, since it is set in the
+      brand's tokens.
+   4. **The handover review,** once every image is in (Ending).
 
    The brand board then holds it all after the steps, as the brand's guideline pages: the logo,
    colour, type, voice, the images and the mockups. Make no templates or pages but a mockup's flat

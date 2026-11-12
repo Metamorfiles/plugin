@@ -80,7 +80,7 @@ which thing carries the accent are each scene's own.
 
 ## The library
 
-Grow six to ten images from the anchors into the imagery folder DESIGN.md lists, each with the same
+Grow six to ten images from the anchors into `brand/refs/`, the library folder DESIGN.md lists, each with the same
 style block:
 `metamorfiles_generate_image { prompt, width, height, references: ["brand/refs/<anchor>", ...], folder: "brand/refs" }`.
 A drawing on a flat paper field also passes `ground: "{colors.background}"`, so it sits on the
