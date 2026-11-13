@@ -89,22 +89,18 @@ A direction starts from something only this business has, which gives it somethi
 
 ## Three paths
 
-Before any search, end the brief with three paths: three ways into the brand, each from a different
-source above, so each search looks for something different. They differ in feel: in register
-(vernacular, heritage, minimal, loud, hand-made, character-led, editorial, material), in how the mark
-is made and in what the imagery is. Write each as a numbered line under `## Paths`: its
-name, what it takes from the brief, which of the category's codes it avoids or keeps, and the plain words to
-search for it:
-
-```markdown
-## Paths
-
-1. **Morning shelf:** the two-minute morning routine as the brand's number; avoids blush pink with
-   gold. Search: skincare packaging.
-```
+The research ends with three paths: three ways into the brand, each from a different source above,
+so each search looks for something different. They differ in feel: in register (vernacular,
+heritage, minimal, loud, hand-made, character-led, editorial, material), in how the mark is made and
+in what the imagery is. Once the brief's research is written, and before any search, record them
+with Studio, which shows them under the brief and starts the directions from them: each with its
+name, what it takes from the brief and which of the category's codes it avoids or keeps, and the
+plain words to search for it:
+`metamorfiles_change_step { step: "direction", changes: [{ do: "paths", paths: [{ name: "Morning shelf", line: "The two-minute morning routine as the brand's number; avoids blush pink with gold.", search: "skincare packaging" }, ...] }] }`,
+all three at once. Studio collects references only for the paths it holds.
 
 A path is a guess the research tests: one that finds nothing good changes or gives way to a better
-one the references show, and its line in the brief changes with it.
+one the references show, recorded again with all three.
 
 ## The reference hunt
 

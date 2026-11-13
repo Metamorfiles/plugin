@@ -26,7 +26,7 @@ Copy it into your notes and tick each step as you go:
 
 ```
 - [ ] Brief: brand/process/brief.md, the user's answers and the research below them
-- [ ] 1. Direction: three paths in the brief, references collected for each, directions written, asked, chosen
+- [ ] 1. Direction: the brief's research, its three paths recorded, references collected for each, directions written, asked, chosen
 - [ ] 2. Logo: three routes with the `logo` skill, reviewed, asked, chosen; then its step 8: the mascot when the brand has one (`step: "character"`), reviewed
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
 - [ ] Kit: final logos and the imagery guide; the library and mockups started; DESIGN.md (its prose by the copywriter) while they're drawn
@@ -244,8 +244,8 @@ its frame shows each file as it arrives, so the user watches the step come toget
 
 ## The steps
 
-1. **Direction:** brief facts, touchpoints, codes and three paths into `brief.md`; references per
-   path; one option per path that holds up (`references/research.md`, then `references/look.md`).
+1. **Direction:** brief facts, touchpoints and codes into `brief.md`, then its three paths recorded
+   on the direction step; references per path; one option per path that holds up (`references/research.md`, then `references/look.md`).
 2. **Logo** (the `logo` skill, steps 1-7, on the logo step), then its step 8 once one is
    chosen: the mascot when the brand has one (the `character` skill, "In a new brand").
 3. **Imagery** (`references/imagery.md`). The mode the brand needs, the style block, and four seeds
