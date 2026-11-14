@@ -13,6 +13,8 @@ without your conversation, which it doesn't need: in Codex, `fork_turns: "none"`
 project path, the traced file and what it is in one sentence. Each writes `<name>-clean.svg` beside its
 trace and replies with its match against the drawing. Nothing the user is asked waits for it, and a
 cleaner still at work ends with your run: before the final files, wait for every one you started.
+A cleaner is done when it replies (in Claude Code, the notice that the background agent finished),
+never when its file appears: the clean file appears with its first draft and changes until then.
 
 ## The final files
 
