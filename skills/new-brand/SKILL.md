@@ -76,10 +76,10 @@ the brand board.
 
 **Asking for the brief:**
 
-1. Call `metamorfiles_ask_user { brief: { name, what, who, feel, asked, own, links } }` with your
+1. Call `metamorfiles_ask_user { brief: { name, what, who, feel, asked, own, loved } }` with your
    reading of what the user said: the brand's name, what it is, who it's for, how it should feel,
-   where it is today (its site, profiles or handles, as they gave them) and the work they love as
-   full https links (`name` and `what` are required). `asked` is everything they named for the
+   where it is today (its site, profiles or handles, as they gave them) and the work they love, as
+   they gave it: links, names of work or both (`name` and `what` are required). `asked` is everything they named for the
    brand to have or be shown on (a mascot, a sign, labels, a scene they want to see it in), in their
    own words, left out when they named nothing: the team reads only the brief, so what you leave out
    of it is never made. Studio draws the brief on the board at once and opens the

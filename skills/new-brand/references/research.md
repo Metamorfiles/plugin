@@ -113,8 +113,10 @@ Designers start from the best of what exists, the way they browse it, one hunt f
 - **Choose from the covers** the three projects worth opening, genuinely good whatever their
   category, and pass their links with the path's name as
   `metamorfiles_collect_references { links: [...], path: "Morning shelf" }`, which keeps about eight
-  images of each (the logo, lettering, mascot and palette pages come with them). Links the user
-  pasted come first, with no path: they are their taste.
+  images of each (the logo, lettering, mascot and palette pages come with them). The work the user
+  loves (the brief's "Work they love") comes first, with no path: it is their taste. Collect the
+  links they gave as they are, and find the work they named by its name, in the index or on the web
+  as below.
 - `metamorfiles_look_at_page { url: "https://..." }` shows a single page when you need to read one
   more closely, such as a type specimen or the business's own website.
 
