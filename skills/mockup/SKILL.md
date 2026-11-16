@@ -10,7 +10,8 @@ A mockup is a real photograph of the brand on a real object. The image model mak
 the brand's real files as references: nothing is ever pasted or placed onto a photograph. Its hard
 part is the mark: image models redraw lettering, and no prompt holds a logo pixel-exact. So the
 prompt gives the model the master file and says how the mark is physically made on the object, and
-the reviewer holds the mark to that file.
+the mark passes when, at the size the photograph shows it, it is the file's word, letters, parts and
+colours (the `review` skill's picture checks, "The logo").
 
 ## Checklist
 
@@ -36,7 +37,7 @@ as cropped hands and arms, a face only when the shot is about a person.
 ### 2. What's on the object
 
 Decide it per object, from the shot's idea and the surface. The master is the file the model
-reproduces exactly: image 1 of the photograph.
+draws the mark from: image 1 of the photograph.
 
 - **The logo alone** (a tag, a business card, an embroidered chest, a fascia with only the name):
   the master is the logo file the object's ground calls for (the reversed one on a dark object).
@@ -132,7 +133,7 @@ look, every must fix in it together (`references/images.md` of the `studio` skil
 
 - **Only the mark or a word wrong:** an edit of the take the reviewer sent back, its master after it,
   as "Edit or redraw" says, naming the fault where it is and restating the Keep line:
-  `metamorfiles_generate_image { prompt: "Edit image 1: on the label at the centre of the bottle, redraw the wordmark with the logo's letters as image 2 draws them, in the label's curve and light. Keep the bottle, the hand and the light exactly as they are.", references: ["brand/mockups/serum-on-shelf-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, width: 1600, height: 2000, replaces: "brand/mockups/serum-on-shelf-1a2b3c4d.png" }`.
+  `metamorfiles_generate_image { prompt: "Edit image 1: the wordmark on the label at the centre of the bottle reads Lumn; redraw it as Lumen with the logo's letters as image 2 draws them, in the label's curve and light. Keep the bottle, the hand and the light exactly as they are.", references: ["brand/mockups/serum-on-shelf-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, width: 1600, height: 2000, replaces: "brand/mockups/serum-on-shelf-1a2b3c4d.png" }`.
 - **Anything else wrong** (a print laid over the photograph or made another way than named, the object
   or its physics, a figure, the brand's products): made again from its prompt as a new image, answering
   every must fix the look named, the mark's too (an edit would keep the faulty take's composition), with the line that should have said it rewritten to describe what the photograph shows
