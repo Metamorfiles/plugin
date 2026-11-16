@@ -119,7 +119,10 @@ task Studio started.
   the recommended one first with its reason, then wait as the `team` skill says ("Choices that
   belong to the user").
 - **Studio records the choice** in the step's file, however the user made it, and the next step's
-  frame appears. Never write `chosen` yourself.
+  frame appears. Never write `chosen` yourself. The choice is the option as the user saw it, and the
+  next step is made from it as it is: it changes only when the user asks for a change in their own
+  words. A reviewer's suggestion on an option is the user's to weigh: say it in `say`, about the
+  option as it is now.
 - **An answer in their own words is the answer.** "A is better but not good enough" means rework A
   and ask again; "the palette of A with the type of B" means write that option and ask again; "C's
   dropper floats above the bottle" means C is fixed before anything else.
