@@ -42,19 +42,22 @@ draws the mark from: image 1 of the photograph.
 - **The logo alone** (a tag, a business card, an embroidered chest, a fascia with only the name):
   the master is the logo file the object's ground calls for (the reversed one on a dark object).
 - **Designed in place** (a can, a box, a label, a deck's graphic, merch: a face whose only words are
-  the logo and a short line the brief gives, seen in one shot): designed in step 3, then drawn by
+  the logo, a product name and one short line, seen in one shot): designed in step 3, then drawn by
   the image model in the photograph, which places the parts itself. Only the logo and the words are
   exact. The master is the logo file.
 - **A flat design** (a pack another shot shows too, a sticker with art, a poster that is a picture):
   designed in step 3, then drawn flat by the image model, the whole print straight on. The passed
   flat is the master, with the logo file as image 2, so every shot shows the same pack. A face with
-  set copy (a label's text, a menu) is a page in code, and a screen is the brand's real one or a page
+  set copy (a label's text, a pack that talks in lines of copy, a menu) is a page in code, and a screen is the brand's real one or a page
   (the `artwork` skill, step 5); its file is the master the same way.
 
 Placed as the business would really make it: where, how large and by what method a printer,
-signwriter or factory puts a mark on this kind of object. Real words only: the brand's name, the
-brief's words and its product names (proposed as the `copywriting` skill's Names says when the
-brief gives none); small print only when its real words were supplied.
+signwriter or factory puts a mark on this kind of object. Real words only: the brand's name, its
+product names (proposed as the `copywriting` skill's Names says when the brief gives none) and its
+lines, from the brief or written in its voice as the `copywriting` skill says (DESIGN.md's
+Messaging and Voice hold them). A face says as much as the brand's direction has its objects say: a
+brand whose packs talk talks on them. Facts and small print only when their real words were
+supplied.
 
 ### 3. Design each face
 
