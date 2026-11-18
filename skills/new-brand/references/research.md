@@ -110,24 +110,30 @@ Designers start from the best of what exists, the way they browse it, one hunt f
   sites file work under: the kind of business with the kind of work (packaging, mascot, lettering,
   signage, menu), a colour or a place. It returns the best matches' covers, numbered on one sheet; a
   search that finds nothing lists the words to use instead.
-- **Choose from the covers** the three projects worth opening, genuinely good whatever their
-  category, and pass their links with the path's name as
-  `metamorfiles_collect_references { links: [...], path: "Morning shelf" }`, which keeps about eight
-  images of each (the logo, lettering, mascot and palette pages come with them). The work the user
-  loves (the brief's "Work they love") comes first, with no path: it is their taste. Collect the
+- **Choose from the covers** the three projects worth a closer look, genuinely good whatever their
+  category, and pass their links with the path's name:
+  `metamorfiles_look_at_references { links: [...], path: "Morning shelf" }`. It shows each project's
+  pictures small, numbered on one sheet (2.4 is project 2's fourth), and keeps nothing. The work the
+  user loves (the brief's "Work they love") comes first, with no path: it is their taste. Look at the
   links they gave as they are, and find the work they named by its name, in the index or on the web
   as below.
+- **Keep what the path needs:** about six pictures across its projects, chosen by what each shows
+  (the lettering or logo, a pack or object, the colour, the imagery, the brand in use), so the
+  moodboard shows a whole brand:
+  `metamorfiles_collect_references { pictures: ["2.4", "3.1"], path: "Morning shelf" }`. The user's
+  pictures are chosen the same way and kept with the path they serve.
 - `metamorfiles_look_at_page { url: "https://..." }` shows a single page when you need to read one
   more closely, such as a type specimen or the business's own website.
 
-When the index has nothing good for a path, search the open web with your own web search, in the
-path's plain words with "branding" or "case study" (the Dieline for packaging, Brand New, the
-studios' own sites), choose three real, credited projects with their images on the page, and
-collect them the same way. A link on a site Studio won't open is skipped, and the result says so;
-never try that site again and never ask the user about it.
+The open web is as good a source as the index: when the index is thin for a path (few projects of
+its kind, or none genuinely good), search the web with your own web search, in the path's plain
+words with "branding" or "case study" (the Dieline for packaging, Brand New, the studios' own
+sites), choose three real, credited projects with their images on the page, and look at them the
+same way. A link on a site Studio won't open is skipped, and the result says so; never try that
+site again and never ask the user about it.
 
-Each project opened spends the project's daily page budget, and a search's covers spend none: spend
-it on the paths first. The tool reports what's left.
+Each link outside the index opens a page from the project's daily page budget; the index's projects
+and a search's covers spend none. Spend it on the paths first. The tool reports what's left.
 
 ## Directions
 
@@ -141,8 +147,8 @@ step, with its palette and faces from `look.md`:
 - **Title:** the direction's name, in a few words.
 - **Line:** why it serves the brief: what it would feel like to meet this brand, and where it takes
   a risk.
-- **Files:** four to eight references chosen by attribute (a logo, type, imagery, a layout, an
-  application), so the direction shows the whole brand, not eight logos.
+- **Files:** the six or so references kept for it, by attribute (a logo, type, imagery, a layout,
+  an application), so the direction shows the whole brand.
 - **Captions:** the project, then what to take from it: "Harbour Study · a loose, confident script as the
   hero". What to take is a principle, never the look to copy.
 
