@@ -40,8 +40,8 @@ the result is the reviewer's to judge.
 When a route needs a part the references don't show well (the lettering, a mascot, a mark), start a
 search for it in the background as you begin, with the category and the part:
 `metamorfiles_search_references { query: "skincare lettering", wait: false }`.
-Read it when you reach that route (`metamorfiles_search_references { id }`), and collect as
-`references/research.md` of the `new-brand` skill says.
+Read it when you reach that route (`metamorfiles_search_references { id }`), and keep the pictures
+that show the part as `references/research.md` of the `new-brand` skill says.
 
 ### 2. The type study
 

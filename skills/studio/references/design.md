@@ -56,9 +56,10 @@ every competitor already has.
 **The best of its kind.** Before deciding a piece, see how the best designers made one. The brand's
 references come first: `metamorfiles_get_project` lists the chosen direction's, each with what to
 take from it. When none shows this kind of piece, search Studio's index for it in that kind of
-business, `metamorfiles_search_references { query: "skincare poster" }`, and look at the covers (a
-search spends none of the day's pages). Name what the strongest do with the space (how they compose, not what
-they show), and take one way of composing on whole: blended with your usual layout, it becomes the
+business, `metamorfiles_search_references { query: "skincare poster" }`, which answers in words, and
+keep the three or four pictures that show the piece to look at them:
+`metamorfiles_collect_references { pictures: ["2.3", "5.1", "7.2"], path: "Skincare poster" }`. Name
+what the strongest do with the space (how they compose, not what they show), and take one way of composing on whole: blended with your usual layout, it becomes the
 usual layout. They set the standard to reach; their subjects and marks stay theirs.
 
 **The idea.** One visual idea per piece, from what this piece says and the subject, named in a phrase:
