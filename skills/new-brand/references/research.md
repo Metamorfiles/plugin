@@ -122,8 +122,10 @@ Designers start from the best of what exists, the way they browse it, one hunt f
 - **The work the user loves** (the brief's "Work they love") comes first, with no path: it is their
   taste. Look at the links they gave, and the work they named once found by its name on the web, with
   `metamorfiles_look_at_references { links: [...] }`, which shows each project's pictures small and
-  numbered without keeping any; keep the ones that serve a path the same way. A project a search
-  lists without its pictures is looked at the same way.
+  numbered without keeping any; keep the ones that serve a path the same way. When a page shows
+  nothing of a work, look for the work on another page: their taste is what the directions build
+  on, so it reaches them as pictures, not only as a note. A project a search lists without its
+  pictures is looked at the same way.
 - `metamorfiles_look_at_page { url: "https://..." }` shows a single page when you need to read one
   more closely, such as a type specimen or the business's own website.
 
