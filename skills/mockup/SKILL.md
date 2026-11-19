@@ -66,9 +66,11 @@ around that idea; given a list of parts, it stacks them. So each face designed i
 flat is designed first, as a packaging designer would, and written in your notes before any image:
 
 1. **The best of its kind.** Start from the brand's references, which `metamorfiles_get_project`
-   lists with what to take from each, and when none shows this kind of object, search for it:
-   `metamorfiles_search_references { query: "skincare packaging" }`. Name
-   how the strongest use the face's space (how they compose it, not what they show) and take that
+   lists with what to take from each, and when none shows this kind of object, search for it,
+   `metamorfiles_search_references { query: "skincare packaging" }`, and keep the three or four
+   pictures that show the object to look at them:
+   `metamorfiles_collect_references { pictures: ["2.3", "5.1", "7.2"], path: "Skincare packaging" }`.
+   Name how the strongest use the face's space (how they compose it, not what they show) and take that
    way of composing whole. Their subjects and marks stay theirs.
 2. **The idea.** One graphic idea that carries the whole face, from what only this business has: its
    name and what it means, its place, what it makes and from what, its rituals and its people. Say
