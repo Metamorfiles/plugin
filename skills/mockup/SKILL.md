@@ -37,8 +37,7 @@ as cropped hands and arms, a face only when the shot is about a person.
 ### 2. What's on the object
 
 Decide it per object, first by the words its face carries, then by the shot's idea. How much the
-brand says on its objects comes from the brief and the chosen direction, and from DESIGN.md's Voice
-once it's written: one brand prints only its name, another fills a face with lines in its voice. The
+brand says on its objects comes from the brief and DESIGN.md's Voice: one brand prints only its name, another fills a face with lines in its voice. The
 words decide the kind of face, since the image model draws a logo and a short line well and redraws
 longer copy. The master is the file the model draws the mark from: image 1 of the photograph.
 
@@ -59,8 +58,9 @@ longer copy. The master is the file the model draws the mark from: image 1 of th
 Placed as the business would really make it: where, how large and by what method a printer,
 signwriter or factory puts a mark on this kind of object. Real words only: the brand's name, its
 product names (proposed as the `copywriting` skill's Names says when the brief gives none) and its
-lines, from the brief or written in its voice as the `copywriting` skill says. Facts (a price, a
-figure, an ingredient, a claim) only when their real words were supplied.
+lines, from the brief or written in its voice as the `copywriting` skill says. A fact not supplied
+(a person's name, a price, a figure, an ingredient, a claim) is left out of the line; the line itself
+is still written, in the voice.
 
 ### 3. Design each face
 

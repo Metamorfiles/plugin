@@ -61,8 +61,8 @@ decide, as a packaging designer would, in your notes:
   The picture's kind follows: an illustration, a repeat pattern, a scene, or a photograph.
 - **The hierarchy,** read from a shelf or across a room: the brand, then what the product is (its
   name or variant), then only the other words the brief and the brand give, its lines in its voice
-  among them. Facts only when their real content was supplied: never an invented price, figure,
-  ingredient or claim. One hero.
+  among them. A fact not supplied (a person's name, a price, a figure, an ingredient, a claim) is
+  left out of the line; the line itself is still written, in the voice. One hero.
 - **The zones.** Where the idea puts the logo and the words, and where the picture has the stage,
   in plain positions ("the top third calm for the logo, the picture's stage below it, a clear band at the foot for the product's name"):
   Studio sets the type there, so the picture has to leave that room.
