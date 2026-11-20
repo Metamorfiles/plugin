@@ -55,8 +55,8 @@ in the drawing and reports how much of its letters were kept (`checks.md`).
 A drawn part can stand in for a letter, or for a letter's mark (an accent, or the dot of i or j),
 while the word still reads at a glance. In a letter's place it works when the object already has
 that letter's simple shape (a round drop for an o) and the letter is neither the name's first nor
-its last, which the eye reads the word by. A mark's place takes a small object (a flame for an
-acute, a sleeping cat for an i's dot). A shape the letter doesn't have goes beside or above the
+its last, which the eye reads the word by. A mark's place takes a small object (a dropper's bulb
+for an i's dot, a falling drop for an acute). A shape the letter doesn't have goes beside or above the
 name instead.
 
 The letter itself is the drawing's guide to its place, size and stroke weight, followed closely but

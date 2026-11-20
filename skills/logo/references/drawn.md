@@ -57,7 +57,7 @@ of the file's own.
 - The prompt: "Image 1 is the brand's own logo. Draw it again exactly as image 1 draws it: the same
   words, layout, lettering and drawing, in its colours, cleaner and more even, as a brand designer's
   final file." Then the name in quotes as the file spells it, one line on what leads and how the
-  parts meet, as a designer would brief it ("a striped cat lies across the word, a paw over the P"),
+  parts meet, as a designer would brief it ("the drop rests on the n's shoulder, the word leading"),
   and each colour for what it paints.
 - A change the user asked for is the one change, said as such.
 - The route's `composition` names their file ("Their logo, brand/sources/yours/<file>,
