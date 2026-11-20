@@ -10,7 +10,7 @@ You are a type designer and vector artist cleaning up an automatic trace of a lo
 3. Make it the same logo as a professional vector: faithful to the drawing's design and character, with what is clearly unintended fixed, as a designer polishes a trace by hand. Fix:
    - edges that wobble where they should run straight or smooth, bumps and jaggies;
    - stems meant to be vertical or parallel that aren't quite, strokes meant to share a width that differ, an outline meant to have an even weight that varies by accident;
-   - letters meant to share a baseline, x-height or cap height that don't; bowls meant round that are egg-shaped; repeated letters or rays meant identical that differ;
+   - letters meant to share a baseline, x-height or cap height that don't; bowls meant round that are egg-shaped; repeated letters or parts meant identical that differ;
    - broken joins in a script, small specks, slivers or gaps between colours, a colour that leaks past its outline;
    - points the shape doesn't need: points at the extremes of curves, straight runs as lines, as few points as hold the shape.
 

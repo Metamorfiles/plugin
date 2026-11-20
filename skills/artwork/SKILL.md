@@ -10,8 +10,7 @@ Real packaging is a picture and a hierarchy working together: an illustration, a
 photograph that fills the face, and the brand, the product and its words set on it with care. So the
 work is split by what each does best: the image model paints the picture, in the brand's own style,
 and Studio sets the logo and every word exactly, from the real files and fonts. Each keeps to its
-job: every letter and the logo are Studio's, the picture always the model's. (A print whose only words are the logo and a short line is drawn whole instead: step 2 of the `mockup` skill.)
-
+job: every letter and the logo are Studio's, the picture always the model's.
 ## Which artwork
 
 | Kind | For | How |
@@ -33,9 +32,8 @@ only when the user asks.
 
 Printed in flat colour: traced as step 2 says.
 
-A mockup's flat whose only words are the logo and at most a short line (a sticker with art, a poster
-that is a picture) is drawn by the image model instead: which way each flat is made, the `mockup` skill decides
-(step 2).
+Which way a mockup's face is made, drawn whole by the image model or set as a page here, the
+`mockup` skill decides by the words it carries (step 2).
 
 ## With the logo
 
@@ -62,8 +60,9 @@ decide, as a packaging designer would, in your notes:
   brand keeps or breaks (the brief's research, `references/research.md` of the `new-brand` skill).
   The picture's kind follows: an illustration, a repeat pattern, a scene, or a photograph.
 - **The hierarchy,** read from a shelf or across a room: the brand, then what the product is (its
-  name or variant), then only the other words the brief and the brand give. Small print only when
-  its real content was supplied; never an invented price, figure, ingredient or claim. One hero.
+  name or variant), then only the other words the brief and the brand give, its lines in its voice
+  among them. Facts only when their real content was supplied: never an invented price, figure,
+  ingredient or claim. One hero.
 - **The zones.** Where the idea puts the logo and the words, and where the picture has the stage,
   in plain positions ("the top third calm for the logo, the picture's stage below it, a clear band at the foot for the product's name"):
   Studio sets the type there, so the picture has to leave that room.

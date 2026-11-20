@@ -17,7 +17,7 @@ colours (the `review` skill's picture checks, "The logo").
 
 ```
 - [ ] 1. The shots: one idea each, from the brand's world
-- [ ] 2. Per shot, what's on the object: the logo alone, a face designed in place, or a flat design
+- [ ] 2. Per shot, what's on the object, by the words it carries: the logo alone, a face designed in place, a flat design, or set copy
 - [ ] 3. Each face designed in your notes before any image: the best of its kind, its idea, its composition
 - [ ] 4. Each photograph made whole from one prompt, all together
 - [ ] 5. Reviewed; each image fixed once per look, every must fix together: an edit when only the mark or a word is wrong, else made again
@@ -36,28 +36,31 @@ as cropped hands and arms, a face only when the shot is about a person.
 
 ### 2. What's on the object
 
-Decide it per object, from the shot's idea and the surface. The master is the file the model
-draws the mark from: image 1 of the photograph.
+Decide it per object, first by the words its face carries, then by the shot's idea. How much the
+brand says on its objects comes from the brief and the chosen direction, and from DESIGN.md's Voice
+once it's written: one brand prints only its name, another fills a face with lines in its voice. The
+words decide the kind of face, since the image model draws a logo and a short line well and redraws
+longer copy. The master is the file the model draws the mark from: image 1 of the photograph.
 
 - **The logo alone** (a tag, a business card, an embroidered chest, a fascia with only the name):
   the master is the logo file the object's ground calls for (the reversed one on a dark object).
-- **Designed in place** (a can, a box, a label, a deck's graphic, merch: a face whose only words are
-  the logo, a product name and one short line, seen in one shot): designed in step 3, then drawn by
-  the image model in the photograph, which places the parts itself. Only the logo and the words are
-  exact. The master is the logo file.
-- **A flat design** (a pack another shot shows too, a sticker with art, a poster that is a picture):
-  designed in step 3, then drawn flat by the image model, the whole print straight on. The passed
-  flat is the master, with the logo file as image 2, so every shot shows the same pack. A face with
-  set copy (a label's text, a pack that talks in lines of copy, a menu) is a page in code, and a screen is the brand's real one or a page
-  (the `artwork` skill, step 5); its file is the master the same way.
+- **Designed in place** (a face whose only words are the logo, a product name and one short line,
+  seen in one shot: a can, a box, a label, merch): designed in step 3, then drawn by the image model
+  in the photograph, which places the parts itself. Only the logo and the words are exact. The
+  master is the logo file.
+- **A flat design** (a face with no more words than that, seen in more than one shot or made as a
+  picture: a pack another shot shows too, a sticker with art, a poster that is a picture): designed
+  in step 3, then drawn flat by the image model, the whole print straight on. The passed flat is the
+  master, with the logo file as image 2, so every shot shows the same pack.
+- **Set copy** (a face with more words: a label's text, lines of copy on a pack, a poster with a
+  paragraph, a menu) and a screen: a page in code, a screen the brand's real one or a page (the
+  `artwork` skill, step 5). Its file is the master, as a flat's is.
 
 Placed as the business would really make it: where, how large and by what method a printer,
 signwriter or factory puts a mark on this kind of object. Real words only: the brand's name, its
 product names (proposed as the `copywriting` skill's Names says when the brief gives none) and its
-lines, from the brief or written in its voice as the `copywriting` skill says (DESIGN.md's
-Messaging and Voice hold them). A face says as much as the brand's direction has its objects say: a
-brand whose packs talk talks on them. Facts and small print only when their real words were
-supplied.
+lines, from the brief or written in its voice as the `copywriting` skill says. Facts (a price, a
+figure, an ingredient, a claim) only when their real words were supplied.
 
 ### 3. Design each face
 
