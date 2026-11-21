@@ -91,7 +91,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 - The logo passes **The logo** above, applied the way the shot means it: perspective and the logo turning with its object; the scene's light, shadows, glare and reflections; its surface's curves, folds and creases; cut by the frame or covered by a hand or an object; its method's look (thread and stitches, ink in the fibre, one-colour relief, detail the method can't hold); wear on a used object. Stretched or squashed beyond what its surface's shape explains is a fault.
 - The brand's own products match what the brief and the brand's files say they are.
 - The only words are the brand's or the brief's, spelled right.
-- What is printed lies in its surface's plane and turns with it, in the photograph's light, made the way the shot names its method: embroidery shows its stitched thread, a print is ink in the surface, a sign a built object. A print in another plane than its surface's, a different method from the one named, or a flat graphic laid on top, is a fault.
+- What is printed lies in its surface's plane and turns with it, in the photograph's light, made the way the shot names its method: embroidery shows its stitched thread, a print is ink in the surface, a sign a built object. It is judged as the logo is, at the size the picture shows it: a print that takes the surface's light and follows its shape where the shape is plain (a band's edges, a fold) passes, however little it turns, since the camera's angle sets how much. A print in another plane than its surface's, a different method from the one named, or one a viewer sees as a sticker laid on top, is a fault.
 
 #### Flat design
 
