@@ -1,6 +1,6 @@
 # Design
 
-The brand kit sets the materials; you decide how they're used in this piece: a social frame, a print, a pack's face, a sticker, a sign. A social image gets about a second in a feed and a sticker a glance across a shop, so every choice serves what the reader takes in during that moment. The contract (`references/contract.md`) says what the HTML must be; this says how to make any designed piece good, whether Studio sets it in code or the image model draws it whole.
+The brand kit sets the materials; you decide how they're used in this piece: a social frame, a print, a pack's face, a sticker, a sign. A social image gets about a second in a feed and a sign a glance across a room, so every choice serves what the reader takes in during that moment. The contract (`references/contract.md`) says what the HTML must be; this says how to make any designed piece good, whether Studio sets it in code or the image model draws it whole.
 
 ## Contents
 - Before you touch anything
@@ -45,7 +45,7 @@ Every piece is decided as an idea, then as a picture, in your notes, before any 
 a frame, a print, a pack's face, a sticker or a sign alike, whether Studio sets it in code or the
 image model draws it. Imagine it from what the piece is for: its goal (what the viewer should feel,
 know or do), its format and how it's met (a feed post judged in a second, a story seen full height, a
-carousel swiped on purpose, a print held in the hand, a sticker read across a shop), and the story it
+carousel swiped on purpose, a print held in the hand, a sign read across a room), and the story it
 tells (one beat, or a sequence with a cover, a build and an end). Then build it with the tools.
 
 **The subject.** Ideas come from what only this business has: its name and what it means, its place,

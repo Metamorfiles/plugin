@@ -8,7 +8,7 @@ drawing stays on model when it starts from the sheet, repeats its Character line
 ## A new pose
 
 A new drawing of the character, with the sheet attached first in `references`:
-`metamorfiles_generate_image { prompt, references: ["<the character sheet>"], width: 1024, height: 1024, folder: "brand/<the character's folder>", name: "02-stirring", trace: { colors: [...] } }`,
+`metamorfiles_generate_image { prompt, references: ["<the character sheet>"], width: 1024, height: 1024, folder: "brand/<the character's folder>", name: "02-stretching", trace: { colors: [...] } }`,
 with `folder: "brand/process/character"` while a brand is made, before the kit lists its folder.
 
 ```
@@ -51,5 +51,5 @@ expression: surprised, round eyes and a small O mouth".
 ## Files
 
 In the character's folder, numbered in the order the board shows them, by `name`: `00-sheet`,
-`01-front` (the chosen drawing), `02-stirring`; Studio adds a short id to each. The sheet and the
+`01-front` (the chosen drawing), `02-stretching`; Studio adds a short id to each. The sheet and the
 chosen drawing are listed, in that order, by their full file names in the folder's `anchors`.

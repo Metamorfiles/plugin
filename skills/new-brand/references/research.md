@@ -145,8 +145,8 @@ Look at everything you collected first, every image whole and numbered on one sh
 (a folder per project, its `credit.json` naming the path it was collected for):
 `metamorfiles_read_file { path: "brand/process/references" }`. Each path
 that holds up becomes a direction, the references showing what it really is, and the best of any
-path may serve another. A direction is one feeling a reference set agrees on ("drawn
-neighbourhood", "quiet apothecary", "loud market stall"), and each is one option of the direction
+path may serve another. A direction is one feeling a reference set agrees on ("quiet
+apothecary", "loud market stall"), and each is one option of the direction
 step, with its palette and faces from `look.md`:
 - **Title:** the direction's name, in a few words.
 - **Line:** why it serves the brief: what it would feel like to meet this brand, and where it takes
