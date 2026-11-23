@@ -19,7 +19,7 @@ or `metamorfiles_import_image`:
   white) names it as `ground`, and that colour is left out of the trace, inside the drawing too, as a
   printer knocks out the garment.
 - **Edge to edge:** a full-bleed picture (a poster, a wrap) with no paper to name is traced whole.
-- **Kept a raster:** a photograph, a gradient or textured art, printed at its resolution: make it at the largest size the source gives.
+- **Kept a raster:** a photograph, a gradient or textured art, printed at its resolution.
 
 The result lists each colour with its share, how much of the drawing the trace keeps and any
 gradient, and says what to do about each. The brand's logo is made by the `logo` skill, never traced
