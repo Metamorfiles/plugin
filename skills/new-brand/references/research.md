@@ -157,5 +157,5 @@ step, with its palette and faces from `look.md`:
   hero". What to take is a principle, never the look to copy.
 
 Recommend the direction that best fits the brief: its line says why it fits, and why it leads goes
-in the thread's `done` update (`SKILL.md`, "At every step"). The user may mix two; write down what
+in the ask's `say` (`SKILL.md`, "At every step"). The user may mix two; write down what
 they took from each.
