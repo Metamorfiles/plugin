@@ -121,7 +121,7 @@ Then the craft, for every model, and that model family's file for what differs (
 | The model's id contains | Read |
 | --- | --- |
 | `chatgpt` or `gpt-image` | [images-openai.md](images-openai.md) |
-| `gemini`, `imagen` or `nano-banana` | [images-gemini.md](images-gemini.md) |
+| `gemini` or `nano-banana` | [images-gemini.md](images-gemini.md) |
 | `flux` | [images-flux.md](images-flux.md) |
 | anything else | [images-other.md](images-other.md) |
 
