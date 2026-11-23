@@ -37,7 +37,7 @@ The brand at the top or the foot, small; the contact line at the foot; the rest,
 
 ## Images on paper
 
-The image's result and the checks say when an image is too small for its printed size: a model's image is enough for a card or a small panel, rarely for a full-page photograph. Compose large pieces around type, the brand's graphics and vector artwork (the `artwork` skill), and use the user's own high-resolution photos for full-bleed photography.
+The checks say when an image is too small for its printed size, and on paper that's an error to fix: show it smaller, or use the user's own high-resolution photo. A model's image is enough for a card or a small panel, rarely for a full-page photograph. Compose large pieces around type, the brand's graphics and vector artwork (the `artwork` skill), and use the user's own high-resolution photos for full-bleed photography.
 
 ## The files
 
