@@ -16,9 +16,10 @@ Studio keeps every image whole, as the model made it: it never crops a file to f
 
 Read `brand/imagery-guide.md` before any prompt: it's what every image of this brand shares, written
 when the brand was made. Its sections:
-- **Style:** one paragraph describing the look, with each colour's hex and what it paints. Pasted
-  whole into every prompt, so it holds only how a picture looks; what each picture shows is its
-  own Scene.
+- **Style:** one paragraph describing the look: the medium, the light, the grade and the materials,
+  each colour's hex as the ground or material it is. Pasted whole into every prompt, so it holds
+  only how a picture looks; what each picture shows, its props and which of them carries an accent,
+  is its own Scene, by the Colour roles.
 - **Character** (a brand with a character): who it is, the one thing that makes it itself, how its
   face is made, its palette and its look, in two or three lines, and that nothing about it changes. Pasted whole into
   every prompt that shows the character, with its character sheet first in the references.
@@ -95,7 +96,10 @@ labelled lines, in this order, each holding only its own:
      or an animal in one line: who (age, gender, clothing), the action, where they look and what
      they hold or touch; how people are shown (posed or caught in the moment) is the brand's imagery
      guide's. Which hand, arm or leg does what is the model's, unless the task decides it. With the
-     character: what it does and feels, in one line, then its Character lines pasted whole.
+     character: what it does and feels, in one line, then its Character lines pasted whole. Where
+     one thing joins another (a cable and its port, a lid and its jar, a strap and its bag), say
+     where it joins, as a real one of that kind has it, in plain words rather than a real product's
+     name: a model guesses any join left open. A prop the moment doesn't need stays out.
    - **The shot:** how close (close-up, medium, wide, top-down), the camera's height and angle, for a
      photograph the lens, a figure's framing ("full body, feet included", "from the waist up"),
      where the subject sits in the frame and what fills the rest. The type's room is part of what the
