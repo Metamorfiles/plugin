@@ -2,6 +2,8 @@
 
 For every model not covered by the OpenAI, Gemini and FLUX files. Read with [images.md](images.md): its rules are what these models need, with the differences below. Models not listed here follow those rules alone.
 
+Through fal, Replicate and DeepInfra, Studio reads each model's own inputs and asks for its largest size in the shape, its references in the field it reads them from, and a transparent background where it has one; `metamorfiles_image_models` lists what each takes.
+
 ## Seedream (ByteDance)
 
 - Coherent sentences (subject, action, setting) and a stated use ("design a background for…"); concise and precise beats a pile of adjectives.
@@ -16,8 +18,10 @@ For every model not covered by the OpenAI, Gemini and FLUX files. Read with [ima
 
 ## Grok (xAI)
 
-- xAI publishes no prompting guide; plain descriptive sentences, as in [images.md](images.md).
-- References are read in the order sent, up to five.
+- One photograph described in prose, in this order: the subject in one opening sentence (what it is, its form, what holds it, the setting), then its details and focal point, the art direction, the light, the colours of the subject and of the background, and the composition. The subject comes first because the model matches it before anything else; an opening of mood or film stock turns it into a stand-in.
+- Counts and objects named exactly, each texture once on its surface. Ask for bright, readable exposure: grain, dust or crushed shadows come out as defects.
+- An edit leads with the changes, then one sentence that keeps the subject, angle and crop; a whole new prompt restages the scene.
+- References are read in the order sent, up to five. Studio asks for 2k at medium quality, in 15 shapes from 21:9 to 9:20. No transparent backgrounds.
 
 ## Recraft
 
@@ -32,4 +36,4 @@ For every model not covered by the OpenAI, Gemini and FLUX files. Read with [ima
 - It takes quoted words as text to render, so write without quotation marks, and phrase everything positively.
 - It may rewrite prompts on its own (Magic Prompt).
 
-Sources: [Seedream prompt guide](https://docs.byteplus.com/en/docs/ModelArk/1829186), [Qwen Image](https://github.com/QwenLM/Qwen-Image) and its [API docs](https://www.alibabacloud.com/help/en/model-studio/qwen-image-api), [xAI image docs](https://docs.x.ai/developers/model-capabilities/images/generation), [Recraft prompting guide](https://www.recraft.ai/docs/prompt-engineering-guide/prompting-with-recraft-v4), [Ideogram prompt structure](https://docs.ideogram.ai/using-ideogram/getting-started/prompting-guide/3-prompt-structure).
+Sources: [Seedream prompt guide](https://docs.byteplus.com/en/docs/ModelArk/1829186), [Qwen Image](https://github.com/QwenLM/Qwen-Image) and its [API docs](https://www.alibabacloud.com/help/en/model-studio/qwen-image-api), [xAI image docs](https://docs.x.ai/developers/model-capabilities/images/generation) and [prompting guide](https://docs.x.ai/developers/model-capabilities/images/prompting-guide), [Recraft prompting guide](https://www.recraft.ai/docs/prompt-engineering-guide/prompting-with-recraft-v4), [Ideogram prompt structure](https://docs.ideogram.ai/using-ideogram/getting-started/prompting-guide/3-prompt-structure).
