@@ -30,7 +30,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 2. Logo: three routes with the `logo` skill, reviewed, asked, chosen; then its step 8: the mascot when the brand has one (`step: "character"`), reviewed
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
 - [ ] Kit: final logos and the imagery guide; the library started; DESIGN.md (its prose by the copywriter) while it's drawn
-- [ ] Mockups: three shots, each reviewed (the `mockup` skill)
+- [ ] Mockups: three shots (the `mockup` skill), looked at in the handover review
 - [ ] Handover: the final review passed, then finished: true with the summary
 ```
 
@@ -176,7 +176,7 @@ skill on the queue and wait for its verdict:
 | The logo routes given their files, before asking | `logo` |
 | The mascots, and in the logo's own case their sheet, before asking | `character` |
 | The seeds given to the imagery step, before asking | `imagery` |
-| The mockups, a flat design before its photograph | `mockups` |
+| A flat design, before its mockup photograph | `mockups` |
 | The kit written: its logo files, its library, its mockups and DESIGN.md | `handover` |
 
 Report the reviewer's turn as the `team` skill says, and fix as step 4 of the `review` skill's Run
@@ -238,7 +238,7 @@ Each option can carry:
 Up to six options: two or three directions; every logo route the plan set, at least three; one per seed on the imagery step.
 Each `title` is at most 60 characters, what the user will call it, and each `line` at most 200, one
 sentence on why this option fits the brief; the board marks the recommended one itself, and why it
-leads goes in the thread's `done` update ("At every step"). On the direction and logo steps one
+leads goes in the ask's `say` ("At every step"). On the direction and logo steps one
 option is `recommended: true`; the imagery step asks
 whether to use the seeds, so none is. Changing the direction step
 also returns the contrast of every pair in each palette, so there is nothing to work out by hand.
@@ -266,8 +266,8 @@ its frame shows each file as it arrives, so the user watches the step come toget
    2. **The library, started.** Grown from the anchors into `brand/refs/` (`references/imagery.md`),
       never asked: each image started with `wait: false`, collected as it arrives.
    3. **DESIGN.md, while it is drawn.** The words are the copywriter's, always: report as
-      `copywriter` while you write DESIGN.md's prose (Overview, Colors, Typography, Logo, Imagery,
-      Voice and Messaging) with the `copywriting` skill, from the brief's facts and the chosen steps,
+      `copywriter` while you write DESIGN.md's prose, in the file's order (Overview, Colors, Typography,
+      Do's and Don'ts, Logo, Imagery, Voice and Messaging) with the `copywriting` skill, from the brief's facts and the chosen steps,
       then hand back to the designer. The chosen direction, logo and imagery become `brand/DESIGN.md`
       as the `brand` skill describes, every face with its role (the logo's own face named for it).
       Its Imagery names the anchors, which exist already; it describes no image still being drawn.
