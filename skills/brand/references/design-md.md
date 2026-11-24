@@ -21,7 +21,7 @@ from it. Read it before you write DESIGN.md.
 - **`rounded`** and **`spacing`**: as the source defines them, whole scales. When the source shows only one or two steps, derive the rest around them; when the brand truly has none (square corners everywhere), list the key in `omitted` with a reason. Only colors, typography, spacing, rounded and components can be omitted.
 - **`components`**: only usage pairs you observed, such as `button-primary`, `card`, `band` or `badge-winner`, with `backgroundColor`, `textColor`, `typography`, `rounded` and `padding`. Reference tokens (`"{colors.primary}"`); use a literal value only when the source hardcodes one.
 - **`fonts`** (Studio): every family the roles use, with its local file (relative to `brand/`) and weight range; the face the logo is set in with `logo: true`.
-- **`logos`** (Studio): each file with the `background` it's made for (a token reference); the logo used small (its icon, the mark alone, a monogram) with `small: true`, since the favicon and profile picture are made from it; with none marked, Studio uses the main logo. A translated brand keeps Studio's placement of it, unless its guidelines define one: then each use's composition (`profile` and `icon`) is set as they give it.
+- **`logos`** (Studio): each file with the `background` it's made for (a token reference); the brand's mark alone (its symbol or monogram) with `mark: true`, since the kit's profile picture and site files are composed from it; with none, Studio uses the main logo. A translated brand keeps Studio's placement of it, unless its guidelines define one: then each use's composition (`profile` and `icon`) is set as they give it.
 - **`casing`** (Studio): the letter case a role is set in, when the brand sets one: `upper`, `lower` or `title`, such as `display: upper` for headlines in capitals (a site's `text-transform`, or copy typed in capitals). The spec's typography has no case, so without it every template and the board guess.
 - **`assets`** (Studio): list an imagery folder only for imagery the brand has, or that the user had the team make. The brand's asset folders under `brand/`, each drawn as a frame of the brand board: `{ folder, kind, title, note?, anchors? }`, the kind one of `imagery` (photos or drawings, whole and framed, with the `anchors` that set its look marked), `character` (a mascot's turnaround and poses), `icons`, `pattern` and `in-use` (mockups of the brand on its objects, never imagery). Without it, `brand/refs/` is the brand's imagery, so anything else (a share image, screenshots) stays in `brand/sources/`. Each folder is shown whole on pages of its own, and the about page shows the first imagery folder's first anchor.
 
@@ -69,7 +69,7 @@ assets:
   - { folder: refs, kind: imagery, title: Photographs, anchors: [serum-morning.jpg] }
 logos:
   primary: { file: logos/logo.svg, background: "{colors.background}" }
-  mark: { file: logos/mark.svg, background: "{colors.background}", small: true }
+  mark: { file: logos/mark.svg, background: "{colors.background}", mark: true }
 ---
 
 ## Overview
