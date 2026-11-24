@@ -23,8 +23,8 @@ the `character` skill.
   quiet, exact partners (a plain line of small capitals, a thin ring).
 - **Character is a choice.** Uneven widths, a bounce, a cut edge are drawn on purpose and repeated
   with intent, so they read as chosen.
-- **Made for its world.** It already looks like it belongs on this business's pack, box, sign
-  or app icon.
+- **Made for its world.** It already looks like it belongs on this business's pack, box
+  or sign.
 - **A family, not a file.** A strong logo comes as a small set: the main lockup, a one-line version,
   the mark alone, often a seal or tag. Each is the same parts, rearranged.
 

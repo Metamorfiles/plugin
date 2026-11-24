@@ -1,7 +1,7 @@
 # Seals, badges and monograms
 
-For a logo that has to fill a round sticker, a stamp, a lid or an app icon, built by Studio from
-real type, shapes and drawn marks.
+For a logo built as a round seal, a badge or a monogram, by Studio from real type, shapes and
+drawn marks.
 
 ## A seal or badge
 

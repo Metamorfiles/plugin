@@ -13,7 +13,7 @@ The logo's own page is `references/taste.md` of the `logo` skill; the families o
 - **Shown as a set:** the same character across poses and expressions proves it's a character and
   not one drawing; its sheet is that proof.
 - **On model in every pose:** the same face, hair, clothes, proportions and line from pose to pose.
-- **Reads as a profile picture:** a head or bust that still reads in a circle, as the mark page shows it.
+- **A face that carries it:** its head alone is still the character.
 
 ## Asked of every brief, before it's drawn
 

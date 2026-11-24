@@ -1,6 +1,6 @@
 ---
 name: logo
-description: Designs a logo in Metamorfiles Studio for a brand that has none: three routes, three different ideas, each made by the method that serves it (drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, or type alone), then, once the user chooses, its final files and how it's used small. Use for the logo step of a new brand, or when the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a brand whose DESIGN.md already sets its look. A business with nothing made yet, even when the user asks only for a logo, starts with the new-brand skill, whose logo step this is. Not for a brand that already has a logo, whose official files are never redrawn (the brand skill), unless its owner asks for it drawn again.
+description: Designs a logo in Metamorfiles Studio for a brand that has none: three routes, three different ideas, each made by the method that serves it (drawn whole by the image model and traced, the name set from real fonts with a generated mark or letter, or type alone), then, once the user chooses, its final files. Use for the logo step of a new brand, or when the user asks for a logo, a wordmark, a mark, a symbol, a seal, a badge, a monogram or a lockup for a brand whose DESIGN.md already sets its look. A business with nothing made yet, even when the user asks only for a logo, starts with the new-brand skill, whose logo step this is. Not for a brand that already has a logo, whose official files are never redrawn (the brand skill), unless its owner asks for it drawn again.
 license: MIT
 ---
 
@@ -22,7 +22,7 @@ Copy it into your notes and tick each step as you go:
 - [ ] 5. Every route checked with metamorfiles_check_logo: its letters and one colour
 - [ ] 6. Each route's files: colour and one colour, plus the parts it shows
 - [ ] 7. Routes shown and one recommended
-- [ ] 8. After the choice: the mascot when the brand has one; then the final files and the logo used small (`references/final.md`)
+- [ ] 8. After the choice: the mascot when the brand has one; then the final files (`references/final.md`)
 ```
 
 ### 1. What the brand already decided
@@ -116,7 +116,7 @@ for what the check reports. After the review, it changes only as the `review` sk
 
 A route's files before the choice: its logo in colour on the ground it's made for, and in one colour
 on white, each with its `ground`, plus the parts it's built from (the name alone, the mark alone,
-with `small: true` on the mark's entry so the board leads with the logo) when the route means to
+with `mark: true` on the mark's entry so the board leads with the logo) when the route means to
 show them. The reversed version and the version redrawn where one colour loses a part
 (`references/drawn.md`, "Other versions of it") are made after the choice, for the chosen route only
 (step 8).
@@ -169,7 +169,7 @@ version the user didn't ask for needs their word first.
 | [references/seal.md](references/seal.md) | A seal, badge or monogram |
 | [references/vector.md](references/vector.md) | How a drawing is made and traced, and what to do with the trace's result |
 | [references/checks.md](references/checks.md) | What metamorfiles_check_logo reports, and the fix for each |
-| [references/final.md](references/final.md) | Once the user has chosen a logo: cleaning, the final files, the logo used small |
+| [references/final.md](references/final.md) | Once the user has chosen a logo: cleaning and the final files |
 
 The faces worth studying are in `references/fonts.md` of the `new-brand` skill; a
 mascot is designed with the `character` skill; how to prompt each image model is in
@@ -179,7 +179,7 @@ mascot is designed with the `character` skill; how to prompt each image model is
 ## Rules
 
 - **Never redraw an existing logo unasked.** A brand that has one keeps its official files
-  (the `brand` skill); a new seal or icon for it is a proposal the user approves first. Drawn
+  (the `brand` skill); a new seal or mark for it is a proposal the user approves first. Drawn
   again on its owner's word, it is a route (step 4).
 - **A mark is drawn by the image model, never geometry typed as SVG by you.** Only Studio's shapes (a
   ring, a disc, a star, a diamond, a facet, a rule) are built without a drawing.

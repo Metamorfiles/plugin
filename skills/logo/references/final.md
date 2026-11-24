@@ -1,7 +1,7 @@
 # The chosen logo's final files
 
 Read once the user has chosen a logo (`SKILL.md`, step 8): cleaning its traced files, the final files
-in `brand/logos/`, and the logo used small, composed for where it's seen small.
+in `brand/logos/`, and the mark alone.
 
 ## Cleaning
 
@@ -28,24 +28,23 @@ redrawn version's cleaned copy when the chosen logo has one (`drawn.md`, "Other 
 `metamorfiles_check_logo` on each. Declare them in DESIGN.md `logos` with their
 grounds and clear space; the face a logo is set in is listed in `fonts` with `logo: true`.
 
-The logo used small, where it's seen small (a profile picture, an app icon, a favicon), is the chosen
-route's own mark when it has one: its file marked `small: true` in the route's files. Make it into
-`brand/logos/` with its versions like the others and declare it with `small: true`. A logo without a
-mark of its own declares none: Studio uses the main logo, and nothing is made or asked for it. A new
-avatar, favicon or icon the user asks for later is made as a page.
+The chosen route's own mark, when it has one, is the file marked `mark: true` in the route's files.
+Make it into `brand/logos/` with its versions like the others and declare it with `mark: true`: the
+kit's profile picture and site files are composed from it. A logo without a mark of its own declares
+none: Studio composes them from the main logo, and nothing is made or asked for it. Another the user
+asks for later is made as a page.
 
-## Where it's seen small
+## The mark alone
 
-Last, compose the logo used small for where it's seen small: in a circle (`profile`), the profile
+Last, compose the mark for the two shapes the kit hands over: a circle (`profile`), the profile
 picture platforms crop to one and the phone's app icon, which keeps the circle's placement inside
-its rounded corners; in a square (`icon`), the favicon and the browser's icons, clear unless it names
-a ground. Studio places it by its ink, on the guidelines' Logo versions page. Where its shape asks
+its rounded corners; and a square (`icon`), the browser's icons, clear unless it names a ground. Studio places it by its ink, on the guidelines' Logo versions page. Where its shape asks
 for another placement (a long wordmark fills less of a circle than a round mark; a logo with no ground
 of its own may want the brand colour behind it), decide it from its shape and the brand's colours:
 how much of the circle or square it fills, where it sits, its ground, or another version of it (the
 reversed logo on a brand colour). Write what differs from Studio's placement on its entry in
 DESIGN.md `logos`, `profile` and `icon`:
-`{ file: logos/mark.svg, small: true, profile: { size: 0.9, ground: "{colors.ink}", file: logos/mark-reversed.svg }, icon: { size: 1 } }`
+`{ file: logos/mark.svg, mark: true, profile: { size: 0.9, ground: "{colors.ink}", file: logos/mark-reversed.svg }, icon: { size: 1 } }`
 (`size` is the share of the circle, from its centre to the mark's farthest point, or of the square,
 its longer side, that the mark spans; above 1 it is cropped; `at` its centre). The kit's profile
-picture, favicon and app icons are exactly these.
+picture and site files are exactly these.

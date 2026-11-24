@@ -216,7 +216,7 @@ metamorfiles_change_step { step: "logo", changes: [
   { do: "option", id: "minutes", files: [
     { file: "brand/process/logo/minutes.svg", ground: "#f4f3ef" },
     { file: "brand/process/logo/minutes-ink.svg", ground: "#ffffff" },
-    { file: "brand/process/logo/minutes-dial.svg", ground: "#f4f3ef", small: true }
+    { file: "brand/process/logo/minutes-dial.svg", ground: "#f4f3ef", mark: true }
   ] }
 ] }
 ```
@@ -226,9 +226,9 @@ edited under its own name, takes its place on the step by itself (`references/im
 `studio` skill, "Edit or redraw").
 
 Each option can carry:
-- `files`: all of its images or SVGs, up to 16, each `{ file, caption, ground, small }` with all but
+- `files`: all of its images or SVGs, up to 16, each `{ file, caption, ground, mark }` with all but
   `file` optional: `caption` (at most 140 characters: a credit, what to take), `ground`
-  (`"#rrggbb"`, the colour a logo file is shown on), and for a logo route's mark `small: true`;
+  (`"#rrggbb"`, the colour a logo file is shown on), and for a logo route's mark `mark: true`;
 - `colors`: up to 10, each `{ name, hex: "#rrggbb", share }` with `share` 0 to 100, in the order and
   proportion they are used;
 - `fonts`: up to 4, each `{ family, file, role }`, `file` the one `metamorfiles_add_font` returned;
