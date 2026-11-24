@@ -36,8 +36,8 @@ The line under each concept is its characteristics: three adjectives, or one sho
 ## Where the lines come from
 
 **For a brand that exists, every `Do` is quoted from its own copy** — its site, its app, its README,
-its docs. It is evidence, like a hex value, and it is recorded in Sources like one. If a concept has
-no real line behind it, it is not one of this brand's three concepts yet; say so in Known gaps
+its docs. It is evidence, like a hex value. If a concept has
+no real line behind it, it is not one of this brand's three concepts yet; leave it out
 rather than writing the line yourself. **For a new brand, you write the `Do` lines** in the voice
 its direction set, as lines the brand would really say on its pack, its site or its posts.
 
@@ -61,6 +61,6 @@ place.
 ## When a brand has no copy to quote
 
 A logo and a palette and nothing written: leave `## Voice` out rather than inventing three concepts
-for it, note it in Known gaps, and say so plainly when you hand the kit over. The board simply
+for it, and say so plainly when you hand the kit over. The board simply
 drops the page. An invented voice is a fact you made up about someone's brand, and it will be
 repeated in every piece of copy the kit ever writes.

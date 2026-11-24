@@ -1,7 +1,7 @@
 # Stand-ins for licensed faces
 
 When translating an existing brand whose face can't be used, use the closest open alternative, never
-the same face. Mark it `proposed` in Sources, name the real face in Known gaps, and never call the
+the same face. Typography names the brand's real face and its stand-in, the handover asks for the files, and never call the
 stand-in by the brand's font's name.
 
 | Licensed face | Open stand-in |

@@ -11,7 +11,8 @@ the `studio` skill; this is the shape of this particular message.
    accent, what each typeface carries, and what the whole thing feels like. This is the only part
    that is yours to write, and it is what makes the kit feel made rather than extracted.
 3. **What you decided for them.** Up to four, the ones that would surprise them, in plain words, no
-   values: Sources is the complete record. End with one line telling them a sentence is enough to
+   values. What you supplied where the brand's sources were silent (a theme, a scale, a stand-in
+   face, a clear space, a proposed name) is said here, its one place. End with one line telling them a sentence is enough to
    change any of it.
 4. **What genuinely needs them.** At most two, and only real ones: a gap you cannot fill, a fact
    only they have, each said as what the kit does until they answer. If there is nothing, say

@@ -122,8 +122,7 @@ task Studio started.
   frame appears. Never write `chosen` yourself. The choice is the option as the user saw it, and the
   next step is made from it as it is: it changes only when the user asks for a change in their own
   words. The versions its skill makes from it after the choice (a logo's redrawn one-colour version)
-  join it as planned. A reviewer's suggestion on an option is the user's to weigh: say it in `say`, about the
-  option as it is now.
+  join it as planned.
 - **An answer in their own words is the answer.** "A is better but not good enough" means rework A
   and ask again; "the palette of A with the type of B" means write that option and ask again; "C's
   dropper floats above the bottle" means C is fixed before anything else.
@@ -269,7 +268,7 @@ its frame shows each file as it arrives, so the user watches the step come toget
       `copywriter` while you write DESIGN.md's prose, in the file's order (Overview, Colors, Typography,
       Do's and Don'ts, Logo, Imagery, Voice and Messaging) with the `copywriting` skill, from the brief's facts and the chosen steps,
       then hand back to the designer. The chosen direction, logo and imagery become `brand/DESIGN.md`
-      as the `brand` skill describes, every face with its role (the logo's own face named for it).
+      as the `brand` skill describes, every face with its role (the logo's own face listed with `logo: true`).
       Its Imagery names the anchors, which exist already; it describes no image still being drawn.
       List the library with the file names the import returned as its anchors:
       `{ folder: refs, kind: imagery, title: Imagery, anchors: [...] }`, a character's folder as
@@ -299,7 +298,7 @@ board in the panel, or any app writes it into `kit/` with `metamorfiles_export_k
 ## Rules
 
 - **Facts are never created**: no claims, prices, awards, history, addresses or customers beyond
-  what the user gave. What a template will need goes to Known gaps.
+  what the user gave.
 - With no products in the brief, the copywriter proposes names, and the handover lists them as
   proposals (the `copywriting` skill, Names).
 - **Collected references are style only.** They, and the direction card made of them, may be shown
