@@ -53,7 +53,7 @@ Files come in unchanged, each kind with its one tool, and never by a shell comma
 | A Google Fonts family | `metamorfiles_add_font { family: "Fraunces" }`, into `brand/fonts/` |
 | A font file the user has | `metamorfiles_write_file { path: "brand/sources/yours/Brand-Regular.otf", from: "<absolute path>" }`; DESIGN.md's `fonts` lists it by that path |
 | A logo component, which Studio's logo tools read inside the project | `metamorfiles_write_file { path: "brand/sources/yours/logo.tsx", from: "<absolute path>" }` |
-| A guidelines PDF or a theme's CSS | read where it is; Sources records where it came from |
+| A guidelines PDF or a theme's CSS | read where it is |
 
 **Change the least that answers the request.** A value or a composed part (a word, a colour, a size,
 a place, one part of a composed logo) changes in its file or in the logo's saved settings (`from`),
@@ -108,7 +108,7 @@ From another skill, read them in this skill's folder, or with `metamorfiles_get_
 ```
 metamorfiles.json          project marker: name, and imageModel only to override the user's default
 AGENTS.md, CLAUDE.md       short instructions for any agent opened here (created only if missing)
-brand/DESIGN.md            the brand kit (design.md format): tokens, rules, Sources and Known gaps
+brand/DESIGN.md            the brand kit (design.md format): tokens, and the prose that says how to apply them
 brand/brand.css            generated --brand-* tokens and @font-face, then the brand's own CSS
 brand/fonts/ logos/ refs/  local brand files
 brand/sources/             copies of the files the brand was translated from; the user's own in yours/

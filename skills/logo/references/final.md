@@ -26,8 +26,7 @@ each with an `output` there. A cleaned drawing reaches it as one part:
 the reversed version is made here for the first time, the same way as the one colour, both from the
 redrawn version's cleaned copy when the chosen logo has one (`drawn.md`, "Other versions of it"). Run
 `metamorfiles_check_logo` on each. Declare them in DESIGN.md `logos` with their
-grounds, sources ("set in <face> as outlines with a drawn part", "drawn by <model> and traced",
-"created and approved by the user on <date>") and clear space.
+grounds and clear space; the face a logo is set in is listed in `fonts` with `logo: true`.
 
 The logo used small, where it's seen small (a profile picture, an app icon, a favicon), is the chosen
 route's own mark when it has one: its file marked `small: true` in the route's files. Make it into

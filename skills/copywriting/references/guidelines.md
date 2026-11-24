@@ -4,13 +4,13 @@ The examples come from Lumen Skincare, Studio's fictional example brand.
 
 DESIGN.md is the brand's guideline, written the way a studio writes one for its client: for
 whoever uses the brand (designers, staff, printers, partners) and for the agents that design with
-it, who read it the same way. The guideline pages print Overview, Colors, Imagery, Voice and
+it, who read it the same way. Its tokens are the values; its prose says how to apply them and why. The guideline pages print Overview, Colors, Imagery, Voice and
 Messaging as you write them.
 
 ## How it sounds
 
 - The brand as it is, in the present tense: "The logo sits on paper or on a plate of paper over a
-  photograph." Its history goes in Sources ("What goes elsewhere").
+  photograph."
 - Rules stated plainly, with the brand's own reason where one helps: "One accent, so a price or a
   button is always the first thing seen."
 - A concrete reference carries the look: "a bathroom shelf in early light".
@@ -66,7 +66,6 @@ prices, awards or tagline: a tagline is a piece, made when the user asks.
 
 | It's about | It goes in |
 |---|---|
-| Where a value came from, what was proposed, generated or approved, and when | Sources |
-| What the brand doesn't define yet, or a name the user hasn't confirmed | Known gaps |
+| What the team supplied or decided, and what it still needs from the user | the handover message (`references/presenting.md` of the `brand` skill) |
 | A rule for whoever designs with it, in a line | Do's and Don'ts |
 | A file's path | `logos` and `assets` |

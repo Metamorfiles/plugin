@@ -18,10 +18,10 @@ from it. Read it before you write DESIGN.md.
   - A dark theme the brand defines (a `.dark` block) becomes a group with the same names: `colors.dark.paper`, `colors.dark.primary`.
   - Numeric scales stay scales (`blue-50` … `blue-900`).
 - **`typography`**: the roles the source actually uses (such as `display`, `headline-lg`, `body`, `label`, `code`), in px as the source defines them (1rem is 16px). `lineHeight` unitless or in px, `letterSpacing` in em. Only the spec's properties: fontFamily, fontSize, fontWeight, lineHeight, letterSpacing, fontFeature and fontVariation. Letter case goes in `casing`.
-- **`rounded`** and **`spacing`**: as the source defines them, whole scales. When the source shows only one or two steps, derive the rest around them and mark them `proposed`; when the brand truly has none (square corners everywhere), list the key in `omitted` with a reason. Only colors, typography, spacing, rounded and components can be omitted.
+- **`rounded`** and **`spacing`**: as the source defines them, whole scales. When the source shows only one or two steps, derive the rest around them; when the brand truly has none (square corners everywhere), list the key in `omitted` with a reason. Only colors, typography, spacing, rounded and components can be omitted.
 - **`components`**: only usage pairs you observed, such as `button-primary`, `card`, `band` or `badge-winner`, with `backgroundColor`, `textColor`, `typography`, `rounded` and `padding`. Reference tokens (`"{colors.primary}"`); use a literal value only when the source hardcodes one.
-- **`fonts`** (Studio): every family the roles use, with its local file (relative to `brand/`) and weight range.
-- **`logos`** (Studio): each file with the `background` it's made for (a token reference) and its `source`; the logo used small (its icon, the mark alone, a monogram) with `small: true`, since the favicon and profile picture are made from it; with none marked, Studio uses the main logo. A translated brand keeps Studio's placement of it, unless its guidelines define one: then each use's composition (`profile` and `icon`) is set as they give it.
+- **`fonts`** (Studio): every family the roles use, with its local file (relative to `brand/`) and weight range; the face the logo is set in with `logo: true`.
+- **`logos`** (Studio): each file with the `background` it's made for (a token reference); the logo used small (its icon, the mark alone, a monogram) with `small: true`, since the favicon and profile picture are made from it; with none marked, Studio uses the main logo. A translated brand keeps Studio's placement of it, unless its guidelines define one: then each use's composition (`profile` and `icon`) is set as they give it.
 - **`casing`** (Studio): the letter case a role is set in, when the brand sets one: `upper`, `lower` or `title`, such as `display: upper` for headlines in capitals (a site's `text-transform`, or copy typed in capitals). The spec's typography has no case, so without it every template and the board guess.
 - **`assets`** (Studio): list an imagery folder only for imagery the brand has, or that the user had the team make. The brand's asset folders under `brand/`, each drawn as a frame of the brand board: `{ folder, kind, title, note?, anchors? }`, the kind one of `imagery` (photos or drawings, whole and framed, with the `anchors` that set its look marked), `character` (a mascot's turnaround and poses), `icons`, `pattern` and `in-use` (mockups of the brand on its objects, never imagery). Without it, `brand/refs/` is the brand's imagery, so anything else (a share image, screenshots) stays in `brand/sources/`. Each folder is shown whole on pages of its own, and the about page shows the first imagery folder's first anchor.
 
@@ -29,13 +29,11 @@ Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the bra
 
 ## Prose
 
-- The prose is the copywriter's: write every section with the `copywriting` skill (Overview, Colors, Typography, Logo, Imagery, Voice and Messaging), as the brand's guideline.
+- The prose is the copywriter's: write every section with the `copywriting` skill (Overview, Colors, Typography, Logo, Imagery, Voice and Messaging), as the brand's guideline. A later change to a section, whatever prompts it (a check's warning, a review's fix, the user's word), is written the same way: as the brand's own rule, in the section that owns it.
 - The spec's sections, in order, only those the brand has: Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts.
-- Then Studio's sections: Logo, Imagery, Voice, Messaging, Audience, Sources, Known gaps. Imagery describes the brand's own pictures, or those the imagery step made; a brand with neither has no Imagery section.
+- Then Studio's sections: Logo, Imagery, Voice, Messaging, Audience. Imagery describes the brand's own pictures, or those the imagery step made; a brand with neither has no Imagery section.
 - Describe rules and intent, not layouts, unless the brand really has a fixed layout rule.
 - Keep Do's and Don'ts short and intentional, and never add brand facts such as claims, prices or awards. It isn't printed: it holds the rules agents follow when they design.
-- **Sources** is a table: value, origin (file or URL), original name (variable, class or element), confidence (exact, sampled, inferred or proposed), plus what was deliberately not carried over. `proposed` is anything you supplied rather than observed; say what you derived it from.
-- **Known gaps** lists what the brand doesn't define and what you need from the user.
 
 ## DESIGN.md template
 
@@ -70,8 +68,8 @@ fonts:
 assets:
   - { folder: refs, kind: imagery, title: Photographs, anchors: [serum-morning.jpg] }
 logos:
-  primary: { file: logos/logo.svg, background: "{colors.background}", source: the site's logo component with the light theme's values }
-  mark: { file: logos/mark.svg, background: "{colors.background}", source: "the app icon, as the site serves it", small: true }
+  primary: { file: logos/logo.svg, background: "{colors.background}" }
+  mark: { file: logos/mark.svg, background: "{colors.background}", small: true }
 ---
 
 ## Overview
@@ -85,8 +83,6 @@ logos:
 ## Voice
 ## Messaging
 ## Audience
-## Sources
-## Known gaps
 ```
 
 ## CSS variables
