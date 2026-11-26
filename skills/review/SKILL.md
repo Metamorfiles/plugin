@@ -105,7 +105,7 @@ A print or a face the image model drew flat, that a mockup's photograph will be 
 #### DESIGN.md section
 
 - It reads as the brand's guideline, for whoever designs with the brand: the brand as it is, in the present tense, each rule in the brand's own words.
-- Every fact in it is right, and every sentence reads one way only.
+- Every sentence is true of the brand as the kit has it: what it says of the logo, the colours, the type and the pictures holds for every file the kit shows, and each fact about the business, in an example line too, is one the brief or a source gives. Every sentence reads one way only.
 
 #### Page or template
 
