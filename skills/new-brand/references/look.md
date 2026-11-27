@@ -9,7 +9,7 @@ Each direction has a complete palette, not a swatch list:
 - **Colours named from the brand's world** (`paper`, `ink`, `clay`), in the
   order they are used, each with its **share**, as the direction's references use them.
 - **Text pairs work:** the ink on the ground at 4.5:1 or more, the ground on the dark colour too.
-  Check the accent: if it can't carry text, say so, and keep it for shapes.
+  Check the lead colour: if it can't carry text, say so.
 - **Differ in logic, not in hue.** Each palette's logic comes from its path's source: the place's
   own colours, the product's material, the category's habit reversed. Two palettes one tint apart
   are one direction.

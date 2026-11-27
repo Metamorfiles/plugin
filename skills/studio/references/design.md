@@ -37,7 +37,7 @@ Decide in this order, since a later choice can't rescue an earlier one: the idea
 - **One hero per frame.** Decide the single thing that has to register in that second (the product, the price, a face, the offer) and make it unmistakably the strongest element; everything else supports it. Plan without the weakest element: what the frame doesn't need, it leaves out. When leaving something out leaves a gap, enlarge what's left or give the room to a picture or a field of colour.
 - **Improve what's there first.** Tighter alignment, a better crop or a clearer size step usually does more than a new shape, badge or line.
 - **Each format is composed for its size.** A landscape frame isn't a shrunken portrait: put the image beside the copy rather than above it, and let a story use its height.
-- **Only this brand.** Build from what the brand has and a competitor doesn't: its photography, its colors in their stated roles, its type, its voice. A decorative device the brand kit doesn't use (a badge, a card, a gradient, an icon, numbering, an emoji) needs a reason in the content. The brand kit and the brief always win over these preferences.
+- **Only this brand.** Build from what the brand has and a competitor doesn't: its photography, its colors, its type, its voice. A decorative device the brand kit doesn't use (a badge, a card, a gradient, an icon, numbering, an emoji) needs a reason in the content. The brand kit and the brief always win over these preferences.
 
 ## The composition
 
