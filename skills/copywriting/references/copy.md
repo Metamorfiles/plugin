@@ -4,7 +4,7 @@ The brand's voice is fixed; your job is to say this one thing, in that voice, in
 
 ## Grounding
 
-Every line traces back to something given or found: the user's brief or request, `brand/DESIGN.md` (its Voice section, with its Do and Don't columns, and its rules), the page's data or table, text already approved in the design, or research done for this piece. No claim, number, price, ingredient, date or testimonial comes from you or your memory.
+Every line traces back to something given or found: the user's brief or request, `brand/DESIGN.md` (its Messaging for what is true, its Voice for how to say it), the page's data or table, text already approved in the design, or research done for this piece. No claim, number, price, ingredient, date or testimonial comes from you or your memory.
 
 - **Research.** When the content is about the world (the latest launches, what a product does, an event's date), search and read the sources themselves before writing: the maker's own page or announcement first, a reputable outlet second, never a model's memory, which is out of date. Keep each fact with its source and date in the plan, give them to the reviewer, and credit the source, with its date, where a reader would want it (a slide's small print or the caption). Prefer the newest that's confirmed; say "announced" for what isn't out yet.
 - **Reframe.** A fact about the user (their routine, their results) is only theirs to give. When a line needs a fact nobody gave, reframe it to what's true, still useful and new to the piece. "How I use it" without the user's routine becomes "One way to use it" and a concrete, general tip ("Two drops on damp skin, before the sunscreen"); a result nobody measured becomes what the product does. Ask once for it (the `team` skill, "Choices that belong to the user").
@@ -20,7 +20,7 @@ Name the one reason the reader should care, from the brief: the outcome ("bright
 - Say the thing itself. A reader scrolling past gives a line one look, so the plain, concrete version wins over the witty one, and the words they'd use win over the brand's internal terms.
 - One idea per line. The headline makes the promise; the support line makes it believable; the call to action names the next step and what it gets them ("Shop the serum", "See the night range").
 - Voice stays the same everywhere; tone can loosen or tighten with the format (a story can be looser than a feed post).
-- Capitalize as the brand does in DESIGN.md; with no rule there, only the first word and names. When DESIGN.md's `casing` sets a role in capitals, the design does it (`--brand-<role>-case`): write the words in sentence case and let it.
+- Capitalize the first word and names. A line set in capitals or lowercase is its design's doing (`text-transform`, or `--brand-<role>-case` where the brand's `casing` sets one): write the words in sentence case and let it.
 
 ## Fit
 
