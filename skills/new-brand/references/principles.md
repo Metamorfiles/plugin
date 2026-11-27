@@ -15,7 +15,7 @@ Each brief adds what is only true of it (`research.md`). These are the floor, no
 - 4. A mark with one idea and one anomaly
 - 5. One expressive element, one disciplined partner
 - 6. A device that is the mark's own grammar
-- 7. Colour: one owned signal, rationed and named
+- 7. Colour: one owned colour, named
 - 8. Type with a job and a feature
 - 9. Imagery with one strict, honest rule
 - 10. Words that only this brand could say
@@ -106,16 +106,15 @@ across applications?
 - `museu-nacional-da-republica`: the portal.
 - `fjord-sauna`: the degree sign as a pixel.
 
-## 7. Colour: one owned signal, rationed and named
+## 7. Colour: one owned colour, named
 
-One colour does the recognising and is used sparingly; the rest is black, white or neutrals cast from
-it. Colours are named after the business's world, with shares, allowed pairs and what they are never
-for.
+One colour does the recognising; the rest is black, white or neutrals cast from it. Colours are
+named after the business's world, with their shares and the text each carries.
 
 **Ask of the plan:** is there a lead colour and a clear proportion? Where do the colours come from?
 What position does the palette take on the category's colour code?
 
-**Studio work:** a named signal colour from the business's own world, rationed.
+**Studio work:** a named lead colour from the business's own world.
 - `castil`: the RAL powder-coat chart.
 - `burger-king`: colours named after ingredients.
 - `nuits-sonores`: one green that the audience adopted.
@@ -197,7 +196,7 @@ parts, a tool.
 - `pa-i-punt`: ground, type, disruption.
 - `barrault-pressacco`: one face, one size.
 - `urban-climb`: a fixed frame plus loose parts.
-- `helsinki-city`: one logo and one wave per view.
+- `helsinki-city`: one frame every unit's name goes into, and the crest's wave.
 
 ## 13. Craft that looks labored over
 

@@ -108,7 +108,7 @@ From another skill, read them in this skill's folder, or with `metamorfiles_get_
 ```
 metamorfiles.json          project marker: name, and imageModel only to override the user's default
 AGENTS.md, CLAUDE.md       short instructions for any agent opened here (created only if missing)
-brand/DESIGN.md            the brand kit (design.md format): tokens, and the prose that says how to apply them
+brand/DESIGN.md            the brand kit (design.md format): tokens, and the prose that says what the brand is
 brand/brand.css            generated --brand-* tokens and @font-face, then the brand's own CSS
 brand/fonts/ logos/ refs/  local brand files
 brand/sources/             copies of the files the brand was translated from; the user's own in yours/

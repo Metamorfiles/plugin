@@ -22,18 +22,17 @@ from it. Read it before you write DESIGN.md.
 - **`components`**: only usage pairs you observed, such as `button-primary`, `card`, `band` or `badge-winner`, with `backgroundColor`, `textColor`, `typography`, `rounded` and `padding`. Reference tokens (`"{colors.primary}"`); use a literal value only when the source hardcodes one.
 - **`fonts`** (Studio): every family the roles use, with its local file (relative to `brand/`) and weight range; the face the logo is set in with `logo: true`.
 - **`logos`** (Studio): each file with the `background` it's made for (a token reference); the brand's mark alone (its symbol or monogram) with `mark: true`, since the kit's profile picture and site files are composed from it; with none, Studio uses the main logo. A translated brand keeps Studio's placement of it, unless its guidelines define one: then each use's composition (`profile` and `icon`) is set as they give it.
-- **`casing`** (Studio): the letter case a role is set in, when the brand sets one: `upper`, `lower` or `title`, such as `display: upper` for headlines in capitals (a site's `text-transform`, or copy typed in capitals). The spec's typography has no case, so without it every template and the board guess.
+- **`casing`** (Studio): the letter case a role is set in, when the brand's own sources set one: `upper`, `lower` or `title`, such as `display: upper` for headlines in capitals (a site's `text-transform`, or copy typed in capitals). A brand made from a brief sets none: each piece sets its own case.
 - **`assets`** (Studio): list an imagery folder only for imagery the brand has, or that the user had the team make. The brand's asset folders under `brand/`, each drawn as a frame of the brand board: `{ folder, kind, title, note?, anchors? }`, the kind one of `imagery` (photos or drawings, whole and framed, with the `anchors` that set its look marked), `character` (a mascot's turnaround and poses), `icons`, `pattern` and `in-use` (mockups of the brand on its objects, never imagery). Without it, `brand/refs/` is the brand's imagery, so anything else (a share image, screenshots) stays in `brand/sources/`. Each folder is shown whole on pages of its own, and the about page shows the first imagery folder's first anchor.
 
 Never write vmin, vw or any image-frame size in DESIGN.md. Studio adapts the brand to each image: the body size becomes the frame's body size (`--brand-type-base`, 3vmin), and every other size, radius and space keeps its ratio to it.
 
 ## Prose
 
-- The prose is the copywriter's: write every section with the `copywriting` skill (Overview, Colors, Typography, Logo, Imagery, Voice and Messaging), as the brand's guideline. A later change to a section, whatever prompts it (a check's warning, a review's fix, the user's word), is written the same way: as the brand's own rule, in the section that owns it.
+- The prose is the copywriter's: write every section with the `copywriting` skill (Overview, Colors, Typography, Logo, Imagery, Voice and Messaging), as the brand's guideline. A later change to a section, whatever prompts it (a check's warning, a review's fix, the user's word), is written the same way: as the guideline, in the section that owns it.
 - The spec's sections, in order, only those the brand has: Overview, Colors, Typography, Layout, Elevation & Depth, Shapes, Components, Do's and Don'ts.
 - Then Studio's sections: Logo, Imagery, Voice, Messaging, Audience. Imagery describes the brand's own pictures, or those the imagery step made; a brand with neither has no Imagery section.
-- Describe rules and intent, not layouts, unless the brand really has a fixed layout rule.
-- Keep Do's and Don'ts short and intentional, and never add brand facts such as claims, prices or awards. It isn't printed: it holds the rules agents follow when they design.
+- Describe what the brand is. Do's and Don'ts and Layout hold only rules from guidelines a brand was brought in with, quoted as theirs and kept short, never brand facts such as claims, prices or awards; a brand made from a brief has neither.
 
 ## DESIGN.md template
 

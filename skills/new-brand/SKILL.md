@@ -266,7 +266,7 @@ its frame shows each file as it arrives, so the user watches the step come toget
       never asked: each image started with `wait: false`, collected as it arrives.
    3. **DESIGN.md, while it is drawn.** The words are the copywriter's, always: report as
       `copywriter` while you write DESIGN.md's prose, in the file's order (Overview, Colors, Typography,
-      Do's and Don'ts, Logo, Imagery, Voice and Messaging) with the `copywriting` skill, from the brief's facts and the chosen steps,
+      Logo, Imagery, Voice and Messaging) with the `copywriting` skill, from the brief's facts and the chosen steps,
       then hand back to the designer. The chosen direction, logo and imagery become `brand/DESIGN.md`
       as the `brand` skill describes, every face with its role (the logo's own face listed with `logo: true`).
       Its Imagery names the anchors, which exist already; it describes no image still being drawn.
