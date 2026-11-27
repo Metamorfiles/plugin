@@ -1,7 +1,7 @@
 # The brand in use
 
-Read this for the mockups, the kit's last images (in a new brand, made once DESIGN.md is
-written). Mockups show the brand made real on this business's own
+Read this for the mockups, the kit's last images (in a new brand, made once DESIGN.md has
+passed its review). Mockups show the brand made real on this business's own
 objects, so the user can judge the whole system at a glance. They are presentation, never the
 brand's imagery: Studio keeps them in their own folder and refuses them in templates.
 
@@ -16,7 +16,8 @@ chosen, designed and made: the `mockup` skill.
 ## Make them
 
 In `brand/mockups/`, as the `mockup` skill says. Once the first is saved, list the
-folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`; the `handover`
-review is the final gate for them with the rest of the kit. They are one board, like the logos and
+folder in DESIGN.md `assets` as `{ folder: mockups, kind: in-use, title: In use }`, a find and replace
+in the front matter, so no section is written again. Each is reviewed as it's made (the `review`
+skill). They are one board, like the logos and
 the images, and nothing is asked: say which three you made in one `say`. The user can redo one from
 its board, or pick one of its earlier takes back.

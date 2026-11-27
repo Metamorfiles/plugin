@@ -119,13 +119,13 @@ comes next: step 3 of the `new-brand` skill.
 ### For a brand that has one
 
 A character the user asks for once the brand has its kit lives in its own folder of the kit from
-the start, so the board shows it and the kit's review sees it:
+the start, so the board shows it and the `library` review sees it:
 
 1. Its look (step 2) comes from `brand/imagery-guide.md`. Draw the three designs (step 3) into the
    character's folder, each with the brand's logo file as image 1, as "In a new brand" says:
    `metamorfiles_generate_image { prompt, references: ["brand/logos/logo.svg"], width: 1024, height: 1024, folder: "brand/<name>", name: "<design's title>", trace: { colors: [...] }, wait: false }`.
 2. List the folder in DESIGN.md `assets` (`kind: character`, its Character lines as `note`). The
-   three then show on its frame and wait in the kit's queue, `metamorfiles_review_queue { for: "handover" }`
+   three then show on its frame and wait in the `library` queue, `metamorfiles_review_queue { for: "library" }`
    (the `review` skill).
 3. Once they pass, the user chooses:
    `metamorfiles_ask_user { task, role: "designer", question: "Which one is <name>?", options: [{ label: "<title>", recommended: true }, { label: "<title>" }, { label: "<title>" }] }`.

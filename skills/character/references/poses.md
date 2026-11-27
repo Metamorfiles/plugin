@@ -37,8 +37,8 @@ the pose: an expression, a prop swapped, a colour fixed.
 - **Several at once**: start each with `wait: false`, each from the sheet, then wait for each with
   `metamorfiles_image_status { id }`.
 - Save each into the character's folder with the same `trace` colours as the chosen drawing.
-- **Reviewed before it's delivered**: outside a new brand, each new pose waits in the `handover`
-  queue (the `review` skill; the reviewer reads it with `metamorfiles_review_queue { for: "handover" }`),
+- **Reviewed before it's delivered**: outside a new brand, each new pose waits in the `library`
+  queue (the `review` skill; the reviewer reads it with `metamorfiles_review_queue { for: "library" }`),
   and Studio holds the task until it passes.
 
 ## The set

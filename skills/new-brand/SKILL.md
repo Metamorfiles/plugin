@@ -30,8 +30,9 @@ Copy it into your notes and tick each step as you go:
 - [ ] 2. Logo: three routes with the `logo` skill, reviewed, asked, chosen; then its step 8: the mascot when the brand has one (`step: "character"`), reviewed
 - [ ] 3. Imagery: mode, style block, four seeds, reviewed, asked, anchors kept
 - [ ] Kit: final logos and the imagery guide; the library started; DESIGN.md (its prose by the copywriter) while it's drawn
-- [ ] Mockups: three shots (the `mockup` skill), looked at in the handover review
-- [ ] Handover: the final review passed, then finished: true with the summary
+- [ ] Guideline: DESIGN.md and its logo files reviewed, before any mockup
+- [ ] Mockups: three shots (the `mockup` skill), each reviewed as it's made; the library reviewed once it's in
+- [ ] Handover: nothing waiting, then finished: true with the summary
 ```
 
 | Step | You prepare | Speaks as | Read | The user |
@@ -167,16 +168,8 @@ task Studio started.
 The user should never be the one to find a piece's mistakes. The board shows each piece as it
 arrives, its controls waiting while the team holds it; the user chooses it once the reviewer has
 passed it. The reviewer looks at each piece, and at whatever is made again or changed on the user's
-word (when and how: the `review` skill). Studio keeps what waits, piece by piece; run the `review`
-skill on the queue and wait for its verdict:
-
-| When | Queue |
-|---|---|
-| The logo routes given their files, before asking | `logo` |
-| The mascots, and in the logo's own case their sheet, before asking | `character` |
-| The seeds given to the imagery step, before asking | `imagery` |
-| A flat design, before its mockup photograph | `mockups` |
-| The kit written: its logo files, its library, its mockups and DESIGN.md | `handover` |
+word. Studio keeps what waits, piece by piece, in the queues the `review` skill's "When" lists: run
+the `review` skill on each as its pieces are made, and wait for its verdict.
 
 Report the reviewer's turn as the `team` skill says, and fix as step 4 of the `review` skill's Run
 it says, as the role that made the piece. Nothing reaches the user with a must fix standing: Studio
@@ -273,9 +266,13 @@ its frame shows each file as it arrives, so the user watches the step come toget
       List the library with the file names the import returned as its anchors:
       `{ folder: refs, kind: imagery, title: Imagery, anchors: [...] }`, a character's folder as
       `references/sheet.md` of the `character` skill says; its frame shows each image as it arrives.
-   4. **The mockups,** from DESIGN.md and the brief (`references/mockups.md`), on their own board,
-      never asked: each started with `wait: false`, collected as it arrives.
-   5. **The handover review,** once every image is in (Ending).
+   4. **The guideline reviewed,** once DESIGN.md lists the final logo files (every cleaner has
+      replied): the `guideline` queue, each must fix made by the role that wrote it. The mockups are
+      made from what passes, so Studio makes none before.
+   5. **The mockups,** from the passed guideline and the brief (`references/mockups.md`), on their
+      own board, never asked: each started with `wait: false`, collected as it arrives, and reviewed
+      as it's made.
+   6. **The library reviewed** once its pictures are in (`library`).
 
    The brand board then holds it all after the steps, as the brand's guideline pages: the logo,
    colour, type, voice, the images and the mockups. Make no templates or pages but a mockup's flat
@@ -283,7 +280,7 @@ its frame shows each file as it arrives, so the user watches the step come toget
 
 ## Ending
 
-Finish the kit, and its `handover` review, before you hand it over as `references/presenting.md` of
+Finish the kit, every piece passed in its queue, before you hand it over as `references/presenting.md` of
 the `brand` skill says. An image that fails is retried by Studio; if its source
 keeps failing, wait a minute and make it again, and if it still fails, ask the user
 (`metamorfiles_ask_user { task, question, options: [{ label: "Wait and try again", recommended: true }, { label: "Another image model" }] }`)

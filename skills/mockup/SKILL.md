@@ -135,15 +135,15 @@ order, each a sentence or two holding only its own:
 
 ### 5. Review, and fix
 
-Reviewed in the `mockups` queue (the `review` skill; in a new brand, `handover` is the final gate).
+Reviewed as each is made, in the `mockups` queue (the `review` skill).
 A piece changes only for a must fix or the user's word, and an image gets one new take for each
 look, every must fix in it together (`references/images.md` of the `studio` skill, "Edit or redraw"):
 
 - **Only the mark or a word wrong:** an edit of the take the reviewer sent back, its master after it,
   as "Edit or redraw" says, naming the fault where it is and restating the Keep line:
   `metamorfiles_generate_image { prompt: "Edit image 1: the wordmark on the label at the centre of the bottle reads Lumn; redraw it as Lumen with the logo's letters as image 2 draws them, in the label's curve and light. Keep the bottle, the hand and the light exactly as they are.", references: ["brand/mockups/serum-on-shelf-1a2b3c4d.png", "brand/logos/logo.svg"], edit: true, width: 1600, height: 2000, replaces: "brand/mockups/serum-on-shelf-1a2b3c4d.png" }`.
-- **Anything else wrong** (a print laid over the photograph or made another way than named, the object
-  or its physics, a figure, the brand's products): made again from its prompt as a new image, answering
+- **Anything else wrong** (a print that isn't part of its object or is made another way than named, the
+  object or its physics, a figure): made again from its prompt as a new image, answering
   every must fix the look named, the mark's too (an edit would keep the faulty take's composition), with the line that should have said it rewritten to describe what the photograph shows
   instead (the design, the object and its moment, or the print, as step 4 says).
 
