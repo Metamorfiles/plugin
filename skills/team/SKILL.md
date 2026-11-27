@@ -64,7 +64,7 @@ Skip the roles a task doesn't need; the final check runs every time. Fixes and t
 
 ## Scope
 
-- **Review and fix** (the request lists flagged frames): change only those frames, fixing what the checks found. Other frames are out of scope even if you'd improve them. The reviewer then looks at the frames the fix changed, before the task ends; a fix on the brand board is looked at as the kit's pieces on those frames, `metamorfiles_review_queue { for: "handover" }`, never the board as a scope.
+- **Review and fix** (the request lists flagged frames): change only those frames, fixing what the checks found. Other frames are out of scope even if you'd improve them. The reviewer then looks at the frames the fix changed, before the task ends; a fix on the brand board is looked at as the kit's pieces on those frames, each in its queue (the `review` skill's "When"), never the board as a scope.
 - **An ask from the user**: Studio names where they asked from (the page, template or project they had open). A change or a fix stays there, and nothing else changes. A request for something new ("make a carousel about…", "a new post") is a new piece, made as a new page from its own design (a template only when the user wants reuse): the page they had open is context and stays as it is. When a request is vague ("make it pop"), make the one change you'd defend and say it in one `say`, so the user can redirect it.
 
 ## Choices that belong to the user

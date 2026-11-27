@@ -83,10 +83,9 @@ labelled lines, in this order, each holding only its own:
 
    A generated image is a reference only once the user approved it or the reviewer passed it, since
    an unchecked image carries its faults into the next, and copies of copies drift: the chosen
-   seeds, the passed character sheet, a passed flat design, and, once the kit's `handover` review
-   has passed it, the library's sheet. While a new brand's kit is made its library is not yet
-   reviewed, so images made then (its mockups and their flats) take only the chosen seeds and the
-   character sheet. The image an edit changes is its own image 1, not a reference, so this never stops a fix.
+   seeds, the passed character sheet, a passed flat design, and the library's pictures the `library` review
+   has passed. A library picture not passed yet is never a reference: until then a new brand's
+   mockups and their flats take only the chosen seeds and the character sheet. The image an edit changes is its own image 1, not a reference, so this never stops a fix.
 2. **What it is:** the medium and the use in one line, which set how real or drawn and how
    finished the model makes it: "A photorealistic photograph for Lumen's spring launch post", "A flat
    poster illustration for a carousel slide".
