@@ -109,9 +109,9 @@ across applications?
 ## 7. Colour: one owned colour, named
 
 One colour does the recognising; the rest is black, white or neutrals cast from it. Colours are
-named after the business's world, with their shares and the text each carries.
+named after the business's world, each with the text it carries.
 
-**Ask of the plan:** is there a lead colour and a clear proportion? Where do the colours come from?
+**Ask of the plan:** is there a lead colour, the one people know the brand by? Where do the colours come from?
 What position does the palette take on the category's colour code?
 
 **Studio work:** a named lead colour from the business's own world.

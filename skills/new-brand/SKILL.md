@@ -37,7 +37,7 @@ Copy it into your notes and tick each step as you go:
 
 | Step | You prepare | Speaks as | Read | The user |
 |---|---|---|---|---|
-| 1. Direction | two or three directions, each its references, palette in proportion and its faces with their jobs, set in the brand's words | `designer` | `references/research.md`, `references/look.md`, `references/fonts.md` | chooses one, or says what to change or mix |
+| 1. Direction | two or three directions, each its references, palette and its faces with their jobs, set in the brand's words | `designer` | `references/research.md`, `references/look.md`, `references/fonts.md` | chooses one, or says what to change or mix |
 | 2. Logo | three routes or more from the chosen direction, three different ideas, each made by the method that serves it (drawn whole by AI, real fonts with a generated part, or type alone); each in colour and in one colour | `designer` | the `logo` skill; the `character` skill for a mascot | chooses one, or asks for another |
 | 3. Imagery | the style in words and four seed images | `imager` | `references/imagery.md` | uses them, or has single ones redone |
 | Kit | DESIGN.md and the brand board: the guideline pages and the images | `designer`, `copywriter` for the prose | `brand`, `copywriting` | asks for any change they want |
@@ -222,8 +222,7 @@ Each option can carry:
 - `files`: all of its images or SVGs, up to 16, each `{ file, caption, ground, mark }` with all but
   `file` optional: `caption` (at most 140 characters: a credit, what to take), `ground`
   (`"#rrggbb"`, the colour a logo file is shown on), and for a logo route's mark `mark: true`;
-- `colors`: up to 10, each `{ name, hex: "#rrggbb", share }` with `share` 0 to 100, in the order and
-  proportion they are used;
+- `colors`: up to 10, each `{ name, hex: "#rrggbb" }`, the colour the brand is known by first;
 - `fonts`: up to 4, each `{ family, file, role }`, `file` the one `metamorfiles_add_font` returned;
 - `sample`: at most 120 characters, the words the fonts are set in, from the brand's own voice.
 

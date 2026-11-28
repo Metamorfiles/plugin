@@ -87,8 +87,8 @@ A drawing on a flat paper field also passes `ground: "{colors.background}"`, so 
 brand's paper; a photograph never takes a `ground`. Each is made at the shape
 it will be used at (1024 × 1024 for a spot, 1600 × 2000 for a 4:5 scene):
 - **Spots:** single objects the business sells or uses, centred with space around them.
-- **Scenes:** the business's moments and people, shot with room for a headline in what the camera
-  sees around them.
+- **Scenes:** the business's moments and people in the brand's look, each composed for itself:
+  every piece made later makes its own picture in this look, around its own words.
 
 A character's images carry its sheet first and its Character lines (`images.md` of the `studio`
 skill, "The prompt").
