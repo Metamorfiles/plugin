@@ -81,6 +81,7 @@ Sample images, library images, mascots, character sheets, mockups, and the pictu
 
 - Each word the image model drew is spelled as the brief writes it: every letter there, in order. Words set in a font are the font's own (the queue says which) and pass as the font draws them.
 - A route that draws the user's own logo again holds to their file, side by side: every word and every part of its drawing as the file draws it, in its colours, nothing added; only the drawing is cleaner.
+- A composed route's parts read as one logo on the logo frame, its mark measured and lined up by what the eye reads as its body (a part hanging from it or sticking out, such as a tail, a tab or a drop, left out). Beside the name, the mark stands clearly taller than the letters, about 1.6 times their average height (as tall as a name on several lines), level with them as the layout says and about a quarter of its own height from them, so it reads as a mark rather than one more letter. Above the name, it is about a third of the name's width and no shorter than the name. It departs from that only as the route's composition says (a mark that leads, one meant to be read as a letter, one that meets the letters). The fix gives the part's new `size`, `shift` or `gap` (in the name's average height; above the name, `size` is a share of its width) on the route's saved settings with every other part as saved: `metamorfiles_compose_logo { from: "brand/process/logo/<route>.svg", parts: [<the saved parts, one value changed>], output: "brand/process/logo/<route>.svg" }`.
 
 #### Final logo file
 

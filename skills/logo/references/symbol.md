@@ -77,6 +77,8 @@ or a little larger". Then set the wordmark again with it:
 its file under `brand/process/` or `brand/logos/`. Studio sets the part on the letter's own lines
 (baseline to x-height or cap height, centred where the letter stood), or in the mark's place
 (centred where it stood, standing where it sat; `scale` makes a mark larger, growing up from there),
-however the drawing is padded, and spaces it by its own shape. It always stays in that place, where a
+however the drawing is padded, and spaces it by its own shape. A part in a letter's place also takes
+that letter's weight: Studio brings a lighter drawing up to it as far as its shapes stay apart, and its
+reply says what it did and anything left for you to decide. It always stays in that place, where a
 reader looks for the letter or the mark; `rotate` turns it there, only when the turn is the idea, said
 in the route's `composition`.

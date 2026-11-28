@@ -22,11 +22,13 @@ route's supporting words, if any, composed with it.
 
 ## Spacing it
 
-Sizes and positions are set for this logo. Spacing comes from the name: in a row or a stack with a name,
-`gap` is measured in the name's cap height, the same on every side, and unset it is half a cap height,
-so a mark beside, above or below the name reads as its own piece of one logo. Leave it unset, and set
-it only when the composition means another space (a mark meant to be read as a letter, a part that
-meets or overlaps the letters). A round or pointed part standing on the baseline
+Sizes and positions are set for this logo, and both come from the name, as designers balance a
+lockup. Studio knows the brand's name: in a row or a stack with it, a mark's `gap` and `shift` are
+measured in the name's average height (its letters' tops above the baseline, averaged), and its `size`
+too beside the name; above it, `size` is a share of the name's width. Left unset, Studio balances them,
+as the tool's description says, and its reply says what it placed. Leave them unset, and set them only
+when the composition means otherwise (a mark that leads the name, a mark meant to be read as a letter,
+a part that meets or overlaps the letters). A round or pointed part standing on the baseline
 overshoots it a little (`shift`), as round letters do. Supporting words follow the word's own axis:
 centred under a word with no straight edge (a drawn or slanted first letter), flush only to an edge
 the word really has.
