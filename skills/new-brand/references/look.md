@@ -6,8 +6,8 @@ references and set in the brand's own words.
 ## Palettes
 
 Each direction has a complete palette, not a swatch list:
-- **Colours named from the brand's world** (`paper`, `ink`, `clay`), in the
-  order they are used, each with its **share**, as the direction's references use them.
+- **Colours named from the brand's world** (`paper`, `ink`, `clay`), the one the brand is known by
+  first.
 - **Text pairs work:** the ink on the ground at 4.5:1 or more, the ground on the dark colour too.
   Check the lead colour: if it can't carry text, say so.
 - **Differ in logic, not in hue.** Each palette's logic comes from its path's source: the place's
@@ -38,8 +38,8 @@ metamorfiles_change_step { step: "direction", changes: [{
     { file: "brand/process/references/glass-study/2.jpg", caption: "Glass Study · one colour taken from the product's own glass" }
   ],
   colors: [
-    { name: "Tile", hex: "#f4f3ef", share: 60 }, { name: "Ink", hex: "#1b1d1f", share: 25 },
-    { name: "Grout", hex: "#c9cac6", share: 10 }, { name: "Amber", hex: "#b4621b", share: 5 }
+    { name: "Amber", hex: "#b4621b" }, { name: "Tile", hex: "#f4f3ef" },
+    { name: "Ink", hex: "#1b1d1f" }, { name: "Grout", hex: "#c9cac6" }
   ],
   fonts: [
     { family: "Host Grotesk", file: "brand/fonts/HostGrotesk.woff2", role: "everything, in a few sizes: plain, so every line reads as fact" },

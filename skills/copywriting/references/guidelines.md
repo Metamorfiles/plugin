@@ -28,10 +28,9 @@ the category's usual look.
 > A small skincare brand for people with a short morning routine. It looks like a bathroom shelf in
 > early light: warm stone, linen, amber glass, and nothing on it that doesn't need to be there.
 
-**Colors.** A line on the palette as a whole, what the brand is mostly made of, then one line per
-colour: its name in bold and its token first, then what it is and which text reads on it. How much
-of a colour a piece shows is that piece's choice. Give each colour a line, or its own clause when
-two share one.
+**Colors.** A line on the palette as a whole, where its colours come from and the one the brand is
+known by, then one line per colour: its name in bold and its token first, then what it is and which
+text reads on it. Give each colour a line, or its own clause when two share one.
 
 > - **Clay** {colors.clay} is the amber of the bottles, the colour people know Lumen by. Ink reads
 >   on it; on paper it is too light to be text.
