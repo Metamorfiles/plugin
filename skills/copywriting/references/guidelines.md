@@ -35,7 +35,8 @@ text reads on it. Give each colour a line, or its own clause when two share one.
 > - **Clay** {colors.clay} is the amber of the bottles, the colour people know Lumen by. Ink reads
 >   on it; on paper it is too light to be text.
 
-**Typography.** Each face, the roles it sets and what it brings, in a sentence or two.
+**Typography.** Each face, what it is and the roles it sets, in a sentence or two; each piece sets
+its own sizes and case.
 
 > **Fraunces**, a warm old-style serif, is Lumen when it speaks large. **Inter**, plain and even,
 > sets everything read closely.

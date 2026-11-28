@@ -28,11 +28,12 @@ redrawn version's cleaned copy when the chosen logo has one (`drawn.md`, "Other 
 `metamorfiles_check_logo` on each. Declare them in DESIGN.md `logos` with their
 grounds and clear space; the face a logo is set in is listed in `fonts` with `logo: true`.
 
-The chosen route's own mark, when it has one, is the file marked `mark: true` in the route's files.
+The brand's mark is the chosen route's own mark (the file marked `mark: true` in the route's files),
+or the mascot the user chose, in its cleaned file, when they asked for the mascot as the brand's icon.
 Make it into `brand/logos/` with its versions like the others and declare it with `mark: true`: the
-kit's profile picture and site files are composed from it. A logo without a mark of its own declares
-none: Studio composes them from the main logo, and nothing is made or asked for it. Another the user
-asks for later is made as a page.
+kit's profile picture and site files are composed from it. A logo with neither declares none: Studio
+composes them from the main logo, and nothing is made or asked for it. Another the user asks for
+later is made as a page.
 
 ## The mark alone
 
